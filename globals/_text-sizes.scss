@@ -1,0 +1,85 @@
+$text-sizing: (
+	x-small: (
+		device-small: (
+			font-size: 14px
+		),
+		device-medium: (
+			font-size: 12px
+		),
+		device-large: (
+			font-size: 12px
+		)
+	),
+	small: (
+			device-small: (
+					font-size: 14px
+			),
+			device-medium: (
+					font-size: 14px
+			),
+			device-large: (
+					font-size: 14px
+			)
+	),
+	base: (
+			device-small: (
+					font-size: 16px
+			),
+			device-medium: (
+					font-size: 16px
+			),
+			device-large: (
+					font-size: 16px
+			)
+	),
+	medium: (
+		device-small: (
+			font-size: 20px
+		),
+		device-medium: (
+			font-size: 20px
+		),
+		device-large: (
+			font-size: 20px
+		)
+	),
+	medium-large: (
+		device-small: (
+			font-size: 20px,
+			line-height: 1.5
+		),
+		device-medium: (
+			font-size: 24px
+		),
+		device-large: (
+			font-size: 24px
+		)
+	),
+	large: (
+		device-small: (
+			font-size: 28px,
+			line-height: 1.2
+		),
+		device-medium: (
+			font-size: 32px,
+			line-height: 1.4
+		),
+		device-large: (
+			font-size: 32px,
+			line-height: 1.4
+		)
+	),
+	// Used for masthead.
+	x-large: (
+		device-small: (
+			font-size: 42px
+		),
+		device-medium: (
+			font-size: 42px
+		),
+		device-large: (
+			font-size: 48px
+		)
+	),
+);
+

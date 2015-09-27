@@ -1,0 +1,14 @@
+node_modules/
+.elasticbeanstalk/
+*.esproj/
+*.espressostorage
+.sass-cache/
+getagent.esproj/user.peter.espressostorage
+npm-debug.log
+
+.DS_Store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

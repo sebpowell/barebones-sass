@@ -1,0 +1,50 @@
+// .row {
+//   @include clearfix;
+//   @include respond(device-medium) {
+//     margin-left: -1rem;
+//     margin-right: -1rem;
+//   }
+// }
+
+// // Generates column offsets.
+// @for $i from 1 through $column-numbers {
+//   .offset-#{$i} {
+//     margin-left: 0;
+//     @include respond(device-medium) {
+//       margin-left: (100% / $column-numbers) * $i;
+//     }
+//   }
+// }
+
+// // Generates grid sizes.
+// @for $i from 1 through $column-numbers {
+//   .flex-grid-#{$i} {
+//     @include no-bullet;
+//     @include clearfix;
+
+//     // Extend this from row. 
+//     @include respond(device-medium) {
+//       margin-left: -(sizes(base));
+//       margin-right: -(sizes(base));
+//     }
+//     > li {
+//       margin-bottom: sizes(double);
+//       @include respond(device-medium) {
+//         width: 100% / $i;
+//         float: left;
+//         padding: 0 sizes(base);
+//       }
+
+//       // If we're including more breakpoints, we'll need to think this bit through carefully. 
+//       &:last-child {
+//         margin-bottom: 0;
+//       }
+//     }
+//   }
+// }
+
+// @for $i from 1 through $column-numbers {
+//   .columns-#{$i}-large {
+//     @include column_above_breakpoint($i, device-large, false);
+//   }
+// }

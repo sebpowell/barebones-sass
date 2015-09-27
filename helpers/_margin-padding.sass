@@ -1,0 +1,18 @@
+$types: padding, margin
+$sides: top, right, bottom, left
+
+@each $type in $types
+	@each $side in $sides
+		@each $key, $value in $sizes
+			.#{$type}-#{$side}-#{$key}
+				#{$type}-#{$side}: $value !important
+
+		@each $key, $value in $sizes
+			.#{$type}-#{$key}
+				#{$type}: $value !important
+
+.no-margin
+	margin: 0 !important
+
+.no-padding
+	padding: 0 !important

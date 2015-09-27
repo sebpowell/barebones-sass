@@ -1,0 +1,16 @@
+.no-bullet {
+  @include no-bullet;
+
+  li {
+    margin-bottom: 20px;
+  }
+}
+
+// .no-bullet
+// 	list-style-type: none
+// 	padding: 0
+// 	margin: 0
+// 	> li
+// 		line-height: 1.5 // Change to variable
+// 		&:not(:last-child)
+// 			margin-bottom: sizes(base)

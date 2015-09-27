@@ -1,0 +1,70 @@
+@import "theme.scss";
+@import "globals/globals.scss";
+@import "mixins/mixins.scss";
+@import "helpers/helpers.scss";
+@import "components/components";
+
+body {
+	background: colors(brand-primary);
+}
+
+.site-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	background: white;
+}
+
+.section {
+	padding: 100px sizes(double);
+}
+
+$sign-up: (device-medium: 4, device-small: 6, device-x-small: 6);
+
+.module-team {
+	h4 {
+		color: colors(brand-primary)
+	}
+	img {
+		max-width: 140px;
+		margin-bottom: sizes(base);
+	}
+	.module-team-member {
+		@include grid-test($sign-up);
+	}
+}
+
+.module-split-panel {
+	@include clearfix;
+	.module-split-panel-summary, .module-split-panel-points  {
+		padding: 100px sizes(quad);
+	}
+	.module-split-panel-points {
+		padding: 100px sizes(quad);
+		
+		h3 {
+			&:before {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: sizes(quarter);
+				content: "";
+				background-image: url("images/dots.png");
+				background-size: contain;
+				background-repeat: no-repeat;
+				width: sizes(base);
+				height: sizes(base);
+				margin-top: -4px;
+			}
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+}
+
+.module-image {
+	height: 400px;
+	width: 100%;
+	background-image: url("images/bg-1.jpg");
+	
+}

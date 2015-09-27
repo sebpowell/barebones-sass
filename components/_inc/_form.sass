@@ -1,0 +1,166 @@
+// // Large / medium / small form
+// $height-form-element: 52px
+// // Apply to buttons and inputs to ensure consistent height. Is this used everywhere? 
+
+// input[type="submit"]
+// 	width: 100%
+
+// .form-group
+// 	&:not(:last-child)
+// 		margin-bottom: sizes(base)
+	
+// .form-inline
+// 	+clearfix
+// 	.form-group
+// 		margin-bottom: 0
+// 	input
+// 		border: 0
+// 		border-right: 1px solid colors(keyline, light)
+// 		border-radius: 0
+	
+// 	.button, button
+// 		height: 56px
+// 		line-height: 56px
+// 		font-size: 16px
+// 		border-radius: 0 3px 3px 0
+// 	.form-group
+// 		width: 25%
+// 		float: left
+// 		&:first-child
+// 			input
+// 				border-radius: 3px 0 0 3px
+
+
+
+
+// .checkbox
+// 	+clearfix
+
+// 	label
+// 		float: left
+// 		margin: 0
+// 		font-size: 24px
+// 		font-weight: 400
+
+// 	input
+// 		float: left
+// 		margin-top: rem(8px)
+// 		margin-right: sizes(base)
+
+// form
+// 	button
+// 		height: $height-form-element
+// 		padding: 0 40px
+// 		min-width: 100px
+
+// input[type="submit"]
+// 	@extend .button
+// 	@extend .button.primary
+
+
+// input[type="text"],
+// input[type="email"],
+// input[type="number"],
+// input[type="password"],
+// input[type="url"],
+// input[type="date"],
+// input[type="tel"],
+// input[type="search"],
+// select,
+// textarea,
+// .input
+// 	-webkit-appearance: none // Need to replace this
+// 	// +border-radius($size-border-radius)
+// 	+transition()
+
+// 	+placeholder
+// 		+transition(color, .25s)
+// 		color: colors(text, light)
+
+// 	border: 1px solid #E2E2E2
+// 	border-radius: 3px
+// 	background: #F9FAFB
+	
+// 	// box-shadow: 0 1px 0px 0 rgba(213, 213, 213, 1)
+// 	height: $height-form-element
+// 	padding: sizes(base)
+// 	font-weight: 400
+// 	font-family: $font-family-primary !important
+// 	font-size: 16px
+// 	outline: none
+// 	color: colors(text, dark)
+// 	text-decoration: none
+// 	width: 100%
+// 	&.has-error
+// 		border-color: colors(info, error)
+// 		+placeholder
+// 			color: colors(info, error)
+			
+// 	&:focus
+// 		background: white
+// 		+placeholder
+// 			color: colors(greyscale, light)
+
+
+// form
+// 	.joined
+// 		input
+// 			border-radius: 0
+// 			&:first-child
+// 				border-radius: 3px 3px 0 0
+// 			&:last-of-type
+// 				border-radius: 0 0 3px 3px
+// 			&:not(:first-child)
+// 				border-top: 0
+// 	.button
+// 		height: $height-form-element
+// 		line-height: $height-form-element
+// 		font-size: 14px
+
+// textarea
+// 	height: auto !important
+// 	resize: none !important
+
+// // This is used throughout the platform to display error message below input fields.
+// .form-error-message
+// 	color: colors(info, error)
+// 	margin-top: sizes(half)
+// 	font-size: 12px
+	
+// 	&:after
+// 		position: absolute
+// 		left: 50%
+// 		margin-left: -4px
+// 		top: -8px
+// 		z-index: 9999
+
+// label
+// 	display: block
+// 	font-size: rem(18px)
+// 	font-weight: 500
+// 	margin-bottom: sizes(half)
+
+// select
+// 	appearance: none
+// 	background: colors(greyscale, light)
+// 	cursor: pointer
+// 	-webkit-appearance: none
+// 	-moz-appearance: none
+
+// .select
+// 	position: relative
+// 	cursor: pointer
+// 	width: 100%
+// 	&:after
+// 		// +triangle(down, $color-primary, 5px)
+// 		+transition
+// 		position: absolute
+// 		right: 0.9em
+// 		top: 50%
+// 		margin-top: -2px
+// 	&:hover
+// 		&:after
+// 			// +triangle(down, $color-primary, 5px)
+
+
+

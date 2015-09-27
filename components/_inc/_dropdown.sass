@@ -1,0 +1,101 @@
+// $dropdown-menu-options: (width: 200px)
+
+// .dropdown-menu-toggle, .dropdown
+// 	position: relative
+// 	cursor: pointer
+// 	&:after
+// 		+triangle(10px, white, down)
+// 		position: absolute
+// 		top: 50%
+// 		right: sizes(base)
+// 		content: ""
+// 		+above(device-medium)
+// 			display: none
+	
+// 	&:hover
+// 		color: colors(brand-primary)
+// 		&:after
+// 			+triangle(down, colors(brand-primary), 5px)
+
+// .dropdown-menu
+// 	transition: all, .25s
+	
+// 	z-index: layer(dropdown)
+// 	max-height: 0 // Creates slideToggle effect without jQuery.
+// 	top: 120%
+// 	width: 100%
+// 	+above(device-medium)
+// 		width: map-get($dropdown-menu-options, width)
+// 		position: absolute
+// 		transform: scale(0.8, 0.8)
+	
+// 	opacity: 0
+// 	visibility: hidden
+	
+// 	padding: 0
+// 	margin: 0
+// 	right: 0
+	
+// 	&.is-open
+// 		max-height: 400px // Creates slideToggle effect without jQuery.
+// 		visibility: visible
+// 		opacity: 1
+// 		+above(device-medium)
+// 			transform: scale(1, 1)
+		
+
+// 	// Menu items.
+// 	> ul
+// 		+nobullet
+// 		background: map-get($navigation-mobile, background-dropdown)
+		
+// 		+above(device-medium)
+// 			+border-radius($size-border-radius)
+// 			+box-shadow(0 2px 2px rgba(48, 48, 48, 0.5))
+// 			padding: sizes(base)
+// 			background: white
+// 			overflow: hidden // to preserver rounded corners on hover effect
+		
+		
+// 		> li
+// 			// Apply styles here to avoid styles being inherited from the parent element, such as primary menu links.
+// 			text-align: left
+// 			line-height: 1
+// 			width: 100%
+
+// 			> a
+				
+// 				display: block
+// 				padding: sizes(double) sizes(base)
+// 				color: map-get($navigation-mobile, link-color)
+
+// 				+above(device-medium)
+// 					+border-radius($size-border-radius)
+// 					color: colors(greyscale, 300)
+// 					padding: sizes(base)
+// 					font-size: 12px
+// 					font-weight: 600
+// 					text-transform: uppercase 
+// 					letter-spacing: 0.1em 
+// 					&:hover
+// 						color: colors(greyscale, 400)
+// 						background: colors(greyscale, 100)
+
+// 	&.center
+
+// 		+above(device-medium)
+// 			left: 50%
+// 			margin-left: -(map-get($dropdown-menu-options, width) / 2)
+// 			&:before
+// 				+triangle(20px, white, up)
+// 				position: absolute
+// 				top: -10px
+// 				left: 50%
+// 				margin-left: -10px
+				
+
+
+
+
+
+

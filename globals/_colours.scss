@@ -1,0 +1,41 @@
+@function colors($palette, $tone: 'base') {
+	@return map-get(map-get($colors, $palette), $tone);
+}
+
+@function theme($value) {
+	@return map-get($theme, $value);
+}
+
+// onvert this to HSL?
+
+$colors: (
+	brand-primary: (
+	// Google mateiral design scale- how do 
+		base: theme(brand-primary),
+		dark: hsla(200, 60%, 10%, 1)
+	),
+	secondary: (
+		light: lighten(#009DFF, 5%),
+		base: #1FC055,
+		dark: darken(#009DFF, 5%)
+	),
+	greyscale: (
+		x-light: #f5f5f5,
+		light: #BDBDBD,
+		medium: #4F4F4F,
+		dark: #2F363A,
+	), 
+
+	info: (
+		error: #F86464,
+		base: #ECDF9A,
+		dark: #8C7A1B,
+	),
+
+	keyline: (
+		light: #ECECEC,
+		medium: #D5D5D5,
+		dark: #D9D9D8,
+	)
+);
+
