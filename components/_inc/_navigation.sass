@@ -2,7 +2,7 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 
 .navigation-primary
 	+clearfix
-	transition: .5s 
+	transition: padding .5s 
 	position: fixed
 	// Change to site width mobile padding
 	padding: sizes(base)
@@ -10,8 +10,8 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 	width: 100%
 	background: white
 	z-index: 9999
-	+respond-above(device-medium)
-		padding: sizes(triple)
+	padding: sizes(triple)
+	+respond-above(device-x-large)
 		width: 1200px
 
 	.navigation-primary-logo

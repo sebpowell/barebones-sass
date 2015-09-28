@@ -21,6 +21,8 @@ $size-grid-gutter: 															sizes(double-half)
 			> li
 				width: 100%
 				margin-bottom: $size-grid-gutter
+				&:last-child
+					margin-bottom: 0
 				&:nth-child(#{$i}n + 1)
 					// Clears floats after a row is complete for variable height elements. 
 					clear: both

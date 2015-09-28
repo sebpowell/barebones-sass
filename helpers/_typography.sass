@@ -21,10 +21,11 @@ $text-alignment: (left, center, right)
 
 
 @each $palette, $tint in $colors
-	.color-#{$palette}
-		color: colors(#{$palette}) !important
-		h1, h2, h3, h4, h5, h6
-			color: colors(#{$palette}) !important
+	@each $color, $value in $tint
+		.color-#{$palette}-#{$color}
+			color: colors(#{$palette}, #{$color})!important
+			h1, h2, h3, h4, h5, h6
+				color: colors(#{$palette}) !important
 			
 .color-white
 	color: white !important

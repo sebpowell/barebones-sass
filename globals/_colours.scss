@@ -11,13 +11,12 @@
 $colors: (
 	brand-primary: (
 	// Google mateiral design scale- how do 
+		
 		base: theme(brand-primary),
 		dark: hsla(200, 60%, 10%, 1)
 	),
-	secondary: (
-		light: lighten(#009DFF, 5%),
-		base: #1FC055,
-		dark: darken(#009DFF, 5%)
+	brand-secondary: (
+		base: theme(brand-secondary),
 	),
 	greyscale: (
 		x-light: #f5f5f5,

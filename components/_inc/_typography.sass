@@ -56,11 +56,13 @@ p
 	// +responsive-text-size(base)
 	font-size: 20px
 	line-height: 1.8
+	+respond-above(device-large)
+		max-width: 600px
+		margin: auto
+
 	&:not(:last-child)
 		margin-bottom: sizes(double-half)
 
-	&.lead
-		font-size: rem(24px)
 
 strong
 	font-weight: 600
