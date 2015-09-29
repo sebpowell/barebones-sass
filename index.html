@@ -11,6 +11,8 @@
 		<meta name="description" content="">
 		<!-- / Meta Tags !-->
 
+		<title>Atlantis Capital</title>
+
 		<link rel="stylesheet" href="style.css">
 
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -18,11 +20,18 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="app.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 		<script>
 			$(document).ready(function() {
+				$(".modal-wrapper").modal();
+
 				$(".navigation-primary").fixedNav();
-				$('body').scrollspy({target: ".navigation-primary"});
+				smoothScroll.init({offset: 100});
+				
+				$(".mobile-navigation-toggle").click(function() {
+					$(".navigation-primary-links").toggleClass("is-open");
+					$(this).toggleClass("close");
+				});
 			});
 		</script>
 
@@ -34,10 +43,10 @@
 		<!-- / Enable HTML5 elements in IE8 !-->
 	</head>
 
-	<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+	<body>
 		<div class="site-container">
 			
-			<nav class="navigation-primary">
+			<nav class="navigation-primary" data-modal="moo">
 				<div class="mobile-navigation-toggle">
 					<span></span>
 					<span></span>
@@ -46,11 +55,11 @@
 				</div>
 				<div class="navigation-primary-logo"><img src="images/logo.png"></div>
 				<ul class="navigation-primary-links">
-					<li><a href="#mission">Mission & Values</a></li>
-					<li><a href="#offering">Offering</a></li>
-					<li><a href="#leadership">Leadership</a></li>
-					<li><a href="#careers">Careers</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a data-scroll href="#mission">Mission & Values</a></li>
+					<li><a data-scroll href="#offering">Offering</a></li>
+					<li><a data-scroll href="#leadership">Leadership</a></li>
+					<li><a data-scroll href="#careers">Careers</a></li>
+					<li><a data-scroll href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 			<section class="masthead text-center">
@@ -60,41 +69,41 @@
 			</section>
 			
 			<section class="section text-center">
-					<p class="text-medium-large color-greyscale-medium">Atlantis Capital Management is an independent investment management firm and multi family office authorised and regulated by the Financial Conduct Authority. We specialize in the creation of bespoke investment solutions and full wealth management offering designed to achieve our clients’ objectives.</p>
+					<p class="text-medium color-greyscale-medium">Atlantis Capital Management is an independent investment management firm and multi family office authorised and regulated by the Financial Conduct Authority. We specialize in the creation of bespoke investment solutions and full wealth management offering designed to achieve our clients’ objectives.</p>
 			</section>
-			<section class="section background-greyscale-x-light text-center color-brand-primary-base">
-				<h1>Mission & Values</h1>
-				<p>Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
-				<div class="row">
+			<section class="section background-greyscale-x-light text-center">
+				<h1 class="color-brand-primary-base">Mission & Values</h1>
+				<p class="text-medium margin-bottom-triple">Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
+				<div class="row color-brand-primary-base">
 					<div class="columns-3">
 						<h3>Ethos</h3>
-						<p>Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
+						<p>We pride ourselves in adhering to the highest ethical code of conduct in the industry. Our platform is specifically designed to remove conflicts of interest; allowing us to truly partner with our clients.</p>
 					</div>
 					<div class="columns-3">
-						<h3>Ethos</h3>
-						<p>Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
+						<h3>Transparency</h3>
+						<p>Atlantis operates on an open architecture approach which enables clients to benefit from a complete alignment of interests and full flexibility around product selection and the construction of investment propositions.</p>
 					</div>
 					<div class="columns-3">
-						<h3>Ethos</h3>
-						<p>Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
+						<h3>Expertise</h3>
+						<p>Our clients directly benefit from the knowledge and experience of our investment advisers and research team. All personnel hail from top-tier institutions and represent the highest calibre of personal integrity and investment proficiency.</p>
 					</div>
 					<div class="columns-3">
-						<h3>Ethos</h3>
-						<p>Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
+						<h3>Innovation & Excellence</h3>
+						<p>Atlantis has an in-house research and risk team established to provide accurate risk management tools and market analysis techniques. This independence allows us to deliver a truly bespoke experience when it comes to deciphering markets and engineering investments designed according to clients’ risk appetite and investment objectives. </p>
 					</div>
 				</div>
 			</section>
-			<section class="section expertise color-white">
-				<h1 class="text-center">Expertise</h1>
+			<section id="offering" class="section expertise color-white">
+				<h1 class="text-center margin-bottom-double">Offering</h1>
 				<div class="container-large">
 				<div class="row">
 					<div class="columns-6">
-						<p>Our offering is designed to cater to all the stages involved in the process of wealth preservation; including structuring and planning, investment management and succession planning.</p>
-						<p>Our expertise lies in the creation and implementation of integrated solutions aimed at solving the complex issues our clients face.</p>
+						<p class="text-medium">Our offering is designed to cater to all the stages involved in the process of wealth preservation; including structuring and planning, investment management and succession planning.</p>
+						<p class="text-medium">Our expertise lies in the creation and implementation of integrated solutions aimed at solving the complex issues our clients face.</p>
 					</div>
 					<div class="columns-6">
-						<p>Our offering is designed to cater to all the stages involved in the process of wealth preservation; including structuring and planning, investment management and succession planning.</p>
-						<p>Our expertise lies in the creation and implementation of integrated solutions aimed at solving the complex issues our clients face.</p>
+						<p class="text-medium">Our offering is designed to cater to all the stages involved in the process of wealth preservation; including structuring and planning, investment management and succession planning.</p>
+						<p class="text-medium">Our expertise lies in the creation and implementation of integrated solutions aimed at solving the complex issues our clients face.</p>
 					</div>
 					</div>
 				</div>
@@ -102,45 +111,81 @@
 			<section class="module-split-panel no-gutter">
 				<div class="module-split-panel-summary">
 					<h1>Wealth Advisory</h1>
-					<p>At Atlantis we provide our clients with lifestyle planning and wealth management services adapted to their individual circumstances. We appreciate that every situation is different, as such we emphasize the needs for a deep understanding of our clients’ situation.</p>
+					<p class="text-medium">At Atlantis we provide our clients with lifestyle planning and wealth management services adapted to their individual circumstances. We appreciate that every situation is different, as such we emphasize the needs for a deep understanding of our clients’ situation.</p>
 
-					<p>This will enable us to develop targeted and customized solutions designed to achieve their objectives. The global nature of Atlantis allows us to advise international clients as well as to construct complex asset and enterprise structures.</p>
+					<p class="text-medium">This will enable us to develop targeted and customized solutions designed to achieve their objectives. The global nature of Atlantis allows us to advise international clients as well as to construct complex asset and enterprise structures.</p>
 				</div>
 				<div class="module-split-panel-points background-brand-secondary-base color-white">
 					<ul class="grid-2-device-small">
 						<li>
-							<h3>Company Formation</h3>
-							<p>We help clients navigate an increasingly complex financial landscape to ensure wealth created is efficiently preserved and passed onto future generations.</p>
-						</li>
-						<li>
-							<h3>Company Formation</h3>
-							<p>We help clients navigate an increasingly.</p>
-						</li>
-						<li>
-							<h3>Company Formation</h3>
-							<p>We help clients navigate an increasingly complex financial landscape.</p>
+							<h3>Custody & Safekeeping</h3>
+							<p>Due to the relationship that Atlantis has with custodian banks, clients are able to access lower institutional-level pricing and fees.</p>
 						</li>
 						<li>
 							<h3>Company Formation</h3>
 							<p>We help clients navigate an increasingly complex financial landscape to ensure wealth created is efficiently preserved and passed onto future generations.</p>
 						</li>
 						<li>
-							<h3>Company Formation</h3>
-							<p>We help clients navigate an increasingly complex financial landscape to ensure wealth created is efficiently preserved and passed onto future generations.</p>
+							<h3>Citizenship & Residency</h3>
+							<p>We are specialized in facilitating investor visas in the UK as well as structuring citizenship and residency offerings in numerous jurisdictions.</p>
+						</li>
+						<li>
+							<h3>Succession Planning</h3>
+							<p>Our expert advisers and experienced advisory panel can provide advice on questions of corporate governance for family businesses, succession planning and structuring.</p>
+						</li>
+						<li>
+							<h3>Trusts & Foundations</h3>
+							<p>We cater to multiple jurisdictions in this regard and provide tax and legal advice to complement this as well.</p>
 						</li>
 						<li class="no-margin">
-							<h3>Company Formation</h3>
-							<p>We help clients navigate an increasingly complex financial landscape to ensure wealth created is efficiently preserved and passed onto future generations.</p>
+							<h3>Risk Mitigation</h3>
+							<p>We hold regular meetings with advisers and experts in various fields in order to stay abreast of any potential regulatory and legal changes which might have an impact on our clients.</p>
 						</li>
 					</ul>
 				</div>
 			</section>
-			<section class="module-image angels">
+			<section class="module-image angels"></section>
+			<section class="module-split-panel no-gutter">
+				<div class="module-split-panel-summary">
+					<h1 class="color-brand-primary-base">Investment Management</h1>
+					<p class="text-medium">Our investment management offering is unique and transparent. Clients have the option of selecting either a discretionary or an advisory mandate with us. All investment solutions are entirely bespoke; taking into account the personal circumstances and risk appetite of our clients.</p>
+
+					<p class="text-medium">Portfolio construction is tailored to achieve the investment objectives of our clients and processes are constantly monitored and evaluated to ensure the advice given is relevant and appropriate.</p>
+				</div>
+				<div class="module-split-panel-points background-brand-secondary-base color-white">
+					<ul class="grid-2-device-small">
+						<li>
+							<h3>Tactical Trading</h3>
+							<p>Our internal proprietary technology allows us to identify profitable market dislocations which can be capitalised on.</p>
+						</li>
+						<li>
+							<h3>Portfolio Consolidation</h3>
+							<p>We provide our advisers with the information needed to construct a well-diversified portfolio and to ensure optimized allocation.</p>
+						</li>
+						<li>
+							<h3>Portfolio Construction</h3>
+							<p>Our team works closely with the client’s adviser to construct the best possible portfolio given the client’s risk tolerance and investment objectives.</p>
+						</li>
+						<li>
+							<h3>Structured Solutions</h3>
+							<p>We create bespoke structured solutions designed for participation, hedging purposes or income generation.</p>
+						</li>
+						<li>
+							<h3>Alternative Investments</h3>
+							<p>We provide investment opportunities in alternative asset classes, such as private equity, venture capital, off-market opportunities, real estate, art and club deals.</p>
+						</li>
+						<li class="no-margin">
+							<h3>Performance Reporting</h3>
+							<p>We enable our clients to gauge exactly where the risk lies and what factors have contributed the most to the performance of the investments.</p>
+						</li>
+					</ul>
+				</div>
 			</section>
+			<section class="module-image roman"></section>
 			<section class="module-split-panel no-gutter">
 				<div class="module-split-panel-summary columns-6-device-medium">
 					<h1>Property Services</h1>
-					<p>The founders of Atlantis have been active investors in the London property market. Clients wishing to gain exposure to real estate can rest assured that through Atlantis they have access to the best opportunities in this sector. For larger projects the potential to co-invest via club deals is also possible.</p>
+					<p class="text-medium">The founders of Atlantis have been active investors in the London property market. Clients wishing to gain exposure to real estate can rest assured that through Atlantis they have access to the best opportunities in this sector. For larger projects the potential to co-invest via club deals is also possible.</p>
 				</div>
 				<div class="module-split-panel-points columns-6-device-medium color-white" style="background: #838F96">
 					<ul class="grid-2-device-small">
@@ -171,12 +216,13 @@
 					</ul>
 				</div>
 			</section>
-			<section class="module-image">
-			</section>
+			<section class="module-image boardroom"></section>
 			<section class="module-split-panel no-gutter">
 				<div class="module-split-panel-summary columns-6-device-medium">
 					<h1>Science of Investing</h1>
-					<p>The quantitative approach to investing is a unique benefit that we are able to provide to our clients. Our research team brings quantitative analysis and statistical machine learning solutions to help construct better portfolios and to find a sustainable edge in investing. This unique methodology helps us identify mispricings, arbitrage opportunities and relative value strategies.</p>
+					<p class="text-medium">The quantitative approach to investing is a unique benefit that we are able to provide to our clients. Our research team brings quantitative analysis and statistical machine learning solutions to help construct better portfolios and to find a sustainable edge in investing.</p>
+
+					<p class="text-medium">This unique methodology helps us identify mispricings, arbitrage opportunities and relative value strategies.</p>
 				</div>
 				<div class="module-split-panel-points columns-6-device-medium background-greyscale-medium color-white">
 					<ul class="grid-2-device-small">
@@ -203,9 +249,9 @@
 			</section>
 			<section id="leadership" class="section module-team full-width text-center">
 					<h1>Leadership</h1>
-					<p>We pride ourselves in providing specialized advice and tailored investments according to the global socio-economic climate, specifically tailored to the risk tolerance and investment objectives of each client.</p>
+					<p class="text-medium">We pride ourselves in providing specialized advice and tailored investments according to the global socio-economic climate, specifically tailored to the risk tolerance and investment objectives of each client.</p>
 					<div class="row">
-						<div class="module-team-member">
+						<div class="module-team-member" data-modal="login-modal">
 							<img src="images/team/paolo-vaglietti.png">
 							<h4>Paolo Vaglietti</h4>
 							<p>Managing Director</p>
@@ -220,32 +266,63 @@
 							<h4>Athena Watson</h4>
 							<p>Director</p>
 						</div>
-					</div>
-
-					<!-- <div class="row is-hidden">
-						<div class="columns-4 offset-2">
-							<h2>Ionannis Chasikos</h2>
+						<div class="module-team-member offset-2">
+							<img src="images/team/paolo-vaglietti.png">
+							<h4>Ionannis Chasikos</h4>
 							<p>Director</p>
 						</div>
-						<div class="columns-4">
-							<h2>Jeffrey Said</h2>
+						<div class="module-team-member">
+							<img src="images/team/paolo-vaglietti.png">
+							<h4>Jeffrey Said</h4>
 							<p>Head of Research</p>
 						</div>
-					</div> -->
+					</div>
 
 			</section>
-			<section class="section background-greyscale-x-light text-center">
-				<h1>Careers</h1>
-				<p>sg</p>
-				<div class="container-medium">
+
+			<section id="careers" class="section background-greyscale-x-light text-center">
+				<h1 class="color-brand-primary-base">Careers</h1>
+				<p class="text-medium margin-bottom-triple">We pride ourselves in providing specialized advice and tailored investments according to the global socio-economic climate.</p>
+				<div class="container-medium margin-bottom-triple">
 					<div class="row">
 						<div class="columns-6">
-							<h3>Quantitative Researcher</h3>
-							<a class="button brand-primary">Read More</a>
+							<h2 class="color-brand-primary-base">Quantitative Researcher</h2>
+							<a class="button brand-primary small">Read More</a>
+						</div>
+						<div class="columns-6">
+							<h2 class="color-brand-primary-base">Portfolio Manager</h2>
+							<a class="button brand-primary small">Read More</a>
 						</div>
 					</div>
 				</div>
+				<p><em>For more information regarding open roles at Atlantis please contact <a class="text-underline" href="mailto:atlantis@atlantiscapital.co.uk">atlantis@atlantiscapital.co.uk</a>.</em></p>
 			</section>
+
+
+			<section id="contact" style="-webkit-filter: grayscale(100%)" class="text-center background-greyscale-x-light text-center">
+				<iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=207868692535093375127.0004f32e5f55fc3e97025&amp;ie=UTF8&amp;ll=51.506085,-0.136208&amp;spn=0,0&amp;t=m&amp;output=embed" class="DRAGDIS_iframe"></iframe>
+				<div class="padding-all-triple-unit">
+				<p>If you would like a copy of our Pillar III or would like to get in touch please contact us at:</p>
+				
+				<p><a href="mailto:atlantis@atlantiscapital.co.uk">atlantis@atlantiscapital.co.uk</a>
+				<p>+44 (0)20 7870 9310 • 40-41 Pall Mall, London, SW1Y 5JG</p>
+				</div>
+			</section>
+			<footer class="footer-primary">
+				<div class="container-large">
+					<div class="copyright">© 2015 Atlantis Capital Management Limited. Registered in England & Wales with registered number 07370778. Authorised and Regulated by the Financial Conduct Authority with registered number 534844. Disclaimers.</div>
+				</div>
+			</footer>
+		</div>
+		<div class="modal-wrapper" id="login-modal">
+		<div class="modal">
+			<p>Jeffrey comes to Atlantis Capital with deep experience in investment banking and hedge funds from prior roles at Goldman Sachs New York, AHL, and Wadhwani Asset Management. As a Head of Quantitative Research with the firm, he leverages his expert knowledge of statistics, financial markets and machine learning to develop cutting edge investment strategies as well as to optimise client portfolio performance across market conditions.</p>
+
+			<p>Prior to embarking on a career in finance Jeffrey obtained a Masters degree in Mathematics from the University of Cambridge and a PhD in Mathematical Finance from Columbia University.</p>
+		</div>
 		</div>
 	</body>
 </html>
+
+
+

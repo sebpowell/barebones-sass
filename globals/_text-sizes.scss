@@ -21,10 +21,16 @@ $text-sizing: (
 		device-small: (
 			font-size: 20px
 		),
+		device-large: (
+			font-size: 20px
+		),
 	),
 	medium-large: (
 		device-small: (
-			font-size: 20px,
+			font-size: 24px
+		),
+		device-large: (
+			font-size: 24px
 		),
 	),
 	large: (
@@ -32,7 +38,7 @@ $text-sizing: (
 			font-size: 36px,
 		),
 		device-large: (
-			font-size: 42px,
+			font-size: 36px,
 		),
 	),
 );

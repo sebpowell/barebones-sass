@@ -2,7 +2,7 @@
 // $grid: ();
 $column-numbers: 12
 $column-width: 100% / $column-numbers
-$size-grid-gutter: 															sizes(double-half)
+$size-grid-gutter: sizes(base)
 
 
 // // Do I need this?
@@ -13,8 +13,9 @@ $size-grid-gutter: 															sizes(double-half)
 		.grid-#{$i}-#{$key}
 			+no-bullet
 			+clearfix
-			margin-left: -$size-grid-gutter
-			margin-right: -$size-grid-gutter
+			+respond-above($key)
+				margin-left: -$size-grid-gutter
+				margin-right: -$size-grid-gutter
 			@if $i < 1
 				margin-left: 0
 				margin-right: 0
@@ -29,6 +30,7 @@ $size-grid-gutter: 															sizes(double-half)
 
 				@if $i < 1
 					padding: 0
+				
 				+respond-above($key)
 					width: 100% / $i !important
 					float: left

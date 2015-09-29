@@ -10,9 +10,11 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 	width: 100%
 	background: white
 	z-index: 9999
-	padding: sizes(triple)
+	+respond-above(device-medium)
+		padding: sizes(triple)
 	+respond-above(device-x-large)
 		width: 1200px
+		
 
 	.navigation-primary-logo
 		width: 140px
@@ -27,6 +29,10 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 		display: none
 		background: map-get($navigation, background-desktop)
 		width: 100%
+		&.is-open
+			display: block
+			border-top: 1px solid colors(keyline, light)
+			box-shadow: 0px 2px 3px rgba(00,00,00,0.4)
 		
 		+respond-above(device-medium)
 			display: table

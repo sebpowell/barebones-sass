@@ -1,94 +1,94 @@
-// .modal-wrapper
-// 	perspective: 1300px
-// 	position: fixed
-// 	top: 0
-// 	left: 0
-// 	width: 100%
-// 	height: 100%
-// 	z-index: 9999
-// 	visibility: hidden
-// 	overflow-y: scroll
-// 	&.is-open
-// 		visibility: visible
+.modal-wrapper
+	perspective: 1300px
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 9999
+	visibility: hidden
+	overflow-y: scroll
+	&.is-open
+		visibility: visible
 
 
-// .modal
-// 	border-radius: 5px
-// 	width: 100%
-// 	background-color: white
-// 	transform: rotateX(-70deg)
-// 	transition: all 400ms cubic-bezier(0.12, 0.4, 0.29, 1.455)
-// 	visibility: hidden
-// 	opacity: 0
-// 	overflow: hidden // Presere rounded corners on header.
+.modal
+	border-radius: 5px
+	width: 100%
+	background-color: white
+	transform: rotateX(-70deg)
+	transition: all 400ms cubic-bezier(0.12, 0.4, 0.29, 1.455)
+	visibility: hidden
+	opacity: 0
+	overflow: hidden // Presere rounded corners on header.
 	
-// 	+above(device-medium)
-// 		+border-radius(5px)
-// 		margin: 100px auto
-// 		width: 460px
+	+respond-above(device-medium)
+		border-radius: 5px
+		margin: 100px auto
+		width: 460px
 		
 	
-// 	&.is-open
-// 		visibility: visible
-// 		opacity: 1
-// 		transform: rotateX(0deg)
+	&.is-open
+		visibility: visible
+		opacity: 1
+		transform: rotateX(0deg)
 		
 
-// 	&.small
-// 		+above(device-medium)
-// 			width: 360px
-// 			margin-left: -180px
+	&.small
+		+respond-above(device-medium)
+			width: 360px
+			margin-left: -180px
 	
-// 	&.large
-// 		max-width: 600px
-// 		width: 95%
+	&.large
+		max-width: 600px
+		width: 95%
 
-// 	.modal-header
-// 		+clearfix
-// 		position: relative
-// 		background: colors(greyscale, 100)
-// 		text-align: center
-// 		text-transform: capitalize
-// 		padding: sizes(base)
-// 		h1, h2, h3
-// 			margin-bottom: 0
-// 			font-size: 20px
-// 			font-weight: 500
+	.modal-header
+		+clearfix
+		position: relative
+		background: colors(greyscale, 100)
+		text-align: center
+		text-transform: capitalize
+		padding: sizes(base)
+		h1, h2, h3
+			margin-bottom: 0
+			font-size: 20px
+			font-weight: 500
 	
 
-// 	.modal-close
-// 		position: absolute !Important
-// 		cursor: pointer
-// 		right: 20px
-// 		top: 12px
-// 		font-size: 32px
-// 		z-index: 999
-// 		opacity: 0.4
-// 		line-height: 1
-// 		&:hover
-// 			opacity: 1 
+	.modal-close
+		position: absolute !Important
+		cursor: pointer
+		right: 20px
+		top: 12px
+		font-size: 32px
+		z-index: 999
+		opacity: 0.4
+		line-height: 1
+		&:hover
+			opacity: 1 
 		
-// 	.modal-body
-// 		+clearfix
-// 		padding: sizes(double)
+	.modal-body
+		+clearfix
+		padding: sizes(double)
 
-// 	.modal-footer
-// 		padding: sizes(double-half)
-// 		color: colors(greyscale, medium)
+	.modal-footer
+		padding: sizes(double-half)
+		color: colors(greyscale, medium)
 
-// .modal-backdrop
-// 	transition: all .2s
-// 	z-index: layer(backdrop)
-// 	position: fixed
-// 	visibility: hidden
-// 	opacity: 0
-// 	top: 0
-// 	left: 0
-// 	width: 100%
-// 	height: 100%
-// 	background-color: rgba(00, 00, 00, 0.5)
-// 	&.is-open
-// 		visibility: visible
-// 		opacity: 1
+.modal-backdrop
+	transition: all .2s
+	z-index: layer(backdrop)
+	position: fixed
+	visibility: hidden
+	opacity: 0
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(00, 00, 00, 0.5)
+	&.is-open
+		visibility: visible
+		opacity: 1
 
 

@@ -5,7 +5,18 @@
 @import "components/components";
 
 body {
-	background: colors(brand-primary);
+	background: #16415C;
+}
+
+.footer-primary {
+	background: colors(brand-primary, dark);
+	padding: sizes(quad) 0;
+	text-align: center;
+	.copyright {
+		color: white;
+		opacity: 0.4;
+		line-height: 1.4;
+	}
 }
 
 .site-container {
@@ -25,7 +36,13 @@ body {
 $sign-up: (device-medium: 4, device-small: 6, device-x-small: 6);
 $split-panels: (device-x-small: 12, device-large: 6);
 
+
+.module-team-member-bio {
+	position: fixed;
+}
+
 .module-team {
+
 	h4 {
 		color: colors(brand-primary)
 	}
@@ -35,6 +52,13 @@ $split-panels: (device-x-small: 12, device-large: 6);
 	}
 	.module-team-member {
 		@include grid-test($sign-up);
+		transition: border .5s;
+		border: 1px solid transparent;
+		border-radius: 5px;
+		cursor: pointer;
+		&:hover {
+			border: 1px solid colors(keyline, dark);
+		}
 	}
 }
 
@@ -42,12 +66,12 @@ $split-panels: (device-x-small: 12, device-large: 6);
 	@include clearfix;
 	.module-split-panel-summary, .module-split-panel-points  {
 		@include grid-test($split-panels);
-		padding: 100px sizes(quad) !important;
-		
+		padding: sizes(triple);
+		@include respond-above(device-medium) {
+			padding: 100px sizes(quad) !important;
+		}
 	}
-	.module-split-panel-points {
-		padding: 100px sizes(quad);
-		
+	.module-split-panel-points {		
 		h3 {
 			&:before {
 				display: inline-block;
@@ -73,7 +97,14 @@ $split-panels: (device-x-small: 12, device-large: 6);
 	width: 100%;
 	background-image: url("images/bg-1.jpg");
 	background-repeat: no-repeat;
+	background-size: cover;
 	&.angels {
 		background-image: url("images/angels.jpg");
+	}
+	&.boardroom {
+		background-image: url("images/board-room.jpg");
+	}
+	&.roman {
+		background-image: url("images/roman.jpg");
 	}
 }
