@@ -6,26 +6,37 @@
 	width: 100%
 	height: 100%
 	z-index: 9999
+	color: white
 	visibility: hidden
+	background-color: colors(brand-primary, dark)
 	overflow-y: scroll
 	&.is-open
 		visibility: visible
+	.modal-close
+		position: absolute !Important
+		cursor: pointer
+		right: 20px
+		top: 12px
+		font-size: 32px
+		z-index: 999
+		opacity: 0.4
+		line-height: 1
+		&:hover
+			opacity: 1 
 
 
 .modal
-	border-radius: 5px
 	width: 100%
-	background-color: white
-	transform: rotateX(-70deg)
-	transition: all 400ms cubic-bezier(0.12, 0.4, 0.29, 1.455)
+	background-color: colors(brand-primary, dark)
 	visibility: hidden
 	opacity: 0
+	color: white
 	overflow: hidden // Presere rounded corners on header.
 	
 	+respond-above(device-medium)
 		border-radius: 5px
 		margin: 100px auto
-		width: 460px
+		width: 600px
 		
 	
 	&.is-open
@@ -56,17 +67,7 @@
 			font-weight: 500
 	
 
-	.modal-close
-		position: absolute !Important
-		cursor: pointer
-		right: 20px
-		top: 12px
-		font-size: 32px
-		z-index: 999
-		opacity: 0.4
-		line-height: 1
-		&:hover
-			opacity: 1 
+	
 		
 	.modal-body
 		+clearfix

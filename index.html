@@ -18,20 +18,19 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon-precomposed" href="/screen-icon.png">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="jquery-1.11.3.min.js"></script>
 		<script src="app.js"></script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/scrollspy.js"></script>
 		<script>
-			$(document).ready(function() {
-				$(".modal-wrapper").modal();
 
-				$(".navigation-primary").fixedNav();
-				smoothScroll.init({offset: 100});
-				
-				$(".mobile-navigation-toggle").click(function() {
-					$(".navigation-primary-links").toggleClass("is-open");
-					$(this).toggleClass("close");
-				});
+			$(document).ready(function() {
+				$(".modal").modal();
+				$("body").scrollspy({
+        target: "#nav",
+        offset: 70
+    		}); 
+    		$("#nav").fixedNav();
+    		smoothScroll.init();
 			});
 		</script>
 
@@ -44,9 +43,26 @@
 	</head>
 
 	<body>
+		<div class="modal-backdrop"></div>
+		
+		
+		<div class="modal-wrapper">	
+			<div class="modal-close" data-modal= "modal-close">&times;</div>
+  		<div class="modal" id="login">
+				<h1>Jeffrey Said</h1>
+	     <p>Jeffrey comes to Atlantis Capital with deep experience in investment banking and hedge funds from prior roles at Goldman Sachs New York, AHL, and Wadhwani Asset Management. As a Head of Quantitative Research with the firm, he leverages his expert knowledge of statistics, financial markets and machine learning to develop cutting edge investment strategies as well as to optimise client portfolio performance across market conditions.</p>
+    	</div>
+    </div>
+
 		<div class="site-container">
-			
-			<nav class="navigation-primary" data-modal="moo">
+			<div id="nav" class="navigation-primary">
+				<ul class="nav navigation-primary-links" data-offset-top="120" data-spy="affix">
+					<li><a data-scroll href="#mission">Mission & Values</a></li>
+					<li><a data-scroll href="#offering">Offering</a></li>
+					<li><a data-scroll href="#leadership">Leadership</a></li>
+					<li><a data-scroll href="#careers">Careers</a></li>
+					<li><a data-scroll href="#contact">Contact</a></li>
+				</ul>
 				<div class="mobile-navigation-toggle">
 					<span></span>
 					<span></span>
@@ -54,14 +70,8 @@
 					<span></span>
 				</div>
 				<div class="navigation-primary-logo"><img src="images/logo.png"></div>
-				<ul class="navigation-primary-links">
-					<li><a data-scroll href="#mission">Mission & Values</a></li>
-					<li><a data-scroll href="#offering">Offering</a></li>
-					<li><a data-scroll href="#leadership">Leadership</a></li>
-					<li><a data-scroll href="#careers">Careers</a></li>
-					<li><a data-scroll href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+				
+			</div>
 			<section class="masthead text-center">
 				<div class="masthead-content">
 					<h1>Excellence through the science of investing</h1>
@@ -71,7 +81,7 @@
 			<section class="section text-center">
 					<p class="text-medium color-greyscale-medium">Atlantis Capital Management is an independent investment management firm and multi family office authorised and regulated by the Financial Conduct Authority. We specialize in the creation of bespoke investment solutions and full wealth management offering designed to achieve our clients’ objectives.</p>
 			</section>
-			<section class="section background-greyscale-x-light text-center">
+			<section id="mission" class="section background-greyscale-x-light text-center">
 				<h1 class="color-brand-primary-base">Mission & Values</h1>
 				<p class="text-medium margin-bottom-triple">Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
 				<div class="row color-brand-primary-base">
@@ -251,7 +261,7 @@
 					<h1>Leadership</h1>
 					<p class="text-medium">We pride ourselves in providing specialized advice and tailored investments according to the global socio-economic climate, specifically tailored to the risk tolerance and investment objectives of each client.</p>
 					<div class="row">
-						<div class="module-team-member" data-modal="login-modal">
+						<div class="module-team-member" data-modal="login">
 							<img src="images/team/paolo-vaglietti.png">
 							<h4>Paolo Vaglietti</h4>
 							<p>Managing Director</p>
@@ -313,13 +323,6 @@
 					<div class="copyright">© 2015 Atlantis Capital Management Limited. Registered in England & Wales with registered number 07370778. Authorised and Regulated by the Financial Conduct Authority with registered number 534844. Disclaimers.</div>
 				</div>
 			</footer>
-		</div>
-		<div class="modal-wrapper" id="login-modal">
-		<div class="modal">
-			<p>Jeffrey comes to Atlantis Capital with deep experience in investment banking and hedge funds from prior roles at Goldman Sachs New York, AHL, and Wadhwani Asset Management. As a Head of Quantitative Research with the firm, he leverages his expert knowledge of statistics, financial markets and machine learning to develop cutting edge investment strategies as well as to optimise client portfolio performance across market conditions.</p>
-
-			<p>Prior to embarking on a career in finance Jeffrey obtained a Masters degree in Mathematics from the University of Cambridge and a PhD in Mathematical Finance from Columbia University.</p>
-		</div>
 		</div>
 	</body>
 </html>

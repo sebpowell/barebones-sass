@@ -17,6 +17,12 @@
 				navigation.removeClass(settings.fixedClass);
 			}
 		});
+
+		$(".mobile-navigation-toggle").click(function() {
+			$(this).toggleClass("close");
+			$(".navigation-primary-links").toggleClass("is-open");
+			
+		});
 	};
 })(jQuery);
 

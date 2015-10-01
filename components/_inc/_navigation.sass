@@ -9,7 +9,7 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 	top: 0
 	width: 100%
 	background: white
-	z-index: 9999
+	z-index: 2
 	+respond-above(device-medium)
 		padding: sizes(triple)
 	+respond-above(device-x-large)
@@ -31,8 +31,10 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 		width: 100%
 		&.is-open
 			display: block
-			border-top: 1px solid colors(keyline, light)
-			box-shadow: 0px 2px 3px rgba(00,00,00,0.4)
+			color: white
+			background: colors(brand-primary, dark)
+			// border-top: 1px solid colors(keyline, light)
+			// box-shadow: 0px 2px 3px rgba(00,00,00,0.4)
 		
 		+respond-above(device-medium)
 			display: table
@@ -49,9 +51,13 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 			text-align: center
 			+respond-above(device-medium)
 				display: table-cell
+			
+			&.active
+				a
+					color: colors(brand-primary)
 			> a
 				display: block
-				padding: 40px
+				padding: sizes(double)
 				font-size: map-get($navigation, link-size-mobile)
 				+respond-above(device-medium)
 					padding: 0 20px
