@@ -370,13 +370,13 @@ button.white.bordered:hover, .button.white.bordered:hover { border: 1px solid wh
 
 .container-x-large { max-width: 1200px; }
 
-.modal-wrapper { perspective: 1300px; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; color: white; visibility: hidden; background-color: #0a1f29; overflow-y: scroll; }
+.modal-wrapper { perspective: 1300px; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; visibility: hidden; overflow-y: scroll; }
 .modal-wrapper.is-open { visibility: visible; }
 .modal-wrapper .modal-close { position: absolute !important; cursor: pointer; right: 20px; top: 12px; font-size: 32px; z-index: 999; opacity: 0.4; line-height: 1; }
 .modal-wrapper .modal-close:hover { opacity: 1; }
 
-.modal { width: 100%; background-color: #0a1f29; visibility: hidden; opacity: 0; color: white; overflow: hidden; }
-@media screen and (min-width: 780px) { .modal { border-radius: 5px; margin: 100px auto; width: 600px; } }
+.modal { width: 100%; background-color: white; visibility: hidden; opacity: 0; padding: 60px; overflow: hidden; }
+@media screen and (min-width: 780px) { .modal { margin: 100px auto; width: 600px; } }
 .modal.is-open { visibility: visible; opacity: 1; transform: rotateX(0deg); }
 @media screen and (min-width: 780px) { .modal.small { width: 360px; margin-left: -180px; } }
 .modal.large { max-width: 600px; width: 95%; }
@@ -389,7 +389,7 @@ button.white.bordered:hover, .button.white.bordered:hover { border: 1px solid wh
 .modal .modal-body:after { clear: both; }
 .modal .modal-footer { padding: 24px; color: #4F4F4F; }
 
-.modal-backdrop { transition: all 0.2s; z-index: layer(backdrop); position: fixed; visibility: hidden; opacity: 0; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+.modal-backdrop { transition: all 0.2s; z-index: 3; position: fixed; visibility: hidden; opacity: 0; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); }
 .modal-backdrop.is-open { visibility: visible; opacity: 1; }
 
 .grid-1-device-x-small { list-style-type: none; margin: 0; padding: 0; zoom: 1; }

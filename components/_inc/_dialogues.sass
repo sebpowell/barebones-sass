@@ -6,9 +6,7 @@
 	width: 100%
 	height: 100%
 	z-index: 9999
-	color: white
 	visibility: hidden
-	background-color: colors(brand-primary, dark)
 	overflow-y: scroll
 	&.is-open
 		visibility: visible
@@ -27,14 +25,14 @@
 
 .modal
 	width: 100%
-	background-color: colors(brand-primary, dark)
+	background-color: white
 	visibility: hidden
 	opacity: 0
-	color: white
+	padding: 60px
 	overflow: hidden // Presere rounded corners on header.
 	
 	+respond-above(device-medium)
-		border-radius: 5px
+		// border-radius: 5px
 		margin: 100px auto
 		width: 600px
 		
@@ -79,7 +77,7 @@
 
 .modal-backdrop
 	transition: all .2s
-	z-index: layer(backdrop)
+	z-index: 3
 	position: fixed
 	visibility: hidden
 	opacity: 0
@@ -87,7 +85,7 @@
 	left: 0
 	width: 100%
 	height: 100%
-	background-color: rgba(00, 00, 00, 0.5)
+	background-color: rgba(00, 00, 00, 0.8)
 	&.is-open
 		visibility: visible
 		opacity: 1
