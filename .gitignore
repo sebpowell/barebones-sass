@@ -5,10 +5,7 @@ node_modules/
 .sass-cache/
 getagent.esproj/user.peter.espressostorage
 npm-debug.log
+.divshot-cache
 
 .DS_Store
 
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
