@@ -1,11 +1,8 @@
 // Grid settings
-// $grid: ();
+$grid: (column-numbers: 12, column-width: 100% / column-numbers, gutter-size: sizes(base))
 $column-numbers: 12
 $column-width: 100% / $column-numbers
 $size-grid-gutter: sizes(base)
-
-
-// // Do I need this?
 
 // Are both grid and columns
 @for $i from 1 through $column-numbers
@@ -16,6 +13,7 @@ $size-grid-gutter: sizes(base)
 			+respond-above($key)
 				margin-left: -$size-grid-gutter
 				margin-right: -$size-grid-gutter
+			
 			@if $i < 1
 				margin-left: 0
 				margin-right: 0
@@ -54,21 +52,7 @@ $size-grid-gutter: sizes(base)
 				// 	margin-bottom: 0
 
 
-.no-gutter
-	margin-left: 0 !important
-	margin-right: 0 !important
-	> [class^="column"], > li
-		padding: 0 !important
-// // Generate gutter widths
-// @each $size, $var in $sizes
-// 	.gutter-#{$size}
-// 		+above(device-medium)
-// 			// Added margin to factor in container-wide padding on smaller sizes
-// 			margin-left: -($var) !important
-// 			margin-right: -($var) !important
-// 			> [class^="column"], > li
-// 				padding: 0 $var !important
-// 				// Add mobile 
+
 
 
 // Generates classes for columns 1 - 12.
@@ -91,7 +75,6 @@ $size-grid-gutter: sizes(base)
 		+respond-above(device-medium-large)
 			margin-left: $i * $column-width
 
-// Grid Container & Helper Classes
 // Start with a row container. Inside the row container, use the columns. The module or component is then place dinside each column.
 // Change ths to /columns-cotainer?
 .row
@@ -114,29 +97,6 @@ $size-grid-gutter: sizes(base)
 		// > [class^="column"]
 		// 	padding: 0
 
-
-
-
-
-// // .page-container {
-// //   // padding: 0 2rem;
-// //   // Experiment with this - how to remove requirement for outer containers?
-// // }
-
-
-
-
-// // @mixin site-padding {
-// //   padding: 0 sizes(base);
-// //   @include respond(device-medium) {
-// //     padding: 0 sizes(double);
-// //   }
-// // }
-
-
-
-// Should we have range instead? 
-
 @mixin grid-test($map)
 	@include clearfix
 	padding: sizes(double)
@@ -149,19 +109,23 @@ $size-grid-gutter: sizes(base)
 				width: (100% / 12) * map-get($map, $key)
 
 
+.no-gutter
+	margin-left: 0 !important
+	margin-right: 0 !important
+	> [class^="column"], > li
+		padding: 0 !important
 
-// =grid-test($map)
-// 	@include clearfix
-// 	// $total-margin: (map-get($map, row-items-desktop) - 1)  * map-get($map, margin)
-// 	// $width: 100% - $total-margin
-// 	// margin-left: -1rem
-// 	// margin-right: -1rem
-// 	padding: sizes(double)
-// 	width: 100%
-// 	@if map-get($map, device-small)
-// 		+respond-above(device-small)
-// 			width: 100% / map-get($map, device-small)
-	
-// 	// @each $key, $value in $map
+
+// Generate gutter widths
+@each $size, $var in $sizes
+	.gutter-#{$size}
+		+respond-above(device-medium)
+			// Added margin to factor in container-wide padding on smaller sizes
+			margin-left: -($var) !important
+			margin-right: -($var) !important
+			> [class^="column"], > li
+				padding: 0 $var !important
+				// Add mobile 
+
 
 

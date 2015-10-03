@@ -7,11 +7,11 @@ var gulp = require("gulp"),
 		// notify = require("gulp-notify");
 
 gulp.task('sass', function () {
-	return sass('style.scss', { style: 'compact' })
+	return sass('css/style.scss', { style: 'compact' })
 	.on('error', function (err) {
 		console.error('Error!', err.message);
 	})
-	.pipe(gulp.dest(''));	
+	.pipe(gulp.dest('css'));	
 });
 
 gulp.task("uglify", function() {

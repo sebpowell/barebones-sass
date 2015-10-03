@@ -1,0 +1,6 @@
+.no-bullet
+	@include no-bullet
+	> li
+		line-height: 1.5 // Change to variable
+		&:not(:last-child)
+			margin-bottom: sizes(base)

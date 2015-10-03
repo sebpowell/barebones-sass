@@ -12,6 +12,9 @@
 
 @each $breakpoint, $value in $breakpoints
 	.hide-below-#{$breakpoint}
+
+		+respond-above(#{$breakpoint})
+			display: none
 		// Figure out why this doesn't work with respond mixin. 
 		@media screen and (max-width: $value) 
 			display: none !important

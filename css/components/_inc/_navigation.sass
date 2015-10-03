@@ -1,3 +1,11 @@
+// @function map-deep-get($map, $keys...) {
+//   @each $key in $keys {
+//       $map: map-get($map, $key);
+//   }
+//   @return $map;
+// }
+
+
 $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-desktop: white)
 
 .navigation-primary
@@ -68,21 +76,6 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 		box-shadow: 0 1px 2px rgba(00,00,00,0.2)
 		+respond-above(device-medium)
 			padding: sizes(double) sizes(triple)
-
-		// .logo
-		// 	background-image: map-deep-get($navigation-desktop, "is-fixed", "logo-color")
-		
-		// .primary-nav-links
-		// 	a
-		// 		+above(device-medium)
-		// 			color: map-deep-get($navigation-desktop, "is-fixed", "link-color")
-		// 			&.button
-		// 				color: colors(greyscale, medium) !Important
-		// 				border: 1px solid colors(keyline, light)
-		// 				&:hover
-		// 					border: 1px solid colors(keyline, medium)
-			
-	
 
 .mobile-navigation-toggle
 	position: absolute
