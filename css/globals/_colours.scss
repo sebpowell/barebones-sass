@@ -2,12 +2,6 @@
 	@return map-get(map-get($colors, $palette), $tone);
 }
 
-@function theme($value) {
-	@return map-get($theme, $value);
-}
-
-// onvert this to HSL?
-
 $colors: (
 	brand-primary: (
 	// Google mateiral design scale- how do 

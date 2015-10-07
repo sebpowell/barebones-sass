@@ -1,7 +1,3 @@
-// Generate helpres
-.opacity-80
-	opacity: 0.8
-
 .is-hidden 
 	display: none !important
 	visibility: hidden !important
@@ -11,12 +7,7 @@
 	visibility: visible !important
 
 @each $breakpoint, $value in $breakpoints
-	.hide-below-#{$breakpoint}
-
+	.hide-above-#{$breakpoint}
 		+respond-above(#{$breakpoint})
-			display: none
-		// Figure out why this doesn't work with respond mixin. 
-		@media screen and (max-width: $value) 
 			display: none !important
-
 

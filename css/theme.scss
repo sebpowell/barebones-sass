@@ -1,13 +1,14 @@
+@function theme($value) {@return map-get($theme, $value);}
+
 $theme: (
 
-	body-background: #16415C,
+	body-background: #0B2638,
 	mobile-first: false,
 	mobile-padding: 24px,
-	font-primary: "sabon lt std",
 	font-secondary-font: null,
 	font-base-size: 16px,
 	
-	brand-primary: #1D6796,
+	brand-primary: #0D3650,
 	brand-secondary: #E98630,
 );
 

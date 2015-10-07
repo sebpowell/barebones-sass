@@ -1,11 +1,3 @@
-// @function map-deep-get($map, $keys...) {
-//   @each $key in $keys {
-//       $map: map-get($map, $key);
-//   }
-//   @return $map;
-// }
-
-
 $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-desktop: white)
 
 .navigation-primary
@@ -75,7 +67,7 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 	&.is-fixed
 		box-shadow: 0 1px 2px rgba(00,00,00,0.2)
 		+respond-above(device-medium)
-			padding: sizes(double) sizes(triple)
+			padding: sizes(double-half) sizes(triple)
 
 .mobile-navigation-toggle
 	position: absolute

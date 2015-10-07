@@ -1,7 +1,3 @@
-@mixin z-index($value) {
-	// z-index: index($objects, $value);
-}
-
 $layer: (
 	backdrop: 2,
 	modal: 3,
@@ -13,7 +9,6 @@ $layer: (
 	@if map-has-key($layer, $name) {
 		@return map-get($layer, $name);  
 	}
-	 
 	@warn "The key #{$name} is not in the map ’$layer’";
 	@return null;
 };

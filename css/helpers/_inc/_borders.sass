@@ -1,8 +1,10 @@
 $border-sides: top, right, bottom, left, all
+
 @each $side in $border-sides
 	@if $side == "all"
 		.border-all
 			border: 1px solid colors(keyline, light)
+	
 	@else
 		.border-#{$side}
 			border-#{$side}: 1px solid colors(keyline, light)
