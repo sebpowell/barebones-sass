@@ -12,6 +12,19 @@
 	background: white;
 }
 
+.masthead-content {
+	vertical-align: bottom !important;
+	padding: 0 !important;
+}
+
+.masthead h1 {
+	background: rgba(11, 38, 56, 0.5);
+	padding: sizes(triple);
+	width: 100%;
+	max-width: 100%;
+	font-size: 48px;
+}
+
 .footer-primary {
 	background: colors(brand-primary, dark);
 	padding: sizes(quad) 0;
