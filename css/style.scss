@@ -5,11 +5,47 @@
 @import "components/components";
 
 
+.service-list {
+	@include no-bullet;
+	li {
+		transition: all .5s;
+		font-size: 18px;
+		padding: sizes(double-half) 0;
+		border-bottom: 1px solid colors(keyline, light);
+		&:first-child {
+			border-top: 1px solid colors(keyline, light);
+		}
+		&:before {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: sizes(quarter);
+			content: "";
+			background-image: url("../images/dots.png");
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: sizes(base);
+			height: sizes(base);
+			margin-top: -4px;
+		}
+		&:hover {
+			padding-left: sizes(half);
+			cursor: pointer;
+			color: colors(brand-primary);
+		}
+	}
+}
+
 .site-container {
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
 	background: white;
+}
+
+hr {
+	border-top: 1px solid colors(keyline, light);
+	width: 100%;
+	margin: 60px 0;
 }
 
 .masthead-content {
