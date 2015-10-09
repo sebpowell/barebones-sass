@@ -12,6 +12,10 @@
 		font-size: 18px;
 		padding: sizes(double-half) 0;
 		border-bottom: 1px solid colors(keyline, light);
+		> p {
+			display: none;
+			margin-top: 30px;
+		}
 		&:first-child {
 			border-top: 1px solid colors(keyline, light);
 		}
@@ -28,7 +32,7 @@
 			margin-top: -4px;
 		}
 		&:hover {
-			padding-left: sizes(half);
+			// padding-left: sizes(half);
 			cursor: pointer;
 			color: colors(brand-primary);
 		}
@@ -73,7 +77,10 @@ hr {
 }
 
 .section {
-	padding: 100px sizes(double);
+	padding: 100px sizes(base);
+	@include respond-above(device-medium) {
+		padding: 100px sizes(quadruple);
+	}
 	&.expertise {
 		background-image: url("../images/building.jpg");
 		background-size: cover;
@@ -92,7 +99,7 @@ $split-panels: (device-x-small: 12, device-large: 6);
 		color: colors(brand-primary)
 	}
 	img {
-		max-width: 140px;
+		max-width: 180px;
 		margin-bottom: sizes(base);
 		transition: scale, 0.25s;
 		&:hover {

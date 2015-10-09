@@ -36,18 +36,18 @@ $size-grid-gutter: sizes(base)
 					// &:nth-last-of-type(-n+#{$i})
 					// 	margin-bottom: 0
 
-@for $i from 1 through $column-numbers
-	@each $key, $value in $breakpoints
+
+@each $key, $value in $breakpoints
+	@for $i from 1 through $column-numbers
 		.columns-#{$i}-#{$key}
 			width: 100%
-			@if $i == 12
-				margin-left: 0
-				margin-right: 0
+			margin-bottom: sizes(double)
 				
 			+respond-above($key)
 				width: $i * $column-width
 				float: left
 				padding: 0 sizes(base)
+				margin-bottom: 0
 				// &:nth-last-of-type(-n+#{$i})
 				// 	margin-bottom: 0
 

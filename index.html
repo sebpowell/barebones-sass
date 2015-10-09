@@ -31,6 +31,11 @@
     		}); 
     		$("#nav").fixedNav();
     		smoothScroll.init();
+
+    		$(".service-list li").click(function() {
+    			// $(".service-list p").slideUp();
+    			$(this).children("p").slideToggle();
+    		});
 			});
 		</script>
 		<!-- Enable HTML5 elements in IE8 !-->
@@ -147,28 +152,28 @@
 			</section>
 			
 			<section class="section text-center">
-				<p class="text-medium color-greyscale-medium">Atlantis Capital Management is an independent investment management firm and multi family office authorised and regulated by the Financial Conduct Authority. We specialize in the creation of bespoke investment solutions and full wealth management offering designed to achieve our clients’ objectives. </p>
+				<p class="text-medium color-greyscale-medium">Atlantis Capital Management is an independent investment management firm and multi family office authorised and regulated by the Financial Conduct Authority. We specialize in the creation of bespoke investment solutions and full wealth management services designed to achieve our clients’ objectives.</p>
 			</section>
 
 			<section id="mission" class="section background-greyscale-x-light text-center">
 				<h1 class="color-brand-primary-base">Mission & Values</h1>
 				<p class="text-medium margin-bottom-triple">Our mission is to provide a holistic value-added approach towards wealth management characterized by strong adherence to the values upon which Atlantis was built.</p>
 				<div class="row color-brand-primary-base">
-					<div class="columns-3">
+					<div class="columns-3-device-medium columns-6-device-small">
 						<h3>Ethos</h3>
 						<p>We pride ourselves in adhering to the highest ethical code of conduct in the industry. Our platform is specifically designed to remove conflicts of interest; allowing us to truly partner with our clients.</p>
 					</div>
-					<div class="columns-3">
+					<div class="columns-3-device-medium columns-6-device-small">
 						<h3>Transparency</h3>
 						<p>Atlantis operates on an open architecture approach which enables clients to benefit from a complete alignment of interests and full flexibility around product selection and the construction of investment propositions.</p>
 					</div>
-					<div class="columns-3">
+					<div class="columns-3-device-medium columns-6-device-small">
 						<h3>Expertise</h3>
 						<p>Our clients directly benefit from the knowledge and experience of our investment advisers and research team. All personnel hail from top-tier institutions and represent the highest calibre of personal integrity and investment proficiency.</p>
 					</div>
-					<div class="columns-3">
+					<div class="columns-3-device-medium columns-6-device-small">
 						<h3>Innovation & Excellence</h3>
-						<p>Atlantis has an in-house research and risk team established to provide accurate risk management tools and market analysis techniques. This independence allows us to deliver a truly bespoke experience when it comes to deciphering markets and engineering investments.</p>
+						<p>Atlantis has an in-house research and risk team established to provide accurate risk management tools and market analysis techniques. This allows us to create risk-adjusted investment solutions for clients.</p>
 					</div>
 				</div>
 			</section>
@@ -179,23 +184,29 @@
 
 				<h1 class="margin-bottom-double">Offering</h1>
 
+
+
 				<div class="row">
 						<div class="columns-6">
-							<p class="text-medium">Our offering is designed to cater to all the stages involved in the process of wealth preservation; including structuring and planning, investment management and succession planning.</p>
+							<p class="text-medium">Our offering is designed to cater to all the stages involved in the process of wealth preservation, including structuring and planning, investment management and succession planning.</p>
 							<p class="text-medium">Our expertise lies in the creation and implementation of integrated solutions aimed at solving the complex issues our clients face.</p>
 						</div>
 						<div class="columns-6">
-							<p class="text-medium">We cater to a broad spectrum of investment requirements from conservative wealth preservation objectives to capital growth.</p>
-							<p class="text-medium">The platform at Atlantis is supported by state of the art information technology infrastructure which has been specifically developed and tested to enable efficiency, safety, and precision of the highest degree. </p>
+							<p class="text-medium">We cater to a broad spectrum of investment requirements, from conservative wealth preservation objectives to capital growth.</p>
+							<p class="text-medium">The platform at Atlantis is supported by state of the art information technology infrastructure which has been specifically developed and tested to enable efficiency, safety, and precision of the highest degree.</p>
 						</div>
 					</div>
 					<hr>
-			<div class="row">
+			<div class="row gutter-triple">
 				<div class="columns-4">
 					<h2 class="text-color-primary">Wealth Advisory</h2>
-					<p>At Atlantis we provide our clients with lifestyle planning and wealth management services adapted to their individual circumstances. We appreciate that every situation is different, as such we emphasize the needs for a deep understanding of our clients’ situation.</p>
+					<p>At Atlantis, we provide our clients with lifestyle planning and wealth management services adapted to their individual circumstances and needs. We appreciate that every situation is different and unique, and therefore we emphasize the needs for a deep understanding of our clients’ situation. This will enable us to develop targeted and customized solutions designed to achieve their objectives.</p>
 					<ul class="service-list">
-						<li>Custody & Safekeeping</li>
+						<li>
+							Custody & Safekeeping
+							<p>Our investment management offering is unique and transparent. Clients have the option of selecting either a discretionary or an advisory mandate with us. All investment solutions are entirely bespoke; taking into account the personal circumstances and risk appetite of our clients.</p>
+						</li>
+						<li>Company Formation</li>
 						<li>Citizenship & Residency</li>
 						<li>Succession Planning</li>
 						<li>Trusts & Foundations</li>
@@ -206,22 +217,32 @@
 					<h2 class="text-color-primary">Investment Management</h2>
 					<p>Our investment management offering is unique and transparent. Clients have the option of selecting either a discretionary or an advisory mandate with us. All investment solutions are entirely bespoke; taking into account the personal circumstances and risk appetite of our clients.</p>
 					<ul class="service-list">
-						<li>Custody & Safekeeping</li>
-						<li>Citizenship & Residency</li>
-						<li>Succession Planning</li>
-						<li>Trusts & Foundations</li>
-						<li>Risk Mitigation</li>
+						
+						<li>Portfolio consolidation</li>
+						<li>Portfolio construction</li>
+						<li>Performance reporting</li>
+						<li>Tactical trading</li>
+						<li>Alternative investments</li>
+						<li>Structured solutions</li>
 					</ul>
 				</div>
 				<div class="columns-4">
 					<h2 class="text-color-primary">Property Services</h2>
 					<p>The founders of Atlantis have been active investors in the London property market. Clients wishing to gain exposure to real estate can rest assured that through Atlantis they have access to the best opportunities in this sector. For larger projects the potential to co-invest via club deals is also possible.</p>
 					<ul class="service-list">
-						<li>Custody & Safekeeping</li>
-						<li>Citizenship & Residency</li>
-						<li>Succession Planning</li>
-						<li>Trusts & Foundations</li>
-						<li>Risk Mitigation</li>
+						<li>
+							Transaction structuring
+							<p>For clients looking to purchase property in Europe our experienced team can help with ensuring the transaction is structured in the most efficient way possible.</p>
+						</li>
+
+						<li>
+							Project analysis
+							<p>Having transacted on significant sized property deals in the past, we have the required knowledge and expertise to conduct in-depth due diligence on properties.</p>
+						</li>
+						<li>
+							Property acquisition
+							<p>Our extensive network in the field of property services allows us to ensure that clients get access to the most competitive pricing on the market. The founders of Atlantis have been active investors in the London property market. Clients wishing to gain exposure to real estate can rest assured that through Atlantis they have access to the best opportunities in this sector. For larger projects we offer co-investment opportunities and club deals.</p>
+						</li>
 					</ul>
 				</div>
 			</div>

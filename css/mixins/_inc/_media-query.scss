@@ -1,5 +1,5 @@
 @mixin respond-above($breakpoint-name) {
-  @media screen and (min-width: breakpoint($breakpoint-name)) {
+  @media (min-width: breakpoint($breakpoint-name)) {
     @content;
   }
 }
