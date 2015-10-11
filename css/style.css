@@ -1519,9 +1519,9 @@ button.white.bordered:hover, .button.white.bordered:hover { border: 1px solid wh
 
 html, body, div, span, object, iframe, hr, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, button, textarea, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; }
 
-html { font-family: SabonLTPro-Roman, Times, Georgia, serif; line-height: 1; color: #2F363A; letter-spacing: -0.01rem; min-height: 100%; height: 100%; }
+html { font-family: SabonLTPro-Roman, Times, Georgia, serif; line-height: 1; color: #2F363A; background-color: #0B2638; letter-spacing: -0.01rem; min-height: 100%; height: 100%; }
 
-body { padding-top: px; background-color: #0B2638; }
+body { padding-top: px; background-color: white; }
 @media (min-width: 780px) { body { padding-top: 94px; } }
 
 img { max-width: 100%; width: 100%; }
@@ -1548,7 +1548,7 @@ a:hover { color: #0D3650; }
 a.link-reset { color: inherit; }
 
 p { font-size: 16px; line-height: 1.8; }
-@media (min-width: 1080px) { p { max-width: 600px; margin: auto; } }
+@media (min-width: 1080px) { p { max-width: 800px; margin: auto; } }
 p:not(:last-child) { margin-bottom: 24px; }
 
 strong { font-weight: 600; }
@@ -1564,6 +1564,8 @@ strong { font-weight: 600; }
 .typography > ul > li, .typography ol > li { margin: 0; line-height: 1.5; }
 .typography > ul > li:not(:last-child), .typography ol > li:not(:last-child) { margin-bottom: 16px; }
 .typography > ul:last-child, .typography ol:last-child { margin-bottom: 0; }
+
+#map { width: 100%; height: 400px; -moz-filter: grayscale(1); -webkit-filter: grayscale(1); }
 
 .service-list { list-style-type: none; margin: 0; padding: 0; }
 .service-list li { margin: 0; line-height: inherit; }
@@ -1582,7 +1584,7 @@ hr { border-top: 1px solid #ECECEC; width: 100%; margin: 60px 0; }
 .masthead h1 { background: rgba(11, 38, 56, 0.5); padding: 48px; width: 100%; max-width: 100%; font-size: 48px; }
 
 .footer-primary { background: #0a1f29; padding: 64px 0; text-align: center; }
-.footer-primary .copyright { color: white; opacity: 0.4; line-height: 1.4; }
+.footer-primary .copyright { color: white; opacity: 0.4; font-size: 14px; line-height: 1.6; }
 
 .section { padding: 100px 16px; }
 @media (min-width: 780px) { .section { padding: 100px; } }

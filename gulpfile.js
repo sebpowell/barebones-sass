@@ -16,7 +16,7 @@ gulp.task('sass', function () {
 
 gulp.task("uglify", function() {
 
-	gulp.src(["js/*.js"])
+	gulp.src(["js/**/*.js"])
 		.pipe(concat("app.js"))
 		.pipe(gulp.dest(""))
 });
@@ -24,7 +24,7 @@ gulp.task("uglify", function() {
 
 gulp.task("watch", function() {
 	gulp.watch(['**/*/*.sass', '**/*/*.scss'], ['sass']);
-	gulp.watch(['js/*.js'], ['uglify']);
+	gulp.watch(['js/**/*.js'], ['uglify']);
 });
 
 gulp.task("default", function() {
