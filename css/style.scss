@@ -9,11 +9,15 @@
 	@include no-bullet;
 	li {
 		transition: all .5s;
+		font-family: SabonLTPro-Bold, Times, Georgia, serif;
+		color: colors(brand-primary);
 		font-size: 18px;
 		padding: sizes(double-half) 0;
 		border-bottom: 1px solid colors(keyline, light);
+		cursor: pointer;
 		> p {
 			display: none;
+			font-family: SabonLTPro-Roman, Times, Georgia, serif;
 			margin-top: 30px;
 		}
 		&:first-child {
@@ -33,7 +37,6 @@
 		}
 		&:hover {
 			// padding-left: sizes(half);
-			cursor: pointer;
 			color: colors(brand-primary);
 		}
 	}
@@ -41,7 +44,7 @@
 
 .site-container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1600px;
 	margin: auto;
 	background: white;
 }

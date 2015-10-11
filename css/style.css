@@ -1489,7 +1489,7 @@ button.white.bordered:hover, .button.white.bordered:hover { border: 1px solid wh
 .navigation-primary:before, .navigation-primary:after { content: ""; display: table; }
 .navigation-primary:after { clear: both; }
 @media (min-width: 780px) { .navigation-primary { padding: 24px 48px; } }
-@media (min-width: 1200px) { .navigation-primary { width: 1200px; } }
+@media (min-width: 1200px) { .navigation-primary { max-width: 1600px; } }
 .navigation-primary .navigation-primary-logo { width: 160px; float: left; }
 .navigation-primary .navigation-primary-links { list-style-type: none; margin: 0; padding: 0; top: 60px; left: 0; margin-top: 14px; position: fixed; display: none; background: white; width: 100%; }
 .navigation-primary .navigation-primary-links li { margin: 0; line-height: inherit; }
@@ -1522,7 +1522,7 @@ html, body, div, span, object, iframe, hr, h1, h2, h3, h4, h5, h6, p, blockquote
 html { font-family: SabonLTPro-Roman, Times, Georgia, serif; line-height: 1; color: #2F363A; letter-spacing: -0.01rem; min-height: 100%; height: 100%; }
 
 body { padding-top: px; background-color: #0B2638; }
-@media (min-width: 780px) { body { padding-top: 88px; } }
+@media (min-width: 780px) { body { padding-top: 94px; } }
 
 img { max-width: 100%; width: 100%; }
 
@@ -1567,13 +1567,13 @@ strong { font-weight: 600; }
 
 .service-list { list-style-type: none; margin: 0; padding: 0; }
 .service-list li { margin: 0; line-height: inherit; }
-.service-list li { transition: all .5s; font-size: 18px; padding: 24px 0; border-bottom: 1px solid #ECECEC; }
-.service-list li > p { display: none; margin-top: 30px; }
+.service-list li { transition: all .5s; font-family: SabonLTPro-Bold, Times, Georgia, serif; color: #0D3650; font-size: 18px; padding: 24px 0; border-bottom: 1px solid #ECECEC; cursor: pointer; }
+.service-list li > p { display: none; font-family: SabonLTPro-Roman, Times, Georgia, serif; margin-top: 30px; }
 .service-list li:first-child { border-top: 1px solid #ECECEC; }
 .service-list li:before { display: inline-block; vertical-align: middle; margin-right: 4px; content: ""; background-image: url("../images/dots.png"); background-size: contain; background-repeat: no-repeat; width: 16px; height: 16px; margin-top: -4px; }
-.service-list li:hover { cursor: pointer; color: #0D3650; }
+.service-list li:hover { color: #0D3650; }
 
-.site-container { width: 100%; max-width: 1200px; margin: auto; background: white; }
+.site-container { width: 100%; max-width: 1600px; margin: auto; background: white; }
 
 hr { border-top: 1px solid #ECECEC; width: 100%; margin: 60px 0; }
 
