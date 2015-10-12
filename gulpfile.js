@@ -11,7 +11,7 @@ gulp.task('sass', function () {
 	.on('error', function (err) {
 		console.error('Error!', err.message);
 	})
-	.pipe(gulp.dest('css'));	
+	.pipe(gulp.dest('css'));
 });
 
 gulp.task("uglify", function() {

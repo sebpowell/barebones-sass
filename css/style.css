@@ -1480,7 +1480,7 @@ button.white.bordered:hover, .button.white.bordered:hover { border: 1px solid wh
 @media (min-width: 780px) { .gutter-quad { margin-left: -64px !important; margin-right: -64px !important; }
   .gutter-quad > [class^="column"], .gutter-quad > li { padding: 0 64px !important; } }
 
-.masthead { display: table; width: 100%; height: 100%; background-image: url("../images/lion.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; }
+.masthead { display: table; width: 100%; height: 680px; background-image: url("../images/lion.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center; }
 .masthead .masthead-content { display: table-cell; padding: 24px; vertical-align: middle; }
 .masthead h1, .masthead h2, .masthead p { color: white; max-width: 800px; margin: auto; }
 .masthead h1 { margin-bottom: 0; font-weight: 700; font-size: 62px; line-height: 1.2; }
@@ -1569,7 +1569,7 @@ strong { font-weight: 600; }
 
 .service-list { list-style-type: none; margin: 0; padding: 0; }
 .service-list li { margin: 0; line-height: inherit; }
-.service-list li { transition: all .5s; font-family: SabonLTPro-Bold, Times, Georgia, serif; color: #0D3650; font-size: 18px; padding: 24px 0; border-bottom: 1px solid #ECECEC; cursor: pointer; }
+.service-list li { transition: all .5s; font-family: SabonLTPro-Bold, Times, Georgia, serif; color: #E98630; font-size: 18px; padding: 24px 0; border-bottom: 1px solid #ECECEC; cursor: pointer; }
 .service-list li > p { display: none; font-family: SabonLTPro-Roman, Times, Georgia, serif; margin-top: 30px; }
 .service-list li:first-child { border-top: 1px solid #ECECEC; }
 .service-list li:before { display: inline-block; vertical-align: middle; margin-right: 4px; content: ""; background-image: url("../images/dots.png"); background-size: contain; background-repeat: no-repeat; width: 16px; height: 16px; margin-top: -4px; }

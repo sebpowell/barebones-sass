@@ -15,7 +15,7 @@
 	li {
 		transition: all .5s;
 		font-family: SabonLTPro-Bold, Times, Georgia, serif;
-		color: colors(brand-primary);
+		color: colors(brand-secondary);
 		font-size: 18px;
 		padding: sizes(double-half) 0;
 		border-bottom: 1px solid colors(keyline, light);
@@ -131,7 +131,7 @@ $split-panels: (device-x-small: 12, device-large: 6);
 			padding: 100px sizes(quad) !important;
 		}
 	}
-	.module-split-panel-points {		
+	.module-split-panel-points {
 		h3 {
 			&:before {
 				display: inline-block;

@@ -13,7 +13,7 @@ $size-grid-gutter: sizes(base)
 			+respond-above($key)
 				margin-left: -$size-grid-gutter
 				margin-right: -$size-grid-gutter
-			
+
 			@if $i < 1
 				margin-left: 0
 				margin-right: 0
@@ -23,12 +23,12 @@ $size-grid-gutter: sizes(base)
 				&:last-child
 					margin-bottom: 0
 				&:nth-child(#{$i}n + 1)
-					// Clears floats after a row is complete for variable height elements. 
+					// Clears floats after a row is complete for variable height elements.
 					clear: both
 
 				@if $i < 1
 					padding: 0
-				
+
 				+respond-above($key)
 					width: 100% / $i !important
 					float: left
@@ -42,7 +42,7 @@ $size-grid-gutter: sizes(base)
 		.columns-#{$i}-#{$key}
 			width: 100%
 			margin-bottom: sizes(double)
-				
+
 			+respond-above($key)
 				width: $i * $column-width
 				float: left
@@ -68,7 +68,7 @@ $size-grid-gutter: sizes(base)
 			margin-bottom: 0
 			width: $i * $column-width
 			// Add nth-class helper
-			
+
 // Generates classes for column offsets.
 @for $i from 1 through $column-numbers
 	.offset-#{$i}
@@ -80,7 +80,7 @@ $size-grid-gutter: sizes(base)
 .row
 	+clearfix
 	position: relative
-	
+
 	&.vertical-align
 		+respond-above(device-medium-large)
 			display: table
@@ -89,8 +89,8 @@ $size-grid-gutter: sizes(base)
 				height: 100%
 				display: table-cell
 				vertical-align: middle
-		
-	
+
+
 	+respond-above(device-medium-large)
 		margin-left: -(sizes(base))
 		margin-right: -(sizes(base))
@@ -102,7 +102,7 @@ $size-grid-gutter: sizes(base)
 	padding: sizes(double)
 	width: 100%
 	float: left
-	
+
 	@each $key, $value in $breakpoints
 		@if map-get($map, $key)
 			+respond-above($key)
@@ -125,7 +125,7 @@ $size-grid-gutter: sizes(base)
 			margin-right: -($var) !important
 			> [class^="column"], > li
 				padding: 0 $var !important
-				// Add mobile 
+				// Add mobile
 
 
 
