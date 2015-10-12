@@ -2,7 +2,7 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 
 .navigation-primary
 	+clearfix
-	transition: padding .5s 
+	transition: padding .5s
 	position: fixed
 	// Change to site width mobile padding
 	padding: sizes(base)
@@ -14,12 +14,12 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 		padding: sizes(double-half) sizes(triple)
 	+respond-above(device-x-large)
 		max-width: 1480px
-		
+
 
 	.navigation-primary-logo
-		width: 160px
+		width: 180px
 		float: left
-	
+
 	.navigation-primary-links
 		+no-bullet
 		top: 60px
@@ -35,7 +35,7 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 			background: colors(brand-primary, dark)
 			// border-top: 1px solid colors(keyline, light)
 			// box-shadow: 0px 2px 3px rgba(00,00,00,0.4)
-		
+
 		+respond-above(device-medium)
 			display: table
 			opacity: 1
@@ -46,33 +46,34 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 			width: auto
 			position: static
 			background: transparent
-		
+
 		> li
 			text-align: center
 			position: relative
 			+respond-above(device-medium)
 				display: table-cell
-			
-			&.active
-				a
-					color: colors(brand-primary)
-					&:after
-						position: absolute
-						top: 44px
-						left: 50%
-						margin-left: -40px
-						content: ""
-						display: block
-						background: colors(brand-primary)
-						height: 4px
-						width: 80px
 
-						
+			+respond-above(device-medium)
+				&.active
+					a
+						color: colors(brand-primary)
+						&:after
+							position: absolute
+							top: 49px
+							left: 50%
+							margin-left: -40px
+							content: ""
+							display: block
+							background: colors(brand-primary)
+							height: 4px
+							width: 80px
+
+
 			> a
 				display: block
 				padding: sizes(double)
 				font-size: map-get($navigation, link-size-mobile)
-					
+
 				+respond-above(device-medium)
 					padding: 0 20px
 					font-size: map-get($navigation, link-size-desktop)
@@ -96,7 +97,7 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 	transition: .5s ease-in-out
 	+respond-above(device-medium)
 		display: none
-	
+
 	span
 		display: block
 		position: absolute
@@ -108,14 +109,14 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 		left: 0
 		transform: rotate(0deg)
 		transition: .25s
-		
+
 		&:nth-child(1)
 			top: 0
 		&:nth-child(2), &:nth-child(3)
 			top: 6px
 		&:nth-child(4)
 			top: 12px
-			
+
 	&.close
 		span
 			&:nth-child(1)
@@ -177,11 +178,11 @@ $navigation: (link-size-mobile: 20px, link-size-desktop: 18px, background-deskto
 // 				padding: sizes(double) sizes(triple)
 // 				display: block
 // 				color: white
-	
+
 // 	.nav-footer
 // 		margin-top: sizes(base)
 // 		padding: sizes(base)
-	
+
 // 	.social-profiles
 // 		margin-top: sizes(base)
 // 		justify-content: center

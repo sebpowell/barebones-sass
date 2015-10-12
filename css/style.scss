@@ -14,15 +14,17 @@
 	@include no-bullet;
 	li {
 		transition: all .5s;
-		font-family: SabonLTPro-Bold, Times, Georgia, serif;
-		color: colors(brand-secondary);
-		font-size: 18px;
+
 		padding: sizes(double-half) 0;
 		border-bottom: 1px solid colors(keyline, light);
 		cursor: pointer;
+		> span {
+			color: colors(brand-secondary);
+			font-size: 18px;
+			font-family: SabonLTPro-Bold, Times, Georgia, serif
+		}
 		> p {
 			display: none;
-			font-family: SabonLTPro-Roman, Times, Georgia, serif;
 			margin-top: 30px;
 		}
 		&:first-child {
