@@ -1,27 +1,13 @@
-// The base size is used to create the following set of standard sizes, used throughout the interface for margins, padding, height etc.
-$size-base: 16px;
-
-// Used on dialogues, form elements and buttons.
-$size-border-radius: 3px;
-
-// Apply to buttons and inputs to ensure consistent height.
-$size-input-height: rem-calc(48);
-
-// Appy to nav if fixed, then to body element.
-$size-nav-height: 56px;
-$size-logo-width: 180px;
-$size-how-it-works: 420px;
-
 @function sizes($value) {
   @return map-get($sizes, $value);
 }
 
 $sizes: (
-  quarter: $size-base / 4,
-  half: $size-base / 2,
-  base: $size-base,
-  double-half: $size-base * 1.5,
-  double: $size-base * 2,
-  triple: $size-base * 3,
-  quad: $size-base * 4,
+  quarter: map-get($theme, font-base-size) / 4,
+  half: map-get($theme, font-base-size) / 2,
+  base: map-get($theme, font-base-size),
+  double-half: map-get($theme, font-base-size) * 1.5,
+  double: map-get($theme, font-base-size) * 2,
+  triple: map-get($theme, font-base-size) * 3,
+  quad: map-get($theme, font-base-size) * 4,
 );

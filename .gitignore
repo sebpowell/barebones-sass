@@ -1,11 +1,6 @@
 node_modules/
-.elasticbeanstalk/
-*.esproj/
-*.espressostorage
 .sass-cache/
-getagent.esproj/user.peter.espressostorage
 npm-debug.log
-.divshot-cache
-
+.divshot-cache/
 .DS_Store
 

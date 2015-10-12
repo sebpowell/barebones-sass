@@ -1,7 +1,9 @@
+$layers: (backdrop: 2,)
+
 @function layers($object)
-	@if map-has-key($layer, $name)
-		@return map-get($layer, $name)
+	@if map-has-key($layers, $object)
+		@return map-get($layers, $object)
 	 
-	@warn "The key #{$name} is not in the map ’$layer’"
+	@warn "The key #{$object} is not in the map ’$layer’"
 	@return null
  
