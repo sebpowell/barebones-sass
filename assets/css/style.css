@@ -1,0 +1,75 @@
+/*
+Error: Invalid CSS after ")": expected "{", was ";"
+        on line 25 of assets/css/_theme.scss
+        from line 1 of assets/css/style.scss
+
+20: 	device-small: 480px,
+21: 	device-medium: 780px,
+22: 	device-medium-large: 900px,
+23: 	device-large: 1080px,
+24: 	device-x-large: 1200px
+25: );
+26: 
+27: 
+28: =gutter($multiple: 1) {
+29: 	* multiple
+30: }
+
+Backtrace:
+assets/css/_theme.scss:25
+assets/css/style.scss:1
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:1162:in `expected'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:1098:in `expected'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:1093:in `tok!'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:638:in `block'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:632:in `ruleset'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:657:in `block_child'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:650:in `block_contents'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/scss/parser.rb:42:in `parse'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/engine.rb:403:in `_to_tree'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/engine.rb:309:in `to_tree'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/stack.rb:88:in `block in with_import'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/stack.rb:88:in `with_import'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/tree/root_node.rb:20:in `render'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/engine.rb:278:in `render'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1@global/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1/bin/sass:23:in `load'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1/bin/sass:23:in `<main>'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+/Users/sebpowell/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \")\": expected \"{\", was \";\"\A         on line 25 of assets/css/_theme.scss\A         from line 1 of assets/css/style.scss\A \A 20: 	device-small: 480px,\A 21: 	device-medium: 780px,\A 22: 	device-medium-large: 900px,\A 23: 	device-large: 1080px,\A 24: 	device-x-large: 1200px\A 25: );\A 26: \A 27: \A 28: =gutter($multiple: 1) {\A 29: 	* multiple\A 30: }"; }

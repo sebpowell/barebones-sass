@@ -1,7 +1,0 @@
-{
-  "name": "atlantis",
-  "root": "./",
-  "clean_urls": true,
-  "exclude": ["node_modules"],
-  "error_page": "error.html"
-}

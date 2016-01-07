@@ -1,0 +1,354 @@
+// Does this work for assmetric grids? 
+// $page: (
+//   sidebar: (
+//     device-large: (
+//       columns: 8,
+//       offset: null, 
+//     ),
+//     device-medium: 2
+//   ),
+//   main-content: (
+//     device-medium: 2,
+//     device-large: 8
+//   ),
+// );
+
+@mixin layout($page, $element) {
+
+  @each $key, $value in map-get($page, $element) {
+    @include respond-above($key) {
+      @include span($value);
+    }
+  }
+}
+
+.example-gallery-item {
+  height: 100px;
+  background: pink;
+  @include gallery-item(1, device-small);
+  @include gallery-item(4, device-medium);
+  
+  // margin bottom on mobile?
+  
+}
+
+.example-wrapper {
+  @include container();
+  background: lightBlue;
+  max-width: 600px;
+  
+  [class^="column"], .example-sidebar, .example-content-block {
+    height: 100px;
+  }
+  .example-sidebar {
+    @include span(4, device-small, last);
+    @include span(8, device-medium);
+  }
+
+  .example-content-block {
+    @include span(8, device-small);
+    @include span(4, device-medium, last);
+  }
+}
+
+
+.phantom {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  
+  background: colors(greyscale, x-light);
+}
+
+.content {
+  background: #e5e5e5;
+  height: 100px;
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  transition: all .15s;
+  height: 100%;
+  max-width: 1200px;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.screen-tester {
+  @include clearfix;
+  position: fixed;
+  background: white;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid colors(keyline, dark);
+  left: 0;
+  .screen-tester-sizes {
+    float: left;
+    
+  }
+
+  .screen-tester-sizes-selected {
+    position: relative;
+    border-right: 1px solid colors(keyline, dark);
+    padding: sizes(base);
+  }
+  .screen-tester-sizes-dropdown {
+    @include no-bullet;
+    background: white;
+    visibility: hidden;
+    position: absolute;
+    border: 1px solid colors(keyline, dark);
+    top: 100%;
+    opacity: 0;
+    > li {
+      padding: sizes(base);
+    }
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+
+
+
+//   .mobile-site-navigation-open {
+//     @include respond-above-above(device-large) {
+//       display: none;
+//     }
+//   }
+// }
+// 				+ ul {
+// 					display: none;
+// 				}
+// 				&.is-open {
+// 					background: colors(brand-primary);
+// 					color: white;
+// 					@include respond-above-above(device-large) {
+// 						border-radius: 3px;
+// 					}
+// 					+ ul {
+// 						display: block;
+// 						a {
+// 							background: colors(greyscale, x-light);
+// 						}
+// 					}
+// 				}
+// 			}
+// 			> ul {
+// 				@include no-bullet;
+// 				margin-bottom: sizes(half);
+// 				> li {
+
+// 					> a {
+// 						font-size: 14px;
+// 						color: colors(greyscale, mid);
+// 						display: block;
+// 						padding: sizes(double-half) sizes(base);
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.mobile-site-navigation-open {
+// 		@include respond-above-above(device-large) {
+// 			display: none;
+// 		}
+// 	}
+
+
+
+
+// Look at bootrstap docs
+
+// @for $i from 1 through $column-numbers {
+//   @each $key, $value in $breakpoints {
+//     .grid-#{$i}-#{$key}  {
+//       @include no-bullet;
+//       margin-left: -sizes(base)
+//       margin-right: -sizes(base)
+//       @if $i < 1
+//         margin-left: 0
+//         margin-right: 0
+//       > li
+//         width: 100%
+//         margin-bottom: sizes(double)
+//         @if $i < 1
+//           padding: 0
+//         +respond-above($key)
+//           width: 100% / $i !important
+//           padding: 0 sizes(base) !important
+
+//           &:nth-last-child(-n+#{$i})
+//             margin-bottom: 0
+//   }
+// }
+
+ul > li {
+  margin-bottom: sizes(base);
+  line-height: 1.5;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.swatch {
+  position: relative;
+  float: left;
+  height: 400px;
+  padding: sizes(base);
+
+  &.small {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-right: sizes(half);
+    border-radius: 30px;
+  }
+
+  &.thumb {
+    float: none;
+    height: 200px;
+  }
+  .label {
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+.tint {
+  padding: 20px;
+}
+
+.text-grey-500 {
+  color: #313033;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+.page-layout-docs {
+  @include clearfix;
+  padding-top: 56px;
+  padding: 0 24px;
+  @include respond-above(device-large) {
+    padding-top: 0;
+  }
+
+  h3 {
+    margin-top: sizes(double);
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  // TODO: Find a way to make this work without affecting the rest of the platform.
+  h2, h1 {
+    line-height: 1;
+  }
+
+  table {
+    img {
+      width: 24px;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+      margin-bottom: 0;
+    }
+  }
+
+  .content {
+    padding: 20px 0;
+    text-align: center;
+    background: #CCEBF3;
+  }
+
+  .primary-site-links {
+    margin-left: 0;
+  }
+
+  .article {
+    margin-bottom: 100px;
+
+    > section {
+      margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // code {
+  //   border: 1px solid colors(keyline, dark);
+  //   border-radius: 3px;
+  //   font-size: 14px;
+  //   font-family: "Source Code Pro", Consolas, "Lucida Console", Courier, monospace;
+  //   padding: sizes(double);
+  //   display: block;
+  //   margin-top: sizes(double);
+  // }
+
+  .class, .code {
+    color: #D88E2C;
+    font-family: "Source Code Pro",Consolas,"Lucida Console",Courier,monospace;
+  }
+
+  .example {
+    border: 1px solid colors(keyline, dark);
+    border-radius: 3px;
+    // padding: 20px;
+
+    .modal, .dropdown-menu {
+      position: static;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .page-header {
+    text-align: left;
+  }
+
+  .align-middle {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 40px sizes(double-half);
+    // max-width: 1000px;
+
+    @include respond-above(device-large) {
+      width: 80%;
+      // max-width: 800px;
+      padding: 100px 60px;
+      margin-left: 20%;
+      float: left;
+    }
+  }
+
+  .logo-example {
+    width: 100%;
+    height: 260px;
+    padding: sizes(triple);
+    text-align: center;
+    background: white;
+  }
+}

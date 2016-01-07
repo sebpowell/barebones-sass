@@ -1,0 +1,7 @@
+=respond-above($breakpoint-name)
+	@if map-has-key($breakpoints, $breakpoint-name)
+		@media (min-width: breakpoint($breakpoint-name))
+			@content
+	@else
+		@media (min-width: $breakpoint-name)
+			@content

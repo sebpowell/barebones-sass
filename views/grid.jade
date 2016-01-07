@@ -1,0 +1,214 @@
+include _inc/_head.html
+//- include _inc/_tool.jade
+//- include _inc/_navigation.jade
+
+
+.body
+
+.test-container
+  h1.page-header Grid1 System
+  article#containers.article
+    p
+      | Containers are used to center and restrict content width on the page. Containers also include left and right padding to give breathing room on smaller devices.
+    p
+      | Containers are fluid, and the width is limited using the max-width property. Various sizes are generated from a range of values specified in 
+      span.code components/container.scss
+      | :
+
+
+    
+    
+    pre
+      code.language-scss
+        | $theme {
+        |   color: red;
+        |   palette: (
+        |   ),
+        |   grid: (
+        |   )
+        |  }
+
+    h3 Colors
+    p These are the colors used to generate button colours and various helpers. These are categorised as follows. You can of course add additional categories. 
+
+    p To access these colours, use the colours() function.
+    pre
+      code.language-scss
+        | .element {
+        |   background: colours(brand, primary);
+        |  };
+
+
+    h2 Containers2
+    p Every layout grid starts with a container that wraps around the grid. Creating a new container is very straightforward. 
+    p This sets a max-width, as defined in your $theme file and centers the container across the screen. It also applies a clearfix to clear fixes from any possible floated columns you place within it. 
+    pre
+      code.language-scss
+        | .wrapper {
+        |   @include container;
+        | }
+    pre
+
+      code.language-scss
+        | // Compiled CSS
+        | .wrapper {
+        |  max-width: 1000px;
+        | }
+
+    .example
+      .example-wrapper
+
+
+    h2 The Grid
+    
+    p Gutters are created using a margin-right property on each column, with the last column set to 0. 
+
+    h2 Adding Columns
+    p Barebones offers multiple ways of creating columns, grids etc. 
+    p For prototyping, a series of helper classes (like Bootstrap) are included. These work in the same way. 
+    .example
+      .example-wrapper
+        .row
+          .columns-6(style="background-color: lightpink") Columns 6
+          .columns-6 Columns 6
+
+    h2 Creating Your Own
+    p Barebones also allows you to create your own layout containers. 
+
+    p By default, columns collapse at 720px. 
+
+    .example
+      .example-wrapper
+        .example-content-block(style="background-color: lightpink")
+        .example-sidebar(style="background-color: cyan")
+
+    pre
+      code.language-scss
+        | .example-sidebar {
+        |  @include span(6, last);
+        |  @include respond-above(device-small) {
+        |    @include span(8, last);
+        |  }
+        | }
+
+
+    h2 Galleries
+
+    p Galleries are grids containing a repeating number of equal-sized items. 
+
+    .example
+      .example-gallery
+        each i in new Array(10)
+          .example-gallery-item
+
+
+
+
+
+
+
+
+  //-   table.table-bordered
+  //-     thead
+  //-       th Name
+  //-       th Max-Width
+  //-     tr
+  //-       td .container-small
+  //-       td 500px
+  //-     tr
+  //-       td .container-medium
+  //-       td 700px
+  //-     tr
+  //-       td .container-large
+  //-       td 1000px
+  //-     tr
+  //-       td .container-x-large
+  //-       td 1200px
+  //-     tr
+  //-       td .container-fluid
+  //-       td
+  //-         em none
+  
+  //- article
+  //-   .example
+  //-     .example-sidebar
+  //-       .inner
+  //-     .example-content 
+
+
+
+
+
+
+
+
+
+
+  //- article#rows.article
+  //-   h3 Rows & Columns
+  //-   p
+  //-     | The grid is built on a standard 12-column system. Classes for different column spans are automatically
+  //-     | generated.
+  //-   p
+  //-     | To create a layout, start by adding a 
+  //-     span.class .flex-row
+  //-     |  element. This clears the floats and adds
+  //-     |     a negative margin on the left and right, equal to the column gutters to ensure the outer column edges sit flush with
+  //-     |     the rest of the site content. The default breakpoint for the grid is set to 720px. At this point, the margin is added and paddings on the
+  //-     |     columns, the widths are set to 100%, and a bottom margin is added.
+  //-   .example
+  //-     .margin-bottom.double-unit
+  //-       .flex-row
+  //-         .columns-3
+  //-           .content 3
+  //-         .columns-3
+  //-           .content 3
+  //-         .columns-6
+  //-           .content 6
+  //-     .flex-row
+  //-       .columns-4
+  //-         .content 4
+  //-       .columns-4
+  //-         .content 4
+  //-       .columns-4
+  //-         .content 4
+  //-   pre.
+  //-     \n        
+  //-   .example
+  //-     .margin-bottom-double
+  //-       .flex-row
+  //-         .columns-3
+  //-           .content 3
+  //-         .columns-3
+  //-           .content 3
+  //-         .columns-6
+  //-           .content 6
+  //-     .flex-row
+  //-       .columns-4
+  //-         .content 4
+  //-       .columns-4
+  //-         .content 4
+  //-       .columns-4
+  //-         .content 4
+  //-   pre.
+  //- article#spacing.article
+  //-   h3 Spacing
+  //-   p
+  //-     strong Do not use a margin helper on the .flex-row element
+  //-     |  - if you want to create spacing between rows,
+  //-     |     wrap the row in a seperate div or section eelemtn, and add the margin on that. Using a helper on the element itself
+  //-     |     will remove the negative margings and screw up the gutters.
+  //- article#offsets.article
+  //-   h3 Offsets
+  //-   p
+  //-     | Offsets allow you to offset your content by the specified number of columns. To use an offset, use the class
+  //-     span.class .offset-n
+  //-     |  (where 'n' is the offset value) to the relevant column.
+  //-   .example
+  //-     .margin-bottom.double-unit
+  //-       .flex-row
+  //-         .columns-6.offset-1
+  //-           .content 6, 1
+  //-     .flex-row
+  //-       .columns-6.offset-4
+  //-         .content 6, 4

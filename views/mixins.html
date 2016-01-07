@@ -1,0 +1,76 @@
+{% extends "../layouts/docs.html.tpl" %}
+{% block docs_body %}
+
+<h1 class="page-header">Mixins</h1>
+
+<article class="article" id="arrow">
+<h2>Arrow</h2>
+<p>Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left".</p>
+<pre>
+<code class="scss">.dropdown-menu {
+ &:after {
+  @include arrow($direction, $color, $size);
+ }
+}</code>
+</pre>
+</article>
+
+<article class="article" id="clearfix">
+<h2>Clearfix</h2>
+<p>Clears floats. Apply this to the parent element.</p>
+<pre>
+<code class="scss">.row {
+ @include clearfix;
+}</code>
+</pre>
+</article>
+
+<article class="article" id="ellipsis">
+<h2>Ellipsis</h2>
+<p>Adds ellipsis to text prevent text overflowing.</p>
+<pre>
+<code class="scss">.label {
+ @include ellipsis($max-width);
+}</code>
+</pre>
+</article>
+
+<article class="article" id="media-queries">
+  <h2>Media Queries</h2>
+
+  <p>By default, media queries are mobile-first (the styles specified in the mixin will only apply to device sizes
+    greater than or equal to the specified breakpoint). The available values are those specified in the
+    <span class="code">$breakpoints</span> map. Another mixin is available if you want to target screen sizes below a
+    certain size.</p>
+
+  <pre><code class="scss">p {
+  font-size: 16px;
+  @include respond-above(device-large) {
+    font-size: 20px;
+  }
+}</code></pre>
+</article>
+
+<article class="article" id="no-bullet">
+  <h2>No Bullet</h2>
+
+  <p>Removes list-style-type, margin and padding attributes from <span class="code">ul</span> elements.</p>
+
+<pre><code class="scss">ul {
+  @include no-bullet;
+}</code></pre>
+</article>
+
+
+<article class="article" id="uppercase">
+<h2>Uppercase</h2>
+<p>Sets text-transform to uppercase and adds 0.1em letter-spacing. No arguments required.</p>
+<pre>
+<code class="scss">h3 {
+ @include uppercase;
+}
+</code>
+</pre>
+</article>
+
+{% endblock %}

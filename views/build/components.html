@@ -1,0 +1,246 @@
+<html>
+	<head>
+		<!-- Meta Tags !-->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<meta name="description" content="">
+		<!-- / Meta Tags !-->
+
+		<title>Set Title</title>
+
+		<link rel="stylesheet" href="../../assets/css/style.css">
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon-precomposed" href="/screen-icon.png">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="../../highlight.js"></script>
+		<!-- <script src="../../assets/js/app.js"></script> -->
+		<!-- Enable HTML5 elements in IE8 !-->
+			<!--[if lt IE 9]>
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+		<!-- / Enable HTML5 elements in IE8 !-->
+
+		<!-- <script>
+			$(document).ready(function() {
+				
+
+				var documentHead = $("head");
+				var document = $(".iframe-container");
+				$('<div class="phantom"><iframe id="myFrame" name="myFrame" src="about:blank"></div>').appendTo('body');
+				var d = $("iframe")[0].contentWindow.document; // contentWindow works in IE7 and FF
+		    d.open(); 
+		    d.close();
+				$("iframe").contents().find("head, body").remove();
+				$("html", d).append(documentHead, document);
+				documentHead.clone().prependTo("html");
+
+				$(".screen-tester-sizes-selected").click(function() {
+					$(".screen-tester-sizes-dropdown").toggleClass("is-visible");
+				});
+
+				$(".screen-tester-sizes-dropdown > li").on("click", function() {
+						var value = $(this).attr("data-size");
+					  	$("iframe").width(value);
+							// testingIframe.width(value);
+							// breakpointSelected.html( $(this).text() );
+							// breakpointDropdown.removeClass("is-visible");
+						});
+
+			});
+		</script> -->
+	</head>
+	<body class="page-layout-docs">
+		<div class="iframe-container">
+
+
+
+<div class="container-medium">
+  <h1 class="page-header">Components</h1>
+  <article id="buttons" class="article">
+    <div class="announcement">Are you an estate agent? <a href="{{URL_BASE}}for-agents">Click here</a> to find out more about how you can work with us</div>
+  </article>
+  <div class="example"></div>
+  <article>{{ components.postcodeFinder() }}</article>
+  <div class="margin-bottom double-unit">
+    {{ components.masthead(
+    _context,
+    {
+    'h1': 'usernam2e',
+    'bgImage': '../images/bg/family-tv@2x.jpg',
+    'subheading': 'Get more money for your home'
+    })
+    }}
+  </div>
+  <div class="margin-bottom double-unit">
+    {{ components.masthead(
+    _context,
+    {
+    heading: 'usernam2e',
+    })
+    }}
+  </div>
+  <article class="article">
+    <h2>Bulleted List</h2>
+    <div class="example">
+      <ul class="bulleted-list">
+        <li><strong>Guidance & advice</strong>: Chances are you’re new to the selling game so your estate agent is on-hand to offer you access to their experience and connections. This advice relates to things like valuing your property, tapping into local market knowledge and connecting you with local service providers such as conveyancers etc.</li>
+        <li><strong>Marketing & advertising</strong>: Your house will only be sold with expert marketing. Your agent should have knowledge on online and offline marketing channels, make sure buyers have access to professional property brochures and situate a ‘For Sale’ sign outside your property. In most cases, this also includes submitting your property to the main property portals, RightMove, Zoopla and OnTheMarket.</li>
+        <li><strong>Sales and lead management</strong>: An estate agent is responsible for managing the flow of the sales process. This includes negotiating a sales price and acting on offers, organising and hosting visits and vetting any leads that are interested in your property.</li>
+        <li><strong>When do I pay my estate agent?</strong>: Fees typically become due when contracts are exchanged but you don’t actually pay until the sale is done and dusted. No estate agent should be paid before the sale money is transferred and available.</li>
+      </ul>
+    </div>
+  </article>
+  <article id="buttons" class="article">
+    <h2>Buttons</h2>
+    <p>Buttons can be created using either <span class="code">button</span> or <span class="code">a</span> elements.</p>
+    <h3>Colors</h3>
+    <div class="example">
+      <button>Button</button>
+      <button class="primary">Primary</button>
+      <button class="secondary">Secondary</button>
+      <button disabled="">Disabled</button>
+    </div>
+    <pre></pre>
+    <h3>Sizes</h3>
+    <div class="example">
+      <button class="primary small">X-Small</button>
+      <button class="primary">Small</button>
+      <button class="primary medium">Medium</button>
+      <button class="primary large">Large</button>
+      <button class="primary x-large">X-Large</button>
+    </div>
+    <pre></pre>
+    <h3>Rounded</h3>
+    <div class="example">
+      <button class="primary medium rounded">Primary</button>
+      <button class="secondary medium rounded">Secondary</button>
+    </div>
+    <pre></pre>
+    <h3>Bordered</h3>
+    <div class="example">
+      <button class="primary bordered">Primary</button>
+      <button class="secondary bordered">Secondary</button>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="dropdown" class="article">
+    <h2>Dropdown</h2>
+    <p>
+      Dropdowns are positioned absolutely, so you need to make sure the parent element has position: relative set on
+      it.
+    </p>
+    <div class="example">
+      <li class="user-actions dropdown"><a href="#">Dropdown Toggle</a>
+        <div class="dropdown-menu show">
+          <ul>
+            <li><a>Dashboard</a></li>
+            <li><a>Settings</a></li>
+            <li class="border-top"><a>Logout</a></li>
+          </ul>
+        </div>
+      </li>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="panel" class="article">
+    <h2>Panel</h2>
+    <div class="example">
+      <div class="container-500">
+        <div class="panel">
+          <section class="panel-header">
+            <h3 class="text-center">Your Basket</h3>
+          </section>
+          <section class="panel-section text-center">You currently have no jobs in your work basket</section>
+          <section class="panel-section"><a class="button primary large block">Get Quote</a></section>
+        </div>
+      </div>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="hero" class="article">
+    <h2>Hero</h2>
+    <div class="example">
+      <div style="max-height: 400px" class="hero homepage">
+        <div class="hero-content">
+          <div class="container-wide">
+            <h1>Hero Header</h1>
+            <p>Hero sub-heading</p>
+            <div class="hero-actions"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="labels" class="article">
+    <h2>Labels</h2>
+    <div class="example">
+      <div class="label-success">Label</div>
+      <div class="label-info">Label</div>
+      <div class="label-error">Label</div>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="progress-bars" class="article">
+    <h2>Progress Bars</h2>
+    <div class="example">
+      <div class="progress-bar">
+        <div class="progress-bar-label">Excellent</div>
+        <div class="progress-bar-inner">
+          <div style="width: 50%" class="progress-bar-value"></div>
+        </div>
+      </div>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="form" class="article">
+    <h2>Form</h2>
+    <div class="example">
+      <div class="container-500">
+        <div class="panel">
+          <form class="panel-section">
+            <div class="form-wrap">
+              <div class="flex-row gutter-half">
+                <div class="columns-6">
+                  <input placeholder="First name" class="form-control"/>
+                </div>
+                <div class="columns-6">
+                  <input placeholder="Last name" class="form-control"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-wrap">
+              <input placeholder="Email" class="form-control"/>
+            </div>
+            <div class="form-wrap">
+              <input placeholder="Password" class="form-control"/>
+            </div>
+            <div class="form-wrap">
+              <input type="submit" value="Create Your Account" class="button blue block large"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <pre></pre>
+  </article>
+  <article id="tabs" class="article">
+    <h2>Tabs</h2>
+    <div class="example">
+      <nav class="tabbed-nav">
+        <ul>
+          <li class="is-active">Servicing</li>
+          <li>Repairs</li>
+          <li>Inspections</li>
+        </ul>
+      </nav>
+    </div>
+    <pre></pre>
+  </article>
+</div>

@@ -1,0 +1,147 @@
+@@include('./template.html')
+
+<h1 class="page-header">HTML & CSS Guidelines</h1>
+<article class="article">
+<h2>General Rules</h2>
+<p>
+<ul>
+  <li>Use hyphenated class names (e.g. "<span class="code">.modal-header</span>") - no underscores or camelCase.</li>
+  <li>Use shorthand when appropriate (e.g. padding: 15px 0; rather than padding: 15px 0px 15px 0px;).</li>
+  <li>Vendor prefixing is handled by Rails, so there's no need to use mixins.</li>
+  <li>Units are always specified in PX, rather than EMs or REMs.</li>
+  <li>Comments rarely hurt -  make use of them, especially where a rule may seem counter-intuitive to the next person.</li>
+  <li>In your markup, order classes like so <span class="code">&lt;div class="component modifiers helpers state js"&gt;</span>.</li>
+  <li>Avoid body classes where possible. Stick to modifiers within your component.</li>
+  <li>ID and tag selectors can complicate things because CSS specificity is a pain. Avoid using these for CSS.</li>
+  <li>Where possible, avoid using <span class="code">@extend</span>, as overusage can significantly impact compile-time.</li>
+</ul>
+</p>
+
+<p>Our CSS is loosely based on the principles of SMACSS, OOCSS and BEM. Since OOCSS is an abstract coding methodology, BEM is a concrete application of OOCSS, and SMACSS is an OOCSS-focused organizational structure, they actually play together very nicely.</p>
+
+<h3>Semantic Names</h2>
+<p>We always use complete words to name our classes. For example, instead of <span class="code">.btn</span>, we use <span class="code">.button</span>. If you're unsure how to name a component, check out other pattern libraries like Bootstrap, Founation or Semantic UI</p>
+
+<h3>Parent-Child Relationships</h3>
+<p>Adopting a naming convention for parent-child relationships between objects can really help clean up your CSS.
+This approach helps us avoid polluting the global name-space with generic classes that should only be used within a specific component. In the first example, if a title object was declared in another context it could conflict with the post title. Not so in the second example. Because the child object is prefixed with the parent object's name it is less likely that an accidental conflict will occur. Win and win.</p>
+<p>To use it simply prefix the name of the of the child object with the name of the parent object. I like to separate with a single dash.</p>
+<pre>
+<code>
+.post {
+  margin: 2em;
+
+  .title {
+    font-size: 2em;
+    font-weight: normal;
+  }
+}
+</code>
+</pre>
+
+<p>Would be better written as:</p>
+<pre>
+<code>
+// Posts
+.post {
+  margin: 2em 0;
+}
+.post-title {
+  font-size: 2em;
+  font-weight: normal;
+}
+</code>
+</pre>
+
+<h3>Using modifiers</h3>
+<p>Modifiers are used to indicate that the object is in a certain state or make small modifications to existing behavior.</p>
+<p>Component modifiers should alway use the ampersand operator to tightly associate the modifier with the object and avoid the selector impacting other objects (is this true in the context of nested selectors?).</p>
+
+<h3>States</h3>
+<p>State classes show that something is enabled, expanded, hidden etc. For these classes, use the <span class="code">.component.is-state</span> pattern.</p>
+
+<p>For example, showing a dropdown menu can be done using something like <span class="code">.dropdown-menu.is-open</span>.</p>
+
+
+<h3>Behaviour</h3>
+<p>The second a modifier can be used is to make small changes to existing behavior. Here's an example using modifers to allow for different size textboxes:</p>
+
+<pre>
+<code>
+.textbox {
+  font: 13px sans-serif;
+  border: 1px solid #ccc;
+  border-top: 1px solid #999;
+  border-radius: 2px;
+  padding: 2px 4px;
+
+  &.large {
+   font-size: 18px;
+  }
+
+  &.small {
+    font-size: 11px;
+    padding: 1px 2px;
+  }
+}
+</code>
+</pre>
+
+<h3>Global Modifers / Helpers</h3>
+<p>There are times when it makes perfect sense to make modifers global. These  should genearlly only change a single property, and should use the !important flag. Here are a couple of examples. These are included in the helpers section.</p>
+<code>
+.block        { display: block        !important; }
+.inline       { display: inline       !important; }
+.inline-block { display: inline-block !important; }
+
+.text-left   { text-align: left   !important; }
+.text-center { text-align: center !important; }
+.text-right  { text-align: right  !important; }
+</code>
+
+
+
+Avoid nested selectors for more modular CSS
+
+We've written before about the dangers of nesting your CSS selectors too deeply. The Inception Rule is a good one for getting you to avoid some mangled CSS selectors. But there's actually a lot of benefit to taking this concept a couple of steps farther. What happens when you avoid nesting for almost all of your major selectors?
+
+http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css
+
+
+</article>
+
+<article class="article">
+<h2>SASS Maps</h2>
+<h2>Extends</h2>
+</article>
+<article>
+<h2>Avoid presentationl naming</h2>
+<p>It's generally best to avoid naming classes
+http://tympanus.net/codrops/2013/01/22/defending-presentational-class-names/
+</article>
+<article class="article">
+<h2>Media Queries</h2>
+<p>Media queries are kept inline, and reference a set of global breakpoints specified in <span class="code">config/breakpoints</span>.</p>
+<p>By default, a mobile-first approach shhould be taken throughouth the platform. The mixins are configured as such.</p>
+<p>For components with multiple descender selectors, we declare media rules after every one, so you can see how a selector responds to different breakpoints in one place (as opposed to declaring these at the end of the parent selector).</p>
+
+</article>
+
+<article class="article">
+<h2>JavaScript</h2>
+<p>Separate style and behavior concerns by using .js- prefixed classes for behavior. For example:</p>
+
+<pre>
+<code class="javascript">// JavaScript (with jQuery)
+  $(".js-open-content-menu").on("click", function(e){
+  openMenu();
+  });
+</code>
+</pre>
+
+
+<p>The .js- class makes it clear to the next person changing this template that it is being used for some JavaScript event and should be approached with caution. Be sure to use a descriptive class name. The intent of .js-open-content-menu is more clear than .js-menu. A more descriptive class is less likely to conflict with other classes and it’s lots easier to search for. The class should almost always include a verb since it’s tied to an action.</p>
+
+<p>.js- classes should never appear in your stylesheets. They are for JavaScript only. Inversely, there is never a reason to see presentation classes like .header-nav-button in JavaScript. You will see state classes like .is-state in your JavaScript and your stylesheets as .component.is-state.</p>
+</article>
+{% endblock %}

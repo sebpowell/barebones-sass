@@ -1,30 +1,59 @@
-// Load Gulp Dependencies
+/////////////////////////////////////////////////////
+// Gulp Dependencies
+/////////////////////////////////////////////////////
+
 var gulp = require("gulp"),
-		sass = require("gulp-ruby-sass"),
 		autoprefixer = require("gulp-autoprefixer"),
-		uglify = require("gulp-uglify"),
-		concat = require("gulp-concat");
+		concat = require("gulp-concat"),
+		jade = require('gulp-jade'),
+		sass = require("gulp-ruby-sass"),
+		uglify = require("gulp-uglify");
+
+/////////////////////////////////////////////////////
+// HTML
+/////////////////////////////////////////////////////
+
+gulp.task("jade", function() {
+	gulp.src('views/**/!(_)*.jade')
+		.pipe(jade({pretty: true}))
+		.pipe(gulp.dest("views/build"));
+});
+
+/////////////////////////////////////////////////////
+// SASS
+/////////////////////////////////////////////////////
 
 gulp.task('sass', function () {
-	return sass('css/style.scss', { style: 'compact' })
+	return sass('assets/css/style.scss', { style: 'compact' })
 	.on('error', function (err) {
 		console.error('Error!', err.message);
 	})
-	.pipe(autoprefixer("last 2 version", "> 1%"))
-	.pipe(gulp.dest('css'));
+	// .pipe(autoprefixer("last 2 version", "> 1%"))
+	.pipe(gulp.dest(function(file) {
+		return file.base;
+	 }));
 });
+
+/////////////////////////////////////////////////////
+// JavaScript
+/////////////////////////////////////////////////////
 
 gulp.task("uglify", function() {
-	gulp.src(["js/**/*.js"])
-		.pipe(concat("app.js"))
-		.pipe(gulp.dest(""))
+	gulp.src(["assets/js/**/*.js"])
+		.pipe(concat("application.js"))
+		.pipe(gulp.dest("assets/js"))
 });
+
+/////////////////////////////////////////////////////
+// Watch
+/////////////////////////////////////////////////////
 
 gulp.task("watch", function() {
-	gulp.watch(['**/*/*.sass', '**/*/*.scss'], ['sass']);
-	gulp.watch(['js/**/*.js'], ['uglify']);
+	gulp.watch(['dist/css/**/*.sass', 'dist/css/**/*.scss', 'assets/css/**/*.sass', 'assets/css/**/*.scss'], ['sass']);
+	gulp.watch(['dist/js/**/*.js'], ['uglify']);
+	gulp.watch(['views/**/*.jade'], ['jade']);
 });
 
-gulp.task("default", function() {
+gulp.task("default", ["watch"], function() {
 
 });

@@ -1,0 +1,246 @@
+{% extends "../layouts/docs.html.tpl" %}
+{% block docs_body %}
+
+<h1 class="page-header">Globals</h1>
+
+<article class="article">
+<h2>Breakpoints</h2>
+<p>Global breakpoint values are stored in <span class="code">globals/breakpoints.scss</span>.</p>
+
+<table class="table-bordered">
+<thead>
+<th>Key</th>
+<th>Devices</th>
+<th>Size</th>
+</thead>
+<tr>
+<td>device-small</td>
+<td>Smartphones</td>
+<td>480px</td>
+</tr>
+<tr>
+<td>device-medium</td>
+<td>Tablets</td>
+<td>780px</td>
+</tr>
+<tr>
+<td>device-medium-large</td>
+<td>Laptops</td>
+<td>900px</td>
+</tr>
+<tr>
+<td>device-large</td>
+<td>Desktop</td>
+<td>960px</td>
+</tr>
+<tr>
+<td>device-xlarge</td>
+<td>Wide Screen</td>
+<td>1280px</td>
+</tr>
+</table>
+</article>
+
+<article class="article">
+<h2>Colours</h2>
+<p>Colors and their shades and tints are stored in <span class="code">config/colors.scss</span> and are accessed using the <span class="code">colors($category, $value)</span> function. The first argument specifies the category, the second (optional) returns the specified shade or tint.</p>
+
+<pre>
+<code>
+// Returns a lighter version of the primary brand color.
+.object {
+  background-color: colors(brand-primary, light);
+}
+
+// Returns the base primary brand color.
+.object {
+  background-color: colors(brand-primary);
+}
+</code>
+</pre>
+
+<table class="table-bordered">
+<thead>
+<th>Palette</th>
+<th>Values</th>
+</thead>
+<tr>
+<td>
+brand-primary
+</td>
+<td>
+  <ul class="no-bullet">
+    <li><span class="swatch small background-brand-primary-light"></span>light</li>
+    <li><span class="swatch small background-brand-primary"></span>base (default)</li>
+    <li><span class="swatch small background-brand-primary-dark"></span>dark</li>
+  </ul>
+</td>
+</tr>
+<tr>
+<td>
+brand-secondary
+</td>
+<td>
+  <ul class="no-bullet">
+    <li><span class="swatch small background-brand-secondary-x-light"></span>x-light</li>
+    <li><span class="swatch small background-brand-secondary-light"></span>light</li>
+    <li><span class="swatch small background-brand-secondary-base"></span>base (default)</li>
+    <li><span class="swatch small background-brand-secondary-dark"></span>dark</li>
+  </ul>
+</td>
+</tr>
+<tr>
+<td>
+keylines
+</td>
+<td>
+  <ul class="no-bullet">
+    <li><span class="swatch small background-keyline-light"></span>light</li>
+    <li><span class="swatch small background-keyline-medium"></span>medium</li>
+    <li><span class="swatch small background-keyline-dark"></span>dark</li>
+  </ul>
+</td>
+</tr>
+<tr>
+<td>
+greyscale
+</td>
+<td>
+  <ul class="no-bullet">
+    <li><span class="swatch small background-greyscale-x-light"></span>x-light</li>
+    <li><span class="swatch small background-greyscale-light"></span>light</li>
+    <li><span class="swatch small background-greyscale"></span>base</li>
+    <li><span class="swatch small background-greyscale-medium"></span>mid</li>
+    <li><span class="swatch small background-greyscale-medium-dark"></span>mid-dark</li>
+    <li><span class="swatch small background-greyscale-dark"></span>dark</li>
+  </ul>
+</td>
+</tr>
+</table>
+</article>
+
+<article class="article">
+<h2>Layout Units</h2>
+<p>Layout units are used to keep spacing consistent throughout the project. Default values are stored in <span class="code">config/sizing.scss</span> and are multiples of the base font size (16px). These values can be accessed using the <span class="code">sizes()</span> function.</p>
+<table class="table-bordered">
+<thead>
+<th>Key</th>
+<th>Value</th>
+</thead>
+<tr>
+<td>quarter</td>
+<td>4px</td>
+</tr>
+<tr>
+<td>half</td>
+<td>8px</td>
+</tr>
+<tr>
+<td>base</td>
+<td>16px</td>
+</tr>
+<tr>
+<td>double-half</td>
+<td>24px</td>
+</tr>
+<tr>
+<td>double</td>
+<td>32px</td>
+</tr>
+<tr>
+<td>triple</td>
+<td>48px</td>
+</tr>
+<tr>
+<td>quadruple</td>
+<td>64px</td>
+</tr>
+</table>
+</article>
+
+<article class="article">
+<h2>Stacking</h2>
+<p>All <span class="code">z-index</span> values are stored in <span class="code">config/z-index</span>. The value is determined by the element's position in the list. Items lower on the list have higher z-indexes. To create a new element, add it to the list, then access the value using the <span class="code">layer()</span> function.</p>
+<strong>Note to self: Use map instead of mixin!</strong>
+<pre>
+<code class="scss">
+.element {
+ z-index: layer(modal);
+}
+</code>
+</pre>
+
+</article>
+
+
+<article class="is-hidden">
+  <h2>Typographic Scale</h2>
+
+  <p>We use a typographic scale that Typographic scale, line-height resets</p>
+
+  <p>The default body text is 15px. For optimum reading length, the paragraph-width is capped at 635px.</p>
+
+  <div class="example">
+    <table class="table-data is-bordered">
+      <thead>
+      <th></th>
+      <th>Mobile (> 700px)</th>
+      <th>Mobile (> 700px)</th>
+      </thead>
+      <tr>
+        <td>
+          <h1>Heading 1</h1>
+        </td>
+        <td>42px</td>
+        <td>48px</td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Heading 2</h2>
+        </td>
+        <td>28x</td>
+        <td>32px</td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Heading 3</h3>
+        </td>
+        <td>20px</td>
+        <td>24px</td>
+      </tr>
+      <tr>
+        <td>
+          <h4>Heading 4</h4>
+        </td>
+        <td>20px</td>
+        <td>20px</td>
+      </tr>
+      <tr>
+        <td>
+          <h5>Heading 5</h5>
+        </td>
+        <td>14px</td>
+        <td>42px</td>
+      </tr>
+      <tr>
+        <td>
+          <h6>Heading 6</h6>
+        </td>
+        <td>12px</td>
+        <td>42px</td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur facilisis mauris vitae dui congue
+            maximus. Quisque tincidunt laoreet massa, at commodo velit semper at.
+          </p>
+        </td>
+        <td>16px</td>
+        <td>16px</td>
+      </tr>
+    </table>
+  </div>
+</article>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+ $(window).ready(function()
+{
+
+	$('.docs-navigation').on('click', '> ul > li > a', function(event)
+	{
+
+		if($(event.currentTarget).parents('li').length !== 1)
+			return;
+
+		event.preventDefault();
+		// close all other menus
+		$('.docs-navigation .is-open').removeClass('is-open');
+
+		$(event.currentTarget).addClass('is-open');
+	})
+
+})
+</script>
+		<!-- Google Analytics !
+	</head>
+
+
+
+ -->

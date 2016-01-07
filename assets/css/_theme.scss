@@ -1,0 +1,298 @@
+@function theme($value) {@return map-get($theme, $value);}
+
+
+@function themes($category, $value: '') {
+	@return map-get(map-get($theme, $category), $value);
+}
+
+What if we want a fixed grid? https://buffer.com/pablo
+
+// https://github.com/oddbird/susy
+// https://benfrain.com/responsive-grid-frustrations-susy-zen-and-sub-pixel-rounding/
+// http://zengrids.com/
+// https://github.com/JohnAlbin/zen-grids/blob/master/sass/zen-grids/_background.scss
+// http://www.zell-weekeat.com/asymmetric-layouts-with-susy/
+
+Astmetric grids? How does golden ratio work? 
+
+$breakpoints: (
+	device-x-small: 350px,
+	device-small: 480px,
+	device-medium: 780px,
+	device-medium-large: 900px,
+	device-large: 1080px,
+	device-x-large: 1200px
+);
+
+
+=gutter($multiple: 1) {
+	* multiple
+}
+
+@mixin respond-above($breakpoint-name) {
+	@media (min-width: breakpoint($breakpoint-name)) {
+		@content;
+	}
+}
+
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+
+
+$theme: (
+
+	// To remove
+	body-background: white,
+	mobile-first: false,
+	
+	// Padding around body // use bleeds for full bleed stuff
+	mobile-padding: 24px,
+	font-base-size: 16px,
+	debug: true,
+
+	palette: (
+
+		brand: (
+			primary: blue,
+		),
+	),
+	// Grid
+	grid: (
+		columns: 12,
+		site-width: 1200px,
+		gutter: 1/4,
+		gutter-type: margin
+	),
+	columns: 12,
+	gutter: 1/4,
+	// gutter: 24px,
+	gutter-type: margin,
+	
+	grid-color: null, 
+	gutter-position: inside-static,
+	site-width: 1000px,
+
+	brand-primary: #0D3650,
+	brand-secondary: #fe5607,
+	
+	fonts: (
+		primary: #{'Roboto', sans-serif},
+		secondary: Helvetica
+	)
+);
+
+.body {
+	background: map-deep-get($theme, palette, brand, primary);
+}
+
+
+html {
+	font-family: themes(fonts, primary);
+	font-size: theme(font-primary);
+}
+
+
+@mixin bleed() {
+	margin-left: -(theme(mobile-padding));
+	margin-right: -(theme(mobile-padding));
+}
+
+@mixin grid-background($gutter-type) {
+	@if $gutter-type == "padding" {
+		background-image: linear-gradient(to right, rgba(00,00,00, 0.85), rgba(00,00,00, 0.05) 100%, rgba(0, 0, 0, 0) 100%);
+		background-size: 100% / theme(columns);
+	}
+
+	@if $gutter-type == "margin" {
+		background-image: linear-gradient(to right, rgba(00,00,00, 0.25), rgba(00,00,00, 0.25) (100% - (100% / $guttersPerColumn)), rgba(0, 0, 0, 0) (100% - (100% / $guttersPerColumn)));
+		background-size: $columnWidth + $gutterWidth;
+	}
+}
+
+// change to grid-container
+@mixin container() {
+	max-width: themes(grid, site-width);
+	@if theme(debug) == true {
+		@include grid-background(theme(gutter-type));
+	};
+	&:after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+
+
+	$width: 20;
+	margin: 0 auto;
+
+
+	
+	background-origin: content-box;
+	background-clip: content-box;
+	background-position: left top;
+
+}
+
+$gutters: (theme(columns) / theme(gutter)) + (theme(columns) - 1);
+$gutterWidth: 100% / $gutters;
+$totalGutterWidth: $gutterWidth * (theme(columns) - 1);
+$columnWidth: (100% - $totalGutterWidth) / theme(columns);
+$totalColumnWidth: $columnWidth + $gutterWidth;
+$guttersPerColumn: (1 / theme(gutter)) + 1;
+
+@mixin gallery-item($columns, $device: "device-medium") {
+
+	@if theme(gutter-type) == "margin" {
+
+		margin-bottom: $gutterWidth;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		@include respond-above(device-medium) {
+			float: left;
+			width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1));
+			margin-right: $gutterWidth;
+			
+			$nth-child: $columns - 1;
+			&:nth-last-child(-n+ #{$nth-child}) {
+				margin-bottom: 0;
+			}
+			&:nth-child(3n + 1) {
+				clear: both;
+			}
+			&:nth-child(#{$nth-child}n) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+
+@mixin span($columns, $device: "device-medium", $position: "") {
+	
+	
+	// margin-right: $gutterWidth;
+	@if theme(gutter-type) == "padding" {
+		$columnWidth: 100% / theme(columns);
+		padding-right: theme(gutter);
+		width: 100%;
+		@include respond-above(device-medium) {
+			width: ($columnWidth * $columns);
+		}
+	}
+
+	@if theme(gutter-type) == "margin" {
+		
+		width: 100%;
+		
+		
+		@if map-has-key($breakpoints, $device) {
+			@include respond-above($device) {
+				width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1));
+				@if $position == "last" {
+					margin-right: 0;
+					float: right;
+				}
+				@else {
+					float: left;
+					margin-right: $gutterWidth;
+				}
+				// @if $offset != null {
+				// 	margin-left: $offset;
+				// }
+			}
+		}
+		@else {
+			@include respond-above($device) {
+				background: yellow;
+			}
+		}
+	}
+}
+
+@mixin-new-row;
+
+@mixin offset($columns) {
+	// margin-left: ($columnWidth * $columns) + ($gutterWidth * ($columns));
+}
+
+
+
+
+
+// gallery?
+
+.test-container {
+	@include container;
+	padding: 100px 0;
+}
+
+
+html {
+	// background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4MCUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  margin: 0 auto;
+	background-size: 100%;
+	
+}
+
+.iframe-container {
+	@include container();
+}
+
+
+// 4 columns assymetic layout
+
+// gallery mixin - different widths at different viewport sizes
+
+// .sidebar {
+// 	+span(6) 
+// 	+respond-above(device-medium) {
+// 		span(8)
+// 	}
+// }
+
+// .main-content {
+
+// }
+
+
+// // toggle grid
+// // COlums on different viewport sizes?
+
+// How to set different margins at different breakpoints
+
+// use padding on right, minus last one
+// =span()
+
+// last colum should float right? 
+
+// use spans to create offsets
+
+// default grid breakpoint
+// +span(desktop, 6);
+// +span(mobile, 8);
+// +span(tablet, 9);
+// +offset(tablet, 3)
+// +offset()
+// +respond-above(dev)
+// margin-left: span()
+// +container()
+
+// // Remove the need for containers
+
+// $module: (
+
+// 	container: 1150px; // Max-width
+
+// )
+
+
+
+
+

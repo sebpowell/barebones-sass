@@ -1,0 +1,179 @@
+{% extends "../layouts/docs.html.tpl" %}
+{% block docs_body %}
+
+<h1 class="page-header">Helpers</h1>
+
+<article class="article" id="background-color">
+  <h3 id="background-color">Background Color</h3>
+
+  <p>Generates a background-color helper for all colors specified in the colors map.</p>
+
+  <div class="example">
+    <div style="height: 40px" class="background-brand-primary margin-bottom-half"></div>
+    <div style="height: 40px" class="background-brand-secondary margin-bottom-half"></div>
+    <div style="height: 40px" class="background-greyscale-light margin-bottom-half"></div>
+    <div style="height: 40px" class="background-greyscale-dark"></div>
+  </div>
+
+  <pre><code class="html">&lt;div class="background-primary"&gt;...&lt;/div&gt;
+&lt;div class="background-secondary"&gt;...&lt;/div&gt;
+&lt;div class="background-greyscale-light"&gt;...&lt;/div&gt;
+&lt;div class="background-greyscale-dark"&gt;...&lt;/div&gt;</code></pre>
+</article>
+
+<article class="article" id="borders">
+  <h3 id="borders">Borders</h3>
+
+  <p>Adds a keyline to any element. The following variants are available:</p>
+
+  <ul>
+    <li>border-left</li>
+    <li>border-top</li>
+    <li>border-right</li>
+    <li>border-bottom</li>
+    <li>border-all</li>
+    <li>no-border</li>
+  </ul>
+
+<pre><code class="html">&lt;div class="border-top"&gt;...&lt;/div&gt;
+ &lt;div class="border-left"&gt;...&lt;/div&gt;
+ &lt;div class="no-border"&gt;...&lt;/div&gt;
+</code></pre>
+</article>
+
+<article class="article">
+  <h3 id="floats">Floats &amp; Clearfix</h3>
+
+  <div class="example">
+    <div class="clearfix">
+      <div class="float-left">Floated left</div>
+      <div class="float-right">Floated right</div>
+    </div>
+  </div>
+
+<pre><code class="html">&lt;div class="clearfix"&gt;
+ &lt;div class="float-left"&gt;Floated left&lt;/div&gt;
+ &lt;div class="float-right"&gt;Floated right&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</article>
+
+<article id="margin" class="article">
+  <h3>Margin & Padding</h3>
+
+  <p>Margin helpers are particularly useful to help fine tune spacing in between elements, without needing to write
+    custom selectors. The helper classes are available for both padding and margin.</p>
+
+  <li>padding-{direction}, margin-{direction} followed by the unit value</li>
+
+  <p>
+  <ul>
+    <li>quarter</li>
+    <li>half</li>
+    <li>base</li>
+    <li>double-half</li>
+    <li>double</li>
+    <li>triple</li>
+    <li><strong>.no-margin / .no-padding</strong> removes any padding or margins.</li>
+  </ul>
+  </p>
+
+  <div class="example">
+    <div style="height: 40px" class="background-greyscale-light margin-bottom quarter-unit">Margin Bottom Quarter</div>
+    <div style="height: 40px" class="background-greyscale-light margin-bottom half-unit">Margin Bottom Half</div>
+    <div style="height: 40px" class="background-greyscale-light margin-bottom base-unit">Margin Bottom Base</div>
+    <div style="height: 40px" class="background-greyscale-light margin-bottom double-half-unit">Margin Bottom Double-Half</div>
+    <div style="height: 40px" class="background-greyscale-light margin-bottom triple-unit">Margin Bottom Triple</div>
+    <div style="height: 40px" class="background-greyscale-light margin-bottom quadruple-unit">Margin Bottom Quadruple</div>
+  </div>
+</article>
+
+<article class="article" id="text-align">
+  <h3>Text Align</h3>
+
+  <div class="example">
+    <p class="text-left">Align left</p>
+
+    <p class="text-center">Align center</p>
+
+    <p class="text-right">Align right</p>
+  </div>
+
+  <pre><code class="html">&lt;div class="text-left"&gt;...&lt;/div&gt;
+&lt;div class="text-center"&gt;...&lt;/div&gt;
+&lt;div class="text-right"&gt;...&lt;/div&gt;</code></pre>
+</article>
+
+<article class="article" id="colors">
+  <h3>Text Color</h3>
+
+  <p>Sets text color for an element. Can either be set on the parent, or on the element itself.</p>
+
+  <div class="example">
+    <p class="text-primary">This is brand primary text</p>
+
+    <p class="text-muted">This is muted text</p>
+
+    <p class="text-error">This is error text</p>
+  </div>
+
+  <pre><code class="html">&lt;div class="text-primary"&gt;...&lt;/div&gt;
+&lt;div class="text-muted"&gt;...&lt;/div&gt;
+&lt;div class="text-error"&gt;...&lt;/div&gt;</code></pre>
+</article>
+
+<article class="article">
+  <h3 id="text-sizes">Text Sizes</h3>
+
+  <p>Helpers for creating the various text sizes specified in the text-sizes.scss file (if you don't want to use the
+    heading helpers). Note that this method only sets the size - the weight is inherited from the parent.</p>
+
+  <ul>
+    <li>text-x-small</li>
+    <li>text-small</li>
+    <li>text-base</li>
+    <li>text-medium</li>
+    <li>text-large</li>
+    <li>text-x-large</li>
+  </ul>
+</article>
+
+
+<article class="article" id="text-transform">
+  <h3>Text Transform</h3>
+
+  <div class="example">
+    <p class="text-uppercase">Text uppercase</p>
+
+    <p class="text-capitalise">Text capitalized</p>
+  </div>
+
+  <pre><code class="html">&lt;div class="text-uppercase"&gt;...&lt;/div&gt;
+&lt;div class="text-capitalized"&gt;...&lt;/div&gt;</code></pre>
+</article>
+
+<article id="text-weight" class="article">
+  <h3>Text Weight</h3>
+
+  <p>Helpers for creating the various text sizes specified in the text-sizes.scss file (if you don't want to use the
+    heading helpers). Note that this method only sets the size - the weight is inherited from the parent.</p>
+
+  <ul>
+    <li>100</li>
+    <li>200</li>
+    <li>300</li>
+    <li>400</li>
+    <li>500</li>
+  </ul>
+
+  <div class="example">
+    <div class="text-weight-200">Weight 100</div>
+    <div class="text-weight-500">Weight 200</div>
+    <div class="text-weight-600">Weight 300</div>
+    <div class="text-weight-700">Weight 400</div>
+    <div class="text-weight-800">Weight 500</div>
+  </div>
+</article>
+
+{% endblock %}
+

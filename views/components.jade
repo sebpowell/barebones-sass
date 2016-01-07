@@ -1,0 +1,160 @@
+include _inc/_head.html
+
+.container-medium
+  h1.page-header Components
+  article#buttons.article
+    .announcement
+      | Are you an estate agent? 
+      a(href='{{URL_BASE}}for-agents') Click here
+      |  to find out more about how you can work with us
+  .example
+    
+  article
+    | {{ components.postcodeFinder() }}
+  .margin-bottom.double-unit
+    | {{ components.masthead(
+    | _context,
+    | {
+    | 'h1': 'usernam2e',
+    | 'bgImage': '../images/bg/family-tv@2x.jpg',
+    | 'subheading': 'Get more money for your home'
+    | })
+    | }}
+  .margin-bottom.double-unit
+    | {{ components.masthead(
+    | _context,
+    | {
+    | heading: 'usernam2e',
+    | })
+    | }}
+  article.article
+    h2 Bulleted List
+    .example
+      ul.bulleted-list
+        li
+          strong Guidance & advice
+          | : Chances are you’re new to the selling game so your estate agent is on-hand to offer you access to their experience and connections. This advice relates to things like valuing your property, tapping into local market knowledge and connecting you with local service providers such as conveyancers etc.
+        li
+          strong Marketing & advertising
+          | : Your house will only be sold with expert marketing. Your agent should have knowledge on online and offline marketing channels, make sure buyers have access to professional property brochures and situate a ‘For Sale’ sign outside your property. In most cases, this also includes submitting your property to the main property portals, RightMove, Zoopla and OnTheMarket.
+        li
+          strong Sales and lead management
+          | : An estate agent is responsible for managing the flow of the sales process. This includes negotiating a sales price and acting on offers, organising and hosting visits and vetting any leads that are interested in your property.
+        li
+          strong When do I pay my estate agent?
+          | : Fees typically become due when contracts are exchanged but you don’t actually pay until the sale is done and dusted. No estate agent should be paid before the sale money is transferred and available.
+  article#buttons.article
+    h2 Buttons
+    p
+      | Buttons can be created using either 
+      span.code button
+      |  or 
+      span.code a
+      |  elements.
+    h3 Colors
+    .example
+      button Button
+      button.primary Primary
+      button.secondary Secondary
+      button(disabled='') Disabled
+    pre.
+    h3 Sizes
+    .example
+      button.primary.small X-Small
+      button.primary Small
+      button.primary.medium Medium
+      button.primary.large Large
+      button.primary.x-large X-Large
+    pre.
+    h3 Rounded
+    .example
+      button.primary.medium.rounded Primary
+      button.secondary.medium.rounded Secondary
+    pre.
+    h3 Bordered
+    .example
+      button.primary.bordered Primary
+      button.secondary.bordered Secondary
+    pre.
+  article#dropdown.article
+    h2 Dropdown
+    p
+      | Dropdowns are positioned absolutely, so you need to make sure the parent element has position: relative set on
+      | it.
+    .example
+      li.user-actions.dropdown
+        a(href='#') Dropdown Toggle
+        .dropdown-menu.show
+          ul
+            li
+              a Dashboard
+            li
+              a Settings
+            li.border-top
+              a Logout
+    pre.
+  article#panel.article
+    h2 Panel
+    .example
+      .container-500
+        .panel
+          section.panel-header
+            h3.text-center Your Basket
+          section.panel-section.text-center
+            | You currently have no jobs in your work basket
+          section.panel-section
+            a.button.primary.large.block Get Quote
+    pre.
+  article#hero.article
+    h2 Hero
+    .example
+      .hero.homepage(style='max-height: 400px')
+        .hero-content
+          .container-wide
+            h1 Hero Header
+            p Hero sub-heading
+            .hero-actions
+    pre.
+  article#labels.article
+    h2 Labels
+    .example
+      .label-success Label
+      .label-info Label
+      .label-error Label
+    pre.
+  article#progress-bars.article
+    h2 Progress Bars
+    .example
+      .progress-bar
+        .progress-bar-label Excellent
+        .progress-bar-inner
+          .progress-bar-value(style='width: 50%')
+    pre.
+  article#form.article
+    h2 Form
+    .example
+      .container-500
+        .panel
+          form.panel-section
+            .form-wrap
+              .flex-row.gutter-half
+                .columns-6
+                  input.form-control(placeholder='First name')
+                .columns-6
+                  input.form-control(placeholder='Last name')
+            .form-wrap
+              input.form-control(placeholder='Email')
+            .form-wrap
+              input.form-control(placeholder='Password')
+            .form-wrap
+              input.button.blue.block.large(type='submit', value='Create Your Account')
+    pre.
+  article#tabs.article
+    h2 Tabs
+    .example
+      nav.tabbed-nav
+        ul
+          li.is-active Servicing
+          li Repairs
+          li Inspections
+    pre.
