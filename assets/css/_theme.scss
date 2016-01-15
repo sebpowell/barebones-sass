@@ -5,7 +5,7 @@
 	@return map-get(map-get($theme, $category), $value);
 }
 
-What if we want a fixed grid? https://buffer.com/pablo
+// What if we want a fixed grid? https://buffer.com/pablo
 
 // https://github.com/oddbird/susy
 // https://benfrain.com/responsive-grid-frustrations-susy-zen-and-sub-pixel-rounding/
@@ -13,7 +13,7 @@ What if we want a fixed grid? https://buffer.com/pablo
 // https://github.com/JohnAlbin/zen-grids/blob/master/sass/zen-grids/_background.scss
 // http://www.zell-weekeat.com/asymmetric-layouts-with-susy/
 
-Astmetric grids? How does golden ratio work? 
+// Astmetric grids? How does golden ratio work?
 
 $breakpoints: (
 	device-x-small: 350px,
@@ -25,9 +25,9 @@ $breakpoints: (
 );
 
 
-=gutter($multiple: 1) {
-	* multiple
-}
+// =gutter($multiple: 1) {
+// 	* multiple
+// }
 
 @mixin respond-above($breakpoint-name) {
 	@media (min-width: breakpoint($breakpoint-name)) {
@@ -50,7 +50,7 @@ $theme: (
 	// To remove
 	body-background: white,
 	mobile-first: false,
-	
+
 	// Padding around body // use bleeds for full bleed stuff
 	mobile-padding: 24px,
 	font-base-size: 16px,
@@ -65,7 +65,7 @@ $theme: (
 	// Grid
 	grid: (
 		columns: 12,
-		site-width: 1200px,
+		site-width: 760px,
 		gutter: 1/4,
 		gutter-type: margin
 	),
@@ -73,14 +73,14 @@ $theme: (
 	gutter: 1/4,
 	// gutter: 24px,
 	gutter-type: margin,
-	
-	grid-color: null, 
+
+	grid-color: null,
 	gutter-position: inside-static,
 	site-width: 1000px,
 
 	brand-primary: #0D3650,
 	brand-secondary: #fe5607,
-	
+
 	fonts: (
 		primary: #{'Roboto', sans-serif},
 		secondary: Helvetica
@@ -118,9 +118,9 @@ html {
 // change to grid-container
 @mixin container() {
 	max-width: themes(grid, site-width);
-	@if theme(debug) == true {
-		@include grid-background(theme(gutter-type));
-	};
+	// @if theme(debug) == true {
+	// 	@include grid-background(theme(gutter-type));
+	// };
 	&:after {
 		clear: both;
 		content: "";
@@ -132,7 +132,7 @@ html {
 	margin: 0 auto;
 
 
-	
+
 	background-origin: content-box;
 	background-clip: content-box;
 	background-position: left top;
@@ -158,7 +158,7 @@ $guttersPerColumn: (1 / theme(gutter)) + 1;
 			float: left;
 			width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1));
 			margin-right: $gutterWidth;
-			
+
 			$nth-child: $columns - 1;
 			&:nth-last-child(-n+ #{$nth-child}) {
 				margin-bottom: 0;
@@ -175,8 +175,8 @@ $guttersPerColumn: (1 / theme(gutter)) + 1;
 
 
 @mixin span($columns, $device: "device-medium", $position: "") {
-	
-	
+
+
 	// margin-right: $gutterWidth;
 	@if theme(gutter-type) == "padding" {
 		$columnWidth: 100% / theme(columns);
@@ -188,10 +188,10 @@ $guttersPerColumn: (1 / theme(gutter)) + 1;
 	}
 
 	@if theme(gutter-type) == "margin" {
-		
+
 		width: 100%;
-		
-		
+
+
 		@if map-has-key($breakpoints, $device) {
 			@include respond-above($device) {
 				width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1));
@@ -238,7 +238,7 @@ html {
 	// background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4MCUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   margin: 0 auto;
 	background-size: 100%;
-	
+
 }
 
 .iframe-container {
@@ -251,7 +251,7 @@ html {
 // gallery mixin - different widths at different viewport sizes
 
 // .sidebar {
-// 	+span(6) 
+// 	+span(6)
 // 	+respond-above(device-medium) {
 // 		span(8)
 // 	}
@@ -270,7 +270,7 @@ html {
 // use padding on right, minus last one
 // =span()
 
-// last colum should float right? 
+// last colum should float right?
 
 // use spans to create offsets
 

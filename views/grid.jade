@@ -1,23 +1,24 @@
 include _inc/_head.html
-//- include _inc/_tool.jade
-//- include _inc/_navigation.jade
+include _inc/_tool.jade
+
+include _inc/_navigation.jade
 
 
 .body
 
-.test-container
+.iframe-container
   h1.page-header Grid1 System
   article#containers.article
     p
       | Containers are used to center and restrict content width on the page. Containers also include left and right padding to give breathing room on smaller devices.
     p
-      | Containers are fluid, and the width is limited using the max-width property. Various sizes are generated from a range of values specified in 
+      | Containers are fluid, and the width is limited using the max-width property. Various sizes are generated from a range of values specified in
       span.code components/container.scss
       | :
 
 
-    
-    
+
+
     pre
       code.language-scss
         | $theme {
@@ -29,7 +30,7 @@ include _inc/_head.html
         |  }
 
     h3 Colors
-    p These are the colors used to generate button colours and various helpers. These are categorised as follows. You can of course add additional categories. 
+    p These are the colors used to generate button colours and various helpers. These are categorised as follows. You can of course add additional categories.
 
     p To access these colours, use the colours() function.
     pre
@@ -40,8 +41,8 @@ include _inc/_head.html
 
 
     h2 Containers2
-    p Every layout grid starts with a container that wraps around the grid. Creating a new container is very straightforward. 
-    p This sets a max-width, as defined in your $theme file and centers the container across the screen. It also applies a clearfix to clear fixes from any possible floated columns you place within it. 
+    p Every layout grid starts with a container that wraps around the grid. Creating a new container is very straightforward.
+    p This sets a max-width, as defined in your $theme file and centers the container across the screen. It also applies a clearfix to clear fixes from any possible floated columns you place within it.
     pre
       code.language-scss
         | .wrapper {
@@ -60,12 +61,12 @@ include _inc/_head.html
 
 
     h2 The Grid
-    
-    p Gutters are created using a margin-right property on each column, with the last column set to 0. 
+
+    p Gutters are created using a margin-right property on each column, with the last column set to 0.
 
     h2 Adding Columns
-    p Barebones offers multiple ways of creating columns, grids etc. 
-    p For prototyping, a series of helper classes (like Bootstrap) are included. These work in the same way. 
+    p Barebones offers multiple ways of creating columns, grids etc.
+    p For prototyping, a series of helper classes (like Bootstrap) are included. These work in the same way.
     .example
       .example-wrapper
         .row
@@ -73,9 +74,9 @@ include _inc/_head.html
           .columns-6 Columns 6
 
     h2 Creating Your Own
-    p Barebones also allows you to create your own layout containers. 
+    p Barebones also allows you to create your own layout containers.
 
-    p By default, columns collapse at 720px. 
+    p By default, columns collapse at 720px.
 
     .example
       .example-wrapper
@@ -94,7 +95,7 @@ include _inc/_head.html
 
     h2 Galleries
 
-    p Galleries are grids containing a repeating number of equal-sized items. 
+    p Galleries are grids containing a repeating number of equal-sized items.
 
     .example
       .example-gallery
@@ -128,12 +129,12 @@ include _inc/_head.html
   //-       td .container-fluid
   //-       td
   //-         em none
-  
+
   //- article
   //-   .example
   //-     .example-sidebar
   //-       .inner
-  //-     .example-content 
+  //-     .example-content
 
 
 
@@ -150,7 +151,7 @@ include _inc/_head.html
   //-     | The grid is built on a standard 12-column system. Classes for different column spans are automatically
   //-     | generated.
   //-   p
-  //-     | To create a layout, start by adding a 
+  //-     | To create a layout, start by adding a
   //-     span.class .flex-row
   //-     |  element. This clears the floats and adds
   //-     |     a negative margin on the left and right, equal to the column gutters to ensure the outer column edges sit flush with
@@ -173,7 +174,7 @@ include _inc/_head.html
   //-       .columns-4
   //-         .content 4
   //-   pre.
-  //-     \n        
+  //-     \n
   //-   .example
   //-     .margin-bottom-double
   //-       .flex-row

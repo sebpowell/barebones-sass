@@ -1,14 +1,19 @@
 .docs-navigation {
   // position: fixed;
-  @include span(4);
+  // @include span(4);
+  width: 300px;
   // top: 62px;
   // top: 0;
   // width: 100%;
   // z-index: 9999; // TODO: Use z-index global
   background: white;
-  box-shadow: 0 1px 3px rgba(00, 00, 00, 0.1);
-  // border-bottom: 1px solid colors(keyline, light);
-  border: 1px solid red;
+  // box-shadow: 0 1px 3px rgba(00, 00, 00, 0.1);
+  border-right: 1px solid colors(keyline, light);
+  position: fixed;
+  z-index: 9999;
+  height: 100%;
+  top: 0;
+  left: 0;
 
   .mobile-site-navigation-open {
     span, span:before, span:after {

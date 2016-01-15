@@ -1,9 +1,9 @@
-// Does this work for assmetric grids? 
+// Does this work for assmetric grids?
 // $page: (
 //   sidebar: (
 //     device-large: (
 //       columns: 8,
-//       offset: null, 
+//       offset: null,
 //     ),
 //     device-medium: 2
 //   ),
@@ -27,16 +27,16 @@
   background: pink;
   @include gallery-item(1, device-small);
   @include gallery-item(4, device-medium);
-  
+
   // margin bottom on mobile?
-  
+
 }
 
 .example-wrapper {
   @include container();
   background: lightBlue;
   max-width: 600px;
-  
+
   [class^="column"], .example-sidebar, .example-content-block {
     height: 100px;
   }
@@ -56,7 +56,7 @@
   margin: auto;
   width: 100%;
   height: 100%;
-  
+
   background: colors(greyscale, x-light);
 }
 
@@ -70,7 +70,7 @@ iframe {
   width: 100%;
   transition: all .15s;
   height: 100%;
-  max-width: 1200px;
+  // max-width: 1200px;
   background: white;
   position: absolute;
   left: 0;
@@ -89,8 +89,8 @@ iframe {
   border-bottom: 1px solid colors(keyline, dark);
   left: 0;
   .screen-tester-sizes {
-    float: left;
-    
+    float: right;
+
   }
 
   .screen-tester-sizes-selected {
@@ -241,10 +241,11 @@ h1 {
 .page-layout-docs {
   @include clearfix;
   padding-top: 56px;
-  padding: 0 24px;
-  @include respond-above(device-large) {
-    padding-top: 0;
-  }
+  // padding: 0 24px;
+  padding-left: 300px;
+  // @include respond-above(device-large) {
+  //   padding-top: 0;
+  // }
 
   h3 {
     margin-top: sizes(double);
