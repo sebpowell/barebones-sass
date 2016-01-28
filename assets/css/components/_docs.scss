@@ -13,24 +13,32 @@
 //   ),
 // );
 
-@mixin layout($page, $element) {
 
-  @each $key, $value in map-get($page, $element) {
-    @include respond-above($key) {
-      @include span($value);
-    }
-  }
+.iframe-container {
+	@include container();
 }
+
+
+.main-container {
+	@include container(800);
+	padding-top: 100px;
+}
+
+
+.page-title {
+	font-size: 42px;
+	font-weight: themes(fonts, weights, light);
+}
+
 
 .example-gallery-item {
   height: 100px;
   background: pink;
   @include gallery-item(1, device-small);
   @include gallery-item(4, device-medium);
-
   // margin bottom on mobile?
-
 }
+
 
 .example-wrapper {
   @include container();
@@ -234,15 +242,12 @@ ul > li {
   color: #313033;
 }
 
-h1 {
-  font-size: 42px;
-}
+
 
 .page-layout-docs {
-  @include clearfix;
-  padding-top: 56px;
-  // padding: 0 24px;
-  padding-left: 300px;
+  @include respond-above(device-large) {
+  	padding-left: 300px;
+  }
   // @include respond-above(device-large) {
   //   padding-top: 0;
   // }
@@ -255,10 +260,6 @@ h1 {
     }
   }
 
-  // TODO: Find a way to make this work without affecting the rest of the platform.
-  h2, h1 {
-    line-height: 1;
-  }
 
   table {
     img {
@@ -280,17 +281,7 @@ h1 {
     margin-left: 0;
   }
 
-  .article {
-    margin-bottom: 100px;
 
-    > section {
-      margin-bottom: 80px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 
   // code {
   //   border: 1px solid colors(keyline, dark);
@@ -331,19 +322,19 @@ h1 {
     transform: translateY(-50%);
   }
 
-  .main-content {
-    width: 100%;
-    padding: 40px sizes(double-half);
-    // max-width: 1000px;
+  // .main-content {
+  //   width: 100%;
+  //   padding: 40px sizes(double-half);
+  //   // max-width: 1000px;
 
-    @include respond-above(device-large) {
-      width: 80%;
-      // max-width: 800px;
-      padding: 100px 60px;
-      margin-left: 20%;
-      float: left;
-    }
-  }
+  //   @include respond-above(device-large) {
+  //     width: 80%;
+  //     // max-width: 800px;
+  //     padding: 100px 60px;
+  //     margin-left: 20%;
+  //     float: left;
+  //   }
+  // }
 
   .logo-example {
     width: 100%;

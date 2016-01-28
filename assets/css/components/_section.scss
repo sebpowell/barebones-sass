@@ -1,0 +1,23 @@
+.article {
+	padding: 100px 0;
+	border-bottom: 1px solid themes(colours, keyline, light);
+
+	> h2 {
+		margin-bottom: themes(sizes, double);
+		font-weight: themes(fonts, weights, regular);
+	}
+
+	> p {
+		font-size: 20px;
+		line-height: 1.8;
+		margin-bottom: sizes(double);
+	}
+
+> section {
+  margin-bottom: 80px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+}

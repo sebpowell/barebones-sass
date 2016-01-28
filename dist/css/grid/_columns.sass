@@ -1,0 +1,75 @@
+// @each $key, $value in theme(breakpoints)
+// 	@for $i from 1 through theme(layout, columns)
+// 		.columns-#{$i}-#{$key}
+// 			width: 100%
+// 			margin-bottom: sizes(double)
+
+// 			+respond-above($key)
+// 				width: $i * (100% / theme(layout, columns))
+// 				float: left
+// 				padding: 0 sizes(base)
+// 				margin-bottom: 0
+// 				// &:nth-last-of-type(-n+#{$i})
+// 				// 	margin-bottom: 0
+
+
+// Generates classes for columns 1 - 12.
+// @for $i from 1 through map-get($theme, columns)
+// 	.columns-#{$i}
+// 		width: 100%
+// 		float: left
+// 		margin-bottom: sizes(double)
+// 		&:last-child
+// 			margin-bottom: 0
+// 		+respond-above(device-small)
+// 			padding: 0 16px
+// 			margin-bottom: 0
+// 			width: $i * (100% / map-get($theme, columns))
+
+
+
+
+
+@mixin span($columns, $device: "device-medium", $position: "")
+
+
+	// margin-right: $gutterWidth;
+	@if theme(layout, gutter-type) == "padding"
+		$columnWidth: 100% / theme(columns)
+		padding-right: theme(gutter)
+		width: 100%
+		@include respond-above(device-medium)
+			width: ($columnWidth * $columns)
+
+	@if theme(layout, gutter-type) == "margin"
+
+		width: 100%
+
+		@include respond-above($device)
+			width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1))
+			@if $position == "last"
+				margin-right: 0
+				float: right
+
+			@else
+				float: left
+				margin-right: $gutterWidth
+
+			// @if $offset != null {
+			// 	margin-left: $offset;
+			// }
+
+
+
+// @mixin grid-background($gutter-type) {
+// 	@if $gutter-type == "padding" {
+// 		background-image: linear-gradient(to right, rgba(00,00,00, 0.85), rgba(00,00,00, 0.05) 100%, rgba(0, 0, 0, 0) 100%);
+// 		background-size: 100% / theme(columns);
+// 	}
+
+// 	@if $gutter-type == "margin" {
+// 		background-image: linear-gradient(to right, rgba(00,00,00, 0.25), rgba(00,00,00, 0.25) (100% - (100% / $guttersPerColumn)), rgba(0, 0, 0, 0) (100% - (100% / $guttersPerColumn)));
+// 		background-size: $columnWidth + $gutterWidth;
+// 	}
+// }
+

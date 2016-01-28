@@ -1,52 +1,25 @@
 .docs-navigation {
-  // position: fixed;
-  // @include span(4);
-  width: 300px;
-  // top: 62px;
-  // top: 0;
-  // width: 100%;
-  // z-index: 9999; // TODO: Use z-index global
-  background: white;
-  // box-shadow: 0 1px 3px rgba(00, 00, 00, 0.1);
-  border-right: 1px solid colors(keyline, light);
-  position: fixed;
-  z-index: 9999;
-  height: 100%;
-  top: 0;
-  left: 0;
-
-  .mobile-site-navigation-open {
-    span, span:before, span:after {
-      background: colors(greyscale, mid);
-    }
+  display: none;
+  @include respond-above(device-medium) {
+  	display: block;
+  	width: 300px;
+  	background-color: white;
+  	border-right: 1px solid themes(colours, keyline, light);
+  	position: fixed;
+  	z-index: 9999;
+  	height: 100%;
+  	top: 0;
+  	left: 0;
   }
-
-  // @include respond-above(device-large) {
-  //   display: block;
-  //   box-shadow: none;
-  //   @include span(4);
-  //   // padding: sizes(double-half);
-  //   overflow-y: scroll;
-  //   float: left;
-  //   // height: 100vh;
-  // }
 
   > ul {
     @include no-bullet;
-    position: fixed;
     transition: all .5s;
+    padding-top: 100px;
     width: 300px;
     left: -300px;
     height: 100%;
-    background: white;
     overflow-y: scroll;
-
-    @include respond-above(device-large) {
-      position: static;
-      left: 0;
-      width: auto;
-      border-right: 0;
-    }
 
     &.is-visible {
       left: 0;
@@ -54,9 +27,10 @@
 
     > li {
       > a {
-        padding: sizes(base);
+        padding: theme(sizes, base);
+        text-decoration: none;
         display: block;
-        color: colors(greyscale, mid-dark);
+        color: colours(greyscale, 800);
 
         + ul {
           display: none;

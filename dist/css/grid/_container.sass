@@ -1,0 +1,21 @@
+=container($max-width: "")
+	@if $max-width != null
+		max-width: $max-width
+	@else
+		max-width: themes(layout, site-width)
+
+	margin: 0 auto
+
+=grid-debug()
+	background-image: linear-gradient(to right, rgba(00,00,00, 0.15), rgba(00,00,00, 0.05) 80%, rgba(0, 0, 0, 0) 85%)
+	background-size: 100% / theme(layout, columns)
+
+
+// 	@mixin layout($page, $element) {
+
+//   @each $key, $value in map-get($page, $element) {
+//     @include respond-above($key) {
+//       @include span($value);
+//     }
+//   }
+// }

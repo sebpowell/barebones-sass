@@ -1,101 +1,53 @@
-include _inc/_head.html
-include _inc/_tool.jade
-
-include _inc/_navigation.jade
+include _inc/_layout.jade
 
 .iframe-container
 
+	.main-container
 
-	h2 Quick Start
-	p
-		| <a href="">Click here to download the latest version</a>.
-	p
-		| You'll aso need to add the Meta viewport tag to control the the width and scale of the viewport on mobile browsers:
-	pre
-		code.markup
-			| &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-	p When you download the source files, you'll find the following structure:
-	ul
-		li <strong>Mixins</strong>
-		li <strong>Config</strong>
-		li <strong>Components</strong>
-		li <strong>Helpers</strong>
-	p
-		| Each file in the above folders hich then get imported into the <strong>_base.sass</strong> file. This file, and the theme file then gets imported into a global <strong>styles.sass</strong> which
-		| then gets compiled into the CSS.
+		h1.page-title Getting Started
 
-	h2 Who's This For?
-	p Enso was built for designers that want to maitain their create their own code protoypyes, without the bloat and styling that comes from popular frameworks like Bootstrap .
-	p The documentation and approach assumes basic knoweldge of HTML &amp; CSS, and the SASS language.
-	p
-		| If you're new to SASS, I would suggest checking out their docs, and reading the excellent <a href="http://abookapart.com/products/sass-for-web-designers">SASS for Web Designers</a>,
-		| For those who are compltely new to HTML &amp; CSS, I would suggest taking a quick course with either Treehouse or CodeAcademy to get up to speed with the basics.
-		| My hope is to encourage more designers to learn how to design in the browser, by offering a tool
-		| It's far from perfect, but it's a start - I hope you nejoy using it.
+		article.article
+			h2 What is Barebones?
+			p Barebones is a SASS boilerplate for creating your own CSS framework.
+			p
+				| Unlike projects such as Bootstrap or Foundation, Barebones simply provides a set of mixins, functions and basic components with the minimum amount of styling to rapidly start building your own, custom UI.
 
-	h2 Customising Enso
-	p
-		| Enso is not designed as to be a 'turnkey' solution. It's primary purpose is to provide a foundation to help both experiented and
-		| less experienced designers build beautiful web and mobile interfaces. To learn more about customising Enso, check out the <a>Theme section</a>.
+			p
+				|Barebones is sepeareted into 2 layers. A config layer and.
 
-	h2 Why does the world need another framework?
-	p
-		| Short answer: it doesn't. But there's a few reasons why I thought builing this would be useful.
-
-	p I fundamentally believe that UI designers need to know how to code. Here are some of the benefits I've found:
-		//- ul
-		//- 	li <strong>Better, faster protoyping:</strong> you can build something that looks almost identical to the final product, allowing you to test ideas in their real context.
-		//- 	li Allows the engineering team to focus on the heavy-lfiting instead of wrestling with CSS &amp; marktup
-		//- 	li Building a system: Encourages the designer to design a consistent UI
-		//- 	li I realised that works best in many cases is prototpying directly in the browser. Doing this allows you to fine tune your aesthic,
-		//- 	li see how your design adapts to different screen sizes and many more benefits.
-	p
-		| Over time, I've worked with various frameworks, including Bootstrap, Foundation and others. I tried a few frameworks, and found them to be either too complex, opinionated, or bloated.
-		| And I've often found the namving convetions hard to read. And I evnetually found that I spent more time wrestiling with the framework  - you end up wrtestinh with it more than enjoying it;s benefits.
-
-	p
-		| Dave Rupert posted this excellt article a couple of years ago, titled <a href="http://daverupert.com/2013/04/responsive-deliverables/">Xbuilding boostraps for clients'</a>
-		| Enso is built with this theme in mind - that designers need to know how ot code, and should provide style guides to their clients ot teams.
-		| But to do so effectively, it's important to have a good foundation that doesn't interfere with how the UI looks.
-	p
-		| Enso is a colletion of all the buts of the various modules, mixins and other SASS functions I find myself using over and over again.
-		| It's not designed to be a turn key solution,
-		| but rather a resource you can use to either learn to build interfaces, or quickly build prototpyes.
+			p
+				a.button.primary(href = "") Download Barebones
 
 
-	h2 Principles
-	h3 SMACSS & OOCSS
-	p Enso is built using <a href="http://sass-lang.com/">SASS</a>.Enso is loosely based on the SMACSS approach by Jon Snooks. This code down into components, modules, states and layouts.
-	p If you aren't familiar with SMACSS, I strongly  you should give it a quick read.
+		article.article
+			h2 Getting Started
 
-	h3 Class Name Conventions
-	p One of the conventions in Pure is for every module to have a standard class name for common rules across a module, and then have additional class names for specific presentational rules for a specific sub-module. A
-	p ll classes start with a pure- prefix to prevent collisions. In addition, we try not to have presentational class names. Instead of calling something pure-form-horizontal, we prefer to call it pure-form-aligned. This prevents a tight coupling between class names and styles, which is good for maintainability.</p>
-	p Additioanlly:
-	p
-		ul
-			li Class names are always hyphenated (this is my erpsonal preference, I find it easier to read than camelcase)
-			li Modifier classes don't use the elemtn name twice.
-			li Modules are always description (e.g. Testimonial-header, testimonial-body)
-			li I use the indented version of the SASS language, and in some cases the SCSS syntax
-			li Try to keep styles less than 3 levels deep
-			li Try not to use !important, only if really needed or obvious classes e.g. a hidden class
-			li Avoid using IDs for styling
-			li Make classes and modules reusable throughout your project
-			li Names are always descriptive
-			li Have a standard agreed way for you and your team to write CSS - Harry Roberts has some great CSS Guidelines
 
-	h2 Browser Support
-	p Enso styles have been tested in Chrome, Safari،
+			p Barebones is a SASS boilerplate for creating custom CSS frameworks.
 
-	p Compass uses Sass.
+			p Unlike systems like Bootstrap, it's not designed to be simply included in a project and forgotten about. The idea is to provide a set of mixins, functions and basic components with the minimum amount of styling which we've found are common to projects we work on. This server as a fpundation, oupon which you can build components, modules and so on.
 
-	p Sass is an extension of CSS3 which adds nested rules, variables, mixins, selector inheritance, and more. Sass generates well formatted CSS and makes your stylesheets easier to organize and maintain.
 
-	h2 Acknowledgements
-	ul
-		li Bootstrap
-		li SMACSS
-		li Hugo Giraudel, for his awesome articles on SASS maps
+			p Getting Started
+
+			p Barebones is split into two sets of files.
+
+			p	1.) A Base file that includes the following
+
+			ul
+				li Mixins
+				li Elements
+				li Config
+				li Utilities
+
+			p The above files reference a series of values stored in a theme file. The theme file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.
+
+			p The theme file defines
+
+
+			//- 2.) Download the latest version of Barebones here.
+
+			//- 3.)
+
 
 

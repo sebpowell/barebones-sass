@@ -1,0 +1,95 @@
+include _inc/_layout.jade
+
+.iframe-container
+
+	.main-container
+
+		h1.page-title The Theme File
+
+
+		article.article
+
+
+			p The theme file is a global configuration file where you can specify various project settings. The following settings are included by default. This map is broken down into various parts.
+
+			h3 Colours
+			p Used to generate various helpers and components (e.g. buttons).
+			pre
+				code.language-scss
+					|   colours: (
+					|     brand: (
+					|       primary: red,
+					|       secondary: green,
+					|    ),
+					|    secondary: (
+					|      purple: purple,
+					|      cyan: cyan,
+					|    ),
+					|    greyscale: (
+					|     brand: 50,
+					|     brand2: 100,
+					|    ),
+					|    keyline: (
+					|      light: light,
+					|      dark: dark,
+					|    ),
+
+			h3 Fonts
+
+			p Specify font familys and respective weights.
+
+			pre
+				code.language-scss
+
+					|   fonts: (
+					|     primary: (
+					|       family: Times New Roman,
+					|       weights: (
+					|         light: 100,
+					|         regular: 200,
+					|       )
+					|     primary: (
+					|       family: Times New Roman,
+					|       weights: (
+					|         light: 100,
+					|         regular: 200,
+					|       )
+					|    ),
+
+			h3 Grid
+			p Specify font familys and respective weights.
+
+			pre
+				code.language-scss
+					|    layout: (
+					|     brand: (
+					|       primary: red,
+					|       secondary: green,
+					|    ),
+					|    secondary: (
+					|      purple: purple,
+					|      cyan: cyan,
+					|    ),
+
+
+			table
+				tr
+					td Category
+					td Required
+				tr
+					td Colours
+					td Yes – colours are used to generate buttons and various helpers.
+			h2 Accessing Values
+
+			p The <span class="code">themes()</span> function allows you to navigate the map and retrieve any value you want. This map is a starting point – you can extend it any way you like.
+
+
+
+			pre
+				code.language-scss
+					| .element {
+					|   border-right: themes(colours, keyline, light);
+					|   color: themes(colours, brand, primary);
+					|   z-index: themes(layers, element);
+					| }
+

@@ -60,32 +60,39 @@
   </body>
 </html>
 <div class="iframe-container">
-  <div class="main-container">
-    <h1 class="page-title">Getting Started</h1>
-    <article class="article">
-      <h2>What is Barebones?</h2>
-      <p>Barebones is a SASS boilerplate for creating your own CSS framework.</p>
-      <p>Unlike projects such as Bootstrap or Foundation, Barebones simply provides a set of mixins, functions and basic components with the minimum amount of styling to rapidly start building your own, custom UI.</p>
-      <p>Barebones is sepeareted into 2 layers. A config layer and.</p>
-      <p><a href="" class="button primary">Download Barebones</a></p>
-    </article>
-    <article class="article">
-      <h2>Getting Started</h2>
-      <p>Barebones is a SASS boilerplate for creating custom CSS frameworks.</p>
-      <p>Unlike systems like Bootstrap, it's not designed to be simply included in a project and forgotten about. The idea is to provide a set of mixins, functions and basic components with the minimum amount of styling which we've found are common to projects we work on. This server as a fpundation, oupon which you can build components, modules and so on.</p>
-      <p>Getting Started</p>
-      <p>Barebones is split into two sets of files.</p>
-      <p>	1.) A Base file that includes the following</p>
-      <ul>
-        <li>Mixins</li>
-        <li>Elements</li>
-        <li>Config</li>
-        <li>Utilities</li>
-      </ul>
-      <p>The above files reference a series of values stored in a theme file. The theme file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.</p>
-      <p>The theme file defines</p>
-      
-      
-    </article>
-  </div>
+  <h1 class="page-header">Mixins</h1>
+  <article id="arrow" class="article">
+    <h2>Arrow</h2>
+    <p>Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left".</p>
+    <pre>\n</pre>
+  </article>
+  <article id="clearfix" class="article">
+    <h2>Clearfix</h2>
+    <p>Clears floats. Apply this to the parent element.</p>
+    <pre>\n</pre>
+  </article>
+  <article id="ellipsis" class="article">
+    <h2>Ellipsis</h2>
+    <p>Adds ellipsis to text prevent text overflowing.</p>
+    <pre>\n</pre>
+  </article>
+  <article id="media-queries" class="article">
+    <h2>Media Queries</h2>
+    <p>
+      By default, media queries are mobile-first (the styles specified in the mixin will only apply to device sizes
+      greater than or equal to the specified breakpoint). The available values are those specified in the<span class="code">$breakpoints</span> map. Another mixin is available if you want to target screen sizes below a
+          certain size.
+    </p>
+    <pre></pre>
+  </article>
+  <article id="no-bullet" class="article">
+    <h2>No Bullet</h2>
+    <p>Removes list-style-type, margin and  padding attributes from<span class="code">ul</span> elements.</p>
+    <pre></pre>
+  </article>
+  <article id="uppercase" class="article">
+    <h2>Uppercase</h2>
+    <p>Sets text-transform to uppercase and adds 0.1em letter-spacing. No arguments required.</p>
+    <pre>\n</pre>
+  </article>
 </div>

@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+sass+scss */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+sass+scss */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -8,9 +8,9 @@
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
+	background: none;
+	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	
-	border-radius: 10px;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -22,7 +22,6 @@ pre[class*="language-"] {
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
-	font-size: 12px;
 
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
@@ -33,12 +32,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
+	background: #b3d4fc;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-
+	background: #b3d4fc;
 }
 
 @media print {
@@ -57,8 +57,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	// background: #f5f2f0;
-border: 1px solid colors(keyline, light);
+	background: #f5f2f0;
 }
 
 /* Inline code */
@@ -99,7 +98,7 @@ border: 1px solid colors(keyline, light);
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #28AFFA;
+	color: #690;
 }
 
 .token.operator,

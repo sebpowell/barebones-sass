@@ -61,31 +61,72 @@
 </html>
 <div class="iframe-container">
   <div class="main-container">
-    <h1 class="page-title">Getting Started</h1>
+    <h1 class="page-title">The Theme File</h1>
     <article class="article">
-      <h2>What is Barebones?</h2>
-      <p>Barebones is a SASS boilerplate for creating your own CSS framework.</p>
-      <p>Unlike projects such as Bootstrap or Foundation, Barebones simply provides a set of mixins, functions and basic components with the minimum amount of styling to rapidly start building your own, custom UI.</p>
-      <p>Barebones is sepeareted into 2 layers. A config layer and.</p>
-      <p><a href="" class="button primary">Download Barebones</a></p>
-    </article>
-    <article class="article">
-      <h2>Getting Started</h2>
-      <p>Barebones is a SASS boilerplate for creating custom CSS frameworks.</p>
-      <p>Unlike systems like Bootstrap, it's not designed to be simply included in a project and forgotten about. The idea is to provide a set of mixins, functions and basic components with the minimum amount of styling which we've found are common to projects we work on. This server as a fpundation, oupon which you can build components, modules and so on.</p>
-      <p>Getting Started</p>
-      <p>Barebones is split into two sets of files.</p>
-      <p>	1.) A Base file that includes the following</p>
-      <ul>
-        <li>Mixins</li>
-        <li>Elements</li>
-        <li>Config</li>
-        <li>Utilities</li>
-      </ul>
-      <p>The above files reference a series of values stored in a theme file. The theme file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.</p>
-      <p>The theme file defines</p>
-      
-      
+      <p>The theme file is a global configuration file where you can specify various project settings. The following settings are included by default. This map is broken down into various parts.</p>
+      <h3>Colours</h3>
+      <p>Used to generate various helpers and components (e.g. buttons).</p>
+      <pre><code class="language-scss">  colours: (
+    brand: (
+      primary: red,
+      secondary: green,
+   ),
+   secondary: (
+     purple: purple,
+     cyan: cyan,
+   ),
+   greyscale: (
+    brand: 50,
+    brand2: 100,
+   ),
+   keyline: (
+     light: light,
+     dark: dark,
+   ),</code></pre>
+      <h3>Fonts</h3>
+      <p>Specify font familys and respective weights.</p>
+      <pre><code class="language-scss">  fonts: (
+    primary: (
+      family: Times New Roman,
+      weights: (
+        light: 100,
+        regular: 200,
+      )
+    primary: (
+      family: Times New Roman,
+      weights: (
+        light: 100,
+        regular: 200,
+      )
+   ),</code></pre>
+      <h3>Grid</h3>
+      <p>Specify font familys and respective weights.</p>
+      <pre><code class="language-scss">   layout: (
+    brand: (
+      primary: red,
+      secondary: green,
+   ),
+   secondary: (
+     purple: purple,
+     cyan: cyan,
+   ),</code></pre>
+      <table>
+        <tr>
+          <td>Category</td>
+          <td>Required</td>
+        </tr>
+        <tr>
+          <td>Colours</td>
+          <td>Yes – colours are used to generate buttons and various helpers.</td>
+        </tr>
+      </table>
+      <h2>Accessing Values</h2>
+      <p>The <span class="code">themes()</span> function allows you to navigate the map and retrieve any value you want. This map is a starting point – you can extend it any way you like.</p>
+      <pre><code class="language-scss">.element {
+  border-right: themes(colours, keyline, light);
+  color: themes(colours, brand, primary);
+  z-index: themes(layers, element);
+}</code></pre>
     </article>
   </div>
 </div>

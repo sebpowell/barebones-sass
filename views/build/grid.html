@@ -1,236 +1,29 @@
-<html>
-	<head>
-		<!-- Meta Tags !-->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<meta property="og:title" content="" />
-		<meta property="og:type" content="article" />
-		<meta property="og:image" content="" />
-		<meta property="og:description" content="" />
-		<meta name="description" content="">
-		<!-- / Meta Tags !-->
-
-		<title>Set Title</title>
-
-		<link rel="stylesheet" href="../../assets/css/style.css">
-
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="apple-touch-icon-precomposed" href="/screen-icon.png">
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="../../highlight.js"></script>
-		<!-- <script src="../../assets/js/app.js"></script> -->
-		<!-- Enable HTML5 elements in IE8 !-->
-			<!--[if lt IE 9]>
-				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-			<![endif]-->
-		<!-- / Enable HTML5 elements in IE8 !-->
-
-		<script>
-			$(document).ready(function() {
-
-				var documentHead = $("head");
-				var document = $(".iframe-container");
-				$('<div class="phantom"><iframe id="myFrame" name="myFrame" src="about:blank"></div>').appendTo('body');
-				var d = $("iframe")[0].contentWindow.document; // contentWindow works in IE7 and FF
-		    d.open();
-		    d.close();
-				$("iframe").contents().find("head, body").remove();
-				$("html", d).append(documentHead, document);
-				documentHead.clone().prependTo("html");
-
-				// var toolbarSelected = $("iframe").contents().find(".screen-tester-sizes-selected");
-				// var toolbarDropdown = $("iframe").contents().find(".screen-tester-sizes-dropdown");
-				// var toolbarOption = $("iframe").contents().find(".screen-tester-sizes-dropdown > li");
-
-				var toolbarSelected = $(".screen-tester-sizes-selected");
-				var toolbarDropdown = $(".screen-tester-sizes-dropdown");
-				var toolbarOption = $(".screen-tester-sizes-dropdown > li");
-
-				toolbarSelected.on('click', function() {
-					toolbarDropdown.toggleClass("is-visible");
-				});
-
-				toolbarOption.on("click", function() {
-
-					alert("test");
-						var value = $(this).attr("data-size");
-					  $("iframe").width(value);
-						testingIframe.width(value);
-							// breakpointSelected.html( $(this).text() );
-							// breakpointDropdown.removeClass("is-visible");
-						});
-
-			});
-		</script>
-	</head>
-	<body class="page-layout-docs">
 
 
 
-<div class="screen-tester">
-  <div class="screen-tester-sizes">
-    <div class="screen-tester-sizes-selected">iPhone</div>
-    <ul class="screen-tester-sizes-dropdown">
-      <li data-size="400">iPhone 4</li>
-      <li data-size="500">iPhone 5</li>
-      <li data-size="1200">Desktop</li>
-      <li data-size="400">iPhone</li>
-    </ul>
-  </div>
-</div>
-<header class="docs-navigation"><a role="button" aria-hidden="true" class="mobile-site-navigation-open"><span></span></a>
-  <ul>
-    <li><a href="index">HTML & CSS</a></li>
-    <li><a href="js">JavaScript</a></li>
-    <li><a href="grid.html">Grid</a>
-      <ul>
-        <li><a href="#containers">Containers</a></li>
-        <li><a href="#rows">Rows & Columns</a></li>
-        <li><a href="#spacing">Spacing</a></li>
-        <li><a href="#offsets">Offsets</a></li>
-      </ul>
-    </li>
-    <li><a href="branding.html">Branding</a>
-      <ul>
-        <li><a href="branding#colors">Colors</a></li>
-        <li><a href="branding#typography">Typography</a></li>
-        <li><a href="branding#photography">Photography</a></li>
-        <li><a href="branding#logo">Logo</a></li>
-        <li><a href="branding#iconography">Iconography</a></li>
-      </ul>
-    </li>
-    <li><a href="globals">Globals</a>
-      <ul>
-        <li><a href="globals#breakpoints">Breakpoints</a></li>
-        <li><a href="globals#colors">Colors</a></li>
-        <li><a href="globals#grid">Grid</a></li>
-        <li><a href="globals#layout">Layout Units</a></li>
-        <li><a href="globals#">Typographic Scale</a></li>
-        <li><a href="globals#stacking">Stacking</a></li>
-      </ul>
-    </li>
-    <li><a href="components.html">Components</a>
-      <ul>
-        <li><a href="components#buttons">Buttons</a></li>
-        <li><a href="components#dropdown">Dropdown</a></li>
-        <li><a href="components#form">Form</a></li>
-        <li><a href="components#hero">Hero</a></li>
-        <li><a href="components#labels">Label</a></li>
-        <li><a href="components#panel">Panel</a></li>
-        <li><a href="components#progress-bars">Progress Bars</a></li>
-        <li><a href="components#tabs">Tabs</a></li>
-      </ul>
-    </li>
-    <li><a href="helpers">Helpers</a>
-      <ul>
-        <li><a href="helpers#background-color">Background Color</a></li>
-        <li><a href="helpers#borders">Borders</a></li>
-        <li><a href="helpers#floats">Floats & Clearfix</a></li>
-        <li><a href="helpers#margin">Margin & Padding</a></li>
-        <li><a href="helpers#text-align">Text Align</a></li>
-        <li><a href="helpers#text-color">Text Color</a></li>
-        <li><a href="helpers#text-size">Text Sizes</a></li>
-        <li><a href="helpers#text-transform">Text Transform</a></li>
-        <li><a href="helpers#text-weight">Text Weight</a></li>
-      </ul>
-    </li>
-    <li><a href="mixins">Mixins</a>
-      <ul>
-        <li><a href="mixins#arrow">Arrow</a></li>
-        <li><a href="mixins#clearfix">Clearfix</a></li>
-        <li><a href="mixins#ellipsis">Ellipsis</a></li>
-        <li><a href="mixins#media-queries">Media Queries</a></li>
-        <li><a href="mixins#no-bullet">No Bullet</a></li>
-        <li><a href="mixins#uppercase">Uppercase</a></li>
-      </ul>
-    </li>
-  </ul>
-</header>
-<div class="body"></div>
-<div class="iframe-container">
-  <h1 class="page-header">Grid1 System</h1>
-  <article id="containers" class="article">
-    <p>Containers are used to center and restrict content width on the page. Containers also include left and right padding to give breathing room on smaller devices.</p>
-    <p>Containers are fluid, and the width is limited using the max-width property. Various sizes are generated from a range of values specified in<span class="code">components/container.scss</span>:</p>
-    <pre><code class="language-scss">$theme {
-  color: red;
-  palette: (
-  ),
-  grid: (
-  )
- }</code></pre>
-    <h3>Colors</h3>
-    <p>These are the colors used to generate button colours and various helpers. These are categorised as follows. You can of course add additional categories.</p>
-    <p>To access these colours, use the colours() function.</p>
-    <pre><code class="language-scss">.element {
-  background: colours(brand, primary);
- };</code></pre>
-    <h2>Containers2</h2>
-    <p>Every layout grid starts with a container that wraps around the grid. Creating a new container is very straightforward.</p>
-    <p>This sets a max-width, as defined in your $theme file and centers the container across the screen. It also applies a clearfix to clear fixes from any possible floated columns you place within it.</p>
-    <pre><code class="language-scss">.wrapper {
-  @include container;
-}</code></pre>
-    <pre><code class="language-scss">// Compiled CSS
-.wrapper {
- max-width: 1000px;
-}</code></pre>
-    <div class="example">
-      <div class="example-wrapper"></div>
-    </div>
-    <h2>The Grid</h2>
-    <p>Gutters are created using a margin-right property on each column, with the last column set to 0.</p>
-    <h2>Adding Columns</h2>
-    <p>Barebones offers multiple ways of creating columns, grids etc.</p>
-    <p>For prototyping, a series of helper classes (like Bootstrap) are included. These work in the same way.</p>
-    <div class="example">
-      <div class="example-wrapper">
-        <div class="row">
-          <div style="background-color: lightpink" class="columns-6">Columns 6</div>
-          <div class="columns-6">Columns 6</div>
-        </div>
-      </div>
-    </div>
-    <h2>Creating Your Own</h2>
-    <p>Barebones also allows you to create your own layout containers.</p>
-    <p>By default, columns collapse at 720px.</p>
-    <div class="example">
-      <div class="example-wrapper">
-        <div style="background-color: lightpink" class="example-content-block"></div>
-        <div style="background-color: cyan" class="example-sidebar"></div>
-      </div>
-    </div>
-    <pre><code class="language-scss">.example-sidebar {
- @include span(6, last);
- @include respond-above(device-small) {
-   @include span(8, last);
- }
-}</code></pre>
-    <h2>Galleries</h2>
-    <p>Galleries are grids containing a repeating number of equal-sized items.</p>
-    <div class="example">
-      <div class="example-gallery">
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-        <div class="example-gallery-item"></div>
-      </div>
-    </div>
-  </article>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
