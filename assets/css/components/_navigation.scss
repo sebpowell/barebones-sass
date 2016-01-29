@@ -1,10 +1,75 @@
+.welcome-masthead {
+	background-color: colours(brand, primary);
+	color: white;
+	height: 100%;
+	display: table;
+	width: 100%;
+
+	.welcome-masthead-inner {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 100px;
+	}
+
+	.welcome-masthead-inner-heading {
+		font-family: themes(fonts, secondarynew, name);
+		font-size: 100px;
+		max-width: 1400px;
+		letter-spacing: 0.01em;
+	}
+
+	.welcome-masthead-buttons {
+		.button {
+			width: 240px;
+		}
+	}
+
+	p {
+		font-size: 24px;
+		opacity: 0.8;
+		line-height: 2;
+		max-width: 800px;
+		margin-bottom: sizes(triple);
+	}
+
+	.welcome-masthead-footer {
+		position: absolute;
+		bottom: sizes(double);
+		left: sizes(double);
+		font-size: 14px;
+
+		a {
+			color: white;
+			font-weight: themes(fonts, primarynew, weights, semi-bold);
+			text-decoration: none;
+		}
+	}
+}
+
 .docs-navigation {
   display: none;
+
+
+  .download {
+  	position: absolute;
+  	bottom: themes(layout, sizes, base);
+  	left: themes(layout, sizes, base);
+  	right: themes(layout, sizes, base);
+  	padding: sizes(base);
+  	text-align: center;
+  	margin-bottom: sizes(base);
+  	transition: all .5s;
+  	&:hover {
+  		transform: scale(1.1);
+
+  	}
+  }
+
   @include respond-above(device-medium) {
   	display: block;
   	width: 300px;
-  	background-color: white;
-  	border-right: 1px solid themes(colours, keyline, light);
+  	background-color: themes(colours, brand, primary);
+
   	position: fixed;
   	z-index: 9999;
   	height: 100%;
@@ -27,41 +92,14 @@
 
     > li {
       > a {
-        padding: theme(sizes, base);
+      	transition: opacity .5s;
+        padding: sizes(base) sizes(double);
         text-decoration: none;
         display: block;
-        color: colours(greyscale, 800);
-
-        + ul {
-          display: none;
-        }
-
-        &.is-open {
-          background: colors(brand-primary);
-          color: white;
-
-          @include respond-above(device-large) {
-            border-radius: 3px;
-          }
-
-          + ul {
-            display: block;
-          }
-        }
-      }
-
-      > ul {
-        @include no-bullet;
-        border-bottom: 1px solid colors(keyline, light);
-        margin-bottom: sizes(half);
-
-        > li {
-          > a {
-            font-size: 14px;
-            color: colors(greyscale, mid);
-            display: block;
-            padding: sizes(double-half) sizes(base);
-          }
+        color: white;
+        opacity: 0.6;
+        &:hover {
+        	opacity: 1;
         }
       }
     }

@@ -1,5 +1,5 @@
-// Generates classes for column offsets.
-// @for $i from 1 through theme(layout, columns)
+// // Generates classes for column offsets.
+// @for $i from 1 through theme(layout, grid, columns)
 // 	.offset-#{$i}
-// 		+respond-above(device-medium-large)
+// 		+respond-above(device-small)
 // 			margin-left: $i * (100% / theme(layout, columns))

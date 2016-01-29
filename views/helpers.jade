@@ -1,120 +1,118 @@
+include _inc/_head.jade
 include _inc/_layout.jade
 
 .iframe-container
-	h1.page-header Helpers
 
-	p
-		| Helpers or utlity classes should generally be used sparingly. They server two main purposes: first, for rapid brower prototyping, and second for
-		| adpating an element or component within a given context.
+	.main-container
 
-	article#background-color.article
-		h3 Background Color
-		p Generates a background-color helper for all colors specified in the palette category in the theme map.
-		pre
-			code.language-scss
-				| .background-brand-primary {
-				|  background-color: #F5F5F5 !important;
-				| }
+		h1.page-title Helpers
 
-	article#borders.article
-		h3#borders Borders
-		p Adds or removes a keyline to a given element. The border color uses the keyline value fromm the theme map.
-		p The following helpers are avaiable:
-		ul
-			li border-left
-			li border-top
-			li border-right
-			li border-bottom
-			li border-all
-			li no-border
-		pre
-			code.language-scss
-				| .border-top {
-				|  background-color: #F5F5F5 !important;
-				| }
 
-	article.article
-		h3#floats Floats & Clearfix
-		.example
-			.clearfix
-				.float-left Floated left
-				.float-right Floated right
 
-	article#margin.article
-		h3 Margin & Padding
-		p
-			| Margin helpers are particularly useful to help fine tune spacing in between elements, without needing to write
-			| custom selectors. The helper classes are available for both padding and margin.
-		li padding-{direction}, margin-{direction} followed by the unit value
-		p
-			ul
-				li quarter
-				li half
+		article#background-color.article
+
+			p Helpers or utlity classes should generally be used sparingly. They server two main purposes: first, for rapid brower prototyping, and second for adapting an element or component within a given context. All helper class attributes are suffixed with an !important flag.
+
+			h3 Background Color
+			p Generates a background-color helper for all colors specified in the palette category in the theme map.
+
+			pre
+				code.language-html
+					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+
+			pre
+				code.language-scss
+					| .background-brand-primary {
+					|  background-color: #F5F5F5 !important;
+					| }
+
+
+		article#borders.article
+			h3#borders Borders
+			p Adds or removes a keyline to a given element. The border color uses the keyline value fromm the theme map.
+			ul.bullet-list.margin-bottom-double
+				li border-left
+				li border-top
+				li border-right
+				li border-bottom
+				li border-all
+				li no-border
+			pre
+				code.language-scss
+					| .border-top {
+					|  background-color: #F5F5F5 !important;
+					| }
+
+
+		article#margin.article
+			h3 Margin & Padding
+			p Generated from the $sizes map.
+
+			ul.bullet-list
+				li <span class="class">.padding-{direction}-{size}</span>
+				li <span class="class">.margin-{direction}-{size}</span>
+				li <span class="class">.no-margin</span>
+				li <span class="class">.no-padding</span>
+
+			pre
+				code.language-html
+				| &lt;div class="margin-bottom-quarter"/div
+
+		article#margin.article
+			h3 Layout
+			ul.bullet-list
+				li block
+				li inline-block
+				li clearfix
+				li float-left
+				li float-right
+			pre
+				code.language-html
+				| &lt;div class="margin-bottom-quarter"/div
+
+
+
+		article#text-align.article
+			h3 Typography
+
+			p Use <span class="class">.text-{helper}</span> to use.
+
+			h4 Alignment
+
+			ul.bullet-list
+				li left
+				li right
+				li center
+
+			h4 Size
+
+			p Helpers for creating the various text sizes specified in your settings file.
+
+			ul.bullet-list
+				li x-small
+				li small
 				li base
-				li double-half
-				li double
-				li triple
-				li
-					strong .no-margin / .no-padding
-					|  removes any padding or margins.
-		.example
-			.background-greyscale-light.margin-bottom.quarter-unit(style='height: 40px') Margin Bottom Quarter
-			.background-greyscale-light.margin-bottom.half-unit(style='height: 40px') Margin Bottom Half
-			.background-greyscale-light.margin-bottom.base-unit(style='height: 40px') Margin Bottom Base
-			.background-greyscale-light.margin-bottom.double-half-unit(style='height: 40px') Margin Bottom Double-Half
-			.background-greyscale-light.margin-bottom.triple-unit(style='height: 40px') Margin Bottom Triple
-			.background-greyscale-light.margin-bottom.quadruple-unit(style='height: 40px') Margin Bottom Quadruple
-	article#text-align.article
-		h3 Text Align
-		.example
-			p.text-left Align left
-			p.text-center Align center
-			p.text-right Align right
+				li medium
+				li medium-large
+				li large
+				li x-large
 
-	article#colors.article
-		h3 Text Color
-		p
-			| Sets text color for an element. Can either be set on the parent, or on the element itself.
-		.example
-			p.text-primary This is brand primary text
-			p.text-muted This is muted text
-			p.text-error This is error text
+			h4 Transform
 
+			ul.bullet-list
+				li x-small
+				li small
+				li base
+				li medium
+				li medium-large
+				li large
+				li x-large
 
-	article.article
-		h3#text-sizes Text Sizes
-		p
-			| Helpers for creating the various text sizes specified in the text-sizes.scss file (if you don't want to use the
-			| heading helpers). Note that this method only sets the size - the weight is inherited from the parent.
-		ul
-			li text-x-small
-			li text-small
-			li text-base
-			li text-medium
-			li text-large
-			li text-x-large
-	article#text-transform.article
-		h3 Text Transform
-		.example
-			p.text-uppercase Text uppercase
-			p.text-capitalise Text capitalized
+			h4 Transform
 
+			ul.bullet-list
+				li uppercase
+				li lowercase
+				li capitalize
 
-	article#text-weight.article
-		h3 Text Weight
-		p
-			| Helpers for creating the various text sizes specified in the text-sizes.scss file (if you don't want to use the
-			| heading helpers). Note that this method only sets the size - the weight is inherited from the parent.
-		ul
-			li 100
-			li 200
-			li 300
-			li 400
-			li 500
-		.example
-			.text-weight-200 Weight 100
-			.text-weight-500 Weight 200
-			.text-weight-600 Weight 300
-			.text-weight-700 Weight 400
-			.text-weight-800 Weight 500
 

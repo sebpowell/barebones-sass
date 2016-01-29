@@ -15,6 +15,8 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <!-- Enable HTML5 elements in IE8 !-->
     <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     -->
@@ -50,49 +52,70 @@
     -->
     <script src="../../highlight.js"></script>
   </head>
-  <body class="page-layout-docs">
-    <header class="docs-navigation"><a role="button" aria-hidden="true" class="mobile-site-navigation-open"><span></span></a>
-      <ul>
-        <li><a href="index.html">Getting Started</a></li>
-        <li><a href="settings.html">Settings</a></li>
-      </ul>
-    </header>
-  </body>
 </html>
+<body class="page-layout-docs">
+  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+    <ul>
+      <li><a href="index.html">Getting Started</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="grid.html">Grid System</a></li>
+      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="helpers.html">Helpers</a></li>
+    </ul>
+    <div class="download"><a class="button white block">Download</a>
+      <div class="made">Made by Getagent.co.uk</div>
+    </div>
+  </header>
+</body>
 <div class="iframe-container">
-  <h1 class="page-header">Mixins</h1>
-  <article id="arrow" class="article">
-    <h2>Arrow</h2>
-    <p>Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left".</p>
-    <pre>\n</pre>
-  </article>
-  <article id="clearfix" class="article">
-    <h2>Clearfix</h2>
-    <p>Clears floats. Apply this to the parent element.</p>
-    <pre>\n</pre>
-  </article>
-  <article id="ellipsis" class="article">
-    <h2>Ellipsis</h2>
-    <p>Adds ellipsis to text prevent text overflowing.</p>
-    <pre>\n</pre>
-  </article>
-  <article id="media-queries" class="article">
-    <h2>Media Queries</h2>
-    <p>
-      By default, media queries are mobile-first (the styles specified in the mixin will only apply to device sizes
-      greater than or equal to the specified breakpoint). The available values are those specified in the<span class="code">$breakpoints</span> map. Another mixin is available if you want to target screen sizes below a
-          certain size.
-    </p>
-    <pre></pre>
-  </article>
-  <article id="no-bullet" class="article">
-    <h2>No Bullet</h2>
-    <p>Removes list-style-type, margin and  padding attributes from<span class="code">ul</span> elements.</p>
-    <pre></pre>
-  </article>
-  <article id="uppercase" class="article">
-    <h2>Uppercase</h2>
-    <p>Sets text-transform to uppercase and adds 0.1em letter-spacing. No arguments required.</p>
-    <pre>\n</pre>
-  </article>
+  <div class="main-container">
+    <h1 class="page-title">Mixins</h1>
+    <article id="arrow" class="article">
+      <h2>Arrow</h2>
+      <p>Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left". Accepts the following arguments arrow($direction, $color, $size).</p>
+      <pre><code class="language-scss">.element {
+  &:after {
+   @include arrow(down, black, 20px);
+  }
+ }</code></pre>
+    </article>
+    <article id="containers" class="article">
+      <h2>Containers</h2>
+      <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices. By default this is using the <span class="code">mobile-padding</span> value from the settings file.</p>
+      <p>You can create a container using the <span class="function">container($max-width)</span> function.</p>
+      <pre><code class="language-scss">.element {
+  @include container($max-width);
+ }</code></pre>
+    </article>
+    <article id="clearfix" class="article">
+      <h2>Clearfix</h2>
+      <p>Clears floats. Apply this to the parent element.</p>
+      <pre><code class="language-scss">.element {
+  @include clearfix;
+ }</code></pre>
+    </article>
+    <article id="ellipsis" class="article">
+      <h2>Ellipsis</h2>
+      <p>Adds ellipsis to limit text width.</p>
+      <pre><code class="language-scss">.element {
+  @include text-overflow($width);
+}</code></pre>
+    </article>
+    <article id="media-queries" class="article">
+      <h2>Media Queries</h2>
+      <p>Use <span class="function">respond-above($device)</span> and <span class="function">respond-below($device)</span> to target different viewport sizes defined in your settings file.</p>
+      <pre><code class="language-scss">.element {
+  @include respond-above(device-medium) {
+    color: red;
+  }
+}</code></pre>
+    </article>
+    <article id="no-bullet" class="article">
+      <h2>No Bullet</h2>
+      <p>Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</p>
+      <pre><code class="language-scss">ul {
+ @include no-bullet;
+}</code></pre>
+    </article>
+  </div>
 </div>

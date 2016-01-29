@@ -48,23 +48,23 @@
 
 
 @mixin gallery-item($columns, $device: "device-medium")
-	@if theme(layout, gutter-type) == "margin"
-		margin-bottom: $gutterWidth
-		&:last-child
+
+	margin-bottom: $gutterWidth
+	&:last-child
+		margin-bottom: 0
+
+	@include respond-above($device)
+		float: left
+		width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1))
+		margin-right: $gutterWidth
+
+		$nth-child: $columns - 1
+
+		&:nth-last-child(-n+ #{$nth-child})
 			margin-bottom: 0
 
-		@include respond-above(device-medium)
-			float: left
-			width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1))
-			margin-right: $gutterWidth
+		&:nth-child(3n + 1)
+			clear: both
 
-			$nth-child: $columns - 1
-
-			&:nth-last-child(-n+ #{$nth-child})
-				margin-bottom: 0
-
-			&:nth-child(3n + 1)
-				clear: both
-
-			&:nth-child(#{$nth-child}n)
-				margin-right: 0
+		&:nth-child(#{$nth-child}n)
+			margin-right: 0

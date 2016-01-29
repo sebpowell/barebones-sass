@@ -1,42 +1,79 @@
+include _inc/_head.jade
 include _inc/_layout.jade
 
 .iframe-container
-	h1.page-header Mixins
-	article#arrow.article
-		h2 Arrow
-		p
-			| Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left".
-		pre.
-			\n
-	article#clearfix.article
-		h2 Clearfix
-		p Clears floats. Apply this to the parent element.
-		pre.
-			\n
-	article#ellipsis.article
-		h2 Ellipsis
-		p Adds ellipsis to text prevent text overflowing.
-		pre.
-			\n
-	article#media-queries.article
-		h2 Media Queries
-		p
-			| By default, media queries are mobile-first (the styles specified in the mixin will only apply to device sizes
-			| greater than or equal to the specified breakpoint). The available values are those specified in the
-			span.code $breakpoints
-			|  map. Another mixin is available if you want to target screen sizes below a
-			|     certain size.
-		pre.
-	article#no-bullet.article
-		h2 No Bullet
-		p
-			| Removes list-style-type, margin and  padding attributes from
-			span.code ul
-			|  elements.
-		pre.
-	article#uppercase.article
-		h2 Uppercase
-		p
-			| Sets text-transform to uppercase and adds 0.1em letter-spacing. No arguments required.
-		pre.
-			\n
+
+	.main-container
+
+		h1.page-title Mixins
+		article#arrow.article
+			h2 Arrow
+			p
+				| Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left". Accepts the following arguments arrow($direction, $color, $size).
+
+			pre
+				code.language-scss
+					| .element {
+					|   &:after {
+					|    @include arrow(down, black, 20px);
+					|   }
+					|  }
+
+
+
+		article#containers.article
+			h2 Containers
+
+			p
+				| Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices. By default this is using the <span class="code">mobile-padding</span> value from the settings file.
+			p
+				| You can create a container using the <span class="function">container($max-width)</span> function.
+
+			pre
+				code.language-scss
+					| .element {
+					|   @include container($max-width);
+					|  }
+
+
+		article#clearfix.article
+			h2 Clearfix
+			p Clears floats. Apply this to the parent element.
+			pre
+				code.language-scss
+					| .element {
+					|   @include clearfix;
+					|  }
+
+		article#ellipsis.article
+			h2 Ellipsis
+			p Adds ellipsis to limit text width.
+			pre
+				code.language-scss
+					| .element {
+					|   @include text-overflow($width);
+					| }
+
+
+		article#media-queries.article
+			h2 Media Queries
+			p Use <span class="function">respond-above($device)</span> and <span class="function">respond-below($device)</span> to target different viewport sizes defined in your settings file.
+			pre
+				code.language-scss
+					| .element {
+					|   @include respond-above(device-medium) {
+					|     color: red;
+					|   }
+					| }
+
+
+
+		article#no-bullet.article
+			h2 No Bullet
+			p
+				| Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+			pre
+				code.language-scss
+					| ul {
+					|  @include no-bullet;
+					| }

@@ -1,53 +1,24 @@
+include _inc/_head.jade
 include _inc/_layout.jade
 
 .iframe-container
-
 	.main-container
 
 		h1.page-title Getting Started
 
 		article.article
-			h2 What is Barebones?
-			p Barebones is a SASS boilerplate for creating your own CSS framework.
-			p
-				| Unlike projects such as Bootstrap or Foundation, Barebones simply provides a set of mixins, functions and basic components with the minimum amount of styling to rapidly start building your own, custom UI.
+			p Barebones is a <a href="http://sass-lang.com/">SASS</a> boilerplate for building custom interfaces.
+			p Unlike Bootstrap Foundation and other CSS frameworks, Barebones is not a fully fledged design system. It doesn't include a ton of pre-built, fully designed components – instead, it provides a set of commonly used tools; mixins, functions and helper classees, organised in a cohesive way to jump-start your next web project, using the full power of SASS.
 
-			p
-				|Barebones is sepeareted into 2 layers. A config layer and.
+			p The best way to get started with Barebones is to download the <a href="https://github.com/sebpowell/barebones">latest version</a> from Github and start building!
 
-			p
-				a.button.primary(href = "") Download Barebones
+			p If you need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>.
 
 
 		article.article
-			h2 Getting Started
+			h2 Requirements
 
-
-			p Barebones is a SASS boilerplate for creating custom CSS frameworks.
-
-			p Unlike systems like Bootstrap, it's not designed to be simply included in a project and forgotten about. The idea is to provide a set of mixins, functions and basic components with the minimum amount of styling which we've found are common to projects we work on. This server as a fpundation, oupon which you can build components, modules and so on.
-
-
-			p Getting Started
-
-			p Barebones is split into two sets of files.
-
-			p	1.) A Base file that includes the following
-
-			ul
-				li Mixins
-				li Elements
-				li Config
-				li Utilities
-
-			p The above files reference a series of values stored in a theme file. The theme file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.
-
-			p The theme file defines
-
-
-			//- 2.) Download the latest version of Barebones here.
-
-			//- 3.)
+			p Baerbones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer">autoprefixer plugin</a> to do this.
 
 
 

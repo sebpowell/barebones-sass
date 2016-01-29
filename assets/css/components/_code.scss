@@ -1,19 +1,46 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+sass+scss */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
+.function {
+	color: themes(colours, secondary, orange);
+	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 16px;
+}
+
+
+.logo {
+	position: absolute;
+	left: 32px;
+	top: 32px;
+	width: 180px;
+}
+
+pre {
+	margin-bottom: sizes(double) !important;
+}
+
+
+.photo-grid {
+	@include clearfix;
+}
+
+.photo-grid-item {
+	@include gallery-item(4);
+	background: lightBlue;
+	padding: sizes(base);
+}
+
+
+
+
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
+	color: themes(colours, greyscale, 700);
 	background: none;
 	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
+	font-size: 14px;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
@@ -32,13 +59,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	background: themes(colours, greyscale, 50);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	background: themes(colours, greyscale, 50);
 }
 
 @media print {
@@ -57,7 +84,8 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	border: 1px solid themes(colours, keyline, light);
+	border-radius: 3px;
 }
 
 /* Inline code */
@@ -89,7 +117,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #905;
+	color: themes(colours, greyscale, 600);
 }
 
 .token.selector,
@@ -98,7 +126,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #690;
+	color: themes(colours, brand, primary);
 }
 
 .token.operator,
@@ -113,11 +141,11 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #07a;
+	color: themes(colours, secondary, orange);
 }
 
 .token.function {
-	color: #DD4A68;
+	color: themes(colours, secondary, orange);
 }
 
 .token.regex,

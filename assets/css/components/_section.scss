@@ -1,14 +1,26 @@
+// keyline(bottomm, dark, 1px);
+
+
 .article {
 	padding: 100px 0;
 	border-bottom: 1px solid themes(colours, keyline, light);
 
+
 	> h2 {
 		margin-bottom: themes(sizes, double);
+		color: themes(colours, brand, primary);
 		font-weight: themes(fonts, weights, regular);
+		font-size: themes(fonts, sizes, large);
+	}
+
+	h3 {
+		font-size: themes(fonts, sizes, medium-large);
+		font-weight: themes(fonts, primarynew, weights, regular);
+		margin-top: themes(layout, sizes, quad);
 	}
 
 	> p {
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 1.8;
 		margin-bottom: sizes(double);
 	}

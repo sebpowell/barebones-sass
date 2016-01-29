@@ -1,44 +1,57 @@
-$button-colours: (brand-primary: colors(brand-primary), secondary: colors(brand-secondary), white: #FFF)
-$button-sizes: (small: 12px, medium: 14px, large: 14px, x-large: 16px)
+$button-sizes: (small: 14px, large: 20px, x-large: 24px)
 
-button, .button 
-	display: inline-block 
+button, .button
+	display: inline-block
 	background: transparent
-	padding: 0 sizes(double)
-	height: 48px 
-	line-height: 50px
-	
+	padding: 0 themes(layout, sizes, double)
+	height: 48px
+	line-height: 48px
+	border-radius: 48px
+
 	font:
 		weight: 600
-		size: theme(font-size-base)
-		family: theme(font-primary)
-	
+		size: themes(fonts, sizes, base)
+		family: themes(fonts, primarynew, name)
+
 	text:
 		decoration: none
 		align: center
 
 	cursor: pointer
 	-webkit-appearance: none // Removes styling on iOS
-	
-	&:disabled
-		background: colors(greyscale, mid) !important
-		cursor: not-allowed
-	
+
+	// &:disabled
+	// 	background: colors(greyscale, mid) !important
+	// 	cursor: not-allowed
+
 	@each $size, $value in $button-sizes
 		&.#{$size}
-			height: $value * 3.4
-			line-height: $value * 3.6 // Needed if applied to link element
+			height: $value * 3
+			line-height: $value * 3 // Needed if applied to link element
 			font-size: $value
 			padding: 0 $value * 2
-	
-	@each $name, $value in $button-colours
+			border-radius: $value * 3.4
+
+
+	&.white
+		background: white
+		color: themes(colours, brand, primary)
+		&.bordered
+			background: transparent
+			border: 1px solid lighten(white, 60%)
+			color: white
+			&:hover
+				background: white
+				color: themes(colours, brand, primary)
+
+	@each $name, $value in themes(colours, brand)
 		&.#{$name}
 			background: $value
 			color: white
 			border: 0
 			&:hover
 				background: darken($value, 2%)
-			
+
 			&.bordered
 				background: transparent
 				border: 1px solid lighten($value, 35%)

@@ -1,0 +1,15 @@
+.bullet-list
+	list-style-type: none
+	font-size: 18px
+	> li
+		position: relative
+		padding-left: 24px
+		&:before
+			content: ""
+			position: absolute
+			top: 9px
+			left: 0
+			width: 4px
+			height: 4px
+			border-radius: 4px
+			border: 2px solid colours(brand, primary)

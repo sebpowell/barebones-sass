@@ -1,13 +1,13 @@
 $theme: (
 	colours: (
-		// brand: (
-		// 	primary: #0D3650,
-		// 	secondary: #fe5607
-		// ),
+		brand: (
+			primary: #157afb,
+			secondary: #fe5607
+		),
 
-		// secondary: (
-
-		// ),
+		secondary: (
+			orange: #f8b000,
+		),
 
 		greyscale: (
 			50: #FAFAFA,
@@ -36,6 +36,38 @@ $theme: (
 	),
 
 	fonts: (
+
+		sizes: (
+			x-small: 12px,
+			small: 14px,
+			base:  16px,
+			medium: 18px,
+			medium-large: 24px,
+			large: 32px,
+			x-large: 42px,
+			xx-large: 68px,
+		),
+
+
+		primarynew: (
+			name: #{'Open Sans', sans-serif},
+			weights: (
+				light: 100,
+				regular: 400,
+				semi-bold: 600,
+				bold: 700
+			),
+		),
+
+		secondarynew: (
+			name: #{'Futura PT', sans-serif},
+			weights: (
+				light: 100,
+				regular: 400,
+				bold: 700
+			),
+		),
+
 		primary: #{'Open Sans', sans-serif},
 		secondary: Helvetica,
 
@@ -68,14 +100,46 @@ $theme: (
 		columns: 12,
 		site-width: 760px,
 		gutter: 1/4,
-		gutter-type: margin,
+		gutter-type: padding,
 		gutter-position: inside-static,
 		grid-color: null,
 		debug: true,
+		collapse: 780px,
 		mobile-padding: 24px,
+
+		grid: (
+			mobile-padding: 24px,
+			columns: 12,
+			gutter: 1/4,
+			mobile-gutter: 24px,
+			collapse: 780px
+		),
+
+		sizes: (
+			font-base-size: 16px,
+		  quarter: 16px / 4,
+		  half: 16px / 2,
+		  base: 16px,
+		  double-half: 16px * 1.5,
+		  double: 16px * 2,
+		  triple: 16px * 3,
+		  quad: 16px * 4,
+		),
+
+		breakpoints: (
+			grid: 760px,
+			device-x-small: 350px,
+			device-small: 480px,
+			device-medium: 780px,
+			device-medium-large: 900px,
+			device-large: 1080px,
+			device-x-large: 1200px
+		)
 	),
 
 	breakpoints: (
+
+		grid: 760px,
 		device-x-small: 350px,
 		device-small: 480px,
 		device-medium: 780px,
@@ -118,9 +182,13 @@ $theme: (
 
 
 @function themes($keys...) {
+
+
   $key: nth($keys, 1);
   $length: length($keys);
   $value: map-get($theme, $key);
+
+
   @if ($length > 1) {
     $rest: ();
     @for $i from 2 through $length {
@@ -130,41 +198,12 @@ $theme: (
   } @else {
     @return $value;
   }
+
+  @if map-has-key($key) {
+  	@debug "Map has this key: #{$key}"
+  }
 }
 
-
-
-
-
-
-$gutters: (theme(layout, columns) / theme(layout, gutter)) + (theme(layout, columns) - 1);
-$gutterWidth: 100% / $gutters;
-$totalGutterWidth: $gutterWidth * (theme(layout, columns) - 1);
-$columnWidth: (100% - $totalGutterWidth) / theme(layout, columns);
-// $totalColumnWidth: $columnWidth + $gutterWidth;
-// $guttersPerColumn: (1 / theme(gutter)) + 1;
-
-
-
-
-// .body {
-// 	background: map-deep-get($theme, palette, brand, primary);
-// }
-
-// gallery?
-
-// .test-container {
-// 	@include container;
-// 	padding: 100px 0;
-// }
-
-
-html {
-	// background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjI1Ii8+PHN0b3Agb2Zmc2V0PSI4MCUiIHN0b3AtY29sb3I9IiNiM2IzZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iODAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  margin: 0 auto;
-	background-size: 100%;
-
-}
 
 
 

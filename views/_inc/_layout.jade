@@ -1,53 +1,23 @@
-html
-	head
-		// Meta Tags !
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-		meta(property='og:title', content='')
-		meta(property='og:type', content='article')
-		meta(property='og:image', content='')
-		meta(property='og:description', content='')
-		meta(name='description', content='')
-		// / Meta Tags !
-		title Set Title
-		link(rel='stylesheet', href='../../assets/css/style.css')
-		link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
-		link(rel='apple-touch-icon-precomposed', href='/screen-icon.png')
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-		// Enable HTML5 elements in IE8 !
-		//if lt IE 9
-			script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-		// / Enable HTML5 elements in IE8 !
-		//
-			// 	$(document).ready(function() {
-			// 		var documentHead = $("head");
-			// 		var document = $(".iframe-container");
-			// 		$('<div class="phantom"><iframe id="myFrame" name="myFrame" src="about:blank"></div>').appendTo('body');
-			// 		var d = $("iframe")[0].contentWindow.document; // contentWindow works in IE7 and FF
-			//     d.open();
-			//     d.close();
-			// 		$("iframe").contents().find("head, body").remove();
-			// 		$("html", d).append(documentHead, document);
-			// 		documentHead.clone().prependTo("html");
-			// 		// var toolbarSelected = $("iframe").contents().find(".screen-tester-sizes-selected");
-			// 		// var toolbarDropdown = $("iframe").contents().find(".screen-tester-sizes-dropdown");
-			// 		// var toolbarOption = $("iframe").contents().find(".screen-tester-sizes-dropdown > li");
-			// 		var toolbarSelected = $(".screen-tester-sizes-selected");
-			// 		var toolbarDropdown = $(".screen-tester-sizes-dropdown");
-			// 		var toolbarOption = $(".screen-tester-sizes-dropdown > li");
-			// 		toolbarSelected.on('click', function() {
-			// 			toolbarDropdown.toggleClass("is-visible");
-			// 		});
-			// 		toolbarOption.on("click", function() {
-			// 				var value = $(this).attr("data-size");
-			// 			  $("iframe").width(value);
-			// 				testingIframe.width(value);
-			// 					// breakpointSelected.html( $(this).text() );
-			// 					// breakpointDropdown.removeClass("is-visible");
-			// 				});
-			// 	});
-		script(src='../../highlight.js')
-	body.page-layout-docs
-		include _navigation.jade
+body.page-layout-docs
+	header.docs-navigation
+		a.logo(href = "welcome.html")
+			img(src="../../assets/images/logo.png")
+		ul
+			li
+				a(href='index.html') Getting Started
 
+			li
+				a(href='settings.html') Settings
+			li
+				a(href='grid.html') Grid System
+			li
+				a(href='mixins.html') Mixins & Functions
+			li
+				a(href='helpers.html') Helpers
+
+
+
+		.download
+			a.button.white.block Download
+			.made Made by Getagent.co.uk
 

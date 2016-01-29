@@ -14,6 +14,31 @@
 // );
 
 
+a, a:visited {
+	color: inherit;
+}
+
+.columns {
+	[class^="column"] {
+
+		background: lightBlue;
+		padding: themes(layout, sizes, base);
+	}
+}
+
+.example {
+  border: 1px solid themes(colours, keyline, light);
+  border-radius: 3px;
+  padding: 24px;
+
+  .modal, .dropdown-menu {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
 .iframe-container {
 	@include container();
 }
@@ -34,8 +59,8 @@
 .example-gallery-item {
   height: 100px;
   background: pink;
-  @include gallery-item(1, device-small);
-  @include gallery-item(4, device-medium);
+  // @include gallery-item(1, device-small);
+  // @include gallery-item(4, device-medium);
   // margin bottom on mobile?
 }
 
@@ -127,77 +152,6 @@ iframe {
 
 
 
-//   .mobile-site-navigation-open {
-//     @include respond-above-above(device-large) {
-//       display: none;
-//     }
-//   }
-// }
-// 				+ ul {
-// 					display: none;
-// 				}
-// 				&.is-open {
-// 					background: colors(brand-primary);
-// 					color: white;
-// 					@include respond-above-above(device-large) {
-// 						border-radius: 3px;
-// 					}
-// 					+ ul {
-// 						display: block;
-// 						a {
-// 							background: colors(greyscale, x-light);
-// 						}
-// 					}
-// 				}
-// 			}
-// 			> ul {
-// 				@include no-bullet;
-// 				margin-bottom: sizes(half);
-// 				> li {
-
-// 					> a {
-// 						font-size: 14px;
-// 						color: colors(greyscale, mid);
-// 						display: block;
-// 						padding: sizes(double-half) sizes(base);
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// 	.mobile-site-navigation-open {
-// 		@include respond-above-above(device-large) {
-// 			display: none;
-// 		}
-// 	}
-
-
-
-
-// Look at bootrstap docs
-
-// @for $i from 1 through $column-numbers {
-//   @each $key, $value in $breakpoints {
-//     .grid-#{$i}-#{$key}  {
-//       @include no-bullet;
-//       margin-left: -sizes(base)
-//       margin-right: -sizes(base)
-//       @if $i < 1
-//         margin-left: 0
-//         margin-right: 0
-//       > li
-//         width: 100%
-//         margin-bottom: sizes(double)
-//         @if $i < 1
-//           padding: 0
-//         +respond-above($key)
-//           width: 100% / $i !important
-//           padding: 0 sizes(base) !important
-
-//           &:nth-last-child(-n+#{$i})
-//             margin-bottom: 0
-//   }
-// }
 
 ul > li {
   margin-bottom: sizes(base);
@@ -207,40 +161,6 @@ ul > li {
   }
 }
 
-.swatch {
-  position: relative;
-  float: left;
-  height: 400px;
-  padding: sizes(base);
-
-  &.small {
-    float: none;
-    display: inline-block;
-    vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin-right: sizes(half);
-    border-radius: 30px;
-  }
-
-  &.thumb {
-    float: none;
-    height: 200px;
-  }
-  .label {
-    position: absolute;
-    bottom: 20px;
-  }
-}
-
-.tint {
-  padding: 20px;
-}
-
-.text-grey-500 {
-  color: #313033;
-}
 
 
 
@@ -252,24 +172,6 @@ ul > li {
   //   padding-top: 0;
   // }
 
-  h3 {
-    margin-top: sizes(double);
-
-    &:first-of-type {
-      margin-top: 0;
-    }
-  }
-
-
-  table {
-    img {
-      width: 24px;
-    }
-
-    h1, h2, h3, h4, h5, h6, p {
-      margin-bottom: 0;
-    }
-  }
 
   .content {
     padding: 20px 0;
@@ -277,38 +179,12 @@ ul > li {
     background: #CCEBF3;
   }
 
-  .primary-site-links {
-    margin-left: 0;
-  }
-
-
-
-  // code {
-  //   border: 1px solid colors(keyline, dark);
-  //   border-radius: 3px;
-  //   font-size: 14px;
-  //   font-family: "Source Code Pro", Consolas, "Lucida Console", Courier, monospace;
-  //   padding: sizes(double);
-  //   display: block;
-  //   margin-top: sizes(double);
-  // }
-
   .class, .code {
     color: #D88E2C;
     font-family: "Source Code Pro",Consolas,"Lucida Console",Courier,monospace;
   }
 
-  .example {
-    border: 1px solid colors(keyline, dark);
-    border-radius: 3px;
-    // padding: 20px;
 
-    .modal, .dropdown-menu {
-      position: static;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
 
   .page-header {
     text-align: left;
@@ -336,11 +212,4 @@ ul > li {
   //   }
   // }
 
-  .logo-example {
-    width: 100%;
-    height: 260px;
-    padding: sizes(triple);
-    text-align: center;
-    background: white;
-  }
 }

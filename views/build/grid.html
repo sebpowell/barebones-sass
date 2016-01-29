@@ -1,29 +1,179 @@
 
+<html>
+  <head>
+    <!-- Meta Tags !-->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="description" content=""/>
+    <!-- / Meta Tags !-->
+    <title>Set Title</title>
+    <link rel="stylesheet" href="../../assets/css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Enable HTML5 elements in IE8 !-->
+    <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    -->
+    <!-- / Enable HTML5 elements in IE8 !-->
+    <!--
+    // 	$(document).ready(function() {
+    // 		var documentHead = $("head");
+    // 		var document = $(".iframe-container");
+    // 		$('<div class="phantom"><iframe id="myFrame" name="myFrame" src="about:blank"></div>').appendTo('body');
+    // 		var d = $("iframe")[0].contentWindow.document; // contentWindow works in IE7 and FF
+    //     d.open();
+    //     d.close();
+    // 		$("iframe").contents().find("head, body").remove();
+    // 		$("html", d).append(documentHead, document);
+    // 		documentHead.clone().prependTo("html");
+    // 		// var toolbarSelected = $("iframe").contents().find(".screen-tester-sizes-selected");
+    // 		// var toolbarDropdown = $("iframe").contents().find(".screen-tester-sizes-dropdown");
+    // 		// var toolbarOption = $("iframe").contents().find(".screen-tester-sizes-dropdown > li");
+    // 		var toolbarSelected = $(".screen-tester-sizes-selected");
+    // 		var toolbarDropdown = $(".screen-tester-sizes-dropdown");
+    // 		var toolbarOption = $(".screen-tester-sizes-dropdown > li");
+    // 		toolbarSelected.on('click', function() {
+    // 			toolbarDropdown.toggleClass("is-visible");
+    // 		});
+    // 		toolbarOption.on("click", function() {
+    // 				var value = $(this).attr("data-size");
+    // 			  $("iframe").width(value);
+    // 				testingIframe.width(value);
+    // 					// breakpointSelected.html( $(this).text() );
+    // 					// breakpointDropdown.removeClass("is-visible");
+    // 				});
+    // 	});
+    -->
+    <script src="../../highlight.js"></script>
+  </head>
+</html>
+<body class="page-layout-docs">
+  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+    <ul>
+      <li><a href="index.html">Getting Started</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="grid.html">Grid System</a></li>
+      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="helpers.html">Helpers</a></li>
+    </ul>
+    <div class="download"><a class="button white block">Download</a>
+      <div class="made">Made by Getagent.co.uk</div>
+    </div>
+  </header>
+</body>
+<div class="iframe-container">
+  <div class="main-container">
+    <h1 class="page-title">Grid System</h1>
+    <article id="containers" class="article">
+      <p>Barebones includes a flexible, responsive grid system that can be used in one of two ways.</p>
+      <ul class="bullet-list">
+        <li>Helper classes</li>
+        <li>Custom grid</li>
+      </ul>
+    </article>
+    <article id="containers" class="article">
+      <h2>Helper Classes</h2>
+      <h3>Rows & Columns</h3>
+      <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
+      <p>Columns work in the following way:</p>
+      <ul class="bullet-list">
+        <li>Each column has a % margin-right applied to it.</li>
+        <li>Margin is removed on the last column</li>
+        <li>They automatically grow to 100% at the breakpoint defined in the SASS map.</li>
+      </ul>
+      <div class="example">
+        <div class="columns">
+          <div class="columns-4">Columns 4</div>
+          <div class="columns-5">Columns 5</div>
+          <div class="columns-3">Columns 3</div>
+        </div>
+      </div>
+      <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4"&gt;
+ &lt;div class="columns-5"&gt;
+ &lt;div class="columns-3"&gt;
+&lt;/div&gt;</code></pre>
+      <p>Helper classes are also available to create different grids for different breakpoints.</p>
+      <div class="example">
+        <div class="columns">
+          <div class="columns-4 columns-4-device-small">Columns 4</div>
+          <div class="columns-5 columns-4-device-small"> Columns 5</div>
+          <div class="columns-3 columns-4-device-small"> Columns 3</div>
+        </div>
+      </div>
+      <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4 columns-4-device-small"&gt;
+ &lt;div class="columns-5 columns-5-device-small"&gt;
+ &lt;div class="columns-3 columns-3-device-small"&gt;
+&lt;/div&gt;</code></pre>
+      <h3>Galleries</h3>
+      <p>Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns</p>
+      <div class="example">
+        <ul class="gallery-5">
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+        </ul>
+      </div>
+      <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4"&gt;
+ &lt;div class="columns-5"&gt;
+ &lt;div class="columns-3"&gt;
+&lt;/div&gt;</code></pre>
+      <h2>Grid Generator</h2>
+      <p>You can also create your own grid, without the need of 'messy' helper classes using the <span class="function">span($columns, $position)</span> function.</p>
+      <ul class="bullet-list">
+        <li>$colums: number of columns spanned by the element.</li>
+        <li>$position: if the column is the last one, pass the 'last' keyword to remove the margin.</li>
+      </ul>
+      <pre><code class="language-scss">.element-left {
+  @include span(4);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.element-right {
+  @include span(8, last);
+}</code></pre>
+      <div class="example">
+        <div class="example-wrapper">
+          <div style="background-color: lightpink" class="example-content-block"></div>
+          <div style="background-color: cyan" class="example-sidebar"></div>
+        </div>
+      </div>
+      <p>To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.</p>
+      <pre><code class="language-scss">.example-sidebar {
+ @include span(6, last);
+ @include respond-above(device-small) {
+   @include span(8, last);
+ }
+}</code></pre>
+      <h2>Galleries</h2>
+      <p>Galleries are grids containing a repeating number of equal-sized items.</p>
+      <div class="example">
+        <ul class="photo-grid">
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+          <li class="photo-grid-item">Item</li>
+        </ul>
+      </div>
+      <pre><code class="language-scss">.example-gallery-item {
+  @include gallery-item(1, device-small);
+  @include gallery-item(4, device-medium);
+}</code></pre>
+    </article>
+  </div>
+</div>

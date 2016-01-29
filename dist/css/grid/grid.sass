@@ -1,3 +1,25 @@
+
+// Get total number of gutters.
+$gutters: (themes(layout, grid, columns) / themes(layout, grid, gutter)) + (themes(layout, grid, columns) - 1)
+
+$gutterCount: (themes(layout, grid, columns) - 1)
+
+@debug $gutters
+
+$gutterWidth: 100% / $gutters
+
+$totalGutterWidth: $gutterWidth * $gutterCount
+
+@debug $totalGutterWidth
+
+$columnWidth: (100% - $totalGutterWidth) / themes(layout, grid, columns)
+
+@debug $columnWidth
+
+$totalColumnWidth: $columnWidth + $gutterWidth
+
+$guttersPerColumn: (1 / themes(layout, grid, gutter)) + 1
+
 @import "bleed"
 @import "container"
 @import "columns"
