@@ -2,6 +2,7 @@
   "name": "barebones",
   "description": "SASS boilerplate",
   "main": "",
+  "version": "1.0",
   "authors": [
     "Seb Powell"
   ],
