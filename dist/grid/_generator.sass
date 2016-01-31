@@ -20,7 +20,12 @@
 	// 	+respond-above($device)
 	// 		width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
 	
-	width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+	@if $device != null
+		+respond-above($device)
+			width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+	@else 
+		+respond-above(grid)
+			width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
 		
 	@if $position == "last"
 		margin-right: 0
