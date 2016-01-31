@@ -1,0 +1,36 @@
+.screen-tester {
+  @include clearfix;
+  position: fixed;
+  background: white;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid colors(keyline, dark);
+  left: 0;
+  .screen-tester-sizes {
+    float: right;
+
+  }
+
+  .screen-tester-sizes-selected {
+    position: relative;
+    border-right: 1px solid colors(keyline, dark);
+    padding: sizes(base);
+  }
+  .screen-tester-sizes-dropdown {
+    @include no-bullet;
+    background: white;
+    visibility: hidden;
+    position: absolute;
+    border: 1px solid colors(keyline, dark);
+    top: 100%;
+    opacity: 0;
+    > li {
+      padding: sizes(base);
+    }
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

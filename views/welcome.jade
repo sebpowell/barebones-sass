@@ -1,13 +1,30 @@
 include _inc/_head.jade
 
 .welcome-masthead
-	img.logo(src="../../assets/images/logo.png")
+	
 	.welcome-masthead-inner
-		h1.welcome-masthead-inner-heading BUILD YOUR OWN SASS FRAMEWORK
-		p Barebones is a SASS boilerplate to kickstart your next project.
-		.welcome-masthead-buttons
-			a.button.white.large.margin-right-base(href="index.html") Download
-			a.button.white.bordered.large(href="index.html") Read the docs
+		img.logo(src="../../assets/images/logo.png")
+		.container-large
+			h1.welcome-masthead-inner-heading BUILD YOUR OWN SASS FRAMEWORK
+			p.welcome-masthead-subheading Barebones is a lightweight SASS boilerplate to kickstart your next web project. 
+			.welcome-masthead-buttons
+				a.button.white.large.margin-right-base(href="https://github.com/sebpowell/barebones", target="_blank") Download V1
+				a.button.white.bordered.large(href="index.html") Read the docs
+
+			section.selling-points
+				.selling-point
+					h2.selling-point-title Speeds up development
+					p.selling-point-description Detailed documentation as well as specific code examples to help new users get started.
+
+				.selling-point
+					h2.selling-point-title Zero Bloat
+					p.selling-point-description Barebones includes only what you need. It's designed to get out of your way and makes it easy to override styles.
+				.selling-point
+					h2.selling-point-title Fully Customisable
+					p.selling-point-description Unlike other frameworks, it's much easier to add new CSS rules than to overwrite existing rules.
+
 
 	.welcome-masthead-footer
-		| Made by <a href="">Getagent.co.uk</a>
+		.made-by
+			| Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a>
+

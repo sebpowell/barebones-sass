@@ -7,18 +7,51 @@ include _inc/_layout.jade
 		h1.page-title Getting Started
 
 		article.article
-			p Barebones is a <a href="http://sass-lang.com/">SASS</a> boilerplate for building custom interfaces.
-			p Unlike Bootstrap Foundation and other CSS frameworks, Barebones is not a fully fledged design system. It doesn't include a ton of pre-built, fully designed components – instead, it provides a set of commonly used tools; mixins, functions and helper classees, organised in a cohesive way to jump-start your next web project, using the full power of SASS.
+			p Barebones is a boilerplate to help you quickly build your own SASS framework. It is not a fully fledged front-end framework, and simply provides a set of commonly used tools: a customisable grid system, automatically generated helper classes, and a range of mixins. Basic elements, icluding buttons, tables, typographic resets, bullet lists are included with minimal styling so you can spend less time overwriting and more time creating something that looks unique. 
 
 			p The best way to get started with Barebones is to download the <a href="https://github.com/sebpowell/barebones">latest version</a> from Github and start building!
 
-			p If you need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>.
+			p You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as the foundational code).
 
+			pre
+				code.language-bash
+					| bower install barebones
+			
 
 		article.article
 			h2 Requirements
 
-			p Baerbones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer">autoprefixer plugin</a> to do this.
+			p Barebones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
+
+		article.article
+			h2 Support 
+			p If you have a question, or need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. 
+
+		article.article
+
+			h2 Background Reading
+
+			p Barebones was heavily inspired by a variety of articles. Here are some of them in case you're interested in doing some more reading. 
+
+			ul.bullet-list
+				li 
+					a(href="http://fourkitchens.com/blog/article/you-dont-need-bootstrap" target="_blank") You Don't Need Bootstrap – Ian Carrico
+				li
+					a(href="https://smacss.com/" target="_blank") Scalable & Module Architecture for CSS – Jonathan Snook
+				li 
+					a(href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank") Responsive Deliverables – Dave Rupert
+				li 
+					a(href="http://www.sitepoint.com/managing-responsive-breakpoints-sass/" target="_blank") Managing Responsive Breakpoints with SASS – Hugo Giraudel
+				li 
+					a(href="http://www.zell-weekeat.com/mappy-breakpoints" target="_blank") Mappy Breakpoints – Zell Liew
+				li 
+					a(href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank") How to Structure a SASS Project – John Long
+				li 
+					a(href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank") Modular CSS Naming Conventions – John Long
+				li 
+					a(href="http://www.sitepoint.com/architecture-sass-project/") Architecture for a SASS Project – Hugo Giraudel
+
+
 
 
 

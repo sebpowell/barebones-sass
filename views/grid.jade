@@ -7,14 +7,62 @@ include _inc/_layout.jade
 	.main-container
 
 
-		h1.page-title Grid System
+		h1.page-title Grid
 		article#containers.article
 
-			p Barebones includes a flexible, responsive grid system that can be used in one of two ways.
+			p Barebones includes a flexible, responsive grid system that can be used in one of two ways. 
 
 			ul.bullet-list
+				li Grid generator
 				li Helper classes
-				li Custom grid
+
+
+		article.article
+			h2 Grid Generator
+			p The grid generator allows you to target the specific component (e.g. a sidebar) without the need of 'messy' helper classes. 
+			p The Barebones grid works in the following way: 
+			ul.bullet-list
+				li Each column has a % margin-right applied to it.
+				li Margin is removed on the last column
+				li They automatically grow to 100% at the breakpoint defined in the SASS map.
+
+			p using the <span class="function">span($columns, $position)</span> function. They work in the fol
+
+			ul.bullet-list
+				li $colums: number of columns spanned by the element.
+				li $position: if the column is the last one, pass the 'last' keyword to remove the margin.
+
+
+			pre
+				code.language-scss
+					| .sidebar {
+					|   @include span(4);
+					| }
+					| #{''}
+					| .content {
+					|   @include span(8, last);
+					| }
+
+
+			.example.margin-bottom-base
+				.example-wrapper
+					.example-sidebar(style="background-color: cyan")
+					.example-content-block(style="background-color: lightpink")
+					
+
+
+			p To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.
+
+			pre
+				code.language-scss
+					| .example-sidebar {
+					|  @include span(6, last);
+					|  @include respond-above(device-small) {
+					|    @include span(8, last);
+					|  }
+					| }
+
+
 
 		article#containers.article
 
@@ -26,10 +74,7 @@ include _inc/_layout.jade
 			p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
 			p Columns work in the following way:
 
-			ul.bullet-list
-				li Each column has a % margin-right applied to it.
-				li Margin is removed on the last column
-				li They automatically grow to 100% at the breakpoint defined in the SASS map.
+			
 
 			.example
 				.columns
@@ -88,62 +133,7 @@ include _inc/_layout.jade
 
 
 
-			h2 Grid Generator
-			p You can also create your own grid, without the need of 'messy' helper classes using the <span class="function">span($columns, $position)</span> function.
-
-			ul.bullet-list
-				li $colums: number of columns spanned by the element.
-				li $position: if the column is the last one, pass the 'last' keyword to remove the margin.
-
-
-			pre
-				code.language-scss
-					| .element-left {
-					|   @include span(4);
-					| }
-					| #{''}
-					| .element-right {
-					|   @include span(8, last);
-					| }
-
-
-			.example
-				.example-wrapper
-					.example-content-block(style="background-color: lightpink")
-					.example-sidebar(style="background-color: cyan")
-
-
-			p To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.
-
-			pre
-				code.language-scss
-					| .example-sidebar {
-					|  @include span(6, last);
-					|  @include respond-above(device-small) {
-					|    @include span(8, last);
-					|  }
-					| }
-
-
-			h2 Galleries
-
-			p Galleries are grids containing a repeating number of equal-sized items.
-
-
-			.example
-				ul.photo-grid
-					each i in new Array(10)
-						li.photo-grid-item Item
-
-
-			pre
-				code.language-scss
-					| .example-gallery-item {
-					|   @include gallery-item(1, device-small);
-					|   @include gallery-item(4, device-medium);
-					| }
-
-
+			
 
 
 

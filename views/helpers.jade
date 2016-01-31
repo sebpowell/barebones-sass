@@ -11,10 +11,10 @@ include _inc/_layout.jade
 
 		article#background-color.article
 
-			p Helpers or utlity classes should generally be used sparingly. They server two main purposes: first, for rapid brower prototyping, and second for adapting an element or component within a given context. All helper class attributes are suffixed with an !important flag.
+			p Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.
 
 			h3 Background Color
-			p Generates a background-color helper for all colors specified in the palette category in the theme map.
+			p Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper. 
 
 			pre
 				code.language-html
@@ -26,10 +26,9 @@ include _inc/_layout.jade
 					|  background-color: #F5F5F5 !important;
 					| }
 
-
 		article#borders.article
 			h3#borders Borders
-			p Adds or removes a keyline to a given element. The border color uses the keyline value fromm the theme map.
+			p Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.
 			ul.bullet-list.margin-bottom-double
 				li border-left
 				li border-top
@@ -38,8 +37,12 @@ include _inc/_layout.jade
 				li border-all
 				li no-border
 			pre
+				code.language-html
+					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+
+			pre
 				code.language-scss
-					| .border-top {
+					| .background-brand-primary {
 					|  background-color: #F5F5F5 !important;
 					| }
 
@@ -56,7 +59,13 @@ include _inc/_layout.jade
 
 			pre
 				code.language-html
-				| &lt;div class="margin-bottom-quarter"/div
+					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+
+			pre
+				code.language-scss
+					| .background-brand-primary {
+					|  background-color: #F5F5F5 !important;
+					| }
 
 		article#margin.article
 			h3 Layout
@@ -68,16 +77,23 @@ include _inc/_layout.jade
 				li float-right
 			pre
 				code.language-html
-				| &lt;div class="margin-bottom-quarter"/div
+					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+
+			pre
+				code.language-scss
+					| .background-brand-primary {
+					|  background-color: #F5F5F5 !important;
+					| }
 
 
 
 		article#text-align.article
 			h3 Typography
 
-			p Use <span class="class">.text-{helper}</span> to use.
+			p <span class="class">.text-{helper}</span>.
 
 			h4 Alignment
+			p These classes are for horizontally aligning content:
 
 			ul.bullet-list
 				li left
@@ -100,19 +116,27 @@ include _inc/_layout.jade
 			h4 Transform
 
 			ul.bullet-list
-				li x-small
-				li small
-				li base
-				li medium
-				li medium-large
-				li large
-				li x-large
-
-			h4 Transform
-
-			ul.bullet-list
 				li uppercase
 				li lowercase
 				li capitalize
+	
 
+		article.article
+			h2 Visibility 
+			p We provide easy to use classes to hide content on specific screen sizes.
 
+			pre
+				code.language-html
+					| &lt;div class="is-hidden"&gt;&lt;/div&gt;
+					| &lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
+					| &lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
+
+			pre
+				code.language-scss
+					| .background-brand-primary {
+					|  background-color: #F5F5F5 !important;
+					| }
+
+	//- article#text-align.article
+	//- 	h2 Vertical Align
+	//- 	p You can easily vertically center things by adding the class valign-wrapper to the container holding the items you want to vertically align.

@@ -5,9 +5,7 @@ $container-sizes: (small: 500px, medium: 800px, large: 1000px, x-large: 1200px, 
 	position: relative
 	margin: auto
 	width: 100%
-	padding: 0 sizes(base)
-	@include respond-above(device-medium)
-		padding: 0 sizes(double)
+
 
 // Generate container sizes
 @each $size, $value in $container-sizes

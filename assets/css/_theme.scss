@@ -60,7 +60,7 @@ $theme: (
 		),
 
 		secondarynew: (
-			name: #{'Futura PT', sans-serif},
+			name: #{'Futura-PT', sans-serif},
 			weights: (
 				light: 100,
 				regular: 400,
@@ -138,7 +138,6 @@ $theme: (
 	),
 
 	breakpoints: (
-
 		grid: 760px,
 		device-x-small: 350px,
 		device-small: 480px,
@@ -182,8 +181,6 @@ $theme: (
 
 
 @function themes($keys...) {
-
-
   $key: nth($keys, 1);
   $length: length($keys);
   $value: map-get($theme, $key);

@@ -10,13 +10,24 @@
     <meta property="og:description" content=""/>
     <meta name="description" content=""/>
     <!-- / Meta Tags !-->
-    <title>Set Title</title>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../assets/css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	$("body").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      
+      		$(".docs-navigation ul li").each(function() {
+      			$(this).css("transform", "translateY(0)");
+      		});
+      	});
+      });
+    </script>
     <!-- Enable HTML5 elements in IE8 !-->
     <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     -->
@@ -54,16 +65,17 @@
   </head>
 </html>
 <body class="page-layout-docs">
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a></header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
     <ul>
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
-      <li><a href="grid.html">Grid System</a></li>
+      <li><a href="grid.html">Grid</a></li>
       <li><a href="mixins.html">Mixins & Functions</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a class="button white block">Download</a>
-      <div class="made">Made by Getagent.co.uk</div>
+      <div class="made">Made in London by Getagent.co.uk</div>
     </div>
   </header>
 </body>
@@ -71,9 +83,9 @@
   <div class="main-container">
     <h1 class="page-title">Helpers</h1>
     <article id="background-color" class="article">
-      <p>Helpers or utlity classes should generally be used sparingly. They server two main purposes: first, for rapid brower prototyping, and second for adapting an element or component within a given context. All helper class attributes are suffixed with an !important flag.</p>
+      <p>Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.</p>
       <h3>Background Color</h3>
-      <p>Generates a background-color helper for all colors specified in the palette category in the theme map.</p>
+      <p>Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper. </p>
       <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
       <pre><code class="language-scss">.background-brand-primary {
  background-color: #F5F5F5 !important;
@@ -81,7 +93,7 @@
     </article>
     <article id="borders" class="article">
       <h3 id="borders">Borders</h3>
-      <p>Adds or removes a keyline to a given element. The border color uses the keyline value fromm the theme map.</p>
+      <p>Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.</p>
       <ul class="bullet-list margin-bottom-double">
         <li>border-left</li>
         <li>border-top</li>
@@ -90,7 +102,8 @@
         <li>border-all</li>
         <li>no-border</li>
       </ul>
-      <pre><code class="language-scss">.border-top {
+      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
+      <pre><code class="language-scss">.background-brand-primary {
  background-color: #F5F5F5 !important;
 }</code></pre>
     </article>
@@ -103,7 +116,10 @@
         <li><span class="class">.no-margin</span></li>
         <li><span class="class">.no-padding</span></li>
       </ul>
-      <pre><code class="language-html"></code>&lt;div class="margin-bottom-quarter"/div</pre>
+      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
+      <pre><code class="language-scss">.background-brand-primary {
+ background-color: #F5F5F5 !important;
+}</code></pre>
     </article>
     <article id="margin" class="article">
       <h3>Layout</h3>
@@ -114,12 +130,16 @@
         <li>float-left</li>
         <li>float-right</li>
       </ul>
-      <pre><code class="language-html"></code>&lt;div class="margin-bottom-quarter"/div</pre>
+      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
+      <pre><code class="language-scss">.background-brand-primary {
+ background-color: #F5F5F5 !important;
+}</code></pre>
     </article>
     <article id="text-align" class="article">
       <h3>Typography</h3>
-      <p>Use <span class="class">.text-{helper}</span> to use.</p>
+      <p><span class="class">.text-{helper}</span>.</p>
       <h4>Alignment</h4>
+      <p>These classes are for horizontally aligning content:</p>
       <ul class="bullet-list">
         <li>left</li>
         <li>right</li>
@@ -138,20 +158,20 @@
       </ul>
       <h4>Transform</h4>
       <ul class="bullet-list">
-        <li>x-small</li>
-        <li>small</li>
-        <li>base</li>
-        <li>medium</li>
-        <li>medium-large</li>
-        <li>large</li>
-        <li>x-large</li>
-      </ul>
-      <h4>Transform</h4>
-      <ul class="bullet-list">
         <li>uppercase</li>
         <li>lowercase</li>
         <li>capitalize</li>
       </ul>
+    </article>
+    <article class="article">
+      <h2>Visibility </h2>
+      <p>We provide easy to use classes to hide content on specific screen sizes.</p>
+      <pre><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt;
+&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
+&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;</code></pre>
+      <pre><code class="language-scss">.background-brand-primary {
+ background-color: #F5F5F5 !important;
+}</code></pre>
     </article>
   </div>
 </div>

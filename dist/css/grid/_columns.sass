@@ -30,42 +30,23 @@
 
 			+respond-above($key)
 				@if $i > 1
-					width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
+				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
 				float: left
 
 
 
 
 
-@mixin span($columns, $device: "device-medium", $position: "")
-	// margin-right: $gutterWidth;
-	// @if theme(layout, gutter-type) == "padding"
-	// 	$columnWidth: 100% / theme(columns)
-	// 	padding-right: theme(gutter)
-	// 	width: 100%
-	// 	@include respond-above(device-medium)
-	// 		width: ($columnWidth * $columns)
+@mixin span($columns, $position: "", $device: "")
+	margin-right: $gutterWidth
+	float: left
 
-	// @if theme(layout, gutter-type) == "margin"
-
-	// 	width: 100%
-
-	// 	@include respond-above($device)
-	// 		width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1))
-	// 		@if $position == "last"
-	// 			margin-right: 0
-	// 			float: right
-
-	// 		@else
-	// 			float: left
-	// 			margin-right: $gutterWidth
-
-			// @if $offset != null {
-			// 	margin-left: $offset;
-			// }
-
-
-
-
-// }
-
+	// @if $device != null
+	// 	+respond-above($device)
+	// 		width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+	
+	width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+		
+	@if $position == "last"
+		margin-right: 0
+		float: right

@@ -11,3 +11,8 @@
 		+respond-above(#{$breakpoint})
 			display: none !important
 
+@each $breakpoint, $value in $breakpoints
+	.hide-below-#{$breakpoint}
+		+respond-below(#{$breakpoint})
+			display: none !important
+

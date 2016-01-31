@@ -10,13 +10,24 @@
     <meta property="og:description" content=""/>
     <meta name="description" content=""/>
     <!-- / Meta Tags !-->
-    <title>Set Title</title>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../assets/css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	$("body").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      
+      		$(".docs-navigation ul li").each(function() {
+      			$(this).css("transform", "translateY(0)");
+      		});
+      	});
+      });
+    </script>
     <!-- Enable HTML5 elements in IE8 !-->
     <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     -->
@@ -54,16 +65,17 @@
   </head>
 </html>
 <body class="page-layout-docs">
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a></header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
     <ul>
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
-      <li><a href="grid.html">Grid System</a></li>
+      <li><a href="grid.html">Grid</a></li>
       <li><a href="mixins.html">Mixins & Functions</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a class="button white block">Download</a>
-      <div class="made">Made by Getagent.co.uk</div>
+      <div class="made">Made in London by Getagent.co.uk</div>
     </div>
   </header>
 </body>
@@ -72,7 +84,12 @@
     <h1 class="page-title">Mixins</h1>
     <article id="arrow" class="article">
       <h2>Arrow</h2>
-      <p>Creates a triangle, used for things like tooltips or dropdowns. Available directions are "up", "right", "down" and "left". Accepts the following arguments arrow($direction, $color, $size).</p>
+      <p>Creates a triangle, used for things like tooltips or dropdowns. </p>
+      <ul class="bullet-list">
+        <li>$direction: "up", "right", "down" or "left"</li>
+        <li>$color: any value </li>
+        <li>$size: any value</li>
+      </ul>
       <pre><code class="language-scss">.element {
   &:after {
    @include arrow(down, black, 20px);

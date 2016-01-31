@@ -11,7 +11,7 @@ button, .button
 	font:
 		weight: 600
 		size: themes(fonts, sizes, base)
-		family: themes(fonts, primarynew, name)
+		family: themes(fonts, secondarynew, name)
 
 	text:
 		decoration: none
@@ -36,9 +36,11 @@ button, .button
 	&.white
 		background: white
 		color: themes(colours, brand, primary)
+		&:hover
+			
 		&.bordered
 			background: transparent
-			border: 1px solid lighten(white, 60%)
+			border: 1px solid rgba(255,255,255,0.4)
 			color: white
 			&:hover
 				background: white

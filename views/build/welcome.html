@@ -10,13 +10,24 @@
     <meta property="og:description" content=""/>
     <meta name="description" content=""/>
     <!-- / Meta Tags !-->
-    <title>Set Title</title>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../assets/css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	$("body").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      
+      		$(".docs-navigation ul li").each(function() {
+      			$(this).css("transform", "translateY(0)");
+      		});
+      	});
+      });
+    </script>
     <!-- Enable HTML5 elements in IE8 !-->
     <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     -->
@@ -53,11 +64,29 @@
     <script src="../../highlight.js"></script>
   </head>
 </html>
-<div class="welcome-masthead"><img src="../../assets/images/logo.png" class="logo"/>
-  <div class="welcome-masthead-inner">
-    <h1 class="welcome-masthead-inner-heading">BUILD YOUR OWN SASS FRAMEWORK</h1>
-    <p>Barebones is a SASS boilerplate to kickstart your next project.</p>
-    <div class="welcome-masthead-buttons"><a href="index.html" class="button white large margin-right-base">Download</a><a href="index.html" class="button white bordered large">Read the docs</a></div>
+<div class="welcome-masthead">
+  <div class="welcome-masthead-inner"><img src="../../assets/images/logo.png" class="logo"/>
+    <div class="container-large">
+      <h1 class="welcome-masthead-inner-heading">BUILD YOUR OWN SASS FRAMEWORK</h1>
+      <p class="welcome-masthead-subheading">Barebones is a lightweight SASS boilerplate to kickstart your next web project. </p>
+      <div class="welcome-masthead-buttons"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button white large margin-right-base">Download V1</a><a href="index.html" class="button white bordered large">Read the docs</a></div>
+      <section class="selling-points">
+        <div class="selling-point">
+          <h2 class="selling-point-title">Speeds up development</h2>
+          <p class="selling-point-description">Detailed documentation as well as specific code examples to help new users get started.</p>
+        </div>
+        <div class="selling-point">
+          <h2 class="selling-point-title">Zero Bloat</h2>
+          <p class="selling-point-description">Barebones includes only what you need. It's designed to get out of your way and makes it easy to override styles.</p>
+        </div>
+        <div class="selling-point">
+          <h2 class="selling-point-title">Fully Customisable</h2>
+          <p class="selling-point-description">Unlike other frameworks, it's much easier to add new CSS rules than to overwrite existing rules.</p>
+        </div>
+      </section>
+    </div>
   </div>
-  <div class="welcome-masthead-footer">Made by <a href="">Getagent.co.uk</a></div>
+  <div class="welcome-masthead-footer">
+    <div class="made-by">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
+  </div>
 </div>

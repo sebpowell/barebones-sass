@@ -1,0 +1,117 @@
+$selling-points: (device-small: 12, device-medium: 4);
+
+
+.selling-points {
+	@include clearfix;
+}
+
+.selling-point {
+	.selling-point-title {
+		font-size: 16px;
+		font-weight: themes(fonts, primarynew, weights, semi-bold);
+		color: white;
+	}
+	.selling-point-description {
+		font-size: 15px;
+		line-height: 1.8;
+		color: lighten(colours(brand, primary), 30%);
+	}
+	@include grid($selling-points);
+}
+
+
+.welcome-masthead {
+	background-color: colours(brand, primary);
+	padding-top: 40px;
+	@include respond-above(device-medium) {
+		height: 100%;
+		padding-top: 100px;
+		display: table;
+	}
+	width: 100%;
+	
+	.logo {
+		margin-bottom: 60px;
+		@include respond-above(device-medium) {
+			position: absolute;
+			margin-bottom: 0;
+			left: 32px;
+		top: 32px;
+			
+		}
+		
+		
+	}
+
+	.welcome-masthead-inner {
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+		color: white;
+		padding: themes(layout, grid, mobile-padding);
+	}
+
+
+
+	.welcome-masthead-inner-heading {
+		font-family: themes(fonts, secondarynew, name);
+		font-size: 40px;
+		letter-spacing: 0.1em;
+		line-height: 1.2;
+		text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+		@include respond-above(device-medium) {
+			font-size: 80px;
+			max-width: 1400px;
+		}
+	}
+
+	.welcome-masthead-subheading {
+		color: lighten(colours(brand, primary), 30%);
+		line-height: 2;
+		font-size: 18px;
+		max-width: 1000px;
+		margin-bottom: sizes(double);
+		@include respond-above(device-medium) {
+			font-size: 24px;
+		}
+	}
+
+	.welcome-masthead-buttons {
+		margin-bottom: sizes(triple);
+		.button {
+			@include respond-below(device-medium) {
+				display: block;
+				margin-right: 0 !important;
+				&:first-child {
+					margin-bottom: sizes(base);
+				}
+			}
+			@include respond-above(device-medium) {
+				width: 240px;
+			}
+		}
+	}
+
+	.welcome-masthead-footer {
+		@include respond-above(device-medium) {
+		position: absolute;
+		bottom: 0;
+		}
+		padding: sizes(double-half) themes(layout, grid, mobile-gutter);
+		width: 100%;
+		left: 0;
+		font-size: 13px;
+		
+		.made-by {
+			color: lighten(colours(brand, primary), 30%);
+		}
+
+		a {
+			color: white;
+			font-weight: themes(fonts, primarynew, weights, semi-bold);
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

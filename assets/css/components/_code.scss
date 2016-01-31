@@ -3,17 +3,30 @@
 	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 16px;
 }
-
-
-.logo {
-	position: absolute;
-	left: 32px;
-	top: 32px;
-	width: 180px;
+img {
+  max-width: 100%;
 }
 
+
+
 pre {
+	position: relative;
 	margin-bottom: sizes(double) !important;
+	padding-top: 50px !important;
+	overflow-x: hidden !important;
+
+	&:after {
+		content: "Example";
+		border-bottom: 1px solid colours(keyline, light);
+		background: colours(greyscale, 50);
+		padding: sizes(half) 0 sizes(half) sizes(half);
+		font-size: 12px;
+		font-family: themes(fonts, primarynew, name);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
 }
 
 

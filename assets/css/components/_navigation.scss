@@ -1,54 +1,62 @@
-.welcome-masthead {
-	background-color: colours(brand, primary);
-	color: white;
-	height: 100%;
-	display: table;
-	width: 100%;
 
-	.welcome-masthead-inner {
-		display: table-cell;
-		vertical-align: middle;
-		padding: 100px;
-	}
-
-	.welcome-masthead-inner-heading {
-		font-family: themes(fonts, secondarynew, name);
-		font-size: 100px;
-		max-width: 1400px;
-		letter-spacing: 0.01em;
-	}
-
-	.welcome-masthead-buttons {
-		.button {
-			width: 240px;
-		}
-	}
-
-	p {
-		font-size: 24px;
-		opacity: 0.8;
-		line-height: 2;
-		max-width: 800px;
-		margin-bottom: sizes(triple);
-	}
-
-	.welcome-masthead-footer {
-		position: absolute;
-		bottom: sizes(double);
-		left: sizes(double);
-		font-size: 14px;
-
-		a {
-			color: white;
-			font-weight: themes(fonts, primarynew, weights, semi-bold);
-			text-decoration: none;
-		}
-	}
+.button {
+  transition: all .25s;
+  box-shadow: 0 0 0 0 rgba(255,255,255,0.3);
 }
 
-.docs-navigation {
+.mobile-docs-navigation {
+  background: colours(brand, primary);
+  padding: sizes(base);
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
 
+  .logo {
+    margin: auto;
+  }
+}
+
+.logo {
+  width: 140px;
+  display: block;
+}
+
+
+.button:hover {
+  // transform: translateY(-10px);
+  box-shadow: 0 0 6px 6px rgba(255,255,255,0.3);
+}
+.docs-navigation {
+  background-color: themes(colours, brand, primary);
+  left: -300px;
+  width: 300px;
+  
+  padding-top: sizes(double);
+
+  position: fixed;
+  height: 100%;
+  top: 0;
+  transition: left 0.5s ease-in-out;
+
+  &.show {
+    left: 0;
+    display: block;
+  }
+  
+
+  @include respond-above(device-large) {
+    display: block;
+    left: 0;
+  }
+
+  .logo {
+    position: relative;
+    display: block;
+    margin: auto;
+  }
 
   .download {
   	position: absolute;
@@ -65,17 +73,7 @@
   	}
   }
 
-  @include respond-above(device-medium) {
-  	display: block;
-  	width: 300px;
-  	background-color: themes(colours, brand, primary);
-
-  	position: fixed;
-  	z-index: 9999;
-  	height: 100%;
-  	top: 0;
-  	left: 0;
-  }
+ 
 
   > ul {
     @include no-bullet;
@@ -91,15 +89,16 @@
     }
 
     > li {
+      transform: translateY(400px);
+      transition: transform .5s;
       > a {
-      	transition: opacity .5s;
+      	transition: color .5s;
         padding: sizes(base) sizes(double);
         text-decoration: none;
         display: block;
-        color: white;
-        opacity: 0.6;
+        color: lighten(colours(brand, primary), 30%);
         &:hover {
-        	opacity: 1;
+        	color: white;
         }
       }
     }

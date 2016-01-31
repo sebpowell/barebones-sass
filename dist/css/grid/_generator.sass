@@ -1,23 +1,44 @@
-// @mixin grid-test($map)
-// 	+clearfix
-// 	width: 100%
-// 	float: left
-// 	margin-bottom: (map-get($theme, gutter)) * 2
+// $page: (
+//   sidebar: (
+//     device-large: (
+//       columns: 8,
+//       offset: null,
+//     ),
+//     device-medium: 2
+//   ),
+//   main-content: (
+//     device-medium: 2,
+//     device-large: 8
+//   ),
+// );
 
-// 	@if map-get($map, debug) == true
-// 		> div
-// 			background-color: red
 
-// 	&:last-child
-// 		margin-bottom: 0
 
-// 	@each $key, $value in $breakpoints
-// 		@if map-get($map, $key)
-// 			+respond-above($key)
-// 				width: (100% / map-get($map, $key))
-// 				padding: 0 sizes(base)
-// 				// &:nth-child(#{map-get($map, $key)}n)
-// 				// 	clear: both
+@mixin grid($map)
+	@each $device, $size in themes(layout, breakpoints)
+		@if map-has-key($map, $device)
+			@if map-get($map, $device) == 12
+				margin-bottom: $gutterWidth * 3
+			
+			+respond-above($device)
+				$columnSpan: map-get($map, $device)
+				float: left
+				
+					
+				
+				@if map-has-key($map, "gutter")
+					@if map-get($map, "gutter") == null
+						width: (100% / themes(layout, grid, columns)) * $columnSpan
+						margin-right: 0
+
+				@else
+					width: (($columnWidth * $columnSpan) + (($columnSpan - 1) * $gutterWidth))
+					margin-right: $gutterWidth
+					
+					
+					&:last-child
+						margin-right: 0
+				
 
 
 

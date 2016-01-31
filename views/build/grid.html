@@ -10,13 +10,24 @@
     <meta property="og:description" content=""/>
     <meta name="description" content=""/>
     <!-- / Meta Tags !-->
-    <title>Set Title</title>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../assets/css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	$("body").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      
+      		$(".docs-navigation ul li").each(function() {
+      			$(this).css("transform", "translateY(0)");
+      		});
+      	});
+      });
+    </script>
     <!-- Enable HTML5 elements in IE8 !-->
     <!--if lt IE 9script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     -->
@@ -54,39 +65,70 @@
   </head>
 </html>
 <body class="page-layout-docs">
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a></header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
     <ul>
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
-      <li><a href="grid.html">Grid System</a></li>
+      <li><a href="grid.html">Grid</a></li>
       <li><a href="mixins.html">Mixins & Functions</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a class="button white block">Download</a>
-      <div class="made">Made by Getagent.co.uk</div>
+      <div class="made">Made in London by Getagent.co.uk</div>
     </div>
   </header>
 </body>
 <div class="iframe-container">
   <div class="main-container">
-    <h1 class="page-title">Grid System</h1>
+    <h1 class="page-title">Grid</h1>
     <article id="containers" class="article">
-      <p>Barebones includes a flexible, responsive grid system that can be used in one of two ways.</p>
+      <p>Barebones includes a flexible, responsive grid system that can be used in one of two ways. </p>
       <ul class="bullet-list">
+        <li>Grid generator</li>
         <li>Helper classes</li>
-        <li>Custom grid</li>
       </ul>
+    </article>
+    <article class="article">
+      <h2>Grid Generator</h2>
+      <p>The grid generator allows you to target the specific component (e.g. a sidebar) without the need of 'messy' helper classes. </p>
+      <p>The Barebones grid works in the following way: </p>
+      <ul class="bullet-list">
+        <li>Each column has a % margin-right applied to it.</li>
+        <li>Margin is removed on the last column</li>
+        <li>They automatically grow to 100% at the breakpoint defined in the SASS map.</li>
+      </ul>
+      <p>using the <span class="function">span($columns, $position)</span> function. They work in the fol</p>
+      <ul class="bullet-list">
+        <li>$colums: number of columns spanned by the element.</li>
+        <li>$position: if the column is the last one, pass the 'last' keyword to remove the margin.</li>
+      </ul>
+      <pre><code class="language-scss">.sidebar {
+  @include span(4);
+}
+
+.content {
+  @include span(8, last);
+}</code></pre>
+      <div class="example margin-bottom-base">
+        <div class="example-wrapper">
+          <div style="background-color: cyan" class="example-sidebar"></div>
+          <div style="background-color: lightpink" class="example-content-block"></div>
+        </div>
+      </div>
+      <p>To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.</p>
+      <pre><code class="language-scss">.example-sidebar {
+ @include span(6, last);
+ @include respond-above(device-small) {
+   @include span(8, last);
+ }
+}</code></pre>
     </article>
     <article id="containers" class="article">
       <h2>Helper Classes</h2>
       <h3>Rows & Columns</h3>
       <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
       <p>Columns work in the following way:</p>
-      <ul class="bullet-list">
-        <li>Each column has a % margin-right applied to it.</li>
-        <li>Margin is removed on the last column</li>
-        <li>They automatically grow to 100% at the breakpoint defined in the SASS map.</li>
-      </ul>
       <div class="example">
         <div class="columns">
           <div class="columns-4">Columns 4</div>
@@ -128,52 +170,6 @@
  &lt;div class="columns-5"&gt;
  &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
-      <h2>Grid Generator</h2>
-      <p>You can also create your own grid, without the need of 'messy' helper classes using the <span class="function">span($columns, $position)</span> function.</p>
-      <ul class="bullet-list">
-        <li>$colums: number of columns spanned by the element.</li>
-        <li>$position: if the column is the last one, pass the 'last' keyword to remove the margin.</li>
-      </ul>
-      <pre><code class="language-scss">.element-left {
-  @include span(4);
-}
-
-.element-right {
-  @include span(8, last);
-}</code></pre>
-      <div class="example">
-        <div class="example-wrapper">
-          <div style="background-color: lightpink" class="example-content-block"></div>
-          <div style="background-color: cyan" class="example-sidebar"></div>
-        </div>
-      </div>
-      <p>To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.</p>
-      <pre><code class="language-scss">.example-sidebar {
- @include span(6, last);
- @include respond-above(device-small) {
-   @include span(8, last);
- }
-}</code></pre>
-      <h2>Galleries</h2>
-      <p>Galleries are grids containing a repeating number of equal-sized items.</p>
-      <div class="example">
-        <ul class="photo-grid">
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-          <li class="photo-grid-item">Item</li>
-        </ul>
-      </div>
-      <pre><code class="language-scss">.example-gallery-item {
-  @include gallery-item(1, device-small);
-  @include gallery-item(4, device-medium);
-}</code></pre>
     </article>
   </div>
 </div>

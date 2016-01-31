@@ -2,34 +2,68 @@
 
 
 .article {
-	padding: 100px 0;
+	padding: 60px 0;
 	border-bottom: 1px solid themes(colours, keyline, light);
 
+	p > a, li > a {
+		color: colours(brand, primary);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	ul > li {
+	  margin-bottom: sizes(base);
+	  line-height: 1.5;
+	  &:last-child {
+	    margin-bottom: 0;
+	  }
+	}
 
 	> h2 {
-		margin-bottom: themes(sizes, double);
+		margin-bottom: themes(sizes, base);
 		color: themes(colours, brand, primary);
 		font-weight: themes(fonts, weights, regular);
-		font-size: themes(fonts, sizes, large);
+		font-size: themes(fonts, sizes, medium-large);
 	}
 
 	h3 {
 		font-size: themes(fonts, sizes, medium-large);
+		color: colours(greyscale, 800);
 		font-weight: themes(fonts, primarynew, weights, regular);
 		margin-top: themes(layout, sizes, quad);
 	}
 
-	> p {
+	> p, > ul li {
 		font-size: 18px;
+		color: colours(greyscale, 800);
 		line-height: 1.8;
 		margin-bottom: sizes(double);
 	}
 
-> section {
-  margin-bottom: 80px;
+	.bullet-list {
+		list-style-type: none;
+		margin-bottom: sizes(double);
+		> li {
+			position: relative;
+			padding-left: 24px;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 12px;
+				left: 0;
+				width: 4px;
+				height: 4px;
+				border-radius: 4px;
+				background-color: colours(brand, primary);
+			}
+		}
+	}
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
+	> section {
+	  margin-bottom: 80px;
+
+	  &:last-child {
+	    margin-bottom: 0;
+	  }
+	}
 }

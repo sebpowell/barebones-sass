@@ -9,11 +9,9 @@ include _inc/_layout.jade
 
 		article.article
 
-			p Barebones keeps all global settings in a single SASS (_settings.sass). This map is a starting point – you can extend it any way you like.
+			p Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. 
 
-			p The <span class="function">theme($args...)</span> function allows you to navigate the map and retrieve any value you want. It accepts any number of arguments, allowing you to navigate nested maps with ease.
-
-
+			p To access values, use the <span class="function">theme($args...)</span> function. It accepts any number of arguments, allowing you to navigate nested maps with ease.
 
 			pre.language-scss
 				code
@@ -28,7 +26,7 @@ include _inc/_layout.jade
 
 
 			h3 Colours
-			p Access values using <span class="function">colours($category, $value)</span>.
+			p Access values using either <span class="function">themes(colours, $category, $value)</span> or <span class="function">colours($category, $value)</span>.
 			pre
 				code.language-scss
 					|   colours: (
@@ -54,7 +52,7 @@ include _inc/_layout.jade
 
 			h3 Fonts
 
-			p Specify font familys and respective weights. You can access using the <span class="function">fonts($family)</span> and <span class="function">weights($weight)</span> functions.
+			p Specify font familys' and their respective weights. Access using <span class="function">fonts($family)</span> and <span class="function">weights($family, $weight)</span> functions.
 
 			pre
 				code.language-scss
@@ -89,7 +87,7 @@ include _inc/_layout.jade
 					|    ),
 
 			h3 Breakpoints
-			p Specify global grid settings. Access using <span class="function">themes(layout, grid, $setting)</span> or <span class="function">grid($setting)</span>.
+			p Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices. Access using <span class="function">themes(layout, breakpoints, $size)</span> or <span class="function">breakpoints($size)</span>.
 
 			pre
 				code.language-scss
@@ -100,7 +98,7 @@ include _inc/_layout.jade
 					|    ),
 
 			h3 Sizes
-			p Used to keep spacing consistent throughout the project. Access using <span class="function">sizes($size)</span>.
+			p Used to keep spacing consistent throughout the project. Access using <span class="function">themes(layout, sizes, $size)</span> or <span class="function">sizes($size)</span>.
 
 			pre
 				code.language-scss
@@ -114,8 +112,7 @@ include _inc/_layout.jade
 
 			h3 Layers
 			p
-				| Stores z-indexes for different components so you can easily see stacking order. Access using <span class="function">layers($element)</span>.
-
+				| Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="function">themes(layout, layers, $component)</span>  or <span class="function">layers($component)</span>.
 			pre
 				code.language-scss
 					|    layers: (

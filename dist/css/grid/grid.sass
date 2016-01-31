@@ -4,17 +4,11 @@ $gutters: (themes(layout, grid, columns) / themes(layout, grid, gutter)) + (them
 
 $gutterCount: (themes(layout, grid, columns) - 1)
 
-@debug $gutters
-
 $gutterWidth: 100% / $gutters
 
 $totalGutterWidth: $gutterWidth * $gutterCount
 
-@debug $totalGutterWidth
-
 $columnWidth: (100% - $totalGutterWidth) / themes(layout, grid, columns)
-
-@debug $columnWidth
 
 $totalColumnWidth: $columnWidth + $gutterWidth
 
