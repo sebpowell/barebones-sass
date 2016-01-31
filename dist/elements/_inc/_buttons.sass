@@ -1,6 +1,5 @@
 $button-sizes: (small: 14px, large: 20px, x-large: 24px)
 
-
 button, .button
 	display: inline-block
 	background: transparent
@@ -8,6 +7,7 @@ button, .button
 	height: 48px
 	line-height: 48px
 	border-radius: 48px
+	cursor: pointer
 
 	font:
 		weight: 600
@@ -18,35 +18,16 @@ button, .button
 		decoration: none
 		align: center
 
-	cursor: pointer
-	-webkit-appearance: none // Removes styling on iOS
-
-	// &:disabled
-	// 	background: colors(greyscale, mid) !important
-	// 	cursor: not-allowed
-
+	// Generate button sizes
 	@each $size, $value in $button-sizes
 		&.#{$size}
 			height: $value * 3
 			line-height: $value * 3 // Needed if applied to link element
 			font-size: $value
 			padding: 0 $value * 2
-			border-radius: $value * 3.4
+			border-radius: $value * 3
 
-
-	&.white
-		background: white
-		color: themes(colours, brand, primary)
-		&:hover
-
-		&.bordered
-			background: transparent
-			border: 1px solid rgba(255,255,255,0.4)
-			color: white
-			&:hover
-				background: white
-				color: themes(colours, brand, primary)
-
+	// Generate button colours
 	@each $name, $value in themes(colours, brand)
 		&.#{$name}
 			background: $value
@@ -61,4 +42,15 @@ button, .button
 				color: $value !important
 				&:hover
 					border: 1px solid lighten($value, 25%)
+	
+	&.white
+		background: white
+		color: themes(colours, brand, primary)
+		&.bordered
+			background: transparent
+			border: 1px solid rgba(255,255,255,0.4)
+			color: white
+			&:hover
+				background: white
+				color: themes(colours, brand, primary)
 

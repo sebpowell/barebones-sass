@@ -1,27 +1,23 @@
-
-
+// Generate column helper classes. 
 @for $i from 1 through themes(layout, columns)
 	.columns-#{$i}
-		width: 100%
-		float: left
-
-		+respond-below(device-small)
-			margin-bottom: themes(layout, grid, mobile-gutter)
-			&:last-child
-				margin-bottom: 0
-
-		+respond-above(device-small)
-			margin-right: $gutterWidth
-			&:last-child
-				margin-right: 0
-
-			@if $i > 1
+		+respond-below(grid)
+			width: 100%
+			margin-bottom: $gutterWidth
+			
+		+respond-above(grid)
+			@if $i < themes(layout, columns)
 				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
+				background: red !important
+				float: left
+				margin-right: $gutterWidth
+				&:last-child
+					margin-right: 0
 			@else
-				width: ($i * $columnWidth)
+				width: 100%
+		
 
-
-
+// Generate breakpoint-specific column helper classes. 
 @each $key, $value in themes(layout, breakpoints)
 	@for $i from 1 through themes(layout, grid, columns)
 		.columns-#{$i}-#{$key}

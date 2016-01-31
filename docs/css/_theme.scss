@@ -79,7 +79,7 @@ $theme: (
 	),
 
 	layers: (
-		backdrop: 2,
+		backdrop: 3,
 		modal: 3,
 		dropdown: 1,
 		navigation: 1,
@@ -200,6 +200,13 @@ $theme: (
   	@debug "Map has this key: #{$key}"
   }
 }
+
+@function layers($object) {
+	@return map-get(map-get($theme, layers), $object);
+}
+	 
+	// @warn "The key #{$object} is not in the map ’$layer’"
+	// @return null
 
 
 

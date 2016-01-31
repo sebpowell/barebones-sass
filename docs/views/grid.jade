@@ -22,9 +22,8 @@ include _inc/_layout.jade
 			p The grid generator allows you to target the specific component (e.g. a sidebar) without the need of 'messy' helper classes. 
 			p The Barebones grid works in the following way: 
 			ul.bullet-list
-				li Each column has a % margin-right applied to it.
-				li Margin is removed on the last column
-				li They automatically grow to 100% at the breakpoint defined in the SASS map.
+				li Each column has right margin applied to it. Margins are % based and are calculated as a fraction of the column width. So you'll need to express margins as such: 1/8, 1/4 etc. This margin is removed on the last column
+				li Columns automatically grow to 100% of the container width at the breakpoint defined in the SASS map (theme, breakpoints, grid).
 
 			p using the <span class="function">span($columns, $position)</span> function. They work in the fol
 

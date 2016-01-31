@@ -24,14 +24,11 @@ gulp.task("jade", function() {
 /////////////////////////////////////////////////////
 
 gulp.task('sass', function () {
-	return sass('docs/css/style.scss', { style: 'compact' })
-	.on('error', function (err) {
-		console.error('Error!', err.message);
-	})
-	// .pipe(autoprefixer("last 2 version", "> 1%"))
-	.pipe(gulp.dest(function(file) {
+	gulp.src('docs/css/style.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest(function(file) {
 		return file.base;
-	 }));
+		 }));
 });
 
 /////////////////////////////////////////////////////
@@ -49,9 +46,9 @@ gulp.task("uglify", function() {
 /////////////////////////////////////////////////////
 
 gulp.task("watch", function() {
-	gulp.watch(['dist/css/**/*.sass', 'dist/css/**/*.scss', 'assets/css/**/*.sass', 'assets/css/**/*.scss'], ['sass']);
-	gulp.watch(['dist/js/**/*.js'], ['uglify']);
-	gulp.watch(['views/**/*.jade'], ['jade']);
+	gulp.watch(['dist/**/*.sass', 'dist/**/*.scss', 'docs/css/**/*.sass', 'docs/css/**/*.scss'], ['sass']);
+	gulp.watch(['docs/js/**/*.js'], ['uglify']);
+	gulp.watch(['docs/views/**/*.jade'], ['jade']);
 });
 
 gulp.task("default", ["watch"], function() {
