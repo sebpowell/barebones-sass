@@ -1,41 +1,4 @@
-html
-	head
-		// Meta Tags !
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-		meta(property='og:title', content='')
-		meta(property='og:type', content='article')
-		meta(property='og:image', content='')
-		meta(property='og:description', content='')
-		meta(name='description', content='')
-		// / Meta Tags !
-		title Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk
-		link(rel='stylesheet', href='../../assets/css/style.css')
-		link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
-		link(rel='apple-touch-icon-precomposed', href='/screen-icon.png')
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-
-		script(src="https://use.typekit.net/bsw1gyt.js")
-
-
-		script
-			| try{Typekit.load({ async: true });}catch(e){}
-
-		script.
-			$(document).ready(function() {
-				$("body").click(function() {
-					$(".docs-navigation").toggleClass("show");
-
-					$(".docs-navigation ul li").each(function() {
-						$(this).css("transform", "translateY(0)");
-					});
-				});
-			});
-		// Enable HTML5 elements in IE8 !
-		//if lt IE 9
-			script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-		// / Enable HTML5 elements in IE8 !
-		//
+	//
 			// 	$(document).ready(function() {
 			// 		var documentHead = $("head");
 			// 		var document = $(".iframe-container");
@@ -63,8 +26,3 @@ html
 			// 					// breakpointDropdown.removeClass("is-visible");
 			// 				});
 			// 	});
-		script(src='../../highlight.js')
-
-
-
-

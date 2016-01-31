@@ -6,7 +6,7 @@ var gulp = require("gulp"),
 		autoprefixer = require("gulp-autoprefixer"),
 		concat = require("gulp-concat"),
 		jade = require('gulp-jade'),
-		sass = require("gulp-ruby-sass"),
+		sass = require("gulp-sass"),
 		uglify = require("gulp-uglify");
 
 /////////////////////////////////////////////////////
@@ -14,9 +14,9 @@ var gulp = require("gulp"),
 /////////////////////////////////////////////////////
 
 gulp.task("jade", function() {
-	gulp.src('views/**/!(_)*.jade')
+	gulp.src('docs/views/**/!(_)*.jade')
 		.pipe(jade({pretty: true}))
-		.pipe(gulp.dest("views/build"));
+		.pipe(gulp.dest("docs/views/build"));
 });
 
 /////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ gulp.task("jade", function() {
 /////////////////////////////////////////////////////
 
 gulp.task('sass', function () {
-	return sass('assets/css/style.scss', { style: 'compact' })
+	return sass('docs/css/style.scss', { style: 'compact' })
 	.on('error', function (err) {
 		console.error('Error!', err.message);
 	})
@@ -39,9 +39,9 @@ gulp.task('sass', function () {
 /////////////////////////////////////////////////////
 
 gulp.task("uglify", function() {
-	gulp.src(["assets/js/**/*.js"])
+	gulp.src(["docs/javascript/**/*.js"])
 		.pipe(concat("application.js"))
-		.pipe(gulp.dest("assets/js"))
+		.pipe(gulp.dest("docs/javascript/"))
 });
 
 /////////////////////////////////////////////////////

@@ -7,7 +7,10 @@
 .mobile-docs-navigation {
   background: colours(brand, primary);
   padding: sizes(base);
-  display: none;
+  display: block;
+  @include respond-above(device-large) {
+    display: none;
+  }
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +33,11 @@
   box-shadow: 0 0 6px 6px rgba(255,255,255,0.3);
 }
 .docs-navigation {
-  background-color: themes(colours, brand, primary);
+  background: white;
+  @include respond-below(device-large) {
+    box-shadow: 0 0 30px rgba(00,00,00,0.2);
+  }
+  
   left: -300px;
   width: 300px;
   
@@ -40,21 +47,31 @@
   height: 100%;
   top: 0;
   transition: left 0.5s ease-in-out;
+  z-index: 9999;
 
   &.show {
     left: 0;
     display: block;
   }
   
-
+  .made {
+    font-size: 12px;
+    color: lighten(colours(brand, primary), 30%);
+  }
   @include respond-above(device-large) {
+
     display: block;
     left: 0;
+    background-color: themes(colours, brand, primary);
+
   }
 
   .logo {
     position: relative;
-    display: block;
+    display: none;
+    @include respond-above(device-large) {
+      display: block;
+    }
     margin: auto;
   }
 
@@ -67,10 +84,18 @@
   	text-align: center;
   	margin-bottom: sizes(base);
   	transition: all .5s;
-  	&:hover {
-  		transform: scale(1.1);
-
-  	}
+    .button {
+      @extend .button.primary;
+      margin-bottom: sizes(base);
+      @include respond-above(device-large) {
+        background: white;
+        color: colours(brand, primary);
+        &:hover {
+          background: white;
+          color: colours(brand, primary);
+        }
+      }
+    }
   }
 
  
@@ -78,7 +103,9 @@
   > ul {
     @include no-bullet;
     transition: all .5s;
-    padding-top: 100px;
+    @include respond-above(device-large) {
+      padding-top: 100px;
+    }
     width: 300px;
     left: -300px;
     height: 100%;
@@ -89,16 +116,17 @@
     }
 
     > li {
-      transform: translateY(400px);
-      transition: transform .5s;
       > a {
       	transition: color .5s;
         padding: sizes(base) sizes(double);
         text-decoration: none;
         display: block;
-        color: lighten(colours(brand, primary), 30%);
-        &:hover {
-        	color: white;
+        @include respond-above(device-large) {
+          color: lighten(colours(brand, primary), 30%);
+
+          &:hover {
+          	color: white;
+          }
         }
       }
     }
