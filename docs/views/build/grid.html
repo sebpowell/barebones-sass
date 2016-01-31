@@ -33,7 +33,7 @@
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
-  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <ul>
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
@@ -41,7 +41,7 @@
       <li><a href="mixins.html">Mixins & Functions</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
-    <div class="download"><a class="button block">Download</a>
+    <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
       <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
     </div>
   </header>
@@ -110,15 +110,15 @@
       <p>Helper classes are also available to create different grids for different breakpoints.</p>
       <div class="example">
         <div class="columns">
-          <div class="columns-4 columns-4-device-small">Columns 4</div>
-          <div class="columns-5 columns-4-device-small"> Columns 5</div>
-          <div class="columns-3 columns-4-device-small"> Columns 3</div>
+          <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
+          <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
+          <div class="columns-4-device-small columns-4-device-medium"> Columns 3</div>
         </div>
       </div>
       <pre><code class="language-html">&lt;div class="columns"&gt;
- &lt;div class="columns-4 columns-4-device-small"&gt;
- &lt;div class="columns-5 columns-5-device-small"&gt;
- &lt;div class="columns-3 columns-3-device-small"&gt;
+ &lt;div class="columns-4-device-small"&gt;
+ &lt;div class="columns-5-device-small"&gt;
+ &lt;div class="columns-3-device-small"&gt;
 &lt;/div&gt;</code></pre>
       <h3>Galleries</h3>
       <p>Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns</p>

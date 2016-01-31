@@ -1,7 +1,7 @@
 =respond-above($breakpoint-name)
-	@media (min-width: theme(breakpoints, $breakpoint-name))
+	@media (min-width: breakpoints($breakpoint-name))
 		@content
 
 =respond-below($breakpoint-name)
-	@media (max-width: theme(breakpoints, $breakpoint-name))
+	@media (max-width: breakpoints($breakpoint-name))
 		@content

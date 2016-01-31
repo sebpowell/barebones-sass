@@ -6,9 +6,10 @@ $selling-points: (device-small: 12, device-medium: 4);
 }
 
 .selling-point {
+	@include grid($selling-points);
 	.selling-point-title {
 		font-size: 16px;
-		font-weight: themes(fonts, primarynew, weights, semi-bold);
+		font-weight: weights(primary, semi-bold);
 		color: white;
 	}
 	.selling-point-description {
@@ -16,20 +17,19 @@ $selling-points: (device-small: 12, device-medium: 4);
 		line-height: 1.8;
 		color: lighten(colours(brand, primary), 30%);
 	}
-	@include grid($selling-points);
 }
 
 
 .welcome-masthead {
 	background-color: colours(brand, primary);
 	padding-top: 40px;
+	width: 100%;
 	@include respond-above(device-medium) {
 		height: 100%;
 		padding-top: 100px;
 		display: table;
 	}
-	width: 100%;
-	
+
 	.logo {
 		margin-bottom: 60px;
 		@include respond-above(device-medium) {
@@ -39,8 +39,6 @@ $selling-points: (device-small: 12, device-medium: 4);
 		top: 32px;
 			
 		}
-		
-		
 	}
 
 	.welcome-masthead-inner {
@@ -54,7 +52,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 
 
 	.welcome-masthead-inner-heading {
-		font-family: themes(fonts, secondarynew, name);
+		font-family: fonts(secondary);
 		font-size: 40px;
 		letter-spacing: 0.1em;
 		line-height: 1.2;
@@ -108,7 +106,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 
 		a {
 			color: white;
-			font-weight: themes(fonts, primarynew, weights, semi-bold);
+			font-weight: weights(primary, semi-bold);
 			&:hover {
 				text-decoration: underline;
 			}

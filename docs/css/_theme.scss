@@ -1,14 +1,12 @@
-$theme: (
+$settings: (
 	colours: (
 		brand: (
 			primary: #157afb,
 			secondary: #fe5607
 		),
-
 		secondary: (
 			orange: #f8b000,
 		),
-
 		greyscale: (
 			50: #FAFAFA,
 			100: #F5F5F5,
@@ -21,13 +19,6 @@ $theme: (
 			800: #424242,
 			900: #212121
 		),
-
-		info: (
-			error: #F86464,
-			base: #ECDF9A,
-			dark: #8C7A1B,
-		),
-
 		keyline: (
 			light: #ECECEC,
 			medium: #D5D5D5,
@@ -36,7 +27,23 @@ $theme: (
 	),
 
 	fonts: (
-
+		primary: (
+			name: #{'Open Sans', sans-serif},
+			weights: (
+				light: 100,
+				regular: 400,
+				semi-bold: 600,
+				bold: 700
+			),
+		),
+		secondary: (
+			name: #{'Futura-PT', sans-serif},
+			weights: (
+				light: 100,
+				regular: 400,
+				bold: 700
+			),
+		),
 		sizes: (
 			x-small: 12px,
 			small: 14px,
@@ -47,74 +54,15 @@ $theme: (
 			x-large: 42px,
 			xx-large: 68px,
 		),
-
-
-		primarynew: (
-			name: #{'Open Sans', sans-serif},
-			weights: (
-				light: 100,
-				regular: 400,
-				semi-bold: 600,
-				bold: 700
-			),
-		),
-
-		secondarynew: (
-			name: #{'Futura-PT', sans-serif},
-			weights: (
-				light: 100,
-				regular: 400,
-				bold: 700
-			),
-		),
-
-		primary: #{'Open Sans', sans-serif},
-		secondary: Helvetica,
-
-		weights: (
-			light: 100,
-			regular: 400,
-			bold: 700,
-		)
-	),
-
-	layers: (
-		backdrop: 3,
-		modal: 3,
-		dropdown: 1,
-		navigation: 1,
-	),
-
-	sizes: (
-		font-base-size: 16px,
-	  quarter: 16px / 4,
-	  half: 16px / 2,
-	  base: 16px,
-	  double-half: 16px * 1.5,
-	  double: 16px * 2,
-	  triple: 16px * 3,
-	  quad: 16px * 4,
 	),
 
 	layout: (
-		columns: 12,
 		site-width: 760px,
-		gutter: 1/4,
-		gutter-type: padding,
-		gutter-position: inside-static,
-		grid-color: null,
-		debug: true,
-		collapse: 780px,
 		mobile-padding: 24px,
-
 		grid: (
-			mobile-padding: 24px,
 			columns: 12,
 			gutter: 1/4,
-			mobile-gutter: 24px,
-			collapse: 780px
 		),
-
 		sizes: (
 			font-base-size: 16px,
 		  quarter: 16px / 4,
@@ -125,7 +73,6 @@ $theme: (
 		  triple: 16px * 3,
 		  quad: 16px * 4,
 		),
-
 		breakpoints: (
 			grid: 760px,
 			device-x-small: 350px,
@@ -134,22 +81,18 @@ $theme: (
 			device-medium-large: 900px,
 			device-large: 1080px,
 			device-x-large: 1200px
-		)
+		),
+		layers: (
+			backdrop: 3,
+			modal: 3,
+			dropdown: 1,
+			navigation: 1,
+		),
 	),
-
-	breakpoints: (
-		grid: 760px,
-		device-x-small: 350px,
-		device-small: 480px,
-		device-medium: 780px,
-		device-medium-large: 900px,
-		device-large: 1080px,
-		device-x-large: 1200px
-	)
 );
 
 @function theme($category, $value: '') {
-	@return map-get(map-get($theme, $category), $value);
+	@return map-get(map-get($settings, $category), $value);
 }
 
 @function map-fetch($map, $keys) {
@@ -171,19 +114,19 @@ $theme: (
 
 @function colours($colour-cat, $colour) {
 	// Returns each category in colours (e.g. primary)
-  @return map-get(map-get(map-get($theme, colours), $colour-cat), $colour);
+  @return map-get(map-get(map-get($settings, colours), $colour-cat), $colour);
 }
 
 @function sizes($size) {
 	// Returns each category in colours (e.g. primary)
-  @return map-get(map-get($theme, sizes), $size);
+  @return map-get(map-get(map-get($settings, layout), sizes), $size);
 }
 
 
 @function themes($keys...) {
   $key: nth($keys, 1);
   $length: length($keys);
-  $value: map-get($theme, $key);
+  $value: map-get($settings, $key);
 
 
   @if ($length > 1) {
@@ -201,8 +144,35 @@ $theme: (
   }
 }
 
+@function grid($object) {
+	@return map-get(map-get(map-get($settings, layout), grid), $object);
+}
+
+@function font($object) {
+	@return map-get(map-get(map-get($settings, fonts), $object), name);
+}
+
+@function weights($family, $object) {
+	@return map-get(
+		map-get(
+			map-get(
+				map-get($settings, fonts), $family
+			), 
+		weights), 
+	$object);
+}
+
+@function breakpoints($object) {
+	@return map-get(map-get(map-get($settings, layout), breakpoints), $object);
+}
+
 @function layers($object) {
-	@return map-get(map-get($theme, layers), $object);
+	@return map-get(map-get(map-get($settings, layout), layers), $object);
+}
+
+
+@function layers($object) {
+	@return map-get(map-get(map-get($settings, layout), layers), $object);
 }
 	 
 	// @warn "The key #{$object} is not in the map ’$layer’"

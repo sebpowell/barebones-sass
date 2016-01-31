@@ -9,13 +9,21 @@ var gulp = require("gulp"),
 		sass = require("gulp-sass"),
 		uglify = require("gulp-uglify");
 
+
+
 /////////////////////////////////////////////////////
 // HTML
 /////////////////////////////////////////////////////
 
 gulp.task("jade", function() {
 	gulp.src('docs/views/**/!(_)*.jade')
-		.pipe(jade({pretty: true}))
+		.pipe(jade({
+			pretty: true,
+			locals: {
+				image_base: "../../images/",
+				repo: "https://github.com/sebpowell/barebones"
+			}
+		}))
 		.pipe(gulp.dest("docs/views/build"));
 });
 
@@ -25,11 +33,14 @@ gulp.task("jade", function() {
 
 gulp.task('sass', function () {
 	gulp.src('docs/css/style.scss')
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+			outputStyle: "compressed",
+		}).on('error', sass.logError))
+		.pipe(autoprefixer({browsers: ['last 2 versions']}))
 		.pipe(gulp.dest(function(file) {
-		return file.base;
-		 }));
-});
+			return file.base;
+		}));
+	});
 
 /////////////////////////////////////////////////////
 // JavaScript

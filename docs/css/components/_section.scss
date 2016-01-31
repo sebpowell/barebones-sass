@@ -3,7 +3,7 @@
 
 .article {
 	padding: 60px 0;
-	border-bottom: 1px solid themes(colours, keyline, light);
+	border-bottom: 1px solid colours(keyline, light);
 
 	p > a, li > a {
 		color: colours(brand, primary);
@@ -20,17 +20,17 @@
 	}
 
 	> h2 {
-		margin-bottom: themes(sizes, base);
-		color: themes(colours, brand, primary);
-		font-weight: themes(fonts, weights, regular);
+		margin-bottom: sizes(base);
+		color: colours(brand, primary);
+		font-weight: weights(primary, regular);
 		font-size: themes(fonts, sizes, medium-large);
 	}
 
 	h3 {
 		font-size: themes(fonts, sizes, medium-large);
 		color: colours(greyscale, 800);
-		font-weight: themes(fonts, primarynew, weights, regular);
-		margin-top: themes(layout, sizes, quad);
+		font-weight: weights(primary, regular);
+		margin-top: sizes(quad);
 	}
 
 	> p, > ul li {

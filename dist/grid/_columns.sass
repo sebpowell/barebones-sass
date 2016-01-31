@@ -1,5 +1,5 @@
 // Generate column helper classes. 
-@for $i from 1 through themes(layout, columns)
+@for $i from 1 through themes(layout, grid, columns)
 	.columns-#{$i}
 		+respond-below(grid)
 			width: 100%
@@ -8,41 +8,24 @@
 		+respond-above(grid)
 			@if $i < themes(layout, columns)
 				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
-				background: red !important
 				float: left
 				margin-right: $gutterWidth
 				&:last-child
 					margin-right: 0
 			@else
 				width: 100%
-		
 
 // Generate breakpoint-specific column helper classes. 
 @each $key, $value in themes(layout, breakpoints)
-	@for $i from 1 through themes(layout, grid, columns)
+	@for $i from 1 through grid(columns)
 		.columns-#{$i}-#{$key}
-			width: 100%
-			// margin-bottom: sizes(double)
-
+			margin-bottom: $gutterWidth
 			+respond-above($key)
+				margin-bottom: 0 !important
 				@if $i > 1
-				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
-				float: left
+					width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
+					float: left
+					margin-right: $gutterWidth
+					&:last-child
+						margin-right: 0
 
-
-
-
-
-@mixin span($columns, $position: "", $device: "")
-	margin-right: $gutterWidth
-	float: left
-
-	// @if $device != null
-	// 	+respond-above($device)
-	// 		width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
-	
-	width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
-		
-	@if $position == "last"
-		margin-right: 0
-		float: right

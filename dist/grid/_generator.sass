@@ -12,6 +12,20 @@
 //   ),
 // );
 
+@mixin span($columns, $position: "", $device: "")
+	margin-right: $gutterWidth
+	float: left
+
+	// @if $device != null
+	// 	+respond-above($device)
+	// 		width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+	
+	width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+		
+	@if $position == "last"
+		margin-right: 0
+		float: right
+
 @mixin grid($map)
 	@each $device, $size in themes(layout, breakpoints)
 		@if map-has-key($map, $device)

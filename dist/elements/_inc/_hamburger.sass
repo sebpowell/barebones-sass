@@ -1,0 +1,47 @@
+.mobile-navigation-toggle
+	position: absolute
+	top: 50%
+	right: sizes(base)
+	margin-top: -7px
+	display: block
+	cursor: pointer
+	width: 20px
+	height: 14px
+	transform: rotate(0deg)
+	transition: .5s ease-in-out
+	+respond-above(device-medium)
+		display: none
+
+	span
+		display: block
+		position: absolute
+		height: 2px
+		border-radius: 3px
+		width: 100%
+		background: white
+		opacity: 1
+		left: 0
+		transform: rotate(0deg)
+		transition: .25s
+
+		&:nth-child(1)
+			top: 0
+		&:nth-child(2), &:nth-child(3)
+			top: 6px
+		&:nth-child(4)
+			top: 12px
+
+	&.close
+		span
+			&:nth-child(1)
+				top: 6px
+				width: 0%
+				left: 50%
+			&:nth-child(2)
+				transform: rotate(45deg)
+			&:nth-child(3)
+				transform: rotate(-45deg)
+			&:nth-child(4)
+				top: 6px
+				width: 0%
+				left: 50%

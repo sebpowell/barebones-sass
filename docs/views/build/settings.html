@@ -33,7 +33,7 @@
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
-  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <ul>
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
@@ -41,7 +41,7 @@
       <li><a href="mixins.html">Mixins & Functions</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
-    <div class="download"><a class="button block">Download</a>
+    <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
       <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
     </div>
   </header>
@@ -90,12 +90,13 @@
         regular: 200,
         semi-bold: 500
       )
+    ),
     secondary: (
       family: Futura PT,
       weights: (
         bold: 600,
       )
-   ),</code></pre>
+    ),</code></pre>
       <h3>Grid</h3>
       <p>Specify global grid settings. Access using <span class="function">themes(layout, grid, $setting)</span> or <span class="function">grid($setting)</span>.</p>
       <pre><code class="language-scss">   grid: (

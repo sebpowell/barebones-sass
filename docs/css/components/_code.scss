@@ -21,7 +21,7 @@ pre {
 		background: colours(greyscale, 50);
 		padding: sizes(half) 0 sizes(half) sizes(half);
 		font-size: 12px;
-		font-family: themes(fonts, primarynew, name);
+		font-family: fonts(primary);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -30,15 +30,15 @@ pre {
 }
 
 
-.photo-grid {
-	@include clearfix;
-}
+// .photo-grid {
+// 	@include clearfix;
+// }
 
-.photo-grid-item {
-	@include gallery-item(4);
-	background: lightBlue;
-	padding: sizes(base);
-}
+// .photo-grid-item {
+// 	@include gallery-item(4);
+// 	background: lightBlue;
+// 	padding: sizes(base);
+// }
 
 
 
