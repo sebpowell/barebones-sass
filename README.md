@@ -8,18 +8,3 @@ You can also get the latest release using Bower, although this is somewhat again
 
 Barebones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
 
-## Support 
-p If you have a question, or need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. 
-
-## Background Reading
-
-Barebones was heavily inspired by a variety of articles. Here are some of them in case you're interested in doing some more reading. 
-
-a(href="http://fourkitchens.com/blog/article/you-dont-need-bootstrap" target="_blank") You Don't Need Bootstrap – Ian Carrico
-a(href="https://smacss.com/" target="_blank") Scalable & Module Architecture for CSS – Jonathan Snook
-a(href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank") Responsive Deliverables – Dave Rupert
-a(href="http://www.sitepoint.com/managing-responsive-breakpoints-sass/" target="_blank") Managing Responsive Breakpoints with SASS – Hugo Giraudel
-a(href="http://www.zell-weekeat.com/mappy-breakpoints" target="_blank") Mappy Breakpoints – Zell Liew
-a(href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank") How to Structure a SASS Project – John Long
-a(href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank") Modular CSS Naming Conventions – John Long
-a(href="http://www.sitepoint.com/architecture-sass-project/") Architecture for a SASS Project – Hugo Giraudel
