@@ -1,10 +1,6 @@
-// // Generates classes for column offsets.
-// @for $i from 1 through theme(layout, grid, columns)
-// 	.offset-#{$i}
-// 		+respond-above(device-small)
-// 			margin-left: $i * (100% / theme(layout, columns))
+// Generates classes for column offsets.
+@for $i from 1 through grid(columns)
+	.offset-#{$i}
+		+respond-above(grid)
+			margin-left: ($i * $columnWidth) + ($i * $gutterWidth)
 
-
-// @mixin offset($columns) {
-// 	// margin-left: ($columnWidth * $columns) + ($gutterWidth * ($columns));
-// }

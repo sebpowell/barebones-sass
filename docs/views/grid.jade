@@ -10,26 +10,36 @@ include _inc/_layout.jade
 		h1.page-title Grid
 		article#containers.article
 
-			p Barebones includes a flexible, responsive grid system that can be used in one of two ways. 
+			p Barebones includes a flexible, responsive grid system that can be used in one of two ways using a range of settings specified in your settings file. Gutters are created by applying margin-right to every column, except for the final one (where the margin is removed using the last-child rule).
 
-			ul.bullet-list
-				li Grid generator
-				li Helper classes
+			table
+				tr
+					td columns (default: 12)
+					td Number of columns
+				tr
+					td breakpoint
+					td The point at which all column sizes should expand to 100%. 
+				tr
+					td gutter
+					td Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc. 
+				tr
+					td offset
 
 
 		article.article
 			h2 Grid Generator
-			p The grid generator allows you to target the specific component (e.g. a sidebar) without the need of 'messy' helper classes. 
-			p The Barebones grid works in the following way: 
-			ul.bullet-list
-				li Each column has right margin applied to it. Margins are % based and are calculated as a fraction of the column width. So you'll need to express margins as such: 1/8, 1/4 etc. This margin is removed on the last column
-				li Columns automatically grow to 100% of the container width at the breakpoint defined in the SASS map (theme, breakpoints, grid).
-
-			p using the <span class="function">span($columns, $position)</span> function. They work in the fol
-
-			ul.bullet-list
-				li $colums: number of columns spanned by the element.
-				li $position: if the column is the last one, pass the 'last' keyword to remove the margin.
+			p The <span class="function">span($columns, $position)</span> grid generator allows you to target a given component – for example, a sidebar – without littering your markup the need of 'messy' helper classes.
+			table
+				tr
+					td $columns
+					td Number of columns the component spans, of the total number defined in your settings file.
+				tr
+					td $position <em>(optional)</em>
+					td if the column is the last one, pass the 'last' keyword to remove the margin.
+				tr
+					td $gutter <em>(optional)</em>
+					td You can remove the gutter by passing the keyword 'none'. 
+		
 
 
 			pre
@@ -39,25 +49,24 @@ include _inc/_layout.jade
 					| }
 					| #{''}
 					| .content {
-					|   @include span(8, last);
+					|   @include span(8, $position: last);
 					| }
 
-
+			
 			.example.margin-bottom-base
 				.example-wrapper
 					.example-sidebar(style="background-color: cyan")
 					.example-content-block(style="background-color: lightpink")
-					
 
 
-			p To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.
+			p To create different widths at different breakpoints, use the <span class="function">respond-above($device)</span> mixin.
 
 			pre
 				code.language-scss
 					| .example-sidebar {
-					|  @include span(6, last);
+					|  @include span(8);
 					|  @include respond-above(device-small) {
-					|    @include span(8, last);
+					|    @include span(6);
 					|  }
 					| }
 
@@ -108,17 +117,11 @@ include _inc/_layout.jade
 					| &lt;/div&gt;
 
 
-			h3 Galleries
+			h3 Offsets
 
-			p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns
 			.example
-				ul.gallery-5
-					li.gallery-item
-					li.gallery-item
-					li.gallery-item
-					li.gallery-item
-					li.gallery-item
-
+				.columns
+					.columns-4.offset-8 Columns 4
 			pre
 				code.language-html
 					| &lt;div class="columns"&gt;
@@ -126,6 +129,27 @@ include _inc/_layout.jade
 					|  &lt;div class="columns-5"&gt;
 					|  &lt;div class="columns-3"&gt;
 					| &lt;/div&gt;
+
+			//- h3 Galleries
+
+			//- p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns. 
+
+			//- p They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row. 
+			//- .example
+			//- 	ul.gallery-5
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+
+			//- pre
+			//- 	code.language-html
+			//- 		| &lt;div class="columns"&gt;
+			//- 		|  &lt;div class="columns-4"&gt;
+			//- 		|  &lt;div class="columns-5"&gt;
+			//- 		|  &lt;div class="columns-3"&gt;
+			//- 		| &lt;/div&gt;
 
 
 

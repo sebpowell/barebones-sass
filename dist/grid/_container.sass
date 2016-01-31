@@ -1,10 +1,13 @@
-=container($max-width: "")
+=container($max-width: "", $mobile-padding: settings(layout, mobile-padding))
+	+clearfix
+	margin: 0 auto
 	@if $max-width != null
 		max-width: $max-width
 	@else
-		max-width: themes(layout, site-width)
-		
-	margin: 0 auto
+		max-width: settings(layout, site-width)
+	
+	@media (max-width: $max-width)
+		padding: 0 $mobile-padding
 
 
 

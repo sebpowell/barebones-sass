@@ -62,7 +62,7 @@
 
     display: block;
     left: 0;
-    background-color: themes(colours, brand, primary);
+    background-color: settings(colours, brand, primary);
 
   }
 
@@ -77,9 +77,9 @@
 
   .download {
   	position: absolute;
-  	bottom: themes(layout, sizes, base);
-  	left: themes(layout, sizes, base);
-  	right: themes(layout, sizes, base);
+  	bottom: settings(layout, sizes, base);
+  	left: settings(layout, sizes, base);
+  	right: settings(layout, sizes, base);
   	padding: sizes(base);
   	text-align: center;
   	margin-bottom: sizes(base);

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="description" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -30,7 +30,7 @@
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -38,7 +38,7 @@
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
       <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="mixins.html">Mixins</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
@@ -50,31 +50,48 @@
   <div class="main-container">
     <h1 class="page-title">Grid</h1>
     <article id="containers" class="article">
-      <p>Barebones includes a flexible, responsive grid system that can be used in one of two ways. </p>
-      <ul class="bullet-list">
-        <li>Grid generator</li>
-        <li>Helper classes</li>
-      </ul>
+      <p>Barebones includes a flexible, responsive grid system that can be used in one of two ways using a range of settings specified in your settings file. Gutters are created by applying margin-right to every column, except for the final one (where the margin is removed using the last-child rule).</p>
+      <table>
+        <tr>
+          <td>columns (default: 12)</td>
+          <td>Number of columns</td>
+        </tr>
+        <tr>
+          <td>breakpoint</td>
+          <td>The point at which all column sizes should expand to 100%. </td>
+        </tr>
+        <tr>
+          <td>gutter</td>
+          <td>Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc. </td>
+        </tr>
+        <tr>
+          <td>offset</td>
+        </tr>
+      </table>
     </article>
     <article class="article">
       <h2>Grid Generator</h2>
-      <p>The grid generator allows you to target the specific component (e.g. a sidebar) without the need of 'messy' helper classes. </p>
-      <p>The Barebones grid works in the following way: </p>
-      <ul class="bullet-list">
-        <li>Each column has right margin applied to it. Margins are % based and are calculated as a fraction of the column width. So you'll need to express margins as such: 1/8, 1/4 etc. This margin is removed on the last column</li>
-        <li>Columns automatically grow to 100% of the container width at the breakpoint defined in the SASS map (theme, breakpoints, grid).</li>
-      </ul>
-      <p>using the <span class="function">span($columns, $position)</span> function. They work in the fol</p>
-      <ul class="bullet-list">
-        <li>$colums: number of columns spanned by the element.</li>
-        <li>$position: if the column is the last one, pass the 'last' keyword to remove the margin.</li>
-      </ul>
+      <p>The <span class="function">span($columns, $position)</span> grid generator allows you to target a given component – for example, a sidebar – without littering your markup the need of 'messy' helper classes.</p>
+      <table>
+        <tr>
+          <td>$columns</td>
+          <td>Number of columns the component spans, of the total number defined in your settings file.</td>
+        </tr>
+        <tr>
+          <td>$position <em>(optional)</em></td>
+          <td>if the column is the last one, pass the 'last' keyword to remove the margin.</td>
+        </tr>
+        <tr>
+          <td>$gutter <em>(optional)</em></td>
+          <td>You can remove the gutter by passing the keyword 'none'. </td>
+        </tr>
+      </table>
       <pre><code class="language-scss">.sidebar {
   @include span(4);
 }
 
 .content {
-  @include span(8, last);
+  @include span(8, $position: last);
 }</code></pre>
       <div class="example margin-bottom-base">
         <div class="example-wrapper">
@@ -82,11 +99,11 @@
           <div style="background-color: lightpink" class="example-content-block"></div>
         </div>
       </div>
-      <p>To create different widths at different breakpoints, you can couple this with the <span class="function">respond-above($device)</span> mixin.</p>
+      <p>To create different widths at different breakpoints, use the <span class="function">respond-above($device)</span> mixin.</p>
       <pre><code class="language-scss">.example-sidebar {
- @include span(6, last);
+ @include span(8);
  @include respond-above(device-small) {
-   @include span(8, last);
+   @include span(6);
  }
 }</code></pre>
     </article>
@@ -120,22 +137,22 @@
  &lt;div class="columns-5-device-small"&gt;
  &lt;div class="columns-3-device-small"&gt;
 &lt;/div&gt;</code></pre>
-      <h3>Galleries</h3>
-      <p>Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns</p>
+      <h3>Offsets</h3>
       <div class="example">
-        <ul class="gallery-5">
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-        </ul>
+        <div class="columns">
+          <div class="columns-4 offset-8">Columns 4</div>
+        </div>
       </div>
       <pre><code class="language-html">&lt;div class="columns"&gt;
  &lt;div class="columns-4"&gt;
  &lt;div class="columns-5"&gt;
  &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
+      
+      
+      
+      
+      
     </article>
   </div>
 </div>

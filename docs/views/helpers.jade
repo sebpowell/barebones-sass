@@ -2,12 +2,9 @@ include _inc/_head.jade
 include _inc/_layout.jade
 
 .iframe-container
-
 	.main-container
 
 		h1.page-title Helpers
-
-
 
 		article#background-color.article
 
@@ -29,21 +26,28 @@ include _inc/_layout.jade
 		article#borders.article
 			h3#borders Borders
 			p Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.
-			ul.bullet-list.margin-bottom-double
-				li border-left
-				li border-top
-				li border-right
-				li border-bottom
-				li border-all
-				li no-border
+			table
+				tr
+					td border-left
+				tr
+					td border-top
+				tr
+					td border-right
+				tr
+					td border-bottom
+				tr
+					td border-all
+				tr
+					td no-border
+
 			pre
 				code.language-html
-					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+					| &lt;div class="border-bottom"&gt;&lt;/div&gt;
 
 			pre
 				code.language-scss
-					| .background-brand-primary {
-					|  background-color: #F5F5F5 !important;
+					| .border-bottom {
+					|  border-bottom: 1px solid #F5F5F5 !important;
 					| }
 
 
@@ -51,30 +55,44 @@ include _inc/_layout.jade
 			h3 Margin & Padding
 			p Generated from the $sizes map.
 
-			ul.bullet-list
-				li <span class="class">.padding-{direction}-{size}</span>
-				li <span class="class">.margin-{direction}-{size}</span>
-				li <span class="class">.no-margin</span>
-				li <span class="class">.no-padding</span>
+			table
+				tr
+					td padding-{direction}-{size}
+					td Applies padding in the specified direction of the specified size.
+				tr
+					td margin-{direction}-{size}
+					td Applies padding in the specified direction of the specified size.
+				tr
+					td no-margin
+					td Removes all margins
+				tr
+					td no-padding
+					td Removes all padding
 
 			pre
 				code.language-html
-					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+					| &lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
 
 			pre
 				code.language-scss
 					| .background-brand-primary {
-					|  background-color: #F5F5F5 !important;
+					|  margin-bottom: 32px !important;
 					| }
 
-		article#margin.article
+		article.article
 			h3 Layout
-			ul.bullet-list
-				li block
-				li inline-block
-				li clearfix
-				li float-left
-				li float-right
+			table
+				tr
+					td block
+				tr
+					td inline-block
+				tr
+					td float-left
+				tr
+					td float-right
+				tr
+					td clearfix
+
 			pre
 				code.language-html
 					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
@@ -89,41 +107,39 @@ include _inc/_layout.jade
 
 		article#text-align.article
 			h3 Typography
+			table
+				tr
+					td alignment
+					td Left, Right, Center
+				tr
+					td size
+					td 
+						| Helpers for creating the various text sizes specified in your settings file.
+						| x-small | small | base | medium | medium-large | large | x-large
+				tr
+					td transform
+					td uppercase | lowercase | capitalize
+
+
 
 			p <span class="class">.text-{helper}</span>.
-
-			h4 Alignment
-			p These classes are for horizontally aligning content:
-
-			ul.bullet-list
-				li left
-				li right
-				li center
-
-			h4 Size
-
-			p Helpers for creating the various text sizes specified in your settings file.
-
-			ul.bullet-list
-				li x-small
-				li small
-				li base
-				li medium
-				li medium-large
-				li large
-				li x-large
-
-			h4 Transform
-
-			ul.bullet-list
-				li uppercase
-				li lowercase
-				li capitalize
 	
 
 		article.article
 			h2 Visibility 
 			p We provide easy to use classes to hide content on specific screen sizes.
+			table
+				tr
+					td alignment
+					td Left, Right, Center
+				tr
+					td size
+					td 
+						| Helpers for creating the various text sizes specified in your settings file.
+						| x-small | small | base | medium | medium-large | large | x-large
+				tr
+					td transform
+					td uppercase | lowercase | capitalize
 
 			pre
 				code.language-html
@@ -133,10 +149,6 @@ include _inc/_layout.jade
 
 			pre
 				code.language-scss
-					| .background-brand-primary {
-					|  background-color: #F5F5F5 !important;
+					| .is-hidden {
+					|  display: none !important;
 					| }
-
-	//- article#text-align.article
-	//- 	h2 Vertical Align
-	//- 	p You can easily vertically center things by adding the class valign-wrapper to the container holding the items you want to vertically align.

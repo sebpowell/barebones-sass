@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="description" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -30,7 +30,7 @@
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -38,7 +38,7 @@
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
       <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="mixins.html">Mixins</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
@@ -50,16 +50,16 @@
   <div class="main-container">
     <h1 class="page-title">Settings</h1>
     <article class="article">
-      <p>Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. </p>
-      <p>To access values, use the <span class="function">theme($args...)</span> function. It accepts any number of arguments, allowing you to navigate nested maps with ease.</p>
+      <p>Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. Default categories are included below (or <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_theme.scss">click here to see an example)</a>.</p>
+      <p>To access values, use the <span class="function">settings($args...)</span> function. It accepts any number of arguments, allowing you to navigate nested maps with ease.</p>
       <pre class="language-scss"><code>.element {
-  border-right: theme(colours, keyline, light);
-  color: theme(colours, brand, primary);
-  z-index: theme(layers, element);
+  border-right: settings(colours, keyline, light);
+  color: settings(colours, brand, primary);
+  z-index: settings(layers, element);
 }</code></pre>
       <p>A helper function is also provided for each category for faster access.</p>
       <h3>Colours</h3>
-      <p>Access values using either <span class="function">themes(colours, $category, $value)</span> or <span class="function">colours($category, $value)</span>.</p>
+      <p>Access values using either <span class="function">settings(colours, $category, $value)</span> or <span class="function">colours($category, $value)</span>.</p>
       <pre><code class="language-scss">  colours: (
     brand: (
       primary: #157AFB,
@@ -98,7 +98,7 @@
       )
     ),</code></pre>
       <h3>Grid</h3>
-      <p>Specify global grid settings. Access using <span class="function">themes(layout, grid, $setting)</span> or <span class="function">grid($setting)</span>.</p>
+      <p>Specify global grid settings. Access using <span class="function">settings(layout, grid, $setting)</span> or <span class="function">grid($setting)</span>.</p>
       <pre><code class="language-scss">   grid: (
     columns: 12,
     site-width: 1200px,
@@ -107,14 +107,14 @@
     mobile-padding: 24px,
    ),</code></pre>
       <h3>Breakpoints</h3>
-      <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices. Access using <span class="function">themes(layout, breakpoints, $size)</span> or <span class="function">breakpoints($size)</span>.</p>
+      <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices. Access using <span class="function">settings(layout, breakpoints, $size)</span> or <span class="function">breakpoints($size)</span>.</p>
       <pre><code class="language-scss">   breakpoints: (
     device-small: 320px,
     device-medium: 480px,
     ...
    ),</code></pre>
       <h3>Sizes</h3>
-      <p>Used to keep spacing consistent throughout the project. Access using <span class="function">themes(layout, sizes, $size)</span> or <span class="function">sizes($size)</span>.</p>
+      <p>Used to keep spacing consistent throughout the project. Access using <span class="function">settings(layout, sizes, $size)</span> or <span class="function">sizes($size)</span>.</p>
       <pre><code class="language-scss">   sizes: (
     quarter: 4px,
     half: 8px,
@@ -122,7 +122,7 @@
     ...
    ),</code></pre>
       <h3>Layers</h3>
-      <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="function">themes(layout, layers, $component)</span>  or <span class="function">layers($component)</span>.</p>
+      <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="function">settings(layout, layers, $component)</span>  or <span class="function">layers($component)</span>.</p>
       <pre><code class="language-scss">   layers: (
     modal: 5,
     backdrop: 2,

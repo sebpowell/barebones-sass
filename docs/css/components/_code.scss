@@ -1,15 +1,10 @@
 .function {
-	color: themes(colours, secondary, orange);
+	color: settings(colours, secondary, orange);
 	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 16px;
 }
-img {
-  max-width: 100%;
-}
 
-
-
-pre {
+pre, .example {
 	position: relative;
 	margin-bottom: sizes(double) !important;
 	padding-top: 50px !important;
@@ -46,7 +41,7 @@ pre {
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: themes(colours, greyscale, 700);
+	color: settings(colours, greyscale, 700);
 	background: none;
 	text-shadow: 0 1px white;
 	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -72,20 +67,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
-	background: themes(colours, greyscale, 50);
+	background: settings(colours, greyscale, 50);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: themes(colours, greyscale, 50);
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
+	background: settings(colours, greyscale, 50);
 }
 
 /* Code blocks */
@@ -97,7 +85,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	border: 1px solid themes(colours, keyline, light);
+	border: 1px solid settings(colours, keyline, light);
 	border-radius: 3px;
 }
 
@@ -130,7 +118,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: themes(colours, greyscale, 600);
+	color: settings(colours, greyscale, 600);
 }
 
 .token.selector,
@@ -139,7 +127,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: themes(colours, brand, primary);
+	color: settings(colours, brand, primary);
 }
 
 .token.operator,
@@ -154,11 +142,11 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: themes(colours, secondary, orange);
+	color: settings(colours, secondary, orange);
 }
 
 .token.function {
-	color: themes(colours, secondary, orange);
+	color: settings(colours, secondary, orange);
 }
 
 .token.regex,

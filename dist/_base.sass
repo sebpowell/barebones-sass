@@ -1,4 +1,55 @@
 @import mixins/mixins
 @import grid/grid
 @import helpers/helpers
-@import elements/elements
+
+*
+	box-sizing: border-box
+	&:hover, &:focus, &:active
+		outline: none
+
+html,body, div, span, object, iframe, hr,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, button, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+	margin: 0
+	padding: 0
+	border: 0
+	outline: 0
+	vertical-align: baseline
+
+html
+	min-height: 100%
+	height: 100%
+	font-family: font(primary)
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+	// font-size: settings(sizes, font-base-size)
+
+a, a:visited
+	color: inherit
+	text-decoration: none
+	cursor: pointer
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea,
+.input, button
+	-webkit-appearance: none // Removes styling on iOS
+
+table
+	width: 100%
+	border-collapse: collapse
+
+img
+	max-width: 100%
+

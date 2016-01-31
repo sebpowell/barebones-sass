@@ -1,49 +1,35 @@
-// @mixin grid-container($map)
-// 	+clearfix
-// 	list-style-type: none
-// 	@each $key, $value in $breakpoints
-// 		@if map-get($map, $key)
-// 			+respond-above($key)
-// 				margin-left: -(sizes(base))
-// 				margin-right: -(sizes(base))
+@for $i from 1 through settings(layout, columns)
+	@each $key, $value in settings(breakpoints)
+		.gallery-#{$i}-#{$key}
+			+no-bullet
+			+clearfix
+			+respond-above($key)
+				margin-left: -(settings(layout, gutter))
+				margin-right: -(settings(layout, gutter))
+
+			@if $i < 1
+				margin-left: 0
+				margin-right: 0
+
+			.gallery-item
+				width: 100%
+				margin-bottom: settings(layout, gutter)
+				&:last-child
+					margin-bottom: 0
+
+				+respond-below($key)
+					&:nth-child(#{$i}n + 1)
+						// Clears floats after a row is complete for variable height elements.
+						// This doesn't work if multiple classes are set (e.g. 2-device-small and 3-device-medium)
+						clear: both
 
 
-// Are both grid and columns
-// @for $i from 1 through theme(layout, columns)
-// 	@each $key, $value in theme(breakpoints)
-// 		.grid-#{$i}-#{$key}
-// 			+no-bullet
-// 			+clearfix
-// 			+respond-above($key)
-// 				margin-left: -(theme(layout, gutter))
-// 				margin-right: -(theme(layout, gutter))
-
-// 			@if $i < 1
-// 				margin-left: 0
-// 				margin-right: 0
-
-// 			> li
-// 				width: 100%
-// 				margin-bottom: theme(layout, gutter)
-// 				&:last-child
-// 					margin-bottom: 0
-
-// 				+respond-below($key)
-// 					&:nth-child(#{$i}n + 1)
-// 						// Clears floats after a row is complete for variable height elements.
-// 						// This doesn't work if multiple classes are set (e.g. 2-device-small and 3-device-medium)
-// 						clear: both
-
-
-// 				@if $i < 1
-// 					padding: 0
-
-// 				+respond-above($key)
-// 					width: 100% / $i !important
-// 					float: left
-// 					padding: 0 theme(layout, gutter) !important
-// 					// &:nth-last-of-type(-n+#{$i})
-// 					// 	margin-bottom: 0
+				+respond-above($key)
+					width: 100% / $i !important
+					float: left
+					padding: 0 settings(layout, gutter) !important
+					// &:nth-last-of-type(-n+#{$i})
+					// 	margin-bottom: 0
 
 
 

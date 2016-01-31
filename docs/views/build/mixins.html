@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="description" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -30,7 +30,7 @@
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -38,7 +38,7 @@
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
       <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="mixins.html">Mixins</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
@@ -52,11 +52,20 @@
     <article id="arrow" class="article">
       <h2>Arrow</h2>
       <p>Creates a triangle, used for things like tooltips or dropdowns. </p>
-      <ul class="bullet-list">
-        <li>$direction: "up", "right", "down" or "left"</li>
-        <li>$color: any value </li>
-        <li>$size: any value</li>
-      </ul>
+      <table>
+        <tr>
+          <td>$direction </td>
+          <td>"up", "right", "down" or "left"</td>
+        </tr>
+        <tr>
+          <td>$color</td>
+          <td>for example, #E5E5E5</td>
+        </tr>
+        <tr>
+          <td>$size</td>
+          <td>for example, 6px</td>
+        </tr>
+      </table>
       <pre><code class="language-scss">.element {
   &:after {
    @include arrow(down, black, 20px);
@@ -64,11 +73,41 @@
  }</code></pre>
     </article>
     <article id="containers" class="article">
-      <h2>Containers</h2>
-      <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices. By default this is using the <span class="code">mobile-padding</span> value from the settings file.</p>
-      <p>You can create a container using the <span class="function">container($max-width)</span> function.</p>
+      <h2>Placeholder</h2>
+      <p>Changes form placeholder text color.</p>
       <pre><code class="language-scss">.element {
-  @include container($max-width);
+  @include placeholder(grey);
+   &:focus {
+     placeholder(lightGrey);
+   }
+ }</code></pre>
+    </article>
+    <article id="containers" class="article">
+      <h2>Uppercase</h2>
+      <p>Changes form placeholder text color.</p>
+      <pre><code class="language-scss">.element {
+  @include placeholder(grey);
+   &:focus {
+     placeholder(lightGrey);
+   }
+ }</code></pre>
+    </article>
+    <article id="containers" class="article">
+      <h2>Containers</h2>
+      <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.</p>
+      <p>You can create a container using the <span class="function">container($max-width)</span> function.</p>
+      <table>
+        <tr>
+          <td>$max-width</td>
+          <td>container max-width</td>
+        </tr>
+        <tr>
+          <td>$mobile-gutter <em>(true | false)</em></td>
+          <td>removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
+        </tr>
+      </table>
+      <pre><code class="language-scss">.element {
+  @include container(600, $mobile-gutter: false);
  }</code></pre>
     </article>
     <article id="clearfix" class="article">

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="description" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -30,7 +30,7 @@
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -38,7 +38,7 @@
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
       <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="mixins.html">Mixins</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
@@ -50,10 +50,19 @@
   <div class="main-container">
     <h1 class="page-title">Getting Started</h1>
     <article class="article">
-      <p>Barebones is a boilerplate to help you quickly build your own SASS framework. It is not a fully fledged front-end framework, and simply provides a set of commonly used tools: a customisable grid system, automatically generated helper classes, and a range of mixins. Basic elements, icluding buttons, tables, typographic resets, bullet lists are included with minimal styling so you can spend less time overwriting and more time creating something that looks unique. </p>
-      <p>The best way to get started with Barebones is to download the <a href="https://github.com/sebpowell/barebones">latest version</a> from Github and start building!</p>
-      <p>You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as the foundational code).</p>
+      <p>Barebones is a boilerplate to help you quickly build your own front-end framework. It is not a fully-fledged library, but a set of commonly used tools; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project. </p>
+      <p>The best way to use Barebones is to download the source from <a href="https://github.com/sebpowell/barebones">Github</a> and start building!</p><a href="https://github.com/sebpowell/barebones" class="button primary large">Download </a>
+    </article>
+    <article class="article">
+      <h2>Bower</h2>
+      <p>You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as a foundational code-base).</p>
+      <p>If you decide to do this, you'll need to do the following:</p>
+      <p>1. Install the Barebones package</p>
       <pre><code class="language-bash">bower install barebones</code></pre>
+      <p>2. Create a settings file (<a href="../build/settings.html">see here</a> for more info)</p>
+      <p>3. Create a new SASS file, import the settings file first followed by _base.sass.</p>
+      <pre><code class="language-scss">@import "_settings.scss"
+@import "bower_components/dist/_base"</code></pre>
     </article>
     <article class="article">
       <h2>Requirements</h2>

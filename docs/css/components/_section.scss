@@ -23,11 +23,11 @@
 		margin-bottom: sizes(base);
 		color: colours(brand, primary);
 		font-weight: weights(primary, regular);
-		font-size: themes(fonts, sizes, medium-large);
+		font-size: settings(fonts, sizes, medium-large);
 	}
 
 	h3 {
-		font-size: themes(fonts, sizes, medium-large);
+		font-size: settings(fonts, sizes, medium-large);
 		color: colours(greyscale, 800);
 		font-weight: weights(primary, regular);
 		margin-top: sizes(quad);

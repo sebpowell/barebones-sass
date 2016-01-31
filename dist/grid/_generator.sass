@@ -1,24 +1,6 @@
-// $page: (
-//   sidebar: (
-//     device-large: (
-//       columns: 8,
-//       offset: null,
-//     ),
-//     device-medium: 2
-//   ),
-//   main-content: (
-//     device-medium: 2,
-//     device-large: 8
-//   ),
-// );
-
-@mixin span($columns, $position: "", $device: "")
+@mixin span($columns, $position: "", $gutter: "", $offset: "", $device: null)
 	margin-right: $gutterWidth
 	float: left
-
-	// @if $device != null
-	// 	+respond-above($device)
-	// 		width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
 	
 	@if $device != null
 		+respond-above($device)
@@ -26,13 +8,21 @@
 	@else 
 		+respond-above(grid)
 			width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
+			@if $gutter == false
+				margin-right: 0
+			@else
+				margin-right: $gutterWidth
+				
+			@if $position == "last"
+				margin-right: 0
+				float: right
 		
 	@if $position == "last"
 		margin-right: 0
 		float: right
 
 @mixin grid($map)
-	@each $device, $size in themes(layout, breakpoints)
+	@each $device, $size in settings(layout, breakpoints)
 		@if map-has-key($map, $device)
 			@if map-get($map, $device) == 12
 				margin-bottom: $gutterWidth * 3
@@ -40,12 +30,10 @@
 			+respond-above($device)
 				$columnSpan: map-get($map, $device)
 				float: left
-				
-					
-				
+		
 				@if map-has-key($map, "gutter")
 					@if map-get($map, "gutter") == null
-						width: (100% / themes(layout, grid, columns)) * $columnSpan
+						width: (100% / settings(layout, grid, columns)) * $columnSpan
 						margin-right: 0
 
 				@else

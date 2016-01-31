@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="description" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -30,7 +30,7 @@
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../assets/images/logo.png"/></a>
+  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -38,7 +38,7 @@
       <li><a href="index.html">Getting Started</a></li>
       <li><a href="settings.html">Settings</a></li>
       <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins & Functions</a></li>
+      <li><a href="mixins.html">Mixins</a></li>
       <li><a href="helpers.html">Helpers</a></li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
@@ -61,42 +61,76 @@
     <article id="borders" class="article">
       <h3 id="borders">Borders</h3>
       <p>Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.</p>
-      <ul class="bullet-list margin-bottom-double">
-        <li>border-left</li>
-        <li>border-top</li>
-        <li>border-right</li>
-        <li>border-bottom</li>
-        <li>border-all</li>
-        <li>no-border</li>
-      </ul>
-      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
-      <pre><code class="language-scss">.background-brand-primary {
- background-color: #F5F5F5 !important;
+      <table>
+        <tr>
+          <td>border-left</td>
+        </tr>
+        <tr>
+          <td>border-top</td>
+        </tr>
+        <tr>
+          <td>border-right</td>
+        </tr>
+        <tr>
+          <td>border-bottom</td>
+        </tr>
+        <tr>
+          <td>border-all</td>
+        </tr>
+        <tr>
+          <td>no-border</td>
+        </tr>
+      </table>
+      <pre><code class="language-html">&lt;div class="border-bottom"&gt;&lt;/div&gt;</code></pre>
+      <pre><code class="language-scss">.border-bottom {
+ border-bottom: 1px solid #F5F5F5 !important;
 }</code></pre>
     </article>
     <article id="margin" class="article">
       <h3>Margin & Padding</h3>
       <p>Generated from the $sizes map.</p>
-      <ul class="bullet-list">
-        <li><span class="class">.padding-{direction}-{size}</span></li>
-        <li><span class="class">.margin-{direction}-{size}</span></li>
-        <li><span class="class">.no-margin</span></li>
-        <li><span class="class">.no-padding</span></li>
-      </ul>
-      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
+      <table>
+        <tr>
+          <td>padding-{direction}-{size}</td>
+          <td>Applies padding in the specified direction of the specified size.</td>
+        </tr>
+        <tr>
+          <td>margin-{direction}-{size}</td>
+          <td>Applies padding in the specified direction of the specified size.</td>
+        </tr>
+        <tr>
+          <td>no-margin</td>
+          <td>Removes all margins</td>
+        </tr>
+        <tr>
+          <td>no-padding</td>
+          <td>Removes all padding</td>
+        </tr>
+      </table>
+      <pre><code class="language-html">&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;</code></pre>
       <pre><code class="language-scss">.background-brand-primary {
- background-color: #F5F5F5 !important;
+ margin-bottom: 32px !important;
 }</code></pre>
     </article>
-    <article id="margin" class="article">
+    <article class="article">
       <h3>Layout</h3>
-      <ul class="bullet-list">
-        <li>block</li>
-        <li>inline-block</li>
-        <li>clearfix</li>
-        <li>float-left</li>
-        <li>float-right</li>
-      </ul>
+      <table>
+        <tr>
+          <td>block</td>
+        </tr>
+        <tr>
+          <td>inline-block</td>
+        </tr>
+        <tr>
+          <td>float-left</td>
+        </tr>
+        <tr>
+          <td>float-right</td>
+        </tr>
+        <tr>
+          <td>clearfix</td>
+        </tr>
+      </table>
       <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
       <pre><code class="language-scss">.background-brand-primary {
  background-color: #F5F5F5 !important;
@@ -104,40 +138,52 @@
     </article>
     <article id="text-align" class="article">
       <h3>Typography</h3>
+      <table>
+        <tr>
+          <td>alignment</td>
+          <td>Left, Right, Center</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>
+             
+            Helpers for creating the various text sizes specified in your settings file.
+            x-small | small | base | medium | medium-large | large | x-large
+          </td>
+        </tr>
+        <tr>
+          <td>transform</td>
+          <td>uppercase | lowercase | capitalize</td>
+        </tr>
+      </table>
       <p><span class="class">.text-{helper}</span>.</p>
-      <h4>Alignment</h4>
-      <p>These classes are for horizontally aligning content:</p>
-      <ul class="bullet-list">
-        <li>left</li>
-        <li>right</li>
-        <li>center</li>
-      </ul>
-      <h4>Size</h4>
-      <p>Helpers for creating the various text sizes specified in your settings file.</p>
-      <ul class="bullet-list">
-        <li>x-small</li>
-        <li>small</li>
-        <li>base</li>
-        <li>medium</li>
-        <li>medium-large</li>
-        <li>large</li>
-        <li>x-large</li>
-      </ul>
-      <h4>Transform</h4>
-      <ul class="bullet-list">
-        <li>uppercase</li>
-        <li>lowercase</li>
-        <li>capitalize</li>
-      </ul>
     </article>
     <article class="article">
       <h2>Visibility </h2>
       <p>We provide easy to use classes to hide content on specific screen sizes.</p>
+      <table>
+        <tr>
+          <td>alignment</td>
+          <td>Left, Right, Center</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>
+             
+            Helpers for creating the various text sizes specified in your settings file.
+            x-small | small | base | medium | medium-large | large | x-large
+          </td>
+        </tr>
+        <tr>
+          <td>transform</td>
+          <td>uppercase | lowercase | capitalize</td>
+        </tr>
+      </table>
       <pre><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt;
 &lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
 &lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;</code></pre>
-      <pre><code class="language-scss">.background-brand-primary {
- background-color: #F5F5F5 !important;
+      <pre><code class="language-scss">.is-hidden {
+ display: none !important;
 }</code></pre>
     </article>
   </div>

@@ -26,9 +26,9 @@ Elements
 Config
 Utilities
 
-The above files reference a series of values stored in a theme file. The theme file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.
+The above files reference a series of values stored in a settings file. The settings file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.
 
-The theme file defines
+The settings file defines
 
 
 2.) Download the latest version of Barebones here.
@@ -44,8 +44,8 @@ The theme file defines
 			//- | Elements
 			//- | Config
 			//- | Utilities
-			//- | The above files reference a series of values stored in a theme file. The theme file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.
-			//- | The theme file defines
+			//- | The above files reference a series of values stored in a settings file. The settings file is where project-specific global values are held. One of the advances of storing these values in a SASS map, aside from organisation, is that you can if you wish convert to a JSON file and then parse the values using gulp-sass, allowing you to share your theming.
+			//- | The settings file defines
 			//- | 2.) Download the latest version of Barebones here.
 			//- | 3.)
 			//- | So What's the Upgrade Path?
@@ -138,7 +138,7 @@ The theme file defines
 	//- 		li <strong>Components</strong>
 	//- 		li <strong>Helpers</strong>
 	//- 	p
-	//- 		| Each file in the above folders hich then get imported into the <strong>_base.sass</strong> file. This file, and the theme file then gets imported into a global <strong>styles.sass</strong> which
+	//- 		| Each file in the above folders hich then get imported into the <strong>_base.sass</strong> file. This file, and the settings file then gets imported into a global <strong>styles.sass</strong> which
 	//- 		| then gets compiled into the CSS.
 
 	//- 	h2 Who's This For?
@@ -153,7 +153,7 @@ The theme file defines
 	//- 	h2 Customising Enso
 	//- 	p
 	//- 		| Enso is not designed as to be a 'turnkey' solution. It's primary purpose is to provide a foundation to help both experiented and
-	//- 		| less experienced designers build beautiful web and mobile interfaces. To learn more about customising Enso, check out the <a>Theme section</a>.
+	//- 		| less experienced designers build beautiful web and mobile interfaces. To learn more about customising Enso, check out the <a>settings section</a>.
 
 	//- 	h2 Why does the world need another framework?
 	//- 	p
@@ -172,7 +172,7 @@ The theme file defines
 
 		//- p
 		//- 	| Dave Rupert posted this excellt article a couple of years ago, titled <a href="http://daverupert.com/2013/04/responsive-deliverables/">Xbuilding boostraps for clients'</a>
-		//- 	| Enso is built with this theme in mind - that designers need to know how ot code, and should provide style guides to their clients ot teams.
+		//- 	| Enso is built with this settings in mind - that designers need to know how ot code, and should provide style guides to their clients ot teams.
 		//- 	| But to do so effectively, it's important to have a good foundation that doesn't interfere with how the UI looks.
 		//- p
 		//- 	| Enso is a colletion of all the buts of the various modules, mixins and other SASS functions I find myself using over and over again.

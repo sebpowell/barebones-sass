@@ -1,13 +1,21 @@
+.page-layout-docs {
+  padding: settings(layout, grid, mobile-gutter);
+  @include container(1800px);
+  @include respond-above(device-large) {
+    padding-left: 300px;
+  }
+}
+
 .columns {
 	[class^="column"] {
 
 		background: lightBlue;
-		padding: themes(layout, sizes, base);
+		padding: settings(layout, sizes, base);
 	}
 }
 
 .example {
-  border: 1px solid themes(colours, keyline, light);
+  border: 1px solid settings(colours, keyline, light);
   border-radius: 3px;
   padding: 24px;
 
@@ -92,28 +100,4 @@ iframe {
 
 
 
-.page-layout-docs {
-  padding: themes(layout, grid, mobile-gutter);
-  @include respond-above(device-large) {
-  	padding-left: 300px;
-  }
-  // @include respond-above(device-large) {
-  //   padding-top: 0;
-  // }
-  // .content {
-  //   padding: 20px 0;
-  //   text-align: center;
-  //   background: #CCEBF3;
-  // }
 
-  // .class, .code {
-  //   color: #D88E2C;
-  //   font-family: "Source Code Pro",Consolas,"Lucida Console",Courier,monospace;
-  // }
-  
-  // .page-header {
-  //   text-align: left;
-  // }
-
-
-}

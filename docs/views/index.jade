@@ -7,16 +7,34 @@ include _inc/_layout.jade
 		h1.page-title Getting Started
 
 		article.article
-			p Barebones is a boilerplate to help you quickly build your own SASS framework. It is not a fully fledged front-end framework, and simply provides a set of commonly used tools: a customisable grid system, automatically generated helper classes, and a range of mixins. Basic elements, icluding buttons, tables, typographic resets, bullet lists are included with minimal styling so you can spend less time overwriting and more time creating something that looks unique. 
+			p Barebones is a boilerplate to help you quickly build your own front-end framework. It is not a fully-fledged library, but a set of commonly used tools; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project. 
 
-			p The best way to get started with Barebones is to download the <a href="https://github.com/sebpowell/barebones">latest version</a> from Github and start building!
+			//- Elements are stripped down to their icluding buttons, tables, typographic resets, bullet lists are included with minimal styling so you can spend less time overwriting and more time creating something that looks unique. 			
 
-			p You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as the foundational code).
+			p The best way to use Barebones is to download the source from <a href="https://github.com/sebpowell/barebones">Github</a> and start building!
 
+			a.button.primary.large(href="#{repo}") Download 
+
+		article.article
+			h2 Bower
+
+			p You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as a foundational code-base).
+
+			p If you decide to do this, you'll need to do the following:
+
+			p 1. Install the Barebones package
 			pre
 				code.language-bash
 					| bower install barebones
-			
+
+			p 2. Create a settings file (<a href="../build/settings.html">see here</a> for more info)
+
+			p 3. Create a new SASS file, import the settings file first followed by _base.sass.
+			pre
+				code.language-scss
+					| @import "_settings.scss"
+					| @import "bower_components/dist/_base"
+
 
 		article.article
 			h2 Requirements

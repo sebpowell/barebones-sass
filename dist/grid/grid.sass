@@ -1,37 +1,15 @@
 // Get total number of gutters.
-$gutters: (themes(layout, grid, columns) / themes(layout, grid, gutter)) + (themes(layout, grid, columns) - 1)
-
-$gutterCount: (themes(layout, grid, columns) - 1)
-
+$gutters: (settings(layout, grid, columns) / settings(layout, grid, gutter)) + (settings(layout, grid, columns) - 1)
+$gutterCount: (settings(layout, grid, columns) - 1)
 $gutterWidth: 100% / $gutters
-
 $totalGutterWidth: $gutterWidth * $gutterCount
-
-$columnWidth: (100% - $totalGutterWidth) / themes(layout, grid, columns)
-
+$columnWidth: (100% - $totalGutterWidth) / settings(layout, grid, columns)
 $totalColumnWidth: $columnWidth + $gutterWidth
-
-$guttersPerColumn: (1 / themes(layout, grid, gutter)) + 1
-
-// =grid-debug()
-// 	background-image: linear-gradient(to right, rgba(00,00,00, 0.15), rgba(00,00,00, 0.05) 80%, rgba(0, 0, 0, 0) 85%)
-// 	background-size: 100% / theme(layout, columns)
-
-// @mixin grid-background($gutter-type) {
-// 	@if $gutter-type == "padding" {
-// 		background-image: linear-gradient(to right, rgba(00,00,00, 0.85), rgba(00,00,00, 0.05) 100%, rgba(0, 0, 0, 0) 100%);
-// 		background-size: 100% / theme(columns);
-// 	}
-
-// 	@if $gutter-type == "margin" {
-// 		background-image: linear-gradient(to right, rgba(00,00,00, 0.25), rgba(00,00,00, 0.25) (100% - (100% / $guttersPerColumn)), rgba(0, 0, 0, 0) (100% - (100% / $guttersPerColumn)));
-// 		background-size: $columnWidth + $gutterWidth;
-// 	}
+$guttersPerColumn: (1 / settings(layout, grid, gutter)) + 1
 
 @import "container"
-// @import "columns"
-// @import "gallery"
+@import "columns"
+// // @import "gallery"
 @import "generator"
-// @import "gutters"
-// @import "offsets"
-// @import "row"
+@import "offsets"
+@import "row"

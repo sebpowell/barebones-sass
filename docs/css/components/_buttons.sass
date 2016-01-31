@@ -28,7 +28,7 @@ button, .button
 			border-radius: $value * 3
 
 	// Generate button colours
-	@each $name, $value in themes(colours, brand)
+	@each $name, $value in settings(colours, brand)
 		&.#{$name}
 			background: $value
 			color: white
@@ -45,12 +45,11 @@ button, .button
 	
 	&.white
 		background: white
-		color: themes(colours, brand, primary)
+		color: settings(colours, brand, primary)
 		&.bordered
 			background: transparent
 			border: 1px solid rgba(255,255,255,0.4)
 			color: white
 			&:hover
 				background: white
-				color: themes(colours, brand, primary)
-
+				color: settings(colours, brand, primary)

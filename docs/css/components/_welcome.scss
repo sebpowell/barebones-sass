@@ -10,6 +10,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 	.selling-point-title {
 		font-size: 16px;
 		font-weight: weights(primary, semi-bold);
+		margin-bottom: sizes(half);
 		color: white;
 	}
 	.selling-point-description {
@@ -46,13 +47,13 @@ $selling-points: (device-small: 12, device-medium: 4);
 		width: 100%;
 		vertical-align: middle;
 		color: white;
-		padding: themes(layout, grid, mobile-padding);
+		padding: 0 settings(layout, mobile-padding);
 	}
 
 
 
 	.welcome-masthead-inner-heading {
-		font-family: fonts(secondary);
+		font-family: font(secondary);
 		font-size: 40px;
 		letter-spacing: 0.1em;
 		line-height: 1.2;
@@ -75,7 +76,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 	}
 
 	.welcome-masthead-buttons {
-		margin-bottom: sizes(triple);
+		margin-bottom: sizes(quad);
 		.button {
 			@include respond-below(device-medium) {
 				display: block;
@@ -95,7 +96,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 		position: absolute;
 		bottom: 0;
 		}
-		padding: sizes(double-half) themes(layout, grid, mobile-gutter);
+		padding: sizes(double-half) settings(layout, grid, mobile-gutter);
 		width: 100%;
 		left: 0;
 		font-size: 13px;

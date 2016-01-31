@@ -5,6 +5,7 @@ $container-sizes: (small: 500px, medium: 800px, large: 1000px, x-large: 1200px, 
 	position: relative
 	margin: auto
 	width: 100%
+	
 
 
 // Generate container sizes
@@ -12,3 +13,5 @@ $container-sizes: (small: 500px, medium: 800px, large: 1000px, x-large: 1200px, 
 	.container-#{$size}
 		@extend %container
 		max-width: $value
+		@media (max-width: $value)
+			padding: 0 settings(layout, mobile-padding)

@@ -1,12 +1,12 @@
 // Generate column helper classes. 
-@for $i from 1 through themes(layout, grid, columns)
+@for $i from 1 through settings(layout, grid, columns)
 	.columns-#{$i}
 		+respond-below(grid)
 			width: 100%
 			margin-bottom: $gutterWidth
 			
 		+respond-above(grid)
-			@if $i < themes(layout, columns)
+			@if $i < grid(columns)
 				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
 				float: left
 				margin-right: $gutterWidth
@@ -16,7 +16,7 @@
 				width: 100%
 
 // Generate breakpoint-specific column helper classes. 
-@each $key, $value in themes(layout, breakpoints)
+@each $key, $value in settings(layout, breakpoints)
 	@for $i from 1 through grid(columns)
 		.columns-#{$i}-#{$key}
 			margin-bottom: $gutterWidth
