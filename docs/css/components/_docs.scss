@@ -1,5 +1,5 @@
 .page-layout-docs {
-  padding: settings(layout, grid, mobile-gutter);
+  padding: grid(mobile-gutter);
   @include container(1800px);
   @include respond-above(device-large) {
     padding-left: 300px;
@@ -10,12 +10,12 @@
 	[class^="column"] {
 
 		background: lightBlue;
-		padding: settings(layout, sizes, base);
+		padding: sizes(base);
 	}
 }
 
 .example {
-  border: 1px solid settings(colours, keyline, light);
+  border: 1px solid colours(keyline, light);
   border-radius: 3px;
   padding: 24px;
 
@@ -76,7 +76,7 @@
   width: 100%;
   height: 100%;
 
-  background: colors(greyscale, x-light);
+  // background: colours(greyscale, x-light);
 }
 
 .content {

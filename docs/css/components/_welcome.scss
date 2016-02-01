@@ -47,7 +47,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 		width: 100%;
 		vertical-align: middle;
 		color: white;
-		padding: 0 settings(layout, mobile-padding);
+		padding: 0 grid(mobile-padding);
 	}
 
 
@@ -96,7 +96,7 @@ $selling-points: (device-small: 12, device-medium: 4);
 		position: absolute;
 		bottom: 0;
 		}
-		padding: sizes(double-half) settings(layout, grid, mobile-gutter);
+		padding: sizes(double-half) grid(mobile-gutter);
 		width: 100%;
 		left: 0;
 		font-size: 13px;

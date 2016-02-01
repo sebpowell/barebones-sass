@@ -1,11 +1,12 @@
 // Get total number of gutters.
-$gutters: (settings(layout, grid, columns) / settings(layout, grid, gutter)) + (settings(layout, grid, columns) - 1)
-$gutterCount: (settings(layout, grid, columns) - 1)
+$gutters: ( grid(columns) / grid(gutter) ) + ( grid(columns) - 1)
+
+$gutterCount: ( grid(columns) - 1 )
 $gutterWidth: 100% / $gutters
 $totalGutterWidth: $gutterWidth * $gutterCount
-$columnWidth: (100% - $totalGutterWidth) / settings(layout, grid, columns)
+$columnWidth: (100% - $totalGutterWidth) / grid(columns)
 $totalColumnWidth: $columnWidth + $gutterWidth
-$guttersPerColumn: (1 / settings(layout, grid, gutter)) + 1
+$guttersPerColumn: (1 / grid(gutter)) + 1
 
 @import "container"
 @import "columns"

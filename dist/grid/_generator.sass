@@ -22,7 +22,7 @@
 		float: right
 
 @mixin grid($map)
-	@each $device, $size in settings(layout, breakpoints)
+	@each $device, $size in $breakpoints
 		@if map-has-key($map, $device)
 			@if map-get($map, $device) == 12
 				margin-bottom: $gutterWidth * 3

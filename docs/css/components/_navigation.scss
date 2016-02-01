@@ -62,7 +62,7 @@
 
     display: block;
     left: 0;
-    background-color: settings(colours, brand, primary);
+    background-color: colours(brand, primary);
 
   }
 
@@ -77,9 +77,9 @@
 
   .download {
   	position: absolute;
-  	bottom: settings(layout, sizes, base);
-  	left: settings(layout, sizes, base);
-  	right: settings(layout, sizes, base);
+  	bottom: sizes(base);
+  	left: sizes(base);
+  	right: sizes(base);
   	padding: sizes(base);
   	text-align: center;
   	margin-bottom: sizes(base);

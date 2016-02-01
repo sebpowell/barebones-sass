@@ -1,92 +1,82 @@
-$settings: (
-	colours: (
-		brand: (
-			primary: #157afb,
-			secondary: #fe5607
-		),
-		secondary: (
-			orange: #f8b000,
-		),
-		greyscale: (
-			50: #FAFAFA,
-			100: #F5F5F5,
-			200: #EEEEEE,
-			300: #E0E0E0,
-			400: #BDBDBD,
-			500: #9E9E9E,
-			600: #757575,
-			700: #616161,
-			800: #424242,
-			900: #212121
-		),
-		keyline: (
-			light: #ECECEC,
-			medium: #D5D5D5,
-			dark: #D9D9D8,
-		)
+$colours: (
+	brand: (
+		primary: #157afb,
+		secondary: #fe5607
 	),
+	secondary: (
+		orange: #f8b000,
+	),
+	greyscale: (
+		50: #FAFAFA,
+		100: #F5F5F5,
+		200: #EEEEEE,
+		300: #E0E0E0,
+		400: #BDBDBD,
+		500: #9E9E9E,
+		600: #757575,
+		700: #616161,
+		800: #424242,
+		900: #212121
+	),
+	keyline: (
+		light: #ECECEC,
+		medium: #D5D5D5,
+		dark: #D9D9D8,
+	)
+);
 
-	fonts: (
-		primary: (
-			name: #{'Open-Sans', sans-serif},
-			weights: (
-				light: 100,
-				regular: 400,
-				semi-bold: 600,
-				bold: 700
-			),
-		),
-		secondary: (
-			name: #{'Futura-PT', sans-serif},
-			weights: (
-				light: 100,
-				regular: 400,
-				bold: 700
-			),
-		),
-		sizes: (
-			x-small: 12px,
-			small: 14px,
-			base:  16px,
-			medium: 18px,
-			medium-large: 24px,
-			large: 32px,
-			x-large: 42px,
-			xx-large: 68px,
+$fonts: (
+	primary: (
+		name: #{'Open-Sans', sans-serif},
+		weights: (
+			light: 100,
+			regular: 400,
+			semi-bold: 600,
+			bold: 700
 		),
 	),
+	secondary: (
+		name: #{'Futura-PT', sans-serif},
+		weights: (
+			light: 100,
+			regular: 400,
+			bold: 700
+		),
+	),
+);
 
-	layout: (
-		site-width: 760px,
-		mobile-padding: 24px,
-		grid: (
-			columns: 12,
-			gutter: 1/2,
-		),
-		sizes: (
-			font-base-size: 16px,
-		  quarter: 16px / 4,
-		  half: 16px / 2,
-		  base: 16px,
-		  double-half: 16px * 1.5,
-		  double: 16px * 2,
-		  triple: 16px * 3,
-		  quad: 16px * 4,
-		),
-		breakpoints: (
-			grid: 760px,
-			device-x-small: 350px,
-			device-small: 480px,
-			device-medium: 780px,
-			device-medium-large: 900px,
-			device-large: 1080px,
-			device-x-large: 1200px
-		),
-		layers: (
-			backdrop: 3,
-			modal: 3,
-			dropdown: 1,
-			navigation: 1,
-		),
-	),
+$breakpoints: (
+	grid: 760px,
+	device-x-small: 350px,
+	device-small: 480px,
+	device-medium: 780px,
+	device-medium-large: 900px,
+	device-large: 1080px,
+	device-x-large: 1200px
+);
+
+$layers: (
+	backdrop: 3,
+	modal: 3,
+	dropdown: 1,
+	navigation: 1,
+);
+
+$grid: (
+	columns: 12,
+	gutter: 1/2,
+	mobile-gutter: 24px,
+	site-width: 760px,
+	mobile-padding: 24px,
+);
+
+$sizes: (
+	font-base-size: 16px,
+  quarter: 16px / 4,
+  half: 16px / 2,
+  base: 16px,
+  double-half: 16px * 1.5,
+  double: 16px * 2,
+  triple: 16px * 3,
+  quad: 16px * 4,
 );

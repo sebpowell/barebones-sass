@@ -15,26 +15,26 @@
 }
 
 
-@function settings($keys...) {
-  $key: nth($keys, 1);
-  $length: length($keys);
-  $value: map-get($settings, $key);
+// @function settings($keys...) {
+//   $key: nth($keys, 1);
+//   $length: length($keys);
+//   $value: map-get($settings, $key);
 
-  @if ($length > 1) {
-    $rest: ();
-    @for $i from 2 through $length {
-      $rest: append($rest, nth($keys, $i))
-    }
-    
-    @return map-fetch($value, $rest)
+//   @if ($length > 1) {
+//     $rest: ();
+//     @for $i from 2 through $length {
+//       $rest: append($rest, nth($keys, $i))
+//     }
 
-  } 
+//     @return map-fetch($value, $rest)
 
-  @else {
-    @return $value;
-    @debug "test";
-  }
-}
+//   } 
+
+//   @else {
+//     @return $value;
+//     @debug "test";
+//   }
+// }
 
 
 
@@ -51,7 +51,7 @@
         $rest: append($rest, nth($keys, $i));
         
       }
-      @warn "The key '#{$key}' doesn't exist in the map '#{$rest}'. Please check your settings file.";
+      @warn "The key '#{$key}' doesn't exist. Please check your settings file.";
     } 
   }
   
@@ -62,31 +62,46 @@
 // Helper functions 
 
 @function sizes($size) {
-  @return map-deep-get($settings, layout, sizes, $size);
+  @if map-has-key($sizes, $size) {
+   @return map-get($sizes, $size);
+  }
+  @else {
+    @warn "#{$size} does not exist in sizes map."
+  }
 }
 
 @function grid($object) {
-	@return map-deep-get($settings, layout, grid, $object);
+  @if map-has-key($grid, $object) {
+   @return map-get($grid, $object);
+  }
+  @else {
+	 @warn "#{$object} does not exist in grid map."
+  }
 }
 
 @function colours($colour-cat, $colour) {
-  @return map-get(map-get(map-get($settings, colours), $colour-cat), $colour);
+  @return map-deep-get($colours, $colour-cat, $colour);
 }
 
 @function font($object) {
-	@return map-deep-get($settings, fonts, $object, name);
+	@return map-deep-get($fonts, $object, name);
 }
 
 @function weights($family, $weight) {
-	@return map-deep-get($settings, fonts, $family, weights, $weight);
+	@return map-deep-get($fonts, $family, weights, $weight);
 }
 
 @function breakpoints($object) {
-  @return map-deep-get($settings, layout, breakpoints, $object);
+  @return map-get($breakpoints, $object);
 }
 
 @function layers($object) {
-	@return map-deep-get($settings, layout, layers, $object);
+  @if map-has-key($layers, $object) {
+	 @return map-get($layers, $object);
+  }
+  @else {
+    @warn "#{$object} does not exist in layers map."
+  }
 }
 
 
