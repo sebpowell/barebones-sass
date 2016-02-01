@@ -10,6 +10,7 @@
     @return map-fetch($value, $rest)
   } @else {
     @return $value;
+    
   }
 }
 
@@ -24,44 +25,68 @@
     @for $i from 2 through $length {
       $rest: append($rest, nth($keys, $i))
     }
+    
     @return map-fetch($value, $rest)
-  } @else {
+
+  } 
+
+  @else {
     @return $value;
+    @debug "test";
   }
+}
+
+
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    @if map-has-key($map, $key) {
+      $map: map-get($map, $key);
+    }
+    @else {
+      $moo: nth($keys, 1);
+      $rest: ();
+      $length: length($keys);
+      @for $i from 1 through $length {
+        $rest: append($rest, nth($keys, $i));
+        
+      }
+      @warn "The key '#{$key}' doesn't exist in the map '#{$rest}'. Please check your settings file.";
+    } 
+  }
+  
+  @return $map;
+}
+
+
+// Helper functions 
+
+@function sizes($size) {
+  @return map-deep-get($settings, layout, sizes, $size);
+}
+
+@function grid($object) {
+	@return map-deep-get($settings, layout, grid, $object);
 }
 
 @function colours($colour-cat, $colour) {
   @return map-get(map-get(map-get($settings, colours), $colour-cat), $colour);
 }
 
-@function sizes($size) {
-  @return map-get(map-get(map-get($settings, layout), sizes), $size);
-}
-
-@function grid($object) {
-	@return map-get(map-get(map-get($settings, layout), grid), $object);
-}
-
 @function font($object) {
-	@return map-get(map-get(map-get($settings, fonts), $object), name);
+	@return map-deep-get($settings, fonts, $object, name);
 }
 
-@function weights($family, $object) {
-	@return map-get(
-		map-get(
-			map-get(
-				map-get($settings, fonts), $family
-			), 
-		weights), 
-	$object);
+@function weights($family, $weight) {
+	@return map-deep-get($settings, fonts, $family, weights, $weight);
 }
 
 @function breakpoints($object) {
-	@return map-get(map-get(map-get($settings, layout), breakpoints), $object);
+  @return map-deep-get($settings, layout, breakpoints, $object);
 }
 
 @function layers($object) {
-	@return map-get(map-get(map-get($settings, layout), layers), $object);
+	@return map-deep-get($settings, layout, layers, $object);
 }
 
 

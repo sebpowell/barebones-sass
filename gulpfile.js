@@ -34,7 +34,7 @@ gulp.task("jade", function() {
 gulp.task('sass', function () {
 	gulp.src('docs/css/style.scss')
 		.pipe(sass({
-			outputStyle: "compressed",
+			outputStyle: "compact",
 		}).on('error', sass.logError))
 		.pipe(autoprefixer({browsers: ['last 2 versions']}))
 		.pipe(gulp.dest(function(file) {
