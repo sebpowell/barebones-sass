@@ -474,31 +474,71 @@
 
 .element:nth-child(2n+1) { background: red; }
 
+.element:nth-child(3n + 2) { background: yellow !important; }
+
+.element:nth-child(3n + 1) { background: red !important; }
+
+.element:nth-child(3n + 3) { background: purple !important; }
+
 @media (max-width: 760px) { .element { width: 100%; } }
 
-.element:nth-child(3n+1) { margin-top: 2.85714%; }
+.element:nth-child(3n + 1) { margin-top: 2.85714%; }
 
-@media (min-width: 760px) { .element:nth-child(3n+1) { width: 22.85714%; margin-right: 2.85714%; float: left; } }
+@media (min-width: 760px) { .element:nth-child(3n + 1) { width: 48.57143%; margin-right: 2.85714%; float: left; } }
 
 @media (min-width: 760px) { .element:nth-child(-n+3) { margin-top: 0; } }
 
-.element:nth-child(3n+3) { margin-right: 0; }
+.element:nth-child(3n) { margin-right: 0; }
 
-.element:nth-child(2n+1) { margin-top: 2.85714%; }
+.element:nth-child(3n + 2) { margin-top: 2.85714%; }
 
-@media (min-width: 760px) { .element:nth-child(2n+1) { width: 22.85714%; margin-right: 2.85714%; float: left; } }
+@media (min-width: 760px) { .element:nth-child(3n + 2) { width: 14.28571%; margin-right: 2.85714%; float: left; } }
 
-@media (min-width: 760px) { .element:nth-child(-n+2) { margin-top: 0; } }
+@media (min-width: 760px) { .element:nth-child(-n+3) { margin-top: 0; } }
 
-.element:nth-child(2n+2) { margin-right: 0; }
+.element:nth-child(3n) { margin-right: 0; }
 
-.element:nth-child(1n+1) { margin-top: 2.85714%; }
+.element:nth-child(3n + 3) { margin-top: 2.85714%; }
 
-@media (min-width: 760px) { .element:nth-child(1n+1) { width: 48.57143%; margin-right: 2.85714%; float: left; } }
+@media (min-width: 760px) { .element:nth-child(3n + 3) { width: 31.42857%; margin-right: 2.85714%; float: left; } }
 
-@media (min-width: 760px) { .element:nth-child(-n+1) { margin-top: 0; } }
+@media (min-width: 760px) { .element:nth-child(-n+3) { margin-top: 0; } }
 
-.element:nth-child(1n+1) { margin-right: 0; }
+.element:nth-child(3n) { margin-right: 0; }
+
+@media (max-width: 760px) { .element-2 { width: 100%; } }
+
+.element-2:nth-child(4n + 1) { margin-top: 2.85714%; }
+
+@media (min-width: 760px) { .element-2:nth-child(4n + 1) { width: 14.28571%; margin-right: 2.85714%; float: left; } }
+
+@media (min-width: 760px) { .element-2:nth-child(-n+4) { margin-top: 0; } }
+
+.element-2:nth-child(4n) { margin-right: 0; }
+
+.element-2:nth-child(4n + 2) { margin-top: 2.85714%; }
+
+@media (min-width: 760px) { .element-2:nth-child(4n + 2) { width: 14.28571%; margin-right: 2.85714%; float: left; } }
+
+@media (min-width: 760px) { .element-2:nth-child(-n+4) { margin-top: 0; } }
+
+.element-2:nth-child(4n) { margin-right: 0; }
+
+.element-2:nth-child(4n + 3) { margin-top: 2.85714%; }
+
+@media (min-width: 760px) { .element-2:nth-child(4n + 3) { width: 22.85714%; margin-right: 2.85714%; float: left; } }
+
+@media (min-width: 760px) { .element-2:nth-child(-n+4) { margin-top: 0; } }
+
+.element-2:nth-child(4n) { margin-right: 0; }
+
+.element-2:nth-child(4n + 4) { margin-top: 2.85714%; }
+
+@media (min-width: 760px) { .element-2:nth-child(4n + 4) { width: 40%; margin-right: 2.85714%; float: left; } }
+
+@media (min-width: 760px) { .element-2:nth-child(-n+4) { margin-top: 0; } }
+
+.element-2:nth-child(4n) { margin-right: 0; }
 
 @media (min-width: 760px) { .offset-1 { margin-left: 8.57143%; } }
 
