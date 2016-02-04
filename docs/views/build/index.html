@@ -14,9 +14,56 @@
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script>
       $(document).ready(function() {
+      	setNavigation();
+      	$(".mobile-navigation-toggle").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      		$(".backdrop").toggleClass("is-visible");
+      		$(this).toggleClass("close");
+      	});
+      });
+      
+    </script>
+    <script src="../../javascript/application.js"></script>
+  </head>
+</html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	setNavigation();
       	$(".mobile-navigation-toggle").click(function() {
       		$(".docs-navigation").toggleClass("show");
       		$(".backdrop").toggleClass("is-visible");
@@ -34,12 +81,55 @@
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
-    <ul>
-      <li><a href="index.html">Getting Started</a></li>
-      <li><a href="settings.html">Settings</a></li>
-      <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins</a></li>
-      <li><a href="helpers.html">Helpers</a></li>
+    <ul class="primary-navigation">
+      <li><a href="/docs/views/build/index.html">Getting Started</a>
+        <ul class="sub-navigation">
+          <li><a href="/docs/views/build/index.html">Bower</a></li>
+          <li><a href="/docs/views/build/index.html">Requirements</a></li>
+          <li><a href="/docs/views/build/index.html">Support</a></li>
+          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/settings.html">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#colours">Colours</a></li>
+          <li><a href="#fonts">Fonts</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="/docs/views/build/index.html">Breakpoints</a></li>
+          <li><a href="/docs/views/build/index.html">Sizes</a></li>
+          <li><a href="/docs/views/build/index.html">Layers</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/grid.html">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Generator</a></li>
+          <li><a href="/docs/views/build/index.html">Helpers</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/mixins.html">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#arrow">Arrow</a></li>
+          <li><a href="#placeholder">Placeholder</a></li>
+          <li><a href="#uppercase">Uppercase</a></li>
+          <li><a href="#containers">Containers</a></li>
+          <li><a href="#clearfix">Clearfix</a></li>
+          <li><a href="#ellipsis">Ellipsis</a></li>
+          <li><a href="#clearfix">Media Queries</a></li>
+          <li><a href="#containers">No Bullet</a></li>
+          <li><a href="#clearfix">Vertical Align</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/helpers.html">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#background">Background Color</a></li>
+          <li><a href="">Position</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#margins">Margins & Padding</a></li>
+          <li><a href="/docs/views/build/index.html">Layout</a></li>
+          <li><a href="/docs/views/build/index.html">Typography</a></li>
+          <li><a href="/docs/views/build/index.html">Visibility</a></li>
+        </ul>
+      </li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
       <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
@@ -50,40 +140,156 @@
   <div class="main-container">
     <h1 class="page-title">Getting Started</h1>
     <article class="article">
-      <p>Barebones is a SASS boilerplate to help you build your own front-end framework. It is not a fully-fledged library, but a set of commonly used tools; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project. </p>
-      <p>The best way to use Barebones is to download the source from <a href="https://github.com/sebpowell/barebones">Github</a> and start building!</p><a href="https://github.com/sebpowell/barebones" class="button primary large">Download </a>
+      <p>Barebones is a SASS boilerplate to help you build your own front-end framework. It is not a fully-fledged library, but a set of commonly used tools; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project.</p>
+      <p>Everything in Barebones has been stripped back to include only the bare essentials, so you can spend less time overwriting and more time creating something that looks unique. It is a collection of ideas, which we see as 'best practice' collected from around the Internet, and packed together into a single package. We help to help SASS 'newbies' and other front-end.</p>
+      <p>The best way to use Barebones is to download the source from <a href="https://github.com/sebpowell/barebones">Github</a> and start building!</p><a href="https://github.com/sebpowell/barebones" class="button primary large">Download</a>
     </article>
     <article class="article">
-      <h2>Bower</h2>
-      <p>You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as a foundational code-base).</p>
-      <p>If you decide to do this, you'll need to do the following:</p>
-      <p>1. Install the Barebones package</p>
+      <h2>Why another framework?</h2>
+      <p>We created Barebones because we weren't happy with other frameworks. Much has been written on the subject of custom SASS frameworks, and we decided to start doing this ourself. As we did, we learned a lot. We wanted it to be as lightweight as possible, whilst also giving enough firection to help you strcuture your SASS project yourself. Buildingin custom CSS frameowrks is hard. 2 years ago, we made the decusiubs of building or own instead of using a full-fledged framework like Bootstrap. There were various reasons for this, but one of the mains reasons was.  No vendor-prefixing mixins (these can not be handled using your build process) Many librarties provide incredibly basic mixins that don't actually help you much. For example, the Bourbon library provides mixins to simplify certain commands, but it doesn't actually encourage.</p>
+      <p>At the same time, we spent a lot of time reading articles by the likes of Hugo Giraduel, Ben Frain and others that regularly had great ideas for structring projects ina  more maintable way. Things like managing z-index maps etc. If you're starting out, or for people whgi are used to tradtionally CSS, it takes a long time to build up that knowledgebase. By which time, it may be too late to add in best practices you've seen elsewhere. BArebones is here to give you that leg-up, included a set of 'best practices' which we think have genuinely made our lives easier.</p>
+      <ul>
+        <li>the lack of customisation these frameowkr offer. Bootrastp, foundation and other frameworks</li>
+      </ul>
+      <h2>How is it different to other frameworks?</h2>
+      <ul>
+        <li>Written in SASS, the best CSS pre-processor there is</li>
+        <li>Lightweight, includes only the most fundamenttl tools needed in web design (and you can even customise what's included)</li>
+        <li>Fully customisable - it's a boilerplace, not a framework</li>
+      </ul>
+    </article>
+    <article class="article">
+      <h2>Installing</h2>
+      <p>You can also get the latest release using Bower.</p>
+      <p>You can alos simply dowload the source files, include and get started! The issue with this approach though is that it makes it difficult to upgrade. However if you're happy maintaining your own SASS library (which after all, is part of the philshopy behind this project), then you can do so and then simply update the relevant files when the next realse comes out.</p>
+      <p>Because Barebones doesn't include any components or styling, it won't get in your way. By default, classes are not namespaced, but the project is strcutured to allow you to do this if you wish.</p>
+      <p>You'll need SASS is not supported by web browser, so you'll need to process. There are various ways of doing this, depending on your steup – see the SASS site for more info</p>
+      <p>Barebones is split into two sets of files;</p>
+      <ul>
+        <li>A collection of the core files</li>
+        <li>A global settings file.</li>
+      </ul>
+      <p>The settings file acts as a global configuration file – mixins, helpers and the grid system all pull i values from this file. You need this file for Barebones to work – it won't work otherwise.</p>
+      <p><strong>1. Install the Barebones package</strong></p>
       <pre><code class="language-bash">bower install barebones</code></pre>
-      <p>2. Create a settings file (<a href="../build/settings.html">see here</a> for more info)</p>
+      <p><strong>2. Create a settings file (<a href="../build/settings.html">see here</a> for more info)</strong></p>
       <p>3. Create a new SASS file, import the settings file first followed by _base.sass.</p>
+      <p>
+        <li>- libs/barebones/_base.scss</li>
+        <li>- assets/scss/styles.scss</li>
+        <li>- assets/scss/_settings.scss</li>
+      </p>
+      <p>Your styles.scss file should look like this:</p>
+      <pre><code class="language-scss">@import _settings.scss // Always import the settings file first
+@import _base.scss // Import Barebones
+// Your stuff can come here.</code></pre>
       <pre><code class="language-scss">@import "_settings.scss"
 @import "bower_components/dist/_base"</code></pre>
+    </article>
+    <article class="article">
+      <h2>Project Structure</h2>
+      <h3>Helpers</h3>
+      <table>
+        <tr>
+          <td>Background</td>
+          <td>Generates background-color helpers for every colour specified in your $colours map.</td>
+        </tr>
+        <tr>
+          <td>Borders</td>
+          <td>Generates border helpers using the $keyline value specified in your $colours map.</td>
+        </tr>
+        <tr>
+          <td>Layout</td>
+          <td>Layout helpers</td>
+        </tr>
+        <tr>
+          <td>Margin & Padding</td>
+          <td>Generates margin and padding helpres from sizes specified in $sizes map.</td>
+        </tr>
+        <tr>
+          <td>Typography</td>
+          <td>Generates text sizing, colours and transform helpers from sizes and colours specified.</td>
+        </tr>
+        <tr>
+          <td>Visibility</td>
+          <td>Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.</td>
+        </tr>
+      </table>
+      <h3>Mixins</h3>
+      <table>
+        <tr>
+          <td>Arrow</td>
+          <td>Generates background-color helpers for every colour specified in your $colours map.</td>
+        </tr>
+        <tr>
+          <td>Clearfix</td>
+          <td>Generates border helpers using the $keyline value specified in your $colours map.</td>
+        </tr>
+        <tr>
+          <td>Ellipsis</td>
+          <td>Layout helpers</td>
+        </tr>
+        <tr>
+          <td>Media Query</td>
+          <td>Generates margin and padding helpres from sizes specified in $sizes map.</td>
+        </tr>
+        <tr>
+          <td>Placeholder</td>
+          <td>Generates text sizing, colours and transform helpers from sizes and colours specified.</td>
+        </tr>
+        <tr>
+          <td>Uppercase</td>
+          <td>Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.</td>
+        </tr>
+        <tr>
+          <td>Z-Index</td>
+          <td>Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.</td>
+        </tr>
+      </table>
+      <h3>Grid</h3>
+      <table>
+        <tr>
+          <td>Columns</td>
+          <td>Generates background-color helpers for every colour specified in your $colours map.</td>
+        </tr>
+        <tr>
+          <td>Container</td>
+          <td>Generates border helpers using the $keyline value specified in your $colours map.</td>
+        </tr>
+        <tr>
+          <td>Gallery</td>
+          <td>Layout helpers</td>
+        </tr>
+        <tr>
+          <td>Offset Helpers</td>
+          <td>Generates margin and padding helpres from sizes specified in $sizes map.</td>
+        </tr>
+        <tr>
+          <td>Row</td>
+          <td>Generates text sizing, colours and transform helpers from sizes and colours specified.</td>
+        </tr>
+      </table>
     </article>
     <article class="article">
       <h2>Requirements</h2>
       <p>Barebones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.</p>
     </article>
     <article class="article">
-      <h2>Support </h2>
-      <p>If you have a question, or need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. </p>
+      <h2>Support</h2>
+      <p>If you have a question, or need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>.If you think something is broken or can be improved, fork the repo, and submit a pull request.</p>
     </article>
     <article class="article">
       <h2>Background Reading</h2>
-      <p>Barebones was heavily inspired by a variety of articles. Here are some of them in case you're interested in doing some more reading. </p>
+      <p>Barebones was heavily inspired by a variety of articles. Here are some of them in case you're interested in doing some more reading.</p>
       <ul class="bullet-list">
-        <li> <a href="http://fourkitchens.com/blog/article/you-dont-need-bootstrap" target="_blank">You Don't Need Bootstrap – Ian Carrico</a></li>
+        <li><a href="http://fourkitchens.com/blog/article/you-dont-need-bootstrap" target="_blank">You Don't Need Bootstrap – Ian Carrico</a></li>
         <li><a href="https://smacss.com/" target="_blank">Scalable & Module Architecture for CSS – Jonathan Snook</a></li>
-        <li> <a href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank">Responsive Deliverables – Dave Rupert</a></li>
-        <li> <a href="http://www.sitepoint.com/managing-responsive-breakpoints-sass/" target="_blank">Managing Responsive Breakpoints with SASS – Hugo Giraudel</a></li>
-        <li> <a href="http://www.zell-weekeat.com/mappy-breakpoints" target="_blank">Mappy Breakpoints – Zell Liew</a></li>
-        <li> <a href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank">How to Structure a SASS Project – John Long</a></li>
-        <li> <a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions – John Long</a></li>
-        <li> <a href="http://www.sitepoint.com/architecture-sass-project/">Architecture for a SASS Project – Hugo Giraudel</a></li>
+        <li><a href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank">Responsive Deliverables – Dave Rupert</a></li>
+        <li><a href="http://www.sitepoint.com/managing-responsive-breakpoints-sass/" target="_blank">Managing Responsive Breakpoints with SASS – Hugo Giraudel</a></li>
+        <li><a href="http://www.zell-weekeat.com/mappy-breakpoints" target="_blank">Mappy Breakpoints – Zell Liew</a></li>
+        <li><a href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank">How to Structure a SASS Project – John Long</a></li>
+        <li><a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions – John Long</a></li>
+        <li><a href="http://www.sitepoint.com/architecture-sass-project/">Architecture for a SASS Project – Hugo Giraudel</a></li>
       </ul>
     </article>
   </div>

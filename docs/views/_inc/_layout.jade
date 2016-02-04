@@ -1,5 +1,10 @@
+include _head.jade
+
+- var path = "/docs/views/build/"
+
 body.page-layout-docs
 	.backdrop
+
 	header.mobile-docs-navigation
 		a.logo(href = "welcome.html")
 			img(src="#{image_base}logo.png")
@@ -9,22 +14,85 @@ body.page-layout-docs
 			span
 			span
 			span
-				
+
 	header.docs-navigation
 		a.logo(href = "welcome.html")
 			img(src="#{image_base}logo.png")
-		ul
+
+		ul.primary-navigation
 			li
-				a(href='index.html') Getting Started
+				a(href='#{path}index.html') Getting Started
+				ul.sub-navigation
+					li
+						a(href='#{path}index.html') Bower
+					li
+						a(href='#{path}index.html') Requirements
+					li
+						a(href='#{path}index.html') Support
+					li
+						a(href='#{path}index.html') Background Reading
 
 			li
-				a(href='settings.html') Settings
+				a(href='#{path}settings.html') Settings
+				ul.sub-navigation
+					li
+						a(href='#colours') Colours
+					li
+						a(href='#fonts') Fonts
+					li
+						a(href='#grid') Grid
+					li
+						a(href='#{path}index.html') Breakpoints
+					li
+						a(href='#{path}index.html') Sizes
+					li
+						a(href='#{path}index.html') Layers
 			li
-				a(href='grid.html') Grid
+				a(href='#{path}grid.html') Grid
+				ul.sub-navigation
+					li
+						a(href='#generator') Grid Generator
+					li
+						a(href='#{path}index.html') Helpers
 			li
-				a(href='mixins.html') Mixins
+				a(href='#{path}mixins.html') Mixins
+				ul.sub-navigation
+					li
+						a(href='#arrow') Arrow
+					li
+						a(href='#placeholder') Placeholder
+					li
+						a(href='#uppercase') Uppercase
+					li
+						a(href='#containers') Containers
+					li
+						a(href='#clearfix') Clearfix
+					li
+						a(href='#ellipsis') Ellipsis
+					li
+						a(href='#clearfix') Media Queries
+					li
+						a(href='#containers') No Bullet
+					li
+						a(href='#clearfix') Vertical Align
 			li
-				a(href='helpers.html') Helpers
+				a(href='#{path}helpers.html') Helpers
+				ul.sub-navigation
+					li
+						a(href='#background') Background Color
+					li
+						a(href="") Position
+					li
+						a(href='#borders') Borders
+					li
+						a(href='#margins') Margins & Padding
+					li
+						a(href='#{path}index.html') Layout
+					li
+						a(href='#{path}index.html') Typography
+
+					li
+						a(href='#{path}index.html') Visibility
 
 
 
@@ -32,3 +100,4 @@ body.page-layout-docs
 			a.button.block(href="#{repo}" target="_blank") Download
 			.made Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a>
 
+	block body

@@ -2,9 +2,9 @@ $border-sides: top, right, bottom, left, all
 
 @each $side in $border-sides
 	@if $side == "all"
-		.border-all
+		.#{map-get($test, prefix)}border-all
 			border: 1px solid colors(keyline, light)
-	
+
 	@else
-		.border-#{$side}
+		.#{map-get($test, prefix)}border-#{$side}
 			border-#{$side}: 1px solid colors(keyline, light)

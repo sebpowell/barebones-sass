@@ -14,9 +14,56 @@
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script>
       $(document).ready(function() {
+      	setNavigation();
+      	$(".mobile-navigation-toggle").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      		$(".backdrop").toggleClass("is-visible");
+      		$(this).toggleClass("close");
+      	});
+      });
+      
+    </script>
+    <script src="../../javascript/application.js"></script>
+  </head>
+</html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	setNavigation();
       	$(".mobile-navigation-toggle").click(function() {
       		$(".docs-navigation").toggleClass("show");
       		$(".backdrop").toggleClass("is-visible");
@@ -34,12 +81,55 @@
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
-    <ul>
-      <li><a href="index.html">Getting Started</a></li>
-      <li><a href="settings.html">Settings</a></li>
-      <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins</a></li>
-      <li><a href="helpers.html">Helpers</a></li>
+    <ul class="primary-navigation">
+      <li><a href="/docs/views/build/index.html">Getting Started</a>
+        <ul class="sub-navigation">
+          <li><a href="/docs/views/build/index.html">Bower</a></li>
+          <li><a href="/docs/views/build/index.html">Requirements</a></li>
+          <li><a href="/docs/views/build/index.html">Support</a></li>
+          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/settings.html">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#colours">Colours</a></li>
+          <li><a href="#fonts">Fonts</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="/docs/views/build/index.html">Breakpoints</a></li>
+          <li><a href="/docs/views/build/index.html">Sizes</a></li>
+          <li><a href="/docs/views/build/index.html">Layers</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/grid.html">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Generator</a></li>
+          <li><a href="/docs/views/build/index.html">Helpers</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/mixins.html">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#arrow">Arrow</a></li>
+          <li><a href="#placeholder">Placeholder</a></li>
+          <li><a href="#uppercase">Uppercase</a></li>
+          <li><a href="#containers">Containers</a></li>
+          <li><a href="#clearfix">Clearfix</a></li>
+          <li><a href="#ellipsis">Ellipsis</a></li>
+          <li><a href="#clearfix">Media Queries</a></li>
+          <li><a href="#containers">No Bullet</a></li>
+          <li><a href="#clearfix">Vertical Align</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/helpers.html">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#background">Background Color</a></li>
+          <li><a href="">Position</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#margins">Margins & Padding</a></li>
+          <li><a href="/docs/views/build/index.html">Layout</a></li>
+          <li><a href="/docs/views/build/index.html">Typography</a></li>
+          <li><a href="/docs/views/build/index.html">Visibility</a></li>
+        </ul>
+      </li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
       <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
@@ -52,7 +142,7 @@
     <article id="background-color" class="article">
       <p>Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.</p>
       <h3>Background Color</h3>
-      <p>Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper. </p>
+      <p>Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.</p>
       <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
       <pre><code class="language-scss">.background-brand-primary {
  background-color: #F5F5F5 !important;
@@ -136,6 +226,47 @@
  background-color: #F5F5F5 !important;
 }</code></pre>
     </article>
+    <h3>Rows & Columns</h3>
+    <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
+    <p>Columns work in the following way:</p>
+    <div class="example">
+      <div class="columns">
+        <div class="columns-4">Columns 4</div>
+        <div class="columns-5">Columns 5</div>
+        <div class="columns-3">Columns 3</div>
+      </div>
+    </div>
+    <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4"&gt;
+ &lt;div class="columns-5"&gt;
+ &lt;div class="columns-3"&gt;
+&lt;/div&gt;</code></pre>
+    <p>Helper classes are also available to create different grids for different breakpoints.</p>
+    <div class="example">
+      <div class="columns">
+        <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
+        <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
+        <div class="columns-4-device-small columns-4-device-medium"> Columns 3</div>
+      </div>
+    </div>
+    <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4-device-small"&gt;
+ &lt;div class="columns-5-device-small"&gt;
+ &lt;div class="columns-3-device-small"&gt;
+&lt;/div&gt;</code></pre>
+    <h3>Offsets</h3>
+    <div class="example">
+      <div class="columns">
+        <div class="columns-4 offset-8">Columns 4</div>
+      </div>
+    </div>
+    <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4"&gt;
+ &lt;div class="columns-5"&gt;
+ &lt;div class="columns-3"&gt;
+&lt;/div&gt;</code></pre>
+    
+    
     <article id="text-align" class="article">
       <h3>Typography</h3>
       <table>
@@ -146,7 +277,6 @@
         <tr>
           <td>size</td>
           <td>
-             
             Helpers for creating the various text sizes specified in your settings file.
             x-small | small | base | medium | medium-large | large | x-large
           </td>
@@ -159,7 +289,7 @@
       <p><span class="class">.text-{helper}</span>.</p>
     </article>
     <article class="article">
-      <h2>Visibility </h2>
+      <h2>Visibility</h2>
       <p>We provide easy to use classes to hide content on specific screen sizes.</p>
       <table>
         <tr>
@@ -169,7 +299,6 @@
         <tr>
           <td>size</td>
           <td>
-             
             Helpers for creating the various text sizes specified in your settings file.
             x-small | small | base | medium | medium-large | large | x-large
           </td>

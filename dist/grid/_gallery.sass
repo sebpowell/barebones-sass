@@ -1,56 +1,89 @@
-@for $i from 1 through settings(layout, columns)
-	@each $key, $value in settings(breakpoints)
-		.gallery-#{$i}-#{$key}
-			+no-bullet
-			+clearfix
-			+respond-above($key)
-				margin-left: -(settings(layout, gutter))
-				margin-right: -(settings(layout, gutter))
+// @for $i from 1 through settings(layout, columns)
+// 	@each $key, $value in settings(breakpoints)
+// 		.gallery-#{$i}-#{$key}
+// 			+no-bullet
+// 			+clearfix
+// 			+respond-above($key)
+// 				margin-left: -(settings(layout, gutter))
+// 				margin-right: -(settings(layout, gutter))
 
-			@if $i < 1
-				margin-left: 0
-				margin-right: 0
+// 			@if $i < 1
+// 				margin-left: 0
+// 				margin-right: 0
 
-			.gallery-item
-				width: 100%
-				margin-bottom: settings(layout, gutter)
-				&:last-child
-					margin-bottom: 0
+// 			.gallery-item
+// 				width: 100%
+// 				margin-bottom: settings(layout, gutter)
+// 				&:last-child
+// 					margin-bottom: 0
 
-				+respond-below($key)
-					&:nth-child(#{$i}n + 1)
-						// Clears floats after a row is complete for variable height elements.
-						// This doesn't work if multiple classes are set (e.g. 2-device-small and 3-device-medium)
-						clear: both
-
-
-				+respond-above($key)
-					width: 100% / $i !important
-					float: left
-					padding: 0 settings(layout, gutter) !important
-					// &:nth-last-of-type(-n+#{$i})
-					// 	margin-bottom: 0
+// 				+respond-below($key)
+// 					&:nth-child(#{$i}n + 1)
+// 						// Clears floats after a row is complete for variable height elements.
+// 						// This doesn't work if multiple classes are set (e.g. 2-device-small and 3-device-medium)
+// 						clear: both
 
 
+// 				+respond-above($key)
+// 					width: 100% / $i !important
+// 					float: left
+// 					padding: 0 settings(layout, gutter) !important
+// 					// &:nth-last-of-type(-n+#{$i})
+// 					// 	margin-bottom: 0
 
-// @mixin gallery-item($columns, $device: "device-medium")
 
-// 	margin-bottom: $gutterWidth
-// 	&:last-child
-// 		margin-bottom: 0
 
-// 	@include respond-above($device)
-// 		float: left
-// 		width: ($columnWidth * $columns) + ($gutterWidth * ($columns - 1))
-// 		margin-right: $gutterWidth
+.element:nth-child(3n+1)
+	background: yellow
 
-// 		$nth-child: $columns - 1
 
-// 		&:nth-last-child(-n+ #{$nth-child})
-// 			margin-bottom: 0
+.element:nth-child(2n+1)
+	background: red
 
+
+
+@mixin gallery($keys...)
+	+respond-below(grid)
+		width: 100%
+
+	$items: length($keys)
+	@debug #{$items}
+
+	@while $items > 0
+		$key: nth($keys, $items)
+
+
+		&:nth-child(#{$items}n+1)
+			@debug #{$items}
+			margin-top: $gutterWidth
+			+respond-above(grid)
+				@debug columnCalc($key)
+				width: columnCalc($key)
+				margin-right: $gutterWidth
+				float: left
+
+		+respond-above(grid)
+			&:nth-child(-n+#{$items})
+				margin-top: 0
+
+		&:nth-child(#{$items}n+#{$items})
+			margin-right: 0
+
+		$items: $items - 1
+	// @debug: $items
+
+// 		Find fix for variable heights
 // 		&:nth-child(3n + 1)
-// 			clear: both
+// // 			clear: both
 
-// 		&:nth-child(#{$nth-child}n)
-// 			margin-right: 0
+
+
+
+.element
+	+gallery(6, 3, 3)
+
+
+// .element-2
+// 	+gallery(2,2,3,5)
+
+

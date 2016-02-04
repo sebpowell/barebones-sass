@@ -37,10 +37,10 @@
   @include respond-below(device-large) {
     box-shadow: 0 0 30px rgba(00,00,00,0.2);
   }
-  
+
   left: -300px;
   width: 300px;
-  
+
   padding-top: sizes(double);
 
   position: fixed;
@@ -53,7 +53,7 @@
     left: 0;
     display: block;
   }
-  
+
   .made {
     font-size: 12px;
     color: lighten(colours(brand, primary), 30%);
@@ -98,17 +98,23 @@
     }
   }
 
- 
+  .sub-navigation {
+  	display: none;
+  	background: darken(colours(brand, primary), 20%)
+  }
 
-  > ul {
+  .primary-navigation {
+  	@include respond-above(device-large) {
+  	 padding-top: 100px;
+  	}
+  }
+  ul {
     @include no-bullet;
     transition: all .5s;
-    @include respond-above(device-large) {
-      padding-top: 100px;
-    }
+
+
     width: 300px;
     left: -300px;
-    height: 100%;
     overflow-y: scroll;
 
     &.is-visible {
@@ -116,6 +122,14 @@
     }
 
     > li {
+    	&.active {
+    		a {
+    			color: white;
+    		}
+    		.sub-navigation {
+    			display: block
+    		}
+    	}
       > a {
       	transition: color .5s;
         padding: sizes(base) sizes(double);

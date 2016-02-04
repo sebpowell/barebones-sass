@@ -1,9 +1,9 @@
-@each $palette, $tint in $colors
-	@each $color, $value in $tint
-		@if $color == "base"
-			.background-#{$palette}
-				background-color: $value !important
+// @each $palette, $tint in $colors
+// 	@each $color, $value in $tint
+// 		@if $color == "base"
+// 			.background-#{$palette}
+// 				background-color: $value !important
 
-		@else
-			.background-#{$palette}-#{$color}
-				background-color: $value !important
+// 		@else
+// 			.#{map-get($test, prefix)}background-#{$palette}-#{$color}
+// 				background-color: $value !important

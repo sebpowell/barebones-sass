@@ -11,7 +11,7 @@ include _inc/_layout.jade
 			p Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.
 
 			h3 Background Color
-			p Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper. 
+			p Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.
 
 			pre
 				code.language-html
@@ -104,6 +104,81 @@ include _inc/_layout.jade
 					| }
 
 
+		h3 Rows & Columns
+
+		p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
+		p Columns work in the following way:
+
+
+
+		.example
+			.columns
+				.columns-4 Columns 4
+				.columns-5 Columns 5
+				.columns-3 Columns 3
+
+		pre
+			code.language-html
+				| &lt;div class="columns"&gt;
+				|  &lt;div class="columns-4"&gt;
+				|  &lt;div class="columns-5"&gt;
+				|  &lt;div class="columns-3"&gt;
+				| &lt;/div&gt;
+
+
+		p Helper classes are also available to create different grids for different breakpoints.
+
+		.example
+
+			.columns
+				.columns-4-device-small.columns-5-device-medium Columns 4
+				.columns-4-device-small.columns-3-device-medium  Columns 5
+				.columns-4-device-small.columns-4-device-medium  Columns 3
+
+		pre
+			code.language-html
+				| &lt;div class="columns"&gt;
+				|  &lt;div class="columns-4-device-small"&gt;
+				|  &lt;div class="columns-5-device-small"&gt;
+				|  &lt;div class="columns-3-device-small"&gt;
+				| &lt;/div&gt;
+
+
+		h3 Offsets
+
+		.example
+			.columns
+				.columns-4.offset-8 Columns 4
+		pre
+			code.language-html
+				| &lt;div class="columns"&gt;
+				|  &lt;div class="columns-4"&gt;
+				|  &lt;div class="columns-5"&gt;
+				|  &lt;div class="columns-3"&gt;
+				| &lt;/div&gt;
+
+		//- h3 Galleries
+
+		//- p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns.
+
+		//- p They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.
+		//- .example
+		//- 	ul.gallery-5
+		//- 		li.gallery-item
+		//- 		li.gallery-item
+		//- 		li.gallery-item
+		//- 		li.gallery-item
+		//- 		li.gallery-item
+
+		//- pre
+		//- 	code.language-html
+		//- 		| &lt;div class="columns"&gt;
+		//- 		|  &lt;div class="columns-4"&gt;
+		//- 		|  &lt;div class="columns-5"&gt;
+		//- 		|  &lt;div class="columns-3"&gt;
+		//- 		| &lt;/div&gt;
+
+
 
 		article#text-align.article
 			h3 Typography
@@ -113,7 +188,7 @@ include _inc/_layout.jade
 					td Left, Right, Center
 				tr
 					td size
-					td 
+					td
 						| Helpers for creating the various text sizes specified in your settings file.
 						| x-small | small | base | medium | medium-large | large | x-large
 				tr
@@ -123,10 +198,10 @@ include _inc/_layout.jade
 
 
 			p <span class="class">.text-{helper}</span>.
-	
+
 
 		article.article
-			h2 Visibility 
+			h2 Visibility
 			p We provide easy to use classes to hide content on specific screen sizes.
 			table
 				tr
@@ -134,7 +209,7 @@ include _inc/_layout.jade
 					td Left, Right, Center
 				tr
 					td size
-					td 
+					td
 						| Helpers for creating the various text sizes specified in your settings file.
 						| x-small | small | base | medium | medium-large | large | x-large
 				tr

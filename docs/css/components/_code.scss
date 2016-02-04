@@ -1,7 +1,6 @@
 .function {
 	color: colours(secondary, orange);
 	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 16px;
 }
 
 pre, .example {
@@ -23,18 +22,6 @@ pre, .example {
 		width: 100%;
 	}
 }
-
-
-// .photo-grid {
-// 	@include clearfix;
-// }
-
-// .photo-grid-item {
-// 	@include gallery-item(4);
-// 	background: lightBlue;
-// 	padding: sizes(base);
-// }
-
 
 
 

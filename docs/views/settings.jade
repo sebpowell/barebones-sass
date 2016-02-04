@@ -11,18 +11,16 @@ include _inc/_layout.jade
 
 			p Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. Default categories are included below (or <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_theme.scss">click here to see an example)</a>.
 
-			p To access values, use the <span class="function">settings($args...)</span> function. It accepts any number of arguments, allowing you to navigate nested maps with ease.
+			p A helper function is provided to access each map. Please note that some sections are required by mixins, so you muist have them – your SASS won't compile otherwise. Others are optional and depend on your specific needs.
 
-			pre.language-scss
-				code
-					| .element {
-					|   border-right: settings(colours, keyline, light);
-					|   color: settings(colours, brand, primary);
-					|   z-index: settings(layers, element);
-					| }
 
-			p A helper function is also provided for each category for faster access.
 
+
+
+		article.article
+
+			h2 Import Settings
+			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced), and to exclude certain file categories (for example, if you only want a grid).
 
 
 			h3 Colours
@@ -84,7 +82,6 @@ include _inc/_layout.jade
 					|     site-width: 1200px,
 					|     gutter: 1/4,
 					|     gutter-type: margin,
-					|     mobile-padding: 24px,
 					|    ),
 
 			h3 Breakpoints

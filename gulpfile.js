@@ -36,7 +36,7 @@ gulp.task('sass', function () {
 		.pipe(sass({
 			outputStyle: "compact",
 		}).on('error', sass.logError))
-		.pipe(autoprefixer({browsers: ['last 2 versions']}))
+		// .pipe(autoprefixer({browsers: ['last 2 versions']}))
 		.pipe(gulp.dest(function(file) {
 			return file.base;
 		}));
@@ -58,7 +58,7 @@ gulp.task("uglify", function() {
 
 gulp.task("watch", function() {
 	gulp.watch(['dist/**/*.sass', 'dist/**/*.scss', 'docs/css/**/*.sass', 'docs/css/**/*.scss'], ['sass']);
-	gulp.watch(['docs/js/**/*.js'], ['uglify']);
+	gulp.watch(['docs/javascript/**/*.js'], ['uglify']);
 	gulp.watch(['docs/views/**/*.jade'], ['jade']);
 });
 

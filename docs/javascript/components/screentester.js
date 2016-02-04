@@ -1,3 +1,28 @@
+function setNavigation() {
+    var path = window.location.pathname;
+
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    $(".docs-navigation > ul > li > a").each(function () {
+        var href = $(this).attr('href');
+        var sub = path.substring(0, href.length);
+        if (sub === href) {
+           $(this).closest('li').addClass('active');
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
 	//
 			// 	$(document).ready(function() {
 			// 		var documentHead = $("head");

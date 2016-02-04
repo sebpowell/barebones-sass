@@ -14,9 +14,56 @@
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script>
       $(document).ready(function() {
+      	setNavigation();
+      	$(".mobile-navigation-toggle").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      		$(".backdrop").toggleClass("is-visible");
+      		$(this).toggleClass("close");
+      	});
+      });
+      
+    </script>
+    <script src="../../javascript/application.js"></script>
+  </head>
+</html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	setNavigation();
       	$(".mobile-navigation-toggle").click(function() {
       		$(".docs-navigation").toggleClass("show");
       		$(".backdrop").toggleClass("is-visible");
@@ -34,12 +81,55 @@
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
-    <ul>
-      <li><a href="index.html">Getting Started</a></li>
-      <li><a href="settings.html">Settings</a></li>
-      <li><a href="grid.html">Grid</a></li>
-      <li><a href="mixins.html">Mixins</a></li>
-      <li><a href="helpers.html">Helpers</a></li>
+    <ul class="primary-navigation">
+      <li><a href="/docs/views/build/index.html">Getting Started</a>
+        <ul class="sub-navigation">
+          <li><a href="/docs/views/build/index.html">Bower</a></li>
+          <li><a href="/docs/views/build/index.html">Requirements</a></li>
+          <li><a href="/docs/views/build/index.html">Support</a></li>
+          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/settings.html">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#colours">Colours</a></li>
+          <li><a href="#fonts">Fonts</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="/docs/views/build/index.html">Breakpoints</a></li>
+          <li><a href="/docs/views/build/index.html">Sizes</a></li>
+          <li><a href="/docs/views/build/index.html">Layers</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/grid.html">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Generator</a></li>
+          <li><a href="/docs/views/build/index.html">Helpers</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/mixins.html">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#arrow">Arrow</a></li>
+          <li><a href="#placeholder">Placeholder</a></li>
+          <li><a href="#uppercase">Uppercase</a></li>
+          <li><a href="#containers">Containers</a></li>
+          <li><a href="#clearfix">Clearfix</a></li>
+          <li><a href="#ellipsis">Ellipsis</a></li>
+          <li><a href="#clearfix">Media Queries</a></li>
+          <li><a href="#containers">No Bullet</a></li>
+          <li><a href="#clearfix">Vertical Align</a></li>
+        </ul>
+      </li>
+      <li><a href="/docs/views/build/helpers.html">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#background">Background Color</a></li>
+          <li><a href="">Position</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#margins">Margins & Padding</a></li>
+          <li><a href="/docs/views/build/index.html">Layout</a></li>
+          <li><a href="/docs/views/build/index.html">Typography</a></li>
+          <li><a href="/docs/views/build/index.html">Visibility</a></li>
+        </ul>
+      </li>
     </ul>
     <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
       <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
@@ -51,13 +141,11 @@
     <h1 class="page-title">Settings</h1>
     <article class="article">
       <p>Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. Default categories are included below (or <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_theme.scss">click here to see an example)</a>.</p>
-      <p>To access values, use the <span class="function">settings($args...)</span> function. It accepts any number of arguments, allowing you to navigate nested maps with ease.</p>
-      <pre class="language-scss"><code>.element {
-  border-right: settings(colours, keyline, light);
-  color: settings(colours, brand, primary);
-  z-index: settings(layers, element);
-}</code></pre>
-      <p>A helper function is also provided for each category for faster access.</p>
+      <p>A helper function is provided to access each map. Please note that some sections are required by mixins, so you muist have them – your SASS won't compile otherwise. Others are optional and depend on your specific needs.</p>
+    </article>
+    <article class="article">
+      <h2>Import Settings</h2>
+      <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced), and to exclude certain file categories (for example, if you only want a grid).</p>
       <h3>Colours</h3>
       <p>Access values using either <span class="function">settings(colours, $category, $value)</span> or <span class="function">colours($category, $value)</span>.</p>
       <pre><code class="language-scss">  colours: (
@@ -104,7 +192,6 @@
     site-width: 1200px,
     gutter: 1/4,
     gutter-type: margin,
-    mobile-padding: 24px,
    ),</code></pre>
       <h3>Breakpoints</h3>
       <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices. Access using <span class="function">settings(layout, breakpoints, $size)</span> or <span class="function">breakpoints($size)</span>.</p>

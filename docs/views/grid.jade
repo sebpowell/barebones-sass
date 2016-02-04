@@ -1,162 +1,143 @@
-include _inc/_head.jade
-include _inc/_layout.jade
+extends  _inc/_layout.jade
+
+block body
+
+	.iframe-container
+
+		.main-container
 
 
-.iframe-container
+			h1.page-title Grid
+			article#containers.article
 
-	.main-container
-
-
-		h1.page-title Grid
-		article#containers.article
-
-			p Barebones includes a flexible, responsive grid system that can be used in one of two ways using a range of settings specified in your settings file. Gutters are created by applying margin-right to every column, except for the final one (where the margin is removed using the last-child rule).
-
-			table
-				tr
-					td columns (default: 12)
-					td Number of columns
-				tr
-					td breakpoint
-					td The point at which all column sizes should expand to 100%. 
-				tr
-					td gutter
-					td Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc. 
-				tr
-					td offset
+				p Barebones includes a flexible, responsive grid system. It's a semantic grid, allowing you to directly target clasesA lightweight semantic grid framework for Sass and Bourbon.allows you to target a given component – for example, a sidebar – without littering your markup the need of 'messy' helper classes.	it relies entirely on Sass mixins and does not pollute your HTML with presentation classes and extra wrapping div's.
+				pre
+					code.language-scss.
+						.sidebar {
+							@include span(4); // Creates a container div that spans 4 colums
+						}
+						#{''}
+						.content {
+						   @include span(8, $position: last); // Creates a container div that spans 4 colums
+							 @include respond-above(medium) {
+							   @include span(6);
+							 }
+							}
 
 
-		article.article
-			h2 Grid Generator
-			p The <span class="function">span($columns, $position)</span> grid generator allows you to target a given component – for example, a sidebar – without littering your markup the need of 'messy' helper classes.
-			table
-				tr
-					td $columns
-					td Number of columns the component spans, of the total number defined in your settings file.
-				tr
-					td $position <em>(optional)</em>
-					td if the column is the last one, pass the 'last' keyword to remove the margin.
-				tr
-					td $gutter <em>(optional)</em>
-					td You can remove the gutter by passing the keyword 'none'. 
-		
+				p Specify your grid settings in your settings file. The following settings are available.
+
+				table
+					tr
+						td columns (default: 12)
+						td Number of columns in your grid
+					tr
+						td breakpoint
+						td The point at which all column sizes should expand to 100%.
+					tr
+						td gutter
+						td Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc.
+					tr
+						td grid-type (margin (default) | padding)
+						td Specify whether you want to create gutters using padding or margin.
 
 
-			pre
-				code.language-scss
-					| .sidebar {
-					|   @include span(4);
-					| }
-					| #{''}
-					| .content {
-					|   @include span(8, $position: last);
-					| }
+			article.article
+				h2 Greating a layout
 
-			
-			.example.margin-bottom-base
-				.example-wrapper
-					.example-sidebar(style="background-color: cyan")
-					.example-content-block(style="background-color: lightpink")
+				h3 Create a container
+
+				pre
+					code.language-scss
+						| .container {
+						|   @include container(1000px);
+						| }
 
 
-			p To create different widths at different breakpoints, use the <span class="function">respond-above($device)</span> mixin.
+				h3 Create a Layout
 
-			pre
-				code.language-scss
-					| .example-sidebar {
-					|  @include span(8);
-					|  @include respond-above(device-small) {
-					|    @include span(6);
-					|  }
-					| }
-
-
-
-		article#containers.article
-
-			h2 Helper Classes
+				p The <span class="function">span($columns, $position)</span> grid generator
+				p To create different widths at different breakpoints, use the <span class="function">respond-above($device)</span> mixin.
+				table
+					tr
+						td $columns
+						td Number of columns the component spans, of the total number defined in your settings file.
+					tr
+						td $position <em>(optional)</em>
+						td if the column is the last one, pass the 'last' keyword to remove the margin.
+					tr
+						td $gutter <em>(optional)</em>
+						td You can remove the gutter by passing the keyword 'none'.
 
 
-			h3 Rows & Columns
-
-			p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
-			p Columns work in the following way:
-
-			
-
-			.example
-				.columns
-					.columns-4 Columns 4
-					.columns-5 Columns 5
-					.columns-3 Columns 3
-
-			pre
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4"&gt;
-					|  &lt;div class="columns-5"&gt;
-					|  &lt;div class="columns-3"&gt;
-					| &lt;/div&gt;
+				pre
+					code.language-scss.
+						| .example-sidebar {
+						|  @include span(8);
+						|  @include respond-above(device-small) {
+						|    @include span(6);
+						|  }
+						| }
+						| .sidebar {
+						|   @include span(4);
+						| }
+						| #{''}
+						| .content {
+						|   @include span(8, $position: last);
+						| }
 
 
-			p Helper classes are also available to create different grids for different breakpoints.
-
-			.example
-
-				.columns
-					.columns-4-device-small.columns-5-device-medium Columns 4
-					.columns-4-device-small.columns-3-device-medium  Columns 5
-					.columns-4-device-small.columns-4-device-medium  Columns 3
-
-			pre
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4-device-small"&gt;
-					|  &lt;div class="columns-5-device-small"&gt;
-					|  &lt;div class="columns-3-device-small"&gt;
-					| &lt;/div&gt;
 
 
-			h3 Offsets
-
-			.example
-				.columns
-					.columns-4.offset-8 Columns 4
-			pre
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4"&gt;
-					|  &lt;div class="columns-5"&gt;
-					|  &lt;div class="columns-3"&gt;
-					| &lt;/div&gt;
-
-			//- h3 Galleries
-
-			//- p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns. 
-
-			//- p They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row. 
-			//- .example
-			//- 	ul.gallery-5
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-
-			//- pre
-			//- 	code.language-html
-			//- 		| &lt;div class="columns"&gt;
-			//- 		|  &lt;div class="columns-4"&gt;
-			//- 		|  &lt;div class="columns-5"&gt;
-			//- 		|  &lt;div class="columns-3"&gt;
-			//- 		| &lt;/div&gt;
+				.example.margin-bottom-base
+					.example-wrapper
+						.example-sidebar(style="background-color: lightpink")
+						.example-content-block(style="background-color: lightpink")
 
 
 
 
 
 
-			
+
+
+
+			article.article
+				h2 Galleries
+				p Galleries are made up of elements that repeat across multiple lines.
+				.example
+					.element(style="background-color: lightpink; height: 40px")
+					.element(style="background-color: lightpink; height: 80px")
+					.element(style="background-color: lightpink; height: 40px")
+					.element(style="background-color: lightpink; height: 40px")
+					.element(style="background-color: lightpink; height: 40px")
+					.element(style="background-color: lightpink; height: 40px")
+
+				.example
+					.element-2(style="background-color: lightpink; height: 40px")
+					.element-2(style="background-color: lightpink; height: 40px")
+					.element-2(style="background-color: lightpink; height: 40px")
+					.element-2(style="background-color: lightpink; height: 40px")
+					.element-2(style="background-color: lightpink; height: 40px")
+					.element-2(style="background-color: lightpink; height: 40px")
+					.element-2(style="background-color: lightpink; height: 40px")
+
+
+
+
+			article#containers.article
+
+				h2 Helper Classes
+
+				p Various helper classes are also generated to quickly create grids. See here for more info.
+
+
+
+
+
+
+
+
 
 
 
