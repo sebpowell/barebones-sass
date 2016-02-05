@@ -32,16 +32,6 @@
 // 					// 	margin-bottom: 0
 
 
-
-.element:nth-child(3n+1)
-	background: yellow
-
-
-.element:nth-child(2n+1)
-	background: red
-
-
-
 @mixin gallery($keys...)
 	+respond-below(grid)
 		width: 100%
@@ -74,6 +64,13 @@
 // 		&:nth-child(3n + 1)
 // // 			clear: both
 
+.photo-gallery
+	@include clearfix
+
+	.photo-gallery-item
+		+gallery(3)
+		background-color: lightpink
+		height: 40px
 
 .element
 	&:nth-child(3n + 2)

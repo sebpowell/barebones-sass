@@ -104,8 +104,28 @@ block body
 
 			article.article
 				h2 Galleries
-				p Galleries are made up of elements that repeat across multiple lines.
+				p Galleries are made up of elements that repeat across multiple lines. Here's how you would create one. 
+				pre
+					code.language-scss.
+						.photo-gallery {
+							@incluce clearfix;
+							// Clears the floats. 
+						}
+
+						.photo-gallery-item {
+							@include gallery(3);
+							// Creates a gallery with each item taking up 3 columns of your grid (on a 12 grid-layout, this would be 4 items).
+						}
+
 				.example
+					.photo-gallery
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+
+
+				.example.photo-gallery
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
