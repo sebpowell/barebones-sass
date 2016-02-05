@@ -6,174 +6,62 @@ include _inc/_layout.jade
 
 		h1.page-title Getting Started
 
-
-		//- .modal
-		//- 	h1 Sign up for updates
-
-		//- 	input(type="email")
-
-		//- 	p No thanks, just take me to the download
-
 		article.article
-			p Barebones is a SASS boilerplate to help you build your own front-end framework. It is not a fully-fledged library, but a set of commonly used tools; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project. Help you structure your custom SASS framework and provide you with all the tools you need to get up and running.
+			p.text-medium-large Barebones is a SASS boilerplate to help you build a maintanable and scalable front-end framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project. It includes only the bare essentials – so you can spend less time overwriting and more time creating.
 
-			p Everything in Barebones has been stripped back to include only the bare essentials, so you can spend less time overwriting and more time creating something that looks unique. It is a collection of ideas, which we see as 'best practice' collected from around the Internet, and packed together into a single package. We help to help SASS 'newbies' and other front-end.
+			h2 Why does the world need Barebones?
 
-			p The best way to use Barebones is to download the source from <a href="https://github.com/sebpowell/barebones">Github</a> and start building!
+			p It probably doesn't, but here goes; we wanted to create a lightweight SASS library that we could share between projects – powerful enough to allow us to focus on design, and lightweight enough to stay out of our way.
 
-			a.button.primary.large(href="#{repo}") Download
+			p Over time, we've learned a lot about how to structure our SASS projects in a cohesive, scalable and maintainable way. We thought other people might find this useful and decided to release our work in the public domain.
 
+			h2 Why build your own framework?
 
+			p Existing frameworks such as Bootstrap and Foundation are great for prototyping but are typically bloated and lack flexibility (if you want to create your own theme, you're going to spend a lot of time with the !important flag – which is a great way for things to quickly become completley unmanageable).
 
-		article.article
-
-
-			h2 Why another framework?
-
-			p We created Barebones because we weren't happy with other frameworks. Much has been written on the subject of custom SASS frameworks, and we decided to start doing this ourself. As we did, we learned a lot. We wanted it to be as lightweight as possible, whilst also giving enough firection to help you strcuture your SASS project yourself. Buildingin custom CSS frameowrks is hard. 2 years ago, we made the decusiubs of building or own instead of using a full-fledged framework like Bootstrap. There were various reasons for this, but one of the mains reasons was.  No vendor-prefixing mixins (these can not be handled using your build process) Many librarties provide incredibly basic mixins that don't actually help you much. For example, the Bourbon library provides mixins to simplify certain commands, but it doesn't actually encourage.
-
-			p At the same time, we spent a lot of time reading articles by the likes of Hugo Giraduel, Ben Frain and others that regularly had great ideas for structring projects ina  more maintable way. Things like managing z-index maps etc. If you're starting out, or for people whgi are used to tradtionally CSS, it takes a long time to build up that knowledgebase. By which time, it may be too late to add in best practices you've seen elsewhere. BArebones is here to give you that leg-up, included a set of 'best practices' which we think have genuinely made our lives easier.
-
-			ul
-				li the lack of customisation these frameowkr offer. Bootrastp, foundation and other frameworks
-
-			h2 How is it different to other frameworks?
-
-			ul
-				li Written in SASS, the best CSS pre-processor there is
-				li Lightweight, includes only the most fundamenttl tools needed in web design (and you can even customise what's included)
-				li Fully customisable - it's a boilerplace, not a framework
+			p Buidling your own framework puts you in the driving seat, giving you full control over how your app or website looks, without being shoe-horned into someone else's design system.
 
 
+		article.article(id="installing")
 
+			h2 Installing Barebones
 
-		article.article
+			p If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.
 
-			h2 Installing
+			h3 1. Install the package
+			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a>.
 
-
-			p You can also get the latest release using Bower.
-
-
-			p You can alos simply dowload the source files, include and get started! The issue with this approach though is that it makes it difficult to upgrade. However if you're happy maintaining your own SASS library (which after all, is part of the philshopy behind this project), then you can do so and then simply update the relevant files when the next realse comes out.
-
-			p Because Barebones doesn't include any components or styling, it won't get in your way. By default, classes are not namespaced, but the project is strcutured to allow you to do this if you wish.
-
-			p You'll need SASS is not supported by web browser, so you'll need to process. There are various ways of doing this, depending on your steup – see the SASS site for more info
-
-			p Barebones is split into two sets of files;
-			ul
-				li A collection of the core files
-				li A global settings file.
-
-			p The settings file acts as a global configuration file – mixins, helpers and the grid system all pull i values from this file. You need this file for Barebones to work – it won't work otherwise.
-
-			p <strong>1. Install the Barebones package</strong>
 			pre
 				code.language-bash
 					| bower install barebones
 
-			p <strong>2. Create a settings file (<a href="../build/settings.html">see here</a> for more info)</strong>
+			h3 2. Create a settings file
 
-			p 3. Create a new SASS file, import the settings file first followed by _base.sass.
+			p Barebones code allows you to define your own settings – just brab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.
 
-			p
-				li - libs/barebones/_base.scss
-				li - assets/scss/styles.scss
-				li - assets/scss/_settings.scss
-
-			p Your styles.scss file should look like this:
+			h3 3. Create your main SASS file
+			p Import your newly created settings file, followed by <span class="var">_barebones.sass</span> into your main SASS file. It should look like this:
 
 			pre
 				code.language-scss
 					| @import _settings.scss // Always import the settings file first
-					| @import _base.scss // Import Barebones
+					| @import bower-components/_base.scss // Import Barebones – the path will depend on your setup.
 					| // Your stuff can come here.
 
 
+		article.article(id="requirements")
 
-			pre
-				code.language-scss
-					| @import "_settings.scss"
-					| @import "bower_components/dist/_base"
-
-		article.article
-			h2 Project Structure
-
-			h3 Helpers
-			table
-				tr
-					td Background
-					td Generates background-color helpers for every colour specified in your $colours map.
-				tr
-					td Borders
-					td Generates border helpers using the $keyline value specified in your $colours map.
-				tr
-					td Layout
-					td Layout helpers
-				tr
-					td Margin & Padding
-					td Generates margin and padding helpres from sizes specified in $sizes map.
-				tr
-					td Typography
-					td Generates text sizing, colours and transform helpers from sizes and colours specified.
-				tr
-					td Visibility
-					td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
-
-			h3 Mixins
-			table
-				tr
-					td Arrow
-					td Generates background-color helpers for every colour specified in your $colours map.
-				tr
-					td Clearfix
-					td Generates border helpers using the $keyline value specified in your $colours map.
-				tr
-					td Ellipsis
-					td Layout helpers
-				tr
-					td Media Query
-					td Generates margin and padding helpres from sizes specified in $sizes map.
-				tr
-					td Placeholder
-					td Generates text sizing, colours and transform helpers from sizes and colours specified.
-				tr
-					td Uppercase
-					td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
-
-				tr
-					td Z-Index
-					td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
-
-			h3 Grid
-			table
-				tr
-					td Columns
-					td Generates background-color helpers for every colour specified in your $colours map.
-				tr
-					td Container
-					td Generates border helpers using the $keyline value specified in your $colours map.
-				tr
-					td Gallery
-					td Layout helpers
-				tr
-					td Offset Helpers
-					td Generates margin and padding helpres from sizes specified in $sizes map.
-				tr
-					td Row
-					td Generates text sizing, colours and transform helpers from sizes and colours specified.
-		article.article
 			h2 Requirements
 
 			p Barebones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
 
-		article.article
+		article.article(id="support")
+
 			h2 Support
 			p If you have a question, or need help send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>.If you think something is broken or can be improved, fork the repo, and submit a pull request.
 
 
-		article.article
+		article.article(id="background")
 
 			h2 Background Reading
 
@@ -184,6 +72,8 @@ include _inc/_layout.jade
 					a(href="http://fourkitchens.com/blog/article/you-dont-need-bootstrap" target="_blank") You Don't Need Bootstrap – Ian Carrico
 				li
 					a(href="https://smacss.com/" target="_blank") Scalable & Module Architecture for CSS – Jonathan Snook
+				li
+					a(href="https://dzone.com/articles/why-its-good-idea-roll-your" target="_blank") Why It's a Good Idea to Roll Your Own CSS Framework
 				li
 					a(href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank") Responsive Deliverables – Dave Rupert
 				li
@@ -197,7 +87,72 @@ include _inc/_layout.jade
 				li
 					a(href="http://www.sitepoint.com/architecture-sass-project/") Architecture for a SASS Project – Hugo Giraudel
 
+		//- article.article
+		//- 	h2 Project Structure
 
+		//- 	h3 Helpers
+		//- 	table
+		//- 		tr
+		//- 			td Background
+		//- 			td Generates background-color helpers for every colour specified in your $colours map.
+		//- 		tr
+		//- 			td Borders
+		//- 			td Generates border helpers using the $keyline value specified in your $colours map.
+		//- 		tr
+		//- 			td Layout
+		//- 			td Layout helpers
+		//- 		tr
+		//- 			td Margin & Padding
+		//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
+		//- 		tr
+		//- 			td Typography
+		//- 			td Generates text sizing, colours and transform helpers from sizes and colours specified.
+		//- 		tr
+		//- 			td Visibility
+		//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
+
+		//- 	h3 Mixins
+		//- 	table
+		//- 		tr
+		//- 			td Arrow
+		//- 			td Generates background-color helpers for every colour specified in your $colours map.
+		//- 		tr
+		//- 			td Clearfix
+		//- 			td Generates border helpers using the $keyline value specified in your $colours map.
+		//- 		tr
+		//- 			td Ellipsis
+		//- 			td Layout helpers
+		//- 		tr
+		//- 			td Media Query
+		//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
+		//- 		tr
+		//- 			td Placeholder
+		//- 			td Generates text sizing, colours and transform helpers from sizes and colours specified.
+		//- 		tr
+		//- 			td Uppercase
+		//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
+
+		//- 		tr
+		//- 			td Z-Index
+		//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
+
+		//- 	h3 Grid
+		//- 	table
+		//- 		tr
+		//- 			td Columns
+		//- 			td Generates background-color helpers for every colour specified in your $colours map.
+		//- 		tr
+		//- 			td Container
+		//- 			td Generates border helpers using the $keyline value specified in your $colours map.
+		//- 		tr
+		//- 			td Gallery
+		//- 			td Layout helpers
+		//- 		tr
+		//- 			td Offset Helpers
+		//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
+		//- 		tr
+		//- 			td Row
+		//- 			td Generates text sizing, colours and transform helpers from sizes and colours specified.
 
 
 

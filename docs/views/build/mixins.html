@@ -84,10 +84,10 @@
     <ul class="primary-navigation">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
-          <li><a href="/docs/views/build/index.html">Bower</a></li>
-          <li><a href="/docs/views/build/index.html">Requirements</a></li>
-          <li><a href="/docs/views/build/index.html">Support</a></li>
-          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+          <li><a href="#installing">Installing Barebones</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background Reading</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
@@ -131,9 +131,6 @@
         </ul>
       </li>
     </ul>
-    <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
-      <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
-    </div>
   </header>
 </body>
 <div class="iframe-container">
@@ -141,26 +138,31 @@
     <h1 class="page-title">Mixins</h1>
     <article id="arrow" class="article">
       <h2>Arrow</h2>
-      <p>Creates a triangle, used for things like tooltips or dropdowns. </p>
-      <table>
+      <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
+      <table class="arguments">
+        <thead>
+          <th colspan="2">Options</th>
+        </thead>
         <tr>
-          <td>$direction </td>
-          <td>"up", "right", "down" or "left"</td>
+          <td>$direction</td>
+          <td>Accepts either "up", "right", "down" or "left".</td>
         </tr>
         <tr>
           <td>$color</td>
-          <td>for example, #E5E5E5</td>
+          <td>Any hex value (e.g. #E5E5E5)</td>
         </tr>
         <tr>
           <td>$size</td>
-          <td>for example, 6px</td>
+          <td>Any px value (e.g. 6px)</td>
         </tr>
       </table>
       <pre><code class="language-scss">.element {
   &:after {
    @include arrow(down, black, 20px);
   }
- }</code></pre>
+ }
+
+</code></pre>
     </article>
     <article id="containers" class="article">
       <h2>Placeholder</h2>
@@ -170,7 +172,8 @@
    &:focus {
      placeholder(lightGrey);
    }
- }</code></pre>
+ }
+</code></pre>
     </article>
     <article id="containers" class="article">
       <h2>Uppercase</h2>
@@ -180,39 +183,27 @@
    &:focus {
      placeholder(lightGrey);
    }
- }</code></pre>
+ }
+
+</code></pre>
     </article>
-    <article id="containers" class="article">
-      <h2>Containers</h2>
-      <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.</p>
-      <p>You can create a container using the <span class="function">container($max-width)</span> function.</p>
-      <table>
-        <tr>
-          <td>$max-width</td>
-          <td>container max-width</td>
-        </tr>
-        <tr>
-          <td>$mobile-gutter <em>(true | false)</em></td>
-          <td>removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
-        </tr>
-      </table>
-      <pre><code class="language-scss">.element {
-  @include container(600, $mobile-gutter: false);
- }</code></pre>
-    </article>
+    <article id="containers" class="article"></article>
     <article id="clearfix" class="article">
       <h2>Clearfix</h2>
       <p>Clears floats. Apply this to the parent element.</p>
       <pre><code class="language-scss">.element {
   @include clearfix;
- }</code></pre>
+ }
+</code></pre>
     </article>
     <article id="ellipsis" class="article">
       <h2>Ellipsis</h2>
       <p>Adds ellipsis to limit text width.</p>
       <pre><code class="language-scss">.element {
   @include text-overflow($width);
-}</code></pre>
+}
+
+</code></pre>
     </article>
     <article id="media-queries" class="article">
       <h2>Media Queries</h2>
@@ -221,11 +212,16 @@
   @include respond-above(device-medium) {
     color: red;
   }
-}</code></pre>
+}
+
+
+</code></pre>
     </article>
     <article id="no-bullet" class="article">
       <h2>No Bullet</h2>
-      <p>Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</p>
+      <p>
+        <Removes>list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</Removes>
+      </p>
       <pre><code class="language-scss">ul {
  @include no-bullet;
 }</code></pre>

@@ -1,7 +1,7 @@
 // Generate text size helpers
-// @each $key, $value in $sizes
-// 	.text-#{$key}
-// 		@include responsive-text-size($item)
+@each $key, $value in $font-sizes
+	.text-#{$key}
+		font-size: #{$value} !important
 
 
 $text-alignment: (left, center, right)
@@ -10,14 +10,7 @@ $text-alignment: (left, center, right)
 		text-align: #{$direction} !important
 
 
-// @each $palette, $tint in 
-// 	.text-#{$palette}
-// 		color: colors(#{$palette}, #{$color})!important
-// 		h1, h2, h3, h4, h5, h6
-// 			color: colors(#{$palette}) !important
-
-
-.text-color-white
+.text-white
 	color: white !important
 
 .text-underline

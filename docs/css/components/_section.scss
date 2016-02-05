@@ -1,9 +1,30 @@
 // keyline(bottomm, dark, 1px);
 
 
+.var {
+	color: colours(secondary, orange);
+}
+
+.arguments {
+	border-radius: 3px;
+	border: 0;
+	thead th {
+		background-color: colours(greyscale, 100);
+		text-align: left;
+		padding: sizes(half) sizes(base);
+		font-weight: weights(primary, semi-bold);
+	}
+}
+
 .article {
 	padding: 60px 0;
 	border-bottom: 1px solid colours(keyline, light);
+
+	&.introduction {
+		p {
+			font-size: map-get($font-sizes, medium);
+		}
+	}
 
 	p > a, li > a {
 		color: colours(brand, primary);
@@ -29,15 +50,19 @@
 	h3 {
 		font-size: settings(fonts, sizes, medium-large);
 		color: colours(greyscale, 800);
-		font-weight: weights(primary, regular);
+		font-weight: weights(primary, semi-bold);
 		margin-top: sizes(quad);
+		margin-bottom: sizes(base);
 	}
 
 	> p, > ul li {
-		font-size: 18px;
+		font-size: map-get($font-sizes, base);
 		color: colours(greyscale, 800);
 		line-height: 1.8;
 		margin-bottom: sizes(double);
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.bullet-list {

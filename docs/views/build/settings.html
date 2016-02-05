@@ -84,10 +84,10 @@
     <ul class="primary-navigation">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
-          <li><a href="/docs/views/build/index.html">Bower</a></li>
-          <li><a href="/docs/views/build/index.html">Requirements</a></li>
-          <li><a href="/docs/views/build/index.html">Support</a></li>
-          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+          <li><a href="#installing">Installing Barebones</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background Reading</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
@@ -131,24 +131,28 @@
         </ul>
       </li>
     </ul>
-    <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
-      <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
-    </div>
   </header>
 </body>
 <div class="iframe-container">
   <div class="main-container">
     <h1 class="page-title">Settings</h1>
-    <article class="article">
-      <p>Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. Default categories are included below (or <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_theme.scss">click here to see an example)</a>.</p>
-      <p>A helper function is provided to access each map. Please note that some sections are required by mixins, so you muist have them – your SASS won't compile otherwise. Others are optional and depend on your specific needs.</p>
+    <article class="article introduction">
+      <p>Barebones expects you to store pyour roject settings in a SASS map (if you're not familar with SASS maps, check out <a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">this article</a>).</p>
+      <p>These values are used by the various helpers and mixins included in the project. For example, the <span class="var">$breakpoints</span> map is used by the <span class="var">respond-above()</span> mixin, and the <span class="var">$colours</span> map is used by the text-color helper.</p>
+      <p>This map is not included in the release to give you the flexibility to specify your own settings.</p>
+      <p>You can download an example map <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">here</a>.</p>
     </article>
     <article class="article">
-      <h2>Import Settings</h2>
-      <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced), and to exclude certain file categories (for example, if you only want a grid).</p>
-      <h3>Colours</h3>
-      <p>Access values using either <span class="function">settings(colours, $category, $value)</span> or <span class="function">colours($category, $value)</span>.</p>
-      <pre><code class="language-scss">  colours: (
+      <h2>Library Settings</h2>
+      <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced).</p>
+      <pre><code class="language-scss">$library: (
+	prefix: "bb-",
+),
+</code></pre>
+    </article>
+    <article class="article">
+      <h2>Colours</h2>
+      <pre><code class="language-scss">  $colours: (
     brand: (
       primary: #157AFB,
       secondary: #FE5607,
@@ -168,8 +172,14 @@
       ...
     ),
   )</code></pre>
-      <h3>Fonts</h3>
-      <p>Specify font familys' and their respective weights. Access using <span class="function">fonts($family)</span> and <span class="function">weights($family, $weight)</span> functions.</p>
+      <pre><code class="language-scss">.element {
+  background-color: colours($category, $value);
+}
+</code></pre>
+    </article>
+    <article class="article">
+      <h2>Fonts</h2>
+      <p>Specify font familys' and their respective weights.</p>
       <pre><code class="language-scss">  fonts: (
     primary: (
       family: Open Sans,
@@ -185,7 +195,10 @@
         bold: 600,
       )
     ),</code></pre>
-      <h3>Grid</h3>
+      <Access>using <span class="function">fonts($family)</span> and <span class="function">weights($family, $weight)</span> functions.</Access>
+    </article>
+    <article class="article">
+      <h2>Grid</h2>
       <p>Specify global grid settings. Access using <span class="function">settings(layout, grid, $setting)</span> or <span class="function">grid($setting)</span>.</p>
       <pre><code class="language-scss">   grid: (
     columns: 12,
@@ -193,14 +206,18 @@
     gutter: 1/4,
     gutter-type: margin,
    ),</code></pre>
-      <h3>Breakpoints</h3>
-      <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices. Access using <span class="function">settings(layout, breakpoints, $size)</span> or <span class="function">breakpoints($size)</span>.</p>
+    </article>
+    <article class="article">
+      <h2>Breakpoints</h2>
+      <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.</p>
       <pre><code class="language-scss">   breakpoints: (
     device-small: 320px,
     device-medium: 480px,
     ...
    ),</code></pre>
-      <h3>Sizes</h3>
+    </article>
+    <article class="article">
+      <h2>Sizes</h2>
       <p>Used to keep spacing consistent throughout the project. Access using <span class="function">settings(layout, sizes, $size)</span> or <span class="function">sizes($size)</span>.</p>
       <pre><code class="language-scss">   sizes: (
     quarter: 4px,
@@ -208,7 +225,9 @@
     base: 16px,
     ...
    ),</code></pre>
-      <h3>Layers</h3>
+    </article>
+    <article class="article">
+      <h2>Layers</h2>
       <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="function">settings(layout, layers, $component)</span>  or <span class="function">layers($component)</span>.</p>
       <pre><code class="language-scss">   layers: (
     modal: 5,

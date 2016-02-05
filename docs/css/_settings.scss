@@ -55,6 +55,16 @@ $breakpoints: (
 	device-x-large: 1200px
 );
 
+$font-sizes: (
+	x-small: 12px,
+	small: 14px,
+	base: 16px,
+	medium: 20px,
+	medium-large: 24px,
+	large: 32px,
+	x-large: 42px
+);
+
 $layers: (
 	backdrop: 3,
 	modal: 3,

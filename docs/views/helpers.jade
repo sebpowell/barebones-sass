@@ -6,7 +6,7 @@ include _inc/_layout.jade
 
 		h1.page-title Helpers
 
-		article#background-color.article
+		article.article.introduction
 
 			p Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.
 
@@ -24,7 +24,7 @@ include _inc/_layout.jade
 					| }
 
 		article#borders.article
-			h3#borders Borders
+			h2#borders Borders
 			p Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.
 			table
 				tr
@@ -52,7 +52,7 @@ include _inc/_layout.jade
 
 
 		article#margin.article
-			h3 Margin & Padding
+			h2 Margin & Padding
 			p Generated from the $sizes map.
 
 			table
@@ -80,7 +80,7 @@ include _inc/_layout.jade
 					| }
 
 		article.article
-			h3 Layout
+			h2 Layout
 			table
 				tr
 					td block
@@ -104,84 +104,82 @@ include _inc/_layout.jade
 					| }
 
 
-		h3 Rows & Columns
+		article#margin.article
+			h2 Grid
 
-		p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
-		p Columns work in the following way:
+			h3 Rows & Columns
 
+			p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
 
+			.example
+				.columns
+					.columns-4 Columns 4
+					.columns-5 Columns 5
+					.columns-3 Columns 3
 
-		.example
-			.columns
-				.columns-4 Columns 4
-				.columns-5 Columns 5
-				.columns-3 Columns 3
-
-		pre
-			code.language-html
-				| &lt;div class="columns"&gt;
-				|  &lt;div class="columns-4"&gt;
-				|  &lt;div class="columns-5"&gt;
-				|  &lt;div class="columns-3"&gt;
-				| &lt;/div&gt;
-
-
-		p Helper classes are also available to create different grids for different breakpoints.
-
-		.example
-
-			.columns
-				.columns-4-device-small.columns-5-device-medium Columns 4
-				.columns-4-device-small.columns-3-device-medium  Columns 5
-				.columns-4-device-small.columns-4-device-medium  Columns 3
-
-		pre
-			code.language-html
-				| &lt;div class="columns"&gt;
-				|  &lt;div class="columns-4-device-small"&gt;
-				|  &lt;div class="columns-5-device-small"&gt;
-				|  &lt;div class="columns-3-device-small"&gt;
-				| &lt;/div&gt;
+			pre
+				code.language-html
+					| &lt;div class="columns"&gt;
+					|  &lt;div class="columns-4"&gt;
+					|  &lt;div class="columns-5"&gt;
+					|  &lt;div class="columns-3"&gt;
+					| &lt;/div&gt;
 
 
-		h3 Offsets
+			p Helper classes are also available to create different grids for different breakpoints.
+			.example
+				.columns
+					.columns-4-device-small.columns-5-device-medium Columns 4
+					.columns-4-device-small.columns-3-device-medium  Columns 5
+					.columns-4-device-small.columns-4-device-medium  Columns 3
 
-		.example
-			.columns
-				.columns-4.offset-8 Columns 4
-		pre
-			code.language-html
-				| &lt;div class="columns"&gt;
-				|  &lt;div class="columns-4"&gt;
-				|  &lt;div class="columns-5"&gt;
-				|  &lt;div class="columns-3"&gt;
-				| &lt;/div&gt;
+			pre
+				code.language-html
+					| &lt;div class="columns"&gt;
+					|  &lt;div class="columns-4-device-small"&gt;
+					|  &lt;div class="columns-5-device-small"&gt;
+					|  &lt;div class="columns-3-device-small"&gt;
+					| &lt;/div&gt;
 
-		//- h3 Galleries
 
-		//- p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns.
+			h3 Offsets
 
-		//- p They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.
-		//- .example
-		//- 	ul.gallery-5
-		//- 		li.gallery-item
-		//- 		li.gallery-item
-		//- 		li.gallery-item
-		//- 		li.gallery-item
-		//- 		li.gallery-item
+			p Offsets allow you to shift a column to the right by a specified number of columns.
+			.example
+				.columns
+					.columns-4.offset-8 Columns 4
+			pre
+				code.language-html
+					| &lt;div class="columns"&gt;
+					|  &lt;div class="columns-4 offset-8"&gt;
+					| &lt;/div&gt;
 
-		//- pre
-		//- 	code.language-html
-		//- 		| &lt;div class="columns"&gt;
-		//- 		|  &lt;div class="columns-4"&gt;
-		//- 		|  &lt;div class="columns-5"&gt;
-		//- 		|  &lt;div class="columns-3"&gt;
-		//- 		| &lt;/div&gt;
+			h3 Galleries
+
+			p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns.
+
+			p They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.
+			.example
+				ul.gallery-5
+					li.gallery-item
+					li.gallery-item
+					li.gallery-item
+					li.gallery-item
+					li.gallery-item
+
+			pre
+				code.language-html
+					| &lt;div class="columns"&gt;
+					|  &lt;div class="columns-4"&gt;
+					|  &lt;div class="columns-5"&gt;
+					|  &lt;div class="columns-3"&gt;
+					| &lt;/div&gt;
 
 
 
 		article#text-align.article
 			h3 Typography
+			p <span class="class">.text-{helper}</span>.
 			table
 				tr
 					td alignment
@@ -196,25 +194,20 @@ include _inc/_layout.jade
 					td uppercase | lowercase | capitalize
 
 
+			.example
+				.text-uppercase This text is uppercase
+				.text-capitalized This text is capitalised
 
-			p <span class="class">.text-{helper}</span>.
+			pre
+				code.language-html
+					| &lt;div class="columns"&gt;This text is uppercase/div
+
+
 
 
 		article.article
 			h2 Visibility
-			p We provide easy to use classes to hide content on specific screen sizes.
-			table
-				tr
-					td alignment
-					td Left, Right, Center
-				tr
-					td size
-					td
-						| Helpers for creating the various text sizes specified in your settings file.
-						| x-small | small | base | medium | medium-large | large | x-large
-				tr
-					td transform
-					td uppercase | lowercase | capitalize
+			p We provide easy to use classes to hide content on specific screen sizes. Helpers are generated from the $breakpoints map.
 
 			pre
 				code.language-html

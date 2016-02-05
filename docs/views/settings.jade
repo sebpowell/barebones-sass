@@ -7,27 +7,34 @@ include _inc/_layout.jade
 
 		h1.page-title Settings
 
+		article.article.introduction
+
+			p Barebones expects you to store pyour roject settings in a SASS map (if you're not familar with SASS maps, check out <a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">this article</a>).
+
+			p These values are used by the various helpers and mixins included in the project. For example, the <span class="var">$breakpoints</span> map is used by the <span class="var">respond-above()</span> mixin, and the <span class="var">$colours</span> map is used by the text-color helper.
+
+			p This map is not included in the release to give you the flexibility to specify your own settings.
+
+			p You can download an example map <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">here</a>.
+
+
 		article.article
 
-			p Barebones stores all project settings in a structured SASS map (_settings.scss). This map is a starting point – you can extend it any way you like. Default categories are included below (or <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_theme.scss">click here to see an example)</a>.
-
-			p A helper function is provided to access each map. Please note that some sections are required by mixins, so you muist have them – your SASS won't compile otherwise. Others are optional and depend on your specific needs.
-
-
-
-
+			h2 Library Settings
+			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced).
+			pre
+				code.language-scss.
+					$library: (
+						prefix: "bb-",
+					),
 
 		article.article
 
-			h2 Import Settings
-			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced), and to exclude certain file categories (for example, if you only want a grid).
+			h2 Colours
 
-
-			h3 Colours
-			p Access values using either <span class="function">settings(colours, $category, $value)</span> or <span class="function">colours($category, $value)</span>.
 			pre
 				code.language-scss
-					|   colours: (
+					|   $colours: (
 					|     brand: (
 					|       primary: #157AFB,
 					|       secondary: #FE5607,
@@ -48,9 +55,16 @@ include _inc/_layout.jade
 					|     ),
 					|   )
 
-			h3 Fonts
+			pre
+				code.language-scss.
+					.element {
+					  background-color: colours($category, $value);
+					}
 
-			p Specify font familys' and their respective weights. Access using <span class="function">fonts($family)</span> and <span class="function">weights($family, $weight)</span> functions.
+		article.article
+			h2 Fonts
+
+			p Specify font familys' and their respective weights.
 
 			pre
 				code.language-scss
@@ -71,7 +85,10 @@ include _inc/_layout.jade
 					|       )
 					|     ),
 
-			h3 Grid
+			Access using <span class="function">fonts($family)</span> and <span class="function">weights($family, $weight)</span> functions.
+
+		article.article
+			h2 Grid
 
 			p Specify global grid settings. Access using <span class="function">settings(layout, grid, $setting)</span> or <span class="function">grid($setting)</span>.
 
@@ -84,8 +101,10 @@ include _inc/_layout.jade
 					|     gutter-type: margin,
 					|    ),
 
-			h3 Breakpoints
-			p Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices. Access using <span class="function">settings(layout, breakpoints, $size)</span> or <span class="function">breakpoints($size)</span>.
+		article.article
+			h2 Breakpoints
+			p Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.
+
 
 			pre
 				code.language-scss
@@ -95,7 +114,9 @@ include _inc/_layout.jade
 					|     ...
 					|    ),
 
-			h3 Sizes
+
+		article.article
+			h2 Sizes
 			p Used to keep spacing consistent throughout the project. Access using <span class="function">settings(layout, sizes, $size)</span> or <span class="function">sizes($size)</span>.
 
 			pre
@@ -107,8 +128,8 @@ include _inc/_layout.jade
 					|     ...
 					|    ),
 
-
-			h3 Layers
+		article.article
+			h2 Layers
 			p
 				| Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="function">settings(layout, layers, $component)</span>  or <span class="function">layers($component)</span>.
 			pre

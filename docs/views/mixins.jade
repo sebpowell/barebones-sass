@@ -8,114 +8,97 @@ include _inc/_layout.jade
 		h1.page-title Mixins
 		article#arrow.article
 			h2 Arrow
-			p
-				| Creates a triangle, used for things like tooltips or dropdowns. 
+			p Creates a triangle, used for things like tooltips or dropdowns.
 
-			table
+			table.arguments
+				thead
+					th(colspan="2") Options
 				tr
-					td $direction 
-					td "up", "right", "down" or "left"
+					td $direction
+					td Accepts either "up", "right", "down" or "left".
 				tr
 					td $color
-					td for example, #E5E5E5
+					td Any hex value (e.g. #E5E5E5)
 				tr
 					td $size
-					td for example, 6px
+					td Any px value (e.g. 6px)
 
 
 			pre
-				code.language-scss
-					| .element {
-					|   &:after {
-					|    @include arrow(down, black, 20px);
-					|   }
-					|  }
+				code.language-scss.
+					.element {
+					  &:after {
+					   @include arrow(down, black, 20px);
+					  }
+					 }
 
 
 		article#containers.article
 			h2 Placeholder
 			p Changes form placeholder text color.
 			pre
-				code.language-scss
-					| .element {
-					|   @include placeholder(grey);
-					|    &:focus {
-					|      placeholder(lightGrey);
-					|    }
-					|  }
+				code.language-scss.
+					.element {
+					  @include placeholder(grey);
+					   &:focus {
+					     placeholder(lightGrey);
+					   }
+					 }
 
 		article#containers.article
 			h2 Uppercase
 			p Changes form placeholder text color.
 			pre
-				code.language-scss
-					| .element {
-					|   @include placeholder(grey);
-					|    &:focus {
-					|      placeholder(lightGrey);
-					|    }
-					|  }
+				code.language-scss.
+					.element {
+					  @include placeholder(grey);
+					   &:focus {
+					     placeholder(lightGrey);
+					   }
+					 }
 
-			
+
 		article#containers.article
-			h2 Containers
-
-			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
-			p You can create a container using the <span class="function">container($max-width)</span> function.
-
-			table
-				tr
-					td $max-width
-					td container max-width
-				tr
-					td $mobile-gutter <em>(true | false)</em>
-					td removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).
-
-			pre
-				code.language-scss
-					| .element {
-					|   @include container(600, $mobile-gutter: false);
-					|  }
 
 
 		article#clearfix.article
 			h2 Clearfix
 			p Clears floats. Apply this to the parent element.
 			pre
-				code.language-scss
-					| .element {
-					|   @include clearfix;
-					|  }
+				code.language-scss.
+					.element {
+					  @include clearfix;
+					 }
 
 		article#ellipsis.article
 			h2 Ellipsis
 			p Adds ellipsis to limit text width.
 			pre
-				code.language-scss
-					| .element {
-					|   @include text-overflow($width);
-					| }
+				code.language-scss.
+					.element {
+					  @include text-overflow($width);
+					}
 
 
 		article#media-queries.article
 			h2 Media Queries
 			p Use <span class="function">respond-above($device)</span> and <span class="function">respond-below($device)</span> to target different viewport sizes defined in your settings file.
 			pre
-				code.language-scss
-					| .element {
-					|   @include respond-above(device-medium) {
-					|     color: red;
-					|   }
-					| }
+				code.language-scss.
+					.element {
+					  @include respond-above(device-medium) {
+					    color: red;
+					  }
+					}
 
 
 
 		article#no-bullet.article
 			h2 No Bullet
 			p
-				| Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+				Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
 			pre
-				code.language-scss
-					| ul {
-					|  @include no-bullet;
-					| }
+				code.language-scss.
+					ul {
+					 @include no-bullet;
+					}

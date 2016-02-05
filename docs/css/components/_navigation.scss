@@ -40,6 +40,7 @@
 
   left: -300px;
   width: 300px;
+  overflow-y: scroll;
 
   padding-top: sizes(double);
 
@@ -123,7 +124,7 @@
 
     > li {
     	&.active {
-    		a {
+    		> a {
     			color: white;
     		}
     		.sub-navigation {

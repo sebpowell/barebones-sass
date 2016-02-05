@@ -84,10 +84,10 @@
     <ul class="primary-navigation">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
-          <li><a href="/docs/views/build/index.html">Bower</a></li>
-          <li><a href="/docs/views/build/index.html">Requirements</a></li>
-          <li><a href="/docs/views/build/index.html">Support</a></li>
-          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+          <li><a href="#installing">Installing Barebones</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background Reading</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
@@ -131,15 +131,12 @@
         </ul>
       </li>
     </ul>
-    <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
-      <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
-    </div>
   </header>
 </body>
 <div class="iframe-container">
   <div class="main-container">
     <h1 class="page-title">Helpers</h1>
-    <article id="background-color" class="article">
+    <article class="article introduction">
       <p>Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.</p>
       <h3>Background Color</h3>
       <p>Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.</p>
@@ -149,7 +146,7 @@
 }</code></pre>
     </article>
     <article id="borders" class="article">
-      <h3 id="borders">Borders</h3>
+      <h2 id="borders">Borders</h2>
       <p>Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.</p>
       <table>
         <tr>
@@ -177,7 +174,7 @@
 }</code></pre>
     </article>
     <article id="margin" class="article">
-      <h3>Margin & Padding</h3>
+      <h2>Margin & Padding</h2>
       <p>Generated from the $sizes map.</p>
       <table>
         <tr>
@@ -203,7 +200,7 @@
 }</code></pre>
     </article>
     <article class="article">
-      <h3>Layout</h3>
+      <h2>Layout</h2>
       <table>
         <tr>
           <td>block</td>
@@ -226,49 +223,66 @@
  background-color: #F5F5F5 !important;
 }</code></pre>
     </article>
-    <h3>Rows & Columns</h3>
-    <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
-    <p>Columns work in the following way:</p>
-    <div class="example">
-      <div class="columns">
-        <div class="columns-4">Columns 4</div>
-        <div class="columns-5">Columns 5</div>
-        <div class="columns-3">Columns 3</div>
+    <article id="margin" class="article">
+      <h2>Grid</h2>
+      <h3>Rows & Columns</h3>
+      <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
+      <div class="example">
+        <div class="columns">
+          <div class="columns-4">Columns 4</div>
+          <div class="columns-5">Columns 5</div>
+          <div class="columns-3">Columns 3</div>
+        </div>
       </div>
-    </div>
-    <pre><code class="language-html">&lt;div class="columns"&gt;
+      <pre><code class="language-html">&lt;div class="columns"&gt;
  &lt;div class="columns-4"&gt;
  &lt;div class="columns-5"&gt;
  &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
-    <p>Helper classes are also available to create different grids for different breakpoints.</p>
-    <div class="example">
-      <div class="columns">
-        <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
-        <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
-        <div class="columns-4-device-small columns-4-device-medium"> Columns 3</div>
+      <p>Helper classes are also available to create different grids for different breakpoints.</p>
+      <div class="example">
+        <div class="columns">
+          <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
+          <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
+          <div class="columns-4-device-small columns-4-device-medium"> Columns 3</div>
+        </div>
       </div>
-    </div>
-    <pre><code class="language-html">&lt;div class="columns"&gt;
+      <pre><code class="language-html">&lt;div class="columns"&gt;
  &lt;div class="columns-4-device-small"&gt;
  &lt;div class="columns-5-device-small"&gt;
  &lt;div class="columns-3-device-small"&gt;
 &lt;/div&gt;</code></pre>
-    <h3>Offsets</h3>
-    <div class="example">
-      <div class="columns">
-        <div class="columns-4 offset-8">Columns 4</div>
+      <h3>Offsets</h3>
+      <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
+      <div class="example">
+        <div class="columns">
+          <div class="columns-4 offset-8">Columns 4</div>
+        </div>
       </div>
-    </div>
-    <pre><code class="language-html">&lt;div class="columns"&gt;
+      <pre><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4 offset-8"&gt;
+&lt;/div&gt;</code></pre>
+      <h3>Galleries</h3>
+      <p>Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns.</p>
+      <p>They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.</p>
+      <div class="example">
+        <ul class="gallery-5">
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+          <li class="gallery-item"></li>
+        </ul>
+      </div>
+      <pre><code class="language-html">&lt;div class="columns"&gt;
  &lt;div class="columns-4"&gt;
  &lt;div class="columns-5"&gt;
  &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
-    
-    
+    </article>
     <article id="text-align" class="article">
       <h3>Typography</h3>
+      <p><span class="class">.text-{helper}</span>.</p>
       <table>
         <tr>
           <td>alignment</td>
@@ -286,28 +300,15 @@
           <td>uppercase | lowercase | capitalize</td>
         </tr>
       </table>
-      <p><span class="class">.text-{helper}</span>.</p>
+      <div class="example">
+        <div class="text-uppercase">This text is uppercase</div>
+        <div class="text-capitalized">This text is capitalised</div>
+      </div>
+      <pre><code class="language-html">&lt;div class="columns"&gt;This text is uppercase/div</code></pre>
     </article>
     <article class="article">
       <h2>Visibility</h2>
-      <p>We provide easy to use classes to hide content on specific screen sizes.</p>
-      <table>
-        <tr>
-          <td>alignment</td>
-          <td>Left, Right, Center</td>
-        </tr>
-        <tr>
-          <td>size</td>
-          <td>
-            Helpers for creating the various text sizes specified in your settings file.
-            x-small | small | base | medium | medium-large | large | x-large
-          </td>
-        </tr>
-        <tr>
-          <td>transform</td>
-          <td>uppercase | lowercase | capitalize</td>
-        </tr>
-      </table>
+      <p>We provide easy to use classes to hide content on specific screen sizes. Helpers are generated from the $breakpoints map.</p>
       <pre><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt;
 &lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
 &lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;</code></pre>

@@ -8,44 +8,56 @@ block body
 
 
 			h1.page-title Grid
-			article#containers.article
+			article.article.introduction
 
-				p Barebones includes a flexible, responsive grid system. It's a semantic grid, allowing you to directly target clasesA lightweight semantic grid framework for Sass and Bourbon.allows you to target a given component – for example, a sidebar – without littering your markup the need of 'messy' helper classes.	it relies entirely on Sass mixins and does not pollute your HTML with presentation classes and extra wrapping div's.
-				pre
-					code.language-scss.
-						.sidebar {
-							@include span(4); // Creates a container div that spans 4 colums
-						}
-						#{''}
-						.content {
-						   @include span(8, $position: last); // Creates a container div that spans 4 colums
-							 @include respond-above(medium) {
-							   @include span(6);
-							 }
-							}
+				p Barebones includes a flexible, responsive grid system. It's a semantic grid, allowing you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary divs.
 
 
+
+
+			article.article
+				h2 Grid Settings
 				p Specify your grid settings in your settings file. The following settings are available.
 
 				table
+
 					tr
 						td columns (default: 12)
+						td 12
 						td Number of columns in your grid
 					tr
-						td breakpoint
+						td breakpoint (default: device-medium – 720px)
 						td The point at which all column sizes should expand to 100%.
 					tr
-						td gutter
+						td gutter (default: 1/4)
 						td Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc.
 					tr
-						td grid-type (margin (default) | padding)
+						td grid-type (default: margin)
 						td Specify whether you want to create gutters using padding or margin.
 
 
 			article.article
-				h2 Greating a layout
+				h2 Columns
+				p First, you'll need to create a container.
+				h2 Containers
 
-				h3 Create a container
+				p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
+				p You can create a container using the <span class="function">container($max-width)</span> function.
+
+				table
+					tr
+						td $max-width
+						td container max-width
+					tr
+						td $mobile-gutter <em>(true false)</em>
+						td removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).
+
+				pre
+					code.language-scss.
+						.element {
+						  @include container(600, $mobile-gutter: false);
+						 }
+
 
 				pre
 					code.language-scss
@@ -53,11 +65,8 @@ block body
 						|   @include container(1000px);
 						| }
 
+				p Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.
 
-				h3 Create a Layout
-
-				p The <span class="function">span($columns, $position)</span> grid generator
-				p To create different widths at different breakpoints, use the <span class="function">respond-above($device)</span> mixin.
 				table
 					tr
 						td $columns
@@ -72,20 +81,13 @@ block body
 
 				pre
 					code.language-scss.
-						| .example-sidebar {
-						|  @include span(8);
-						|  @include respond-above(device-small) {
-						|    @include span(6);
-						|  }
-						| }
-						| .sidebar {
-						|   @include span(4);
-						| }
-						| #{''}
-						| .content {
-						|   @include span(8, $position: last);
-						| }
+						.sidebar {
+						  @include span(4); // Creates a column that spans 4 colums
+						}
 
+						.content {
+						  @include span(8, $position: last); // Creates a column that spans 8 columns
+						}
 
 
 
@@ -98,18 +100,14 @@ block body
 
 
 
-
-
-
-
 			article.article
 				h2 Galleries
-				p Galleries are made up of elements that repeat across multiple lines. Here's how you would create one. 
+				p Galleries are made up of elements that repeat across multiple lines. Here's how you would create one.
 				pre
 					code.language-scss.
 						.photo-gallery {
-							@incluce clearfix;
-							// Clears the floats. 
+						  @include clearfix;
+						  // Clears the floats.
 						}
 
 						.photo-gallery-item {
@@ -123,6 +121,12 @@ block body
 						.photo-gallery-item
 						.photo-gallery-item
 						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
 
 
 				.example.photo-gallery
@@ -131,20 +135,6 @@ block body
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-
-				.example
-					.element-2(style="background-color: lightpink; height: 40px")
-					.element-2(style="background-color: lightpink; height: 40px")
-					.element-2(style="background-color: lightpink; height: 40px")
-					.element-2(style="background-color: lightpink; height: 40px")
-					.element-2(style="background-color: lightpink; height: 40px")
-					.element-2(style="background-color: lightpink; height: 40px")
-					.element-2(style="background-color: lightpink; height: 40px")
-
 
 
 

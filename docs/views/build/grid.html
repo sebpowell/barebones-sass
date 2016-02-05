@@ -46,10 +46,10 @@
     <ul class="primary-navigation">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
-          <li><a href="/docs/views/build/index.html">Bower</a></li>
-          <li><a href="/docs/views/build/index.html">Requirements</a></li>
-          <li><a href="/docs/views/build/index.html">Support</a></li>
-          <li><a href="/docs/views/build/index.html">Background Reading</a></li>
+          <li><a href="#installing">Installing Barebones</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background Reading</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
@@ -93,56 +93,61 @@
         </ul>
       </li>
     </ul>
-    <div class="download"><a href="https://github.com/sebpowell/barebones" target="_blank" class="button block">Download</a>
-      <div class="made">Made in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a></div>
-    </div>
   </header>
   <div class="iframe-container">
     <div class="main-container">
       <h1 class="page-title">Grid</h1>
-      <article id="containers" class="article">
-        <p>Barebones includes a flexible, responsive grid system. It's a semantic grid, allowing you to directly target clasesA lightweight semantic grid framework for Sass and Bourbon.allows you to target a given component – for example, a sidebar – without littering your markup the need of 'messy' helper classes.	it relies entirely on Sass mixins and does not pollute your HTML with presentation classes and extra wrapping div's.</p>
-        <pre><code class="language-scss">.sidebar {
-	@include span(4); // Creates a container div that spans 4 colums
-}
-
-.content {
-   @include span(8, $position: last); // Creates a container div that spans 4 colums
-	 @include respond-above(medium) {
-	   @include span(6);
-	 }
-	}
-
-</code></pre>
+      <article class="article introduction">
+        <p>Barebones includes a flexible, responsive grid system. It's a semantic grid, allowing you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary divs.</p>
+      </article>
+      <article class="article">
+        <h2>Grid Settings</h2>
         <p>Specify your grid settings in your settings file. The following settings are available.</p>
         <table>
           <tr>
             <td>columns (default: 12)</td>
+            <td>12</td>
             <td>Number of columns in your grid</td>
           </tr>
           <tr>
-            <td>breakpoint</td>
+            <td>breakpoint (default: device-medium – 720px)</td>
             <td>The point at which all column sizes should expand to 100%.</td>
           </tr>
           <tr>
-            <td>gutter</td>
+            <td>gutter (default: 1/4)</td>
             <td>Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc.</td>
           </tr>
           <tr>
-            <td>grid-type (margin (default) | padding)</td>
+            <td>grid-type (default: margin)</td>
             <td>Specify whether you want to create gutters using padding or margin.</td>
           </tr>
         </table>
       </article>
       <article class="article">
-        <h2>Greating a layout</h2>
-        <h3>Create a container</h3>
+        <h2>Columns</h2>
+        <p>First, you'll need to create a container.</p>
+        <h2>Containers</h2>
+        <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.</p>
+        <p>You can create a container using the <span class="function">container($max-width)</span> function.</p>
+        <table>
+          <tr>
+            <td>$max-width</td>
+            <td>container max-width</td>
+          </tr>
+          <tr>
+            <td>$mobile-gutter <em>(true false)</em></td>
+            <td>removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
+          </tr>
+        </table>
+        <pre><code class="language-scss">.element {
+  @include container(600, $mobile-gutter: false);
+ }
+
+</code></pre>
         <pre><code class="language-scss">.container {
   @include container(1000px);
 }</code></pre>
-        <h3>Create a Layout</h3>
-        <p>The <span class="function">span($columns, $position)</span> grid generator</p>
-        <p>To create different widths at different breakpoints, use the <span class="function">respond-above($device)</span> mixin.</p>
+        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.</p>
         <table>
           <tr>
             <td>$columns</td>
@@ -157,20 +162,13 @@
             <td>You can remove the gutter by passing the keyword 'none'.</td>
           </tr>
         </table>
-        <pre><code class="language-scss">| .example-sidebar {
-|  @include span(8);
-|  @include respond-above(device-small) {
-|    @include span(6);
-|  }
-| }
-| .sidebar {
-|   @include span(4);
-| }
-| 
-| .content {
-|   @include span(8, $position: last);
-| }
+        <pre><code class="language-scss">.sidebar {
+  @include span(4); // Creates a column that spans 4 colums
+}
 
+.content {
+  @include span(8, $position: last); // Creates a column that spans 8 columns
+}
 
 
 </code></pre>
@@ -183,10 +181,10 @@
       </article>
       <article class="article">
         <h2>Galleries</h2>
-        <p>Galleries are made up of elements that repeat across multiple lines. Here's how you would create one. </p>
+        <p>Galleries are made up of elements that repeat across multiple lines. Here's how you would create one.</p>
         <pre><code class="language-scss">.photo-gallery {
-	@incluce clearfix;
-	// Clears the floats. 
+  @include clearfix;
+  // Clears the floats.
 }
 
 .photo-gallery-item {
@@ -200,6 +198,12 @@
             <div class="photo-gallery-item"></div>
             <div class="photo-gallery-item"></div>
             <div class="photo-gallery-item"></div>
+            <div class="photo-gallery-item"></div>
+            <div class="photo-gallery-item"></div>
+            <div class="photo-gallery-item"></div>
+            <div class="photo-gallery-item"></div>
+            <div class="photo-gallery-item"></div>
+            <div class="photo-gallery-item"></div>
           </div>
         </div>
         <div class="example photo-gallery">
@@ -208,19 +212,6 @@
           <div style="background-color: lightpink; height: 40px" class="element"></div>
           <div style="background-color: lightpink; height: 40px" class="element"></div>
           <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-        </div>
-        <div class="example">
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
-          <div style="background-color: lightpink; height: 40px" class="element-2"></div>
         </div>
       </article>
       <article id="containers" class="article">
