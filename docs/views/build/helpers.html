@@ -81,7 +81,7 @@
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </header>
   <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
-    <ul class="primary-navigation">
+    <ul class="docs-navigation-primary-links">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
           <li><a href="#installing">Installing Barebones</a></li>
@@ -137,7 +137,7 @@
   <div class="main-container">
     <h1 class="page-title">Helpers</h1>
     <article class="article introduction">
-      <p>Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.</p>
+      <p>Helpers class should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues. Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable for many features that will be added in the future. So whenever you want to create a new component, you’ll just need to combine some classes together to build it.</p>
       <h3>Background Color</h3>
       <p>Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.</p>
       <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
@@ -281,12 +281,12 @@
 &lt;/div&gt;</code></pre>
     </article>
     <article id="text-align" class="article">
-      <h3>Typography</h3>
-      <p><span class="class">.text-{helper}</span>.</p>
+      <h2>Typography</h2>
+      <p>Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.</p>
       <table>
         <tr>
           <td>alignment</td>
-          <td>Left, Right, Center</td>
+          <td>left | right | center</td>
         </tr>
         <tr>
           <td>size</td>
@@ -300,21 +300,22 @@
           <td>uppercase | lowercase | capitalize</td>
         </tr>
       </table>
+      <h3>Alignment</h3>
       <div class="example">
         <div class="text-uppercase">This text is uppercase</div>
         <div class="text-capitalized">This text is capitalised</div>
+        <div class="text-left">This text is left-aligned</div>
+        <div class="text-center">This text is centered</div>
+        <div class="text-right">This text is right-aligned</div>
       </div>
       <pre><code class="language-html">&lt;div class="columns"&gt;This text is uppercase/div</code></pre>
     </article>
     <article class="article">
       <h2>Visibility</h2>
-      <p>We provide easy to use classes to hide content on specific screen sizes. Helpers are generated from the $breakpoints map.</p>
-      <pre><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt;
-&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
-&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;</code></pre>
-      <pre><code class="language-scss">.is-hidden {
- display: none !important;
-}</code></pre>
+      <p>Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.</p>
+      <pre><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt; // Hidden at all times.</code></pre>
+      <pre><code class="language-html">&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; // Hides above the device-small breakpoint.</code></pre>
+      <pre><code class="language-html">&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt; // Hides below the device-small breakpoint.</code></pre>
     </article>
   </div>
 </div>

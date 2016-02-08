@@ -1133,6 +1133,26 @@ iframe { width: 100%; transition: all .15s; height: 100%; background: white; pos
 
 .button { transition: all .25s; box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
 
+.primary-navigation { width: 100%; position: absolute; padding: 32px; zoom: 1; }
+
+.primary-navigation:before, .primary-navigation:after { content: ""; display: table; }
+
+.primary-navigation:after { clear: both; }
+
+.primary-navigation .logo { float: left; margin-top: 3px; margin-right: 32px; }
+
+.primary-navigation ul { list-style-type: none; margin: 0; padding: 0; float: left; }
+
+.primary-navigation ul li { margin: 0; line-height: inherit; }
+
+.primary-navigation ul > li { display: inline-block; font-size: 14px; color: white; opacity: 0.7; transition: all .5s; font-weight: 500; margin-right: 16px; }
+
+.primary-navigation ul > li:hover { opacity: 1; }
+
+.primary-navigation .github { float: right; }
+
+.primary-navigation iframe { background: transparent; position: static; }
+
 .mobile-docs-navigation { background: #157afb; padding: 16px; display: block; position: fixed; top: 0; left: 0; width: 100%; z-index: 9; }
 
 @media (min-width: 1080px) { .mobile-docs-navigation { display: none; } }
@@ -1166,7 +1186,7 @@ iframe { width: 100%; transition: all .15s; height: 100%; background: white; pos
 
 .docs-navigation .sub-navigation { display: none; background: #034ba7; }
 
-@media (min-width: 1080px) { .docs-navigation .primary-navigation { padding-top: 100px; } }
+@media (min-width: 1080px) { .docs-navigation .docs-navigation-primary-links { padding-top: 100px; } }
 
 .docs-navigation ul { list-style-type: none; margin: 0; padding: 0; transition: all .5s; width: 300px; left: -300px; overflow-y: scroll; }
 
@@ -1237,8 +1257,6 @@ table thead th { color: colors(greyscale, medium); font-weight: 400; padding: 32
 
 .selling-points:after { clear: both; }
 
-.selling-point { margin-bottom: 8.57143%; }
-
 @media (min-width: 480px) { .selling-point { float: left; width: 100%; margin-right: 2.85714%; }
   .selling-point:last-child { margin-right: 0; } }
 
@@ -1249,13 +1267,13 @@ table thead th { color: colors(greyscale, medium); font-weight: 400; padding: 32
 
 .selling-point .selling-point-description { font-size: 15px; line-height: 1.8; color: #abd0fe; }
 
-.welcome-masthead { background-color: #157afb; padding-top: 40px; width: 100%; }
+.welcome-masthead { background-color: #157afb; padding-top: 40px; width: 100%; text-align: center; }
 
-@media (min-width: 780px) { .welcome-masthead { height: 100%; padding-top: 100px; display: table; } }
+@media (min-width: 780px) { .welcome-masthead { height: 100%; display: table; } }
 
 .welcome-masthead .logo { margin-bottom: 60px; }
 
-@media (min-width: 780px) { .welcome-masthead .logo { position: absolute; margin-bottom: 0; left: 32px; top: 32px; } }
+@media (min-width: 780px) { .welcome-masthead .logo { margin-bottom: 0; left: 32px; top: 32px; } }
 
 .welcome-masthead .welcome-masthead-inner { display: table-cell; width: 100%; vertical-align: middle; color: white; padding: 0 24px; }
 

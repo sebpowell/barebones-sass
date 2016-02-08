@@ -4,6 +4,45 @@
   box-shadow: 0 0 0 0 rgba(255,255,255,0.3);
 }
 
+.primary-navigation {
+	width: 100%;
+	position: absolute;
+	padding: sizes(double);
+	@include clearfix;
+
+	.logo {
+		float: left;
+		margin-top: 3px;
+		margin-right: sizes(double);
+	}
+	ul {
+		@include no-bullet;
+		float: left;
+		> li {
+			display: inline-block;
+			// @include uppercase;
+			font-size: 14px;
+			color: white;
+			opacity: 0.7;
+			transition: all .5s;
+			font-weight: 500;
+			margin-right: sizes(base);
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+
+	.github {
+		float: right;
+	}
+	iframe {
+		background: transparent;
+		position: static;
+	}
+}
+
 .mobile-docs-navigation {
   background: colours(brand, primary);
   padding: sizes(base);
@@ -104,7 +143,7 @@
   	background: darken(colours(brand, primary), 20%)
   }
 
-  .primary-navigation {
+  .docs-navigation-primary-links {
   	@include respond-above(device-large) {
   	 padding-top: 100px;
   	}

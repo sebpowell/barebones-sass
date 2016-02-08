@@ -8,7 +8,7 @@ include _inc/_layout.jade
 
 		article.article.introduction
 
-			p Helpers or utlity classes should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues.
+			p Helpers class should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues. Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable for many features that will be added in the future. So whenever you want to create a new component, you’ll just need to combine some classes together to build it.
 
 			h3 Background Color
 			p Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.
@@ -178,12 +178,12 @@ include _inc/_layout.jade
 
 
 		article#text-align.article
-			h3 Typography
-			p <span class="class">.text-{helper}</span>.
+			h2 Typography
+			p Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.
 			table
 				tr
 					td alignment
-					td Left, Right, Center
+					td left | right | center
 				tr
 					td size
 					td
@@ -194,9 +194,14 @@ include _inc/_layout.jade
 					td uppercase | lowercase | capitalize
 
 
+			h3 Alignment
+
 			.example
 				.text-uppercase This text is uppercase
 				.text-capitalized This text is capitalised
+				.text-left This text is left-aligned
+				.text-center This text is centered
+				.text-right This text is right-aligned
 
 			pre
 				code.language-html
@@ -207,16 +212,14 @@ include _inc/_layout.jade
 
 		article.article
 			h2 Visibility
-			p We provide easy to use classes to hide content on specific screen sizes. Helpers are generated from the $breakpoints map.
+			p Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.
 
 			pre
 				code.language-html
-					| &lt;div class="is-hidden"&gt;&lt;/div&gt;
-					| &lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
-					| &lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
-
+					| &lt;div class="is-hidden"&gt;&lt;/div&gt; // Hidden at all times.
 			pre
-				code.language-scss
-					| .is-hidden {
-					|  display: none !important;
-					| }
+				code.language-html
+					| &lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; // Hides above the device-small breakpoint.
+			pre
+				code.language-html
+					| &lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt; // Hides below the device-small breakpoint.

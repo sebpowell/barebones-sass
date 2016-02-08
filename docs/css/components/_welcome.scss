@@ -25,20 +25,21 @@ $selling-points: (device-small: 12, device-medium: 4);
 	background-color: colours(brand, primary);
 	padding-top: 40px;
 	width: 100%;
+	text-align: center;
 	@include respond-above(device-medium) {
 		height: 100%;
-		padding-top: 100px;
+		// padding-top: 100px;
 		display: table;
 	}
 
 	.logo {
 		margin-bottom: 60px;
 		@include respond-above(device-medium) {
-			position: absolute;
+			// position: absolute;
 			margin-bottom: 0;
 			left: 32px;
 		top: 32px;
-			
+
 		}
 	}
 
@@ -100,7 +101,9 @@ $selling-points: (device-small: 12, device-medium: 4);
 		width: 100%;
 		left: 0;
 		font-size: 13px;
-		
+
+
+
 		.made-by {
 			color: lighten(colours(brand, primary), 30%);
 		}
