@@ -1,6 +1,7 @@
 // Generates classes for column offsets.
-@for $i from 1 through grid(columns)
+@for $i from 1 through $columnCount
 	.offset-#{$i}
-		+respond-above(grid)
+		margin-right: 0 !important
+		+respond-above($gridBreakpoint)
 			margin-left: ($i * $columnWidth) + ($i * $gutterWidth)
 

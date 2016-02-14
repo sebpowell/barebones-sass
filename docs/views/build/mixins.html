@@ -37,44 +37,6 @@
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
-    <link rel="stylesheet" href="../../css/style.css"/>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://use.typekit.net/bsw1gyt.js"></script>
-    <script>
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-73127596-1', 'auto');
-      	ga('send', 'pageview');
-    </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
-    </script>
-    <script src="../../javascript/application.js"></script>
-  </head>
-</html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -95,15 +57,18 @@
           <li><a href="#colours">Colours</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
-          <li><a href="/docs/views/build/index.html">Breakpoints</a></li>
-          <li><a href="/docs/views/build/index.html">Sizes</a></li>
-          <li><a href="/docs/views/build/index.html">Layers</a></li>
+          <li><a href="#Breakpoints">Breakpoints</a></li>
+          <li><a href="#sizes">Sizes</a></li>
+          <li><a href="#layers">Layers</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/grid.html">Grid</a>
         <ul class="sub-navigation">
-          <li><a href="#generator">Grid Generator</a></li>
-          <li><a href="/docs/views/build/index.html">Helpers</a></li>
+          <li><a href="#generator">Grid Settings</a></li>
+          <li><a href="#generator">Containers</a></li>
+          <li><a href="#generator">Columns</a></li>
+          <li><a href="#generator">Galleries</a></li>
+          <li><a href="#generator">Helpers</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/mixins.html">Mixins</a>
@@ -169,6 +134,7 @@
       <p>Changes form placeholder text color.</p>
       <pre><code class="language-scss">.element {
   @include placeholder(grey);
+  	color: grry
    &:focus {
      placeholder(lightGrey);
    }
@@ -177,12 +143,9 @@
     </article>
     <article id="containers" class="article">
       <h2>Uppercase</h2>
-      <p>Changes form placeholder text color.</p>
+      <p>Transforms text to uppercase, accepts an argument to specify letter-spacing. </p>
       <pre><code class="language-scss">.element {
-  @include placeholder(grey);
-   &:focus {
-     placeholder(lightGrey);
-   }
+  @include uppercase(0.1em);
  }
 
 </code></pre>

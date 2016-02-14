@@ -7,9 +7,11 @@ $sides: top, right, bottom, left
 			.#{$type}-#{$side}-#{$key}
 				#{$type}-#{$side}: $value !important
 
-		@each $key, $value in $sizes
-			.#{$type}-#{$key}
-				#{$type}: $value !important
+@each $type in $types
+	@each $key, $value in $sizes
+		.#{$type}-#{$key}
+			#{$type}: $value !important
+
 
 .no-margin
 	margin: 0 !important

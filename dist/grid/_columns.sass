@@ -1,12 +1,12 @@
 // Generate column helper classes.
-@for $i from 1 through grid(columns)
+@for $i from 1 through $columnCount
 	.columns-#{$i}
-		+respond-below(grid)
+		+respond-below($gridBreakpoint)
 			width: 100%
 			margin-bottom: $gutterWidth
 
-		+respond-above(grid)
-			@if $i < grid(columns)
+		+respond-above($gridBreakpoint)
+			@if $i $columnCount
 				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
 				float: left
 				margin-right: $gutterWidth
@@ -17,13 +17,13 @@
 
 // Generate breakpoint-specific column helper classes.
 @each $key, $value in $breakpoints
-	@for $i from 1 through grid(columns)
+	@for $i from 1 through $columnCount
 		.columns-#{$i}-#{$key}
 			margin-bottom: $gutterWidth
 			+respond-above($key)
 				margin-bottom: 0 !important
 				@if $i > 1
-					width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
+					width: columnCalc($i)
 					float: left
 					margin-right: $gutterWidth
 					&:last-child

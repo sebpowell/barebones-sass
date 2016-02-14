@@ -37,44 +37,6 @@
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
-    <link rel="stylesheet" href="../../css/style.css"/>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://use.typekit.net/bsw1gyt.js"></script>
-    <script>
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-73127596-1', 'auto');
-      	ga('send', 'pageview');
-    </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
-    </script>
-    <script src="../../javascript/application.js"></script>
-  </head>
-</html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -95,15 +57,18 @@
           <li><a href="#colours">Colours</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
-          <li><a href="/docs/views/build/index.html">Breakpoints</a></li>
-          <li><a href="/docs/views/build/index.html">Sizes</a></li>
-          <li><a href="/docs/views/build/index.html">Layers</a></li>
+          <li><a href="#Breakpoints">Breakpoints</a></li>
+          <li><a href="#sizes">Sizes</a></li>
+          <li><a href="#layers">Layers</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/grid.html">Grid</a>
         <ul class="sub-navigation">
-          <li><a href="#generator">Grid Generator</a></li>
-          <li><a href="/docs/views/build/index.html">Helpers</a></li>
+          <li><a href="#generator">Grid Settings</a></li>
+          <li><a href="#generator">Containers</a></li>
+          <li><a href="#generator">Columns</a></li>
+          <li><a href="#generator">Galleries</a></li>
+          <li><a href="#generator">Helpers</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/mixins.html">Mixins</a>
@@ -137,17 +102,25 @@
   <div class="main-container">
     <h1 class="page-title">Helpers</h1>
     <article class="article introduction">
-      <p>Helpers class should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues. Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable for many features that will be added in the future. So whenever you want to create a new component, you’ll just need to combine some classes together to build it.</p>
-      <h3>Background Color</h3>
-      <p>Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.</p>
-      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
-      <pre><code class="language-scss">.background-brand-primary {
- background-color: #F5F5F5 !important;
-}</code></pre>
+      <p>Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable. </p>
+      <p>All helper classes use the !important flag to avoid specificity issues. </p>
+    </article>
+    <article class="article">
+      <h2>Background Color</h2>
+      <p>Generates a background-color helper for all colors specified in your $colours map, in the following format: background-{$category}-{$value}.</p>
+      <div class="example">
+        <div style="height: 40px" class="background-brand-primary"></div>
+        <div style="height: 40px" class="background-secondary-orange"></div>
+        <div style="height: 40px" class="background-greyscale-50"></div>
+      </div>
+      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+</code></pre>
     </article>
     <article id="borders" class="article">
       <h2 id="borders">Borders</h2>
-      <p>Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.</p>
+      <p>Adds or removes a keyline to a given element. The border color used is the keyline value specified in your <span class="var">$colours</span> map.</p>
       <table>
         <tr>
           <td>border-left</td>
@@ -168,36 +141,40 @@
           <td>no-border</td>
         </tr>
       </table>
-      <pre><code class="language-html">&lt;div class="border-bottom"&gt;&lt;/div&gt;</code></pre>
+      <div class="example"> </div>
       <pre><code class="language-scss">.border-bottom {
  border-bottom: 1px solid #F5F5F5 !important;
 }</code></pre>
     </article>
     <article id="margin" class="article">
       <h2>Margin & Padding</h2>
-      <p>Generated from the $sizes map.</p>
+      <p>Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.</p>
       <table>
         <tr>
-          <td>padding-{direction}-{size}</td>
+          <td>.padding-{direction}-{size}</td>
           <td>Applies padding in the specified direction of the specified size.</td>
         </tr>
         <tr>
-          <td>margin-{direction}-{size}</td>
+          <td>.margin-{direction}-{size}</td>
           <td>Applies padding in the specified direction of the specified size.</td>
         </tr>
         <tr>
-          <td>no-margin</td>
+          <td>.no-margin</td>
           <td>Removes all margins</td>
         </tr>
         <tr>
-          <td>no-padding</td>
+          <td>.no-padding</td>
           <td>Removes all padding</td>
         </tr>
       </table>
-      <pre><code class="language-html">&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;</code></pre>
-      <pre><code class="language-scss">.background-brand-primary {
- margin-bottom: 32px !important;
-}</code></pre>
+      <div class="example">
+        <div style="height: 40px" class="background-brand-primary margin-bottom-quarter"></div>
+        <div style="height: 40px" class="background-brand-primary margin-bottom-base"></div>
+      </div>
+      <pre><code class="language-html">&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
+&lt;div class="margin-base"&gt;&lt;/div&gt;
+&lt;div class="padding-left-half"&gt;&lt;/div&gt;
+</code></pre>
     </article>
     <article class="article">
       <h2>Layout</h2>
@@ -218,17 +195,19 @@
           <td>clearfix</td>
         </tr>
       </table>
-      <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;</code></pre>
-      <pre><code class="language-scss">.background-brand-primary {
- background-color: #F5F5F5 !important;
-}</code></pre>
+      <pre><code class="language-html">&lt;div class="block"&gt;&lt;/div&gt;
+&lt;div class="block"&gt;&lt;/div&gt;
+&lt;div class="block"&gt;&lt;/div&gt;
+&lt;div class="block"&gt;&lt;/div&gt;
+&lt;div class="block"&gt;&lt;/div&gt;
+</code></pre>
     </article>
     <article id="margin" class="article">
       <h2>Grid</h2>
       <h3>Rows & Columns</h3>
       <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
       <div class="example">
-        <div class="columns">
+        <div class="row">
           <div class="columns-4">Columns 4</div>
           <div class="columns-5">Columns 5</div>
           <div class="columns-3">Columns 3</div>
@@ -241,7 +220,7 @@
 &lt;/div&gt;</code></pre>
       <p>Helper classes are also available to create different grids for different breakpoints.</p>
       <div class="example">
-        <div class="columns">
+        <div class="row">
           <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
           <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
           <div class="columns-4-device-small columns-4-device-medium"> Columns 3</div>
@@ -255,25 +234,13 @@
       <h3>Offsets</h3>
       <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
       <div class="example">
-        <div class="columns">
-          <div class="columns-4 offset-8">Columns 4</div>
+        <div class="row">
+          <div class="columns-3 offset-9">columns-3, offset-9</div>
         </div>
       </div>
       <pre><code class="language-html">&lt;div class="columns"&gt;
- &lt;div class="columns-4 offset-8"&gt;
+ &lt;div class="columns-3 offset-9"&gt;
 &lt;/div&gt;</code></pre>
-      <h3>Galleries</h3>
-      <p>Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns.</p>
-      <p>They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.</p>
-      <div class="example">
-        <ul class="gallery-5">
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-          <li class="gallery-item"></li>
-        </ul>
-      </div>
       <pre><code class="language-html">&lt;div class="columns"&gt;
  &lt;div class="columns-4"&gt;
  &lt;div class="columns-5"&gt;
@@ -283,32 +250,61 @@
     <article id="text-align" class="article">
       <h2>Typography</h2>
       <p>Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.</p>
-      <table>
-        <tr>
-          <td>alignment</td>
-          <td>left | right | center</td>
-        </tr>
-        <tr>
-          <td>size</td>
-          <td>
-            Helpers for creating the various text sizes specified in your settings file.
-            x-small | small | base | medium | medium-large | large | x-large
-          </td>
-        </tr>
-        <tr>
-          <td>transform</td>
-          <td>uppercase | lowercase | capitalize</td>
-        </tr>
-      </table>
       <h3>Alignment</h3>
+      <p>Left, right and center.</p>
       <div class="example">
-        <div class="text-uppercase">This text is uppercase</div>
-        <div class="text-capitalized">This text is capitalised</div>
         <div class="text-left">This text is left-aligned</div>
         <div class="text-center">This text is centered</div>
         <div class="text-right">This text is right-aligned</div>
       </div>
-      <pre><code class="language-html">&lt;div class="columns"&gt;This text is uppercase/div</code></pre>
+      <pre><code class="language-html">&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+</code></pre>
+      <h3>Size</h3>
+      <p>These are generated using values specified in your $font-sizes map.</p>
+      <div class="example">
+        <div class="text-x-large">This text is X-Large</div>
+        <div class="text-large">This text is Large</div>
+        <div class="text-medium-large">This text is Medium-Large</div>
+        <div class="text-medium">This text is Medium</div>
+        <div class="text-base">This text is Base</div>
+        <div class="text-small">This text is Small</div>
+        <div class="text-x-small">This text is X-Small</div>
+      </div>
+      <pre><code class="language-html">&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+</code></pre>
+      <h3>Colours</h3>
+      <p>These are generated using values stored in your $colours map.</p>
+      <div class="example">
+        <div class="text-brand-primary">Text brand primary</div>
+        <div class="text-brand-secondary">Text brand secondary</div>
+        <div class="text-greyscale-400">Text brand primary</div>
+      </div>
+      <pre><code class="language-html">&lt;div class="text-brand-primary"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+</code></pre>
+      <h3>Transform</h3>
+      <p>Uppercase or capitalised.</p>
+      <div class="example">
+        <div class="text-uppercase">This text is uppercase</div>
+        <div class="text-capitalized">This text is capitalised</div>
+      </div>
+      <pre><code class="language-html">&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+</code></pre>
     </article>
     <article class="article">
       <h2>Visibility</h2>

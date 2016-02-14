@@ -1,3 +1,45 @@
+@mixin gallery($keys...)
+	+respond-below($gridBreakpoint)
+		width: 100%
+		
+	$items: length($keys)
+	@if $items > 1
+		@for $i from 1 through $items
+			$key: nth($keys, $i)
+			&:not(:first-child)
+				margin-top: $gutterWidth
+				+respond-above($gridBreakpoint)
+					&:nth-child(-n+#{$items})
+						margin-top: 0
+
+			&:nth-child(#{$items}n + #{$i})
+				+respond-above($gridBreakpoint)
+					width: columnCalc($key)
+					margin-right: $gutterWidth
+					float: left
+					
+			&:nth-child(#{$items}n)
+				margin-right: 0
+
+	@else
+		$key: nth($keys, 1)
+		$items: $columnCount / $key
+		
+		&:not(:first-child)
+			margin-top: $gutterWidth
+			+respond-above($gridBreakpoint)
+				&:nth-child(-n+#{$items})
+					margin-top: 0
+
+		+respond-above($gridBreakpoint)
+			width: columnCalc($key)
+			margin-right: $gutterWidth
+			float: left
+			
+			&:nth-child(#{$items}n + #{$items})
+				margin-right: 0
+
+
 // @for $i from 1 through settings(layout, columns)
 // 	@each $key, $value in settings(breakpoints)
 // 		.gallery-#{$i}-#{$key}
@@ -30,90 +72,5 @@
 // 					padding: 0 settings(layout, gutter) !important
 // 					// &:nth-last-of-type(-n+#{$i})
 // 					// 	margin-bottom: 0
-
-
-@mixin gallery($keys...)
-	+respond-below(grid)
-		width: 100%
-
-	$items: length($keys)
-
-	@if $items > 1
-		@for $i from 1 through $items
-			$key: nth($keys, $i)
-
-			&:not(:first-child)
-				margin-top: $gutterWidth
-				+respond-above(grid)
-					&:nth-child(-n+#{$items})
-						margin-top: 0
-
-
-			&:nth-child(#{$items}n + #{$i})
-				@debug #{$key}
-
-				+respond-above(grid)
-					// @debug columnCalc($key)
-					width: columnCalc($key)
-					margin-right: $gutterWidth
-					float: left
-
-
-			&:nth-child(#{$items}n)
-				margin-right: 0
-
-	@else
-		$key: nth($keys, 1)
-		$items: grid(columns) / $key
-
-		&:not(:first-child)
-			margin-top: $gutterWidth
-			+respond-above(grid)
-				&:nth-child(-n+#{$items})
-					margin-top: 0
-
-		+respond-above(grid)
-
-			width: columnCalc($key)
-			margin-right: $gutterWidth
-			float: left
-
-
-			&:nth-child(#{$items}n + #{$items})
-				margin-right: 0
-
-	// @debug: $items
-
-// 		Find fix for variable heights
-// 		&:nth-child(3n + 1)
-// // 			clear: both
-
-.photo-gallery
-	@include clearfix
-
-	.photo-gallery-item
-		+gallery(3)
-		background-color: lightpink
-		height: 40px
-
-.element
-	&:nth-child(3n + 2)
-		background: yellow !important
-
-	&:nth-child(3n + 1)
-		background: red !important
-
-	&:nth-child(3n + 3)
-		background: purple !important
-
-// .element:nth-child(2n)
-// 	background: red !important
-
-.element
-	+gallery(6, 2, 4)
-
-
-.element-2
-	+gallery(2,2,3,5)
 
 

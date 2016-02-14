@@ -3,29 +3,29 @@ include _inc/_layout.jade
 
 .iframe-container
 	.main-container
-
 		h1.page-title Helpers
 
 		article.article.introduction
+			p Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable. 
 
-			p Helpers class should generally be used sparingly. All helper class attributes are suffixed with an !important flag to avoid specificity issues. Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable for many features that will be added in the future. So whenever you want to create a new component, you’ll just need to combine some classes together to build it.
+			p All helper classes use the !important flag to avoid specificity issues. 
 
-			h3 Background Color
-			p Generates a background-color helper for all colors specified in the palette category in the settings map. To append the colour category and name to the helper.
-
+		article.article
+			h2 Background Color
+			p Generates a background-color helper for all colors specified in your $colours map, in the following format: background-{$category}-{$value}.
+			.example
+				div.background-brand-primary(style="height: 40px")
+				div.background-secondary-orange(style="height: 40px")
+				div.background-greyscale-50(style="height: 40px")
 			pre
-				code.language-html
-					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
-
-			pre
-				code.language-scss
-					| .background-brand-primary {
-					|  background-color: #F5F5F5 !important;
-					| }
+				code.language-html.
+					&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+					&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+					&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
 
 		article#borders.article
 			h2#borders Borders
-			p Adds or removes a keyline to a given element. The border color used is the keyline value specified in the settings map.
+			p Adds or removes a keyline to a given element. The border color used is the keyline value specified in your <span class="var">$colours</span> map.
 			table
 				tr
 					td border-left
@@ -40,9 +40,7 @@ include _inc/_layout.jade
 				tr
 					td no-border
 
-			pre
-				code.language-html
-					| &lt;div class="border-bottom"&gt;&lt;/div&gt;
+			.example 
 
 			pre
 				code.language-scss
@@ -50,34 +48,33 @@ include _inc/_layout.jade
 					|  border-bottom: 1px solid #F5F5F5 !important;
 					| }
 
-
-		article#margin.article
+		article.article(id="margin")
 			h2 Margin & Padding
-			p Generated from the $sizes map.
+			p Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.
 
 			table
 				tr
-					td padding-{direction}-{size}
+					td .padding-{direction}-{size}
 					td Applies padding in the specified direction of the specified size.
 				tr
-					td margin-{direction}-{size}
+					td .margin-{direction}-{size}
 					td Applies padding in the specified direction of the specified size.
 				tr
-					td no-margin
+					td .no-margin
 					td Removes all margins
 				tr
-					td no-padding
+					td .no-padding
 					td Removes all padding
 
-			pre
-				code.language-html
-					| &lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
+			.example
+				div.background-brand-primary.margin-bottom-quarter(style="height: 40px")
+				div.background-brand-primary.margin-bottom-base(style="height: 40px")
 
 			pre
-				code.language-scss
-					| .background-brand-primary {
-					|  margin-bottom: 32px !important;
-					| }
+				code.language-html.
+					&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
+					&lt;div class="margin-base"&gt;&lt;/div&gt;
+					&lt;div class="padding-left-half"&gt;&lt;/div&gt;
 
 		article.article
 			h2 Layout
@@ -94,25 +91,21 @@ include _inc/_layout.jade
 					td clearfix
 
 			pre
-				code.language-html
-					| &lt;div class="background-brand-primary"&gt;&lt;/div&gt;
-
-			pre
-				code.language-scss
-					| .background-brand-primary {
-					|  background-color: #F5F5F5 !important;
-					| }
-
+				code.language-html.
+					&lt;div class="block"&gt;&lt;/div&gt;
+					&lt;div class="block"&gt;&lt;/div&gt;
+					&lt;div class="block"&gt;&lt;/div&gt;
+					&lt;div class="block"&gt;&lt;/div&gt;
+					&lt;div class="block"&gt;&lt;/div&gt;
 
 		article#margin.article
 			h2 Grid
 
 			h3 Rows & Columns
-
 			p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
 
 			.example
-				.columns
+				.row
 					.columns-4 Columns 4
 					.columns-5 Columns 5
 					.columns-3 Columns 3
@@ -128,7 +121,7 @@ include _inc/_layout.jade
 
 			p Helper classes are also available to create different grids for different breakpoints.
 			.example
-				.columns
+				.row
 					.columns-4-device-small.columns-5-device-medium Columns 4
 					.columns-4-device-small.columns-3-device-medium  Columns 5
 					.columns-4-device-small.columns-4-device-medium  Columns 3
@@ -143,29 +136,25 @@ include _inc/_layout.jade
 
 
 			h3 Offsets
-
 			p Offsets allow you to shift a column to the right by a specified number of columns.
 			.example
-				.columns
-					.columns-4.offset-8 Columns 4
+				.row
+					.columns-3.offset-9 columns-3, offset-9
 			pre
 				code.language-html
 					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4 offset-8"&gt;
+					|  &lt;div class="columns-3 offset-9"&gt;
 					| &lt;/div&gt;
 
-			h3 Galleries
-
-			p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns.
-
-			p They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.
-			.example
-				ul.gallery-5
-					li.gallery-item
-					li.gallery-item
-					li.gallery-item
-					li.gallery-item
-					li.gallery-item
+			//- h3 Galleries
+			//- p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns. They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.
+			//- .example
+			//- 	ul.gallery-5
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+			//- 		li.gallery-item
+			//- 		li.gallery-item
 
 			pre
 				code.language-html
@@ -180,35 +169,69 @@ include _inc/_layout.jade
 		article#text-align.article
 			h2 Typography
 			p Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.
-			table
-				tr
-					td alignment
-					td left | right | center
-				tr
-					td size
-					td
-						| Helpers for creating the various text sizes specified in your settings file.
-						| x-small | small | base | medium | medium-large | large | x-large
-				tr
-					td transform
-					td uppercase | lowercase | capitalize
-
 
 			h3 Alignment
-
+			p Left, right and center.
 			.example
-				.text-uppercase This text is uppercase
-				.text-capitalized This text is capitalised
 				.text-left This text is left-aligned
 				.text-center This text is centered
 				.text-right This text is right-aligned
 
 			pre
-				code.language-html
-					| &lt;div class="columns"&gt;This text is uppercase/div
+				code.language-html.
+					&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+					&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+					&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 
+			h3 Size
+			p These are generated using values specified in your $font-sizes map.
+			.example
+				.text-x-large This text is X-Large
+				.text-large This text is Large
+				.text-medium-large This text is Medium-Large
+				.text-medium This text is Medium
+				.text-base This text is Base
+				.text-small This text is Small
+				.text-x-small This text is X-Small
 
+			pre
+				code.language-html.
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
 
+			h3 Colours
+			p These are generated using values stored in your $colours map.
+			.example
+				.text-brand-primary Text brand primary
+				.text-brand-secondary Text brand secondary
+				.text-greyscale-400 Text brand primary
+
+			pre
+				code.language-html.
+					&lt;div class="text-brand-primary"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+
+			h3 Transform
+			p Uppercase or capitalised.
+			.example
+				.text-uppercase This text is uppercase
+				.text-capitalized This text is capitalised
+
+			pre
+				code.language-html.
+					&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+					&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+					&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 
 		article.article
 			h2 Visibility

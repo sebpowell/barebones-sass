@@ -46,13 +46,17 @@ $fonts: (
 );
 
 $breakpoints: (
-	grid: 760px,
 	device-x-small: 350px,
 	device-small: 480px,
 	device-medium: 780px,
 	device-medium-large: 900px,
 	device-large: 1080px,
 	device-x-large: 1200px
+);
+
+$misc: (
+	mobile-gutter: 24px,
+	prefix: null,
 );
 
 $font-sizes: (
@@ -73,20 +77,19 @@ $layers: (
 );
 
 $grid: (
-	columns: 12,
-	gutter: 1/2,
+	// columns: 12,
+	// gutter: 1/2,
+	// breakpoint: 4000px,
 	mobile-gutter: 24px,
-	site-width: 760px,
-	mobile-padding: 24px,
+	mobile-padding: 24px
 );
 
 $sizes: (
-	font-base-size: 16px,
-  quarter: 16px / 4,
-  half: 16px / 2,
+  quarter: 4px,
+  half: 8px,
   base: 16px,
-  double-half: 16px * 1.5,
-  double: 16px * 2,
-  triple: 16px * 3,
-  quad: 16px * 4,
+  double-half: 24px,
+  double: 32px,
+  triple: 48px,
+  quad: 64px,
 );

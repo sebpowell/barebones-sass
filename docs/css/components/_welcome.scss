@@ -1,12 +1,12 @@
-$selling-points: (device-small: 12, device-medium: 4);
-
-
 .selling-points {
 	@include clearfix;
 }
 
 .selling-point {
-	@include grid($selling-points);
+	@include respond-above(device-medium) {
+		@include span(4);
+	}
+	
 	.selling-point-title {
 		font-size: 16px;
 		font-weight: weights(primary, semi-bold);

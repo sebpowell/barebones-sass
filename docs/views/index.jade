@@ -7,22 +7,19 @@ include _inc/_layout.jade
 		h1.page-title Getting Started
 
 		article.article
-			p.text-medium-large Barebones is a <a href="http://sass-lang.com/" target="_blank">SASS</a> boilerplate to help you build a maintanable and scalable front-end framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of mixins, put together in a convenient package to kickstart your next project. It includes only the bare essentials – so you can spend less time overwriting and more time creating.
+			p.text-medium-large Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.
 
 			h2 Why does the world need Barebones?
 
 			p It probably doesn't, but here goes; we wanted to create a lightweight SASS library that we could share between projects – powerful enough to allow us to focus on design, and lightweight enough to stay out of our way.
 
-			p Over time, we've learned a lot about how to structure our SASS projects in a cohesive, scalable and maintainable way. We thought other people might find this useful and decided to release our work in the public domain. My decision was to pick out the best of the techniques I’d discovered and combine them all in one place, so that every new project I work on is using the most modern technologies I know about.
+			p Over time, we've learned a lot about how to structure our SASS projects in a cohesive, scalable and maintainable way. We thought other people might find this knowledge useful so decided to release this as a package in the public domain. 
 
 			h2 Why build your own framework?
 
-			p Existing frameworks such as Bootstrap and Foundation are great for prototyping but are typically bloated and lack flexibility (if you want to create your own theme, you're going to spend a lot of time with the !important flag – which is a great way for things to quickly become completley unmanageable).
+			p Existing frameworks such as Bootstrap and Foundation are great for prototyping, but typically lack flexibility. If you want to create your own theme, you're going to spend a lot of time with the !important flag – a great way for things to quickly become completely unmanageable.
 
-			p Buidling your own framework puts you in the driving seat, giving you full control over how your app or website looks, without being shoe-horned into someone else's design system.
-
-			p comes with a series of SCSS and JS files designed to start all projects at the same point, avoiding the need to rewrite code on every project.The SCSS files reset browser styles to a default point, and includes a large range of reusable mixins. allowing you to quickly get off the ground and begin coding with a grid system, and add other components and modules as required.
-
+			p Building your own framework puts you in the driving seat, giving you full control over how your app or website looks, without being shoe-horned into someone else's design system.
 
 		article.article(id="installing")
 
@@ -31,7 +28,7 @@ include _inc/_layout.jade
 			p If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.
 
 			h3 1. Install the package
-			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a>.
+			p Barebones is available as a Bower or NPM package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.
 
 			pre
 				code.language-bash
@@ -39,10 +36,19 @@ include _inc/_layout.jade
 
 			h3 2. Create a settings file
 
-			p Barebones code allows you to define your own settings – just brab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.
+			p Barebones code allows you to specify your own individual project settings – just grab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.
 
 			h3 3. Create your main SASS file
-			p Import your newly created settings file, followed by <span class="var">_barebones.sass</span> into your main SASS file. It should look like this:
+			p Import your newly created settings file, followed by <span class="var">_barebones.sass</span> into your main SASS file. When you're done, it should look like this:
+
+			pre
+				code.language-html.
+					| - css
+					|	- main.sass
+					| -	_settings.sass
+					bower-components // Or node_modules, depending on which package manager you're using
+						barebones
+							_barebones.sass
 
 			pre
 				code.language-scss
@@ -55,7 +61,7 @@ include _inc/_layout.jade
 
 			h2 Requirements
 
-			p Barebones relies heavily on SASS maps to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
+			p Barebones relies heavily on <a href="">SASS maps</a> to work, so you'll need to make sure you're using SASS 3.3 or higher. Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
 
 		article.article(id="support")
 
@@ -65,9 +71,8 @@ include _inc/_layout.jade
 
 		article.article(id="background")
 
-			h2 Background Reading
-
-			p Barebones was heavily inspired by a variety of articles. Here are some of them in case you're interested in doing some more reading.
+			h2 Background Reading & Acknoledgments
+			p Barebones was heavily inspired by other people's brains. Here are some of them in case you're interested in doing some more reading.
 
 			ul.bullet-list
 				li

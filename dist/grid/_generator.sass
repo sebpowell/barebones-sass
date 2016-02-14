@@ -1,50 +1,18 @@
-@mixin span($columns, $position: "", $gutter: "", $offset: "", $device: null)
+@mixin span($columns, $position: "", $gutter: "", $offset: "")
 	margin-right: $gutterWidth
 	float: left
-
-	@if $device != null
-		+respond-above($device)
-			width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
-	@else
-		+respond-above(grid)
-			width: (($columnWidth * $columns) + (($columns - 1) * $gutterWidth))
-			@if $gutter == false
+	width: 100%
+	margin-bottom: $gutterWidth
+	
+	+respond-above($gridBreakpoint)
+		width: columnCalc($columns)
+		@if $gutter == false
+			margin-right: 0
+		@else
+			margin-right: $gutterWidth
+			&:last-child
 				margin-right: 0
-			@else
-				margin-right: $gutterWidth
 
-			@if $position == "last"
-				margin-right: 0
-				float: right
-
-	@if $position == "last"
-		margin-right: 0
-		float: right
-
-@mixin grid($map)
-	@each $device, $size in $breakpoints
-		@if map-has-key($map, $device)
-			@if map-get($map, $device) == 12
-				// margin-bottom: $gutterWidth * 3
-
-
-			+respond-above($device)
-				$columnSpan: map-get($map, $device)
-				float: left
-
-				@if map-has-key($map, "gutter")
-					@if map-get($map, "gutter") == null
-						width: (100% / settings(layout, grid, columns)) * $columnSpan
-						margin-right: 0
-
-				@else
-					width: (($columnWidth * $columnSpan) + (($columnSpan - 1) * $gutterWidth))
-					margin-right: $gutterWidth
-
-					&:last-child
-						margin-right: 0
-
-
-
-
-
+		@if $position == "last"
+			margin-right: 0
+			float: right

@@ -1,20 +1,4 @@
-// Get total number of gutters.
-
-
-
-
-$gutters: ( grid(columns) / grid(gutter) ) + ( grid(columns) - 1)
-
-$gutterCount: ( grid(columns) - 1 )
-$gutterWidth: 100% / $gutters
-$totalGutterWidth: $gutterWidth * $gutterCount
-$columnWidth: (100% - $totalGutterWidth) / grid(columns)
-$totalColumnWidth: $columnWidth + $gutterWidth
-$guttersPerColumn: (1 / grid(gutter)) + 1
-
-
-@function columnCalc($columns)
-	@return (($columns * $columnWidth) + (($columns - 1) * $gutterWidth))
+@import "config"
 
 @import "container"
 @import "columns"

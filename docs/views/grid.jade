@@ -1,44 +1,35 @@
 extends  _inc/_layout.jade
-
 block body
-
 	.iframe-container
-
 		.main-container
-
-
 			h1.page-title Grid
 			article.article.introduction
-
-				p Barebones includes a flexible, responsive grid system. It's a semantic grid, allowing you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary divs.
-
-
-
+				p Barebones includes a responsive and semantic grid system. It allows you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary divs.
 
 			article.article
 				h2 Grid Settings
-				p Specify your grid settings in your settings file. The following settings are available.
+				p Specify your grid settings in your settings file. If nothing is specified, default values are applied. 
 
 				table
-
+					thead
+						th Setting
+						th Default Value
+						th What it Does
 					tr
-						td columns (default: 12)
+						td columns
 						td 12
-						td Number of columns in your grid
+						td Specifies the number of columns in your grid
 					tr
-						td breakpoint (default: device-medium – 720px)
-						td The point at which all column sizes should expand to 100%.
+						td breakpoint
+						td 720px
+						td The point at which columns should expand to 100%.
 					tr
-						td gutter (default: 1/4)
-						td Expressed as a calculated as a fraction of the column widthns as such: 1/8, 1/4 etc.
-					tr
-						td grid-type (default: margin)
-						td Specify whether you want to create gutters using padding or margin.
+						td gutter
+						td 1/4
+						td Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2)
 
 
-			article.article
-				h2 Columns
-				p First, you'll need to create a container.
+			article.article(id="containers")
 				h2 Containers
 
 				p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
@@ -64,6 +55,9 @@ block body
 						| .container {
 						|   @include container(1000px);
 						| }
+			
+			article.article(id="columns")
+				h2 Columns
 
 				p Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.
 
@@ -89,16 +83,10 @@ block body
 						  @include span(8, $position: last); // Creates a column that spans 8 columns
 						}
 
-
-
 				.example.margin-bottom-base
 					.example-wrapper
 						.example-sidebar(style="background-color: lightpink")
 						.example-content-block(style="background-color: lightpink")
-
-
-
-
 
 			article.article
 				h2 Galleries
@@ -136,23 +124,6 @@ block body
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
 
-
-
 			article#containers.article
-
 				h2 Helper Classes
-
 				p Various helper classes are also generated to quickly create grids. See here for more info.
-
-
-
-
-
-
-
-
-
-
-
-
-
