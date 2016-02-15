@@ -1,4 +1,42 @@
 
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	setNavigation();
+      	$(".mobile-navigation-toggle").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      		$(".backdrop").toggleClass("is-visible");
+      		$(this).toggleClass("close");
+      	});
+      });
+      
+    </script>
+    <script src="../../javascript/application.js"></script>
+  </head>
+</html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -16,6 +54,7 @@
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
         <ul class="sub-navigation">
+          <li><a href="#import">Import</a></li>
           <li><a href="#colours">Colours</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
@@ -75,17 +114,17 @@
             <th>What it Does</th>
           </thead>
           <tr>
-            <td>columns</td>
+            <td><span class="var">columns</span></td>
             <td>12</td>
             <td>Specifies the number of columns in your grid</td>
           </tr>
           <tr>
-            <td>breakpoint</td>
+            <td><span class="var">breakpoint</span></td>
             <td>720px</td>
             <td>The point at which columns should expand to 100%.</td>
           </tr>
           <tr>
-            <td>gutter</td>
+            <td><span class="var">gutter</span></td>
             <td>1/4</td>
             <td>Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2)</td>
           </tr>
@@ -94,14 +133,17 @@
       <article id="containers" class="article">
         <h2>Containers</h2>
         <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.</p>
-        <p>You can create a container using the <span class="function">container($max-width)</span> function.</p>
+        <p>You can create a container using the <span class="var">container()</span> function.</p>
         <table>
+          <thead>
+            <th colspan="2">Options</th>
+          </thead>
           <tr>
-            <td>$max-width</td>
+            <td><span class="var">$max-width</span></td>
             <td>container max-width</td>
           </tr>
           <tr>
-            <td>$mobile-gutter <em>(true false)</em></td>
+            <td><span class="var">$mobile-gutter</span></td>
             <td>removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
           </tr>
         </table>
@@ -148,18 +190,19 @@
       </article>
       <article class="article">
         <h2>Galleries</h2>
-        <p>Galleries are made up of elements that repeat across multiple lines. Here's how you would create one.</p>
-        <pre><code class="language-scss">.photo-gallery {
+        <p>Galleries are made up of elements that repeat across multiple lines.</p>
+        <pre class="margin-bottom-double"><code class="language-scss">.photo-gallery {
   @include clearfix;
   // Clears the floats.
 }
 
 .photo-gallery-item {
 	@include gallery(3);
-	// Creates a gallery with each item taking up 3 columns of your grid (on a 12 grid-layout, this would be 4 items).
+	// Creates a gallery with each item taking up 3 columns of your grid 
+	// (on a 12 grid-layout, this would be 4 items).
 }
 </code></pre>
-        <div class="example">
+        <div class="example margin-bottom-double">
           <div class="photo-gallery">
             <div class="photo-gallery-item"></div>
             <div class="photo-gallery-item"></div>
@@ -173,17 +216,27 @@
             <div class="photo-gallery-item"></div>
           </div>
         </div>
-        <div class="example photo-gallery">
+        <p>The gallery function also allows you to create asmettric galleries. </p>
+        <div class="example photo-gallery margin-bottom-double">
           <div style="background-color: lightpink; height: 40px" class="element"></div>
           <div style="background-color: lightpink; height: 40px" class="element"></div>
           <div style="background-color: lightpink; height: 40px" class="element"></div>
           <div style="background-color: lightpink; height: 40px" class="element"></div>
           <div style="background-color: lightpink; height: 40px" class="element"></div>
         </div>
+        <pre><code class="language-scss">.photo-gallery {
+  @include clearfix;
+  // Clears the floats.
+}
+
+.photo-gallery-item {
+	@include gallery(3, 6, 4);
+}
+</code></pre>
       </article>
       <article id="containers" class="article">
         <h2>Helper Classes</h2>
-        <p>Various helper classes are also generated to quickly create grids. See here for more info.</p>
+        <p>Various helper classes are also generated to quickly create grids – <a href="helpers.html">see here</a>.</p>
       </article>
     </div>
   </div>

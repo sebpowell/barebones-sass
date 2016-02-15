@@ -16,17 +16,30 @@
 table
 	table-layout: fixed
 	width: 100%
-	border: 1px solid colours(keyline, light)
-	box-shadow: 0 0 3px rgba(00,00,00,0.05)
+	// box-shadow: 0 0 3px rgba(00,00,00,0.05)
 	border-radius: 3px
 	padding: 0
 	margin: 0
-	border-collapse: collapse
+	border-collapse: initial
+	border-spacing: 0
 	font-size: 14px
 	margin-bottom: sizes(double)
 	td
 		padding: sizes(base)
+		border-left: 1px solid colours(keyline, light)
+		border-bottom: 1px solid colours(keyline, light)
 
+	tr:first-child
+		td:first-child
+			border-radius: 3px 0 0 0
+		td:last-child
+			border-radius-right: 0 3px 0 0
+	tr:last-child
+		td:first-child
+			border-radius: 0 0 0 3px
+		td:last-child
+			border-radius: 0 0 3px 0
+			
 	tr
 		td:first-child
 			font-weight: bold
@@ -41,9 +54,10 @@ table
 
 	thead
 		th
-			color: colors(greyscale, medium)
 			font-weight: 700
-			font-size: 12px
-			padding: sizes(base)
+			font-size: 14px
+			color: colours(greyscale, 800)
+			padding: sizes(half) sizes(base)
+			text-align: left
 			background: colours(greyscale, 100)
 			border-bottom: 1px solid colors(keyline, light)

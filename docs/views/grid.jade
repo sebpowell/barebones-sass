@@ -16,15 +16,15 @@ block body
 						th Default Value
 						th What it Does
 					tr
-						td columns
+						td <span class="var">columns</span>
 						td 12
 						td Specifies the number of columns in your grid
 					tr
-						td breakpoint
+						td <span class="var">breakpoint</span>
 						td 720px
 						td The point at which columns should expand to 100%.
 					tr
-						td gutter
+						td <span class="var">gutter</span>
 						td 1/4
 						td Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2)
 
@@ -33,14 +33,16 @@ block body
 				h2 Containers
 
 				p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
-				p You can create a container using the <span class="function">container($max-width)</span> function.
+				p You can create a container using the <span class="var">container()</span> function.
 
 				table
+					thead
+						th(colspan="2") Options
 					tr
-						td $max-width
+						td <span class="var">$max-width</span>
 						td container max-width
 					tr
-						td $mobile-gutter <em>(true false)</em>
+						td <span class="var">$mobile-gutter</span>
 						td removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).
 
 				pre
@@ -90,8 +92,8 @@ block body
 
 			article.article
 				h2 Galleries
-				p Galleries are made up of elements that repeat across multiple lines. Here's how you would create one.
-				pre
+				p Galleries are made up of elements that repeat across multiple lines.
+				pre.margin-bottom-double
 					code.language-scss.
 						.photo-gallery {
 						  @include clearfix;
@@ -100,10 +102,11 @@ block body
 
 						.photo-gallery-item {
 							@include gallery(3);
-							// Creates a gallery with each item taking up 3 columns of your grid (on a 12 grid-layout, this would be 4 items).
+							// Creates a gallery with each item taking up 3 columns of your grid 
+							// (on a 12 grid-layout, this would be 4 items).
 						}
 
-				.example
+				.example.margin-bottom-double
 					.photo-gallery
 						.photo-gallery-item
 						.photo-gallery-item
@@ -116,14 +119,26 @@ block body
 						.photo-gallery-item
 						.photo-gallery-item
 
+				p The gallery function also allows you to create asmettric galleries. 
 
-				.example.photo-gallery
+				.example.photo-gallery.margin-bottom-double
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
 					.element(style="background-color: lightpink; height: 40px")
+
+				pre
+					code.language-scss.
+						.photo-gallery {
+						  @include clearfix;
+						  // Clears the floats.
+						}
+
+						.photo-gallery-item {
+							@include gallery(3, 6, 4);
+						}
 
 			article#containers.article
 				h2 Helper Classes
-				p Various helper classes are also generated to quickly create grids. See here for more info.
+				p Various helper classes are also generated to quickly create grids – <a href="helpers.html">see here</a>.

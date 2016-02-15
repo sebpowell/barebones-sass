@@ -6,13 +6,13 @@ include _inc/_layout.jade
 		h1.page-title Helpers
 
 		article.article.introduction
-			p Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable. 
+			p Helper classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each helper class is responsible for doing one job and doing it well. 
 
-			p All helper classes use the !important flag to avoid specificity issues. 
+			p All helper classes use the <span class="var">!important</span> flag to avoid specificity issues. 
 
 		article.article
 			h2 Background Color
-			p Generates a background-color helper for all colors specified in your $colours map, in the following format: background-{$category}-{$value}.
+			p Generates a background-color helper for all colors specified in your <span class="var">$colours</span> map, in the following format: <span class="var">background-{$category}-{$value}</span>.
 			.example
 				div.background-brand-primary(style="height: 40px")
 				div.background-secondary-orange(style="height: 40px")
@@ -54,16 +54,16 @@ include _inc/_layout.jade
 
 			table
 				tr
-					td .padding-{direction}-{size}
+					td <span class="var">.padding-{direction}-{size}</span>
 					td Applies padding in the specified direction of the specified size.
 				tr
-					td .margin-{direction}-{size}
+					td <span class="var">..margin-{direction}-{size}</span>
 					td Applies padding in the specified direction of the specified size.
 				tr
-					td .no-margin
+					td <span class="var">.no-margin</span>
 					td Removes all margins
 				tr
-					td .no-padding
+					td <span class="var">.no-padding</span>
 					td Removes all padding
 
 			.example
@@ -102,7 +102,7 @@ include _inc/_layout.jade
 			h2 Grid
 
 			h3 Rows & Columns
-			p To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.
+			p To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths.
 
 			.example
 				.row
@@ -184,7 +184,7 @@ include _inc/_layout.jade
 					&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 
 			h3 Size
-			p These are generated using values specified in your $font-sizes map.
+			p These are generated using values specified in your <span class="var">$font-sizes</span> map.
 			.example
 				.text-x-large This text is X-Large
 				.text-large This text is Large
@@ -197,15 +197,15 @@ include _inc/_layout.jade
 			pre
 				code.language-html.
 					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-large"&gt;This text is Large&lt;/div&gt;
+					&lt;div class="text-medium-large"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-medium"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-base"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-small"&gt;This text is X-Large&lt;/div&gt;
+					&lt;div class="text-x-small"&gt;This text is X-Large&lt;/div&gt;
 
 			h3 Colours
-			p These are generated using values stored in your $colours map.
+			p These are generated using values stored in your <span class="var">$colours</span> map.
 			.example
 				.text-brand-primary Text brand primary
 				.text-brand-secondary Text brand secondary
@@ -222,27 +222,29 @@ include _inc/_layout.jade
 					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
 
 			h3 Transform
-			p Uppercase or capitalised.
+			p Uppercase or capitalized.
 			.example
 				.text-uppercase This text is uppercase
-				.text-capitalized This text is capitalised
+				.text-capitalized This text is capitalized
 
 			pre
 				code.language-html.
-					&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
-					&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
-					&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+					&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
+					&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
 
 		article.article
 			h2 Visibility
 			p Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.
 
+			pre.margin-bottom-double-half
+				code.language-html.
+					&lt;div class="is-hidden"&gt;&lt;/div&gt; 
+					// Hidden at all times.
+			pre.margin-bottom-double-half
+				code.language-html.
+					&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; 
+					// Hides above the device-small breakpoint.
 			pre
-				code.language-html
-					| &lt;div class="is-hidden"&gt;&lt;/div&gt; // Hidden at all times.
-			pre
-				code.language-html
-					| &lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; // Hides above the device-small breakpoint.
-			pre
-				code.language-html
-					| &lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt; // Hides below the device-small breakpoint.
+				code.language-html.
+					&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
+					// Hides below the device-small breakpoint.

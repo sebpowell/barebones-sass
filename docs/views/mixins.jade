@@ -6,30 +6,28 @@ include _inc/_layout.jade
 	.main-container
 
 		h1.page-title Mixins
-		article#arrow.article
+		article.article(id="arrow")
 			h2 Arrow
 			p Creates a triangle, used for things like tooltips or dropdowns.
 
-			table.arguments
-				thead
-					th(colspan="2") Options
+			table
 				tr
-					td $direction
-					td Accepts either "up", "right", "down" or "left".
+					td <span class="var">$direction</span>
+					td up, down, left, right, top-right, top-left, bottom-right, bottom-left
 				tr
-					td $color
+					td <span class="var">$color</span>
 					td Any hex value (e.g. #E5E5E5)
 				tr
-					td $size
+					td <span class="var">$size</span>
 					td Any px value (e.g. 6px)
 
 
 			pre
 				code.language-scss.
 					.element {
-					  &:after {
-					   @include arrow(down, black, 20px);
-					  }
+						&:after {
+							@include arrow(down, black, 20px);
+						}
 					 }
 
 
@@ -39,11 +37,11 @@ include _inc/_layout.jade
 			pre
 				code.language-scss.
 					.element {
-					  @include placeholder(grey);
-					  	color: grry
-					   &:focus {
-					     placeholder(lightGrey);
-					   }
+						@include placeholder(grey);
+							color: grry
+						 &:focus {
+							 placeholder(lightGrey);
+						 }
 					 }
 
 		article#containers.article
@@ -52,7 +50,7 @@ include _inc/_layout.jade
 			pre
 				code.language-scss.
 					.element {
-					  @include uppercase(0.1em);
+						@include uppercase(0.1em);
 					 }
 
 
@@ -65,36 +63,38 @@ include _inc/_layout.jade
 			pre
 				code.language-scss.
 					.element {
-					  @include clearfix;
+						@include clearfix;
 					 }
 
 		article#ellipsis.article
 			h2 Ellipsis
-			p Adds ellipsis to limit text width.
+			p Adds ellipsis to limit text width <span class="var">ellipsis($width)<span>
 			pre
 				code.language-scss.
 					.element {
-					  @include text-overflow($width);
+						@include text-overflow(300);
 					}
 
 
 		article#media-queries.article
 			h2 Media Queries
-			p Use <span class="function">respond-above($device)</span> and <span class="function">respond-below($device)</span> to target different viewport sizes defined in your settings file.
+			p Use <span class="var">respond-above($device)</span> and <span class="var">respond-below($device)</span> to target different viewport sizes defined in your settings file.
 			pre
 				code.language-scss.
 					.element {
-					  @include respond-above(device-medium) {
-					    color: red;
-					  }
+						@include respond-below(device-medium) {
+							color: blue;
+						}
+						@include respond-above(device-medium) {
+							color: red;
+						}
 					}
 
 
 
 		article#no-bullet.article
 			h2 No Bullet
-			p
-				Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
 			pre
 				code.language-scss.
 					ul {

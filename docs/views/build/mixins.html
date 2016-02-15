@@ -37,6 +37,44 @@
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	setNavigation();
+      	$(".mobile-navigation-toggle").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      		$(".backdrop").toggleClass("is-visible");
+      		$(this).toggleClass("close");
+      	});
+      });
+      
+    </script>
+    <script src="../../javascript/application.js"></script>
+  </head>
+</html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -54,6 +92,7 @@
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
         <ul class="sub-navigation">
+          <li><a href="#import">Import</a></li>
           <li><a href="#colours">Colours</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
@@ -104,27 +143,24 @@
     <article id="arrow" class="article">
       <h2>Arrow</h2>
       <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
-      <table class="arguments">
-        <thead>
-          <th colspan="2">Options</th>
-        </thead>
+      <table>
         <tr>
-          <td>$direction</td>
-          <td>Accepts either "up", "right", "down" or "left".</td>
+          <td><span class="var">$direction</span></td>
+          <td>up, down, left, right, top-right, top-left, bottom-right, bottom-left</td>
         </tr>
         <tr>
-          <td>$color</td>
+          <td><span class="var">$color</span></td>
           <td>Any hex value (e.g. #E5E5E5)</td>
         </tr>
         <tr>
-          <td>$size</td>
+          <td><span class="var">$size</span></td>
           <td>Any px value (e.g. 6px)</td>
         </tr>
       </table>
       <pre><code class="language-scss">.element {
-  &:after {
-   @include arrow(down, black, 20px);
-  }
+	&:after {
+		@include arrow(down, black, 20px);
+	}
  }
 
 </code></pre>
@@ -133,11 +169,11 @@
       <h2>Placeholder</h2>
       <p>Changes form placeholder text color.</p>
       <pre><code class="language-scss">.element {
-  @include placeholder(grey);
-  	color: grry
-   &:focus {
-     placeholder(lightGrey);
-   }
+	@include placeholder(grey);
+		color: grry
+	 &:focus {
+		 placeholder(lightGrey);
+	 }
  }
 </code></pre>
     </article>
@@ -145,7 +181,7 @@
       <h2>Uppercase</h2>
       <p>Transforms text to uppercase, accepts an argument to specify letter-spacing. </p>
       <pre><code class="language-scss">.element {
-  @include uppercase(0.1em);
+	@include uppercase(0.1em);
  }
 
 </code></pre>
@@ -155,26 +191,29 @@
       <h2>Clearfix</h2>
       <p>Clears floats. Apply this to the parent element.</p>
       <pre><code class="language-scss">.element {
-  @include clearfix;
+	@include clearfix;
  }
 </code></pre>
     </article>
     <article id="ellipsis" class="article">
       <h2>Ellipsis</h2>
-      <p>Adds ellipsis to limit text width.</p>
+      <p>Adds ellipsis to limit text width <span class="var">ellipsis($width)<span></p>
       <pre><code class="language-scss">.element {
-  @include text-overflow($width);
+	@include text-overflow(300);
 }
 
 </code></pre>
     </article>
     <article id="media-queries" class="article">
       <h2>Media Queries</h2>
-      <p>Use <span class="function">respond-above($device)</span> and <span class="function">respond-below($device)</span> to target different viewport sizes defined in your settings file.</p>
+      <p>Use <span class="var">respond-above($device)</span> and <span class="var">respond-below($device)</span> to target different viewport sizes defined in your settings file.</p>
       <pre><code class="language-scss">.element {
-  @include respond-above(device-medium) {
-    color: red;
-  }
+	@include respond-below(device-medium) {
+		color: blue;
+	}
+	@include respond-above(device-medium) {
+		color: red;
+	}
 }
 
 
@@ -182,9 +221,7 @@
     </article>
     <article id="no-bullet" class="article">
       <h2>No Bullet</h2>
-      <p>
-        <Removes>list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</Removes>
-      </p>
+      <p>Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</p>
       <pre><code class="language-scss">ul {
  @include no-bullet;
 }</code></pre>

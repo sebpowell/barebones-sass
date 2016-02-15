@@ -37,6 +37,44 @@
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      $(document).ready(function() {
+      	setNavigation();
+      	$(".mobile-navigation-toggle").click(function() {
+      		$(".docs-navigation").toggleClass("show");
+      		$(".backdrop").toggleClass("is-visible");
+      		$(this).toggleClass("close");
+      	});
+      });
+      
+    </script>
+    <script src="../../javascript/application.js"></script>
+  </head>
+</html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
@@ -54,6 +92,7 @@
       </li>
       <li><a href="/docs/views/build/settings.html">Settings</a>
         <ul class="sub-navigation">
+          <li><a href="#import">Import</a></li>
           <li><a href="#colours">Colours</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
@@ -102,12 +141,12 @@
   <div class="main-container">
     <h1 class="page-title">Helpers</h1>
     <article class="article introduction">
-      <p>Helper classes can help remove repetition by creating a set of abstract classes that can be used over and over on HTML elements. Each helper class is responsible for doing one job and doing it well. Doing this will make your code more reusable and scalable. </p>
-      <p>All helper classes use the !important flag to avoid specificity issues. </p>
+      <p>Helper classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each helper class is responsible for doing one job and doing it well. </p>
+      <p>All helper classes use the <span class="var">!important</span> flag to avoid specificity issues. </p>
     </article>
     <article class="article">
       <h2>Background Color</h2>
-      <p>Generates a background-color helper for all colors specified in your $colours map, in the following format: background-{$category}-{$value}.</p>
+      <p>Generates a background-color helper for all colors specified in your <span class="var">$colours</span> map, in the following format: <span class="var">background-{$category}-{$value}</span>.</p>
       <div class="example">
         <div style="height: 40px" class="background-brand-primary"></div>
         <div style="height: 40px" class="background-secondary-orange"></div>
@@ -151,19 +190,19 @@
       <p>Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.</p>
       <table>
         <tr>
-          <td>.padding-{direction}-{size}</td>
+          <td><span class="var">.padding-{direction}-{size}</span></td>
           <td>Applies padding in the specified direction of the specified size.</td>
         </tr>
         <tr>
-          <td>.margin-{direction}-{size}</td>
+          <td><span class="var">..margin-{direction}-{size}</span></td>
           <td>Applies padding in the specified direction of the specified size.</td>
         </tr>
         <tr>
-          <td>.no-margin</td>
+          <td><span class="var">.no-margin</span></td>
           <td>Removes all margins</td>
         </tr>
         <tr>
-          <td>.no-padding</td>
+          <td><span class="var">.no-padding</span></td>
           <td>Removes all padding</td>
         </tr>
       </table>
@@ -205,7 +244,7 @@
     <article id="margin" class="article">
       <h2>Grid</h2>
       <h3>Rows & Columns</h3>
-      <p>To create a grid, use the .row class (clears the floats), then .column-{number} classes for different column widths.</p>
+      <p>To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths.</p>
       <div class="example">
         <div class="row">
           <div class="columns-4">Columns 4</div>
@@ -262,7 +301,7 @@
 &lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 </code></pre>
       <h3>Size</h3>
-      <p>These are generated using values specified in your $font-sizes map.</p>
+      <p>These are generated using values specified in your <span class="var">$font-sizes</span> map.</p>
       <div class="example">
         <div class="text-x-large">This text is X-Large</div>
         <div class="text-large">This text is Large</div>
@@ -273,15 +312,15 @@
         <div class="text-x-small">This text is X-Small</div>
       </div>
       <pre><code class="language-html">&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-large"&gt;This text is Large&lt;/div&gt;
+&lt;div class="text-medium-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-medium"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-base"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-small"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-x-small"&gt;This text is X-Large&lt;/div&gt;
 </code></pre>
       <h3>Colours</h3>
-      <p>These are generated using values stored in your $colours map.</p>
+      <p>These are generated using values stored in your <span class="var">$colours</span> map.</p>
       <div class="example">
         <div class="text-brand-primary">Text brand primary</div>
         <div class="text-brand-secondary">Text brand secondary</div>
@@ -296,22 +335,24 @@
 &lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
 </code></pre>
       <h3>Transform</h3>
-      <p>Uppercase or capitalised.</p>
+      <p>Uppercase or capitalized.</p>
       <div class="example">
         <div class="text-uppercase">This text is uppercase</div>
-        <div class="text-capitalized">This text is capitalised</div>
+        <div class="text-capitalized">This text is capitalized</div>
       </div>
-      <pre><code class="language-html">&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
-&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
-&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+      <pre><code class="language-html">&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
+&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
 </code></pre>
     </article>
     <article class="article">
       <h2>Visibility</h2>
       <p>Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.</p>
-      <pre><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt; // Hidden at all times.</code></pre>
-      <pre><code class="language-html">&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; // Hides above the device-small breakpoint.</code></pre>
-      <pre><code class="language-html">&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt; // Hides below the device-small breakpoint.</code></pre>
+      <pre class="margin-bottom-double-half"><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt; 
+// Hidden at all times.</code></pre>
+      <pre class="margin-bottom-double-half"><code class="language-html">&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; 
+// Hides above the device-small breakpoint.</code></pre>
+      <pre><code class="language-html">&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
+// Hides below the device-small breakpoint.</code></pre>
     </article>
   </div>
 </div>

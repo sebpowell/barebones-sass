@@ -1,26 +1,25 @@
 .function {
-	color: colours(secondary, orange);
-	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	color: colours(secondary, green);
+	font-family: "Roboto Mono", "Menlo", "Monaco", Courier, monospace;
 }
 
 pre, .example {
 	position: relative;
-	margin-bottom: sizes(double) !important;
-	padding-top: 50px !important;
+	// padding-top: 50px !important;
 	overflow-x: hidden !important;
 
-	&:after {
-		content: "Example";
-		border-bottom: 1px solid colours(keyline, light);
-		background: colours(greyscale, 50);
-		padding: sizes(half) 0 sizes(half) sizes(half);
-		font-size: 12px;
-		font-family: fonts(primary);
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-	}
+	// &:after {
+	// 	content: "Example";
+	// 	border-bottom: 1px solid colours(keyline, light);
+	// 	background: colours(greyscale, 50);
+	// 	padding: sizes(half) 0 sizes(half) sizes(half);
+	// 	font-size: 12px;
+	// 	font-family: fonts(primary);
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// }
 }
 
 
@@ -28,26 +27,17 @@ pre, .example {
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: colours(greyscale, 700);
+	color: colours(greyscale, 600);
 	background: none;
-	text-shadow: 0 1px white;
-	font-family: Menlo,Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	direction: ltr;
+	font-family: "Roboto Mono", "Menlo", "Monaco", Courier, monospace;
 	text-align: left;
 	white-space: pre;
-	font-size: 14px;
+	font-size: 13px;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
+	tab-size: 2;
 	hyphens: none;
 }
 
@@ -122,24 +112,24 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #a67f59;
+	color: colours(secondary, green);
 	background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: colours(secondary, orange);
+	color: colours(secondary, green);
 }
 
 .token.function {
-	color: colours(secondary, orange);
+	color: colours(secondary, green);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-	color: #e90;
+	color: colours(secondary, green);
 }
 
 .token.important,

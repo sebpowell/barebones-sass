@@ -2,9 +2,18 @@
 
 
 .var {
-	color: colours(secondary, orange);
+	color: colours(greyscale, 600);
+	font-family: font(code);
+	border: 1px solid colours(keyline, dark);
+	border-radius: 3px;
+	padding: 5px;
+	font-size: 13px;
+	font-weight: bold;
 }
 
+p {
+	color: colours(greyscale, 600) !important;
+}
 .arguments {
 	border-radius: 3px;
 	border: 0;
@@ -17,14 +26,11 @@
 }
 
 .article {
-	padding: 60px 0;
-	&:not(:last-child) {
-		border-bottom: 1px solid colours(keyline, light);
-	}
+	padding: 24px 0;
 
 	&.introduction {
 		p {
-			font-size: map-get($font-sizes, medium);
+			font-size: 20px;
 		}
 	}
 
@@ -44,7 +50,6 @@
 
 	> h2 {
 		margin-bottom: sizes(base);
-		color: colours(brand, primary);
 		font-weight: weights(primary, regular);
 		font-size: settings(fonts, sizes, medium-large);
 	}
@@ -52,7 +57,7 @@
 	h3 {
 		font-size: settings(fonts, sizes, medium-large);
 		color: colours(greyscale, 800);
-		font-weight: weights(primary, semi-bold);
+		font-weight: weights(primary, regular);
 		margin-top: sizes(quad);
 		margin-bottom: sizes(base);
 	}
