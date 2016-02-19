@@ -6,14 +6,16 @@
     <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Typekit-->
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Google Analytics-->
     <script>
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,18 +23,6 @@
       	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       	ga('create', 'UA-73127596-1', 'auto');
       	ga('send', 'pageview');
-    </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
     </script>
     <script src="../../javascript/application.js"></script>
   </head>
@@ -44,14 +34,16 @@
     <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Typekit-->
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Google Analytics-->
     <script>
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -60,27 +52,18 @@
       	ga('create', 'UA-73127596-1', 'auto');
       	ga('send', 'pageview');
     </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
-    </script>
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
+  <div class="primary-navigation"><a href="index.html" class="logo"><img src="../../images/logo.png"/></a>
+    <div class="github"><a href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></div>
+  </div>
+  <div class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
-  </header>
-  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
+  </div>
+  <div class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <ul class="docs-navigation-primary-links">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
@@ -93,10 +76,10 @@
       <li><a href="/docs/views/build/settings.html">Settings</a>
         <ul class="sub-navigation">
           <li><a href="#import">Import</a></li>
-          <li><a href="#colours">Colours</a></li>
+          <li><a href="#colors">colors</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
-          <li><a href="#Breakpoints">Breakpoints</a></li>
+          <li><a href="#breakpoints">Breakpoints</a></li>
           <li><a href="#sizes">Sizes</a></li>
           <li><a href="#layers">Layers</a></li>
         </ul>
@@ -120,7 +103,6 @@
           <li><a href="#ellipsis">Ellipsis</a></li>
           <li><a href="#clearfix">Media Queries</a></li>
           <li><a href="#containers">No Bullet</a></li>
-          <li><a href="#clearfix">Vertical Align</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/helpers.html">Helpers</a>
@@ -135,15 +117,15 @@
         </ul>
       </li>
     </ul>
-  </header>
+  </div>
 </body>
 <div class="iframe-container">
   <div class="main-container">
     <h1 class="page-title">Settings</h1>
     <article class="article introduction">
-      <p>Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project. For example, the <span class="var">respond-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map is used by the, and the <span class="var">.text-color</span> helper generates a helper class for every colour stored in the <span class="var">$colours</span> map.</p>
-      <p><strong>This map is not included in the source code to avoid collisions with your own settings.</strong> To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">this template</a>. Please note that for helpers to generate properly, your SASS map needs to follow the same schema as in the example. </p>
-      <p>A helper function is included to allow you to fetch the values in each map. </p>
+      <p>Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project. For example, the <span class="var">respond-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map is used by the, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.</p>
+      <p><span class="text-system-warning">The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">this template</a>. </p>
+      <p>A helper function is also included to allow you to easily fetch values in each map. </p>
     </article>
     <article id="import" class="article">
       <h2>Import</h2>
@@ -153,10 +135,10 @@
 );
 </code></pre>
     </article>
-    <article id="colours" class="article">
-      <h2>Colours</h2>
-      <p>Stores your colour palette in a organised way. Access using the <span class="var">colours($category, $value)</span> function.</p>
-      <pre class="margin-bottom-double"><code class="language-scss"> $colours: (
+    <article id="colors" class="article">
+      <h2>Colors</h2>
+      <p>Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.</p>
+      <pre class="margin-bottom-double"><code class="language-scss"> $colors: (
 	 brand: (
 		 primary: #157AFB,
 		 secondary: #FE5607,
@@ -178,7 +160,7 @@
  );
 </code></pre>
       <pre><code class="language-scss">.element {
-	background-color: colours($category, $value);
+	background-color: colors($category, $value);
 }
 </code></pre>
     </article>

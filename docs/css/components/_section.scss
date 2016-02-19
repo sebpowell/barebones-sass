@@ -2,23 +2,20 @@
 
 
 .var {
-	color: colours(greyscale, 600);
+	color: colors(greyscale, 600);
 	font-family: font(code);
-	border: 1px solid colours(keyline, dark);
+	border: 1px solid colors(keyline, dark);
 	border-radius: 3px;
-	padding: 5px;
+	padding: 2px 6px;
 	font-size: 13px;
 	font-weight: bold;
 }
 
-p {
-	color: colours(greyscale, 600) !important;
-}
 .arguments {
 	border-radius: 3px;
 	border: 0;
 	thead th {
-		background-color: colours(greyscale, 100);
+		background-color: colors(greyscale, 100);
 		text-align: left;
 		padding: sizes(half) sizes(base);
 		font-weight: weights(primary, semi-bold);
@@ -35,7 +32,7 @@ p {
 	}
 
 	p > a, li > a {
-		color: colours(brand, primary);
+		color: colors(brand, primary);
 		&:hover {
 			text-decoration: underline;
 		}
@@ -56,7 +53,7 @@ p {
 
 	h3 {
 		font-size: settings(fonts, sizes, medium-large);
-		color: colours(greyscale, 800);
+		color: colors(greyscale, 800);
 		font-weight: weights(primary, regular);
 		margin-top: sizes(quad);
 		margin-bottom: sizes(base);
@@ -64,7 +61,7 @@ p {
 
 	> p, > ul li {
 		font-size: map-get($font-sizes, base);
-		color: colours(greyscale, 800);
+		color: colors(greyscale, 800);
 		line-height: 1.8;
 		margin-bottom: sizes(double);
 		&:last-child {
@@ -86,7 +83,7 @@ p {
 				width: 4px;
 				height: 4px;
 				border-radius: 4px;
-				background-color: colours(brand, primary);
+				background-color: colors(brand, primary);
 			}
 		}
 	}

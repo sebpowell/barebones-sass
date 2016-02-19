@@ -14,7 +14,7 @@
 }
 
 .example {
-  border: 1px solid colours(keyline, light);
+  border: 1px solid colors(keyline, light);
   border-radius: 3px;
   padding: 24px;
 
@@ -40,7 +40,7 @@
 .page-title {
 	font-size: 42px;
 	font-weight: weights(primary, light);
-  color: colours(greyscale, 800);
+  color: colors(greyscale, 800);
 }
 
 
@@ -75,7 +75,7 @@
   width: 100%;
   height: 100%;
 
-  // background: colours(greyscale, x-light);
+  // background: colors(greyscale, x-light);
 }
 
 .content {

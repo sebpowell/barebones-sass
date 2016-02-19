@@ -6,14 +6,16 @@
     <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Typekit-->
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Google Analytics-->
     <script>
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,27 +24,18 @@
       	ga('create', 'UA-73127596-1', 'auto');
       	ga('send', 'pageview');
     </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
-    </script>
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
+  <div class="primary-navigation"><a href="index.html" class="logo"><img src="../../images/logo.png"/></a>
+    <div class="github"><a href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></div>
+  </div>
+  <div class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
-  </header>
-  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
+  </div>
+  <div class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <ul class="docs-navigation-primary-links">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
@@ -55,10 +48,10 @@
       <li><a href="/docs/views/build/settings.html">Settings</a>
         <ul class="sub-navigation">
           <li><a href="#import">Import</a></li>
-          <li><a href="#colours">Colours</a></li>
+          <li><a href="#colors">colors</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
-          <li><a href="#Breakpoints">Breakpoints</a></li>
+          <li><a href="#breakpoints">Breakpoints</a></li>
           <li><a href="#sizes">Sizes</a></li>
           <li><a href="#layers">Layers</a></li>
         </ul>
@@ -82,7 +75,6 @@
           <li><a href="#ellipsis">Ellipsis</a></li>
           <li><a href="#clearfix">Media Queries</a></li>
           <li><a href="#containers">No Bullet</a></li>
-          <li><a href="#clearfix">Vertical Align</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/helpers.html">Helpers</a>
@@ -97,7 +89,7 @@
         </ul>
       </li>
     </ul>
-  </header>
+  </div>
   <div class="iframe-container">
     <div class="main-container">
       <h1 class="page-title">Grid</h1>
@@ -133,7 +125,7 @@
       <article id="containers" class="article">
         <h2>Containers</h2>
         <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.</p>
-        <p>You can create a container using the <span class="var">container()</span> function.</p>
+        <p>You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.</p>
         <table>
           <thead>
             <th colspan="2">Options</th>
@@ -148,31 +140,36 @@
           </tr>
         </table>
         <pre><code class="language-scss">.element {
-  @include container(600, $mobile-gutter: false);
- }
-
+	@include container(600, $mobile-gutter: false);
+}
 </code></pre>
-        <pre><code class="language-scss">.container {
-  @include container(1000px);
-}</code></pre>
       </article>
       <article id="columns" class="article">
         <h2>Columns</h2>
         <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.</p>
         <table>
+          <thead>
+            <th colspan="2">Options</th>
+          </thead>
           <tr>
-            <td>$columns</td>
-            <td>Number of columns the component spans, of the total number defined in your settings file.</td>
+            <td><span class="var">$columns</span></td>
+            <td>Number of columns the component spans, of the total number defined in your settings file (by default this is 12).</td>
           </tr>
           <tr>
-            <td>$position <em>(optional)</em></td>
-            <td>if the column is the last one, pass the 'last' keyword to remove the margin.</td>
+            <td><span class="var">$position</span> <em>(optional)</em></td>
+            <td>If the column is the last one, pass in the 'last' keyword to remove the margin.</td>
           </tr>
           <tr>
-            <td>$gutter <em>(optional)</em></td>
-            <td>You can remove the gutter by passing the keyword 'none'.</td>
+            <td><span class="var">$gutter</span> <em>(optional)</em></td>
+            <td>You can remove the gutter by passing in the keyword 'none'.</td>
           </tr>
         </table>
+        <div class="example margin-bottom-double">
+          <div class="example-wrapper">
+            <div style="background-color: lightpink" class="example-sidebar"></div>
+            <div style="background-color: lightpink" class="example-content-block"></div>
+          </div>
+        </div>
         <pre><code class="language-scss">.sidebar {
   @include span(4); // Creates a column that spans 4 colums
 }
@@ -181,12 +178,6 @@
   @include span(8, $position: last); // Creates a column that spans 8 columns
 }
 </code></pre>
-        <div class="example margin-bottom-base">
-          <div class="example-wrapper">
-            <div style="background-color: lightpink" class="example-sidebar"></div>
-            <div style="background-color: lightpink" class="example-content-block"></div>
-          </div>
-        </div>
       </article>
       <article class="article">
         <h2>Galleries</h2>

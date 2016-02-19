@@ -14,30 +14,6 @@
   }
 }
 
-
-// @function settings($keys...) {
-//   $key: nth($keys, 1);
-//   $length: length($keys);
-//   $value: map-get($settings, $key);
-
-//   @if ($length > 1) {
-//     $rest: ();
-//     @for $i from 2 through $length {
-//       $rest: append($rest, nth($keys, $i))
-//     }
-
-//     @return map-fetch($value, $rest)
-
-//   } 
-
-//   @else {
-//     @return $value;
-//     @debug "test";
-//   }
-// }
-
-
-
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     @if map-has-key($map, $key) {
@@ -54,13 +30,11 @@
       @warn "The key '#{$key}' doesn't exist. Please check your settings file.";
     } 
   }
-  
   @return $map;
 }
 
 
 // Helper functions 
-
 @function sizes($size) {
   @if map-has-key($sizes, $size) {
    @return map-get($sizes, $size);
@@ -79,8 +53,8 @@
   }
 }
 
-@function colours($colour-cat, $colour) {
-  @return map-deep-get($colours, $colour-cat, $colour);
+@function colors($colour-cat, $colour) {
+  @return map-deep-get($colors, $colour-cat, $colour);
 }
 
 @function font($object) {

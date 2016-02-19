@@ -6,14 +6,16 @@
     <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Typekit-->
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Google Analytics-->
     <script>
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,18 +23,6 @@
       	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       	ga('create', 'UA-73127596-1', 'auto');
       	ga('send', 'pageview');
-    </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
     </script>
     <script src="../../javascript/application.js"></script>
   </head>
@@ -44,14 +34,16 @@
     <meta property="og:title" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
-    <meta name="description" content="Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta property="og:description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
+    <meta name="description" content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk"/>
     <title>Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="../../css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Typekit-->
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- Google Analytics-->
     <script>
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -60,27 +52,18 @@
       	ga('create', 'UA-73127596-1', 'auto');
       	ga('send', 'pageview');
     </script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <script>
-      $(document).ready(function() {
-      	setNavigation();
-      	$(".mobile-navigation-toggle").click(function() {
-      		$(".docs-navigation").toggleClass("show");
-      		$(".backdrop").toggleClass("is-visible");
-      		$(this).toggleClass("close");
-      	});
-      });
-      
-    </script>
     <script src="../../javascript/application.js"></script>
   </head>
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <header class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
+  <div class="primary-navigation"><a href="index.html" class="logo"><img src="../../images/logo.png"/></a>
+    <div class="github"><a href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></div>
+  </div>
+  <div class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
-  </header>
-  <header class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
+  </div>
+  <div class="docs-navigation"><a href="welcome.html" class="logo"><img src="../../images/logo.png"/></a>
     <ul class="docs-navigation-primary-links">
       <li><a href="/docs/views/build/index.html">Getting Started</a>
         <ul class="sub-navigation">
@@ -93,10 +76,10 @@
       <li><a href="/docs/views/build/settings.html">Settings</a>
         <ul class="sub-navigation">
           <li><a href="#import">Import</a></li>
-          <li><a href="#colours">Colours</a></li>
+          <li><a href="#colors">colors</a></li>
           <li><a href="#fonts">Fonts</a></li>
           <li><a href="#grid">Grid</a></li>
-          <li><a href="#Breakpoints">Breakpoints</a></li>
+          <li><a href="#breakpoints">Breakpoints</a></li>
           <li><a href="#sizes">Sizes</a></li>
           <li><a href="#layers">Layers</a></li>
         </ul>
@@ -120,7 +103,6 @@
           <li><a href="#ellipsis">Ellipsis</a></li>
           <li><a href="#clearfix">Media Queries</a></li>
           <li><a href="#containers">No Bullet</a></li>
-          <li><a href="#clearfix">Vertical Align</a></li>
         </ul>
       </li>
       <li><a href="/docs/views/build/helpers.html">Helpers</a>
@@ -135,7 +117,7 @@
         </ul>
       </li>
     </ul>
-  </header>
+  </div>
 </body>
 <div class="iframe-container">
   <div class="main-container">
@@ -146,7 +128,7 @@
     </article>
     <article class="article">
       <h2>Background Color</h2>
-      <p>Generates a background-color helper for all colors specified in your <span class="var">$colours</span> map, in the following format: <span class="var">background-{$category}-{$value}</span>.</p>
+      <p>Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.</p>
       <div class="example">
         <div style="height: 40px" class="background-brand-primary"></div>
         <div style="height: 40px" class="background-secondary-orange"></div>
@@ -159,28 +141,39 @@
     </article>
     <article id="borders" class="article">
       <h2 id="borders">Borders</h2>
-      <p>Adds or removes a keyline to a given element. The border color used is the keyline value specified in your <span class="var">$colours</span> map.</p>
+      <p>Adds or removes a keyline to a given element. The border color used is the keyline light value specified in your <span class="var">$colors</span> map.</p>
       <table>
+        <thead>
+          <th colspan="2">Options</th>
+        </thead>
         <tr>
-          <td>border-left</td>
+          <td><span class="var">.border-left</span></td>
+          <td>Adds a 1px keyline on the left.</td>
         </tr>
         <tr>
-          <td>border-top</td>
+          <td><span class="var">.border-top</span></td>
+          <td>Adds a 1px keyline on the top.</td>
         </tr>
         <tr>
-          <td>border-right</td>
+          <td><span class="var">.border-right</span></td>
+          <td>Adds a 1px keyline on the right.</td>
         </tr>
         <tr>
-          <td>border-bottom</td>
+          <td><span class="var">.border-bottom</span></td>
+          <td>Adds a 1px keyline on the bottom.</td>
         </tr>
         <tr>
-          <td>border-all</td>
+          <td><span class="var">.border-all</span></td>
+          <td>Adds a 1px keyline to every side.</td>
         </tr>
         <tr>
-          <td>no-border</td>
+          <td><span class="var">.no-border</span></td>
+          <td>Removes all borders.</td>
         </tr>
       </table>
-      <div class="example"> </div>
+      <div class="example margin-bottom-double">
+        <div class="border-top"></div>
+      </div>
       <pre><code class="language-scss">.border-bottom {
  border-bottom: 1px solid #F5F5F5 !important;
 }</code></pre>
@@ -189,56 +182,67 @@
       <h2>Margin & Padding</h2>
       <p>Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.</p>
       <table>
+        <thead>
+          <th colspan="2">Options</th>
+        </thead>
         <tr>
           <td><span class="var">.padding-{direction}-{size}</span></td>
           <td>Applies padding in the specified direction of the specified size.</td>
         </tr>
         <tr>
-          <td><span class="var">..margin-{direction}-{size}</span></td>
-          <td>Applies padding in the specified direction of the specified size.</td>
+          <td><span class="var">.margin-{direction}-{size}</span></td>
+          <td>Applies margin in the specified direction of the specified size.</td>
         </tr>
         <tr>
           <td><span class="var">.no-margin</span></td>
-          <td>Removes all margins</td>
+          <td>Removes all margins.</td>
         </tr>
         <tr>
           <td><span class="var">.no-padding</span></td>
-          <td>Removes all padding</td>
+          <td>Removes all padding.</td>
         </tr>
       </table>
       <div class="example">
         <div style="height: 40px" class="background-brand-primary margin-bottom-quarter"></div>
         <div style="height: 40px" class="background-brand-primary margin-bottom-base"></div>
+        <div style="height: 40px" class="background-brand-primary"></div>
       </div>
       <pre><code class="language-html">&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
-&lt;div class="margin-base"&gt;&lt;/div&gt;
-&lt;div class="padding-left-half"&gt;&lt;/div&gt;
+&lt;div class="margin-bottom-base"&gt;&lt;/div&gt;
 </code></pre>
     </article>
     <article class="article">
       <h2>Layout</h2>
       <table>
+        <thead>
+          <th colspan="2">Options</th>
+        </thead>
         <tr>
-          <td>block</td>
+          <td><span class="var">.block</span></td>
+          <td>Sets element display mode to <span class="var">block</span>.</td>
         </tr>
         <tr>
-          <td>inline-block</td>
+          <td><span class="var">.inline-block</span></td>
+          <td>Sets element display mode to <span class="var">inline-block</span>.</td>
         </tr>
         <tr>
-          <td>float-left</td>
+          <td><span class="var">.float-left</span></td>
+          <td>Floats element to the left.</td>
         </tr>
         <tr>
-          <td>float-right</td>
+          <td><span class="var">.float-right</span></td>
+          <td>Floats element to the right.</td>
         </tr>
         <tr>
-          <td>clearfix</td>
+          <td><span class="var">.clearfix</span></td>
+          <td>Clears floats (apply this to the parent element).</span></td>
         </tr>
       </table>
       <pre><code class="language-html">&lt;div class="block"&gt;&lt;/div&gt;
-&lt;div class="block"&gt;&lt;/div&gt;
-&lt;div class="block"&gt;&lt;/div&gt;
-&lt;div class="block"&gt;&lt;/div&gt;
-&lt;div class="block"&gt;&lt;/div&gt;
+&lt;div class="inline-block"&gt;&lt;/div&gt;
+&lt;div class="float-left"&gt;&lt;/div&gt;
+&lt;div class="float-right"&gt;&lt;/div&gt;
+&lt;div class="clearfix"&gt;&lt;/div&gt;
 </code></pre>
     </article>
     <article id="margin" class="article">
@@ -252,13 +256,13 @@
           <div class="columns-3">Columns 3</div>
         </div>
       </div>
-      <pre><code class="language-html">&lt;div class="columns"&gt;
+      <pre class="margin-bottom-double"><code class="language-html">&lt;div class="row"&gt;
  &lt;div class="columns-4"&gt;
  &lt;div class="columns-5"&gt;
  &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
       <p>Helper classes are also available to create different grids for different breakpoints.</p>
-      <div class="example">
+      <div class="example margin-bottom-double">
         <div class="row">
           <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
           <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
@@ -272,18 +276,13 @@
 &lt;/div&gt;</code></pre>
       <h3>Offsets</h3>
       <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
-      <div class="example">
+      <div class="example margin-bottom-double">
         <div class="row">
           <div class="columns-3 offset-9">columns-3, offset-9</div>
         </div>
       </div>
-      <pre><code class="language-html">&lt;div class="columns"&gt;
+      <pre class="margin-bottom-double"><code class="language-html">&lt;div class="columns"&gt;
  &lt;div class="columns-3 offset-9"&gt;
-&lt;/div&gt;</code></pre>
-      <pre><code class="language-html">&lt;div class="columns"&gt;
- &lt;div class="columns-4"&gt;
- &lt;div class="columns-5"&gt;
- &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
     </article>
     <article id="text-align" class="article">
@@ -319,8 +318,8 @@
 &lt;div class="text-small"&gt;This text is X-Large&lt;/div&gt;
 &lt;div class="text-x-small"&gt;This text is X-Large&lt;/div&gt;
 </code></pre>
-      <h3>Colours</h3>
-      <p>These are generated using values stored in your <span class="var">$colours</span> map.</p>
+      <h3>Colors</h3>
+      <p>These are generated using values stored in your <span class="var">$colors</span> map.</p>
       <div class="example">
         <div class="text-brand-primary">Text brand primary</div>
         <div class="text-brand-secondary">Text brand secondary</div>

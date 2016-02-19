@@ -4,17 +4,17 @@ $sides: top, right, bottom, left
 @each $type in $types
 	@each $side in $sides
 		@each $key, $value in $sizes
-			.#{$type}-#{$side}-#{$key}
+			.#{map-get($test, prefix)}#{$type}-#{$side}-#{$key}
 				#{$type}-#{$side}: $value !important
 
 @each $type in $types
 	@each $key, $value in $sizes
-		.#{$type}-#{$key}
+		.#{map-get($test, prefix)}#{$type}-#{$key}
 			#{$type}: $value !important
 
 
-.no-margin
+.#{map-get($test, prefix)}no-margin
 	margin: 0 !important
 
-.no-padding
+.#{map-get($test, prefix)}no-padding
 	padding: 0 !important

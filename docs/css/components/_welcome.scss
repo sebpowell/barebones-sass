@@ -16,13 +16,13 @@
 	.selling-point-description {
 		font-size: 15px;
 		line-height: 1.8;
-		color: lighten(colours(brand, primary), 30%);
+		color: lighten(colors(brand, primary), 30%);
 	}
 }
 
 
 .welcome-masthead {
-	background-color: colours(brand, primary);
+	background-color: colors(brand, primary);
 	padding-top: 40px;
 	width: 100%;
 	text-align: center;
@@ -66,7 +66,7 @@
 	}
 
 	.welcome-masthead-subheading {
-		color: lighten(colours(brand, primary), 30%);
+		color: lighten(colors(brand, primary), 30%);
 		line-height: 2;
 		font-size: 18px;
 		max-width: 1000px;
@@ -105,7 +105,7 @@
 
 
 		.made-by {
-			color: lighten(colours(brand, primary), 30%);
+			color: lighten(colors(brand, primary), 30%);
 		}
 
 		a {

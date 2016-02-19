@@ -1,18 +1,17 @@
-.is-hidden 
-	display: none !important
-	visibility: hidden !important
-
-.is-visible
-	display: inherit !important
-	visibility: visible !important
-
 @each $breakpoint, $value in $breakpoints
-	.hide-above-#{$breakpoint}
+	.#{map-get($test, prefix)}hide-above-#{$breakpoint}
 		+respond-above(#{$breakpoint})
 			display: none !important
 
 @each $breakpoint, $value in $breakpoints
-	.hide-below-#{$breakpoint}
+	.#{map-get($test, prefix)}hide-below-#{$breakpoint}
 		+respond-below(#{$breakpoint})
 			display: none !important
 
+.#{map-get($test, prefix)}is-hidden 
+	display: none !important
+	visibility: hidden !important
+
+.#{map-get($test, prefix)}is-visible
+	display: inherit !important
+	visibility: visible !important

@@ -6,15 +6,18 @@
 
 .primary-navigation {
 	width: 100%;
-	position: absolute;
-	padding: sizes(double);
+	position: fixed;
+  top: 0;
+  left: 0;
+	padding: sizes(double-half);
 	@include clearfix;
+  background: colors(brand, primary);
 
 	.logo {
 		float: left;
-		margin-top: 3px;
+		// margin-top: 3px;
     // display: none;
-		margin-right: sizes(double);
+		// margin-right: sizes(double);
 	}
 	ul {
 		@include no-bullet;
@@ -45,7 +48,7 @@
 }
 
 .mobile-docs-navigation {
-  background: colours(brand, primary);
+  background: colors(brand, primary);
   padding: sizes(base);
   display: block;
   @include respond-above(device-large) {
@@ -59,7 +62,6 @@
 
   .logo {
     margin: auto;
-    
   }
 }
 
@@ -73,6 +75,7 @@
   // transform: translateY(-10px);
   box-shadow: 0 0 6px 6px rgba(255,255,255,0.3);
 }
+
 .docs-navigation {
   background: #FDFDFD;
   @include respond-below(device-large) {
@@ -82,15 +85,13 @@
   left: -300px;
   width: 300px;
   overflow-y: scroll;
-
-
   position: fixed;
-  height: calc(100% - 48px);
-  border: 1px solid colours(keyline, light);
-  top: 24px;
+  border: 1px solid colors(keyline, light);
+  top: 110px;
   transition: left 0.5s ease-in-out;
   z-index: 9999;
   border-radius: 3px;
+  overflow: hidden;
 
   &.show {
     left: 0;
@@ -99,13 +100,13 @@
 
   .made {
     font-size: 12px;
-    color: lighten(colours(brand, primary), 30%);
+    color: lighten(colors(brand, primary), 30%);
   }
-  @include respond-above(device-large) {
 
+  @include respond-above(device-large) {
     display: block;
     left: 24px;
-    // background-color: colours(brand, primary);
+    // background-color: colors(brand, primary);
   }
 
   .logo {
@@ -131,10 +132,10 @@
       margin-bottom: sizes(base);
       @include respond-above(device-large) {
         background: white;
-        color: colours(brand, primary);
+        color: colors(brand, primary);
         &:hover {
           background: white;
-          color: colours(brand, primary);
+          color: colors(brand, primary);
         }
       }
     }
@@ -142,15 +143,17 @@
 
   .sub-navigation {
   	display: none;
-    border-top: 1px solid colours(keyline, light);
-  	// background: darken(colours(brand, primary), 20%)
+    border-top: 1px solid colors(keyline, light);
+  	// background: darken(colors(brand, primary), 20%)
   }
 
   .docs-navigation-primary-links {
     > li {
-      border-bottom: 1px solid colours(keyline, light);
+      &:not(:last-child) {
+        border-bottom: 1px solid colors(keyline, light);
+      }
       &:first-child {
-        border-top: 1px solid colours(keyline, light);
+        // border-top: 1px solid colors(keyline, light);
       }
     }
   	@include respond-above(device-large) {
@@ -160,8 +163,6 @@
   ul {
     @include no-bullet;
     transition: all .5s;
-
-
     width: 300px;
     left: -300px;
     overflow-y: scroll;
@@ -170,37 +171,33 @@
       left: 0;
     }
 
-
-    > li {
-      
+    > li {      
     	&.active {
     		> a {
-          color: colours(brand, primary);
-
+          color: colors(brand, primary);
     		}
     		.sub-navigation {
     			display: block;
           background: white;
           a {
-            color: colours(greyscale, 500);
+            color: colors(greyscale, 500);
             font-size: 14px;
             &:hover {
-              color: colours(greyscale, 900);
+              color: colors(greyscale, 900);
             }
           }
     		}
     	}
       > a {
       	transition: color .5s;
-        padding: sizes(base) sizes(double);
+        padding: sizes(base);
         text-decoration: none;
         display: block;
         @include respond-above(device-large) {
-          // color: lighten(colours(brand, primary), 30%);
-
+          // color: lighten(colors(brand, primary), 30%);
           &:hover {
           	// color: white;
-            color: colours(brand, primary);
+            color: colors(brand, primary);
           }
         }
       }

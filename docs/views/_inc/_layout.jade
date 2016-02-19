@@ -5,7 +5,13 @@ include _head.jade
 body.page-layout-docs
 	.backdrop
 
-	header.mobile-docs-navigation
+	.primary-navigation
+		a.logo(href = "index.html")
+			img(src="#{image_base}logo.png")
+		.github
+			a(class="github-button" href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub") Star
+
+	.mobile-docs-navigation
 		a.logo(href = "welcome.html")
 			img(src="#{image_base}logo.png")
 
@@ -15,7 +21,7 @@ body.page-layout-docs
 			span
 			span
 
-	header.docs-navigation
+	.docs-navigation
 		a.logo(href = "welcome.html")
 			img(src="#{image_base}logo.png")
 
@@ -38,13 +44,13 @@ body.page-layout-docs
 					li
 						a(href='#import') Import
 					li
-						a(href='#colours') Colours
+						a(href='#colors') colors
 					li
 						a(href='#fonts') Fonts
 					li
 						a(href='#grid') Grid
 					li
-						a(href='#Breakpoints') Breakpoints
+						a(href='#breakpoints') Breakpoints
 					li
 						a(href='#sizes') Sizes
 					li
@@ -81,8 +87,7 @@ body.page-layout-docs
 						a(href='#clearfix') Media Queries
 					li
 						a(href='#containers') No Bullet
-					li
-						a(href='#clearfix') Vertical Align
+
 			li
 				a(href='#{path}helpers.html') Helpers
 				ul.sub-navigation

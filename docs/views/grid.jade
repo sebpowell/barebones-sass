@@ -33,7 +33,7 @@ block body
 				h2 Containers
 
 				p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
-				p You can create a container using the <span class="var">container()</span> function.
+				p You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.
 
 				table
 					thead
@@ -48,15 +48,8 @@ block body
 				pre
 					code.language-scss.
 						.element {
-						  @include container(600, $mobile-gutter: false);
-						 }
-
-
-				pre
-					code.language-scss
-						| .container {
-						|   @include container(1000px);
-						| }
+							@include container(600, $mobile-gutter: false);
+						}
 			
 			article.article(id="columns")
 				h2 Columns
@@ -64,16 +57,25 @@ block body
 				p Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.
 
 				table
+					thead
+						th(colspan="2") Options
 					tr
-						td $columns
-						td Number of columns the component spans, of the total number defined in your settings file.
+						td <span class="var">$columns</span>
+						td Number of columns the component spans, of the total number defined in your settings file (by default this is 12).
 					tr
-						td $position <em>(optional)</em>
-						td if the column is the last one, pass the 'last' keyword to remove the margin.
+						td <span class="var">$position</span> <em>(optional)</em>
+						td If the column is the last one, pass in the 'last' keyword to remove the margin.
 					tr
-						td $gutter <em>(optional)</em>
-						td You can remove the gutter by passing the keyword 'none'.
+						td <span class="var">$gutter</span> <em>(optional)</em>
+						td You can remove the gutter by passing in the keyword 'none'.
 
+
+				
+
+				.example.margin-bottom-double
+					.example-wrapper
+						.example-sidebar(style="background-color: lightpink")
+						.example-content-block(style="background-color: lightpink")
 
 				pre
 					code.language-scss.
@@ -84,11 +86,6 @@ block body
 						.content {
 						  @include span(8, $position: last); // Creates a column that spans 8 columns
 						}
-
-				.example.margin-bottom-base
-					.example-wrapper
-						.example-sidebar(style="background-color: lightpink")
-						.example-content-block(style="background-color: lightpink")
 
 			article.article
 				h2 Galleries

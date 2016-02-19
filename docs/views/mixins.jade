@@ -11,6 +11,8 @@ include _inc/_layout.jade
 			p Creates a triangle, used for things like tooltips or dropdowns.
 
 			table
+				thead
+					th(colspan="2") Options
 				tr
 					td <span class="var">$direction</span>
 					td up, down, left, right, top-right, top-left, bottom-right, bottom-left
@@ -37,12 +39,10 @@ include _inc/_layout.jade
 			pre
 				code.language-scss.
 					.element {
-						@include placeholder(grey);
-							color: grry
-						 &:focus {
-							 placeholder(lightGrey);
-						 }
-					 }
+						@include placeholder {
+							color: grey;
+						}
+					}
 
 		article#containers.article
 			h2 Uppercase

@@ -26,14 +26,17 @@ table
 	margin-bottom: sizes(double)
 	td
 		padding: sizes(base)
-		border-left: 1px solid colours(keyline, light)
-		border-bottom: 1px solid colours(keyline, light)
+		line-height: 1.8
+		border-bottom: 1px solid colors(keyline, light)
 
 	tr:first-child
-		td:first-child
-			border-radius: 3px 0 0 0
-		td:last-child
-			border-radius-right: 0 3px 0 0
+		// td
+		// 	border-top: 1px solid colors(keyline, light)
+			
+		// td:first-child
+		// 	border-radius: 3px 0 0 0
+		// td:last-child
+		// 	border-radius-right: 0 3px 0 0
 	tr:last-child
 		td:first-child
 			border-radius: 0 0 0 3px
@@ -43,21 +46,25 @@ table
 	tr
 		td:first-child
 			font-weight: bold
-		td:not(:last-child)
-			border-right: 1px solid colours(keyline, light)
+			border-left: 1px solid colors(keyline, light)
+		td
+			border-right: 1px solid colors(keyline, light)
 		td:not(:first-child)
-			text-align: center
+			// text-align: center
 	tr:not(:last-child)
 		td
-			border-bottom: 1px solid colours(keyline, light)
+			border-bottom: 1px solid colors(keyline, light)
 			
 
 	thead
+
 		th
 			font-weight: 700
+			border: 1px solid colors(keyline, light)
+			border-radius: 3px 3px 0 0
 			font-size: 14px
-			color: colours(greyscale, 800)
+			color: colors(greyscale, 800)
 			padding: sizes(half) sizes(base)
 			text-align: left
-			background: colours(greyscale, 100)
+			background: colors(greyscale, 100)
 			border-bottom: 1px solid colors(keyline, light)

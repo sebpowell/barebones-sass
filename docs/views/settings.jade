@@ -5,11 +5,11 @@ include _inc/_layout.jade
 	.main-container
 		h1.page-title Settings
 		article.article.introduction
-			p Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project. For example, the <span class="var">respond-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map is used by the, and the <span class="var">.text-color</span> helper generates a helper class for every colour stored in the <span class="var">$colours</span> map.
+			p Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project. For example, the <span class="var">respond-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map is used by the, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.
 
-			p <strong>This map is not included in the source code to avoid collisions with your own settings.</strong> To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">this template</a>. Please note that for helpers to generate properly, your SASS map needs to follow the same schema as in the example. 
+			p <span class="text-system-warning">The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">this template</a>. 
 
-			p A helper function is included to allow you to fetch the values in each map. 
+			p A helper function is also included to allow you to easily fetch values in each map. 
 
 
 		article.article(id="import")
@@ -21,12 +21,12 @@ include _inc/_layout.jade
 						prefix: "bb-",
 					);
 
-		article.article(id="colours")
-			h2 Colours
-			p Stores your colour palette in a organised way. Access using the <span class="var">colours($category, $value)</span> function.
+		article.article(id="colors")
+			h2 Colors
+			p Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.
 			pre.margin-bottom-double
 				code.language-scss.
-						 $colours: (
+						 $colors: (
 							 brand: (
 								 primary: #157AFB,
 								 secondary: #FE5607,
@@ -50,7 +50,7 @@ include _inc/_layout.jade
 			pre
 				code.language-scss.
 					.element {
-						background-color: colours($category, $value);
+						background-color: colors($category, $value);
 					}
 
 		article.article(id="fonts")

@@ -47,7 +47,7 @@ gulp.task('sass', function () {
 /////////////////////////////////////////////////////
 
 gulp.task("uglify", function() {
-	gulp.src(["docs/javascript/components/*.js"])
+	gulp.src(["docs/javascript/vendor/*.js", "docs/javascript/components/*.js"])
 		.pipe(concat("application.js"))
 		.pipe(gulp.dest("docs/javascript/"))
 });

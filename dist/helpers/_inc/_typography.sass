@@ -3,11 +3,10 @@
 	.#{map-get($test, prefix)}text-#{$key}
 		font-size: #{$value} !important
 
-@each $palette, $name in $colours
+@each $palette, $name in $colors
 	@each $colour, $value in $name
 		.#{map-get($test, prefix)}text-#{$palette}-#{$colour}
 			color: $value !important
-
 
 $text-alignment: (left, center, right)
 @each $direction in $text-alignment

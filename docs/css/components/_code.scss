@@ -1,5 +1,5 @@
 .function {
-	color: colours(secondary, green);
+	color: colors(secondary, green);
 	font-family: "Roboto Mono", "Menlo", "Monaco", Courier, monospace;
 }
 
@@ -10,8 +10,8 @@ pre, .example {
 
 	// &:after {
 	// 	content: "Example";
-	// 	border-bottom: 1px solid colours(keyline, light);
-	// 	background: colours(greyscale, 50);
+	// 	border-bottom: 1px solid colors(keyline, light);
+	// 	background: colors(greyscale, 50);
 	// 	padding: sizes(half) 0 sizes(half) sizes(half);
 	// 	font-size: 12px;
 	// 	font-family: fonts(primary);
@@ -27,7 +27,7 @@ pre, .example {
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: colours(greyscale, 600);
+	color: colors(greyscale, 600);
 	background: none;
 	font-family: "Roboto Mono", "Menlo", "Monaco", Courier, monospace;
 	text-align: left;
@@ -44,13 +44,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
-	background: colours(greyscale, 50);
+	background: colors(greyscale, 50);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: colours(greyscale, 50);
+	background: colors(greyscale, 50);
 }
 
 /* Code blocks */
@@ -62,7 +62,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	border: 1px solid colours(keyline, light);
+	border: 1px solid colors(keyline, light);
 	border-radius: 3px;
 }
 
@@ -95,7 +95,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: colours(greyscale, 600);
+	color: colors(greyscale, 600);
 }
 
 .token.selector,
@@ -104,7 +104,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: colours(brand, primary);
+	color: colors(brand, primary);
 }
 
 .token.operator,
@@ -112,24 +112,24 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: colours(secondary, green);
+	color: colors(secondary, green);
 	background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: colours(secondary, green);
+	color: colors(secondary, green);
 }
 
 .token.function {
-	color: colours(secondary, green);
+	color: colors(secondary, green);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-	color: colours(secondary, green);
+	color: colors(secondary, green);
 }
 
 .token.important,

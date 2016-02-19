@@ -12,7 +12,7 @@ include _inc/_layout.jade
 
 		article.article
 			h2 Background Color
-			p Generates a background-color helper for all colors specified in your <span class="var">$colours</span> map, in the following format: <span class="var">background-{$category}-{$value}</span>.
+			p Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.
 			.example
 				div.background-brand-primary(style="height: 40px")
 				div.background-secondary-orange(style="height: 40px")
@@ -25,23 +25,32 @@ include _inc/_layout.jade
 
 		article#borders.article
 			h2#borders Borders
-			p Adds or removes a keyline to a given element. The border color used is the keyline value specified in your <span class="var">$colours</span> map.
+			p Adds or removes a keyline to a given element. The border color used is the keyline light value specified in your <span class="var">$colors</span> map.
+
 			table
+				thead
+					th(colspan="2") Options
 				tr
-					td border-left
+					td <span class="var">.border-left</span>
+					td Adds a 1px keyline on the left.
 				tr
-					td border-top
+					td <span class="var">.border-top</span>
+					td Adds a 1px keyline on the top.
 				tr
-					td border-right
+					td <span class="var">.border-right</span>
+					td Adds a 1px keyline on the right.
 				tr
-					td border-bottom
+					td <span class="var">.border-bottom</span>
+					td Adds a 1px keyline on the bottom.
 				tr
-					td border-all
+					td <span class="var">.border-all</span>
+					td Adds a 1px keyline to every side.
 				tr
-					td no-border
+					td <span class="var">.no-border</span>
+					td Removes all borders.
 
-			.example 
-
+			.example.margin-bottom-double
+				.border-top
 			pre
 				code.language-scss
 					| .border-bottom {
@@ -53,50 +62,59 @@ include _inc/_layout.jade
 			p Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.
 
 			table
+				thead
+					th(colspan="2") Options
 				tr
 					td <span class="var">.padding-{direction}-{size}</span>
 					td Applies padding in the specified direction of the specified size.
 				tr
-					td <span class="var">..margin-{direction}-{size}</span>
-					td Applies padding in the specified direction of the specified size.
+					td <span class="var">.margin-{direction}-{size}</span>
+					td Applies margin in the specified direction of the specified size.
 				tr
 					td <span class="var">.no-margin</span>
-					td Removes all margins
+					td Removes all margins.
 				tr
 					td <span class="var">.no-padding</span>
-					td Removes all padding
+					td Removes all padding.
 
 			.example
 				div.background-brand-primary.margin-bottom-quarter(style="height: 40px")
 				div.background-brand-primary.margin-bottom-base(style="height: 40px")
+				div.background-brand-primary(style="height: 40px")
 
 			pre
 				code.language-html.
 					&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
-					&lt;div class="margin-base"&gt;&lt;/div&gt;
-					&lt;div class="padding-left-half"&gt;&lt;/div&gt;
+					&lt;div class="margin-bottom-base"&gt;&lt;/div&gt;
 
 		article.article
 			h2 Layout
 			table
+				thead
+					th(colspan="2") Options
 				tr
-					td block
+					td <span class="var">.block</span>
+					td Sets element display mode to <span class="var">block</span>.
 				tr
-					td inline-block
+					td <span class="var">.inline-block</span>
+					td Sets element display mode to <span class="var">inline-block</span>.
 				tr
-					td float-left
+					td <span class="var">.float-left</span>
+					td Floats element to the left.
 				tr
-					td float-right
+					td <span class="var">.float-right</span>
+					td Floats element to the right.
 				tr
-					td clearfix
+					td <span class="var">.clearfix</span>
+					td Clears floats (apply this to the parent element).</span>
 
 			pre
 				code.language-html.
 					&lt;div class="block"&gt;&lt;/div&gt;
-					&lt;div class="block"&gt;&lt;/div&gt;
-					&lt;div class="block"&gt;&lt;/div&gt;
-					&lt;div class="block"&gt;&lt;/div&gt;
-					&lt;div class="block"&gt;&lt;/div&gt;
+					&lt;div class="inline-block"&gt;&lt;/div&gt;
+					&lt;div class="float-left"&gt;&lt;/div&gt;
+					&lt;div class="float-right"&gt;&lt;/div&gt;
+					&lt;div class="clearfix"&gt;&lt;/div&gt;
 
 		article#margin.article
 			h2 Grid
@@ -110,9 +128,9 @@ include _inc/_layout.jade
 					.columns-5 Columns 5
 					.columns-3 Columns 3
 
-			pre
+			pre.margin-bottom-double
 				code.language-html
-					| &lt;div class="columns"&gt;
+					| &lt;div class="row"&gt;
 					|  &lt;div class="columns-4"&gt;
 					|  &lt;div class="columns-5"&gt;
 					|  &lt;div class="columns-3"&gt;
@@ -120,7 +138,7 @@ include _inc/_layout.jade
 
 
 			p Helper classes are also available to create different grids for different breakpoints.
-			.example
+			.example.margin-bottom-double
 				.row
 					.columns-4-device-small.columns-5-device-medium Columns 4
 					.columns-4-device-small.columns-3-device-medium  Columns 5
@@ -137,10 +155,10 @@ include _inc/_layout.jade
 
 			h3 Offsets
 			p Offsets allow you to shift a column to the right by a specified number of columns.
-			.example
+			.example.margin-bottom-double
 				.row
 					.columns-3.offset-9 columns-3, offset-9
-			pre
+			pre.margin-bottom-double
 				code.language-html
 					| &lt;div class="columns"&gt;
 					|  &lt;div class="columns-3 offset-9"&gt;
@@ -155,16 +173,6 @@ include _inc/_layout.jade
 			//- 		li.gallery-item
 			//- 		li.gallery-item
 			//- 		li.gallery-item
-
-			pre
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4"&gt;
-					|  &lt;div class="columns-5"&gt;
-					|  &lt;div class="columns-3"&gt;
-					| &lt;/div&gt;
-
-
 
 		article#text-align.article
 			h2 Typography
@@ -204,8 +212,8 @@ include _inc/_layout.jade
 					&lt;div class="text-small"&gt;This text is X-Large&lt;/div&gt;
 					&lt;div class="text-x-small"&gt;This text is X-Large&lt;/div&gt;
 
-			h3 Colours
-			p These are generated using values stored in your <span class="var">$colours</span> map.
+			h3 Colors
+			p These are generated using values stored in your <span class="var">$colors</span> map.
 			.example
 				.text-brand-primary Text brand primary
 				.text-brand-secondary Text brand secondary

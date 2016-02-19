@@ -27,8 +27,8 @@ button, .button
 			padding: 0 $value * 2
 			border-radius: $value * 3
 
-	// Generate button colours
-	@each $name, $value in map-get($colours, brand)
+	// Generate button colors
+	@each $name, $value in map-get($colors, brand)
 		&.#{$name}
 			background: $value
 			color: white
@@ -45,11 +45,11 @@ button, .button
 	
 	&.white
 		background: white
-		color: colours(brand, primary)
+		color: colors(brand, primary)
 		&.bordered
 			background: transparent
 			border: 1px solid rgba(255,255,255,0.4)
 			color: white
 			&:hover
 				background: white
-				color: colours(brand, primary)
+				color: colors(brand, primary)
