@@ -1,13 +1,11 @@
 include _head.jade
 
-- var path = "/docs/views/build/"
-
 body.page-layout-docs
 	.backdrop
 
 	.primary-navigation
 		a.logo(href = "index.html")
-			img(src="#{image_base}logo.png")
+			img(src="#{image_base}logo-blue.png")
 		.github
 			a(class="github-button" href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub") Star
 
@@ -21,91 +19,102 @@ body.page-layout-docs
 			span
 			span
 
-	.docs-navigation
-		a.logo(href = "welcome.html")
-			img(src="#{image_base}logo.png")
-
-		ul.docs-navigation-primary-links
-			li
-				a(href='#{path}index.html') Getting Started
-				ul.sub-navigation
-					li
-						a(href='#installing') Installing Barebones
-					li
-						a(href='#requirements') Requirements
-					li
-						a(href='#support') Support
-					li
-						a(href='#background') Background Reading
-
-			li
-				a(href='#{path}settings.html') Settings
-				ul.sub-navigation
-					li
-						a(href='#import') Import
-					li
-						a(href='#colors') colors
-					li
-						a(href='#fonts') Fonts
-					li
-						a(href='#grid') Grid
-					li
-						a(href='#breakpoints') Breakpoints
-					li
-						a(href='#sizes') Sizes
-					li
-						a(href='#layers') Layers
-			li
-				a(href='#{path}grid.html') Grid
-				ul.sub-navigation
-					li
-						a(href='#generator') Grid Settings
-					li
-						a(href='#generator') Containers
-					li
-						a(href='#generator') Columns
-					li
-						a(href='#generator') Galleries
-					li
-						a(href='#generator') Helpers
-			li
-				a(href='#{path}mixins.html') Mixins
-				ul.sub-navigation
-					li
-						a(href='#arrow') Arrow
-					li
-						a(href='#placeholder') Placeholder
-					li
-						a(href='#uppercase') Uppercase
-					li
-						a(href='#containers') Containers
-					li
-						a(href='#clearfix') Clearfix
-					li
-						a(href='#ellipsis') Ellipsis
-					li
-						a(href='#clearfix') Media Queries
-					li
-						a(href='#containers') No Bullet
-
-			li
-				a(href='#{path}helpers.html') Helpers
-				ul.sub-navigation
-					li
-						a(href='#background') Background Color
-					li
-						a(href="") Position
-					li
-						a(href='#borders') Borders
-					li
-						a(href='#margins') Margins & Padding
-					li
-						a(href='#{path}index.html') Layout
-					li
-						a(href='#{path}index.html') Typography
-
-					li
-						a(href='#{path}index.html') Visibility
 
 
-	block body
+
+	.share-bar
+		.newsletter
+			form(action="//london.us9.list-manage.com/subscribe/post?u=7f799244738e8b8558a646378&amp;id=55c4288084" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+				input.newsletter-input(type="email" id="mce-EMAIL" name="EMAIL" placeholder="Sign up to our newsletter")
+				input.newsletter-submit(type="submit" name="subscribe" id="mc-embedded-subscribe", value="Submit")
+
+		//- .social
+		//- 	a.facebook(href="https://www.facebook.com/makingjam/" target="_blank") Follow JAM on Facebook
+		//- 	a.twitter(href="https://twitter.com/Jam2015London" target="_blank") Follow JAM on Twitter
+
+
+
+	.docs-container
+		.docs-navigation
+			ul.docs-navigation-primary-links
+				li
+					a(href='/introduction.html') Getting Started
+					ul.sub-navigation
+						li
+							a(href='#installing') Installing Barebones
+						li
+							a(href='#requirements') Requirements
+						li
+							a(href='#support') Support
+						li
+							a(href='#background') Background Reading
+
+				li
+					a(href='settings.html') Settings
+					ul.sub-navigation
+						li
+							a(href='#import') Import
+						li
+							a(href='#colors') colors
+						li
+							a(href='#fonts') Fonts
+						li
+							a(href='#grid') Grid
+						li
+							a(href='#breakpoints') Breakpoints
+						li
+							a(href='#sizes') Sizes
+						li
+							a(href='#layers') Layers
+				li
+					a(href='grid.html') Grid
+					ul.sub-navigation
+						li
+							a(href='#generator') Grid Settings
+						li
+							a(href='#generator') Containers
+						li
+							a(href='#generator') Columns
+						li
+							a(href='#generator') Galleries
+						li
+							a(href='#generator') Helpers
+				li
+					a(href='mixins.html') Mixins
+					ul.sub-navigation
+						li
+							a(href='#arrow') Arrow
+						li
+							a(href='#placeholder') Placeholder
+						li
+							a(href='#uppercase') Uppercase
+						li
+							a(href='#containers') Containers
+						li
+							a(href='#clearfix') Clearfix
+						li
+							a(href='#ellipsis') Ellipsis
+						li
+							a(href='#clearfix') Media Queries
+						li
+							a(href='#containers') No Bullet
+
+				li
+					a(href='helpers.html') Helpers
+					ul.sub-navigation
+						li
+							a(href='#background') Background Color
+						li
+							a(href="") Position
+						li
+							a(href='#borders') Borders
+						li
+							a(href='#margins') Margins & Padding
+						li
+							a(href='#{path}index.html') Layout
+						li
+							a(href='#{path}index.html') Typography
+
+						li
+							a(href='#{path}index.html') Visibility
+		block body

@@ -9,7 +9,7 @@ html
 		meta(name='description', content="Barebones – A lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk")
 
 		title Barebones – Lightweight SASS boilerplate to kickstart your next project | Made by Getagent.co.uk
-		link(rel='stylesheet', href='../../css/style.css')
+		link(rel='stylesheet', href='#{base}css/style.css')
 		link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
 		link(rel='apple-touch-icon-precomposed', href='/screen-icon.png')
 
@@ -27,4 +27,5 @@ html
 			|	ga('create', 'UA-73127596-1', 'auto');
 			|	ga('send', 'pageview');
 
-		script(src='../../javascript/application.js')
+		script(src='#{base}javascript/application.js')
+		script(async defer id="github-bjs" src="https://buttons.github.io/buttons.js")

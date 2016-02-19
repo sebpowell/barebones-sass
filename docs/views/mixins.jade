@@ -1,8 +1,6 @@
-include _inc/_head.jade
-include _inc/_layout.jade
+extends  _inc/_layout.jade
 
-.iframe-container
-
+block body
 	.main-container
 
 		h1.page-title Mixins
@@ -46,7 +44,7 @@ include _inc/_layout.jade
 
 		article#containers.article
 			h2 Uppercase
-			p Transforms text to uppercase, accepts an argument to specify letter-spacing. 
+			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
 			pre
 				code.language-scss.
 					.element {

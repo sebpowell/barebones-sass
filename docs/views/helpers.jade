@@ -1,14 +1,13 @@
-include _inc/_head.jade
-include _inc/_layout.jade
+extends  _inc/_layout.jade
 
-.iframe-container
+block body
 	.main-container
 		h1.page-title Helpers
 
 		article.article.introduction
-			p Helper classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each helper class is responsible for doing one job and doing it well. 
+			p Helper classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each helper class is responsible for doing one job and doing it well.
 
-			p All helper classes use the <span class="var">!important</span> flag to avoid specificity issues. 
+			p All helper classes use the <span class="var">!important</span> flag to avoid specificity issues.
 
 		article.article
 			h2 Background Color
@@ -246,11 +245,11 @@ include _inc/_layout.jade
 
 			pre.margin-bottom-double-half
 				code.language-html.
-					&lt;div class="is-hidden"&gt;&lt;/div&gt; 
+					&lt;div class="is-hidden"&gt;&lt;/div&gt;
 					// Hidden at all times.
 			pre.margin-bottom-double-half
 				code.language-html.
-					&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt; 
+					&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
 					// Hides above the device-small breakpoint.
 			pre
 				code.language-html.

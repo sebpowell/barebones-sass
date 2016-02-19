@@ -8,14 +8,17 @@
 	width: 100%;
 	position: fixed;
   top: 0;
+  z-index: 2;
   left: 0;
-	padding: sizes(double-half);
+	padding: sizes(base) sizes(double-half);
 	@include clearfix;
-  background: colors(brand, primary);
+	background: white;
+	border-bottom: 1px solid colors(keyline, light);
+  // background: colors(brand, primary);
 
 	.logo {
 		float: left;
-		// margin-top: 3px;
+		margin-top: 5px;
     // display: none;
 		// margin-right: sizes(double);
 	}
@@ -77,16 +80,16 @@
 }
 
 .docs-navigation {
-  background: #FDFDFD;
-  @include respond-below(device-large) {
-    box-shadow: 0 0 30px rgba(00,00,00,0.5);
-  }
+  // background: #FDFDFD;
+  // @include respond-below(device-large) {
+  //   box-shadow: 0 0 30px rgba(00,00,00,0.5);
+  // }
 
-  left: -300px;
-  width: 300px;
+  // left: -300px;
+  width: 200px;
   overflow-y: scroll;
   position: fixed;
-  border: 1px solid colors(keyline, light);
+  border-right: 1px solid colors(keyline, light);
   top: 110px;
   transition: left 0.5s ease-in-out;
   z-index: 9999;
@@ -105,13 +108,12 @@
 
   @include respond-above(device-large) {
     display: block;
-    left: 24px;
+    // left: 24px;
     // background-color: colors(brand, primary);
   }
 
   .logo {
     position: relative;
-    display: none;
     @include respond-above(device-large) {
       // display: block;/
     }
@@ -143,14 +145,14 @@
 
   .sub-navigation {
   	display: none;
-    border-top: 1px solid colors(keyline, light);
+    // border-top: 1px solid colors(keyline, light);
   	// background: darken(colors(brand, primary), 20%)
   }
 
   .docs-navigation-primary-links {
     > li {
       &:not(:last-child) {
-        border-bottom: 1px solid colors(keyline, light);
+        // border-bottom: 1px solid colors(keyline, light);
       }
       &:first-child {
         // border-top: 1px solid colors(keyline, light);
@@ -171,7 +173,7 @@
       left: 0;
     }
 
-    > li {      
+    > li {
     	&.active {
     		> a {
           color: colors(brand, primary);

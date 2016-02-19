@@ -6,7 +6,7 @@
 	@include respond-above(device-medium) {
 		@include span(4);
 	}
-	
+
 	.selling-point-title {
 		font-size: 16px;
 		font-weight: weights(primary, semi-bold);
@@ -53,7 +53,7 @@
 
 
 
-	.welcome-masthead-inner-heading {
+	.welcome-masthead-heading {
 		font-family: font(secondary);
 		font-size: 40px;
 		letter-spacing: 0.1em;

@@ -1,141 +1,141 @@
 extends  _inc/_layout.jade
+
 block body
-	.iframe-container
-		.main-container
-			h1.page-title Grid
-			article.article.introduction
-				p Barebones includes a responsive and semantic grid system. It allows you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary divs.
+	.main-container
+		h1.page-title Grid
+		article.article.introduction
+			p Barebones includes a responsive and semantic grid system. It allows you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary divs.
 
-			article.article
-				h2 Grid Settings
-				p Specify your grid settings in your settings file. If nothing is specified, default values are applied. 
+		article.article
+			h2 Grid Settings
+			p Specify your grid settings in your settings file. If nothing is specified, default values are applied.
 
-				table
-					thead
-						th Setting
-						th Default Value
-						th What it Does
-					tr
-						td <span class="var">columns</span>
-						td 12
-						td Specifies the number of columns in your grid
-					tr
-						td <span class="var">breakpoint</span>
-						td 720px
-						td The point at which columns should expand to 100%.
-					tr
-						td <span class="var">gutter</span>
-						td 1/4
-						td Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2)
-
-
-			article.article(id="containers")
-				h2 Containers
-
-				p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
-				p You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.
-
-				table
-					thead
-						th(colspan="2") Options
-					tr
-						td <span class="var">$max-width</span>
-						td container max-width
-					tr
-						td <span class="var">$mobile-gutter</span>
-						td removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).
-
-				pre
-					code.language-scss.
-						.element {
-							@include container(600, $mobile-gutter: false);
-						}
-			
-			article.article(id="columns")
-				h2 Columns
-
-				p Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.
-
-				table
-					thead
-						th(colspan="2") Options
-					tr
-						td <span class="var">$columns</span>
-						td Number of columns the component spans, of the total number defined in your settings file (by default this is 12).
-					tr
-						td <span class="var">$position</span> <em>(optional)</em>
-						td If the column is the last one, pass in the 'last' keyword to remove the margin.
-					tr
-						td <span class="var">$gutter</span> <em>(optional)</em>
-						td You can remove the gutter by passing in the keyword 'none'.
+			table
+				thead
+					th Setting
+					th Default Value
+					th What it Does
+				tr
+					td <span class="var">columns</span>
+					td 12
+					td Specifies the number of columns in your grid
+				tr
+					td <span class="var">breakpoint</span>
+					td 720px
+					td The point at which columns should expand to 100%.
+				tr
+					td <span class="var">gutter</span>
+					td 1/4
+					td Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2)
 
 
-				
+		article.article(id="containers")
+			h2 Containers
 
-				.example.margin-bottom-double
-					.example-wrapper
-						.example-sidebar(style="background-color: lightpink")
-						.example-content-block(style="background-color: lightpink")
+			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
+			p You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.
 
-				pre
-					code.language-scss.
-						.sidebar {
-						  @include span(4); // Creates a column that spans 4 colums
-						}
+			table
+				thead
+					th(colspan="2") Options
+				tr
+					td <span class="var">$max-width</span>
+					td container max-width
+				tr
+					td <span class="var">$mobile-gutter</span>
+					td removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).
 
-						.content {
-						  @include span(8, $position: last); // Creates a column that spans 8 columns
-						}
+			pre
+				code.language-scss.
+					.element {
+						@include container(600, $mobile-gutter: false);
+					}
 
-			article.article
-				h2 Galleries
-				p Galleries are made up of elements that repeat across multiple lines.
-				pre.margin-bottom-double
-					code.language-scss.
-						.photo-gallery {
-						  @include clearfix;
-						  // Clears the floats.
-						}
+		article.article(id="columns")
+			h2 Columns
 
-						.photo-gallery-item {
-							@include gallery(3);
-							// Creates a gallery with each item taking up 3 columns of your grid 
-							// (on a 12 grid-layout, this would be 4 items).
-						}
+			p Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.
 
-				.example.margin-bottom-double
-					.photo-gallery
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
-						.photo-gallery-item
+			table
+				thead
+					th(colspan="2") Options
+				tr
+					td <span class="var">$columns</span>
+					td Number of columns the component spans, of the total number defined in your settings file (by default this is 12).
+				tr
+					td <span class="var">$position</span> <em>(optional)</em>
+					td If the column is the last one, pass in the 'last' keyword to remove the margin.
+				tr
+					td <span class="var">$gutter</span> <em>(optional)</em>
+					td You can remove the gutter by passing in the keyword 'none'.
 
-				p The gallery function also allows you to create asmettric galleries. 
 
-				.example.photo-gallery.margin-bottom-double
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
-					.element(style="background-color: lightpink; height: 40px")
 
-				pre
-					code.language-scss.
-						.photo-gallery {
-						  @include clearfix;
-						  // Clears the floats.
-						}
 
-						.photo-gallery-item {
-							@include gallery(3, 6, 4);
-						}
+			.example.margin-bottom-double
+				.example-wrapper
+					.example-sidebar(style="background-color: lightpink")
+					.example-content-block(style="background-color: lightpink")
 
-			article#containers.article
-				h2 Helper Classes
-				p Various helper classes are also generated to quickly create grids – <a href="helpers.html">see here</a>.
+			pre
+				code.language-scss.
+					.sidebar {
+					  @include span(4); // Creates a column that spans 4 colums
+					}
+
+					.content {
+					  @include span(8, $position: last); // Creates a column that spans 8 columns
+					}
+
+		article.article
+			h2 Galleries
+			p Galleries are made up of elements that repeat across multiple lines.
+			pre.margin-bottom-double
+				code.language-scss.
+					.photo-gallery {
+					  @include clearfix;
+					  // Clears the floats.
+					}
+
+					.photo-gallery-item {
+						@include gallery(3);
+						// Creates a gallery with each item taking up 3 columns of your grid
+						// (on a 12 grid-layout, this would be 4 items).
+					}
+
+			.example.margin-bottom-double
+				.photo-gallery
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+					.photo-gallery-item
+
+			p The gallery function also allows you to create asmettric galleries.
+
+			.example.photo-gallery.margin-bottom-double
+				.element(style="background-color: lightpink; height: 40px")
+				.element(style="background-color: lightpink; height: 40px")
+				.element(style="background-color: lightpink; height: 40px")
+				.element(style="background-color: lightpink; height: 40px")
+				.element(style="background-color: lightpink; height: 40px")
+
+			pre
+				code.language-scss.
+					.photo-gallery {
+					  @include clearfix;
+					  // Clears the floats.
+					}
+
+					.photo-gallery-item {
+						@include gallery(3, 6, 4);
+					}
+
+		article#containers.article
+			h2 Helper Classes
+			p Various helper classes are also generated to quickly create grids – <a href="helpers.html">see here</a>.

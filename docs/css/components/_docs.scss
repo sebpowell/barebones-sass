@@ -1,9 +1,6 @@
 .page-layout-docs {
   padding: grid(mobile-gutter);
-  @include container(1800px);
-  @include respond-above(device-large) {
-    padding-left: 300px;
-  }
+
 }
 
 .row {
@@ -25,6 +22,11 @@
   }
 }
 
+.docs-container {
+	max-width: 1000px;
+	margin: auto;
+}
+
 
 .iframe-container {
 	@include container();
@@ -32,8 +34,9 @@
 
 
 .main-container {
-	@include container(720px);
+	// @include container(720px);
 	padding-top: 100px;
+	padding-left: 300px;
 }
 
 

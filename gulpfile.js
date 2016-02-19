@@ -20,11 +20,12 @@ gulp.task("jade", function() {
 		.pipe(jade({
 			pretty: true,
 			locals: {
-				image_base: "../../images/",
+				base: "docs/",
+				image_base: "docs/images/",
 				repo: "https://github.com/sebpowell/barebones"
 			}
 		}))
-		.pipe(gulp.dest("docs/views/build"));
+		.pipe(gulp.dest("./"));
 });
 
 /////////////////////////////////////////////////////

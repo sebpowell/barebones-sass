@@ -1,16 +1,25 @@
 $colors: (
 	test: black,
+
 	brand: (
 		primary: #157afb,
 		secondary: #fe5607
 	),
+
 	secondary: (
 		orange: #f8b000,
 		green: #00C771,
 	),
+
+	social: (
+		facebook: #103480,
+		twitter: #1DA1F2
+	),
+
 	system: (
 		warning: red,
 	),
+
 	greyscale: (
 		50: #FAFAFA,
 		100: #F5F5F5,
@@ -23,6 +32,7 @@ $colors: (
 		800: #424242,
 		900: #212121
 	),
+
 	keyline: (
 		light: #E8E8EB,
 		medium: #D5D5D5,

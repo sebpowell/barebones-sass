@@ -1,13 +1,14 @@
 function setNavigation() {
     var path = window.location.pathname;
 
-    path = path.replace(/\/$/, "");
-    path = decodeURIComponent(path);
+    path = path.replace(/\/$/, "").replace(/^\//, "");
+    // path = decodeURIComponent(path);
 
     $(".docs-navigation > ul > li > a").each(function () {
         var href = $(this).attr('href');
         var sub = path.substring(0, href.length);
-        console.log(sub);
+        console.log(sub, href);
+
         if (sub === href) {
            $(this).closest('li').addClass('active');
         }
