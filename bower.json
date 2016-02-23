@@ -1,24 +1,21 @@
 {
-  "name": "barebones",
-  "description": "SASS boilerplate",
-  "main": "",
-  "version": "1.2",
+  "name": "barebones-sass",
+  "description": "A lightweight, responsive SASS boilerplate to kickstart your next web project.SASS boilerplate",
+  "version": "1.0",
   "authors": [
-    "Seb Powell"
+    "Sebastien Powell"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/sebpowell/barebones",
-  "moduleType": [],
-  "private": true,
+  "homepage": "https://github.com/sebpowell/barebones-sass",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests",
-    "docs", 
-    "*.html", 
-    "CNAME", 
+    "docs",
+    "*.html",
+    "CNAME",
     "*.log",
     "package.json",
     "*.js",
