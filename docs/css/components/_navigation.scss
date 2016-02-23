@@ -5,22 +5,24 @@
 }
 
 .primary-navigation {
+  @include clearfix;
+  display: none;
 	width: 100%;
 	position: fixed;
   top: 0;
-  z-index: 2;
   left: 0;
+  // z-index: layers(primary-navigation);
 	padding: sizes(base) sizes(double-half);
-	@include clearfix;
+
 	background: white;
 	border-bottom: 1px solid colors(keyline, light);
-  // background: colors(brand, primary);
+  @include respond-above(device-medium) {
+    display: block;
+  }
 
 	.logo {
 		float: left;
-		margin-top: 5px;
-    // display: none;
-		// margin-right: sizes(double);
+		margin-top: 6px;
 	}
 	ul {
 		@include no-bullet;
@@ -40,7 +42,6 @@
 		}
 	}
 
-
 	.github {
 		float: right;
 	}
@@ -54,15 +55,15 @@
   background: colors(brand, primary);
   padding: sizes(base);
   display: block;
-  @include respond-above(device-large) {
-    display: none;
-  }
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9;
-
+  
+  @include respond-above(device-medium) {
+    display: none;
+  }
   .logo {
     margin: auto;
   }
@@ -74,105 +75,55 @@
 }
 
 
-.button:hover {
-  // transform: translateY(-10px);
-  box-shadow: 0 0 6px 6px rgba(255,255,255,0.3);
-}
 
 .docs-navigation {
-  // background: #FDFDFD;
-  // @include respond-below(device-large) {
-  //   box-shadow: 0 0 30px rgba(00,00,00,0.5);
-  // }
-
-  // left: -300px;
-  width: 200px;
-  overflow-y: scroll;
+  @include span(3);
+  background: white;
   position: fixed;
-  border-right: 1px solid colors(keyline, light);
-  top: 110px;
-  transition: left 0.5s ease-in-out;
-  z-index: 9999;
-  border-radius: 3px;
-  overflow: hidden;
-
+  
   &.show {
-    left: 0;
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1)
   }
 
-  .made {
-    font-size: 12px;
-    color: lighten(colors(brand, primary), 30%);
+  @include respond-below(device-medium) {
+    transition: all .5s;
+    transform: scale(0.9);
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+    top: 58px;
+    width: 94%;
+    left: 3%;
+    z-index: 9999; // temp
   }
 
-  @include respond-above(device-large) {
-    display: block;
-    // left: 24px;
-    // background-color: colors(brand, primary);
-  }
 
   .logo {
     position: relative;
-    @include respond-above(device-large) {
+    @include respond-above(device-medium) {
       // display: block;/
     }
     margin: auto;
   }
 
-  .download {
-  	position: absolute;
-  	bottom: sizes(base);
-  	left: sizes(base);
-  	right: sizes(base);
-  	padding: sizes(base);
-  	text-align: center;
-  	margin-bottom: sizes(base);
-  	transition: all .5s;
-    .button {
-      @extend .button.primary;
-      margin-bottom: sizes(base);
-      @include respond-above(device-large) {
-        background: white;
-        color: colors(brand, primary);
-        &:hover {
-          background: white;
-          color: colors(brand, primary);
-        }
-      }
-    }
-  }
-
   .sub-navigation {
   	display: none;
-    // border-top: 1px solid colors(keyline, light);
-  	// background: darken(colors(brand, primary), 20%)
   }
 
   .docs-navigation-primary-links {
-    > li {
-      &:not(:last-child) {
-        // border-bottom: 1px solid colors(keyline, light);
-      }
-      &:first-child {
-        // border-top: 1px solid colors(keyline, light);
-      }
+    @include respond-above(device-medium) {
+      position: fixed;
+      min-width: 200px;
+      border-right: 1px solid colors(keyline, light);
     }
-  	@include respond-above(device-large) {
-  	 // padding-top: 100px;
-  	}
   }
   ul {
     @include no-bullet;
-    transition: all .5s;
-    width: 300px;
-    left: -300px;
-    overflow-y: scroll;
-
     &.is-visible {
       left: 0;
     }
-
     > li {
     	&.active {
     		> a {
@@ -190,12 +141,19 @@
           }
     		}
     	}
+      &:first-child {
+        @include respond-above(device-medium) {
+          > a {
+            padding-top: 0;
+          }
+        }
+      }
       > a {
       	transition: color .5s;
         padding: sizes(base);
         text-decoration: none;
         display: block;
-        @include respond-above(device-large) {
+        @include respond-above(device-medium) {
           // color: lighten(colors(brand, primary), 30%);
           &:hover {
           	// color: white;

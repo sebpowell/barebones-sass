@@ -96,8 +96,8 @@ $layers: (
 
 $grid: (
 	// columns: 12,
-	// gutter: 1/2,
-	// breakpoint: 4000px,
+	gutter: 1/2,
+	breakpoint: "device-medium",
 	mobile-gutter: 24px,
 	mobile-padding: 24px
 );

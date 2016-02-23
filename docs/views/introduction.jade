@@ -4,9 +4,10 @@ block body
 	.main-container
 		h1.page-title Getting Started
 
+		article.article.introduction
+			p Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.
+			
 		article.article
-			p.text-medium-large Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.
-
 			h2 Why does the world need Barebones?
 
 			p It probably doesn't, but here goes; we wanted to create a lightweight SASS library that we could share between projects – powerful enough to allow us to focus on design, and lightweight enough to stay out of our way.
@@ -28,74 +29,73 @@ block body
 				li A customisable, semantic and responsive grid system
 				li Commonly used mixins, to handle things like media queries, styling input placeholder text and more.
 				li A toned down version of Normlaise.css that applies browser resets to only the most commonly used elements.
-			p Click here for a complete overview of the included files.
 
-			article.article
-				h2 Project Structure
+			//- article.article
+			//- 	h2 Project Structure
 
-				h3 Helpers
-				table
-					tr
-						td Background
-						td Generates background-color helpers for every colour specified in your $colors map.
-					tr
-						td Borders
-						td Generates border helpers using the $keyline value specified in your $colors map.
-					tr
-						td Layout
-						td Layout helpers
-					tr
-						td Margin & Padding
-						td Generates margin and padding helpres from sizes specified in $sizes map.
-					tr
-						td Typography
-						td Generates text sizing, colors and transform helpers from sizes and colors specified.
-					tr
-						td Visibility
-						td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
+			//- 	h3 Helpers
+			//- 	table
+			//- 		tr
+			//- 			td Background
+			//- 			td Generates background-color helpers for every colour specified in your $colors map.
+			//- 		tr
+			//- 			td Borders
+			//- 			td Generates border helpers using the $keyline value specified in your $colors map.
+			//- 		tr
+			//- 			td Layout
+			//- 			td Layout helpers
+			//- 		tr
+			//- 			td Margin & Padding
+			//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
+			//- 		tr
+			//- 			td Typography
+			//- 			td Generates text sizing, colors and transform helpers from sizes and colors specified.
+			//- 		tr
+			//- 			td Visibility
+			//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
 
-				h3 Mixins
-				table
-					tr
-						td Arrow
-						td Generates background-color helpers for every colour specified in your $colors map.
-					tr
-						td Clearfix
-						td Generates border helpers using the $keyline value specified in your $colors map.
-					tr
-						td Ellipsis
-						td Layout helpers
-					tr
-						td Media Query
-						td Generates margin and padding helpres from sizes specified in $sizes map.
-					tr
-						td Placeholder
-						td Generates text sizing, colors and transform helpers from sizes and colors specified.
-					tr
-						td Uppercase
-						td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
+			//- 	h3 Mixins
+			//- 	table
+			//- 		tr
+			//- 			td Arrow
+			//- 			td Generates background-color helpers for every colour specified in your $colors map.
+			//- 		tr
+			//- 			td Clearfix
+			//- 			td Generates border helpers using the $keyline value specified in your $colors map.
+			//- 		tr
+			//- 			td Ellipsis
+			//- 			td Layout helpers
+			//- 		tr
+			//- 			td Media Query
+			//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
+			//- 		tr
+			//- 			td Placeholder
+			//- 			td Generates text sizing, colors and transform helpers from sizes and colors specified.
+			//- 		tr
+			//- 			td Uppercase
+			//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
 
-					tr
-						td Z-Index
-						td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
+			//- 		tr
+			//- 			td Z-Index
+			//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
 
-				h3 Grid
-				table
-					tr
-						td Columns
-						td Generates background-color helpers for every colour specified in your $colors map.
-					tr
-						td Container
-						td Generates border helpers using the $keyline value specified in your $colors map.
-					tr
-						td Gallery
-						td Layout helpers
-					tr
-						td Offset Helpers
-						td Generates margin and padding helpres from sizes specified in $sizes map.
-					tr
-						td Row
-						td Generates text sizing, colors and transform helpers from sizes and colors specified.
+			//- 	h3 Grid
+			//- 	table
+			//- 		tr
+			//- 			td Columns
+			//- 			td Generates background-color helpers for every colour specified in your $colors map.
+			//- 		tr
+			//- 			td Container
+			//- 			td Generates border helpers using the $keyline value specified in your $colors map.
+			//- 		tr
+			//- 			td Gallery
+			//- 			td Layout helpers
+			//- 		tr
+			//- 			td Offset Helpers
+			//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
+			//- 		tr
+			//- 			td Row
+			//- 			td Generates text sizing, colors and transform helpers from sizes and colors specified.
 
 
 
@@ -106,7 +106,7 @@ block body
 			p If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.
 
 			h3 1. Install the package
-			p Barebones is available as a Bower or NPM package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.
+			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.
 
 			pre
 				code.language-bash
@@ -125,9 +125,9 @@ block body
 					|--| main.sass
 					|--| _settings.sass
 					|
-					|-- bower-components // Or node_modules, depending on which package manager you're using
+					|-- bower-components
 					|--	barebones
-							_barebones.sass
+							_base.sass
 
 			pre
 				code.language-scss.

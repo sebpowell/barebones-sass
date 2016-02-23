@@ -16,6 +16,12 @@
     "bower_components",
     "test",
     "tests",
-    "docs"
+    "docs", 
+    "*.html", 
+    "CNAME", 
+    "*.log",
+    "package.json",
+    "*.js",
+    ".editorconfig"
   ]
 }

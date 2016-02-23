@@ -1,5 +1,4 @@
-@mixin span($columns, $position: "", $gutter: "", $offset: "")
-	margin-right: $gutterWidth
+@mixin span($columns, $position: "", $gutter: "", $offset: 0)
 	float: left
 	width: 100%
 	
@@ -15,6 +14,9 @@
 			&:last-child
 				margin-right: 0
 
+		@if $offset > 0
+			margin-left: columnCalc($offset)
+		
 		@if $position == "last"
 			margin-right: 0
 			float: right

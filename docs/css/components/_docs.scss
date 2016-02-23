@@ -1,6 +1,5 @@
 .page-layout-docs {
-  padding: grid(mobile-gutter);
-
+  padding: 52px grid(mobile-gutter) grid(mobile-gutter) grid(mobile-gutter);
 }
 
 .row {
@@ -23,20 +22,27 @@
 }
 
 .docs-container {
+  @include clearfix;
 	max-width: 1000px;
-	margin: auto;
+  padding-top: 24px;
+  
+  margin: auto;
+  @include respond-above(device-medium) {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
 }
 
-
-.iframe-container {
-	@include container();
+.button:hover {
+  // transform: translateY(-10px);
+  box-shadow: 0 0 6px 6px rgba(255,255,255,0.3);
 }
 
 
 .main-container {
 	// @include container(720px);
-	padding-top: 100px;
-	padding-left: 300px;
+  @include span(9, $position: last);
+
 }
 
 

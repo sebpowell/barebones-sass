@@ -8,8 +8,7 @@
 
 .element
 	+gallery(6, 2, 4)
-
-
+	
 .element-2
 	+gallery(2,2,3,5)
 
@@ -29,14 +28,6 @@ table
 		line-height: 1.8
 		border-bottom: 1px solid colors(keyline, light)
 
-	tr:first-child
-		// td
-		// 	border-top: 1px solid colors(keyline, light)
-			
-		// td:first-child
-		// 	border-radius: 3px 0 0 0
-		// td:last-child
-		// 	border-radius-right: 0 3px 0 0
 	tr:last-child
 		td:first-child
 			border-radius: 0 0 0 3px
@@ -57,14 +48,19 @@ table
 			
 
 	thead
-
 		th
 			font-weight: 700
 			border: 1px solid colors(keyline, light)
-			border-radius: 3px 3px 0 0
+			
 			font-size: 14px
 			color: colors(greyscale, 800)
 			padding: sizes(half) sizes(base)
 			text-align: left
 			background: colors(greyscale, 100)
 			border-bottom: 1px solid colors(keyline, light)
+			&:first-child
+				border-radius: 3px 0 0 0
+			&:last-child
+				border-radius: 0 3px 0 0
+			&:not(:first-child)
+				border-left: 0

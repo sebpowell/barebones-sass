@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="docs/css/style.css"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,300italic,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css"/>
     <!-- Typekit-->
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -31,25 +32,23 @@
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <div class="primary-navigation"><a href="index.html" class="logo"><img src="docs/images/logo-blue.png"/></a>
-    <div class="github"><a href="https://github.com/ntkme/github-buttons" data-style="mega" data-count-href="/ntkme/github-buttons/stargazers" data-count-api="/repos/ntkme/github-buttons#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></div>
+    <div class="github"><a href="https://github.com/sebpowell/barebones-sass" data-style="mega" data-count-href="/sebpowell/barebones-sass" data-count-api="/sebpowell/barebones-sass" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></div>
   </div>
   <div class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="docs/images/logo.png"/></a>
     <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
   </div>
   <div class="share-bar">
     <div class="newsletter">
-      <form action="//london.us9.list-manage.com/subscribe/post?u=7f799244738e8b8558a646378&amp;amp;id=55c4288084" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="novalidate" class="validate">
-        <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="Sign up to our newsletter" class="newsletter-input"/>
+      <form action="//getagent.us8.list-manage.com/subscribe/post?u=8e7e2415ce6f230a2587c4d65&amp;amp;id=efa90a8389" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="novalidate" class="validate">
+        <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="Sign up for release updates" class="newsletter-input"/>
         <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Submit" class="newsletter-submit"/>
       </form>
     </div>
-    
-    
   </div>
   <div class="docs-container">
     <div class="docs-navigation">
       <ul class="docs-navigation-primary-links">
-        <li><a href="/introduction.html">Getting Started</a>
+        <li><a href="introduction.html">Getting Started</a>
           <ul class="sub-navigation">
             <li><a href="#installing">Installing Barebones</a></li>
             <li><a href="#requirements">Requirements</a></li>
@@ -60,7 +59,7 @@
         <li><a href="settings.html">Settings</a>
           <ul class="sub-navigation">
             <li><a href="#import">Import</a></li>
-            <li><a href="#colors">colors</a></li>
+            <li><a href="#colors">Colors</a></li>
             <li><a href="#fonts">Fonts</a></li>
             <li><a href="#grid">Grid</a></li>
             <li><a href="#breakpoints">Breakpoints</a></li>
@@ -104,8 +103,10 @@
     </div>
     <div class="main-container">
       <h1 class="page-title">Getting Started</h1>
+      <article class="article introduction">
+        <p>Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.</p>
+      </article>
       <article class="article">
-        <p class="text-medium-large">Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.</p>
         <h2>Why does the world need Barebones?</h2>
         <p>It probably doesn't, but here goes; we wanted to create a lightweight SASS library that we could share between projects – powerful enough to allow us to focus on design, and lightweight enough to stay out of our way.</p>
         <p>Over time, we've learned a lot about how to structure our SASS projects in a cohesive, scalable and maintainable way. We thought other people might find this knowledge useful so decided to release this as a package in the public domain.</p>
@@ -120,97 +121,14 @@
           <li>Commonly used mixins, to handle things like media queries, styling input placeholder text and more.</li>
           <li>A toned down version of Normlaise.css that applies browser resets to only the most commonly used elements.</li>
         </ul>
-        <p>Click here for a complete overview of the included files.</p>
-        <article class="article">
-          <h2>Project Structure</h2>
-          <h3>Helpers</h3>
-          <table>
-            <tr>
-              <td>Background</td>
-              <td>Generates background-color helpers for every colour specified in your $colors map.</td>
-            </tr>
-            <tr>
-              <td>Borders</td>
-              <td>Generates border helpers using the $keyline value specified in your $colors map.</td>
-            </tr>
-            <tr>
-              <td>Layout</td>
-              <td>Layout helpers</td>
-            </tr>
-            <tr>
-              <td>Margin & Padding</td>
-              <td>Generates margin and padding helpres from sizes specified in $sizes map.</td>
-            </tr>
-            <tr>
-              <td>Typography</td>
-              <td>Generates text sizing, colors and transform helpers from sizes and colors specified.</td>
-            </tr>
-            <tr>
-              <td>Visibility</td>
-              <td>Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.</td>
-            </tr>
-          </table>
-          <h3>Mixins</h3>
-          <table>
-            <tr>
-              <td>Arrow</td>
-              <td>Generates background-color helpers for every colour specified in your $colors map.</td>
-            </tr>
-            <tr>
-              <td>Clearfix</td>
-              <td>Generates border helpers using the $keyline value specified in your $colors map.</td>
-            </tr>
-            <tr>
-              <td>Ellipsis</td>
-              <td>Layout helpers</td>
-            </tr>
-            <tr>
-              <td>Media Query</td>
-              <td>Generates margin and padding helpres from sizes specified in $sizes map.</td>
-            </tr>
-            <tr>
-              <td>Placeholder</td>
-              <td>Generates text sizing, colors and transform helpers from sizes and colors specified.</td>
-            </tr>
-            <tr>
-              <td>Uppercase</td>
-              <td>Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.</td>
-            </tr>
-            <tr>
-              <td>Z-Index</td>
-              <td>Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.</td>
-            </tr>
-          </table>
-          <h3>Grid</h3>
-          <table>
-            <tr>
-              <td>Columns</td>
-              <td>Generates background-color helpers for every colour specified in your $colors map.</td>
-            </tr>
-            <tr>
-              <td>Container</td>
-              <td>Generates border helpers using the $keyline value specified in your $colors map.</td>
-            </tr>
-            <tr>
-              <td>Gallery</td>
-              <td>Layout helpers</td>
-            </tr>
-            <tr>
-              <td>Offset Helpers</td>
-              <td>Generates margin and padding helpres from sizes specified in $sizes map.</td>
-            </tr>
-            <tr>
-              <td>Row</td>
-              <td>Generates text sizing, colors and transform helpers from sizes and colors specified.</td>
-            </tr>
-          </table>
-        </article>
+        
+        
       </article>
       <article id="installing" class="article">
         <h2>Installing Barebones</h2>
         <p>If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.</p>
         <h3>1. Install the package</h3>
-        <p>Barebones is available as a Bower or NPM package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.</p>
+        <p>Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.</p>
         <pre><code class="language-bash">bower install barebones</code></pre>
         <h3>2. Create a settings file</h3>
         <p>Barebones code allows you to specify your own individual project settings – just grab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.</p>
@@ -220,9 +138,9 @@
 |--| main.sass
 |--| _settings.sass
 |
-|-- bower-components // Or node_modules, depending on which package manager you're using
+|-- bower-components
 |--	barebones
-		_barebones.sass
+		_base.sass
 </code></pre>
         <pre><code class="language-scss">// Always import the settings file first
 @import _settings.scss
