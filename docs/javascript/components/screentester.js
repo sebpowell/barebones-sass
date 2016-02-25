@@ -7,8 +7,6 @@ function setNavigation() {
     $(".docs-navigation > ul > li > a").each(function () {
         var href = $(this).attr('href');
         var sub = path.substring(0, href.length);
-        console.log(sub, href);
-
         if (sub === href) {
            $(this).closest('li').addClass('active');
         }
@@ -22,6 +20,17 @@ $(document).ready(function() {
 		$(".backdrop").toggleClass("is-visible");
 		$(this).toggleClass("close");
 	});
+
+	if ( $(window).width() < 800 ) {
+		$(".docs-navigation a").click(function() {
+			$(".docs-navigation").toggleClass("show");
+			$(".backdrop").toggleClass("is-visible");
+			$(".mobile-navigation-toggle").toggleClass("close");
+		});
+	}
+	else {
+		//
+	}
 });
 
 

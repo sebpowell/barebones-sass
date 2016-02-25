@@ -2,22 +2,62 @@
   padding: 52px grid(mobile-gutter) grid(mobile-gutter) grid(mobile-gutter);
 }
 
-.row {
-	[class^="column"] {
-		background: lightBlue;
-		padding: sizes(base);
-	}
-}
-
 .example {
   border: 1px solid colors(keyline, light);
   border-radius: 3px;
   padding: 24px;
 
+  .example-gallery-item {
+    height: 100px;
+    background: pink;
+  }
+
+  // Example grid
+  .example-wrapper {
+    @include container();
+    @include clearfix;
+
+    [class^="column"], .example-sidebar, .example-content-block {
+      height: 100px;
+    }
+    .example-sidebar {
+      @include span(4);
+    }
+
+    .example-content-block {
+      @include span(8, last);
+    }
+  }
+
   .modal, .dropdown-menu {
     position: static;
     visibility: visible;
     opacity: 1;
+  }
+  .row {
+  	[class^="column"] {
+  		background: pink;
+  		padding: sizes(base);
+  		font-size: 13px;
+  		color: darken(pink, 60%);
+  	}
+  }
+
+  .photo-gallery {
+  	@include clearfix;
+
+  	.photo-gallery-item {
+  		@include gallery(3);
+  		background-color: lightpink;
+  		height: 40px;
+  	}
+  }
+  .element {
+  	@include gallery(6, 2, 4);
+  }
+
+  .element-2 {
+  	@include gallery(2,2,3,5);
   }
 }
 
@@ -25,7 +65,7 @@
   @include clearfix;
 	max-width: 1000px;
   padding-top: 24px;
-  
+
   margin: auto;
   @include respond-above(device-medium) {
     padding-top: 80px;
@@ -34,17 +74,12 @@
 }
 
 .button:hover {
-  // transform: translateY(-10px);
   box-shadow: 0 0 6px 6px rgba(255,255,255,0.3);
 }
 
-
 .main-container {
-	// @include container(720px);
   @include span(9, $position: last);
-
 }
-
 
 .page-title {
 	font-size: 42px;
@@ -53,58 +88,7 @@
 }
 
 
-.example-gallery-item {
-  height: 100px;
-  background: pink;
-  // @include gallery-item(1, device-small);
-  // @include gallery-item(4, device-medium);
-  // margin bottom on mobile?
-}
 
-
-.example-wrapper {
-  @include container();
-  @include clearfix;
-
-  [class^="column"], .example-sidebar, .example-content-block {
-    height: 100px;
-  }
-  .example-sidebar {
-    @include span(4);
-  }
-
-  .example-content-block {
-    @include span(8, last);
-  }
-}
-
-
-.phantom {
-  margin: auto;
-  width: 100%;
-  height: 100%;
-
-  // background: colors(greyscale, x-light);
-}
-
-.content {
-  background: #e5e5e5;
-  height: 100px;
-  width: 100%;
-}
-
-iframe {
-  width: 100%;
-  transition: all .15s;
-  height: 100%;
-  // max-width: 1200px;
-  background: white;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
 
 
 

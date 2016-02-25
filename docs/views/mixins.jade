@@ -2,7 +2,6 @@ extends  _inc/_layout.jade
 
 block body
 	.main-container
-
 		h1.page-title Mixins
 		article.article(id="arrow")
 			h2 Arrow
@@ -21,7 +20,6 @@ block body
 					td <span class="var">$size</span>
 					td Any px value (e.g. 6px)
 
-
 			pre
 				code.language-scss.
 					.element {
@@ -30,8 +28,7 @@ block body
 						}
 					 }
 
-
-		article#containers.article
+		article.article(id="placeholder")
 			h2 Placeholder
 			p Changes form placeholder text color.
 			pre
@@ -42,7 +39,7 @@ block body
 						}
 					}
 
-		article#containers.article
+		article.article(id="uppercase")
 			h2 Uppercase
 			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
 			pre
@@ -51,11 +48,7 @@ block body
 						@include uppercase(0.1em);
 					 }
 
-
-		article#containers.article
-
-
-		article#clearfix.article
+		article.article(id="clearfix")
 			h2 Clearfix
 			p Clears floats. Apply this to the parent element.
 			pre
@@ -64,7 +57,7 @@ block body
 						@include clearfix;
 					 }
 
-		article#ellipsis.article
+		article.article(id="ellipsis")
 			h2 Ellipsis
 			p Adds ellipsis to limit text width <span class="var">ellipsis($width)<span>
 			pre
@@ -73,8 +66,7 @@ block body
 						@include text-overflow(300);
 					}
 
-
-		article#media-queries.article
+		article.article(id="media-queries")
 			h2 Media Queries
 			p Use <span class="var">respond-above($device)</span> and <span class="var">respond-below($device)</span> to target different viewport sizes defined in your settings file.
 			pre
@@ -88,9 +80,7 @@ block body
 						}
 					}
 
-
-
-		article#no-bullet.article
+		article.article(id="no-bullet")
 			h2 No Bullet
 			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
 			pre

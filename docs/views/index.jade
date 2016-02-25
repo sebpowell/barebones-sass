@@ -1,32 +1,29 @@
 include _inc/_head.jade
-.welcome-masthead
-	
+section.welcome-masthead
 	.welcome-masthead-inner
-		a.logo(href = "index.html")
-			img(src="#{image_base}logo-white.png")
 		.container-large.no-padding
-			h1.welcome-masthead-heading BUILD YOUR OWN SASS FRAMEWORK
-			.welcome-masthead-subheading A lightweight, responsive SASS boilerplate to kickstart your next web project.
+			h1.welcome-masthead-heading BAREBONES
+			.welcome-masthead-subheading #{strapline}
 			.welcome-masthead-buttons
 				a.button.white.large.margin-right-base(href="introduction.html") Get Started
 
-			section.selling-points
-				.selling-point
-					img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
-					h2.selling-point-title Zero Bloat
-					p.selling-point-description Includes only what you need – a responsive grid system and reusable mixins and helpers.
+section.selling-points
+	.selling-point
+		img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
+		h2.selling-point-title Zero Bloat
+		p.selling-point-description Includes only what you need – a responsive grid system and reusable mixins and helpers.
 
-				.selling-point
-					img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
-					h2.selling-point-title Faster Development
-					p.selling-point-description Stop wasting time overwriting existing styles, and Kick things off with a clean starting point.
+	.selling-point
+		img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
+		h2.selling-point-title Faster Development
+		p.selling-point-description Stop wasting time overwriting existing styles, and Kick things off with a clean starting point.
 
-				.selling-point
-					img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
-					h2.selling-point-title Fully Customisable
-					p.selling-point-description Every setting is easily customisable.
+	.selling-point
+		img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
+		h2.selling-point-title Fully Customisable
+		p.selling-point-description Every setting is easily customisable.
 
-	.welcome-masthead-footer
-		.made-by
-			| Made with blood, sweat and tears in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a>. The source code is licensed MIT. The website content is licensed CC ANS 4.0.
+.welcome-masthead-footer
+	.made-by
+	| Made with blood, sweat and tears in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a>. The source code is licensed MIT. The website content is licensed CC ANS 4.0.
 

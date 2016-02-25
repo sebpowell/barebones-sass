@@ -1,81 +1,52 @@
-
-
 .share-bar
 	position: fixed
 	left: 0
-	width: 100%
 	bottom: 0
+	width: 100%
 	background: white
-	// box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2)
 	border-top: 1px solid colors(keyline, light)
 	padding: sizes(half)
-	z-index: 9999
+	z-index: layers(share-bar)
 	transition: bottom .5s
 
-	.social
-		float: right
-	.twitter, .facebook
-		@extend .button
-		color: white
-		margin-right: sizes(half)
-		display: none
-		+respond-above(device-large)
-			display: inline-block
-
-	.facebook
-		background: colors(social, facebook)
-
-	.twitter
-		background: colors(social, twitter)
-
-	&.is-visible
-		bottom: 0
-	// box-shadow: 0 -4px 20px rgba(00,00,00,0.2)
 	.newsletter
 		position: relative
 		+respond-above(device-medium)
 			float: left
 			width: 500px
+
 		.newsletter-submit
 			@extend .button
-			background: colors(greyscale, 900)
 			color: white
 			height: 48px
 			line-height: 48px
+			background: colors(brand, primary)
+			&:hover
+				background: colors(greyscale, 900)
+
 			+respond-above(device-large)
-				background: colors(brand, primary)
+
 				height: 38px
 				line-height: 38px
-			transition: right .4s
-			z-index: 999
-			+respond-below(device-medium)
-				width: 100%
-			+respond-above(device-medium)
 				position: absolute
 				top: 50%
 				right: 6px
 				margin-top: -19px
 
-
-			&:hover
-				background: colors(greyscale, 900)
+			+respond-below(device-medium)
+				width: 100%
 
 		.newsletter-input
-			+respond-below(device-medium)
-				text-align: center
-				font-size: 16px
-				margin-bottom: sizes(half)
-			+respond-above(device-medium)
-				font-size: 16px
-
+			font-size: 16px
 			height: 48px
 			line-height: 48px
 			font-family: font(primary)
 			background: transparent
 			width: 100%
-
 			border-radius: 100px
 			padding: sizes(base)
 			background: white
 			border: 1px solid colors(keyline, dark)
-
+			+respond-below(device-medium)
+				text-align: center
+				margin-bottom: sizes(half)

@@ -54,7 +54,7 @@ $fonts: (
 		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
 	),
 	secondary: (
-		name: #{'Futura-PT', sans-serif},
+		name: #{"Futura-LT", 'Futura LT', sans-serif},
 		weights: (
 			light: 100,
 			regular: 400,
@@ -89,8 +89,8 @@ $font-sizes: (
 
 $layers: (
 	backdrop: 3,
-	modal: 3,
-	dropdown: 1,
+	modal: 4,
+	share-bar: 2,
 	navigation: 1,
 );
 
