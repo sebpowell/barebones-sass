@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <script src="docs/javascript/application.js"></script>
-    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   </head>
 </html>
 <body class="page-layout-docs">
@@ -99,14 +98,6 @@
         <h2>Why build your own framework?</h2>
         <p>Existing frameworks such as Bootstrap and Foundation are great for prototyping, but typically lack flexibility. If you want to create your own theme, you're going to spend a lot of time with the !important flag – a great way for things to quickly become completely unmanageable.</p>
         <p>Building your own framework puts you in the driving seat, giving you full control over how your app or website looks, without being shoe-horned into someone else's design system.</p>
-        <h2>What's included?</h2>
-        <p>Barebones includes:</p>
-        <ul>
-          <li>A global settings file to add your own settings.</li>
-          <li>A customisable, semantic and responsive grid system</li>
-          <li>Commonly used mixins, to handle things like media queries, styling input placeholder text and more.</li>
-          <li>A toned down version of Normlaise.css that applies browser resets to only the most commonly used elements.</li>
-        </ul>
         
         
       </article>
@@ -124,9 +115,9 @@
 |--| main.sass
 |--| _settings.sass
 |
-|-- bower-components
-|--	barebones
-		_base.sass
+|-- bower-components/
+|--| barebones/
+|--|--| _base.sass
 </code></pre>
         <pre><code class="language-scss">// Always import the settings file first
 @import _settings.scss

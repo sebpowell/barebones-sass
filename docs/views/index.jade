@@ -1,29 +1,31 @@
 include _inc/_head.jade
 section.welcome-masthead
 	.welcome-masthead-inner
-		.container-large.no-padding
-			h1.welcome-masthead-heading BAREBONES
-			.welcome-masthead-subheading #{strapline}
-			.welcome-masthead-buttons
-				a.button.white.large.margin-right-base(href="introduction.html") Get Started
+		.container-large
+			.welcome-masthead-left
+				h1.welcome-masthead-heading BAREBONES
+				.welcome-masthead-subheading #{strapline}
+				.welcome-masthead-buttons
+					a.button.large.white(href="introduction.html") Get Started
 
-section.selling-points
-	.selling-point
-		img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
-		h2.selling-point-title Zero Bloat
-		p.selling-point-description Includes only what you need – a responsive grid system and reusable mixins and helpers.
 
-	.selling-point
-		img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
-		h2.selling-point-title Faster Development
-		p.selling-point-description Stop wasting time overwriting existing styles, and Kick things off with a clean starting point.
+			section.selling-points
+				.selling-point(style="animation-delay: 250ms")
+					img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
+					h2.selling-point-title Zero Bloat
+					p.selling-point-description Includes only the basics – a responsive grid system, and reusable mixins and helpers.
 
-	.selling-point
-		img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
-		h2.selling-point-title Fully Customisable
-		p.selling-point-description Every setting is easily customisable.
+				.selling-point(style="animation-delay: 500ms")
+					img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
+					h2.selling-point-title Faster Development
+					p.selling-point-description Stop wasting time overwriting existing styles, and Kick things off with a clean starting point.
 
-.welcome-masthead-footer
-	.made-by
-	| Made with blood, sweat and tears in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a>. The source code is licensed MIT. The website content is licensed CC ANS 4.0.
+				.selling-point(style="animation-delay: 750ms")
+					img.margin-bottom-double(src="#{image_base}icons/settings.png", width="32")
+					h2.selling-point-title Fully Customisable
+					p.selling-point-description Make it yours by specifying your own custom settings.
+
+	.welcome-masthead-footer
+		.made-by
+		| Made with blood, sweat and tears in London by <a href="http://www.getagent.co.uk" target="_blank">Getagent.co.uk</a>. The source code is licensed MIT. The website content is licensed CC ANS 4.0.
 
