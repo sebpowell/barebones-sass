@@ -4,25 +4,25 @@ The best way to get started with Barebones is to download the <a href="https://g
 
 You can also get the latest release using Bower, although this is somewhat against the philsophy behind this project (rather than include as a depenency, you should ideally use this as the foundational code).
 
-## Installation 
+## Installation
 
 If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.
 
-# 1. Install the package
+### 1. Install the package
 Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.
 
 bower install barebones
 
-# 2. Create a settings file
+### 2. Create a settings file
 
 Barebones code allows you to specify your own individual project settings – just grab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.
 
-# 3. Create your main SASS file
+### 3. Create your main SASS file
 
 Import your newly created settings file, followed by <span class="var">_barebones.sass</span> into your main SASS file. When you're done, it should look like this:
 
-pre.margin-bottom-double
-	code.language-html.
+pre
+	code.language-html
 		|-- css/
 		|--| main.sass
 		|--| _settings.sass

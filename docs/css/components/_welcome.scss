@@ -1,12 +1,12 @@
 @keyframes fade-in {
 	0% {
 		opacity: 0;
-		transform: translateX(-100px);
+		transform: translateY(40px);
 		// color: red;
 	}
 	100% {
 		opacity: 1;
-		transform: translateX(0px);
+		transform: translateY(0px);
 	}
 }
 
@@ -68,8 +68,8 @@
 		opacity: 0.7;
 		line-height: 2;
 		font-size: 18px;
-		font-weight: 100;
-		font-style: italic;
+		font-weight: 300;
+
 		letter-spacing: .01em;
 		max-width: 1000px;
 		margin-bottom: sizes(double-half);
@@ -82,8 +82,10 @@
 		margin-bottom: 48px;
 		.button {
 			text-transform: uppercase;
-			font-weight: 100;
-			width: 230px;
+			font-weight: 600;
+			font-style: italic;
+			letter-spacing: 0.05em;
+
 		}
 		// .button {
 		// 	@include respond-below(device-medium) {
@@ -110,18 +112,20 @@
 .selling-point {
 	margin-bottom: 60px;
 	opacity: 0;
-	transform: translateY(20px);
 	animation: fade-in 1s forwards;
 	@include respond-above(device-medium) {
-		@include span(4);
+		@include span(4, $gutter: false);
+		padding: 16px;
 	}
 	&:last-child {
 		margin-bottom: 0;
 	}
 
 	img {
-		display: none;
+		width: 42px;
 	}
+
+
 	.selling-point-title {
 		font-size: 16px;
 		letter-spacing: 0.03em;
@@ -142,11 +146,18 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	font-size: 13px;
-	text-align: center;
-	color: colors(greyscale, 700);
 
+	text-align: center;
+	color: white;
+
+	.notice {
+		opacity: 0.6;
+		font-size: 12px;
+	}
 	.made-by {
+		margin-bottom: sizes(base);
+		font-weight: weights(primary, semi-bold);
+		font-size: 14px;
 		@include respond-below(device-medium) {
 			line-height: 1.8;
 		}
@@ -154,7 +165,7 @@
 
 	a {
 		color: white;
-		font-weight: weights(primary, semi-bold);
+
 		&:hover {
 			text-decoration: underline;
 		}

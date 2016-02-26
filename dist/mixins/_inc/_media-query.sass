@@ -13,3 +13,12 @@
 	@else
 		@media (max-width: $breakpoint-name)
 			@content
+
+=respond-between($breakpoint-name-min, $breakpoint-name-max)
+	@if map-has-key($breakpoints, $breakpoint-name-min)
+		@media (min-width: breakpoint($breakpoint-name-min)) and (max-width: breakpoint($breakpoint-name-max))
+			@content
+	@else
+		@media (min-width: $breakpoint-name-min) and (max-width: $breakpoint-name-max)
+			@content
+
