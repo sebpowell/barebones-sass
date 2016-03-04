@@ -1,17 +1,17 @@
-@function gallery($keys...)
-	$items: length($keys)
-	@if $items > 1
-		@for $i from 1 through $items
-			$key: nth($keys, $i)
-			&:not(:first-child)
-				margin-top: $gutterWidth
-				&:nth-child(-n+#{$items})
-					margin-top: 0
+// @function gallery($keys...)
+// 	$items: length($keys)
+// 	@if $items > 1
+// 		@for $i from 1 through $items
+// 			$key: nth($keys, $i)
+// 			&:not(:first-child)
+// 				margin-top: $gutterWidth
+// 				&:nth-child(-n+#{$items})
+// 					margin-top: 0
 
-			&:nth-child(#{$items}n + #{$i})
-				width: columnCalc($key)
-				margin-right: $gutterWidth
-				float: left
+// 			&:nth-child(#{$items}n + #{$i})
+// 				width: columnCalc($key)
+// 				margin-right: $gutterWidth
+// 				float: left
 
 			// &:nth-child(#{$items}n)
 			// 	margin-right: 0
@@ -25,12 +25,12 @@
 			$key: nth($keys, $i)
 			&:not(:first-child)
 				margin-top: $gutterWidth
-				+respond-above($gridBreakpoint)
+				+if-above($gridBreakpoint)
 					&:nth-child(-n+#{$items})
 						margin-top: 0
 
 			&:nth-child(#{$items}n + #{$i})
-				+respond-above($gridBreakpoint)
+				+if-above($gridBreakpoint)
 					width: columnCalc($key)
 					margin-right: $gutterWidth
 					float: left
@@ -44,11 +44,11 @@
 
 		&:not(:first-child)
 			margin-top: $gutterWidth
-			+respond-above($gridBreakpoint)
+			+if-above($gridBreakpoint)
 				&:nth-child(-n+#{$items})
 					margin-top: 0
 
-		+respond-above($gridBreakpoint)
+		+if-above($gridBreakpoint)
 			width: columnCalc($key)
 			margin-right: $gutterWidth
 			float: left

@@ -16,7 +16,7 @@
 
 	background: white;
 	border-bottom: 1px solid colors(keyline, light);
-  @include respond-above(device-medium) {
+  @include if-above(device-medium) {
     display: block;
   }
 
@@ -61,7 +61,7 @@
   width: 100%;
   z-index: 9;
 
-  @include respond-above(device-medium) {
+  @include if-above(device-medium) {
     display: none;
   }
   .logo {
@@ -89,7 +89,7 @@
     transform: scale(1)
   }
 
-  @include respond-below(device-medium) {
+  @include if-below(device-medium) {
     transition: all .5s;
     transform: scale(0.9);
     border-radius: 3px;
@@ -104,7 +104,7 @@
 
   .logo {
     position: relative;
-    @include respond-above(device-medium) {
+    @include if-above(device-medium) {
       // display: block;/
     }
     margin: auto;
@@ -115,7 +115,7 @@
   }
 
   .docs-navigation-primary-links {
-    @include respond-above(device-medium) {
+    @include if-above(device-medium) {
       position: fixed;
       min-width: 200px;
       max-height: 500px;
@@ -145,7 +145,7 @@
     		}
     	}
       &:first-child {
-        @include respond-above(device-medium) {
+        @include if-above(device-medium) {
           > a {
             padding-top: 0;
           }
@@ -156,7 +156,7 @@
         padding: sizes(base);
         text-decoration: none;
         display: block;
-        @include respond-above(device-medium) {
+        @include if-above(device-medium) {
           // color: lighten(colors(brand, primary), 30%);
           &:hover {
           	// color: white;

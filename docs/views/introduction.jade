@@ -7,6 +7,11 @@ block body
 		article.article.introduction
 			p Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.
 
+
+			p Warning
+
+			p In order to use Susy 2 with Rails you must update your Gemfile to use sass-rails ~> 5.0.0. This is because Susy 2 requires Sass >= 3.3 whilst Rails 4.1 and below include a version of sass-rails which does not support Sass 3.3.
+
 		article.article
 			h2 Why does the world need Barebones?
 
@@ -103,11 +108,17 @@ block body
 			p If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.
 
 			h3 1. Install the package
-			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.
+			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly. This will add the Susy repository to your bower_components directory or create a bower_components directory for you.
+
+			p If you want to copy in the Sass files directly, and skip any package management, you can do that too.
+
+			p Download the zip file from GitHub.
+			p Copy the contents of the “sass” folder (feel free to remove everything else).
+			p Paste the files in your project “sass” folder (whatever you call it).
 
 			pre
 				code.language-bash
-					| bower install barebones
+					| bower install barebones_sass --save
 
 			h3 2. Create a settings file
 

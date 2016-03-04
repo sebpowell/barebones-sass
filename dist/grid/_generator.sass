@@ -1,48 +1,25 @@
 @function span($columns)
 	@return columnCalc($columns)
 
-// At desktop, should take 4 columns
-// But at mobile, it should take 6 columns
-// $breakpoint: default
+@mixin span($columns, $position: "", $gutter: "", $offset: 0)
+	width: columnCalc($columns)
+	float: left
 
-@mixin span($columns, $position: "", $gutter: "", $breakpoint: "", $offset: 0)
-
-	@if $breakpoint == "custom"
-		width: columnCalc($columns)
-		@if $gutter == false
-			margin-right: 0
-			width: (100% / $columnCount) * $columns
-		@else
-			margin-right: $gutterWidth
-			&:last-child
-				margin-right: 0
-
-		@if $offset > 0
-			margin-left: columnCalc($offset) + $gutterWidth
-
-		@if $position == "last"
-			margin-right: 0
-			float: right
+	@if $gutter == false
+		margin-right: 0
+		width: (100% / $columnCount) * $columns
 
 	@else
-		width: 100%
-		+respond-above($gridBreakpoint)
-			width: columnCalc($columns)
-			float: left
-			@if $gutter == false
-				margin-right: 0
-				width: (100% / $columnCount) * $columns
-			@else
-				margin-right: $gutterWidth
-				&:last-child
-					margin-right: 0
+		margin-right: $gutterWidth
+		&:last-child
+			margin-right: 0
 
-			@if $offset > 0
-				margin-left: columnCalc($offset) + $gutterWidth
+	@if $offset > 0
+		margin-left: columnCalc($offset) + $gutterWidth
 
-			@if $position == "last"
-				margin-right: 0
-				float: right
+	@if $position == "last"
+		margin-right: 0
+		float: right
 
 
 

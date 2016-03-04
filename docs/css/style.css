@@ -900,27 +900,22 @@ pre[class*="language-"] { padding: 1em; margin: .5em 0; overflow: auto; }
 
 .example .example-wrapper [class^="column"], .example .example-wrapper .example-sidebar, .example .example-wrapper .example-content-block, .example .example-wrapper .example-offset, .example .example-wrapper .example-span { height: 100px; }
 
-.example .example-wrapper .example-sidebar { width: 100%; }
+.example .example-wrapper .example-sidebar { width: 31.42857%; float: left; margin-right: 2.85714%; }
 
-@media (min-width: 780px) { .example .example-wrapper .example-sidebar { width: 31.42857%; float: left; margin-right: 2.85714%; }
-  .example .example-wrapper .example-sidebar:last-child { margin-right: 0; } }
+.example .example-wrapper .example-sidebar:last-child { margin-right: 0; }
 
-.example .example-wrapper .example-span { width: 100%; }
+.example .example-wrapper .example-span { width: 48.57143%; }
 
-.example .example-wrapper .example-offset { width: 100%; }
+.example .example-wrapper .example-offset { width: 48.57143%; float: left; margin-right: 2.85714%; margin-left: 25.71429%; }
 
-@media (max-width: 480px) { .example .example-wrapper .example-offset { width: 100%; } }
-
-@media (max-width: 480px) and (min-width: 780px) { .example .example-wrapper .example-offset { width: 48.57143%; float: left; margin-right: 2.85714%; }
+@media (max-width: 480px) { .example .example-wrapper .example-offset { width: 48.57143%; float: left; margin-right: 2.85714%; }
   .example .example-wrapper .example-offset:last-child { margin-right: 0; } }
 
-@media (min-width: 780px) { .example .example-wrapper .example-offset { width: 48.57143%; float: left; margin-right: 2.85714%; margin-left: 25.71429%; }
-  .example .example-wrapper .example-offset:last-child { margin-right: 0; } }
+.example .example-wrapper .example-offset:last-child { margin-right: 0; }
 
-.example .example-wrapper .example-content-block { width: 100%; }
+.example .example-wrapper .example-content-block { width: 65.71429%; float: left; margin-right: 2.85714%; margin-right: 0; float: right; }
 
-@media (min-width: 780px) { .example .example-wrapper .example-content-block { width: 65.71429%; float: left; margin-right: 2.85714%; margin-right: 0; float: right; }
-  .example .example-wrapper .example-content-block:last-child { margin-right: 0; } }
+.example .example-wrapper .example-content-block:last-child { margin-right: 0; }
 
 .example .modal, .example .dropdown-menu { position: static; visibility: visible; opacity: 1; }
 
@@ -941,39 +936,7 @@ pre[class*="language-"] { padding: 1em; margin: .5em 0; overflow: auto; }
 @media (min-width: 780px) { .example .photo-gallery .photo-gallery-item { width: 22.85714%; margin-right: 2.85714%; float: left; }
   .example .photo-gallery .photo-gallery-item:nth-child(4n + 4) { margin-right: 0; } }
 
-.example .element { width: 100%; }
-
-.example .element:not(:first-child) { margin-top: 2.85714%; }
-
-@media (min-width: 780px) { .example .element:not(:first-child):nth-child(-n+3) { margin-top: 0; } }
-
-@media (min-width: 780px) { .example .element:nth-child(3n + 1) { width: 48.57143%; margin-right: 2.85714%; float: left; } }
-
-.example .element:nth-child(3n) { margin-right: 0; }
-
-.example .element:not(:first-child) { margin-top: 2.85714%; }
-
-@media (min-width: 780px) { .example .element:not(:first-child):nth-child(-n+3) { margin-top: 0; } }
-
-@media (min-width: 780px) { .example .element:nth-child(3n + 2) { width: 14.28571%; margin-right: 2.85714%; float: left; } }
-
-.example .element:nth-child(3n) { margin-right: 0; }
-
-.example .element:not(:first-child) { margin-top: 2.85714%; }
-
-@media (min-width: 780px) { .example .element:not(:first-child):nth-child(-n+3) { margin-top: 0; } }
-
-@media (min-width: 780px) { .example .element:nth-child(3n + 3) { width: 31.42857%; margin-right: 2.85714%; float: left; } }
-
-.example .element:nth-child(3n) { margin-right: 0; }
-
-@media (max-width: 480px) { .example .element { width: 100%; }
-  .example .element:not(:first-child) { margin-top: 2.85714%; } }
-
-@media (max-width: 480px) and (min-width: 780px) { .example .element:not(:first-child):nth-child(-n+4) { margin-top: 0; } }
-
-@media (max-width: 480px) and (min-width: 780px) { .example .element { width: 22.85714%; margin-right: 2.85714%; float: left; }
-  .example .element:nth-child(4n + 4) { margin-right: 0; } }
+.example .element { width: gallery(4, 4); }
 
 .example .element-2 { width: 100%; }
 
@@ -1018,8 +981,6 @@ pre[class*="language-"] { padding: 1em; margin: .5em 0; overflow: auto; }
 @media (min-width: 780px) { .docs-container { padding-top: 80px; padding-bottom: 100px; } }
 
 .button:hover, .share-bar .newsletter .newsletter-submit:hover { box-shadow: 0 0 6px 6px rgba(255, 255, 255, 0.3); }
-
-.main-container { width: 100%; }
 
 @media (min-width: 780px) { .main-container { width: 74.28571%; float: left; margin-right: 2.85714%; margin-right: 0; float: right; }
   .main-container:last-child { margin-right: 0; } }
@@ -1078,10 +1039,9 @@ pre[class*="language-"] { padding: 1em; margin: .5em 0; overflow: auto; }
 
 .logo { width: 140px; display: block; }
 
-.docs-navigation { width: 100%; background: white; position: fixed; }
+.docs-navigation { width: 22.85714%; float: left; margin-right: 2.85714%; background: white; position: fixed; }
 
-@media (min-width: 780px) { .docs-navigation { width: 22.85714%; float: left; margin-right: 2.85714%; }
-  .docs-navigation:last-child { margin-right: 0; } }
+.docs-navigation:last-child { margin-right: 0; }
 
 .docs-navigation.show { visibility: visible; opacity: 1; -webkit-transform: scale(1); transform: scale(1); }
 
@@ -1235,9 +1195,7 @@ table thead th:not(:first-child) { border-left: 0; }
 
 .selling-point { margin-bottom: 60px; opacity: 0; -webkit-animation: fade-in 1s forwards; animation: fade-in 1s forwards; }
 
-@media (min-width: 780px) { .selling-point { width: 100%; margin-bottom: 0px; padding: 16px; } }
-
-@media (min-width: 780px) and (min-width: 780px) { .selling-point { width: 31.42857%; float: left; margin-right: 0; width: 33.33333%; } }
+@media (min-width: 780px) { .selling-point { width: 31.42857%; float: left; margin-right: 0; width: 33.33333%; margin-bottom: 0px; padding: 16px; } }
 
 .selling-point:last-child { margin-bottom: 0; }
 

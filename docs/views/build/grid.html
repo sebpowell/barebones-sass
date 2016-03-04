@@ -146,7 +146,7 @@
       </article>
       <article id="columns" class="article">
         <h2>Columns</h2>
-        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.</p>
+        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">if-above($device)</span> mixin.</p>
         <table>
           <thead>
             <th colspan="2">Options</th>
@@ -189,7 +189,7 @@
 
 .photo-gallery-item {
 	@include gallery(3);
-	// Creates a gallery with each item taking up 3 columns of your grid 
+	// Creates a gallery with each item taking up 3 columns of your grid
 	// (on a 12 grid-layout, this would be 4 items).
 }
 </code></pre>

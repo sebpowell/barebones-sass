@@ -151,16 +151,16 @@
       </article>
       <article id="media-queries" class="article">
         <h2>Media Queries</h2>
-        <p>Use <span class="var">respond-above($device)</span>, <span class="var">respond-below($device)</span> and <span class="var">respond-between($device-min, $device-max)</span> to target different viewport sizes defined in your settings file.</p>
+        <p>Use <span class="var">if-above($device)</span>, <span class="var">if-below($device)</span> and <span class="var">if-between($device-min, $device-max)</span> to target different viewport sizes defined in your settings file.</p>
         <p>You can also use other values.</p>
         <pre><code class="language-scss">.element {
-  @include respond-above(device-medium) {
+  @include if-above(device-medium) {
     color: red;
   }
 }
 
 .element {
-  @include respond-above(800px) {
+  @include if-above(800px) {
     color: red;
   }
 }

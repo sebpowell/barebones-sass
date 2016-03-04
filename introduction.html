@@ -90,6 +90,8 @@
       <h1 class="page-title">Getting Started</h1>
       <article class="article introduction">
         <p>Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.</p>
+        <p>Warning</p>
+        <p>In order to use Susy 2 with Rails you must update your Gemfile to use sass-rails ~> 5.0.0. This is because Susy 2 requires Sass >= 3.3 whilst Rails 4.1 and below include a version of sass-rails which does not support Sass 3.3.</p>
       </article>
       <article class="article">
         <h2>Why does the world need Barebones?</h2>
@@ -105,8 +107,12 @@
         <h2>Installing Barebones</h2>
         <p>If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.</p>
         <h3>1. Install the package</h3>
-        <p>Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.</p>
-        <pre><code class="language-bash">bower install barebones</code></pre>
+        <p>Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly. This will add the Susy repository to your bower_components directory or create a bower_components directory for you.</p>
+        <p>If you want to copy in the Sass files directly, and skip any package management, you can do that too.</p>
+        <p>Download the zip file from GitHub.</p>
+        <p>Copy the contents of the “sass” folder (feel free to remove everything else).</p>
+        <p>Paste the files in your project “sass” folder (whatever you call it).</p>
+        <pre><code class="language-bash">bower install barebones_sass --save</code></pre>
         <h3>2. Create a settings file</h3>
         <p>Barebones code allows you to specify your own individual project settings – just grab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.</p>
         <h3>3. Create your main SASS file</h3>

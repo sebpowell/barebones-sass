@@ -1,14 +1,14 @@
 @each $breakpoint, $value in $breakpoints
 	.#{map-get($test, prefix)}hide-above-#{$breakpoint}
-		+respond-above(#{$breakpoint})
+		+if-above(#{$breakpoint})
 			display: none !important
 
 @each $breakpoint, $value in $breakpoints
 	.#{map-get($test, prefix)}hide-below-#{$breakpoint}
-		+respond-below(#{$breakpoint})
+		+if-below(#{$breakpoint})
 			display: none !important
 
-.#{map-get($test, prefix)}is-hidden 
+.#{map-get($test, prefix)}is-hidden
 	display: none !important
 	visibility: hidden !important
 

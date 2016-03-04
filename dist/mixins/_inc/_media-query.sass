@@ -1,4 +1,4 @@
-=respond-above($breakpoint-name)
+=if-above($breakpoint-name)
 	@if map-has-key($breakpoints, $breakpoint-name)
 		@media (min-width: breakpoints($breakpoint-name))
 			@content
@@ -6,7 +6,7 @@
 		@media (min-width: $breakpoint-name)
 			@content
 
-=respond-below($breakpoint-name)
+=if-below($breakpoint-name)
 	@if map-has-key($breakpoints, $breakpoint-name)
 		@media (max-width: breakpoints($breakpoint-name))
 			@content
@@ -14,7 +14,7 @@
 		@media (max-width: $breakpoint-name)
 			@content
 
-=respond-between($breakpoint-name-min, $breakpoint-name-max)
+=if-between($breakpoint-name-min, $breakpoint-name-max)
 	@if map-has-key($breakpoints, $breakpoint-name-min)
 		@media (min-width: breakpoint($breakpoint-name-min)) and (max-width: breakpoint($breakpoint-name-max))
 			@content

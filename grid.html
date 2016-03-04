@@ -94,6 +94,7 @@
       <article class="article">
         <h2>Grid Settings</h2>
         <p>Specify your grid settings in your settings file. If nothing is specified, default values are applied.</p>
+        <p>The $grid-settings map allows you to specify project-wide settings that effect many of Cask's defaults including the number of columns, the width of your gutters, and maximum site width.</p>
         <table>
           <thead>
             <th>Setting</th>
@@ -113,9 +114,11 @@
           <tr>
             <td><span class="var">gutter</span></td>
             <td>1/4</td>
-            <td>Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2)</td>
+            <td>Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2). Cask supports any unit of measure for gutter values.10px,1.2rem,4%, and even2vw` are all valid inputs! Rems are preferred.</td>
           </tr>
         </table>
+        <h2>Example</h2>
+        <p>To change your grid settings, you can use the following. Because of the way the project settings are called, you can update one or all of the settings as needed.</p>
       </article>
       <article id="containers" class="article">
         <h2>Containers</h2>
@@ -141,7 +144,19 @@
       </article>
       <article id="columns" class="article">
         <h2>Columns</h2>
-        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.</p>
+        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">if-above($device)</span> mixin.</p>
+        <p>The columns argument is the unitless number of columns the element spans. The default of this property is false which will cause the object to be 100% of its container, or full-width.</p>
+        <p>A set of values can also be passed in to specify the number of columns the object is as well as the number of total columns in this instance. Values can be separated with a of as in 7 of 12. This is useful for specific layouts that break the default column count of the project defined in the $grid-settings.</p>
+        <p>If only one value is passed, the number of total columns is the total-columns set in the $grid-settings.</p>
+        <p>$collapse</p>
+        <p>The collapse argument is a boolean attribute that will cause the element to consume the margins on either side of it. The default of this property is false which will cause the object preserve the gutters on either side. This option is useful when creating containers as well as nested grids.</p>
+        <p>$center</p>
+        <p>The center argument is a boolean attribute that will cause the element no longer be floated and will instead be centered in its container. .card {@include grid-column($columns: 1 of 2, $collapse: true);}</p>
+        <p>$center</p>
+        <p>Unlike the grid-column mixin, the center argument in the grid-column mixin defaults to true. As with the columns, true causes the element not to be floated and instead be centered in its container. Setting this to false will cause the element to floated to the default-float set in the $grid-settings.</p>
+        <p>$max-widt</p>
+        <p>The max-width argument directly sets the max-width property on the element. any format that fits the max-width css specification will be accepted. This value will default to the max-width set in the $grid-settings.</p>
+        <p>Like the grid-column mixin, grid-push also accepts sub-grid settings like 2 of 5 or 4 of 7.</p>
         <table>
           <thead>
             <th colspan="2">Options</th>

@@ -189,12 +189,12 @@
     </article>
     <article id="media-queries" class="article">
       <h2>Media Queries</h2>
-      <p>Use <span class="var">respond-above($device)</span> and <span class="var">respond-below($device)</span> to target different viewport sizes defined in your settings file.</p>
+      <p>Use <span class="var">if-above($device)</span> and <span class="var">if-below($device)</span> to target different viewport sizes defined in your settings file.</p>
       <pre><code class="language-scss">.element {
-	@include respond-below(device-medium) {
+	@include if-below(device-medium) {
 		color: blue;
 	}
-	@include respond-above(device-medium) {
+	@include if-above(device-medium) {
 		color: red;
 	}
 }

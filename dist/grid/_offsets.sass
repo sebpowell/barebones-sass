@@ -2,6 +2,6 @@
 @for $i from 1 through $columnCount
 	.offset-#{$i}
 		margin-right: 0 !important
-		+respond-above($gridBreakpoint)
+		+if-above($gridBreakpoint)
 			margin-left: ($i * $columnWidth) + ($i * $gutterWidth)
 

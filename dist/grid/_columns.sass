@@ -1,11 +1,11 @@
 // Generate column helper classes.
 @for $i from 1 through $columnCount
 	.columns-#{$i}
-		+respond-below($gridBreakpoint)
+		+if-below($gridBreakpoint)
 			width: 100%
 			margin-bottom: $gutterWidth
 
-		+respond-above($gridBreakpoint)
+		+if-above($gridBreakpoint)
 			@if $i $columnCount
 				width: ($i * $columnWidth) + (($i - 1) * $gutterWidth)
 				float: left
@@ -20,7 +20,7 @@
 	@for $i from 1 through $columnCount
 		.columns-#{$i}-#{$key}
 			margin-bottom: $gutterWidth
-			+respond-above($key)
+			+if-above($key)
 				margin-bottom: 0 !important
 				@if $i > 1
 					width: columnCalc($i)

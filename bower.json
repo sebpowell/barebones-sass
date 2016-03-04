@@ -1,5 +1,5 @@
 {
-  "name": "barebones_sass",
+  "name": "barebones-sass",
   "description": "A lightweight, responsive SASS boilerplate to kickstart your next web project.SASS boilerplate",
   "main": [
   	"dist/_base.sass"

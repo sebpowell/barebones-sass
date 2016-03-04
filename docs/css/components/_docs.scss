@@ -25,11 +25,11 @@
     }
 
     .example-span {
-    	width: span(12);
+    	width: span(6);
     }
 
     .example-offset {
-    	@include respond-below(device-small) {
+    	@include if-below(device-small) {
     		@include span(6);
     	}
     	@include span(6, $offset: 3);
@@ -78,7 +78,7 @@
   padding-top: 24px;
 
   margin: auto;
-  @include respond-above(device-medium) {
+  @include if-above(device-medium) {
     padding-top: 80px;
     padding-bottom: 100px;
   }
@@ -89,7 +89,9 @@
 }
 
 .main-container {
-  @include span(9, $position: last);
+	@include if-above(device-medium) {
+		@include span(9, $position: last);
+	}
 }
 
 .page-title {
