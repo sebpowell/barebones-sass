@@ -1,52 +1,55 @@
 .share-bar
-	position: fixed
-	left: 0
-	bottom: 0
-	width: 100%
-	background: white
-	border-top: 1px solid colors(keyline, light)
-	padding: sizes(half)
-	z-index: layers(share-bar)
-	transition: bottom .5s
+	display: none
+	+respond-above(device-medium)
+		display: block
+		position: fixed
+		left: 0
+		bottom: 0
+		width: 100%
+		background: white
+		border-top: 1px solid colors(keyline, light)
+		padding: sizes(half)
+		z-index: layers(share-bar)
+		transition: bottom .5s
 
-	.newsletter
-		position: relative
-		+respond-above(device-medium)
-			float: left
-			width: 500px
+		.newsletter
+			position: relative
+			+respond-above(device-medium)
+				float: left
+				width: 500px
 
-		.newsletter-submit
-			@extend .button
-			color: white
-			height: 48px
-			line-height: 48px
-			background: colors(brand, primary)
-			&:hover
-				background: colors(greyscale, 900)
+			.newsletter-submit
+				@extend .button
+				color: white
+				height: 48px
+				line-height: 48px
+				background: colors(brand, primary)
+				&:hover
+					background: colors(greyscale, 900)
 
-			+respond-above(device-large)
+				+respond-above(device-large)
 
-				height: 38px
-				line-height: 38px
-				position: absolute
-				top: 50%
-				right: 6px
-				margin-top: -19px
+					height: 38px
+					line-height: 38px
+					position: absolute
+					top: 50%
+					right: 6px
+					margin-top: -19px
 
-			+respond-below(device-medium)
+				+respond-below(device-medium)
+					width: 100%
+
+			.newsletter-input
+				font-size: 16px
+				height: 48px
+				line-height: 48px
+				font-family: font(primary)
+				background: transparent
 				width: 100%
-
-		.newsletter-input
-			font-size: 16px
-			height: 48px
-			line-height: 48px
-			font-family: font(primary)
-			background: transparent
-			width: 100%
-			border-radius: 100px
-			padding: sizes(base)
-			background: white
-			border: 1px solid colors(keyline, dark)
-			+respond-below(device-medium)
-				text-align: center
-				margin-bottom: sizes(half)
+				border-radius: 100px
+				padding: sizes(base)
+				background: white
+				border: 1px solid colors(keyline, dark)
+				+respond-below(device-medium)
+					text-align: center
+					margin-bottom: sizes(half)

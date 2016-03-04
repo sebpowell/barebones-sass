@@ -60,7 +60,7 @@
   left: 0;
   width: 100%;
   z-index: 9;
-  
+
   @include respond-above(device-medium) {
     display: none;
   }
@@ -80,7 +80,9 @@
   @include span(3);
   background: white;
   position: fixed;
-  
+  // max-height: calc(400px)
+  // overflow-y: scroll;
+
   &.show {
     visibility: visible;
     opacity: 1;
@@ -116,7 +118,9 @@
     @include respond-above(device-medium) {
       position: fixed;
       min-width: 200px;
-      border-right: 1px solid colors(keyline, light);
+      max-height: 500px;
+      overflow-y: scroll;
+      border: 1px solid colors(keyline, light);
     }
   }
   ul {
@@ -131,7 +135,6 @@
     		}
     		.sub-navigation {
     			display: block;
-          background: white;
           a {
             color: colors(greyscale, 500);
             font-size: 14px;

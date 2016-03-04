@@ -31,7 +31,6 @@ block body
 
 		article.article(id="containers")
 			h2 Containers
-
 			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
 			p You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.
 
@@ -53,7 +52,6 @@ block body
 
 		article.article(id="columns")
 			h2 Columns
-
 			p Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">respond-above($device)</span> mixin.
 
 			table
@@ -69,9 +67,6 @@ block body
 					td <span class="var">$gutter</span> <em>(optional)</em>
 					td You can remove the gutter by passing in the keyword 'none'.
 
-
-
-
 			.example.margin-bottom-double
 				.example-wrapper
 					.example-sidebar(style="background-color: lightpink")
@@ -82,7 +77,32 @@ block body
 					.sidebar {
 					  @include span(4); // Creates a column that spans 4 colums
 					}
+					.content {
+					  @include span(8, $position: last); // Creates a column that spans 8 columns
+					}
 
+
+		article.article
+			h2 Span Function
+			p The above mixin includes certain behaviour – columns will break at your default mobile breakpoint unless overwritten, margins are applied and more.
+
+			p If you want something more basic, you can use the span($columns) function to simply calculate the width of your component.
+			.example.margin-bottom-double
+				.example-wrapper
+					.example-span(style="background-color: lightpink")
+
+		article.article(id="columns")
+			h2 Offset
+
+			.example.margin-bottom-double
+				.example-wrapper
+					.example-offset(style="background-color: lightpink")
+
+			pre
+				code.language-scss.
+					.sidebar {
+					  @include span(4); // Creates a column that spans 4 colums
+					}
 					.content {
 					  @include span(8, $position: last); // Creates a column that spans 8 columns
 					}

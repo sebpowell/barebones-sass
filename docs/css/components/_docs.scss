@@ -17,11 +17,22 @@
     @include container();
     @include clearfix;
 
-    [class^="column"], .example-sidebar, .example-content-block {
+    [class^="column"], .example-sidebar, .example-content-block, .example-offset, .example-span {
       height: 100px;
     }
     .example-sidebar {
       @include span(4);
+    }
+
+    .example-span {
+    	width: span(12);
+    }
+
+    .example-offset {
+    	@include respond-below(device-small) {
+    		@include span(6);
+    	}
+    	@include span(6, $offset: 3);
     }
 
     .example-content-block {
@@ -53,7 +64,7 @@
   	}
   }
   .element {
-  	@include gallery(6, 2, 4);
+		width: gallery(4, 4);
   }
 
   .element-2 {
