@@ -10,7 +10,7 @@
     @return map-fetch($value, $rest)
   } @else {
     @return $value;
-    
+
   }
 }
 
@@ -25,16 +25,16 @@
       $length: length($keys);
       @for $i from 1 through $length {
         $rest: append($rest, nth($keys, $i));
-        
+
       }
       @warn "The key '#{$key}' doesn't exist. Please check your settings file.";
-    } 
+    }
   }
   @return $map;
 }
 
 
-// Helper functions 
+// Helper functions
 @function sizes($size) {
   @if map-has-key($sizes, $size) {
    @return map-get($sizes, $size);
@@ -53,8 +53,16 @@
   }
 }
 
-@function colors($colour-cat, $colour) {
-  @return map-deep-get($colors, $colour-cat, $colour);
+@function colors($args...) {
+	@if length($args) > 1 {
+		$category: nth($args, 1);
+		$name: nth($args, 2);
+		@return map-deep-get($colors, $category, $name);
+	}
+	@else {
+		$name: nth($args, 1);
+		@return map-get($colors, $name);
+	}
 }
 
 @function font($object) {

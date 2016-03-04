@@ -466,8 +466,6 @@
 
 .row:after { clear: both; }
 
-.background-test-black { background-color: !important; }
-
 .background-brand-primary { background-color: #157afb !important; }
 
 .background-brand-secondary { background-color: #fe5607 !important; }
@@ -703,8 +701,6 @@
 .text-large { font-size: 32px !important; }
 
 .text-x-large { font-size: 42px !important; }
-
-.text-test-black { color: !important; }
 
 .text-brand-primary { color: #157afb !important; }
 

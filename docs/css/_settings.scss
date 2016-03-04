@@ -1,6 +1,4 @@
 $colors: (
-	test: black,
-
 	brand: (
 		primary: #157afb,
 		secondary: #fe5607
@@ -74,7 +72,7 @@ $breakpoints: (
 
 $misc: (
 	mobile-gutter: 24px,
-	prefix: null,
+	prefix: null
 );
 
 $font-sizes: (
@@ -95,7 +93,7 @@ $layers: (
 );
 
 $grid: (
-	// columns: 12,
+	columns: 12,
 	gutter: 1/2,
 	breakpoint: "device-medium",
 	mobile-gutter: 24px,
