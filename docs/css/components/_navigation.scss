@@ -16,6 +16,7 @@
 
 	background: white;
 	border-bottom: 1px solid colors(keyline, light);
+
   @include if-above(device-medium) {
     display: block;
   }
@@ -80,8 +81,6 @@
   @include span(3);
   background: white;
   position: fixed;
-  // max-height: calc(400px)
-  // overflow-y: scroll;
 
   &.show {
     visibility: visible;
@@ -117,10 +116,12 @@
   .docs-navigation-primary-links {
     @include if-above(device-medium) {
       position: fixed;
-      min-width: 200px;
+      min-width: 240px;
       max-height: 500px;
       overflow-y: scroll;
       border: 1px solid colors(keyline, light);
+      border-radius: 5px;
+
     }
   }
   ul {
@@ -129,6 +130,7 @@
       left: 0;
     }
     > li {
+    	border-bottom: 1px solid colors(keyline, light);
     	&.active {
     		> a {
           color: colors(brand, primary);
@@ -144,13 +146,6 @@
           }
     		}
     	}
-      &:first-child {
-        @include if-above(device-medium) {
-          > a {
-            padding-top: 0;
-          }
-        }
-      }
       > a {
       	transition: color .5s;
         padding: sizes(base);

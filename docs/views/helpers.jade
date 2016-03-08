@@ -2,10 +2,10 @@ extends  _inc/_layout.jade
 
 block body
 	.main-container
-		h1.page-title Helpers
+		h1.page-title Utilities
 
 		article.article.introduction
-			p Helper classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each helper class is responsible for doing one job and doing it well.
+			p Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.
 
 			p All helper classes use the <span class="var">!important</span> flag to avoid specificity issues.
 
@@ -13,20 +13,22 @@ block body
 			h2 Background Color
 			p Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.
 			.example
-				div.background-brand-primary(style="height: 40px")
-				div.background-secondary-orange(style="height: 40px")
-				div.background-greyscale-50(style="height: 40px")
-			pre
-				code.language-html.
-					&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
-					&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
-					&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+				.example-rendered
+					.background-brand-primary(style="height: 40px")
+					.background-secondary-orange(style="height: 40px")
+					.background-greyscale-50(style="height: 40px")
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+						&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+						&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
 
 		article#borders.article
 			h2#borders Borders
-			p Adds or removes a keyline to a given element. The border color used is the keyline light value specified in your <span class="var">$colors</span> map.
+			p Adds a border to a given element in the specified direction(s). It uses the color value specified in the keyline category of your <span class="var">$colors</span> map.
 
-			table
+			table.table-lined.margin-bottom-double
 				thead
 					th(colspan="2") Options
 				tr
@@ -49,18 +51,29 @@ block body
 					td Removes all borders.
 
 			.example.margin-bottom-double
-				.border-top
-			pre
-				code.language-scss
-					| .border-bottom {
-					|  border-bottom: 1px solid #F5F5F5 !important;
-					| }
+				.example-rendered
+					.border-top
+				pre.example-code
+					code.language-scss.
+						| .border-bottom {
+						|  border-bottom: 1px solid #F5F5F5 !important;
+						| }
 
 		article.article(id="margin")
-			h2 Margin & Padding
-			p Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.
+			h2 Margin
+			p Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map, to help create consistency throughout your project.
 
-			table
+			p To add spacing around an element, use the the margin
+
+			//- No margin bottom
+			//- <h1 class="m0">No margin</h1>
+			//- <h1 class="mt0">No margin top</h1>
+			//- <h1 class="mb0">No margin bottom</h1>
+			p Add Spacing
+
+			p Add spacing around elements using a combination of margin utilities.
+
+			table.table-lined.margin-bottom-double
 				thead
 					th(colspan="2") Options
 				tr
@@ -76,10 +89,37 @@ block body
 					td <span class="var">.no-padding</span>
 					td Removes all padding.
 
+
+
 			.example
-				div.background-brand-primary.margin-bottom-quarter(style="height: 40px")
-				div.background-brand-primary.margin-bottom-base(style="height: 40px")
-				div.background-brand-primary(style="height: 40px")
+				.example-rendered
+					.border-all.padding-base.margin-bottom-quarter .margin-bottom-quarter
+					.border-all.padding-base.margin-bottom-base .margin-bottom-base
+					.border-all.padding-base.margin-bottom-triple .margin-bottom-triple
+					.border-all.padding-base.no-margin .no-margin
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+
+
+			//- Box
+
+			//- To create a simple box component, use padding along with color utilities.
+
+			//- A simple box
+			//- <div class="p2 bg-white border rounded">
+			//-   A simple box
+			//- </div>
+			//- Panel Header
+			//- Panel Body
+			//- Panel Footer
+
+
+
 
 			pre
 				code.language-html.
@@ -107,49 +147,52 @@ block body
 					td <span class="var">.clearfix</span>
 					td Clears floats (apply this to the parent element).</span>
 
-			pre
-				code.language-html.
-					&lt;div class="block"&gt;&lt;/div&gt;
-					&lt;div class="inline-block"&gt;&lt;/div&gt;
-					&lt;div class="float-left"&gt;&lt;/div&gt;
-					&lt;div class="float-right"&gt;&lt;/div&gt;
-					&lt;div class="clearfix"&gt;&lt;/div&gt;
+			.example.margin-bottom-double
+				pre.example-code
+					code.language-html.
+						&lt;div class="block"&gt;&lt;/div&gt;
+						&lt;div class="inline-block"&gt;&lt;/div&gt;
+						&lt;div class="float-left"&gt;&lt;/div&gt;
+						&lt;div class="float-right"&gt;&lt;/div&gt;
+						&lt;div class="clearfix"&gt;&lt;/div&gt;
 
 		article#margin.article
 			h2 Grid
 
 			h3 Rows & Columns
-			p To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths.
+			p To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoing specified in your grid map.
 
-			.example
-				.row
-					.columns-4 Columns 4
-					.columns-5 Columns 5
-					.columns-3 Columns 3
-
-			pre.margin-bottom-double
-				code.language-html
-					| &lt;div class="row"&gt;
-					|  &lt;div class="columns-4"&gt;
-					|  &lt;div class="columns-5"&gt;
-					|  &lt;div class="columns-3"&gt;
-					| &lt;/div&gt;
-
-
-			p Helper classes are also available to create different grids for different breakpoints.
 			.example.margin-bottom-double
-				.row
-					.columns-4-device-small.columns-5-device-medium Columns 4
-					.columns-4-device-small.columns-3-device-medium  Columns 5
-					.columns-4-device-small.columns-4-device-medium  Columns 3
+				.example-rendered
+					.row
+						.columns-4 Columns 4
+						.columns-5 Columns 5
+						.columns-3 Columns 3
 
-			pre
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4-device-small"&gt;
-					|  &lt;div class="columns-5-device-small"&gt;
-					|  &lt;div class="columns-3-device-small"&gt;
-					| &lt;/div&gt;
+				pre.example-code
+					code.language-html
+						| &lt;div class="row"&gt;
+						|  &lt;div class="columns-4"&gt;
+						|  &lt;div class="columns-5"&gt;
+						|  &lt;div class="columns-3"&gt;
+						| &lt;/div&gt;
+
+
+			p Helper classes are also available to create different grids for different screen sizes.
+			.example.margin-bottom-double
+				.example-rendered
+					.row
+						.columns-4-device-x-small.columns-5-device-medium
+						.columns-4-device-x-small.columns-3-device-medium
+						.columns-4-device-x-small.columns-4-device-medium
+
+				pre.example-code
+					code.language-html
+						| &lt;div class="columns"&gt;
+						|  &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;
+						|  &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;
+						|  &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;
+						| &lt;/div&gt;
 
 
 			h3 Offsets
@@ -191,7 +234,7 @@ block body
 					&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 
 			h3 Size
-			p These are generated using values specified in your <span class="var">$font-sizes</span> map.
+			p These are generated using values specified in your <span class="var">$font-sizes</span> map. These are especially useful for altering the visual appearance of semantically correct headings.
 			.example
 				.text-x-large This text is X-Large
 				.text-large This text is Large
@@ -239,6 +282,9 @@ block body
 					&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
 					&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
 
+			p Use padding and negative margin utilities to create gutters based on the white space scale. The negative margin ensures content inside each column lines up with content outside of the grid. When using negative margin, be sure to compensate for the extra width created with a padded parent element or by using overflow hidden. Otherwise, horizontal scrolling may occur.
+
+			p Create gutters with a width of 2 units using .mxn2 and .px2.
 		article.article
 			h2 Visibility
 			p Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.

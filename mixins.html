@@ -108,30 +108,36 @@
             <td>Any px value (e.g. 6px)</td>
           </tr>
         </table>
-        <pre><code class="language-scss">.element {
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">.element {
 	&:after {
 		@include arrow(down, black, 20px);
 	}
  }
 </code></pre>
+        </div>
       </article>
       <article id="placeholder" class="article">
         <h2>Placeholder</h2>
         <p>Changes form placeholder text color.</p>
-        <pre><code class="language-scss">.element {
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">.element {
 	@include placeholder {
 		color: grey;
 	}
 }
 </code></pre>
+        </div>
       </article>
       <article id="uppercase" class="article">
         <h2>Uppercase</h2>
         <p>Transforms text to uppercase, accepts an argument to specify letter-spacing.</p>
-        <pre><code class="language-scss">.element {
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">.element {
 	@include uppercase(0.1em);
- }
+}
 </code></pre>
+        </div>
       </article>
       <article id="clearfix" class="article">
         <h2>Clearfix</h2>
@@ -144,34 +150,40 @@
       <article id="ellipsis" class="article">
         <h2>Ellipsis</h2>
         <p>Adds ellipsis to limit text width <span class="var">ellipsis($width)<span></p>
-        <pre><code class="language-scss">.element {
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">.element {
 	@include text-overflow(300);
 }
 </code></pre>
+        </div>
       </article>
       <article id="media-queries" class="article">
         <h2>Media Queries</h2>
-        <p>Use <span class="var">if-above($device)</span>, <span class="var">if-below($device)</span> and <span class="var">if-between($device-min, $device-max)</span> to target different viewport sizes defined in your settings file.</p>
-        <p>You can also use other values.</p>
-        <pre><code class="language-scss">.element {
+        <p>Use <span class="var">if-above($device)</span>, <span class="var">if-below($device)</span> and <span class="var">if-between($device-min, $device-max)</span> to target different viewport sizes defined in your $breakpoints map.</p>
+        <p>These mixins will also accept values that aren't defined in your $breakpoints map.</p>
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">.element {
   @include if-above(device-medium) {
     color: red;
   }
 }
 
 .element {
-  @include if-above(800px) {
-    color: red;
-  }
+	@include if-above(800px) {
+	color: red;
+	}
 }
 </code></pre>
+        </div>
       </article>
       <article id="no-bullet" class="article">
         <h2>No Bullet</h2>
         <p>Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</p>
-        <pre><code class="language-scss">ul {
- @include no-bullet;
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">ul {
+	@include no-bullet;
 }</code></pre>
+        </div>
       </article>
     </div>
   </div>

@@ -8,9 +8,34 @@ block body
 			p Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.
 
 
-			p Warning
+			.info-panel.warning
+				p In order to use Susy 2 with Rails you must update your Gemfile to use sass-rails ~> 5.0.0. This is because Susy 2 requires Sass >= 3.3 whilst Rails 4.1 and below include a version of sass-rails which does not support Sass 3.3.
 
-			p In order to use Susy 2 with Rails you must update your Gemfile to use sass-rails ~> 5.0.0. This is because Susy 2 requires Sass >= 3.3 whilst Rails 4.1 and below include a version of sass-rails which does not support Sass 3.3.
+			p Principles
+
+			p Deliberatley verbose to make it super clear to people what each class is doing.
+			p Code with Confidence
+
+			p Using clear, humanized naming conventions, Basscss is quick to internalize and easy to reason about while speeding up development time with more scalable, more readable code.
+
+			p No Side Effects
+
+			p Things behave exactly as expected with immutable utilities and styles that do one thing well to help prevent common pitfalls with CSS.
+
+			p Composable
+			p Reusable, interoperable styles work like building blocks to lay the foundation for any stylesheet and can be mixed and matched in any number of combinations.
+
+			p Designed for Design
+			p Basscss strikes a balance between consistency and flexibility to allow for rapid prototyping and quick iterative changes when designing in the browser.
+
+			p Responsive by Default
+			p Basscss provides lightweight, performant styles and flexible utilities to design for any device and to help reduce boilerplate in stylesheets.
+
+			p Unassuming
+
+			p Modular and customizable typography and layout styles don’t dictate what things should look like and play well with other stylesheets and frameworks.
+
+			p Responsive Everything should be 100% responsive. Your website should work regardless of a users device or screensize. Don't break the functionality of HTML with CSS. Readable No matter the lighting, or the device, font-sizes should be large enough and contrast should be high enough. Performant Code isn't for making a developers life easier. It's for improving the lives of our users. If it's not doing that, why write it. A developer's time is not precious. A user's time is. Code should be optimized for performance. Modular Modules > Monoliths Tachyons isn't a monolithic framework. It's a collection of self contained modules that can be mixed and matched or used independently. Use what you want, leave what you don't. Reusable Doing one thing well, promotes reusability and reduces redundancy in a codebase. Easy Designing in the browser should be easy. If a computer can do it, you shouldn't have to. Features Runs on Postcss A flexible plugin framework for post-processing css. View on Github Mobile-first architecture Base classes are mobile by default. Can be overridden by namespaced classes targeting larger breakpoints. Layout debugging Small css modules for debugging stacking and layout issues. Can easily be turned on or off during development. Composable classes Construct anything from complex layouts to responsive components with a series of single purpose classes. Cohesive design system Scale based on the powers of two. Starting at .25 Responsive Grid Infinitely nestable. Fully fluid. Extremely light-weight. Customize, or extend Tachyons is meant to be edited and customized to meet the needs of your product. It's just css. It isn't precious. Don't be afraid to change: class names, media queries, breakpoints, or values.
 
 		article.article
 			h2 Why does the world need Barebones?
@@ -25,82 +50,6 @@ block body
 
 			p Building your own framework puts you in the driving seat, giving you full control over how your app or website looks, without being shoe-horned into someone else's design system.
 
-			//- h2 What's included?
-			//- ul.bullet-list
-			//- 	li A semantic, responsive grid system
-			//- 	li Commonly used mixins to handle things like media queries, styling input placeholder text and more.
-			//- 	li Helper classes
-			//- 	li Browser resets for the most commonly used elements.
-
-			//- article.article
-			//- 	h2 Project Structure
-
-			//- 	h3 Helpers
-			//- 	table
-			//- 		tr
-			//- 			td Background
-			//- 			td Generates background-color helpers for every colour specified in your $colors map.
-			//- 		tr
-			//- 			td Borders
-			//- 			td Generates border helpers using the $keyline value specified in your $colors map.
-			//- 		tr
-			//- 			td Layout
-			//- 			td Layout helpers
-			//- 		tr
-			//- 			td Margin & Padding
-			//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
-			//- 		tr
-			//- 			td Typography
-			//- 			td Generates text sizing, colors and transform helpers from sizes and colors specified.
-			//- 		tr
-			//- 			td Visibility
-			//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
-
-			//- 	h3 Mixins
-			//- 	table
-			//- 		tr
-			//- 			td Arrow
-			//- 			td Generates background-color helpers for every colour specified in your $colors map.
-			//- 		tr
-			//- 			td Clearfix
-			//- 			td Generates border helpers using the $keyline value specified in your $colors map.
-			//- 		tr
-			//- 			td Ellipsis
-			//- 			td Layout helpers
-			//- 		tr
-			//- 			td Media Query
-			//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
-			//- 		tr
-			//- 			td Placeholder
-			//- 			td Generates text sizing, colors and transform helpers from sizes and colors specified.
-			//- 		tr
-			//- 			td Uppercase
-			//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
-
-			//- 		tr
-			//- 			td Z-Index
-			//- 			td Generic helpers, alongside generated helpers to target different viewports, using the $breakpoints map.
-
-			//- 	h3 Grid
-			//- 	table
-			//- 		tr
-			//- 			td Columns
-			//- 			td Generates background-color helpers for every colour specified in your $colors map.
-			//- 		tr
-			//- 			td Container
-			//- 			td Generates border helpers using the $keyline value specified in your $colors map.
-			//- 		tr
-			//- 			td Gallery
-			//- 			td Layout helpers
-			//- 		tr
-			//- 			td Offset Helpers
-			//- 			td Generates margin and padding helpres from sizes specified in $sizes map.
-			//- 		tr
-			//- 			td Row
-			//- 			td Generates text sizing, colors and transform helpers from sizes and colors specified.
-
-
-
 		article.article(id="installing")
 
 			h2 Installing Barebones
@@ -108,7 +57,7 @@ block body
 			p If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.
 
 			h3 1. Install the package
-			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly. This will add the Susy repository to your bower_components directory or create a bower_components directory for you.
+			p Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones-sass">Github</a> and integrate the source files directly. This will add the Susy repository to your bower_components directory or create a bower_components directory for you.
 
 			p If you want to copy in the Sass files directly, and skip any package management, you can do that too.
 
@@ -118,7 +67,7 @@ block body
 
 			pre
 				code.language-bash
-					| bower install barebones_sass --save
+					| bower install barebones-sass --save
 
 			h3 2. Create a settings file
 
@@ -162,7 +111,7 @@ block body
 		article.article(id="background")
 
 			h2 Background Reading & Acknowledgements
-			p Barebones was heavily inspired by other people's brains. Here are some of them in case you're interested in doing some more reading.
+			p Barebones was heavily inspired by other people's brains. Here are some of them in case you're interested in doing some more reading. Inspiration and motivationGemma is evolutionary, not revolutionary. Its philosophical and stylistic leanings have been heavily influenced by the following people and projects:
 
 			ul.bullet-list
 				li
@@ -183,6 +132,8 @@ block body
 					a(href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank") Modular CSS Naming Conventions – John Long
 				li
 					a(href="http://www.sitepoint.com/architecture-sass-project/") Architecture for a SASS Project – Hugo Giraudel
+				li
+					a(href="http://www.sitepoint.com/architecture-sass-project/") SUSY
 
 
 

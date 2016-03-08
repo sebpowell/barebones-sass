@@ -1,5 +1,6 @@
 $border-sides: top, right, bottom, left, all
 
+
 @each $side in $border-sides
 	@if $side == "all"
 		.#{map-get($test, prefix)}border-all

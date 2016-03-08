@@ -18,3 +18,9 @@ $sides: top, right, bottom, left
 
 .#{map-get($test, prefix)}no-padding
 	padding: 0 !important
+
+
+@each $type in $types
+	@each $side in $sides
+		.#{map-get($test, prefix)}no-padding-#{$side}
+			#{$type}-#{$side}: 0 !important

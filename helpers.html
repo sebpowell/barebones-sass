@@ -87,28 +87,30 @@
       </ul>
     </div>
     <div class="main-container">
-      <h1 class="page-title">Helpers</h1>
+      <h1 class="page-title">Utilities</h1>
       <article class="article introduction">
-        <p>Helper classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each helper class is responsible for doing one job and doing it well.</p>
+        <p>Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.</p>
         <p>All helper classes use the <span class="var">!important</span> flag to avoid specificity issues.</p>
       </article>
       <article class="article">
         <h2>Background Color</h2>
         <p>Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.</p>
         <div class="example">
-          <div style="height: 40px" class="background-brand-primary"></div>
-          <div style="height: 40px" class="background-secondary-orange"></div>
-          <div style="height: 40px" class="background-greyscale-50"></div>
-        </div>
-        <pre><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+          <div class="example-rendered">
+            <div style="height: 40px" class="background-brand-primary"></div>
+            <div style="height: 40px" class="background-secondary-orange"></div>
+            <div style="height: 40px" class="background-greyscale-50"></div>
+          </div>
+          <pre class="example-code"><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
 &lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
 &lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
 </code></pre>
+        </div>
       </article>
       <article id="borders" class="article">
         <h2 id="borders">Borders</h2>
-        <p>Adds or removes a keyline to a given element. The border color used is the keyline light value specified in your <span class="var">$colors</span> map.</p>
-        <table>
+        <p>Adds a border to a given element in the specified direction(s). It uses the color value specified in the keyline category of your <span class="var">$colors</span> map.</p>
+        <table class="table-lined margin-bottom-double">
           <thead>
             <th colspan="2">Options</th>
           </thead>
@@ -138,16 +140,22 @@
           </tr>
         </table>
         <div class="example margin-bottom-double">
-          <div class="border-top"></div>
+          <div class="example-rendered">
+            <div class="border-top"></div>
+          </div>
+          <pre class="example-code"><code class="language-scss">| .border-bottom {
+|  border-bottom: 1px solid #F5F5F5 !important;
+| }
+</code></pre>
         </div>
-        <pre><code class="language-scss">.border-bottom {
- border-bottom: 1px solid #F5F5F5 !important;
-}</code></pre>
       </article>
       <article id="margin" class="article">
-        <h2>Margin & Padding</h2>
-        <p>Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map.</p>
-        <table>
+        <h2>Margin</h2>
+        <p>Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map, to help create consistency throughout your project.</p>
+        <p>To add spacing around an element, use the the margin</p>
+        <p>Add Spacing</p>
+        <p>Add spacing around elements using a combination of margin utilities.</p>
+        <table class="table-lined margin-bottom-double">
           <thead>
             <th colspan="2">Options</th>
           </thead>
@@ -169,10 +177,22 @@
           </tr>
         </table>
         <div class="example">
-          <div style="height: 40px" class="background-brand-primary margin-bottom-quarter"></div>
-          <div style="height: 40px" class="background-brand-primary margin-bottom-base"></div>
-          <div style="height: 40px" class="background-brand-primary"></div>
+          <div class="example-rendered">
+            <div class="border-all padding-base margin-bottom-quarter">.margin-bottom-quarter</div>
+            <div class="border-all padding-base margin-bottom-base">.margin-bottom-base</div>
+            <div class="border-all padding-base margin-bottom-triple">.margin-bottom-triple</div>
+            <div class="border-all padding-base no-margin">.no-margin</div>
+          </div>
+          <pre class="example-code"><code class="language-html">&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+
+</code></pre>
         </div>
+        
+        
+        
         <pre><code class="language-html">&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
 &lt;div class="margin-bottom-base"&gt;&lt;/div&gt;
 </code></pre>
@@ -204,42 +224,48 @@
             <td>Clears floats (apply this to the parent element).</span></td>
           </tr>
         </table>
-        <pre><code class="language-html">&lt;div class="block"&gt;&lt;/div&gt;
+        <div class="example margin-bottom-double">
+          <pre class="example-code"><code class="language-html">&lt;div class="block"&gt;&lt;/div&gt;
 &lt;div class="inline-block"&gt;&lt;/div&gt;
 &lt;div class="float-left"&gt;&lt;/div&gt;
 &lt;div class="float-right"&gt;&lt;/div&gt;
 &lt;div class="clearfix"&gt;&lt;/div&gt;
 </code></pre>
+        </div>
       </article>
       <article id="margin" class="article">
         <h2>Grid</h2>
         <h3>Rows & Columns</h3>
-        <p>To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths.</p>
-        <div class="example">
-          <div class="row">
-            <div class="columns-4">Columns 4</div>
-            <div class="columns-5">Columns 5</div>
-            <div class="columns-3">Columns 3</div>
+        <p>To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoing specified in your grid map.</p>
+        <div class="example margin-bottom-double">
+          <div class="example-rendered">
+            <div class="row">
+              <div class="columns-4">Columns 4</div>
+              <div class="columns-5">Columns 5</div>
+              <div class="columns-3">Columns 3</div>
+            </div>
           </div>
-        </div>
-        <pre class="margin-bottom-double"><code class="language-html">&lt;div class="row"&gt;
+          <pre class="example-code"><code class="language-html">&lt;div class="row"&gt;
  &lt;div class="columns-4"&gt;
  &lt;div class="columns-5"&gt;
  &lt;div class="columns-3"&gt;
 &lt;/div&gt;</code></pre>
-        <p>Helper classes are also available to create different grids for different breakpoints.</p>
-        <div class="example margin-bottom-double">
-          <div class="row">
-            <div class="columns-4-device-small columns-5-device-medium">Columns 4</div>
-            <div class="columns-4-device-small columns-3-device-medium"> Columns 5</div>
-            <div class="columns-4-device-small columns-4-device-medium"> Columns 3</div>
-          </div>
         </div>
-        <pre><code class="language-html">&lt;div class="columns"&gt;
- &lt;div class="columns-4-device-small"&gt;
- &lt;div class="columns-5-device-small"&gt;
- &lt;div class="columns-3-device-small"&gt;
+        <p>Helper classes are also available to create different grids for different screen sizes.</p>
+        <div class="example margin-bottom-double">
+          <div class="example-rendered">
+            <div class="row">
+              <div class="columns-4-device-x-small columns-5-device-medium"></div>
+              <div class="columns-4-device-x-small columns-3-device-medium"></div>
+              <div class="columns-4-device-x-small columns-4-device-medium"></div>
+            </div>
+          </div>
+          <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;
+ &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;
+ &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;
 &lt;/div&gt;</code></pre>
+        </div>
         <h3>Offsets</h3>
         <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
         <div class="example margin-bottom-double">
@@ -266,7 +292,7 @@
 &lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 </code></pre>
         <h3>Size</h3>
-        <p>These are generated using values specified in your <span class="var">$font-sizes</span> map.</p>
+        <p>These are generated using values specified in your <span class="var">$font-sizes</span> map. These are especially useful for altering the visual appearance of semantically correct headings.</p>
         <div class="example">
           <div class="text-x-large">This text is X-Large</div>
           <div class="text-large">This text is Large</div>
@@ -308,6 +334,8 @@
         <pre><code class="language-html">&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
 &lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
 </code></pre>
+        <p>Use padding and negative margin utilities to create gutters based on the white space scale. The negative margin ensures content inside each column lines up with content outside of the grid. When using negative margin, be sure to compensate for the extra width created with a padded parent element or by using overflow hidden. Otherwise, horizontal scrolling may occur.</p>
+        <p>Create gutters with a width of 2 units using .mxn2 and .px2.</p>
       </article>
       <article class="article">
         <h2>Visibility</h2>

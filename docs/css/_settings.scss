@@ -15,7 +15,7 @@ $colors: (
 	),
 
 	system: (
-		warning: red,
+		warning: #FFD5D5,
 	),
 
 	greyscale: (
@@ -32,7 +32,7 @@ $colors: (
 	),
 
 	keyline: (
-		light: #E8E8EB,
+		light: #f0f0f0,
 		medium: #D5D5D5,
 		dark: #D9D9D8,
 	)
@@ -40,7 +40,7 @@ $colors: (
 
 $fonts: (
 	primary: (
-		name: #{'Roboto', sans-serif},
+		name: #{'Helvetica Neue', Helvetica, Arial, sans-serif},
 		weights: (
 			light: 100,
 			regular: 400,
@@ -101,11 +101,11 @@ $grid: (
 );
 
 $sizes: (
-  quarter: 4px,
-  half: 8px,
-  base: 16px,
-  double-half: 24px,
-  double: 32px,
-  triple: 48px,
-  quad: 64px,
+  quarter: 0.25rem,
+  half: 0.5rem,
+  base: 1rem,
+  double-half: 1.5rem,
+  double: 2rem,
+  triple: 3rem,
+  quad: 4rem,
 );

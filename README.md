@@ -11,7 +11,7 @@ If you're new to SASS, you'll first need to make sure you're able to <a href="ht
 ### 1. Install the package
 Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones">Github</a> and integrate the source files directly.
 
-bower install barebones
+bower install barebones-sass
 
 ### 2. Create a settings file
 

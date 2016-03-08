@@ -8,6 +8,84 @@ pre, .example {
 }
 
 
+.example {
+  border: 1px solid colors(keyline, light);
+  border-radius: 3px;
+
+
+  .example-code {
+  	padding: sizes(double-half);
+  }
+
+  .example-rendered {
+  	padding: sizes(double-half);
+  	border-bottom: 1px solid colors(keyline, light);
+  }
+
+  .example-gallery-item {
+    height: 100px;
+    background: pink;
+  }
+
+  // Example grid
+  .example-wrapper {
+    @include container();
+    @include clearfix;
+
+    [class^="column"], .example-sidebar, .example-content-block, .example-offset, .example-span {
+      height: 100px;
+    }
+    .example-sidebar {
+      @include span(4);
+    }
+
+    .example-span {
+    	width: span(6);
+    }
+
+    .example-offset {
+    	@include if-below(device-small) {
+    		@include span(6);
+    	}
+    	@include span(6, $offset: 3);
+    }
+
+    .example-content-block {
+      @include span(8, last);
+    }
+  }
+
+  .modal, .dropdown-menu {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+  }
+  .row {
+  	[class^="column"] {
+  		background: pink;
+  		padding: sizes(base);
+  		font-size: 13px;
+  		color: darken(pink, 60%);
+  	}
+  }
+
+  .photo-gallery {
+  	@include clearfix;
+
+  	.photo-gallery-item {
+  		@include gallery(3);
+  		background-color: lightpink;
+  		height: 40px;
+  	}
+  }
+  .element {
+		width: gallery(4, 4);
+  }
+
+  .element-2 {
+  	@include gallery(2,2,3,5);
+  }
+}
 
 
 code[class*="language-"],
@@ -18,6 +96,7 @@ pre[class*="language-"] {
 	text-align: left;
 	white-space: pre;
 	font-size: 13px;
+	margin: 0;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
@@ -36,19 +115,6 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
 	background: colors(greyscale, 50);
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	border: 1px solid colors(keyline, light);
-	border-radius: 3px;
 }
 
 /* Inline code */
@@ -97,14 +163,14 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: colors(secondary, green);
+	color: #3d9970;
 	background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: colors(secondary, green);
+	color: #3d9970;
 }
 
 .token.function {

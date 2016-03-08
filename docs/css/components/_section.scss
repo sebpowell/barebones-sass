@@ -1,14 +1,30 @@
 // keyline(bottomm, dark, 1px);
 
+body {
+	line-height: 1.5;
+}
+
+
+html {
+	font-size: 16px;
+	@include if-above(device-large) {
+		font-size: 18px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+}
 
 .var {
-	color: colors(greyscale, 600);
+	color: #07c;
 	font-family: font(code);
-	border: 1px solid colors(keyline, dark);
-	border-radius: 3px;
-	padding: 2px 6px;
-	font-size: 13px;
+	// border: 1px solid colors(keyline, dark);
+	// border-radius: 3px;
+	padding: 4px 0;
+	font-size: 14px;
 	font-weight: 500;
+	background: linear-gradient(transparent,transparent 87.5%,rgba(0,119,204,.125) 0);
 }
 
 .arguments {
@@ -23,22 +39,26 @@
 }
 
 .article {
-	padding: 24px 0;
+	padding: sizes(quad) 0;
 
 	&.introduction {
 		p {
 			font-size: 20px;
 		}
 	}
+
 	p {
-		font-weight: 300;
+		font-weight: 400;
+		font-size: 1rem;
 	}
+
 	p > a, li > a {
 		color: colors(brand, primary);
 		&:hover {
 			text-decoration: underline;
 		}
 	}
+
 	ul > li {
 	  margin-bottom: sizes(base);
 	  line-height: 1.5;
@@ -49,20 +69,20 @@
 
 	> h2 {
 		margin-bottom: sizes(base);
-		font-weight: weights(primary, regular);
+		// font-weight: weights(primary, semi-bold);
 		font-size: settings(fonts, sizes, medium-large);
 	}
 
 	h3 {
 		font-size: settings(fonts, sizes, medium-large);
 		color: colors(greyscale, 800);
-		font-weight: weights(primary, regular);
+		// font-weight: weights(primary, regular);
 		margin-top: sizes(quad);
 		margin-bottom: sizes(base);
 	}
 
 	> p, > ul li {
-		font-size: map-get($font-sizes, base);
+		// font-size: map-get($font-sizes, base);
 		color: colors(greyscale, 800);
 		line-height: 1.8;
 		margin-bottom: sizes(double);
