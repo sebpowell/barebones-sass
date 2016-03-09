@@ -4,7 +4,7 @@
   "main": [
   	"dist/_base.sass"
   ],
-  "version": "v2.1",
+  "version": "v1.0",
   "authors": [
     "Sebastien Powell"
   ],
