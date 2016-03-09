@@ -151,52 +151,64 @@ block body
 
 		article.article
 			h2 Galleries
-			p Galleries are made up of elements that repeat across multiple lines.
-			pre.margin-bottom-double
-				code.language-scss.
-					.photo-gallery {
-					  @include clearfix;
-					  // Clears the floats.
-					}
+			p Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row. Because of the way this works, if you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.
 
-					.photo-gallery-item {
-						@include gallery(3);
-						// Creates a gallery with each item taking up 3 columns of your grid
-						// (on a 12 grid-layout, this would be 4 items).
-					}
 
 			.example.margin-bottom-double
-				.photo-gallery
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
-					.photo-gallery-item
+				.example-rendered
+					.photo-gallery
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
+						.photo-gallery-item
 
-			p The gallery function also allows you to create asmettric galleries.
+				pre.example-code.border-bottom
+					code.language-scss.
+						.photo-gallery {
+							@include clearfix; // Clears the floats.
+						}
 
-			.example.photo-gallery.margin-bottom-double
-				.element(style="background-color: lightpink; height: 40px")
-				.element(style="background-color: lightpink; height: 40px")
-				.element(style="background-color: lightpink; height: 40px")
-				.element(style="background-color: lightpink; height: 40px")
-				.element(style="background-color: lightpink; height: 40px")
+						.photo-gallery-item {
+							@include gallery(3);
+							// Creates a gallery with each item taking up 3 columns of your grid
+							// (on a 12 grid-layout, this would be 4 items). This will be the case at every screen size.
+						}
 
-			pre
-				code.language-scss.
-					.photo-gallery {
-					  @include clearfix;
-					  // Clears the floats.
-					}
+						.photo-gallery-item {
+							+if-between(device-x-small, device-medium) {
+								@include gallery(6);
+							}
+							+if-above(device-medium) {
+								@include gallery(4);
+							}
+							// Creates a gallery with each item taking up 3 columns of your grid
+							// (on a 12 grid-layout, this would be 4 items). This will be the case at every screen size.
+						}
 
-					.photo-gallery-item {
-						@include gallery(3, 6, 4);
-					}
+				pre.example-code
+					code.language-css.
+						.photo-gallery {
+							@include clearfix; // Clears the floats.
+						}
+
+						.photo-gallery-item {
+							width: 22.85714%;
+							margin-right: 2.85714%;
+							float: left;
+						}
+
+						.photo-gallery-item(:nth-child: 3n + 1) {
+							width: 22.85714%;
+							margin-right: 0;
+							float: right;
+						}
+
 
 		article#containers.article
 			h2 Helper Classes

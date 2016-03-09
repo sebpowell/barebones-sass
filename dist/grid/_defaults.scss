@@ -2,4 +2,30 @@ $grid: (
 	columns: 12,
 	gutter: 1/4,
 	max-width: 1280px,
-);
+	breakpoint: 780px,
+	mobile-padding: 24px,
+	mobile-gutter: 24px,
+) !default;
+
+$columnCount: map-get($grid, columns);
+$gutterCount: map-get($grid, columns) - 1;
+
+
+@debug map-get($grid, gutter);
+
+// Calculate total number of gutters (number of gutters in a column + the extra gutter on the right)
+$totalGutters: ($columnCount / 12) + ($columnCount - 1);
+
+// Set width for gutters and columns.
+$gutterWidth: 100% / $totalGutters;
+$totalGutterWidth: $gutterWidth * $gutterCount;
+$columnWidth: (100% - $totalGutterWidth) / $columnCount;
+
+// Set global breakpoint.
+$gridBreakpoint: grid(breakpoint);
+
+
+// Calculate column widths
+@function columnCalc($columns) {
+	@return (($columns * $columnWidth) + (($columns - 1) * $gutterWidth));
+}

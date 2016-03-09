@@ -237,49 +237,61 @@
       </article>
       <article class="article">
         <h2>Galleries</h2>
-        <p>Galleries are made up of elements that repeat across multiple lines.</p>
-        <pre class="margin-bottom-double"><code class="language-scss">.photo-gallery {
-  @include clearfix;
-  // Clears the floats.
+        <p>Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row. Because of the way this works, if you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.</p>
+        <div class="example margin-bottom-double">
+          <div class="example-rendered">
+            <div class="photo-gallery">
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+              <div class="photo-gallery-item"></div>
+            </div>
+          </div>
+          <pre class="example-code border-bottom"><code class="language-scss">.photo-gallery {
+	@include clearfix; // Clears the floats.
 }
 
 .photo-gallery-item {
 	@include gallery(3);
 	// Creates a gallery with each item taking up 3 columns of your grid
-	// (on a 12 grid-layout, this would be 4 items).
-}
-</code></pre>
-        <div class="example margin-bottom-double">
-          <div class="photo-gallery">
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-            <div class="photo-gallery-item"></div>
-          </div>
-        </div>
-        <p>The gallery function also allows you to create asmettric galleries.</p>
-        <div class="example photo-gallery margin-bottom-double">
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-          <div style="background-color: lightpink; height: 40px" class="element"></div>
-        </div>
-        <pre><code class="language-scss">.photo-gallery {
-  @include clearfix;
-  // Clears the floats.
+	// (on a 12 grid-layout, this would be 4 items). This will be the case at every screen size.
 }
 
 .photo-gallery-item {
-	@include gallery(3, 6, 4);
+	+if-between(device-x-small, device-medium) {
+		@include gallery(6);
+	}
+	+if-above(device-medium) {
+		@include gallery(4);
+	}
+	// Creates a gallery with each item taking up 3 columns of your grid
+	// (on a 12 grid-layout, this would be 4 items). This will be the case at every screen size.
 }
 </code></pre>
+          <pre class="example-code"><code class="language-css">.photo-gallery {
+	@include clearfix; // Clears the floats.
+}
+
+.photo-gallery-item {
+	width: 22.85714%;
+	margin-right: 2.85714%;
+	float: left;
+}
+
+.photo-gallery-item(:nth-child: 3n + 1) {
+	width: 22.85714%;
+	margin-right: 0;
+	float: right;
+}
+
+</code></pre>
+        </div>
       </article>
       <article id="containers" class="article">
         <h2>Helper Classes</h2>

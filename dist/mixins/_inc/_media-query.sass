@@ -16,7 +16,7 @@
 
 =if-between($breakpoint-name-min, $breakpoint-name-max)
 	@if map-has-key($breakpoints, $breakpoint-name-min)
-		@media (min-width: breakpoint($breakpoint-name-min)) and (max-width: breakpoint($breakpoint-name-max))
+		@media (min-width: breakpoints($breakpoint-name-min)) and (max-width: breakpoints($breakpoint-name-max))
 			@content
 	@else
 		@media (min-width: $breakpoint-name-min) and (max-width: $breakpoint-name-max)

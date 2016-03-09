@@ -73,17 +73,19 @@ pre, .example {
   	@include clearfix;
 
   	.photo-gallery-item {
-  		@include gallery(3);
+  		@include if-between(device-x-small, device-medium) {
+  			@include gallery(6, $gutter: 1/2);
+  		}
+
+  		@include if-above(device-medium) {
+  			@include gallery(4);
+  		}
+
+
+
   		background-color: lightpink;
   		height: 40px;
   	}
-  }
-  .element {
-		width: gallery(4, 4);
-  }
-
-  .element-2 {
-  	@include gallery(2,2,3,5);
   }
 }
 

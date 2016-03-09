@@ -1,0 +1,28 @@
+@function span($columns) {
+	@return columnCalc($columns);
+}
+
+@mixin span($columns, $position: "", $gutter: "", $offset: 0) {
+	width: columnCalc($columns);
+	float: left;
+	@if $gutter == false {
+		margin-right: 0;
+		width: 100% / $columnCount * $columns;
+	}
+	@else {
+		margin-right: $gutterWidth;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	@if $offset > 0 {
+		margin-left: columnCalc($offset) + $gutterWidth;
+	}
+	@if $position == "last" {
+		margin-right: 0;
+		float: right;
+	}
+}
+
+
+
