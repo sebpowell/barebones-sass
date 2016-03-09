@@ -40,10 +40,10 @@ Import your newly created settings file, followed by <span class="var">_barebone
 
 
 // Always import the settings file first
-@import _settings.scss
+@import "_settings.scss";
 
 // Import Barebones – the path will depend on your setup.
-@import bower-components/_base.scss
+@import "bower-components/_base.scss";
 
 // Your stuff can come here.
 ```
