@@ -94,6 +94,28 @@ block body
 							}
 						}
 
+		article.article(id="strip-units")
+			h2 Strip Unit
+			p Removes units from a given value - for example, stripping off the 'px' from a pixel value.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						@return strip-units(20px);
+						// Returns 20
+
+		article.article(id="convert-to-rem")
+			h2 Convert to REM
+			p Converts a px based value to REM units. The root value deafults to 16px, unless a different 'base' value is specifed in your <span class="var">$sizes</span> map.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						ul {
+							font-size: rem(12px);
+							// Converts to 12 / 16 = 0.75rem;
+						}
+
 		article.article(id="no-bullet")
 			h2 No Bullet
 			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).

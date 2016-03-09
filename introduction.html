@@ -62,7 +62,7 @@
             <li><a href="#generator">Helpers</a></li>
           </ul>
         </li>
-        <li><a href="mixins.html">Mixins</a>
+        <li><a href="mixins.html">Mixins &amp; Functions</a>
           <ul class="sub-navigation">
             <li><a href="#arrow">Arrow</a></li>
             <li><a href="#placeholder">Placeholder</a></li>
@@ -70,6 +70,8 @@
             <li><a href="#clearfix">Clearfix</a></li>
             <li><a href="#ellipsis">Ellipsis</a></li>
             <li><a href="#media-queries">Media Queries</a></li>
+            <li><a href="#strip-units">Strip Units</a></li>
+            <li><a href="#convert-to-rem">Convert to REM</a></li>
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
@@ -90,63 +92,68 @@
       <h1 class="page-title">Getting Started</h1>
       <article class="article introduction">
         <p>Barebones is a boilerplate to help you build your own <a href="http://sass-lang.com/" target="_blank">SASS</a> framework. It is not a fully-fledged library, but a set of tools common to all projects; a grid system, helper classes and a range of resuable mixins, put together in a convenient package to kickstart your next project. Only the bare essentials are included – so you can spend less time overwriting and more time creating.</p>
-        <div class="info-panel warning">
-          <p>In order to use Susy 2 with Rails you must update your Gemfile to use sass-rails ~> 5.0.0. This is because Susy 2 requires Sass >= 3.3 whilst Rails 4.1 and below include a version of sass-rails which does not support Sass 3.3.</p>
-        </div>
-        <p>Principles</p>
-        <p>Deliberatley verbose to make it super clear to people what each class is doing.</p>
-        <p>Code with Confidence</p>
-        <p>Using clear, humanized naming conventions, Basscss is quick to internalize and easy to reason about while speeding up development time with more scalable, more readable code.</p>
-        <p>No Side Effects</p>
-        <p>Things behave exactly as expected with immutable utilities and styles that do one thing well to help prevent common pitfalls with CSS.</p>
-        <p>Composable</p>
-        <p>Reusable, interoperable styles work like building blocks to lay the foundation for any stylesheet and can be mixed and matched in any number of combinations.</p>
-        <p>Designed for Design</p>
-        <p>Basscss strikes a balance between consistency and flexibility to allow for rapid prototyping and quick iterative changes when designing in the browser.</p>
-        <p>Responsive by Default</p>
+      </article>
+      <article class="article">
+        <h3>Principles</h3>
+        <h4>Easy to Pick Up</h4>
+        <p>Barbones classes are deliberatley verbose to make it super clear to people what each class is doing.</p>
+        <h4>Made with desig in mind</h4>
+        <p>Basscss strikes a balance between consistency and flexibility to allow for rapid prototyping and quick iterative changes when designing in the browser. Easy Designing in the browser should be easy.</p>
+        <h4>Responsive by Default</h4>
         <p>Basscss provides lightweight, performant styles and flexible utilities to design for any device and to help reduce boilerplate in stylesheets.</p>
-        <p>Unassuming</p>
+        <h4>Unassuming</h4>
         <p>Modular and customizable typography and layout styles don’t dictate what things should look like and play well with other stylesheets and frameworks.</p>
-        <p>Responsive Everything should be 100% responsive. Your website should work regardless of a users device or screensize. Don't break the functionality of HTML with CSS. Readable No matter the lighting, or the device, font-sizes should be large enough and contrast should be high enough. Performant Code isn't for making a developers life easier. It's for improving the lives of our users. If it's not doing that, why write it. A developer's time is not precious. A user's time is. Code should be optimized for performance. Modular Modules > Monoliths Tachyons isn't a monolithic framework. It's a collection of self contained modules that can be mixed and matched or used independently. Use what you want, leave what you don't. Reusable Doing one thing well, promotes reusability and reduces redundancy in a codebase. Easy Designing in the browser should be easy. If a computer can do it, you shouldn't have to. Features Runs on Postcss A flexible plugin framework for post-processing css. View on Github Mobile-first architecture Base classes are mobile by default. Can be overridden by namespaced classes targeting larger breakpoints. Layout debugging Small css modules for debugging stacking and layout issues. Can easily be turned on or off during development. Composable classes Construct anything from complex layouts to responsive components with a series of single purpose classes. Cohesive design system Scale based on the powers of two. Starting at .25 Responsive Grid Infinitely nestable. Fully fluid. Extremely light-weight. Customize, or extend Tachyons is meant to be edited and customized to meet the needs of your product. It's just css. It isn't precious. Don't be afraid to change: class names, media queries, breakpoints, or values.</p>
+        <h4>Composable classes</h4>
+        <p>Construct anything from complex layouts to responsive components with a series of single purpose classes. Cohesive design system Scale based on the powers of two.</p>
+        <h4>Responsive</h4>
+        <p>Everything should be 100% responsive. Your website should work regardless of a users device or screensize. D</p>
+        <h4>Unitless</h4>
+        <h4></h4>
+        <p>Tachyons isn't a monolithic framework. It's a collection of self contained modules that can be mixed and matched or used independently. Use what you want, leave what you don't. Reusable Doing one thing well, promotes reusability and reduces redundancy in a codebase.</p>
       </article>
       <article class="article">
         <h2>Why does the world need Barebones?</h2>
         <p>It probably doesn't, but here goes; we wanted to create a lightweight SASS library that we could share between projects – powerful enough to allow us to focus on design, and lightweight enough to stay out of our way.</p>
         <p>Over time, we've learned a lot about how to structure our SASS projects in a cohesive, scalable and maintainable way. We thought other people might find this knowledge useful so decided to release this as a package in the public domain.</p>
-        <h2>Why build your own framework?</h2>
         <p>Existing frameworks such as Bootstrap and Foundation are great for prototyping, but typically lack flexibility. If you want to create your own theme, you're going to spend a lot of time with the !important flag – a great way for things to quickly become completely unmanageable.</p>
         <p>Building your own framework puts you in the driving seat, giving you full control over how your app or website looks, without being shoe-horned into someone else's design system.</p>
       </article>
       <article id="installing" class="article">
         <h2>Installing Barebones</h2>
         <p>If you're new to SASS, you'll first need to make sure you're able to <a href="http://sass-lang.com/install" target="_blank">compile SASS files</a>.</p>
+        <div class="info-panel warning">
+          <p>In order to use Susy 2 with Rails you must update your Gemfile to use sass-rails ~> 5.0.0. This is because Susy 2 requires Sass >= 3.3 whilst Rails 4.1 and below include a version of sass-rails which does not support Sass 3.3.</p>
+        </div>
         <h3>1. Install the package</h3>
-        <p>Barebones is available as a Bower package. You can also download the latest release from <a href="https://github.com/sebpowell/barebones-sass">Github</a> and integrate the source files directly. This will add the Susy repository to your bower_components directory or create a bower_components directory for you.</p>
-        <p>If you want to copy in the Sass files directly, and skip any package management, you can do that too.</p>
-        <p>Download the zip file from GitHub.</p>
-        <p>Copy the contents of the “sass” folder (feel free to remove everything else).</p>
-        <p>Paste the files in your project “sass” folder (whatever you call it).</p>
-        <pre><code class="language-bash">bower install barebones-sass --save</code></pre>
+        <p>Barebones is available as a Bower package. If you want to copy in the Sass files directly, and skip any package management, you can do that too – simply download the latest release from <a href="https://github.com/sebpowell/barebones-sass">Github</a> and integrate the source files directly.</p>
+        <div class="example">
+          <pre class="example-code"><code class="language-bash">bower install barebones-sass --save</code></pre>
+        </div>
         <h3>2. Create a settings file</h3>
         <p>Barebones code allows you to specify your own individual project settings – just grab <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">the example file</a> </strong> and change the values to fit your needs.</p>
         <h3>3. Create your main SASS file</h3>
         <p>Import your newly created settings file, followed by <span class="var">_barebones.sass</span> into your main SASS file. When you're done, it should look like this:</p>
-        <pre class="margin-bottom-double"><code class="language-html">|-- css/
+        <div class="example margin-bottom-double">
+          <pre class="example-code"><code class="language-html">|-- css/
 |--| main.sass
 |--| _settings.sass
 |
 |-- bower-components/
 |--| barebones/
-|--|--| _base.sass
+|--|--| dist/
+|--|--|--| _base.sass
 </code></pre>
-        <pre><code class="language-scss">// Always import the settings file first
+        </div>
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">// Always import the settings file first
 @import _settings.scss
 
 // Import Barebones – the path will depend on your setup.
-@import bower-components/_base.scss
+@import bower-components/barebones/dist/_base.scss
 
 // Your stuff can come here.
 </code></pre>
+        </div>
       </article>
       <article id="requirements" class="article">
         <h2>Requirements</h2>

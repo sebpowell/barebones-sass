@@ -15,7 +15,7 @@ $colors: (
 	),
 
 	system: (
-		warning: #FFD5D5,
+		warning: #FFEEEE,
 	),
 
 	greyscale: (
@@ -65,9 +65,9 @@ $breakpoints: (
 	device-x-small: 350px,
 	device-small: 480px,
 	device-medium: 780px,
-	device-medium-large: 900px,
-	device-large: 1080px,
-	device-x-large: 1200px
+	device-medium-large: 960px,
+	device-large: 1280px,
+	device-x-large: 1400px
 );
 
 $misc: (
@@ -76,13 +76,13 @@ $misc: (
 );
 
 $font-sizes: (
-	x-small: 12px,
-	small: 14px,
+	x-small: rem(12px),
+	small: rem(14px),
 	base: 16px,
-	medium: 20px,
-	medium-large: 24px,
-	large: 32px,
-	x-large: 42px
+	medium: rem(20px),
+	medium-large: rem(24px),
+	large: rem(32px),
+	x-large: rem(42px)
 );
 
 $layers: (

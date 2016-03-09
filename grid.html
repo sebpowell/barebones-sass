@@ -62,7 +62,7 @@
             <li><a href="#generator">Helpers</a></li>
           </ul>
         </li>
-        <li><a href="mixins.html">Mixins</a>
+        <li><a href="mixins.html">Mixins &amp; Functions</a>
           <ul class="sub-navigation">
             <li><a href="#arrow">Arrow</a></li>
             <li><a href="#placeholder">Placeholder</a></li>
@@ -70,6 +70,8 @@
             <li><a href="#clearfix">Clearfix</a></li>
             <li><a href="#ellipsis">Ellipsis</a></li>
             <li><a href="#media-queries">Media Queries</a></li>
+            <li><a href="#strip-units">Strip Units</a></li>
+            <li><a href="#convert-to-rem">Convert to REM</a></li>
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
@@ -93,8 +95,7 @@
       </article>
       <article class="article">
         <h2>Grid Settings</h2>
-        <p>Specify your grid settings in your settings file. If nothing is specified, default values are applied.</p>
-        <p>The $grid-settings map allows you to specify project-wide settings that effect many of Cask's defaults including the number of columns, the width of your gutters, and maximum site width.</p>
+        <p>Specify your grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.</p>
         <table>
           <thead>
             <th>Setting</th>
@@ -117,8 +118,15 @@
             <td>Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2). Cask supports any unit of measure for gutter values.10px,1.2rem,4%, and even2vw` are all valid inputs! Rems are preferred.</td>
           </tr>
         </table>
-        <h2>Example</h2>
+        <h3>Example</h3>
         <p>To change your grid settings, you can use the following. Because of the way the project settings are called, you can update one or all of the settings as needed.</p>
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">$grid: (
+	columns: 12,
+	gutter: 1/4,
+);
+</code></pre>
+        </div>
       </article>
       <article id="containers" class="article">
         <h2>Containers</h2>
@@ -130,40 +138,33 @@
           </thead>
           <tr>
             <td><span class="var">$max-width</span></td>
-            <td>container max-width</td>
+            <td>The max-width argument directly sets the max-width property on the element. any format that fits the max-width css specification will be accepted. This value will default to the max-width set in the $grid-settings.</td>
+          </tr>
+          <tr>
+            <td></td>
           </tr>
           <tr>
             <td><span class="var">$mobile-gutter</span></td>
-            <td>removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
+            <td> boolean attribute . removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
           </tr>
         </table>
-        <pre><code class="language-scss">.element {
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">.element {
 	@include container(600, $mobile-gutter: false);
 }
 </code></pre>
+        </div>
       </article>
       <article id="columns" class="article">
         <h2>Columns</h2>
-        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to specify column widths. To create different widths at different breakpoints, use the <span class="var">if-above($device)</span> mixin.</p>
-        <p>The columns argument is the unitless number of columns the element spans. The default of this property is false which will cause the object to be 100% of its container, or full-width.</p>
-        <p>A set of values can also be passed in to specify the number of columns the object is as well as the number of total columns in this instance. Values can be separated with a of as in 7 of 12. This is useful for specific layouts that break the default column count of the project defined in the $grid-settings.</p>
-        <p>If only one value is passed, the number of total columns is the total-columns set in the $grid-settings.</p>
-        <p>$collapse</p>
-        <p>The collapse argument is a boolean attribute that will cause the element to consume the margins on either side of it. The default of this property is false which will cause the object preserve the gutters on either side. This option is useful when creating containers as well as nested grids.</p>
-        <p>$center</p>
-        <p>The center argument is a boolean attribute that will cause the element no longer be floated and will instead be centered in its container. .card {@include grid-column($columns: 1 of 2, $collapse: true);}</p>
-        <p>$center</p>
-        <p>Unlike the grid-column mixin, the center argument in the grid-column mixin defaults to true. As with the columns, true causes the element not to be floated and instead be centered in its container. Setting this to false will cause the element to floated to the default-float set in the $grid-settings.</p>
-        <p>$max-widt</p>
-        <p>The max-width argument directly sets the max-width property on the element. any format that fits the max-width css specification will be accepted. This value will default to the max-width set in the $grid-settings.</p>
-        <p>Like the grid-column mixin, grid-push also accepts sub-grid settings like 2 of 5 or 4 of 7.</p>
+        <p>To create different widths at different breakpoints, use the <span class="var">if-above($device)</span> mixin.</p>
         <table>
           <thead>
             <th colspan="2">Options</th>
           </thead>
           <tr>
             <td><span class="var">$columns</span></td>
-            <td>Number of columns the component spans, of the total number defined in your settings file (by default this is 12).</td>
+            <td>Number of columns the component spans, of the total number defined in your settings file (by default this is 12). The columns argument is the unitless number of columns the element spans.</td>
           </tr>
           <tr>
             <td><span class="var">$position</span> <em>(optional)</em></td>
@@ -173,46 +174,66 @@
             <td><span class="var">$gutter</span> <em>(optional)</em></td>
             <td>Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.</td>
           </tr>
+          <tr>
+            <td><span class="var">$offset</span> <em>(optional)</em></td>
+            <td>Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.</td>
+          </tr>
         </table>
-        <div class="example margin-bottom-double">
-          <div class="example-wrapper">
-            <div style="background-color: lightpink" class="example-sidebar"></div>
-            <div style="background-color: lightpink" class="example-content-block"></div>
+        <h3>Span Mixin</h3>
+        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to create a new container.</p>
+        <div class="example">
+          <div class="example-rendered">
+            <div class="example-wrapper">
+              <div style="background-color: lightpink" class="example-sidebar"></div>
+              <div style="background-color: lightpink" class="example-content-block"></div>
+            </div>
           </div>
-        </div>
-        <pre><code class="language-scss">.sidebar {
+          <pre class="example-code border-bottom"><code class="language-scss">.sidebar {
   @include span(4); // Creates a column that spans 4 colums
 }
 .content {
   @include span(8, $position: last); // Creates a column that spans 8 columns
-}
-
-</code></pre>
-      </article>
-      <article class="article">
-        <h2>Span Function</h2>
-        <p>The above mixin includes certain behaviour – columns will break at your default mobile breakpoint unless overwritten, margins are applied and more. Span [function]The span function is identical to the span mixin, but returns only the span width value, so you can use it with custom output.</p>
-        <p>If you want something more basic, you can use the span($columns) function to simply calculate the width of your component.</p>
-        <div class="example margin-bottom-double">
-          <div class="example-wrapper">
-            <div style="background-color: lightpink" class="example-span"></div>
-          </div>
-        </div>
-      </article>
-      <article id="columns" class="article">
-        <h2>Offset</h2>
-        <div class="example margin-bottom-double">
-          <div class="example-wrapper">
-            <div style="background-color: lightpink" class="example-offset"></div>
-          </div>
-        </div>
-        <pre><code class="language-scss">.sidebar {
-  @include span(4); // Creates a column that spans 4 colums
+}</code></pre>
+          <pre class="example-code"><code class="language-scss">.sidebar {
+	width: 34.5%;
+	margin-right: 1.25%;
+	float: left;
 }
 .content {
-  @include span(8, $position: last); // Creates a column that spans 8 columns
+	width: 34.5%;
+	margin-right: 1.25%;
+	float: left;
 }
 </code></pre>
+        </div>
+        <h3>Span Function</h3>
+        <p>The above mixin includes the heaviour you'd expect from a grid sysem – marings are added to create the gutters, and floats are applied depending on the positiong of the element. If you want something more basic, the <span class="var">span($columns)</span> function is identical to the mixin, but returns only a width value.</p>
+        <div class="example margin-bottom-double">
+          <div class="example-rendered">
+            <div class="example-wrapper">
+              <div style="background-color: lightpink" class="example-span"></div>
+            </div>
+          </div>
+          <pre class="example-code border-bottom"><code class="language-scss">.example-span {
+	width: span(4);
+}</code></pre>
+          <pre class="example-code"><code class="language-scss">.example-span {
+	width: 56.1%;
+}
+</code></pre>
+        </div>
+        <h3>Offset</h3>
+        <div class="example margin-bottom-double">
+          <div class="example-rendered">
+            <div class="example-wrapper">
+              <div style="background-color: lightpink" class="example-offset"></div>
+            </div>
+          </div>
+          <pre class="example-code"><code class="language-scss">.sidebar {
+	@include span(8, $offset: 4);
+}
+</code></pre>
+        </div>
       </article>
       <article class="article">
         <h2>Galleries</h2>

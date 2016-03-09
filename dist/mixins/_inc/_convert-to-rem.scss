@@ -1,0 +1,7 @@
+$sizes: (
+	base: 16px
+) !default;
+
+@function rem($input) {
+	@return (strip-unit($input) / map-get($sizes, base)) + rem;
+}

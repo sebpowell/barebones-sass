@@ -88,7 +88,7 @@
     transform: scale(1)
   }
 
-  @include if-below(device-medium) {
+  @include if-below(device-medium-large) {
     transition: all .5s;
     transform: scale(0.9);
     border-radius: 3px;
@@ -114,14 +114,13 @@
   }
 
   .docs-navigation-primary-links {
-    @include if-above(device-medium) {
+    @include if-above(device-medium-large) {
       position: fixed;
       min-width: 240px;
       max-height: 500px;
       overflow-y: scroll;
       border: 1px solid colors(keyline, light);
       border-radius: 5px;
-
     }
   }
   ul {
@@ -148,7 +147,7 @@
     	}
       > a {
       	transition: color .5s;
-        padding: sizes(base);
+        padding: rem(12px);
         text-decoration: none;
         display: block;
         @include if-above(device-medium) {

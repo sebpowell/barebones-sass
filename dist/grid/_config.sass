@@ -1,10 +1,14 @@
+
+
+
+
 // Check number of columns, if no value, assign default value.
 @if map-has-key($grid, columns)
 	$columnCount: grid(columns)
-	$gutterCount: grid(columns) - 1 
+	$gutterCount: grid(columns) - 1
 @else
 	$columnCount: 12
-	$gutterCount: 12 - 1 
+	$gutterCount: 12 - 1
 
 // Calculate total number of gutters (number of gutters in a column + the extra gutter on the right)
 @if map-has-key($grid, gutter)

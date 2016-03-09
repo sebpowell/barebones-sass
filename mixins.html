@@ -62,7 +62,7 @@
             <li><a href="#generator">Helpers</a></li>
           </ul>
         </li>
-        <li><a href="mixins.html">Mixins</a>
+        <li><a href="mixins.html">Mixins &amp; Functions</a>
           <ul class="sub-navigation">
             <li><a href="#arrow">Arrow</a></li>
             <li><a href="#placeholder">Placeholder</a></li>
@@ -70,6 +70,8 @@
             <li><a href="#clearfix">Clearfix</a></li>
             <li><a href="#ellipsis">Ellipsis</a></li>
             <li><a href="#media-queries">Media Queries</a></li>
+            <li><a href="#strip-units">Strip Units</a></li>
+            <li><a href="#convert-to-rem">Convert to REM</a></li>
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
@@ -172,6 +174,26 @@
 	@include if-above(800px) {
 	color: red;
 	}
+}
+</code></pre>
+        </div>
+      </article>
+      <article id="strip-units" class="article">
+        <h2>Strip Unit</h2>
+        <p>Removes units from a given value - for example, stripping off the 'px' from a pixel value.</p>
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">@return strip-units(20px);
+// Returns 20
+</code></pre>
+        </div>
+      </article>
+      <article id="convert-to-rem" class="article">
+        <h2>Convert to REM</h2>
+        <p>Converts a px based value to REM units. The root value deafults to 16px, unless a different 'base' value is specifed in your <span class="var">$sizes</span> map.</p>
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">ul {
+	font-size: rem(12px);
+	// Converts to 12 / 16 = 0.75rem;
 }
 </code></pre>
         </div>
