@@ -6,13 +6,24 @@
     <meta property="og:title" content="Barebones SASS"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content="docs//images/og-image.png"/>
-    <meta property="og:description" content="Barebones SASS – A lightweight, responsive SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
-    <meta name="description" content="Barebones SASS – A lightweight, responsive SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
-    <title>Barebones SASS – A lightweight, responsive SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="docs/css/style.css"/>
     <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
     <script src="docs/javascript/application.js"></script>
+    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   </head>
 </html>
 <body class="page-layout-docs">
@@ -44,7 +55,7 @@
         </li>
         <li><a href="settings.html">Settings</a>
           <ul class="sub-navigation">
-            <li><a href="#import">Import</a></li>
+            <li><a href="#misc">Misc</a></li>
             <li><a href="#colors">Colors</a></li>
             <li><a href="#fonts">Fonts</a></li>
             <li><a href="#grid">Grid</a></li>
@@ -75,15 +86,15 @@
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
-        <li><a href="helpers.html">Helpers</a>
+        <li><a href="utilities.html">Utilities</a>
           <ul class="sub-navigation">
             <li><a href="#background">Background Color</a></li>
-            <li><a href="">Position</a></li>
             <li><a href="#borders">Borders</a></li>
-            <li><a href="#margins">Margins & Padding</a></li>
-            <li><a href="undefinedindex.html">Layout</a></li>
-            <li><a href="undefinedindex.html">Typography</a></li>
-            <li><a href="undefinedindex.html">Visibility</a></li>
+            <li><a href="#margin">Margins & Padding</a></li>
+            <li><a href="#layout">Layout</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#visibility">Visibility</a></li>
           </ul>
         </li>
       </ul>
@@ -91,51 +102,59 @@
     <div class="main-container">
       <h1 class="page-title">Settings</h1>
       <article class="article introduction">
-        <p>Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project. For example, the <span class="var">if-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map is used by the, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.</p>
-        <p><span class="text-system-warning">The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">this template</a>.</p>
-        <p>A helper function is also included to allow you to easily fetch values in each map.</p>
+        <p>Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project.</p>
+        <p>For example, the <span class="var">if-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.</p>
+        <div class="info-panel warning margin-bottom-double">
+          <p>The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones-sass/blob/master/docs/css/_settings.scss" target="_blank">this template</a>.</p>
+        </div>
       </article>
-      <article id="import" class="article">
-        <h2>Import</h2>
+      <article id="misc" class="article">
+        <h2>Misc</h2>
         <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced).</p>
-        <pre><code class="language-scss">$library: (
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">$library: (
 	prefix: "bb-",
+	units: px
 );
 </code></pre>
+        </div>
       </article>
       <article id="colors" class="article">
         <h2>Colors</h2>
         <p>Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.</p>
-        <pre class="margin-bottom-double"><code class="language-scss"> $colors: (
-	 brand: (
-		 primary: #157AFB,
-		 secondary: #FE5607,
-		 ...
-	 ),
-	 secondary: (
-		 orange: #F8B000,
-		 ...
-	 ),
-	 greyscale: (
-		 50: #FAFAFA,
-		 100: #F5F5F5,
-		 ...
-	 ),
-	 keyline: (
-		 light: #E5E5E5,
-		 ...
-	 ),
- );
+        <div class="example margin-bottom-double">
+          <pre class="example-code border-bottom"><code class="language-scss">$colors: (
+	brand: (
+		primary: #157AFB,
+		secondary: #FE5607,
+		...
+	),
+	secondary: (
+		orange: #F8B000,
+		...
+	),
+	greyscale: (
+		50: #FAFAFA,
+		100: #F5F5F5,
+		...
+	),
+	keyline: (
+		light: #E5E5E5,
+		...
+	),
+);
 </code></pre>
-        <pre><code class="language-scss">.element {
+          <pre class="example-code"><code class="language-scss">.element {
 	background-color: colors($category, $value);
 }
 </code></pre>
+        </div>
       </article>
       <article id="fonts" class="article">
         <h2>Fonts</h2>
         <p>Specify font familys' and their respective weights. Access using <span class="var">fonts($family)</span> and <span class="var">weights($family, $weight)</span> functions.</p>
-        <pre><code class="language-scss">$fonts: (
+        <div class="example margin-bottom-double">
+          <pre class="example-code"><code class="language-scss">$fonts: (
 	primary: (
 		family: Open Sans,
 		weights: (
@@ -152,47 +171,56 @@
 	)
 );
 </code></pre>
+        </div>
       </article>
       <article id="grid" class="article">
         <h2>Grid</h2>
         <p>Specify global grid settings. Access using <span class="var">grid($setting)</span>. Read more about the grid system and available settings <a href="grid.html">here</a>.</p>
-        <pre><code class="language-scss">$grid: (
+        <div class="example margin-bottom-double">
+          <pre class="example-code"><code class="language-scss">$grid: (
 	columns: 12,
 	gutter: 1/4,
 );
 </code></pre>
+        </div>
       </article>
       <article id="breakpoints" class="article">
         <h2>Breakpoints</h2>
         <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.</p>
-        <pre><code class="language-scss">$breakpoints: (
+        <div class="example margin-bottom-double">
+          <pre class="example-code"><code class="language-scss">$breakpoints: (
 	device-small: 320px,
 	device-medium: 480px,
 	...
 );
 
 </code></pre>
+        </div>
       </article>
       <article id="sizes" class="article">
         <h2>Sizes</h2>
         <p>Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.</p>
-        <pre><code class="language-scss">$sizes: (
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">$sizes: (
 	quarter: 4px,
 	half: 8px,
 	base: 16px,
 	...
 );
 </code></pre>
+        </div>
       </article>
       <article id="layers" class="article">
         <h2>Layers</h2>
         <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.</p>
-        <pre><code class="language-scss">$layers: (
+        <div class="example">
+          <pre class="example-code"><code class="language-scss">$layers: (
 	modal: 5,
 	backdrop: 2,
 	navigation: 4,
 	...
 );</code></pre>
+        </div>
       </article>
     </div>
   </div>

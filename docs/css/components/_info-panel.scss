@@ -1,0 +1,17 @@
+
+.info-panel {
+	padding: sizes(double-half);
+	&.warning {
+		background: lighten(colors(system, warning), 42%);
+		border-left: 5px solid darken(colors(system, warning), 2%);
+		color: colors(system, warning);
+		font-size: rem(16px);
+		p {
+			color: colors(system, warning);
+		}
+		a {
+			color: colors(system, warning);
+			text-decoration: underline;
+		}
+	}
+}

@@ -8,89 +8,87 @@ block body
 
 		article.article
 			h2 Grid Settings
-			p Specify your grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.
+			p First, you need to specify global grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.
 
 			table
 				thead
 					th Setting
-					th Default Value
-					th What it Does
+					th Default
+					th Description
 				tr
 					td <span class="var">columns</span>
 					td 12
-					td Specifies the number of columns in your grid
+					td Specifies the number of columns in your grid.
 				tr
 					td <span class="var">breakpoint</span>
 					td 720px
-					td The point at which columns should expand to 100%.
+					td The point at which columns should expand to 100%. This only gets used for the generic helper classes.
 				tr
 					td <span class="var">gutter</span>
 					td 1/4
-					td Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2). Cask supports any unit of measure for gutter values.10px,1.2rem,4%, and even2vw` are all valid inputs! Rems are preferred.
+					td Gutters are created using margins, expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2).
 
-
-			h3 Example
-			p To change your grid settings, you can use the following. Because of the way the project settings are called, you can update one or all of the settings as needed.
-
-			.example
-				pre.example-code
-					code.language-scss.
-						$grid: (
-							columns: 12,
-							gutter: 1/4,
-						);
 
 		article.article(id="containers")
 			h2 Containers
-			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.
+			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.
 
-			p You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.
-
-			table
-				thead
-					th(colspan="2") Options
-				tr
-					td <span class="var">$max-width</span>
-					td The max-width argument directly sets the max-width property on the element. any format that fits the max-width css specification will be accepted. This value will default to the max-width set in the $grid-settings.
-				tr
-					td
-				tr
-					td <span class="var">$mobile-gutter</span>
-					td  boolean attribute . removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).
+			p Create a new container using the <span class="var">container($max-width)</span> function.
 
 			.example
+				.example-rendered
+					.example-container
+
+				pre.example-code.border-bottom
+					code.language-scss.
+						.container {
+							@include container(600px);
+						}
+
 				pre.example-code
 					code.language-scss.
-						.element {
-							@include container(600, $mobile-gutter: false);
+						.container {
+							zoom: 1;
+							margin: 0 auto;
+							max-width: 600px;
+						}
+
+						.container:before, .container:after {
+							content: "";
+							display: table;
+						}
+
+						.container:after {
+							clear: both;
 						}
 
 		article.article(id="columns")
 
 			h2 Columns
 
-			p To create different widths at different breakpoints, use the <span class="var">if-above($device)</span> mixin.
+			p Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.
 
-			table
+
+			h3 Span Mixin
+
+			p The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.
+
+			table.table-lined.margin-bottom-double
 				thead
 					th(colspan="2") Options
 				tr
 					td <span class="var">$columns</span>
-					td Number of columns the component spans, of the total number defined in your settings file (by default this is 12). The columns argument is the unitless number of columns the element spans.
+					td Number of columns the component spans, of the total number defined in your settings file (by default this is 12).
 				tr
 					td <span class="var">$position</span> <em>(optional)</em>
-					td If the column is the last one, pass in the 'last' keyword to remove the margin.
+					td If the column is the last one, pass in the 'last' keyword to remove the margin-right property and float the column to the right.
 				tr
 					td <span class="var">$gutter</span> <em>(optional)</em>
 					td Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.
 				tr
 					td <span class="var">$offset</span> <em>(optional)</em>
-					td Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.
+					td Offset the container by a given number of columns.
 
-
-
-			h3 Span Mixin
-			p Use the <span class="var">span($columns, $position, $gutter)</span> function to create a new container.
 
 			.example
 				.example-rendered
@@ -100,26 +98,31 @@ block body
 				pre.example-code.border-bottom
 					code.language-scss.
 						.sidebar {
-						  @include span(4); // Creates a column that spans 4 colums
+							@include if-above(device-medium) {
+								@include span(4); // Creates a column that spans 4 colums above this size.
+							}
 						}
+
 						.content {
-						  @include span(8, $position: last); // Creates a column that spans 8 columns
+							@include if-above(device-medium) {
+								@include span(8, $position: last); // Creates a column that spans 8 colums above this size.
+							}
 						}
 				pre.example-code
 					code.language-scss.
 						.sidebar {
-							width: 34.5%;
-							margin-right: 1.25%;
+							width: 30.43478%;
+							margin-right: 4.34783%;
 							float: left;
 						}
 						.content {
-							width: 34.5%;
-							margin-right: 1.25%;
-							float: left;
+							width: 60.21739%;
+							margin-right: 0;
+							float: right;
 						}
 
 			h3 Span Function
-			p The above mixin includes the heaviour you'd expect from a grid sysem – marings are added to create the gutters, and floats are applied depending on the positiong of the element. If you want something more basic, the <span class="var">span($columns)</span> function is identical to the mixin, but returns only a width value.
+			p The <span class="var">span($columns)</span> only returns a width value for the container - nothing else.
 
 			.example.margin-bottom-double
 				.example-rendered
@@ -137,6 +140,7 @@ block body
 						}
 
 			h3 Offset
+			p You can offset a container by a given number of columns by passing in an argument for the <span class="var">$offset</span> value.
 
 			.example.margin-bottom-double
 				.example-rendered
@@ -151,7 +155,9 @@ block body
 
 		article.article
 			h2 Galleries
-			p Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row. Because of the way this works, if you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.
+			p Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row.
+
+			p If you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.
 
 
 			.example.margin-bottom-double
@@ -181,10 +187,10 @@ block body
 						}
 
 						.photo-gallery-item {
-							+if-between(device-x-small, device-medium) {
+							@include if-between(device-x-small, device-medium) {
 								@include gallery(6);
 							}
-							+if-above(device-medium) {
+							@include if-above(device-medium) {
 								@include gallery(4);
 							}
 							// Creates a gallery with each item taking up 3 columns of your grid

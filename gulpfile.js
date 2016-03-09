@@ -23,8 +23,8 @@ gulp.task("jade", function() {
 			locals: {
 				base: "docs/",
 				image_base: "docs/images/",
-				strapline: "A lightweight, responsive SASS boilerplate to kickstart your next web project.",
-				repo: "https://github.com/sebpowell/barebones"
+				strapline: "A lightweight, modular SASS boilerplate to kickstart your next web project.",
+				repo: "https://github.com/sebpowell/barebones-sass"
 			}
 		}))
 		.pipe(gulp.dest("./"));

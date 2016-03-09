@@ -6,13 +6,24 @@
     <meta property="og:title" content="Barebones SASS"/>
     <meta property="og:type" content="article"/>
     <meta property="og:image" content="docs//images/og-image.png"/>
-    <meta property="og:description" content="Barebones SASS – A lightweight, responsive SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
-    <meta name="description" content="Barebones SASS – A lightweight, responsive SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
-    <title>Barebones SASS – A lightweight, responsive SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="docs/css/style.css"/>
     <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
     <script src="docs/javascript/application.js"></script>
+    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   </head>
 </html>
 <body class="page-layout-docs">
@@ -44,7 +55,7 @@
         </li>
         <li><a href="settings.html">Settings</a>
           <ul class="sub-navigation">
-            <li><a href="#import">Import</a></li>
+            <li><a href="#misc">Misc</a></li>
             <li><a href="#colors">Colors</a></li>
             <li><a href="#fonts">Fonts</a></li>
             <li><a href="#grid">Grid</a></li>
@@ -75,15 +86,15 @@
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
-        <li><a href="helpers.html">Helpers</a>
+        <li><a href="utilities.html">Utilities</a>
           <ul class="sub-navigation">
             <li><a href="#background">Background Color</a></li>
-            <li><a href="">Position</a></li>
             <li><a href="#borders">Borders</a></li>
-            <li><a href="#margins">Margins & Padding</a></li>
-            <li><a href="undefinedindex.html">Layout</a></li>
-            <li><a href="undefinedindex.html">Typography</a></li>
-            <li><a href="undefinedindex.html">Visibility</a></li>
+            <li><a href="#margin">Margins & Padding</a></li>
+            <li><a href="#layout">Layout</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#visibility">Visibility</a></li>
           </ul>
         </li>
       </ul>
@@ -95,80 +106,75 @@
       </article>
       <article class="article">
         <h2>Grid Settings</h2>
-        <p>Specify your grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.</p>
+        <p>First, you need to specify global grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.</p>
         <table>
           <thead>
             <th>Setting</th>
-            <th>Default Value</th>
-            <th>What it Does</th>
+            <th>Default</th>
+            <th>Description</th>
           </thead>
           <tr>
             <td><span class="var">columns</span></td>
             <td>12</td>
-            <td>Specifies the number of columns in your grid</td>
+            <td>Specifies the number of columns in your grid.</td>
           </tr>
           <tr>
             <td><span class="var">breakpoint</span></td>
             <td>720px</td>
-            <td>The point at which columns should expand to 100%.</td>
+            <td>The point at which columns should expand to 100%. This only gets used for the generic helper classes.</td>
           </tr>
           <tr>
             <td><span class="var">gutter</span></td>
             <td>1/4</td>
-            <td>Gutters are created using margins. The gutter sizes is expressed as a fraction of the column widths (e.g. 1/8, 1/4 or 1/2). Cask supports any unit of measure for gutter values.10px,1.2rem,4%, and even2vw` are all valid inputs! Rems are preferred.</td>
+            <td>Gutters are created using margins, expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2).</td>
           </tr>
         </table>
-        <h3>Example</h3>
-        <p>To change your grid settings, you can use the following. Because of the way the project settings are called, you can update one or all of the settings as needed.</p>
-        <div class="example">
-          <pre class="example-code"><code class="language-scss">$grid: (
-	columns: 12,
-	gutter: 1/4,
-);
-</code></pre>
-        </div>
       </article>
       <article id="containers" class="article">
         <h2>Containers</h2>
-        <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also include left and right padding to give breathing room on smaller devices, using the <span class="code">mobile-padding</span> value from the settings file.</p>
-        <p>You can create a container using the <span class="var">container($max-width, $mobile-gutter)</span> function.</p>
-        <table>
-          <thead>
-            <th colspan="2">Options</th>
-          </thead>
-          <tr>
-            <td><span class="var">$max-width</span></td>
-            <td>The max-width argument directly sets the max-width property on the element. any format that fits the max-width css specification will be accepted. This value will default to the max-width set in the $grid-settings.</td>
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
-          <tr>
-            <td><span class="var">$mobile-gutter</span></td>
-            <td> boolean attribute . removes the mobile gutter on smaller screens (for example, if you're nesting a container inside another container).</td>
-          </tr>
-        </table>
+        <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.</p>
+        <p>Create a new container using the <span class="var">container($max-width)</span> function.</p>
         <div class="example">
-          <pre class="example-code"><code class="language-scss">.element {
-	@include container(600, $mobile-gutter: false);
+          <div class="example-rendered">
+            <div class="example-container"></div>
+          </div>
+          <pre class="example-code border-bottom"><code class="language-scss">.container {
+	@include container(600px);
+}
+</code></pre>
+          <pre class="example-code"><code class="language-scss">.container {
+	zoom: 1;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.container:before, .container:after {
+	content: "";
+	display: table;
+}
+
+.container:after {
+	clear: both;
 }
 </code></pre>
         </div>
       </article>
       <article id="columns" class="article">
         <h2>Columns</h2>
-        <p>To create different widths at different breakpoints, use the <span class="var">if-above($device)</span> mixin.</p>
-        <table>
+        <p>Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.</p>
+        <h3>Span Mixin</h3>
+        <p>The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.</p>
+        <table class="table-lined margin-bottom-double">
           <thead>
             <th colspan="2">Options</th>
           </thead>
           <tr>
             <td><span class="var">$columns</span></td>
-            <td>Number of columns the component spans, of the total number defined in your settings file (by default this is 12). The columns argument is the unitless number of columns the element spans.</td>
+            <td>Number of columns the component spans, of the total number defined in your settings file (by default this is 12).</td>
           </tr>
           <tr>
             <td><span class="var">$position</span> <em>(optional)</em></td>
-            <td>If the column is the last one, pass in the 'last' keyword to remove the margin.</td>
+            <td>If the column is the last one, pass in the 'last' keyword to remove the margin-right property and float the column to the right.</td>
           </tr>
           <tr>
             <td><span class="var">$gutter</span> <em>(optional)</em></td>
@@ -176,11 +182,9 @@
           </tr>
           <tr>
             <td><span class="var">$offset</span> <em>(optional)</em></td>
-            <td>Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.</td>
+            <td>Offset the container by a given number of columns.</td>
           </tr>
         </table>
-        <h3>Span Mixin</h3>
-        <p>Use the <span class="var">span($columns, $position, $gutter)</span> function to create a new container.</p>
         <div class="example">
           <div class="example-rendered">
             <div class="example-wrapper">
@@ -189,25 +193,30 @@
             </div>
           </div>
           <pre class="example-code border-bottom"><code class="language-scss">.sidebar {
-  @include span(4); // Creates a column that spans 4 colums
+	@include if-above(device-medium) {
+		@include span(4); // Creates a column that spans 4 colums above this size.
+	}
 }
+
 .content {
-  @include span(8, $position: last); // Creates a column that spans 8 columns
+	@include if-above(device-medium) {
+		@include span(8, $position: last); // Creates a column that spans 8 colums above this size.
+	}
 }</code></pre>
           <pre class="example-code"><code class="language-scss">.sidebar {
-	width: 34.5%;
-	margin-right: 1.25%;
+	width: 30.43478%;
+	margin-right: 4.34783%;
 	float: left;
 }
 .content {
-	width: 34.5%;
-	margin-right: 1.25%;
-	float: left;
+	width: 60.21739%;
+	margin-right: 0;
+	float: right;
 }
 </code></pre>
         </div>
         <h3>Span Function</h3>
-        <p>The above mixin includes the heaviour you'd expect from a grid sysem – marings are added to create the gutters, and floats are applied depending on the positiong of the element. If you want something more basic, the <span class="var">span($columns)</span> function is identical to the mixin, but returns only a width value.</p>
+        <p>The <span class="var">span($columns)</span> only returns a width value for the container - nothing else.</p>
         <div class="example margin-bottom-double">
           <div class="example-rendered">
             <div class="example-wrapper">
@@ -223,6 +232,7 @@
 </code></pre>
         </div>
         <h3>Offset</h3>
+        <p>You can offset a container by a given number of columns by passing in an argument for the <span class="var">$offset</span> value.</p>
         <div class="example margin-bottom-double">
           <div class="example-rendered">
             <div class="example-wrapper">
@@ -237,7 +247,8 @@
       </article>
       <article class="article">
         <h2>Galleries</h2>
-        <p>Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row. Because of the way this works, if you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.</p>
+        <p>Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row.</p>
+        <p>If you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.</p>
         <div class="example margin-bottom-double">
           <div class="example-rendered">
             <div class="photo-gallery">
@@ -264,10 +275,10 @@
 }
 
 .photo-gallery-item {
-	+if-between(device-x-small, device-medium) {
+	@include if-between(device-x-small, device-medium) {
 		@include gallery(6);
 	}
-	+if-above(device-medium) {
+	@include if-above(device-medium) {
 		@include gallery(4);
 	}
 	// Creates a gallery with each item taking up 3 columns of your grid

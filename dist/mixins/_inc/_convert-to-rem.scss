@@ -3,5 +3,9 @@ $sizes: (
 ) !default;
 
 @function rem($input) {
-	@return (strip-unit($input) / map-get($sizes, base)) + rem;
+	$val: strip-unit($input);
+	$context: strip-unit(map-get($sizes, base));
+	@return ($val / $context) + rem;
 }
+
+

@@ -1,56 +1,56 @@
 @function map-fetch($map, $keys) {
-  $key: nth($keys, 1);
-  $length: length($keys);
-  $value: map-get($map, $key);
-  @if ($length > 1) {
-    $rest: ();
-    @for $i from 2 through $length {
-      $rest: append($rest, nth($keys, $i))
-    }
-    @return map-fetch($value, $rest)
-  } @else {
-    @return $value;
+	$key: nth($keys, 1);
+	$length: length($keys);
+	$value: map-get($map, $key);
+	@if ($length > 1) {
+		$rest: ();
+		@for $i from 2 through $length {
+			$rest: append($rest, nth($keys, $i))
+		}
+		@return map-fetch($value, $rest)
+	} @else {
+		@return $value;
 
-  }
+	}
 }
 
 @function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    @if map-has-key($map, $key) {
-      $map: map-get($map, $key);
-    }
-    @else {
-      $moo: nth($keys, 1);
-      $rest: ();
-      $length: length($keys);
-      @for $i from 1 through $length {
-        $rest: append($rest, nth($keys, $i));
+	@each $key in $keys {
+		@if map-has-key($map, $key) {
+			$map: map-get($map, $key);
+		}
+		@else {
+			$moo: nth($keys, 1);
+			$rest: ();
+			$length: length($keys);
+			@for $i from 1 through $length {
+				$rest: append($rest, nth($keys, $i));
 
-      }
-      @warn "The key '#{$key}' doesn't exist. Please check your settings file.";
-    }
-  }
-  @return $map;
+			}
+			@warn "The key '#{$key}' doesn't exist. Please check your settings file.";
+		}
+	}
+	@return $map;
 }
 
 
 // Helper functions
 @function sizes($size) {
-  @if map-has-key($sizes, $size) {
-   @return map-get($sizes, $size);
-  }
-  @else {
-    @warn "#{$size} does not exist in sizes map."
-  }
+	@if map-has-key($sizes, $size) {
+	 @return map-get($sizes, $size);
+	}
+	@else {
+		@warn "#{$size} does not exist in sizes map."
+	}
 }
 
 @function grid($object) {
-  @if map-has-key($grid, $object) {
-   @return map-get($grid, $object);
-  }
-  @else {
+	@if map-has-key($grid, $object) {
+	 @return map-get($grid, $object);
+	}
+	@else {
 	 @warn "#{$object} does not exist in grid map."
-  }
+	}
 }
 
 @function colors($args...) {
@@ -74,16 +74,16 @@
 }
 
 @function breakpoints($object) {
-  @return map-get($breakpoints, $object);
+	@return map-get($breakpoints, $object);
 }
 
 @function layers($object) {
-  @if map-has-key($layers, $object) {
+	@if map-has-key($layers, $object) {
 	 @return map-get($layers, $object);
-  }
-  @else {
-    @warn "#{$object} does not exist in layers map."
-  }
+	}
+	@else {
+		@warn "#{$object} does not exist in layers map."
+	}
 }
 
 

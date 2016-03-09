@@ -9,7 +9,7 @@ block body
 
 			p All helper classes use the <span class="var">!important</span> flag to avoid specificity issues.
 
-		article.article
+		article.article(id="background")
 			h2 Background Color
 			p Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.
 			.example
@@ -24,8 +24,8 @@ block body
 						&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
 						&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
 
-		article#borders.article
-			h2#borders Borders
+		article.article(id="borders")
+			h2 Borders
 			p Adds a border to a given element in the specified direction(s). It uses the color value specified in the keyline category of your <span class="var">$colors</span> map.
 
 			table.table-lined.margin-bottom-double
@@ -55,23 +55,12 @@ block body
 					.border-top
 				pre.example-code
 					code.language-scss.
-						| .border-bottom {
-						|  border-bottom: 1px solid #F5F5F5 !important;
-						| }
+						&lt;div class="border-bottom"&gt;&lt;/div&gt;
 
 		article.article(id="margin")
-			h2 Margin
+			h2 Margin &amp; Padding
 			p Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map, to help create consistency throughout your project.
 
-			p To add spacing around an element, use the the margin
-
-			//- No margin bottom
-			//- <h1 class="m0">No margin</h1>
-			//- <h1 class="mt0">No margin top</h1>
-			//- <h1 class="mb0">No margin bottom</h1>
-			p Add Spacing
-
-			p Add spacing around elements using a combination of margin utilities.
 
 			table.table-lined.margin-bottom-double
 				thead
@@ -86,10 +75,11 @@ block body
 					td <span class="var">.no-margin</span>
 					td Removes all margins.
 				tr
-					td <span class="var">.no-padding</span>
-					td Removes all padding.
-
-
+					td <span class="var">.no-margin-{direction}</span>
+					td Removes margin in the specified direction.
+				tr
+					td <span class="var">.no-padding-{padding}</span>
+					td Removes padding in the specified direction.
 
 			.example
 				.example-rendered
@@ -101,34 +91,13 @@ block body
 				pre.example-code
 					code.language-html.
 						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
-						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
-						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
-						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-base"&gt;.margin-bottom-base&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-triple"&gt;.margin-bottom-triple&lt;/div&gt;
+						&lt;div class="border-all padding-base no-margin"&gt;.no-margin&lt;/div&gt;
 
-
-			//- Box
-
-			//- To create a simple box component, use padding along with color utilities.
-
-			//- A simple box
-			//- <div class="p2 bg-white border rounded">
-			//-   A simple box
-			//- </div>
-			//- Panel Header
-			//- Panel Body
-			//- Panel Footer
-
-
-
-
-			pre
-				code.language-html.
-					&lt;div class="margin-bottom-double"&gt;&lt;/div&gt;
-					&lt;div class="margin-bottom-base"&gt;&lt;/div&gt;
-
-		article.article
+		article.article(id="layout")
 			h2 Layout
-			table
+			table.table-lined.margin-bottom-double
 				thead
 					th(colspan="2") Options
 				tr
@@ -156,18 +125,18 @@ block body
 						&lt;div class="float-right"&gt;&lt;/div&gt;
 						&lt;div class="clearfix"&gt;&lt;/div&gt;
 
-		article#margin.article
+		article.article(id="grid")
 			h2 Grid
 
-			h3 Rows & Columns
-			p To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoing specified in your grid map.
+			h3 Rows &amp; Columns
+			p To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
 
 			.example.margin-bottom-double
 				.example-rendered
 					.row
-						.columns-4 Columns 4
-						.columns-5 Columns 5
-						.columns-3 Columns 3
+						.columns-4
+						.columns-5
+						.columns-3
 
 				pre.example-code
 					code.language-html
@@ -179,6 +148,7 @@ block body
 
 
 			p Helper classes are also available to create different grids for different screen sizes.
+
 			.example.margin-bottom-double
 				.example-rendered
 					.row
@@ -198,106 +168,96 @@ block body
 			h3 Offsets
 			p Offsets allow you to shift a column to the right by a specified number of columns.
 			.example.margin-bottom-double
-				.row
-					.columns-3.offset-9 columns-3, offset-9
-			pre.margin-bottom-double
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-3 offset-9"&gt;
-					| &lt;/div&gt;
+				.example-rendered
+					.row
+						.columns-3.offset-9
 
-			//- h3 Galleries
-			//- p Galleries are grids containing a repeating number of equal-sized items. They work in a similar way to columns. They're slightly different to columns in that you can create odd numbers of items – for example, in a 12-column grid, you mayb want a gallery with 5 items on each row.
-			//- .example
-			//- 	ul.gallery-5
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-			//- 		li.gallery-item
-			//- 		li.gallery-item
+				pre.example-code
+					code.language-html.
+						&lt;div class="columns"&gt;
+							&lt;div class="columns-3 offset-9"&gt;
+						&lt;/div&gt;
 
-		article#text-align.article
+
+		article.article(id="typography")
 			h2 Typography
 			p Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.
 
 			h3 Alignment
 			p Left, right and center.
 			.example
-				.text-left This text is left-aligned
-				.text-center This text is centered
-				.text-right This text is right-aligned
+				.example-rendered
+					.text-left This text is left-aligned
+					.text-center This text is centered
+					.text-right This text is right-aligned
 
-			pre
-				code.language-html.
-					&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
-					&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
-					&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+						&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+						&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
 
 			h3 Size
-			p These are generated using values specified in your <span class="var">$font-sizes</span> map. These are especially useful for altering the visual appearance of semantically correct headings.
+			p These are generated using values specified in your <span class="var">$font-sizes</span> map. These are useful for altering the visual appearance of semantically correct headings.
 			.example
-				.text-x-large This text is X-Large
-				.text-large This text is Large
-				.text-medium-large This text is Medium-Large
-				.text-medium This text is Medium
-				.text-base This text is Base
-				.text-small This text is Small
-				.text-x-small This text is X-Small
+				.example-rendered
+					.text-x-large This text is X-Large
+					.text-large This text is Large
+					.text-medium-large This text is Medium-Large
+					.text-medium This text is Medium
+					.text-base This text is Base
+					.text-small This text is Small
+					.text-x-small This text is X-Small
 
-			pre
-				code.language-html.
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-large"&gt;This text is Large&lt;/div&gt;
-					&lt;div class="text-medium-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-medium"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-base"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-small"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-small"&gt;This text is X-Large&lt;/div&gt;
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+						&lt;div class="text-large"&gt;This text is Large&lt;/div&gt;
+						&lt;div class="text-medium-large"&gt;This text is Medium-Large&lt;/div&gt;
+						&lt;div class="text-medium"&gt;This text is Medium&lt;/div&gt;
+						&lt;div class="text-base"&gt;This text is Base&lt;/div&gt;
+						&lt;div class="text-small"&gt;This text is Small&lt;/div&gt;
+						&lt;div class="text-x-small"&gt;This text is X-Small&lt;/div&gt;
 
 			h3 Colors
 			p These are generated using values stored in your <span class="var">$colors</span> map.
 			.example
-				.text-brand-primary Text brand primary
-				.text-brand-secondary Text brand secondary
-				.text-greyscale-400 Text brand primary
+				.example-rendered
+					.text-brand-primary Text Brand Primary
+					.text-brand-secondary Text Brand Secondary
+					.text-greyscale-400 Text Greyscale-400
 
-			pre
-				code.language-html.
-					&lt;div class="text-brand-primary"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
-					&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-brand-primary"&gt;Text Brand Primary&lt;/div&gt;
+						&lt;div class="text-brand-primary"&gt;Text Brand Secondary&lt;/div&gt;
+						&lt;div class="text-greyscale-400"&gt;Text Greyscale-400&lt;/div&gt;
 
 			h3 Transform
 			p Uppercase or capitalized.
 			.example
-				.text-uppercase This text is uppercase
-				.text-capitalized This text is capitalized
+				.example-rendered
+					.text-uppercase This text is uppercase
+					.text-capitalized This text is capitalized
 
-			pre
-				code.language-html.
-					&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
-					&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
+						&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
 
-			p Use padding and negative margin utilities to create gutters based on the white space scale. The negative margin ensures content inside each column lines up with content outside of the grid. When using negative margin, be sure to compensate for the extra width created with a padded parent element or by using overflow hidden. Otherwise, horizontal scrolling may occur.
-
-			p Create gutters with a width of 2 units using .mxn2 and .px2.
-		article.article
+		article.article(id="visibility")
 			h2 Visibility
 			p Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.
 
-			pre.margin-bottom-double-half
-				code.language-html.
-					&lt;div class="is-hidden"&gt;&lt;/div&gt;
-					// Hidden at all times.
-			pre.margin-bottom-double-half
-				code.language-html.
-					&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
-					// Hides above the device-small breakpoint.
-			pre
-				code.language-html.
-					&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
-					// Hides below the device-small breakpoint.
+			.example
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="is-hidden"&gt;&lt;/div&gt;
+						// Hidden at all times.
+
+						&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
+						// Hides above the device-small breakpoint.
+
+						&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
+						// Hides below the device-small breakpoint.

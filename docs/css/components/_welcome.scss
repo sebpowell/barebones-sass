@@ -81,47 +81,37 @@
 		.button {
 			text-transform: uppercase;
 			font-weight: 600;
-			font-style: italic;
 			letter-spacing: 0.05em;
-
 		}
-		// .button {
-		// 	@include if-below(device-medium) {
-		// 		display: block;
-		// 		margin-right: 0 !important;
-		// 		&:first-child {
-		// 			margin-bottom: sizes(base);
-		// 		}
-		// 	}
-		// 	@include if-above(device-medium) {
-		// 		width: 240px;
-		// 	}
-		// }
 	}
-
 
 }
 
 .selling-points {
 	@include clearfix;
-
+	@include if-below(device-medium) {
+		margin-bottom: 100px;
+	}
 }
 
 .selling-point {
 	margin-bottom: 60px;
 	opacity: 0;
 	animation: fade-in 1s forwards;
+
 	@include if-above(device-medium) {
 		@include span(4, $gutter: false);
 		margin-bottom: 0px;
 		padding: 16px;
 	}
+
 	&:last-child {
 		margin-bottom: 0;
 	}
 
 	img {
 		width: 42px;
+		margin-bottom: sizes(base)
 	}
 
 
@@ -140,7 +130,7 @@
 }
 
 .welcome-masthead-footer {
-	padding: sizes(double-half) grid(mobile-gutter);
+	padding: sizes(double-half) grid(mobile-padding);
 	width: 100%;
 	text-align: center;
 	color: white;

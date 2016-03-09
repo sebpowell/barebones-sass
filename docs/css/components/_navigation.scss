@@ -122,6 +122,12 @@
       border: 1px solid colors(keyline, light);
       border-radius: 5px;
     }
+
+    > li {
+    	&:not(:last-child) {
+    		border-bottom: 1px solid colors(keyline, light);
+    	}
+    }
   }
   ul {
     @include no-bullet;
@@ -129,7 +135,7 @@
       left: 0;
     }
     > li {
-    	border-bottom: 1px solid colors(keyline, light);
+
     	&.active {
     		> a {
           color: colors(brand, primary);
@@ -137,8 +143,7 @@
     		.sub-navigation {
     			display: block;
           a {
-            color: colors(greyscale, 500);
-            font-size: 14px;
+            color: colors(greyscale, 700);
             &:hover {
               color: colors(greyscale, 900);
             }
@@ -148,6 +153,7 @@
       > a {
       	transition: color .5s;
         padding: rem(12px);
+        font-size: rem(14px);
         text-decoration: none;
         display: block;
         @include if-above(device-medium) {

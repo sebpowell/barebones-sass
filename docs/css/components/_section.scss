@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 	// border: 1px solid colors(keyline, dark);
 	// border-radius: 3px;
 	padding: 4px 0;
-	font-size: 14px;
+	font-size: rem(14px);
 	font-weight: 500;
 	background: linear-gradient(transparent,transparent 87.5%,rgba(0,119,204,.125) 0);
 }
@@ -41,21 +41,15 @@ h1, h2, h3, h4, h5, h6 {
 .article {
 	padding: sizes(double) 0;
 
-	&.introduction {
-		p {
-			font-size: 20px;
-		}
-	}
-
 	p {
 		font-weight: 400;
 		font-size: 1rem;
 	}
 
 	p > a, li > a {
-		color: colors(brand, primary);
+		text-decoration: underline;
 		&:hover {
-			text-decoration: underline;
+			color: colors(brand, primary);
 		}
 	}
 
@@ -77,15 +71,15 @@ h1, h2, h3, h4, h5, h6 {
 		font-size: settings(fonts, sizes, medium-large);
 		color: colors(greyscale, 800);
 		// font-weight: weights(primary, regular);
-		margin-top: sizes(quad);
+		margin-top: sizes(double-half);
 		margin-bottom: sizes(base);
 	}
 
-	> p, > ul li {
+	p, ul li {
 		// font-size: map-get($font-sizes, base);
 		color: colors(greyscale, 800);
 		line-height: 1.8;
-		margin-bottom: sizes(double);
+		margin-bottom: sizes(double-half);
 		&:last-child {
 			margin-bottom: 0;
 		}

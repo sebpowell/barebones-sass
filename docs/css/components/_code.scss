@@ -1,8 +1,3 @@
-.function {
-	color: colors(secondary, green);
-	font-family: "Roboto Mono", "Menlo", "Monaco", Courier, monospace;
-}
-
 pre, .example {
 	overflow-x: scroll !important;
 }
@@ -20,6 +15,12 @@ pre, .example {
   .example-rendered {
   	padding: sizes(double-half);
   	border-bottom: 1px solid colors(keyline, light);
+  }
+
+  .example-container {
+  	@include container(500px);
+  	height: 200px;
+  	background: pink;
   }
 
   .example-gallery-item {
@@ -176,7 +177,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 .token.function {
-	color: colors(secondary, green);
+	color: colors(brand, primary);
 }
 
 .token.regex,

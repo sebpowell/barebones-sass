@@ -1,0 +1,15 @@
+$container-sizes: (small: 500px, medium: 800px, large: 1000px, x-large: 1200px, fluid: null);
+
+%container {
+	@include clearfix;
+	position: relative;
+	margin: auto;
+}
+
+// Generate container sizes
+@each $size, $value in $container-sizes {
+	.container-#{$size} {
+		@extend %container;
+		max-width: $value;
+	}
+}

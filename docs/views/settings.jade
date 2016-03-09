@@ -4,121 +4,131 @@ block body
 	.main-container
 		h1.page-title Settings
 		article.article.introduction
-			p Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project. For example, the <span class="var">if-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map is used by the, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.
+			p Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project.
 
-			p <span class="text-system-warning">The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones/blob/master/docs/css/_settings.scss" target="_blank">this template</a>.
+			p For example, the <span class="var">if-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.
 
-			p A helper function is also included to allow you to easily fetch values in each map.
+			.info-panel.warning.margin-bottom-double
+				p The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones-sass/blob/master/docs/css/_settings.scss" target="_blank">this template</a>.
 
-
-		article.article(id="import")
-			h2 Import
+		article.article(id="misc")
+			h2 Misc
 			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced).
-			pre
-				code.language-scss.
-					$library: (
-						prefix: "bb-",
-					);
+
+			.example
+				pre.example-code
+					code.language-scss.
+						$library: (
+							prefix: "bb-",
+							units: px
+						);
 
 		article.article(id="colors")
 			h2 Colors
 			p Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.
-			pre.margin-bottom-double
-				code.language-scss.
-						 $colors: (
-							 brand: (
-								 primary: #157AFB,
-								 secondary: #FE5607,
-								 ...
-							 ),
-							 secondary: (
-								 orange: #F8B000,
-								 ...
-							 ),
-							 greyscale: (
-								 50: #FAFAFA,
-								 100: #F5F5F5,
-								 ...
-							 ),
-							 keyline: (
-								 light: #E5E5E5,
-								 ...
-							 ),
-						 );
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+						code.language-scss.
+								$colors: (
+									brand: (
+										primary: #157AFB,
+										secondary: #FE5607,
+										...
+									),
+									secondary: (
+										orange: #F8B000,
+										...
+									),
+									greyscale: (
+										50: #FAFAFA,
+										100: #F5F5F5,
+										...
+									),
+									keyline: (
+										light: #E5E5E5,
+										...
+									),
+								);
 
-			pre
-				code.language-scss.
-					.element {
-						background-color: colors($category, $value);
-					}
+				pre.example-code
+					code.language-scss.
+						.element {
+							background-color: colors($category, $value);
+						}
 
 		article.article(id="fonts")
 			h2 Fonts
 			p Specify font familys' and their respective weights. Access using <span class="var">fonts($family)</span> and <span class="var">weights($family, $weight)</span> functions.
-
-			pre
-				code.language-scss.
-					$fonts: (
-						primary: (
-							family: #{"Open Sans", Helvetica, sans-serif},
-							weights: (
-							 light: 100,
-							 regular: 200,
-							 semi-bold: 500
+			.example.margin-bottom-double
+				pre.example-code
+					code.language-scss.
+						$fonts: (
+							primary: (
+								family: #{"Open Sans", Helvetica, sans-serif},
+								weights: (
+								 light: 100,
+								 regular: 200,
+								 semi-bold: 500
+								)
+							),
+							secondary: (
+								family: #{"Futura PT", Helvetica, sans-serif},
+								weights: (
+									bold: 600,
+								)
 							)
-						),
-						secondary: (
-							family: #{"Futura PT", Helvetica, sans-serif},
-							weights: (
-								bold: 600,
-							)
-						)
-					);
+						);
 
 		article.article(id="grid")
 			h2 Grid
 			p Specify global grid settings. Access using <span class="var">grid($setting)</span>. Read more about the grid system and available settings <a href="grid.html">here</a>.
 
-			pre
-				code.language-scss.
-					$grid: (
-						columns: 12,
-						gutter: 1/4,
-					);
+			.example.margin-bottom-double
+				pre.example-code
+					code.language-scss.
+						$grid: (
+							columns: 12,
+							gutter: 1/4,
+						);
 
 		article.article(id="breakpoints")
 			h2 Breakpoints
 			p Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.
-			pre
-				code.language-scss.
-					$breakpoints: (
-						device-small: 320px,
-						device-medium: 480px,
-						...
-					);
+
+			.example.margin-bottom-double
+				pre.example-code
+					code.language-scss.
+						$breakpoints: (
+							device-small: 320px,
+							device-medium: 480px,
+							...
+						);
 
 
 		article.article(id="sizes")
 			h2 Sizes
 			p Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.
 
-			pre
-				code.language-scss.
-					$sizes: (
-						quarter: 4px,
-						half: 8px,
-						base: 16px,
-						...
-					);
+			.example
+				pre.example-code
+					code.language-scss.
+						$sizes: (
+							quarter: 4px,
+							half: 8px,
+							base: 16px,
+							...
+						);
 
 		article.article(id="layers")
 			h2 Layers
 			p Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.
-			pre
-				code.language-scss.
-					$layers: (
-						modal: 5,
-						backdrop: 2,
-						navigation: 4,
-						...
-					);
+
+			.example
+				pre.example-code
+					code.language-scss.
+						$layers: (
+							modal: 5,
+							backdrop: 2,
+							navigation: 4,
+							...
+						);

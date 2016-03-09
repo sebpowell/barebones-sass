@@ -15,7 +15,13 @@ $colors: (
 	),
 
 	system: (
-		warning: #FFEEEE,
+		warning: #CE3535
+	),
+
+	warning: (
+		light: #FFEEEE,
+		base: #CE3535,
+		dark: #FFEEEE,
 	),
 
 	greyscale: (
@@ -71,18 +77,18 @@ $breakpoints: (
 );
 
 $misc: (
-	mobile-gutter: 24px,
-	prefix: null
+	prefix: null,
+	units: rem
 );
 
 $font-sizes: (
-	x-small: rem(12px),
-	small: rem(14px),
+	x-small: 12px,
+	small: 14px,
 	base: 16px,
-	medium: rem(20px),
-	medium-large: rem(24px),
-	large: rem(32px),
-	x-large: rem(42px)
+	medium: 20px,
+	medium-large: 24px,
+	large: 32px,
+	x-large: 42px
 );
 
 $layers: (
@@ -92,20 +98,19 @@ $layers: (
 	navigation: 1,
 );
 
-// $grid: (
-// 	columns: 12,
-// 	// gutter: 2,
-// 	breakpoint: "device-medium",
-// 	mobile-gutter: 24px,
-// 	mobile-padding: 24px
-// );
-
 $sizes: (
   quarter: 0.25rem,
   half: 0.5rem,
-  base: 1rem,
+  base: 16px, // 1rem
   double-half: 1.5rem,
   double: 2rem,
   triple: 3rem,
   quad: 4rem,
+);
+
+$grid: (
+	columns: 12,
+	gutter: 1,
+	breakpoint: "device-medium",
+	mobile-padding: 24px
 );
