@@ -28,7 +28,7 @@ Barebones code allows you to specify your own individual project settings – ju
 
 Import your newly created settings file, followed by <span class="var">_barebones.sass</span> into your main SASS file. When you're done, it should look like this:
 
-```scss
+```ascii
 |-- css/
 |--| main.sass
 |--| _settings
@@ -37,8 +37,10 @@ Import your newly created settings file, followed by <span class="var">_barebone
 |--| barebones-sass/
 |--|--| dist/
 |--|--|--| _base
+```
 
 
+```scss
 // Always import the settings file first
 @import "_settings.scss";
 
