@@ -13,12 +13,12 @@ block body
 
 		article.article(id="misc")
 			h2 Misc
-			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced).
+			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced) and unit type (px, rems or ems).
 
 			.example
 				pre.example-code
 					code.language-scss.
-						$library: (
+						$misc: (
 							prefix: "bb-",
 							units: px
 						);
@@ -53,7 +53,7 @@ block body
 				pre.example-code
 					code.language-scss.
 						.element {
-							background-color: colors($category, $value);
+							background-color: colors(brand, primary);
 						}
 
 		article.article(id="fonts")
@@ -110,7 +110,7 @@ block body
 			p Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.
 
 			.example
-				pre.example-code
+				pre.example-code.border-bottom
 					code.language-scss.
 						$sizes: (
 							quarter: 4px,
@@ -118,13 +118,18 @@ block body
 							base: 16px,
 							...
 						);
+				pre.example-code
+					code.language-scss.
+						.element {
+							padding: sizes(quarter);
+						}
 
 		article.article(id="layers")
 			h2 Layers
 			p Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.
 
 			.example
-				pre.example-code
+				pre.example-code.border-bottom
 					code.language-scss.
 						$layers: (
 							modal: 5,
@@ -132,3 +137,8 @@ block body
 							navigation: 4,
 							...
 						);
+				pre.example-code
+					code.language-scss.
+						.modal {
+							z-index: layers(modal);
+						}

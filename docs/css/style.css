@@ -968,7 +968,7 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection, code[cl
 
 .token.entity { cursor: help; }
 
-.page-layout-docs { padding: 52px 24px 0 24px; }
+.page-layout-docs { padding: 52px 24px 60px 24px; }
 
 .docs-container { zoom: 1; margin: 0 auto; max-width: 1100px; padding-top: 24px; }
 
@@ -983,7 +983,7 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection, code[cl
 
 .page-title { font-size: 42px; font-weight: 700; color: #212121; }
 
-.info-panel { padding: 1.5rem; }
+.info-panel { padding: 16px; }
 
 .info-panel.warning { background: #f8e1e1; border-left: 5px solid #c83131; color: #CE3535; font-size: 1rem; }
 
@@ -1081,7 +1081,7 @@ body { line-height: 1.5; }
 
 html { font-size: 16px; }
 
-@media (min-width: 1280px) { html { font-size: 18px; } }
+@media (min-width: 1400px) { html { font-size: 18px; } }
 
 h1, h2, h3, h4, h5, h6 { font-weight: 600; }
 

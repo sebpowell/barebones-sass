@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta property="og:title" content="Barebones SASS"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:image" content="docs//images/og-image.png"/>
+    <meta property="og:image" content="http://www.barebones-sass.io/docs/images/og-image.png"/>
+    <meta property="og:url" content="http://barebones-sass.getagent.co.uk/"/>
     <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
     <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
     <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
@@ -110,9 +111,9 @@
       </article>
       <article id="misc" class="article">
         <h2>Misc</h2>
-        <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced).</p>
+        <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced) and unit type (px, rems or ems).</p>
         <div class="example">
-          <pre class="example-code"><code class="language-scss">$library: (
+          <pre class="example-code"><code class="language-scss">$misc: (
 	prefix: "bb-",
 	units: px
 );
@@ -145,7 +146,7 @@
 );
 </code></pre>
           <pre class="example-code"><code class="language-scss">.element {
-	background-color: colors($category, $value);
+	background-color: colors(brand, primary);
 }
 </code></pre>
         </div>
@@ -201,12 +202,15 @@
         <h2>Sizes</h2>
         <p>Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.</p>
         <div class="example">
-          <pre class="example-code"><code class="language-scss">$sizes: (
+          <pre class="example-code border-bottom"><code class="language-scss">$sizes: (
 	quarter: 4px,
 	half: 8px,
 	base: 16px,
 	...
-);
+);</code></pre>
+          <pre class="example-code"><code class="language-scss">.element {
+	padding: sizes(quarter);
+}
 </code></pre>
         </div>
       </article>
@@ -214,12 +218,15 @@
         <h2>Layers</h2>
         <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.</p>
         <div class="example">
-          <pre class="example-code"><code class="language-scss">$layers: (
+          <pre class="example-code border-bottom"><code class="language-scss">$layers: (
 	modal: 5,
 	backdrop: 2,
 	navigation: 4,
 	...
 );</code></pre>
+          <pre class="example-code"><code class="language-scss">.modal {
+	z-index: layers(modal);
+}</code></pre>
         </div>
       </article>
     </div>
