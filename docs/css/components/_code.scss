@@ -75,11 +75,11 @@ pre, .example {
 
   	.photo-gallery-item {
   		@include if-between(device-x-small, device-medium) {
-  			@include gallery(6, $gutter: 1/2);
+  			// @include gallery(6, $gutter: 2);
   		}
 
   		@include if-above(device-medium) {
-  			@include gallery(4);
+  			@include gallery(4, $gutter: 4);
   		}
 
 

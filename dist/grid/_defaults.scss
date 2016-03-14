@@ -19,9 +19,12 @@ $grid: (
 @if map-has-key($grid, gutter) {
 	$totalGutters: $columnCount / grid(gutter) + $columnCount - 1;
 }
+
 @else {
 	$totalGutters: $columnCount / 0.25 + $columnCount - 1;
 }
+
+@debug $totalGutters;
 
 // Set width for gutters and columns.
 $gutterWidth: 100% / $totalGutters;
@@ -36,7 +39,26 @@ $columnWidth: (100% - $totalGutterWidth) / $columnCount;
 	$gridBreakpoint: 720px;
 }
 
+@function gutterCalc($gutter) {
+
+
+	$totalGutters: ($columnCount * $gutter) + ($columnCount - 1);
+	@debug $totalGutters;
+	$gutterWidth: 100% / $totalGutters;
+	$totalGutterWidth: $gutterWidth * $gutterCount;
+
+	@return $gutterWidth;
+}
+
 // Calculate column widths
-@function columnCalc($columns) {
-	@return $columns * $columnWidth + ($columns - 1) * $gutterWidth;
+@function columnCalc($columns, $gutter: "") {
+
+	@if $gutter != null {
+		@return $columns * $columnWidth + ($columns - 1) * $gutterWidth;
+	}
+
+	@else {
+		@return $columns * $columnWidth + ($columns - 1) * $gutterWidth;
+	}
+
 }

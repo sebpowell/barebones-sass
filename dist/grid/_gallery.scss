@@ -2,10 +2,12 @@
 
 	$key: nth($keys, 1);
 	$items: $columnCount / $key;
-	width: columnCalc($key);
+
+	width: columnCalc($key, $gutter);
 	float: left;
-	margin-right: $gutterWidth;
+	margin-right: gutterCalc($gutter);
 	margin-bottom: $gutterWidth;
+
 	&:nth-child( #{$items}n + #{$items} ) {
 		margin-right: 0;
 	}
