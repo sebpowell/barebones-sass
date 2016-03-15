@@ -3,9 +3,20 @@
 	$key: nth($keys, 1);
 	$items: $columnCount / $key;
 
-	width: columnCalc($key, $gutter);
+	$totalGutters: $columnCount / $gutter + $columnCount - 1;
+	$gutterWidth: 100% / $totalGutters;
+	$totalGutterWidth: $gutterWidth * $gutterCount;
+	$columnWidth: (100% - $totalGutterWidth) / $columnCount;
+	@debug $totalGutters;
+	@debug $gutterWidth;
+	@debug $totalGutterWidth;
+	@debug $columnWidth;
+
+
+	// width: columnCalc($key, $gutter);
+	width: ($key * $columnWidth) + (($key - 1) * $gutterWidth);
 	float: left;
-	margin-right: gutterCalc($gutter);
+	margin-right: $gutterWidth;
 	margin-bottom: $gutterWidth;
 
 	&:nth-child( #{$items}n + #{$items} ) {

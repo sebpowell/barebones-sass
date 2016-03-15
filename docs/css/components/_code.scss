@@ -79,7 +79,7 @@ pre, .example {
   		}
 
   		@include if-above(device-medium) {
-  			@include gallery(4, $gutter: 4);
+  			@include gallery(4, $gutter: 2);
   		}
 
 

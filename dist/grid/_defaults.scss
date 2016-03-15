@@ -24,7 +24,7 @@ $grid: (
 	$totalGutters: $columnCount / 0.25 + $columnCount - 1;
 }
 
-@debug $totalGutters;
+
 
 // Set width for gutters and columns.
 $gutterWidth: 100% / $totalGutters;
@@ -42,6 +42,7 @@ $columnWidth: (100% - $totalGutterWidth) / $columnCount;
 @function gutterCalc($gutter) {
 
 
+
 	$totalGutters: ($columnCount * $gutter) + ($columnCount - 1);
 	@debug $totalGutters;
 	$gutterWidth: 100% / $totalGutters;
@@ -51,10 +52,20 @@ $columnWidth: (100% - $totalGutterWidth) / $columnCount;
 }
 
 // Calculate column widths
-@function columnCalc($columns, $gutter: "") {
+@function columnCalc($columns, $gutter: null) {
 
 	@if $gutter != null {
-		@return $columns * $columnWidth + ($columns - 1) * $gutterWidth;
+
+		// $totalGutters: $columnCount / $gutter + $columnCount - 1;
+		// $gutterWidth: 100% / $totalGutters;
+		// $totalGutterWidth: $gutterWidth * $gutterCount;
+		// $columnWidth: (100% - $totalGutterWidth) / $columnCount;
+		// @debug $totalGutters;
+		// @debug $gutterWidth;
+		// @debug $totalGutterWidth;
+		// @debug $columnWidth;
+
+		@return $columns * $columnWidth + ($columns - 1) * $gutter;
 	}
 
 	@else {

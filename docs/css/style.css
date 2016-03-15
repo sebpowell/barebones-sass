@@ -921,7 +921,7 @@ pre, .example { overflow-x: scroll !important; }
 
 .example .photo-gallery .photo-gallery-item { background-color: lightpink; height: 40px; }
 
-@media (min-width: 780px) { .example .photo-gallery .photo-gallery-item { width: 30.43478%; float: left; margin-right: 1.69492%; margin-bottom: 4.34783%; }
+@media (min-width: 780px) { .example .photo-gallery .photo-gallery-item { width: 29.41176%; float: left; margin-right: 5.88235%; margin-bottom: 5.88235%; }
   .example .photo-gallery .photo-gallery-item:nth-child(3n + 3) { margin-right: 0; } }
 
 @media (min-width: 780px) and (min-width: 780px) { .example .photo-gallery .photo-gallery-item:not(:first-child):nth-child(-n+3) { margin-top: 0; } }
