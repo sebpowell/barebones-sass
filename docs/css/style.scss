@@ -1,12 +1,16 @@
 @import "_settings";
-@import "_component-settings";
 @import "../../dist/_base";
+
+@import "_component-settings";
+@import "components/_LIB/_buttons";
+@import "components/_LIB/_forms";
+@import "components/_LIB/_tooltip";
+@import "components/_LIB/_tables";
 
 @import "components/_backdrop";
 @import "components/_buttons";
 @import "components/_code";
 @import "components/_docs";
-@import "components/_dropdown";
 @import "components/_info-panel";
 @import "components/_hamburger";
 @import "components/_navigation";
@@ -14,3 +18,6 @@
 @import "components/_share";
 @import "components/_tables";
 @import "components/_welcome";
+
+
+

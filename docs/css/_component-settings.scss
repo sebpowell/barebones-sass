@@ -2,3 +2,37 @@ $backdrop: (
 	color: rgba(00, 00, 00, 0.8),
 	transition: all .5s
 );
+
+$form-user: (
+  border: 0,
+  border-radius: 3px,
+  color: blue,
+  colorOut: orange,
+  placeholder: red,
+  placeholderFocus: orange,
+  background: beige,
+  outline: none, 
+  box-shadow: none,
+
+  disabledColor: null, 
+  disabledBackground: null, 
+  disabledBorder: null,
+);
+
+$buttons-user: (
+
+
+);
+
+$tooltip-user: (
+
+	background: red,
+	border-radius: 5px,
+	border: 0,
+	shadow: 0
+);
+
+$tables-user: (
+
+	stripes: colors(greyscale, 400),
+);
