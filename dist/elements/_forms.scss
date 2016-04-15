@@ -1,0 +1,46 @@
+$forms: (
+	border: 1px solid grey,
+	color: grey,
+	borderRadius: 3px,
+	borderHover: black,
+	borderFocus: black,
+	borderSelected: black,
+) !default;
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea, {
+  border: map-get($forms, border);
+  border-radius: map-get($forms, borderRadius);
+  height: map-get($forms, height);
+  line-height: map-get($forms, height);
+  background: white;
+  padding-left: sizes(base);
+  font-family: fonts(primary);
+  font-size: 16px;
+  outline: none;
+  color: map-get($forms, color);
+  width: 100%;
+  -webkit-appearance: none;
+  &:focus {
+    border-color: map-get($forms, borderFocus);
+    // @include placeholder {
+    //   color: colors(greyscale, base);
+    // }
+  }
+  // Remove clear icon in IE
+  &::-ms-clear {
+    display: none;
+  }
+  // @include placeholder {
+  //   @include transition(color, 0.25s);
+  //   color: #9c9c9c;
+  // }
+}

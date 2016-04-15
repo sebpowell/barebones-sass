@@ -1,0 +1,21 @@
+// @mixin fade-in($duration, )
+// 	transform: translateY(-10px)
+// 	&:hover
+// 		transform: translate(-20px)
+
+
+@mixin fadeUpScale($duration, $shift, $trigger) {
+	transition: $duration;
+	transform: translateY(0 - $shift);
+
+	@if $trigger == "hover" {
+		&:hover {
+			transform: translateY(0);
+		}
+	}
+	@else {
+		&.#{$trigger} {
+			transform: translateY(0);
+		}
+	}
+}

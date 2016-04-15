@@ -1,0 +1,142 @@
+$tooltip: (
+	backgroundColor: black,
+	tailSize: 20px,
+	fontSize: 12px,
+	padding: 12px,
+	borderRadius: 3px,
+	effect: fa-dein,
+);
+
+
+%tooltip {
+  position: relative;
+
+  &:hover {
+  	.tooltip-content {
+  		visibility: visible;
+  		opacity: 1;
+  	}
+  }
+  .tooltip-content {
+  	// @include fadeUpScale(1s, 20px, hover);
+    // @include transition(transform, 0.25s);
+    // @include transform(scale(0.8, 0.8));
+    // @include box-shadow(0 0 15px 1px rgba(0, 0, 0, 0.2));
+    z-index: 9999;
+    border-radius: 3px;
+    white-space: normal;
+    padding: sizes(base);
+    width: 200px;
+    // opacity: 0;
+    color: white;
+    // visibility: hidden;
+    text-transform: none !important;
+    font-weight: 400 !important;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+    position: absolute;
+    background: darken(#49515b, 10%);
+    &:after {
+      position: absolute;
+    }
+    &.is-visible {
+      // @include transform(scale(1, 1));
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.tooltip-top-left {
+  @extend %tooltip;
+  .tooltip-content {
+    left: -20px;
+    bottom: 100%;
+    &:after {
+      @include arrow(down, colors(greyscale, 800), 8px);
+      left: 24px;
+      bottom: -8px;
+    }
+  }
+}
+
+.tooltip-top-right {
+  @extend %tooltip;
+  .tooltip-content {
+    right: -20px;
+    bottom: 160%;
+    &:after {
+      @include arrow(down, white, 8px);
+      right: 24px;
+      bottom: -8px;
+    }
+  }
+}
+
+.tooltip-top-center {
+  @extend %tooltip;
+  .tooltip-content {
+    left: 50%;
+    top: -52px;
+    &:after {
+      @include arrow(down, darken(#49515b, 10%), 8px);
+      left: 50%;
+      margin-left: -8px;
+      bottom: -8px;
+    }
+  }
+}
+
+.tooltip-bottom-center {
+  @extend %tooltip;
+  .tooltip-content {
+    left: 50%;
+    top: 100%;
+    &:after {
+      // @include arrow(up, colors(greyscale), 8px);
+      left: 50%;
+      margin-left: -8px;
+      top: -7px;
+    }
+  }
+}
+
+.tooltip-bottom-right {
+  @extend %tooltip;
+  .tooltip-content {
+    right: 0;
+    top: 100%;
+    &:after {
+      // @include arrow(up, colors(greyscale), 8px);
+      right: sizes(base);
+      top: -8px;
+    }
+  }
+}
+
+.tooltip-bottom-left {
+  @extend %tooltip;
+  .tooltip-content {
+    left: 0;
+    top: 100%;
+    &:after {
+      // @include arrow(up, colors(greyscale), 8px);
+      left: sizes(base);
+      top: -8px;
+    }
+  }
+}
+
+.tooltip-right {
+  @extend %tooltip;
+  .tooltip-content {
+    right: -100%;
+    bottom: 160%;
+    &:after {
+      @include arrow(down, white, 8px);
+      right: 24px;
+      bottom: -8px;
+    }
+  }
+}
