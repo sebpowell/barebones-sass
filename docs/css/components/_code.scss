@@ -37,7 +37,12 @@ pre, .example {
       height: 100px;
     }
     .example-sidebar {
-      @include span(4, $gutter: 2);
+      @include span(4, $gutter: 4);
+    }
+
+    .example-sidebar2 {
+      @include span(1 of 4);
+      height: 100px;
     }
 
     .example-span {
@@ -52,7 +57,7 @@ pre, .example {
     }
 
     .example-content-block {
-      @include span(8, last);
+      @include span(8, $gutter: 4, $position: last);
     }
   }
 

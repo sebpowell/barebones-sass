@@ -95,6 +95,7 @@ block body
 					.example-wrapper
 						.example-sidebar(style="background-color: lightpink")
 						.example-content-block(style="background-color: lightpink")
+
 				pre.example-code.border-bottom
 					code.language-scss.
 						.sidebar {
@@ -158,6 +159,8 @@ block body
 			p Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row.
 
 			p If you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.
+
+			p You can pass in "false" as a parameter to remove all gutters. 
 
 
 			.example.margin-bottom-double

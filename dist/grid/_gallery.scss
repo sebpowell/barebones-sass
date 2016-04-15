@@ -13,20 +13,20 @@
 	margin-right: $gutterWidth;
 	margin-bottom: $gutterWidth;
 
-	&:nth-child( #{$items}n + #{$items} ) {
+	&:nth-of-type( #{$items}n + #{$items} ) {
 		margin-right: 0;
 	}
 
-	&:not(:first-child) {
+	&:not(:first-of-type) {
 
 		@include if-above($gridBreakpoint) {
-			&:nth-child(-n+#{$items}) {
+			&:nth-of-type(-n+#{$items}) {
 				margin-top: 0;
 			}
 		}
 	}
 	@include if-above($gridBreakpoint) {
-		&:nth-child(#{$items}n + #{$items}) {
+		&:nth-of-type(#{$items}n + #{$items}) {
 			margin-right: 0;
 		}
 	}

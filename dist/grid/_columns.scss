@@ -1,30 +1,60 @@
-@mixin span($columns, $position: "", $gutter: "", $offset: 0) {
+@mixin span($columns, $position: "", $gutter: map-get($grid, gutter), $offset: 0) {
 
-	// $length: length($columns);
-
-	// $columnsTarget: nth($columns, 1);
-	// $columnsContext: nth($columns, 3);
-	// @if 
-
-	width: columnCalc($columns);
 	float: left;
+	
+	$length: length($columns);
 	@if $gutter == false {
 		margin-right: 0;
 		width: 100% / $columnCount * $columns;
 	}
-	@else {
+
+	@if $length > 2 {
+
+		$columnCount: nth($columns, 1);
+		$columnContext: nth($columns, 3);
+		$gutterCount: $columnContext - 1;
+
+		$totalGutters: ($columnContext / $gutter) + ($columnContext - 1);
+		@debug $totalGutters;
+		$gutterWidth: 100% / $totalGutters;
+		@debug $gutterWidth;
+
+		$totalGutterWidth: $gutterWidth * $gutterCount;
+
+		@debug $totalGutterWidth;
+		$columnWidth: (100% - $totalGutterWidth) / $columnContext;
+		// @debug $columnWidth;
+
 		margin-right: $gutterWidth;
+		width: ($columnCount * $columnWidth) + (($columnCount - 1) * $gutterWidth);
 		&:last-child {
 			margin-right: 0;
 		}
 	}
+
+	@if $length < 2 {
+		$totalGutters: (map-get($grid, columns) / $gutter) + (map-get($grid, columns) - 1);
+		$gutterWidth: 100% / $totalGutters;
+		$totalGutterWidth: $gutterWidth * $gutterCount;
+		$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+
+		margin-right: $gutterWidth;
+		width: ($columns * $columnWidth) + (($columns - 1) * $gutterWidth);
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+
 	@if $offset > 0 {
 		margin-left: columnCalc($offset) + $gutterWidth;
 	}
+
 	@if $position == "last" {
 		margin-right: 0;
 		float: right;
 	}
+
 }
 
 @function span($columns) {
