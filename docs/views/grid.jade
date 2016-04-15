@@ -188,7 +188,7 @@ block body
 
 						.photo-gallery-item {
 							@include if-between(device-x-small, device-medium) {
-								@include gallery(6);
+								@include gallery(6, $gutter: 2);
 							}
 							@include if-above(device-medium) {
 								@include gallery(4);

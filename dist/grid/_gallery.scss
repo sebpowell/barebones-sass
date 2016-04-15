@@ -1,4 +1,4 @@
-@mixin gallery($keys, $gutter: "") {
+@mixin gallery($keys, $gutter: map-get($grid, gutter)) {
 
 	$key: nth($keys, 1);
 	$items: $columnCount / $key;
@@ -7,13 +7,7 @@
 	$gutterWidth: 100% / $totalGutters;
 	$totalGutterWidth: $gutterWidth * $gutterCount;
 	$columnWidth: (100% - $totalGutterWidth) / $columnCount;
-	@debug $totalGutters;
-	@debug $gutterWidth;
-	@debug $totalGutterWidth;
-	@debug $columnWidth;
 
-
-	// width: columnCalc($key, $gutter);
 	width: ($key * $columnWidth) + (($key - 1) * $gutterWidth);
 	float: left;
 	margin-right: $gutterWidth;
@@ -24,7 +18,7 @@
 	}
 
 	&:not(:first-child) {
-		// margin-top: $gutterWidth;
+
 		@include if-above($gridBreakpoint) {
 			&:nth-child(-n+#{$items}) {
 				margin-top: 0;
@@ -36,33 +30,4 @@
 			margin-right: 0;
 		}
 	}
-
-	// $items: length($keys);
-
-	// @if $items > 1 {
-	//   @for $i from 1 through $items {
-	//     $key: nth($keys, $i);
-	//     &:not(:first-child) {
-	//       margin-top: $gutterWidth;
-	//       @include if-above($gridBreakpoint) {
-	//         &:nth-child(-n+#{$items}) {
-	//           margin-top: 0;
-	//         }
-	//       }
-	//     }
-	//     &:nth-child(#{$items}n + #{$i}) {
-	//       @include if-above($gridBreakpoint) {
-	//         width: columnCalc($key);
-	//         margin-right: $gutterWidth;
-	//         float: left;
-	//       }
-	//     }
-	//     &:nth-child(#{$items}n) {
-	//       margin-right: 0;
-	//     }
-	//   }
-	// }
-	// @else {
-
-	// }
 }

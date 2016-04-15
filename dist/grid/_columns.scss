@@ -1,4 +1,11 @@
 @mixin span($columns, $position: "", $gutter: "", $offset: 0) {
+
+	// $length: length($columns);
+
+	// $columnsTarget: nth($columns, 1);
+	// $columnsContext: nth($columns, 3);
+	// @if 
+
 	width: columnCalc($columns);
 	float: left;
 	@if $gutter == false {
