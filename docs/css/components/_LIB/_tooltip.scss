@@ -8,10 +8,10 @@ $tooltip-default: (
 $tooltip-config: map-extend($tooltip-default, $tooltip-user, true);
 
 
-@mixin arrowtip($direction, $size, $color, $shadow) {
+@mixin arrowtip($direction, $size, $color, $shadow: "") {
 	
   // -webkit-transform: translateZ(0);
-  -webkit-filter: drop-shadow(0 0 0.15rem rgba(104, 104, 104, 0.5));
+  // -webkit-filter: drop-shadow(0 0 0.15rem rgba(104, 104, 104, 0.5));
   &:after, &:before {
   	position: absolute;
     
@@ -91,7 +91,7 @@ $tooltip-config: map-extend($tooltip-default, $tooltip-user, true);
     padding: map-get($tooltip-config, padding);
     width: 200px;
     opacity: 0;
-    color: map-get($tooltip-config, textColor);
+    color: map-get($tooltip-config, text-color);
     border: map-get($tooltip-config, border);
     box-shadow: map-get($tooltip-config, shadow);
     visibility: hidden;

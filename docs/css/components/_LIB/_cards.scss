@@ -1,0 +1,45 @@
+$card-default: (
+  background: white,
+  shadow: 0 1px 2px rgba(208, 208, 208, 0.5),
+  padding: sizes(double-half),
+  borderRadius: 5px
+);
+
+$card-config: map-extend($card-default, $card-user);
+
+
+%card-style {
+  background: map-get($card-config, background);
+  box-shadow:  map-get($card-config, shadow);
+  border-radius: map-get($card-config, borderRadius);
+  border: map-get($card-config, border);
+}
+
+.card {
+  @extend %card-style;
+
+  // &:hover {
+  //   box-shadow: 
+  // }
+
+  .card-image {
+    height: 300px;
+    background: colors(greyscale, 400);
+    border-radius: map-get($card-config, borderRadius) map-get($card-config, borderRadius) 0 0;
+  }
+
+  .card-header {
+    padding: sizes(base);
+    border-bottom: 1px solid colors(keyline, light);
+    h1, h2, h3, h4, h5 {
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .card-section {
+    padding: sizes(double-half);
+  }
+}
+

@@ -1,60 +1,332 @@
 extends  _inc/_layout.jade
 
+
 block body
+	script.
+
+		$(document).ready(function() {
+			$(".dropdown").on("click", function() {
+				$(this).children(".dropdown-menu").toggleClass("is-open");
+			});
+		});
+
 	.main-container
 		article.article(id="containers")
-			h2 Containers
-			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.
+			h2 Components
+			p Barebones includes a series of basic components which are easily configurable. Each component includes on the bare minimum in terms of styling, so you don't need to spend time undoing properties. 
 
-			p Create a new container using the <span class="var">container($max-width)</span> function.
+			h3 Styling Components
 
-			.example
+			p Components are styled using a user sass map. For example, $modal-user. To style a component, simply create a new map and specify your settings. 
+
+
+
+		article.article(id="containers")
+			h2 Forms
+
+			table.table-lined
+				thead
+					th Options
+					th Default
+					th Description
+				tbody
+					tr
+						td border
+						td 1px solid colors(keyline, dark)
+						td 
+					tr
+						td background
+						td white
+						td 
+					tr
+						td backgroundDisabled
+						td colors(greyscale, 500)
+						td 
+					tr
+						td borderRadius
+						td 3px
+						td 
+					tr
+						td placeholder
+						td colors(greyscale, 400)
+						td 
+					tr
+						td placeholderFocus
+						td colors(greyscale, 300)
+						td 
+
+					tr
+						td color
+						td colors(greyscale, 500)
+						td 
+					tr
+						td colorFocus
+						td colors(greyscale, 900)
+						td 
+					tr
+						td colorDisabled
+						td colors(greyscale, 700)
+						td 
+					tr
+						td shadow
+
+
+
+			.example.background-greyscale-200
 				.example-rendered
-					form
-						input.form-entry(type="text" placeholder="Your Name")
-						input.form-entry(type="email" placeholder="Email Address")
+					.container-small
+						.card
+							.card-section
+								h1.margin-bottom-double Create Your Account
+								form
+									input.form-entry(type="text" placeholder="Your Name")
+									input.form-entry(type="email" placeholder="Email Address")
+									input.form-entry(type="email" placeholder="Password" disabled)
+									input.button.primary(type="submit" value="Submit")
 
-			.example
+
+			article.article(id="containers")
+				h2 Buttons
+
+				table.table-lined
+					thead
+						th Options
+						th Default
+						th Description
+					tbody
+
+						tr
+							td border
+							td 1px
+							td 
+
+						tr
+							td borderRadius
+							td 3px
+							td 
+
+						tr
+							td textTransform
+							td capitalize
+							td 
+
+						tr
+							td shadow
+							td 3px
+							td 
+						tr
+							td shadowHover
+							td 3px
+							td 
+						tr
+							td hoverBackground
+							td darken($color, 20%)
+							td 
+		
+
+
+				h3 Colors
+
+				.example.background-greyscale-200
+					.example-rendered
+						.button.primary Large Button
+						.button.secondary Large Button
+						.button.white Large Button
+
+
+				h3 Sizes
+				.example
+					.example-rendered
+						.button.primary.x-small X-Small Button
+						.button.primary.small Small Button
+						.button.primary Large Button
+						//- .button.primary.large Large Button
+
+
+			
+		
+		article.article(id="containers")
+			h2 Cards
+
+			table
+				thead
+					th Options
+				tbody
+					tr
+						td backgroundColor
+					tr
+						td border
+					tr
+						td shadow
+					tr
+						td borderRadius
+					tr
+						td itemBorder
+					tr
+						td hoverBackground
+						td Background color applied to striped tables.
+					tr
+						td hoverColor
+
+			.example.background-greyscale-100(style="height: 500px")
 				.example-rendered
-					.button.primary.x-small Large Button
-					.button.primary.small Large Button
-					.button.primary Large Button
-					.button.primary.large Large Button
+					
+					.card
+						.card-image
+
+						.card-section
+							h3 This is a card section
+							p Some paragraph
+
+
+
+		article.article(id="containers")
+			h2 Tooltips
+
+			p Tooltips include two modifier classes; direction and position. 
+
+			table.table-striped
+				thead
+					th Options
+				tbody
+					tr
+						td backgroundColor
+						td
+					tr
+						td border
+						td
+					tr
+						td shadow
+						td
+					tr
+						td borderRadius
+						td
+					tr
+						td color
+						td Background color applied to striped tables.
+					tr
+						td effect
+						td
+					tr
+						td effectTiming
+						td
+
+
 
 
 			.example
 				.example-rendered(style="height: 600px")
-					.tooltip-top-center
-						span Test
+					.tooltip.left.bottom
+						button.primary Test
 						.tooltip-content Test
 
-					.tooltip.left.top
-						button.primary.large Test
-						.tooltip-content Test
 
-					.tooltip-top-left
-						span Test
-						.tooltip-content Test
+							
+		article.article(id="containers")
+			h2 Tables
+
+			table
+				thead
+					th Options
+				tbody
+					tr
+						td stripe-color
+						td Background color applied to striped tables.
+					tr
+						td outer-border
+					tr
+						td horizontal-border
+					tr
+						td vertical-border
+						td Border (e.g. 1px solid colors(keyline, light))
+					tr
+						td rowHoverBackground
+
 
 			.example
 				.example-rendered
-					table.lined.striped
+					table.striped
 						thead
-							th About
-							th Option
+							th ID
+							th Name
+							th Email
 						tbody
 							tr
-								td Test
-								td Test
+								td 1
+								td John Smith
+								td john.smith@mail.com
 							tr
-								td Test
-								td Test
+								td 1
+								td John Smith
+								td john.smith@mail.com
 							tr
-								td Test
-								td Test
+								td 1
+								td John Smith
+								td john.smith@mail.com
 							tr
-								td Test
-								td Test
+								td 1
+								td John Smith
+								td john.smith@mail.com
+				.example-rendered
+					table.lined
+						thead
+							th ID
+							th Name
+							th Email
+						tbody
 							tr
-								td Test
-								td Test
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+
+		article.article(id="containers")
+			h2 Dropdown
+
+			table
+				thead
+					th Options
+				tbody
+					tr
+						td backgroundColor
+					tr
+						td border
+					tr
+						td shadow
+					tr
+						td borderRadius
+					tr
+						td itemBorder
+					tr
+						td hoverBackground
+						td Background color applied to striped tables.
+					tr
+						td hoverColor
+
+			.example.background-brand-primary
+				.example-rendered(style="height: 500px")
+					
+					.dropdown
+						a.dropdown-menu-toggle My Account
+						.dropdown-menu.is-open
+							ul.dropdown-menu-links
+								li
+									a(href="#") Dashboard
+								li
+									a(href="#") Settings
+								li.border-top
+									a(href="#") Logout
+
+		
+

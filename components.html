@@ -76,11 +76,14 @@
         </li>
         <li><a href="components.html">Components</a>
           <ul class="sub-navigation">
-            <li><a href="#generator">Grid Settings</a></li>
-            <li><a href="#generator">Containers</a></li>
-            <li><a href="#generator">Columns</a></li>
-            <li><a href="#generator">Galleries</a></li>
-            <li><a href="#generator">Helpers</a></li>
+            <li><a href="#generator">Backdrop</a></li>
+            <li><a href="#generator">Buttons</a></li>
+            <li><a href="#generator">Cards</a></li>
+            <li><a href="#generator">Dropdown</a></li>
+            <li><a href="#generator">Forms</a></li>
+            <li><a href="#generator">Modals</a></li>
+            <li><a href="#generator">Tables</a></li>
+            <li><a href="#generator">Tooltip</a></li>
           </ul>
         </li>
         <li><a href="mixins.html">Mixins</a>
@@ -109,71 +112,380 @@
         </li>
       </ul>
     </div>
+    <script>
+      $(document).ready(function() {
+      	$(".dropdown").on("click", function() {
+      		$(this).children(".dropdown-menu").toggleClass("is-open");
+      	});
+      });
+      
+    </script>
     <div class="main-container">
       <article id="containers" class="article">
-        <h2>Containers</h2>
-        <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.</p>
-        <p>Create a new container using the <span class="var">container($max-width)</span> function.</p>
-        <div class="example">
+        <h2>Components</h2>
+        <p>Barebones includes a series of basic components which are easily configurable. Each component includes on the bare minimum in terms of styling, so you don't need to spend time undoing properties. </p>
+        <h3>Styling Components</h3>
+        <p>Components are styled using a user sass map. For example, $modal-user. To style a component, simply create a new map and specify your settings. </p>
+      </article>
+      <article id="containers" class="article">
+        <h2>Forms</h2>
+        <table class="table-lined">
+          <thead>
+            <th>Options</th>
+            <th>Default</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>border</td>
+              <td>1px solid colors(keyline, dark)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>background</td>
+              <td>white</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>backgroundDisabled</td>
+              <td>colors(greyscale, 500)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>borderRadius</td>
+              <td>3px</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>placeholder</td>
+              <td>colors(greyscale, 400)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>placeholderFocus</td>
+              <td>colors(greyscale, 300)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td>colors(greyscale, 500)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>colorFocus</td>
+              <td>colors(greyscale, 900)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>colorDisabled</td>
+              <td>colors(greyscale, 700)</td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>shadow</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="example background-greyscale-200">
           <div class="example-rendered">
-            <form>
-              <input type="text" placeholder="Your Name" class="form-entry"/>
-              <input type="email" placeholder="Email Address" class="form-entry"/>
-            </form>
+            <div class="container-small">
+              <div class="card">
+                <div class="card-section">
+                  <h1 class="margin-bottom-double">Create Your Account</h1>
+                  <form>
+                    <input type="text" placeholder="Your Name" class="form-entry"/>
+                    <input type="email" placeholder="Email Address" class="form-entry"/>
+                    <input type="email" placeholder="Password" disabled="disabled" class="form-entry"/>
+                    <input type="submit" value="Submit" class="button primary"/>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="example">
+        <article id="containers" class="article">
+          <h2>Buttons</h2>
+          <table class="table-lined">
+            <thead>
+              <th>Options</th>
+              <th>Default</th>
+              <th>Description</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>border</td>
+                <td>1px</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>borderRadius</td>
+                <td>3px</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>textTransform</td>
+                <td>capitalize</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>shadow</td>
+                <td>3px</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>shadowHover</td>
+                <td>3px</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>hoverBackground</td>
+                <td>darken($color, 20%)</td>
+                <td> </td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Colors</h3>
+          <div class="example background-greyscale-200">
+            <div class="example-rendered">
+              <div class="button primary">Large Button</div>
+              <div class="button secondary">Large Button</div>
+              <div class="button white">Large Button</div>
+            </div>
+          </div>
+          <h3>Sizes</h3>
+          <div class="example">
+            <div class="example-rendered">
+              <div class="button primary x-small">X-Small Button</div>
+              <div class="button primary small">Small Button</div>
+              <div class="button primary">Large Button</div>
+              
+            </div>
+          </div>
+        </article>
+      </article>
+      <article id="containers" class="article">
+        <h2>Cards</h2>
+        <table>
+          <thead>
+            <th>Options</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>backgroundColor</td>
+            </tr>
+            <tr>
+              <td>border</td>
+            </tr>
+            <tr>
+              <td>shadow</td>
+            </tr>
+            <tr>
+              <td>borderRadius</td>
+            </tr>
+            <tr>
+              <td>itemBorder</td>
+            </tr>
+            <tr>
+              <td>hoverBackground</td>
+              <td>Background color applied to striped tables.</td>
+            </tr>
+            <tr>
+              <td>hoverColor</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="height: 500px" class="example background-greyscale-100">
           <div class="example-rendered">
-            <div class="button primary x-small">Large Button</div>
-            <div class="button primary small">Large Button</div>
-            <div class="button primary">Large Button</div>
-            <div class="button primary large">Large Button</div>
+            <div class="card">
+              <div class="card-image"></div>
+              <div class="card-section">
+                <h3>This is a card section</h3>
+                <p>Some paragraph</p>
+              </div>
+            </div>
           </div>
         </div>
+      </article>
+      <article id="containers" class="article">
+        <h2>Tooltips</h2>
+        <p>Tooltips include two modifier classes; direction and position. </p>
+        <table class="table-striped">
+          <thead>
+            <th>Options</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>backgroundColor</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>border</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>shadow</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>borderRadius</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td>Background color applied to striped tables.</td>
+            </tr>
+            <tr>
+              <td>effect</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>effectTiming</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
         <div class="example">
           <div style="height: 600px" class="example-rendered">
-            <div class="tooltip-top-center"><span>Test</span>
-              <div class="tooltip-content">Test</div>
-            </div>
-            <div class="tooltip left top">
-              <button class="primary large">Test</button>
-              <div class="tooltip-content">Test</div>
-            </div>
-            <div class="tooltip-top-left"><span>Test</span>
+            <div class="tooltip left bottom">
+              <button class="primary">Test</button>
               <div class="tooltip-content">Test</div>
             </div>
           </div>
         </div>
+      </article>
+      <article id="containers" class="article">
+        <h2>Tables</h2>
+        <table>
+          <thead>
+            <th>Options</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>stripe-color</td>
+              <td>Background color applied to striped tables.</td>
+            </tr>
+            <tr>
+              <td>outer-border</td>
+            </tr>
+            <tr>
+              <td>horizontal-border</td>
+            </tr>
+            <tr>
+              <td>vertical-border</td>
+              <td>Border (e.g. 1px solid colors(keyline, light))</td>
+            </tr>
+            <tr>
+              <td>rowHoverBackground</td>
+            </tr>
+          </tbody>
+        </table>
         <div class="example">
           <div class="example-rendered">
-            <table class="lined striped">
+            <table class="striped">
               <thead>
-                <th>About</th>
-                <th>Option</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
               </thead>
               <tbody>
                 <tr>
-                  <td>Test</td>
-                  <td>Test</td>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
                 </tr>
                 <tr>
-                  <td>Test</td>
-                  <td>Test</td>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
                 </tr>
                 <tr>
-                  <td>Test</td>
-                  <td>Test</td>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
                 </tr>
                 <tr>
-                  <td>Test</td>
-                  <td>Test</td>
-                </tr>
-                <tr>
-                  <td>Test</td>
-                  <td>Test</td>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="example-rendered">
+            <table class="lined">
+              <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>John Smith</td>
+                  <td>john.smith@mail.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <article id="containers" class="article">
+        <h2>Dropdown</h2>
+        <table>
+          <thead>
+            <th>Options</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>backgroundColor</td>
+            </tr>
+            <tr>
+              <td>border</td>
+            </tr>
+            <tr>
+              <td>shadow</td>
+            </tr>
+            <tr>
+              <td>borderRadius</td>
+            </tr>
+            <tr>
+              <td>itemBorder</td>
+            </tr>
+            <tr>
+              <td>hoverBackground</td>
+              <td>Background color applied to striped tables.</td>
+            </tr>
+            <tr>
+              <td>hoverColor</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="example background-brand-primary">
+          <div style="height: 500px" class="example-rendered">
+            <div class="dropdown"><a class="dropdown-menu-toggle">My Account</a>
+              <div class="dropdown-menu is-open">
+                <ul class="dropdown-menu-links">
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li class="border-top"><a href="#">Logout</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </article>

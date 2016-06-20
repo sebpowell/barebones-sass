@@ -1,0 +1,72 @@
+
+
+
+
+.tab-content
+	background: white
+	border: 1px solid $color-keyline-dark
+	padding: sizes(double)
+	border-radius: 0 0 3px 3px
+	position: relative
+	z-index: 2
+
+
+.tabs
+
+	+nobullet
+	width: 100%
+	// display: table
+	position: relative
+	margin-bottom: -1px
+
+	&.lined
+		// Used on branch profile page - consider creating new component.
+		@extend %panel
+		> li
+			border-right: 1px solid colors(keyline, light)
+			&.ui-tabs-active
+				z-index: 0
+				&:after
+					display: block
+					position: absolute
+					bottom: 0
+					content: ""
+					width: 100px
+					left: 50%
+					margin-left: -50px
+					height: 4px
+					background: colors(brand-primary)
+		a
+			border: 0
+			background: transparent
+
+
+	> li
+		position: relative
+		text-align: center
+		top: 1px
+		margin-bottom: sizes(base)
+		margin-right: sizes(half)
+		display: table-cell
+		width: 180px
+		font-size: 14px
+
+
+		> a
+			display: block
+			padding: sizes(base) sizes(double)
+			color: inherit
+			border: 1px solid $color-keyline-dark
+			border-radius: 5px
+			background: colors(greyscale, x-light)
+			color: colors(greyscale, mid)
+			border-radius: 5px 5px 0 0
+		// Uses jQuery UI
+		&.ui-tabs-active
+			z-index: 3
+			a
+				color: colors(brand-primary)
+				background: white
+				font-weight: 600
+				border-bottom: 0
+

@@ -36,7 +36,7 @@ table {
   	border: 1px solid colors(keyline, dark);
   }
 
-  &.lined {
+  &.lined, &.table-lined {
   	th {
   		border-bottom: 1px solid colors(keyline, light);
   	}
@@ -47,7 +47,7 @@ table {
   	}
   }
 
-  &.striped {
+  &.striped, &.table-striped {
   	// thead {
   	// 	background: 
   	// }
