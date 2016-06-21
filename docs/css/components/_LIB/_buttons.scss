@@ -1,0 +1,92 @@
+$buttons-default: (
+	borderRadius: 3px,
+	textTransform: capitalize,
+	shadow: 0 2px 4px rgba(00,00,00,0.2),
+	shadowHover: 0 2px 10px rgba(00,00,00,0.2),
+	hoverBackground: lighten 20%,
+	hoverTransition: .5s,
+);
+
+$buttons-config: map-extend($buttons-default, $buttons-user);
+
+button, .button {
+	display: inline-block;
+	background: transparent;
+	padding: 0 sizes(double);
+	height: 48px;
+	line-height: 48px;
+	border-radius: map-get($buttons-config, borderRadius);
+	cursor: pointer;
+	box-shadow: map-get($buttons-config, shadow);
+	transition: map-get($buttons-config, hoverTransition);
+
+	font: {
+		weight: 600;
+		size: sizes(base);
+		// family: fonts(primary);
+	}
+
+	text: {
+		decoration: none;
+		transform: map-get($buttons-config, textTransform);
+		align: center;
+	}
+
+	&:hover {
+		box-shadow: map-get($buttons-config, shadowHover);
+	}
+
+	// Generate button sizes
+	@each $size, $value in $font-sizes {
+		&.#{$size} {
+			height: $value * 3;
+			line-height: $value * 3; // Needed if applied to link element
+			font-size: $value;
+			padding: 0 $value * 2;
+			// border-radius: $value * 3;
+		}
+	}
+
+	// Generate button colors
+	@each $name, $value in map-get($colors, brand) {
+		&.#{$name} {
+			background: $value;
+			color: white;
+			border: 0;
+
+			&:hover {
+				$type: nth(map-get($buttons-config, hoverBackground), 1);
+				$value2: nth(map-get($buttons-config, hoverBackground), 2);
+				@if $type == "darken" {
+					background: darken($value, $value2);
+				}
+				@if $type == "lighten" {
+					background: lighten($value, $value2);
+				}
+			}
+
+			&.empty {
+				background: transparent;
+				border: 1px solid lighten($value, 35%);
+				color: $value !important;
+				&:hover {
+					border: 1px solid lighten($value, 25%);
+				}
+			}
+		}
+	}
+
+	&.white {
+		background: white;
+		color: colors(brand, primary);
+		&.empty {
+			background: transparent;
+			border: 1px solid rgba(255,255,255,0.4);
+			color: white;
+			&:hover {
+				background: white;
+				color: colors(brand, primary);
+			}
+		}
+	}
+}

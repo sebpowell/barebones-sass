@@ -1,0 +1,111 @@
+$dropdown-default: (
+	border: 1px solid colors(keyline, dark),
+	shadow: 0 0 3px rgba(00,00,00,0.4),
+	borderRadius: 3px,
+	backgroundColor: white,
+	tailSize: 10px,
+
+	itemBorder: 0,
+	itemHoverBackground: colors(greyscale, 100),
+ 	itemHoverColor: colors(brand, primary),
+ 	itemFontSize: 14px, 
+ 	itemPadding: sizes(half) sizes(base),
+
+ 	effect: fade-up,
+ 	effectDelta: 40px
+);
+
+
+
+$dropdown-config: map-extend($dropdown-default, $dropdown-user);
+
+
+@mixin fade-up($class, $delta) {
+	transition: all .5s;
+	transform: translateY(($delta));
+	&.#{$class} {
+		transform: translateY(0);
+	}
+}
+// 	transform: 
+
+// =scale(0.7)
+
+// none
+
+.dropdown {
+	position: relative !important;
+
+	.dropdown-menu {
+  		border-radius: map-get($dropdown-config, borderRadius);
+  		box-shadow: map-get($dropdown-config, shadow);
+  		border: map-get($dropdown-config, border);
+  		position: absolute !important;
+  		top: 100%;
+  		width: 240px;
+  		background: map-get($dropdown-config, backgroundColor);
+  		padding: sizes(half) 0;
+  		opacity: 0;
+  		visibility: hidden; 
+  		@include arrowtip(up, map-get($dropdown-config, tailSize), white, black);
+  		
+  		@if map-get($dropdown-config, effect) == "fade-up" {
+			@include fade-up(is-open, map-get($dropdown-config, effectDelta));
+		}
+  		
+  		&:before, &:after {
+  			top: -(map-get($dropdown-config, tailSize));
+  			left: sizes(base);
+  		}
+  		&.is-open, &.is-visible {
+  			.dropdown-menu {
+  		    // @include transform(scale(1, 1));
+  		    	
+  		  }
+  		  opacity: 1;
+  		   visibility: visible;
+  		}
+ 	}
+
+  .dropdown-menu-links {
+    @include no-bullet;
+  		
+  	padding: 0;
+  	margin: 0;
+    max-height: 400px;
+    overflow-y: scroll;
+    
+	
+    > li {
+      // Apply styles here to avoid styles being inherited from the parent element, such as primary menu links.
+      text-align: left;
+      > a {
+        display: block;
+        padding: map-get($dropdown-config, itemPadding);
+        text-decoration: none;
+        color:  map-get($dropdown-config, itemColor);
+        font-size: map-get($dropdown-config, itemFontSize);
+        &:hover {
+        	background: map-get($dropdown-config, itemHoverBackground);
+        	color:  map-get($dropdown-config, itemHoverColor);
+        }
+      }
+    }
+
+    
+  }
+
+  // Positioning helpers.
+  &.dropdown-menu-left {
+    left: 0;
+  }
+
+  &.dropdown-menu-center {
+    left: 50%;
+    margin-left: -90px;
+  }
+
+  &.dropdown-menu-right, &.right {
+    right: 0;
+  }
+}

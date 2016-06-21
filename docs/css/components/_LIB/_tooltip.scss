@@ -1,0 +1,150 @@
+$tooltip-default: (
+	padding: sizes(base),
+	tooltipSize: 20px,
+  tailSize: 10px,
+  background: white,
+);
+
+$tooltip-config: map-extend($tooltip-default, $tooltip-user, true);
+
+
+@mixin arrowtip($direction, $size, $color, $shadow: "") {
+	
+  // -webkit-transform: translateZ(0);
+  // -webkit-filter: drop-shadow(0 0 0.15rem rgba(104, 104, 104, 0.5));
+  &:after, &:before {
+  	position: absolute;
+    
+  }
+
+  &:after {
+	  content: " ";
+	  @if $direction == "left" {
+		  border-left: $size solid $color;
+		  border-top: $size solid transparent;
+		  border-bottom: $size solid transparent;
+		}
+		@else if $direction == "down" {
+			border-top: $size solid $color;
+		  border-left: $size solid transparent;
+		  border-right: $size solid transparent;
+		}
+
+		@else if $direction == "right" {
+			border-right: $size solid $color;
+		  border-top: $size solid transparent;
+		  border-bottom: $size solid transparent;
+		}
+
+		@else if $direction == "up" {
+			border-bottom: $size solid $color;
+		  border-left: $size solid transparent;
+		  border-right: $size solid transparent;
+		}
+
+	  z-index: 1;
+  }
+
+  &:before {
+    content: " ";
+      @if $direction == "left" {
+    	  border-left: $size solid $shadow;
+    	  border-top: $size solid transparent;
+    	  border-bottom: $size solid transparent;
+    	}
+    	@else if $direction == "down" {
+    		border-top: $size solid $shadow;
+    	  border-left: $size solid transparent;
+    	  border-right: $size solid transparent;
+    	}
+
+    	@else if $direction == "right" {
+    		border-right: $size solid $shadow;
+    	  border-top: $size solid transparent;
+    	  border-bottom: $size solid transparent;
+    	}
+
+    	@else if $direction == "up" {
+    		border-bottom: $size solid $shadow;
+    	  border-left: $size solid transparent;
+    	  border-right: $size solid transparent;
+    	}
+    z-index: 0;
+  }
+}
+
+
+.tooltip {
+  position: relative;
+  &:hover {
+    .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .tooltip-content {
+    @include arrowtip(down, map-get($tooltip-config, tailSize), map-get($tooltip-config, background), rgba(104, 104, 104, 0.5));
+    // z-index: layers(tooltip);
+    border-radius: map-get($tooltip-config, border-radius);
+    white-space: normal;
+    padding: map-get($tooltip-config, padding);
+    width: 200px;
+    opacity: 0;
+    color: map-get($tooltip-config, text-color);
+    border: map-get($tooltip-config, border);
+    box-shadow: map-get($tooltip-config, shadow);
+    visibility: hidden;
+    
+    margin-bottom: sizes(half);
+    text-transform: none !important;
+    font-weight: 400 !important;
+    font-size: map-get($tooltip-config, font-size);
+    text-align: center;
+    transition: all .25s;
+    line-height: 1.5;
+    position: absolute;
+    background: map-get($tooltip-config, background);
+    // transform: scale(0.8);
+    &:after {
+      position: absolute;
+    }
+    &.is-visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  $tooltip-positions: (left, center, right);
+
+  &.top {
+    .tooltip-content {
+      &:after, &:before {
+        bottom: -(map-get($tooltip-config, tailSize));
+      }
+    }
+  }
+  @each $position in $tooltip-positions {
+    @if $position == "left" {
+      &.#{$position} {
+        .tooltip-content {
+            left: 0;
+            bottom: 100%;
+          &:after, &:before { 
+            left: sizes(base);
+          }
+        }
+      }
+    }
+  }
+  &:after, &:before {
+    margin-left: -(map-get($tooltip-config, tooltipSize));
+    bottom: -(map-get($tooltip-config, tooltipSize));
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+$backdrop-default: (
+  background: rgba(00,00,00,.2);
+  effectTiming: all .5s,
+  effectClass: is-open,
+);
+
+$backdrop-config: map-extend($backdrop-default, $backdrop-user);
+
+.backdrop {
+	z-index: layers(backdrop);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: map-get($backdrop-config, background);
+	visibility: hidden;
+	opacity: 0;
+	transition: map-get($backdrop-config, effectTiming);
+		
+	&.#{map-get($backdrop-config, effectClass)} {
+		visibility: visible;
+		opacity: 1;
+	}
+}

@@ -1,160 +1,332 @@
-//- include _inc/_head.html
+extends  _inc/_layout.jade
 
-//- .container-medium
-//-   h1.page-header Components
-//-   article#buttons.article
-//-     .announcement
-//-       | Are you an estate agent?
-//-       a(href='{{URL_BASE}}for-agents') Click here
-//-       |  to find out more about how you can work with us
-//-   .example
 
-//-   article
-//-     | {{ components.postcodeFinder() }}
-//-   .margin-bottom.double-unit
-//-     | {{ components.masthead(
-//-     | _context,
-//-     | {
-//-     | 'h1': 'usernam2e',
-//-     | 'bgImage': '../images/bg/family-tv@2x.jpg',
-//-     | 'subheading': 'Get more money for your home'
-//-     | })
-//-     | }}
-//-   .margin-bottom.double-unit
-//-     | {{ components.masthead(
-//-     | _context,
-//-     | {
-//-     | heading: 'usernam2e',
-//-     | })
-//-     | }}
-//-   article.article
-//-     h2 Bulleted List
-//-     .example
-//-       ul.bulleted-list
-//-         li
-//-           strong Guidance & advice
-//-           | : Chances are you’re new to the selling game so your estate agent is on-hand to offer you access to their experience and connections. This advice relates to things like valuing your property, tapping into local market knowledge and connecting you with local service providers such as conveyancers etc.
-//-         li
-//-           strong Marketing & advertising
-//-           | : Your house will only be sold with expert marketing. Your agent should have knowledge on online and offline marketing channels, make sure buyers have access to professional property brochures and situate a ‘For Sale’ sign outside your property. In most cases, this also includes submitting your property to the main property portals, RightMove, Zoopla and OnTheMarket.
-//-         li
-//-           strong Sales and lead management
-//-           | : An estate agent is responsible for managing the flow of the sales process. This includes negotiating a sales price and acting on offers, organising and hosting visits and vetting any leads that are interested in your property.
-//-         li
-//-           strong When do I pay my estate agent?
-//-           | : Fees typically become due when contracts are exchanged but you don’t actually pay until the sale is done and dusted. No estate agent should be paid before the sale money is transferred and available.
-//-   article#buttons.article
-//-     h2 Buttons
-//-     p
-//-       | Buttons can be created using either
-//-       span.code button
-//-       |  or
-//-       span.code a
-//-       |  elements.
-//-     h3 Colors
-//-     .example
-//-       button Button
-//-       button.primary Primary
-//-       button.secondary Secondary
-//-       button(disabled='') Disabled
-//-     pre.
-//-     h3 Sizes
-//-     .example
-//-       button.primary.small X-Small
-//-       button.primary Small
-//-       button.primary.medium Medium
-//-       button.primary.large Large
-//-       button.primary.x-large X-Large
-//-     pre.
-//-     h3 Rounded
-//-     .example
-//-       button.primary.medium.rounded Primary
-//-       button.secondary.medium.rounded Secondary
-//-     pre.
-//-     h3 Bordered
-//-     .example
-//-       button.primary.bordered Primary
-//-       button.secondary.bordered Secondary
-//-     pre.
-//-   article#dropdown.article
-//-     h2 Dropdown
-//-     p
-//-       | Dropdowns are positioned absolutely, so you need to make sure the parent element has position: relative set on
-//-       | it.
-//-     .example
-//-       li.user-actions.dropdown
-//-         a(href='#') Dropdown Toggle
-//-         .dropdown-menu.show
-//-           ul
-//-             li
-//-               a Dashboard
-//-             li
-//-               a Settings
-//-             li.border-top
-//-               a Logout
-//-     pre.
-//-   article#panel.article
-//-     h2 Panel
-//-     .example
-//-       .container-500
-//-         .panel
-//-           section.panel-header
-//-             h3.text-center Your Basket
-//-           section.panel-section.text-center
-//-             | You currently have no jobs in your work basket
-//-           section.panel-section
-//-             a.button.primary.large.block Get Quote
-//-     pre.
-//-   article#hero.article
-//-     h2 Hero
-//-     .example
-//-       .hero.homepage(style='max-height: 400px')
-//-         .hero-content
-//-           .container-wide
-//-             h1 Hero Header
-//-             p Hero sub-heading
-//-             .hero-actions
-//-     pre.
-//-   article#labels.article
-//-     h2 Labels
-//-     .example
-//-       .label-success Label
-//-       .label-info Label
-//-       .label-error Label
-//-     pre.
-//-   article#progress-bars.article
-//-     h2 Progress Bars
-//-     .example
-//-       .progress-bar
-//-         .progress-bar-label Excellent
-//-         .progress-bar-inner
-//-           .progress-bar-value(style='width: 50%')
-//-     pre.
-//-   article#form.article
-//-     h2 Form
-//-     .example
-//-       .container-500
-//-         .panel
-//-           form.panel-section
-//-             .form-wrap
-//-               .flex-row.gutter-half
-//-                 .columns-6
-//-                   input.form-control(placeholder='First name')
-//-                 .columns-6
-//-                   input.form-control(placeholder='Last name')
-//-             .form-wrap
-//-               input.form-control(placeholder='Email')
-//-             .form-wrap
-//-               input.form-control(placeholder='Password')
-//-             .form-wrap
-//-               input.button.blue.block.large(type='submit', value='Create Your Account')
-//-     pre.
-//-   article#tabs.article
-//-     h2 Tabs
-//-     .example
-//-       nav.tabbed-nav
-//-         ul
-//-           li.is-active Servicing
-//-           li Repairs
-//-           li Inspections
-//-     pre.
+block body
+	script.
+
+		$(document).ready(function() {
+			$(".dropdown").on("click", function() {
+				$(this).children(".dropdown-menu").toggleClass("is-open");
+			});
+		});
+
+	.main-container
+		article.article(id="containers")
+			h2 Components
+			p Barebones includes a series of basic components which are easily configurable. Each component includes on the bare minimum in terms of styling, so you don't need to spend time undoing properties. 
+
+			h3 Styling Components
+
+			p Components are styled using a user sass map. For example, $modal-user. To style a component, simply create a new map and specify your settings. 
+
+
+
+		article.article(id="containers")
+			h2 Forms
+
+			table.table-lined
+				thead
+					th Options
+					th Default
+					th Description
+				tbody
+					tr
+						td border
+						td 1px solid colors(keyline, dark)
+						td 
+					tr
+						td background
+						td white
+						td 
+					tr
+						td backgroundDisabled
+						td colors(greyscale, 500)
+						td 
+					tr
+						td borderRadius
+						td 3px
+						td 
+					tr
+						td placeholder
+						td colors(greyscale, 400)
+						td 
+					tr
+						td placeholderFocus
+						td colors(greyscale, 300)
+						td 
+
+					tr
+						td color
+						td colors(greyscale, 500)
+						td 
+					tr
+						td colorFocus
+						td colors(greyscale, 900)
+						td 
+					tr
+						td colorDisabled
+						td colors(greyscale, 700)
+						td 
+					tr
+						td shadow
+
+
+
+			.example.background-greyscale-200
+				.example-rendered
+					.container-small
+						.card
+							.card-section
+								h1.margin-bottom-double Create Your Account
+								form
+									input.form-entry(type="text" placeholder="Your Name")
+									input.form-entry(type="email" placeholder="Email Address")
+									input.form-entry(type="email" placeholder="Password" disabled)
+									input.button.primary(type="submit" value="Submit")
+
+
+			article.article(id="containers")
+				h2 Buttons
+
+				table.table-lined
+					thead
+						th Options
+						th Default
+						th Description
+					tbody
+
+						tr
+							td border
+							td 1px
+							td 
+
+						tr
+							td borderRadius
+							td 3px
+							td 
+
+						tr
+							td textTransform
+							td capitalize
+							td 
+
+						tr
+							td shadow
+							td 3px
+							td 
+						tr
+							td shadowHover
+							td 3px
+							td 
+						tr
+							td hoverBackground
+							td darken($color, 20%)
+							td 
+		
+
+
+				h3 Colors
+
+				.example.background-greyscale-200
+					.example-rendered
+						.button.primary Large Button
+						.button.secondary Large Button
+						.button.white Large Button
+
+
+				h3 Sizes
+				.example
+					.example-rendered
+						.button.primary.x-small X-Small Button
+						.button.primary.small Small Button
+						.button.primary Large Button
+						//- .button.primary.large Large Button
+
+
+			
+		
+		article.article(id="containers")
+			h2 Cards
+
+			table
+				thead
+					th Options
+				tbody
+					tr
+						td backgroundColor
+					tr
+						td border
+					tr
+						td shadow
+					tr
+						td borderRadius
+					tr
+						td itemBorder
+					tr
+						td hoverBackground
+						td Background color applied to striped tables.
+					tr
+						td hoverColor
+
+			.example.background-greyscale-100(style="height: 500px")
+				.example-rendered
+					
+					.card
+						.card-image
+
+						.card-section
+							h3 This is a card section
+							p Some paragraph
+
+
+
+		article.article(id="containers")
+			h2 Tooltips
+
+			p Tooltips include two modifier classes; direction and position. 
+
+			table.table-striped
+				thead
+					th Options
+				tbody
+					tr
+						td backgroundColor
+						td
+					tr
+						td border
+						td
+					tr
+						td shadow
+						td
+					tr
+						td borderRadius
+						td
+					tr
+						td color
+						td Background color applied to striped tables.
+					tr
+						td effect
+						td
+					tr
+						td effectTiming
+						td
+
+
+
+
+			.example
+				.example-rendered(style="height: 600px")
+					.tooltip.left.bottom
+						button.primary Test
+						.tooltip-content Test
+
+
+							
+		article.article(id="containers")
+			h2 Tables
+
+			table
+				thead
+					th Options
+				tbody
+					tr
+						td stripe-color
+						td Background color applied to striped tables.
+					tr
+						td outer-border
+					tr
+						td horizontal-border
+					tr
+						td vertical-border
+						td Border (e.g. 1px solid colors(keyline, light))
+					tr
+						td rowHoverBackground
+
+
+			.example
+				.example-rendered
+					table.striped
+						thead
+							th ID
+							th Name
+							th Email
+						tbody
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+				.example-rendered
+					table.lined
+						thead
+							th ID
+							th Name
+							th Email
+						tbody
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+							tr
+								td 1
+								td John Smith
+								td john.smith@mail.com
+
+		article.article(id="containers")
+			h2 Dropdown
+
+			table
+				thead
+					th Options
+				tbody
+					tr
+						td backgroundColor
+					tr
+						td border
+					tr
+						td shadow
+					tr
+						td borderRadius
+					tr
+						td itemBorder
+					tr
+						td hoverBackground
+						td Background color applied to striped tables.
+					tr
+						td hoverColor
+
+			.example.background-brand-primary
+				.example-rendered(style="height: 500px")
+					
+					.dropdown
+						a.dropdown-menu-toggle My Account
+						.dropdown-menu.is-open
+							ul.dropdown-menu-links
+								li
+									a(href="#") Dashboard
+								li
+									a(href="#") Settings
+								li.border-top
+									a(href="#") Logout
+
+		
+

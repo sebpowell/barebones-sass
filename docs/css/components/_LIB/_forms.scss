@@ -1,0 +1,94 @@
+$forms-default: (
+	border: 1px solid colors(keyline, dark),
+  borderDirection: bottom,
+  borderFocus: 1px solid colors(brand, primary),
+  borderRadius: 3px,
+
+	background: white,
+  backgroundDisabled: colors(greyscale, 200),
+	
+	color: colors(greyscale, 500),
+  colorFocus: colors(greyscale, 900),
+  colorDisabled: colors(greyscale, 700),
+  placeholder: colors(greyscale, 400),
+  placeholderFocus: colors(greyscale, 300),
+  transition: null,
+
+  shadow: null, 
+  innerShadow: 0 2px 2px rgba(00,00,00,0.2) inset,
+);
+
+
+.form-entry {
+  margin-bottom: sizes(base);
+}
+
+
+$form-config: map-extend($forms-default, $form-user);
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea,
+.input {
+	appearance: none;
+  -webkit-appearance: none;
+  border-radius: map-get($form-config, borderRadius);
+  border: map-get($form-config, border);
+  background: map-get($form-config, background);
+  color: map-get($form-config, color);
+  padding: sizes(base);
+  font-weight: 400;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  box-shadow: map-get($form-config, innerShadow);
+
+  &:focus {
+    color: map-get($form-config, colorFocus);
+    @include placeholder {
+      color: map-get($form-config, placeholderFocus);
+    }
+  }
+
+  // Remove clear icon in IE
+  &::-ms-clear {
+    display: none;
+  }
+
+  @include placeholder {
+    color: map-get($form-config, placeholder);
+  }
+  &:disabled {
+    background: map-get($form-config, backgroundDisabled);
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  height: auto !important;
+  padding: sizes(base) !important;
+  resize: none !important;
+  line-height: 1.7 !important;
+  font-size: 14px !important;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: sizes(half);
+  &.required {
+    &:after {
+      content: "*";
+      color: red;
+      margin-left: sizes(half);
+    }
+  }
+}
