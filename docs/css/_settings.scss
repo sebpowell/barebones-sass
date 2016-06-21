@@ -78,7 +78,7 @@ $breakpoints: (
 
 $misc: (
 	prefix: null,
-	units: rem
+	units: px
 );
 
 $font-sizes: (
@@ -99,18 +99,19 @@ $layers: (
 );
 
 $sizes: (
-  quarter: 0.25rem,
-  half: 0.5rem,
-  base: 16px, // 1rem
-  double-half: 1.5rem,
-  double: 2rem,
-  triple: 3rem,
-  quad: 4rem,
+  quarter: 4px,
+  half: 8px,
+  base: 16px,
+  double-half: 24px,
+  double: 32px,
+  triple: 48px,
+  quad: 64px,
 );
 
 $grid: (
 	columns: 12,
-	gutter: 0.5,
+	gutter: 1,
 	breakpoint: "device-medium",
+	type: "margin",
 	mobile-padding: 24px
 );

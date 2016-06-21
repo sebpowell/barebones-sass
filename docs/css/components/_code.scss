@@ -37,27 +37,27 @@ pre, .example {
       height: 100px;
     }
     .example-sidebar {
-      @include span(4, $gutter: 4);
+      // @include span(4, $gutter: 4);
     }
 
     .example-sidebar2 {
-      @include span(1 of 4);
+      // @include span(1 of 4);
       height: 100px;
     }
 
     .example-span {
-    	width: span(6);
+    	// width: span(6);
     }
 
     .example-offset {
     	@include if-below(device-small) {
-    		@include span(6);
+    		// @include span(6);
     	}
-    	@include span(6, $offset: 3);
+    	// @include span(6, $offset: 3);
     }
 
     .example-content-block {
-      @include span(8, $gutter: 4, $position: last);
+      // @include span(8, $gutter: 4, $position: last);
     }
   }
 
@@ -80,11 +80,11 @@ pre, .example {
 
   	.photo-gallery-item {
   		@include if-between(device-x-small, device-medium) {
-  			@include gallery(6, $gutter: 2);
+  			// @include gallery(6, $gutter: 2);
   		}
 
   		@include if-above(device-medium) {
-  			@include gallery(4);
+  			// @include gallery(4);
   		}
 
 

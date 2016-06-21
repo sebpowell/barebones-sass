@@ -1,33 +1,64 @@
 @mixin gallery($keys, $gutter: map-get($grid, gutter)) {
 
 	$key: nth($keys, 1);
-	$items: $columnCount / $key;
-
-	$totalGutters: $columnCount / $gutter + $columnCount - 1;
-	$gutterWidth: 100% / $totalGutters;
-	$totalGutterWidth: $gutterWidth * $gutterCount;
-	$columnWidth: (100% - $totalGutterWidth) / $columnCount;
-
-	width: ($key * $columnWidth) + (($key - 1) * $gutterWidth);
+	$items: map-get($grid, columns) / $key;
 	float: left;
-	margin-right: $gutterWidth;
-	margin-bottom: $gutterWidth;
 
-	&:nth-of-type( #{$items}n + #{$items} ) {
-		margin-right: 0;
+
+	@if map-get($grid, type) == "padding" {
+		width: 100% / $items;
+		padding: 0 $gutter;
+		height: 100px;
+		background: red;
 	}
 
-	&:not(:first-of-type) {
 
-		@include if-above($gridBreakpoint) {
-			&:nth-of-type(-n+#{$items}) {
-				margin-top: 0;
+	@if map-get($grid, type) == "margin" {
+
+		@if $gutter == 0 {
+			width: 100% / $items; 
+			height: 100px;
+			background: red;
+		}
+
+
+		@else if $gutter <= 1 {
+			$totalGutters: ( map-get($grid, columns) / $gutter ) + ( map-get($grid, columns) - 1 );
+			$gutterWidthTest: 100% / $totalGutters;
+			$totalGutterWidth: $gutterWidthTest * ( map-get($grid, columns) - 1 );
+			$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+			background: red;
+			height: 100px;
+			width: $key * $gutterWidthTest * (1 / $gutter);
+			&:not(:last-child) {
+				margin-right: $gutterWidthTest;
+			}
+		}
+
+		@else {
+			
+			$totalGutters: map-get($grid, columns) + ($gutter * ( map-get($grid, columns) - 1) );
+			$gutterWidthTest: 100% / $totalGutters;
+			$totalGutterWidth: $gutterWidthTest * ( map-get($grid, columns) - 1 );
+			// $columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+			background: red;
+			height: 100px;
+			width: $gutterWidthTest;
+			&:not(:last-child) {
+				margin-right: $gutterWidthTest * $gutter;
 			}
 		}
 	}
-	@include if-above($gridBreakpoint) {
-		&:nth-of-type(#{$items}n + #{$items}) {
-			margin-right: 0;
-		}
+
+
+	// Remove margin-right if more than n items in container.
+	&:nth-of-type(#{$items}n + #{$items}) {
+		margin-right: 0;
 	}
+
+	&:nth-of-type(-n+#{$items}) {
+		margin-top: 0;
+	} 
 }
+
+
