@@ -3,6 +3,12 @@
 }
 
 
+
+// .test-grid {
+//   @include gallery(1, $gutter: 24px);
+// }
+
+
 .docs-container {
   @include container(1100px);
   padding-top: 24px;
@@ -16,7 +22,7 @@
 
 .main-container {
 	@include if-above(device-medium-large) {
-		@include span(9, $position: last);
+		@include span(6, $position: last, $gutter: 4);
 	}
 }
 

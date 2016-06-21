@@ -1,9 +1,9 @@
-// Generates classes for column offsets.
-@for $i from 1 through $columnCount {
-	.offset-#{$i} {
-		margin-right: 0 !important;
-		@include if-above($gridBreakpoint) {
-			margin-left: $i * $columnWidth + $i * $gutterWidth;
-		}
-	}
-}
+// // Generates classes for column offsets.
+// @for $i from 1 through $columnCount {
+// 	.offset-#{$i} {
+// 		margin-right: 0 !important;
+// 		@include if-above($gridBreakpoint) {
+// 			margin-left: $i * $columnWidth + $i * $gutterWidth;
+// 		}
+// 	}
+// }
