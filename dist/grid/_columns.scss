@@ -1,3 +1,5 @@
+$gridBreakpoint: null;
+
 @mixin span($columns, $position: "", $gutter: map-get($grid, gutter), $offset: 0) {
 	float: left;	
 	$length: length($columns);
@@ -106,11 +108,8 @@
 
 // Generate column helper classes.
 @for $i from 1 through map-get($grid, columns) {
-
 	@if map-get($grid, type) == "padding" {
 		.columns-#{$i} {
-			background: red;
-			height: 200px;
 			@include if-below($gridBreakpoint) {
 				width: 100%;
 			}
@@ -126,8 +125,6 @@
 
 	@else if map-get($grid, type) == "margin" {
 		.columns-#{$i} {
-			background: red;
-			height: 200px;
 			@include if-below($gridBreakpoint) {
 				width: 100%;
 			}
