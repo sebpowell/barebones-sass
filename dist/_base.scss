@@ -1,13 +1,35 @@
+$misc: (
+	units: px
+) !default;
+
+$breakpoints: (
+	device-x-small: 350px,
+	device-small: 480px,
+	device-medium: 780px,
+	device-medium-large: 960px,
+	device-large: 1280px,
+	device-x-large: 1400px
+) !default;
+
+$grid: (
+	columns: 12,
+	gutter: 1,
+	breakpoint: "device-medium",
+	type: padding
+) !default;
+
+
 @import "mixins/mixins";
 @import "grid/grid";
 @import "helpers/helpers";
 
-* {
+*, *:before, *:after {
 	box-sizing: border-box;
 	&:hover, &:focus, &:active {
 		outline: none;
 	}
 }
+
 
 html,body, div, span, object, iframe, hr,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

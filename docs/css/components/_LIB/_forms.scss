@@ -24,6 +24,12 @@ $forms-default: (
 }
 
 
+
+appearance: none;
+-webkit-appearance: none; 
+outline: none;
+width: 100%;
+
 $form-config: map-extend($forms-default, $form-user);
 
 input[type="text"],
@@ -37,8 +43,7 @@ input[type="search"],
 select,
 textarea,
 .input {
-	appearance: none;
-  -webkit-appearance: none;
+	
   border-radius: map-get($form-config, borderRadius);
   border: map-get($form-config, border);
   background: map-get($form-config, background);
@@ -46,8 +51,7 @@ textarea,
   padding: sizes(base);
   font-weight: 400;
   font-size: 16px;
-  outline: none;
-  width: 100%;
+  
   box-shadow: map-get($form-config, innerShadow);
 
   &:focus {

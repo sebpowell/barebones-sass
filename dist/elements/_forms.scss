@@ -17,20 +17,20 @@ input[type="tel"],
 input[type="search"],
 select,
 textarea, {
-  border: map-get($forms, border);
-  border-radius: map-get($forms, borderRadius);
-  height: map-get($forms, height);
-  line-height: map-get($forms, height);
+  // border: map-get($forms, border);
+  // border-radius: map-get($forms, borderRadius);
+  // height: map-get($forms, height);
+  // line-height: map-get($forms, height);
   background: white;
-  padding-left: sizes(base);
-  font-family: fonts(primary);
-  font-size: 16px;
-  outline: none;
-  color: map-get($forms, color);
+  // padding-left: sizes(base);
+  // font-family: fonts(primary);
+  // font-size: 16px;
+  // outline: none;
+  // color: map-get($forms, color);
   width: 100%;
   -webkit-appearance: none;
   &:focus {
-    border-color: map-get($forms, borderFocus);
+    // border-color: map-get($forms, borderFocus);
     // @include placeholder {
     //   color: colors(greyscale, base);
     // }

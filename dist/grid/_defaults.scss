@@ -1,12 +1,3 @@
-$grid: (
-	columns: 12,
-	gutter: 1,
-	breakpoint: "device-medium",
-	type: padding
-) !default;
-
-
-
 $gutterCount: ( map-get($grid, columns) - 1 ) !default;
 @debug $gutterCount;
 $gutter: map-get($grid, gutter);

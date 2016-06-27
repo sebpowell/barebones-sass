@@ -1,85 +1,61 @@
-.columns-1 { background: red; height: 200px; }
+@media (max-width: null) { .columns-1 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-1 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-1 { width: 4.34783%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-1 { width: 4.34783%; float: left; margin-right: 4.34783%; }
   .columns-1:last-child { margin-right: 0; } }
 
-.columns-2 { background: red; height: 200px; }
+@media (max-width: null) { .columns-2 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-2 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-2 { width: 13.04348%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-2 { width: 13.04348%; float: left; margin-right: 4.34783%; }
   .columns-2:last-child { margin-right: 0; } }
 
-.columns-3 { background: red; height: 200px; }
+@media (max-width: null) { .columns-3 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-3 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-3 { width: 21.73913%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-3 { width: 21.73913%; float: left; margin-right: 4.34783%; }
   .columns-3:last-child { margin-right: 0; } }
 
-.columns-4 { background: red; height: 200px; }
+@media (max-width: null) { .columns-4 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-4 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-4 { width: 30.43478%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-4 { width: 30.43478%; float: left; margin-right: 4.34783%; }
   .columns-4:last-child { margin-right: 0; } }
 
-.columns-5 { background: red; height: 200px; }
+@media (max-width: null) { .columns-5 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-5 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-5 { width: 39.13043%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-5 { width: 39.13043%; float: left; margin-right: 4.34783%; }
   .columns-5:last-child { margin-right: 0; } }
 
-.columns-6 { background: red; height: 200px; }
+@media (max-width: null) { .columns-6 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-6 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-6 { width: 47.82609%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-6 { width: 47.82609%; float: left; margin-right: 4.34783%; }
   .columns-6:last-child { margin-right: 0; } }
 
-.columns-7 { background: red; height: 200px; }
+@media (max-width: null) { .columns-7 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-7 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-7 { width: 56.52174%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-7 { width: 56.52174%; float: left; margin-right: 4.34783%; }
   .columns-7:last-child { margin-right: 0; } }
 
-.columns-8 { background: red; height: 200px; }
+@media (max-width: null) { .columns-8 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-8 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-8 { width: 65.21739%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-8 { width: 65.21739%; float: left; margin-right: 4.34783%; }
   .columns-8:last-child { margin-right: 0; } }
 
-.columns-9 { background: red; height: 200px; }
+@media (max-width: null) { .columns-9 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-9 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-9 { width: 73.91304%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-9 { width: 73.91304%; float: left; margin-right: 4.34783%; }
   .columns-9:last-child { margin-right: 0; } }
 
-.columns-10 { background: red; height: 200px; }
+@media (max-width: null) { .columns-10 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-10 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-10 { width: 82.6087%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-10 { width: 82.6087%; float: left; margin-right: 4.34783%; }
   .columns-10:last-child { margin-right: 0; } }
 
-.columns-11 { background: red; height: 200px; }
+@media (max-width: null) { .columns-11 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-11 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-11 { width: 91.30435%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-11 { width: 91.30435%; float: left; margin-right: 4.34783%; }
   .columns-11:last-child { margin-right: 0; } }
 
-.columns-12 { background: red; height: 200px; }
+@media (max-width: null) { .columns-12 { width: 100%; } }
 
-@media (max-width: 780px) { .columns-12 { width: 100%; } }
-
-@media (min-width: 780px) { .columns-12 { width: 100%; float: left; margin-right: 4.34783%; }
+@media (min-width: null) { .columns-12 { width: 100%; float: left; margin-right: 4.34783%; }
   .columns-12:last-child { margin-right: 0; } }
 
 .row { zoom: 1; }
@@ -442,7 +418,7 @@
 
 html, body, div, span, object, iframe, hr, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, button, textarea, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; }
 
-html { min-height: 100%; height: 100%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+html { min-height: 100%; height: 100%; font-family: Avenir Next, Helvetica, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
 a, a:visited { color: inherit; text-decoration: none; cursor: pointer; }
 
@@ -494,7 +470,7 @@ button.white.empty:hover, .button.white.empty:hover, .share-bar .newsletter .whi
 
 .form-entry { margin-bottom: 16px; }
 
-input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="url"], input[type="date"], input[type="tel"], input[type="search"], select, textarea, .input { appearance: none; -webkit-appearance: none; border-radius: 3px; border: 1px solid #D9D9D8; background: white; color: #9E9E9E; padding: 16px; font-weight: 400; font-size: 16px; outline: none; width: 100%; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2) inset; }
+input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="url"], input[type="date"], input[type="tel"], input[type="search"], select, textarea, .input { border-radius: 3px; border: 1px solid #D9D9D8; background: white; color: #9E9E9E; padding: 16px; font-weight: 400; font-size: 16px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2) inset; }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="url"]:focus, input[type="date"]:focus, input[type="tel"]:focus, input[type="search"]:focus, select:focus, textarea:focus, .input:focus { color: #212121; }
 
@@ -693,8 +669,7 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection, code[cl
 
 @media (min-width: 960px) { .docs-container { padding-top: 80px; } }
 
-@media (min-width: 960px) { .main-container { float: left; height: 100px; width: 46.42857%; margin-right: 0; float: right; }
-  .main-container:not(:last-child) { margin-right: 28.57143%; } }
+@media (min-width: 960px) { .main-container { float: left; width: 66.66667%; margin-right: 0; float: right; } }
 
 .page-title { font-size: 42px; font-weight: 700; color: #212121; }
 
@@ -846,7 +821,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; }
 
 @media (min-width: 780px) and (max-width: 780px) { .share-bar .newsletter .newsletter-submit { width: 100%; } }
 
-@media (min-width: 780px) { .share-bar .newsletter .newsletter-input { font-size: 16px; height: 48px; line-height: 48px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; background: transparent; width: 100%; border-radius: 100px; padding: 16px; background: white; border: 1px solid #D9D9D8; } }
+@media (min-width: 780px) { .share-bar .newsletter .newsletter-input { font-size: 16px; height: 48px; line-height: 48px; font-family: Avenir Next, Helvetica, Arial, sans-serif; background: transparent; width: 100%; border-radius: 100px; padding: 16px; background: white; border: 1px solid #D9D9D8; } }
 
 @media (min-width: 780px) and (max-width: 780px) { .share-bar .newsletter .newsletter-input { text-align: center; margin-bottom: 8px; } }
 
@@ -910,3 +885,5 @@ h1, h2, h3, h4, h5, h6 { font-weight: 600; }
 .welcome-masthead-footer a { color: white; }
 
 .welcome-masthead-footer a:hover { text-decoration: underline; }
+
+html { background: black; color: white; }
