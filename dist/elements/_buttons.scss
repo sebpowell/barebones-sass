@@ -14,18 +14,6 @@ button, .button {
 		&.#{$name} {
 			background: $value;
 			color: white;
-
-			&:hover {
-				$type: nth(map-get($buttons-config, hoverBackground), 1);
-				$value2: nth(map-get($buttons-config, hoverBackground), 2);
-				@if $type == "darken" {
-					background: darken($value, $value2);
-				}
-				@if $type == "lighten" {
-					background: lighten($value, $value2);
-				}
-			}
-
 		}
 	}
 }
