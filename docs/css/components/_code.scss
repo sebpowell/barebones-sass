@@ -3,8 +3,17 @@ pre, .example {
 }
 
 
+
+.example-code-toggle {
+  position: absolute;
+  @include no-bullet;
+  > li {
+  
+  }
+}
+
 .example {
-  border: 1px solid colors(keyline, light);
+  border: 1px solid colors(keyline, dark);
   border-radius: 3px;
 
 

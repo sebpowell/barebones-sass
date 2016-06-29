@@ -1,0 +1,34 @@
+extends  _inc/_layout.jade
+
+block body
+	.main-container
+		h1.page-title Functions
+		article.article(id="arrow")
+			h2 Arrow
+			p Creates a triangle, used for things like tooltips or dropdowns.
+
+			table.table-lined.margin-bottom-double
+				thead
+					th(colspan="2") Options
+				tr
+					td <span class="var">$direction</span>
+					td up, down, left, right, top-right, top-left, bottom-right, bottom-left
+				tr
+					td <span class="var">$color</span>
+					td Any hex value (e.g. #E5E5E5)
+				tr
+					td <span class="var">$size</span>
+					td Any px value (e.g. 6px)
+
+			.example
+
+				pre.example-code
+					code.language-scss.
+						.element { 
+							&:after {
+								@include arrow(down, black, 20px);
+							}
+						 }
+
+
+

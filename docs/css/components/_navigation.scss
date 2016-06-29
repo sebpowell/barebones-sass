@@ -72,9 +72,13 @@
 
 
 .docs-navigation {
-  // @include span(3);
   background: white;
   position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 380px;
+  border-right: 1px solid colors(keyline, dark);
 
   &.show {
     visibility: visible;
@@ -109,17 +113,13 @@
 
   .docs-navigation-primary-links {
     @include if-above(device-medium-large) {
-      position: fixed;
-      min-width: 240px;
-      max-height: 500px;
-      overflow-y: scroll;
-      border: 1px solid colors(keyline, light);
+  
       border-radius: 5px;
     }
 
     > li {
     	&:not(:last-child) {
-    		border-bottom: 1px solid colors(keyline, light);
+    		border-bottom: 1px solid colors(keyline, dark);
     	}
     }
   }
@@ -136,8 +136,10 @@
     		}
     		.sub-navigation {
     			display: block;
+          background: colors(greyscale, 100);
           a {
             color: colors(greyscale, 700);
+            font-size: 14px;
             &:hover {
               color: colors(greyscale, 900);
             }
@@ -146,8 +148,8 @@
     	}
       > a {
       	transition: color .5s;
-        padding: rem(12px);
-        font-size: rem(14px);
+        padding: sizes(double-half);
+        font-size: 20px;
         text-decoration: none;
         display: block;
         @include if-above(device-medium) {

@@ -112,132 +112,33 @@
       </ul>
     </div>
     <div class="main-container">
-      <h1 class="page-title">Settings</h1>
-      <article class="article introduction">
-        <p>Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project.</p>
-        <p>For example, the <span class="var">if-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.</p>
-        <div class="info-panel warning margin-bottom-double">
-          <p>The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones-sass/blob/master/docs/css/_settings.scss" target="_blank">this template</a>.</p>
-        </div>
-      </article>
-      <article id="misc" class="article">
-        <h2>Misc</h2>
-        <p>Allows you to specify class prefixing (by default Barebones classes aren't namespaced) and unit type (px, rems or ems).</p>
+      <h1 class="page-title">Functions</h1>
+      <article id="arrow" class="article">
+        <h2>Arrow</h2>
+        <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
+        <table class="table-lined margin-bottom-double">
+          <thead>
+            <th colspan="2">Options</th>
+          </thead>
+          <tr>
+            <td><span class="var">$direction</span></td>
+            <td>up, down, left, right, top-right, top-left, bottom-right, bottom-left</td>
+          </tr>
+          <tr>
+            <td><span class="var">$color</span></td>
+            <td>Any hex value (e.g. #E5E5E5)</td>
+          </tr>
+          <tr>
+            <td><span class="var">$size</span></td>
+            <td>Any px value (e.g. 6px)</td>
+          </tr>
+        </table>
         <div class="example">
-          <pre class="example-code"><code class="language-scss">$misc: (
-	prefix: "bb-",
-	units: px
-);
-</code></pre>
-        </div>
-      </article>
-      <article id="colors" class="article">
-        <h2>Colors</h2>
-        <p>Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.</p>
-        <div class="example margin-bottom-double">
-          <pre class="example-code border-bottom"><code class="language-scss">$colors: (
-	brand: (
-		primary: #157AFB,
-		secondary: #FE5607,
-		...
-	),
-	secondary: (
-		orange: #F8B000,
-		...
-	),
-	greyscale: (
-		50: #FAFAFA,
-		100: #F5F5F5,
-		...
-	),
-	keyline: (
-		light: #E5E5E5,
-		...
-	),
-);
-</code></pre>
-          <pre class="example-code"><code class="language-scss">.element {
-	background-color: colors(brand, primary);
-}
-</code></pre>
-        </div>
-      </article>
-      <article id="fonts" class="article">
-        <h2>Fonts</h2>
-        <p>Specify font familys' and their respective weights. Access using <span class="var">fonts($family)</span> and <span class="var">weights($family, $weight)</span> functions.</p>
-        <div class="example margin-bottom-double">
-          <pre class="example-code"><code class="language-scss">$fonts: (
-	primary: (
-		family: Open Sans,
-		weights: (
-		 light: 100,
-		 regular: 200,
-		 semi-bold: 500
-		)
-	),
-	secondary: (
-		family: Futura PT,
-		weights: (
-			bold: 600,
-		)
-	)
-);
-</code></pre>
-        </div>
-      </article>
-      <article id="grid" class="article">
-        <h2>Grid</h2>
-        <p>Specify global grid settings. Access using <span class="var">grid($setting)</span>. Read more about the grid system and available settings <a href="grid.html">here</a>.</p>
-        <div class="example margin-bottom-double">
-          <pre class="example-code"><code class="language-scss">$grid: (
-	columns: 12,
-	gutter: 1/4,
-);
-</code></pre>
-        </div>
-      </article>
-      <article id="breakpoints" class="article">
-        <h2>Breakpoints</h2>
-        <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.</p>
-        <div class="example margin-bottom-double">
-          <pre class="example-code"><code class="language-scss">$breakpoints: (
-	device-small: 320px,
-	device-medium: 480px,
-	...
-);
-
-</code></pre>
-        </div>
-      </article>
-      <article id="sizes" class="article">
-        <h2>Sizes</h2>
-        <p>Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.</p>
-        <div class="example">
-          <pre class="example-code border-bottom"><code class="language-scss">$sizes: (
-	quarter: 4px,
-	half: 8px,
-	base: 16px,
-	...
-);</code></pre>
-          <pre class="example-code"><code class="language-scss">.element {
-	padding: sizes(quarter);
-}
-</code></pre>
-        </div>
-      </article>
-      <article id="layers" class="article">
-        <h2>Layers</h2>
-        <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.</p>
-        <div class="example">
-          <pre class="example-code border-bottom"><code class="language-scss">$layers: (
-	modal: 5,
-	backdrop: 2,
-	navigation: 4,
-	...
-);</code></pre>
-          <pre class="example-code"><code class="language-scss">.modal {
-	z-index: layers(modal);
-}</code></pre>
+          <pre class="example-code"><code class="language-scss">.element { 
+	&:after {
+		@include arrow(down, black, 20px);
+	}
+ }</code></pre>
         </div>
       </article>
     </div>

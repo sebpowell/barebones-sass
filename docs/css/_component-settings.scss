@@ -4,17 +4,6 @@ $backdrop: (
 	transition: all .5s
 );
 
-$form-user: (
-  // border-radius: 3px,
-  // color: blue,
-  // colorOut: orange,
-  // placeholder: red,
-  // placeholderFocus: orange,
-  // background: beige,
-  // outline: none, 
-  // box-shadow: none,
-
-);
 
 $buttons-user: (
 
@@ -39,25 +28,4 @@ $tooltip-user: (
 $tables-user: (
 	stripes: colors(greyscale, 100),
 );
-
-
-// $card: (
-// 	border-radius: 3px,
-// 	shadow:
-// 	border:
-// 	background:
-// 	text-transform: uppercase,
-// 	letter-spacing: 0.01em,
-// 	box-shadow: 0 0 0 5px,
-// );
-
-
-
-
-// $modal: (
-// 	effect: popdown,
-// 	borderRadius: 3px,
-// 	shadow: 20px,
-// 	backdrop: rgba(00,00,00,0.2);
-// );
 

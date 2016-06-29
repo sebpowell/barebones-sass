@@ -29,12 +29,6 @@
 </html>
 <body class="page-layout-docs">
   <div class="backdrop"></div>
-  <div class="primary-navigation"><a href="index.html" class="logo"><img src="docs/images/logo-blue.png"/></a>
-    <div class="github"><a href="https://github.com/sebpowell/barebones-sass" data-style="mega" data-count-href="/sebpowell/barebones-sass" data-count-api="/sebpowell/barebones-sass" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub" class="github-button">Star</a></div>
-  </div>
-  <div class="mobile-docs-navigation"><a href="welcome.html" class="logo"><img src="docs/images/logo.png"/></a>
-    <div class="mobile-navigation-toggle"><span></span><span></span><span></span><span></span></div>
-  </div>
   <div class="docs-container">
     <div class="docs-navigation">
       <ul class="docs-navigation-primary-links">
@@ -91,6 +85,19 @@
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
+        <li><a href="functions.html">Functions</a>
+          <ul class="sub-navigation">
+            <li><a href="#arrow">Arrow</a></li>
+            <li><a href="#placeholder">Placeholder</a></li>
+            <li><a href="#uppercase">Uppercase</a></li>
+            <li><a href="#clearfix">Clearfix</a></li>
+            <li><a href="#ellipsis">Ellipsis</a></li>
+            <li><a href="#media-queries">Media Queries</a></li>
+            <li><a href="#strip-units">Strip Units</a></li>
+            <li><a href="#convert-to-rem">Convert to REM</a></li>
+            <li><a href="#no-bullet">No Bullet</a></li>
+          </ul>
+        </li>
         <li><a href="utilities.html">Utilities</a>
           <ul class="sub-navigation">
             <li><a href="#background">Background Color</a></li>
@@ -119,6 +126,11 @@
             <th>Description</th>
           </thead>
           <tr>
+            <td><span class="var">type</span></td>
+            <td>margin</td>
+            <td>Choose from a padding or margin-based grid. </td>
+          </tr>
+          <tr>
             <td><span class="var">columns</span></td>
             <td>12</td>
             <td>Specifies the number of columns in your grid.</td>
@@ -131,9 +143,14 @@
           <tr>
             <td><span class="var">gutter</span></td>
             <td>1/4</td>
-            <td>Gutters are created using margins, expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2).</td>
+            <td>If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px).</td>
+            
           </tr>
         </table>
+      </article>
+      <article id="containers" class="article">
+        <h2>Grid Type</h2>
+        <p>Barebones allows you to create a grid system that uses either <strong>margins</strong> or padding</strong>. Padding-based grids work by adding padding to left and right side of each column. This creates the gutters in between columns, </p>
       </article>
       <article id="containers" class="article">
         <h2>Containers</h2>
@@ -165,61 +182,25 @@
         </div>
       </article>
       <article id="columns" class="article">
-        <h2>Columns</h2>
-        <p>Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.</p>
-        <h3>Span Mixin</h3>
-        <p>The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.</p>
-        <table class="table-lined margin-bottom-double">
-          <thead>
-            <th colspan="2">Options</th>
-          </thead>
-          <tr>
-            <td><span class="var">$columns</span></td>
-            <td>Number of columns the component spans, of the total number defined in your settings file (by default this is 12).</td>
-          </tr>
-          <tr>
-            <td><span class="var">$position</span> <em>(optional)</em></td>
-            <td>If the column is the last one, pass in the 'last' keyword to remove the margin-right property and float the column to the right.</td>
-          </tr>
-          <tr>
-            <td><span class="var">$gutter</span> <em>(optional)</em></td>
-            <td>Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.</td>
-          </tr>
-          <tr>
-            <td><span class="var">$offset</span> <em>(optional)</em></td>
-            <td>Offset the container by a given number of columns.</td>
-          </tr>
-        </table>
+        <h2>Span</h2>
+        <p>Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.</p>
+        <h3>Columns (required)</h3>
+        <p>Number of columns the component spans, of the total number defined in your settings file (by default this is 12). Barebones also allows you to create a new context, which may be useful in some situations. For example, you may want want to create a grid wit 5 items per row – this isn't possible with a 12-column grid. In these instances, you can override the global context by passing in a new context. </p>
         <div class="example">
-          <div class="example-rendered">
-            <div class="example-wrapper">
-              <div style="background-color: lightpink" class="example-sidebar"></div>
-              <div style="background-color: lightpink" class="example-content-block"></div>
-            </div>
-          </div>
+          <div class="example-code-toggle"></div>
           <pre class="example-code border-bottom"><code class="language-scss">.sidebar {
-	@include if-above(device-medium) {
-		@include span(4); // Creates a column that spans 4 colums above this size.
-	}
+	@include span(4); // Spans 4 colums out of your global context (default: 12)
 }
 
 .content {
-	@include if-above(device-medium) {
-		@include span(8, $position: last); // Creates a column that spans 8 colums above this size.
-	}
+	@include span(8, $position: last); // Spans 8 colums above this size.
 }</code></pre>
-          <pre class="example-code"><code class="language-scss">.sidebar {
-	width: 30.43478%;
-	margin-right: 4.34783%;
-	float: left;
-}
-.content {
-	width: 60.21739%;
-	margin-right: 0;
-	float: right;
+          <pre class="example-code border-bottom"><code class="language-scss">.sidebar {
+	@include span(4 of 20); // Create a new context. This spans 4 columns out of 20.
 }
 </code></pre>
         </div>
+        
         <h3>Span Function</h3>
         <p>The <span class="var">span($columns)</span> only returns a width value for the container - nothing else.</p>
         <div class="example margin-bottom-double">

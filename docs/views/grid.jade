@@ -15,6 +15,12 @@ block body
 					th Setting
 					th Default
 					th Description
+
+				tr
+					td <span class="var">type</span>
+					td margin
+					td Choose from a padding or margin-based grid. 
+
 				tr
 					td <span class="var">columns</span>
 					td 12
@@ -26,9 +32,22 @@ block body
 				tr
 					td <span class="var">gutter</span>
 					td 1/4
-					td Gutters are created using margins, expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2).
+					td If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px).
+					//- 				olumns: 12,
+					//- type: margin,
+					//- gutter: 0.5,
+					//- breakpoint: "device-medium",
+					//- mobile-padding: 24px
 
 
+		
+		article.article(id="containers")
+
+			h2 Grid Type
+
+			p Barebones allows you to create a grid system that uses either <strong>margins</strong> or padding</strong>. Padding-based grids work by adding padding to left and right side of each column. This creates the gutters in between columns, 
+
+	
 		article.article(id="containers")
 			h2 Containers
 			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.
@@ -64,64 +83,50 @@ block body
 
 		article.article(id="columns")
 
-			h2 Columns
+			h2 Span
 
-			p Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.
+			p Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.
 
 
-			h3 Span Mixin
-
-			p The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.
-
-			table.table-lined.margin-bottom-double
-				thead
-					th(colspan="2") Options
-				tr
-					td <span class="var">$columns</span>
-					td Number of columns the component spans, of the total number defined in your settings file (by default this is 12).
-				tr
-					td <span class="var">$position</span> <em>(optional)</em>
-					td If the column is the last one, pass in the 'last' keyword to remove the margin-right property and float the column to the right.
-				tr
-					td <span class="var">$gutter</span> <em>(optional)</em>
-					td Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.
-				tr
-					td <span class="var">$offset</span> <em>(optional)</em>
-					td Offset the container by a given number of columns.
+			h3 Columns (required)
+			p Number of columns the component spans, of the total number defined in your settings file (by default this is 12). Barebones also allows you to create a new context, which may be useful in some situations. For example, you may want want to create a grid wit 5 items per row – this isn't possible with a 12-column grid. In these instances, you can override the global context by passing in a new context. 
 
 
 			.example
-				.example-rendered
-					.example-wrapper
-						.example-sidebar(style="background-color: lightpink")
-						.example-content-block(style="background-color: lightpink")
-
+				.example-code-toggle
+					
 				pre.example-code.border-bottom
 					code.language-scss.
 						.sidebar {
-							@include if-above(device-medium) {
-								@include span(4); // Creates a column that spans 4 colums above this size.
-							}
+							@include span(4); // Spans 4 colums out of your global context (default: 12)
 						}
 
 						.content {
-							@include if-above(device-medium) {
-								@include span(8, $position: last); // Creates a column that spans 8 colums above this size.
-							}
+							@include span(8, $position: last); // Spans 8 colums above this size.
 						}
-				pre.example-code
+				pre.example-code.border-bottom
 					code.language-scss.
 						.sidebar {
-							width: 30.43478%;
-							margin-right: 4.34783%;
-							float: left;
-						}
-						.content {
-							width: 60.21739%;
-							margin-right: 0;
-							float: right;
+							@include span(4 of 20); // Create a new context. This spans 4 columns out of 20.
 						}
 
+			//- table.table-lined.margin-bottom-double
+			//- 	thead
+			//- 		th(colspan="2") Options
+			//- 	tr
+					
+			//- 	tr
+			//- 		td <span class="var">$position</span> <em>(optional)</em>
+			//- 		td If the column is the last one, pass in the 'last' keyword to remove the margin-right property and float the column to the right.
+			//- 	tr
+			//- 		td <span class="var">$gutter</span> <em>(optional)</em>
+			//- 		td Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.
+			//- 	tr
+			//- 		td <span class="var">$offset</span> <em>(optional)</em>
+			//- 		td Offset the container by a given number of columns.
+
+
+			
 			h3 Span Function
 			p The <span class="var">span($columns)</span> only returns a width value for the container - nothing else.
 

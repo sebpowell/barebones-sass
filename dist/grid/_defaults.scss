@@ -1,5 +1,4 @@
 $gutterCount: ( map-get($grid, columns) - 1 ) !default;
-@debug $gutterCount;
 $gutter: map-get($grid, gutter);
 
 

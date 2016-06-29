@@ -2,21 +2,21 @@ include _head.jade
 
 body.page-layout-docs
 	.backdrop
-	.primary-navigation
-		a.logo(href = "index.html")
-			img(src="#{image_base}logo-blue.png")
-		.github
-			a(class="github-button" href="https://github.com/sebpowell/barebones-sass" data-style="mega" data-count-href="/sebpowell/barebones-sass" data-count-api="/sebpowell/barebones-sass" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub") Star
+	//- .primary-navigation
+	//- 	a.logo(href = "index.html")
+	//- 		img(src="#{image_base}logo-blue.png")
+	//- 	.github
+	//- 		a(class="github-button" href="https://github.com/sebpowell/barebones-sass" data-style="mega" data-count-href="/sebpowell/barebones-sass" data-count-api="/sebpowell/barebones-sass" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub") Star
 
-	.mobile-docs-navigation
-		a.logo(href = "welcome.html")
-			img(src="#{image_base}logo.png")
+	//- .mobile-docs-navigation
+	//- 	a.logo(href = "welcome.html")
+	//- 		img(src="#{image_base}logo.png")
 
-		.mobile-navigation-toggle
-			span
-			span
-			span
-			span
+	//- 	.mobile-navigation-toggle
+	//- 		span
+	//- 		span
+	//- 		span
+	//- 		span
 
 	//- .share-bar
 	//- 	.newsletter
@@ -90,6 +90,28 @@ body.page-layout-docs
 							a(href='#generator') Tooltip
 				li
 					a(href='mixins.html') Mixins
+					ul.sub-navigation
+						li
+							a(href='#arrow') Arrow
+						li
+							a(href='#placeholder') Placeholder
+						li
+							a(href='#uppercase') Uppercase
+						li
+							a(href='#clearfix') Clearfix
+						li
+							a(href='#ellipsis') Ellipsis
+						li
+							a(href='#media-queries') Media Queries
+						li
+							a(href='#strip-units') Strip Units
+						li
+							a(href='#convert-to-rem') Convert to REM
+						li
+							a(href='#no-bullet') No Bullet
+
+				li
+					a(href='functions.html') Functions
 					ul.sub-navigation
 						li
 							a(href='#arrow') Arrow
