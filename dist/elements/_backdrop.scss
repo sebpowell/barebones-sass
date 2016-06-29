@@ -1,13 +1,15 @@
 $backdrop-default: (
-  background: rgba(00,00,00,.2);
+  background: rgba(00,00,00,.2),
   effectTiming: all .5s,
   effectClass: is-open,
 );
 
+$backdrop-user: () !default;
+
 $backdrop-config: map-extend($backdrop-default, $backdrop-user);
 
 .backdrop {
-	z-index: layers(backdrop);
+	// z-index: layers(backdrop);
 	position: fixed;
 	top: 0;
 	left: 0;

@@ -634,7 +634,7 @@
 
 html, body, div, span, object, iframe, hr, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, button, textarea, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; }
 
-html { min-height: 100%; height: 100%; font-family: Avenir Next, Helvetica, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+html { min-height: 100%; height: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
 a, a:visited { color: inherit; text-decoration: none; cursor: pointer; }
 
@@ -644,9 +644,9 @@ table { width: 100%; padding: 0; margin: 0; border-collapse: initial; border-spa
 
 img { max-width: 100%; }
 
-.backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); visibility: hidden; opacity: 0; transition: all 0.5s; }
+.backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2); visibility: hidden; opacity: 0; transition: all 0.5s; }
 
-.backdrop.is-visible { visibility: visible; opacity: 1; }
+.backdrop.is-open { visibility: visible; opacity: 1; }
 
 input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="url"], input[type="date"], input[type="tel"], input[type="search"], select, textarea { appearance: none; -webkit-appearance: none; border: 2px solid #BDBDBD; height: 48px; line-height: 48px; color: black; padding-left: 16px; font-weight: 400; font-size: 16px; outline: none; text-decoration: none; width: 100%; }
 
@@ -678,9 +678,9 @@ label.required:after { content: "*"; color: red; margin-left: 8px; }
 
 .dropdown-menu.dropdown-menu-right, .dropdown-menu.right { right: 0; }
 
-.backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); visibility: hidden; opacity: 0; transition: all 0.5s; }
+.backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2); visibility: hidden; opacity: 0; transition: all 0.5s; }
 
-.backdrop.is-visible { visibility: visible; opacity: 1; }
+.backdrop.is-open { visibility: visible; opacity: 1; }
 
 button, .button, .share-bar .newsletter .newsletter-submit { display: inline-block; background: transparent; padding: 0 32px; height: 48px; line-height: 48px; border-radius: 3px; cursor: pointer; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); transition: 0.5s; font-weight: 600; font-size: 16px; text-decoration: none; text-transform: capitalize; text-align: center; }
 
@@ -758,7 +758,7 @@ label.required:after { content: "*"; color: red; margin-left: 8px; }
 
 .tooltip:hover .tooltip-content { visibility: visible; opacity: 1; transform: scale(1); }
 
-.tooltip .tooltip-content { border-radius: 5px; white-space: normal; padding: 16px; width: 200px; opacity: 0; color: white; border: 0; box-shadow: 0; visibility: hidden; margin-bottom: 8px; text-transform: none !important; font-weight: 400 !important; text-align: center; transition: all .25s; line-height: 1.5; position: absolute; background: black; }
+.tooltip .tooltip-content { -webkit-filter: drop-shadow(0 -1px 1px rgba(104, 104, 104, 0.15)); border-radius: 5px; white-space: normal; padding: 16px; width: 200px; opacity: 0; color: white; border: 0; box-shadow: 0; visibility: hidden; margin-bottom: 8px; text-transform: none !important; font-weight: 400 !important; text-align: center; transition: all .25s; line-height: 1.5; position: absolute; background: black; }
 
 .tooltip .tooltip-content:after, .tooltip .tooltip-content:before { position: absolute; }
 
@@ -800,7 +800,7 @@ table.striped tr:nth-child(even), table.table-striped tr:nth-child(even) { backg
 
 .dropdown { position: relative !important; }
 
-.dropdown .dropdown-menu { border-radius: 3px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4); border: 1px solid #e0e6ed; position: absolute !important; top: 100%; width: 240px; background: white; padding: 8px 0; opacity: 0; visibility: hidden; transition: all .5s; transform: translateY(40px); }
+.dropdown .dropdown-menu { border-radius: 3px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4); border: 1px solid #e0e6ed; position: absolute !important; top: 100%; width: 240px; background: white; padding: 8px 0; opacity: 0; visibility: hidden; -webkit-filter: drop-shadow(0 -1px 1px rgba(104, 104, 104, 0.15)); transition: all .5s; transform: translateY(40px); }
 
 .dropdown .dropdown-menu:after, .dropdown .dropdown-menu:before { position: absolute; }
 
