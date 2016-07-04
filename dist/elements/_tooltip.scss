@@ -1,77 +1,58 @@
-// $tooltip-default: (
-//   padding: sizes(base),
-//   tooltipSize: 20px,
-//   tailSize: 10px,
-//   background: white,
-// );
+$tooltip-default: (
+  padding: sizes(base),
+  tooltipSize: 20px,
+  tailSize: 10px,
+  background: white,
+);
 
-// $tooltip-config: map-merge($tooltip-default, $tooltip-user);
 
-// .tooltip {
-//   position: relative;
-//   &:hover {
-//     .tooltip-content {
-//       visibility: visible;
-//       opacity: 1;
-//       transform: scale(1);
-//     }
-//   }
-//   .tooltip-content {
-//     @include arrowtip(down, map-get($tooltip-config, tailSize), map-get($tooltip-config, background), rgba(104, 104, 104, 0.5));
-//     // z-index: layers(tooltip);
-//     border-radius: map-get($tooltip-config, border-radius);
-//     white-space: normal;
-//     padding: map-get($tooltip-config, padding);
-//     width: 200px;
-//     opacity: 0;
-//     color: map-get($tooltip-config, text-color);
-//     border: map-get($tooltip-config, border);
-//     box-shadow: map-get($tooltip-config, shadow);
-//     visibility: hidden;
-    
-//     margin-bottom: sizes(half);
-//     text-transform: none !important;
-//     font-weight: 400 !important;
-//     font-size: map-get($tooltip-config, font-size);
-//     text-align: center;
-//     transition: all .25s;
-//     line-height: 1.5;
-//     position: absolute;
-//     background: map-get($tooltip-config, background);
-//     // transform: scale(0.8);
-//     &:after {
-//       position: absolute;
-//     }
-//     &.is-visible {
-//       visibility: visible;
-//       opacity: 1;
-//     }
-//   }
+$tooltip-user: () !default;
 
-//   $tooltip-positions: (left, center, right);
+$tooltip-config: map-merge($tooltip-default, $tooltip-user);
 
-//   &.top {
-//     .tooltip-content {
-//       &:after, &:before {
-//         bottom: -(map-get($tooltip-config, tailSize));
-//       }
-//     }
-//   }
-//   @each $position in $tooltip-positions {
-//     @if $position == "left" {
-//       &.#{$position} {
-//         .tooltip-content {
-//             left: 0;
-//             bottom: 100%;
-//           &:after, &:before { 
-//             left: sizes(base);
-//           }
-//         }
-//       }
-//     }
-//   }
-//   &:after, &:before {
-//     margin-left: -(map-get($tooltip-config, tooltipSize));
-//     bottom: -(map-get($tooltip-config, tooltipSize));
-//   }
-// }
+.tooltip {
+  position: relative;
+  &:hover {
+    .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .tooltip-content {
+    white-space: normal;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    text-transform: none !important;
+    position: absolute;
+    &.is-visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  $tooltip-positions: (left, center, right);
+
+  &.top {
+    .tooltip-content {
+      &:after, &:before {
+        bottom: -(map-get($tooltip-config, tailSize));
+      }
+    }
+  }
+  @each $position in $tooltip-positions {
+    @if $position == "left" {
+      &.#{$position} {
+        .tooltip-content {
+            left: 0;
+            bottom: 100%;
+        }
+      }
+    }
+  }
+  &:after, &:before {
+    margin-left: -(map-get($tooltip-config, tooltipSize));
+    bottom: -(map-get($tooltip-config, tooltipSize));
+  }
+}
