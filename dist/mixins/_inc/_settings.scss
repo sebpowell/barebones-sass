@@ -61,7 +61,7 @@
 				$rest: append($rest, nth($keys, $i));
 
 			}
-			@warn "The key '#{$key}' doesn't exist. Please check your settings file.";
+			// @warn "The key '#{$key}' doesn't exist. Please check your settings file.";
 		}
 	}
 	@return $map;
@@ -74,7 +74,7 @@
 	 @return map-get($sizes, $size);
 	}
 	@else {
-		@warn "#{$size} does not exist in sizes map."
+		// @warn "#{$size} does not exist in sizes map."
 	}
 }
 
@@ -83,7 +83,7 @@
 	 @return map-get($grid, $object);
 	}
 	@else {
-	 @warn "#{$object} does not exist in grid map."
+	//  @warn "#{$object} does not exist in grid map."
 	}
 }
 
@@ -116,8 +116,6 @@
 	 @return map-get($layers, $object);
 	}
 	@else {
-		@warn "#{$object} does not exist in layers map."
+		// @warn "#{$object} does not exist in layers map."
 	}
 }
-
-

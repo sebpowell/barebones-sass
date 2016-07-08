@@ -1,3 +1,5 @@
+$colors: ();
+
 @each $palette, $name in $colors {
 	@each $colour, $value in $name {
 		.#{map-get($test, prefix)}background-#{$palette}-#{$colour} {
