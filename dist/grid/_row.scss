@@ -1,3 +1,9 @@
-.row {
+.row, .flex-row {
 	@include clearfix;
+	@if map-get($grid, type) == "padding" {
+		@include if-above($gridBreakpoint) {
+			margin-left: -($gutter);
+			margin-right: -($gutter);
+		}
+	}
 }
