@@ -1,3 +1,7 @@
+$font: () !default;
+
+$font-sizes: () !default;
+
 // Generate text size helpers
 @each $key, $value in $font-sizes {
 	.#{map-get($test, prefix)}text-#{$key} {
@@ -8,6 +12,12 @@
 		@else {
 			font-size: #{$value} !important;
 		}
+	}
+}
+
+@each $weight, $value in map-get($font, weights) {
+	.weight-#{$weight} {
+		font-weight: $value !important;
 	}
 }
 
