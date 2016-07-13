@@ -13,7 +13,7 @@ $gridBreakpoint: 720 !default;
 
 	// Padding-based grid handler.
 	@if map-get($grid, type) == "padding" {
-		padding: 0 $gutter;
+		padding: 0 $gutter / 2;
 		@if $length > 2 {
 			width: (100% / $columnContext) * $columnCount;
 		}
@@ -116,10 +116,10 @@ $gridBreakpoint: 720 !default;
 					margin-bottom: $gutter / 2;
 				}
 			}
- 
+
 			@include if-above($gridBreakpoint) {
 				width: $i * (100% /  map-get($grid, columns));
-				padding: 0 $gutter;
+				padding: 0 $gutter / 2;
 				float: left;
 			}
 		}
@@ -162,7 +162,7 @@ $gridBreakpoint: 720 !default;
 
 				@include if-above($key) {
 					width: $i * (100% /  map-get($grid, columns));
-					padding: 0 $gutter;
+					padding: 0 $gutter / 2;
 					float: left;
 				}
 			}
@@ -191,6 +191,5 @@ $gridBreakpoint: 720 !default;
 				}
 			}
 		}
-
 	}
 }
