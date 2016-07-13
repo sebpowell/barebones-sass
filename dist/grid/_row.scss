@@ -2,8 +2,8 @@
 	@include clearfix;
 	@if map-get($grid, type) == "padding" {
 		@include if-above($gridBreakpoint) {
-			margin-left: -($gutter);
-			margin-right: -($gutter);
+			margin-left: -($gutter / 2);
+			margin-right: -($gutter / 2);
 		}
 	}
 }
