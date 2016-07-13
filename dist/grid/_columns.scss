@@ -112,7 +112,9 @@ $gridBreakpoint: 720 !default;
 		.columns-#{$i} {
 			@include if-below($gridBreakpoint) {
 				width: 100%;
-				margin-bottom: $gutter;
+				&:not(:last-of-type) {
+					margin-bottom: $gutter / 2;
+				}
 			}
 
 			@include if-above($gridBreakpoint) {
@@ -152,9 +154,10 @@ $gridBreakpoint: 720 !default;
 	@for $i from 1 through map-get($grid, columns) {
 		@if map-get($grid, type) == "padding" {
 			.columns-#{$i}-#{$key} {
-
 				@include if-below($key) {
-					margin-bottom: $gutter;
+					&:not(:last-of-type) {
+						margin-bottom: $gutter / 2;
+					}
 				}
 
 				@include if-above($key) {

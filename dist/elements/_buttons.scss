@@ -8,12 +8,7 @@ button, .button {
 		align: center;
 	}
 
-
-	// Generate button colors
-	@each $name, $value in map-get($colors, brand) {
-		&.#{$name} {
-			background: $value;
-			color: white;
-		}
+	&.block {
+		display: block !important;
 	}
 }

@@ -1,7 +1,3 @@
-$font: () !default;
-
-$font-sizes: () !default;
-
 // Generate text size helpers
 @each $key, $value in $font-sizes {
 	.#{map-get($test, prefix)}text-#{$key} {

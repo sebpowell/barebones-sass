@@ -4,6 +4,7 @@ $container-sizes: (small: 500px, medium: 800px, large: 1000px, x-large: 1200px, 
 	@include clearfix;
 	position: relative;
 	margin: auto;
+	padding: 0 sizes(double-half);
 }
 
 // Generate container sizes
