@@ -116,7 +116,7 @@ $gridBreakpoint: 720 !default;
 					margin-bottom: $gutter / 2;
 				}
 			}
-
+ 
 			@include if-above($gridBreakpoint) {
 				width: $i * (100% /  map-get($grid, columns));
 				padding: 0 $gutter;
