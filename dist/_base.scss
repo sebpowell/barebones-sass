@@ -94,6 +94,7 @@ select,
 textarea,
 .input, button {
 	-webkit-appearance: none;
+	width: 100%;
 	&::-ms-clear {
 		display: none;
 	}
