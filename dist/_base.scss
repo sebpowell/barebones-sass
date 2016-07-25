@@ -2,6 +2,13 @@ $misc: (
 	units: px
 ) !default;
 
+
+$colors: () !default;
+$font: () !default;
+$font-sizes: () !default;
+$sizes: () !default;
+
+
 $breakpoints: (
 	device-x-small: 350px,
 	device-small: 480px,

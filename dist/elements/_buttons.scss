@@ -1,0 +1,14 @@
+button, .button {
+	display: inline-block;
+	background: transparent;
+	cursor: pointer;
+
+	text: {
+		decoration: none;
+		align: center;
+	}
+
+	&.block {
+		display: block !important;
+	}
+}

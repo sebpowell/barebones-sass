@@ -1,4 +1,4 @@
-.row {
+.row, .flex-row {
 	@include clearfix;
 	@if map-get($grid, type) == "padding" {
 		margin-left: -($gutter / 2);

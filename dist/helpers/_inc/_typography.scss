@@ -11,6 +11,24 @@
 	}
 }
 
+@each $weight, $value in map-get($font, weights) {
+	.weight-#{$weight} {
+		font-weight: $value !important;
+	}
+}
+
+
+@each $name, $size in $font-sizes {
+	@each $breakpoint, $value in $breakpoints {
+		.text-#{$name}-#{$breakpoint} {
+			@include if-above($breakpoint) {
+				font-size: $size !important;
+			}
+		}
+	}
+}
+
+
 @each $palette, $name in $colors {
 	@each $colour, $value in $name {
 		.#{map-get($test, prefix)}text-#{$palette}-#{$colour} {

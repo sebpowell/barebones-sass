@@ -1,0 +1,20 @@
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea, {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  text-decoration: none;
+  width: 100%;
+  // Remove clear icon in IE
+  &::-ms-clear {
+    display: none;
+  }
+}

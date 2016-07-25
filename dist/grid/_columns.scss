@@ -1,3 +1,5 @@
+$gridBreakpoint: 720 !default;
+
 @mixin span($columns, $position: "", $gutter: map-get($grid, gutter), $offset: 0) {
 	float: left;
 	$length: length($columns);
@@ -11,7 +13,7 @@
 
 	// Padding-based grid handler.
 	@if map-get($grid, type) == "padding" {
-		padding: 0 $gutter;
+		padding: 0 $gutter / 2;
 		@if $length > 2 {
 			width: (100% / $columnContext) * $columnCount;
 		}
@@ -111,6 +113,9 @@
 			padding: 0 $gutter;
 			@include if-below($gridBreakpoint) {
 				width: 100%;
+				&:not(:last-of-type) {
+					margin-bottom: $gutter / 2;
+				}
 			}
 
 			@include if-above($gridBreakpoint) {
@@ -125,6 +130,7 @@
 		.columns-#{$i} {
 			@include if-below($gridBreakpoint) {
 				width: 100%;
+				margin-bottom: $gutter;
 			}
 			@include if-above($gridBreakpoint) {
 				$totalGutters: ( map-get($grid, columns) / map-get($grid, gutter) ) + ( map-get($grid, columns) - 1 );
@@ -149,6 +155,13 @@
 		@if map-get($grid, type) == "padding" {
 			.columns-#{$i}-#{$key} {
 				padding: 0 $gutter;
+
+				@include if-below($key) {
+					&:not(:last-of-type) {
+						margin-bottom: $gutter / 2;
+					}
+				}
+
 				@include if-above($key) {
 					width: $i * (100% /  map-get($grid, columns));
 					float: left;
@@ -159,6 +172,11 @@
 
 		@else if map-get($grid, type) == "margin" {
 			.columns-#{$i}-#{$key} {
+
+				@include if-below($key) {
+					margin-bottom: $gutter;
+				}
+
 				@include if-above($key) {
 					$totalGutters: ( map-get($grid, columns) / map-get($grid, gutter) ) + ( map-get($grid, columns) - 1 );
 					$gutterWidthTest: 100% / $totalGutters;
