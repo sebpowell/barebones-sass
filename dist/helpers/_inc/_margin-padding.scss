@@ -35,3 +35,18 @@ $sides: top, right, bottom, left;
 		}
 	}
 }
+
+
+@each $device, $size in $breakpoints {
+	@each $type in $types {
+		@each $side in $sides {
+			@each $key, $value in $sizes {
+				@include if-below($device) {
+					.#{map-get($test, prefix)}#{$type}-#{$side}-#{$key}-below-#{$device} {
+						#{$type}-#{$side}: $value !important;
+					}
+				}
+			}
+		}
+	}
+}

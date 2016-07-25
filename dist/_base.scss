@@ -60,6 +60,27 @@ a, a:visited {
 	cursor: pointer;
 }
 
+
+button, .button {
+	display: inline-block;
+	background: transparent;
+	cursor: pointer;
+
+	text: {
+		decoration: none;
+		align: center;
+	}
+
+
+	// Generate button colors
+	@each $name, $value in map-get($colors, brand) {
+		&.#{$name} {
+			background: $value;
+			color: white;
+		}
+	}
+}
+
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -73,6 +94,9 @@ select,
 textarea,
 .input, button {
 	-webkit-appearance: none;
+	&::-ms-clear {
+		display: none;
+	}
 }
 
 table {
