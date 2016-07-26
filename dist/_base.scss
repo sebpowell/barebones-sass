@@ -99,7 +99,7 @@ input[type="search"],
 input[type="submit"],
 select,
 textarea,
-.input, button {
+.input {
 	-webkit-appearance: none;
 	width: 100%;
 	&::-ms-clear {
