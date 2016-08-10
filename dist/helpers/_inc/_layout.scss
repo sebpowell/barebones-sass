@@ -2,36 +2,7 @@
 	@include clearfix;
 }
 
-.float-right {
-	float: right !important;
-}
-
-.float-left {
-	float: left !important;
-}
-
-.block {
-	display: block !important;
-	width: 100%;
-}
-
-@each $device, $size in $breakpoints {
-	.block-below-#{$device} {
-		@include if-below($device) {
-			display: block !important;
-			width: 100% !important;
-		}
-	}
-}
-
-.inline-block {
-	display: inline-block !important;
-}
-
-@each $device, $size in $breakpoints {
-	.inline-block-above-#{$device} {
-		@include if-above($device) {
-			display: inline-block !important;
-		}
-	}
-}
+@include helpers("float-right", "float: right");
+@include helpers("block", "display: block", "width: 100%");
+@include helpers("float-left", "float: left");
+@include helpers("inline-block", "display: inline-block");

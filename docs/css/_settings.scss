@@ -43,30 +43,30 @@ $colors: (
 		dark: #e0e6ed,
 	)
 );
-
-$fonts: (
-	primary: (
-		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
-		weights: (
-			light: 100,
-			regular: 400,
-			semi-bold: 600,
-			bold: 700
-		),
-	),
-	code: (
-		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
-	),
-	secondary: (
-		name: #{"Futura-PT", 'Futura PT', sans-serif},
-		weights: (
-			light: 100,
-			regular: 400,
-			bold: 700
-		),
-	),
-);
-
+//
+// $fonts: (
+// 	primary: (
+// 		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
+// 		weights: (
+// 			light: 100,
+// 			regular: 400,
+// 			semi-bold: 600,
+// 			bold: 700
+// 		),
+// 	),
+// 	code: (
+// 		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
+// 	),
+// 	secondary: (
+// 		name: #{"Futura-PT", 'Futura PT', sans-serif},
+// 		weights: (
+// 			light: 100,
+// 			regular: 400,
+// 			bold: 700
+// 		),
+// 	),
+// );
+//
 $breakpoints: (
 	device-x-small: 350px,
 	device-small: 480px,
@@ -74,11 +74,6 @@ $breakpoints: (
 	device-medium-large: 960px,
 	device-large: 1280px,
 	device-x-large: 1400px
-);
-
-$misc: (
-	prefix: null,
-	units: px
 );
 
 $font-sizes: (
@@ -91,13 +86,13 @@ $font-sizes: (
 	x-large: 42px
 );
 
-$layers: (
-	backdrop: 3,
-	modal: 4,
-	share-bar: 2,
-	navigation: 1,
-);
-
+// $layers: (
+// 	backdrop: 3,
+// 	modal: 4,
+// 	share-bar: 2,
+// 	navigation: 1,
+// );
+//
 $sizes: (
   quarter: 4px,
   half: 8px,
@@ -106,12 +101,4 @@ $sizes: (
   double: 32px,
   triple: 48px,
   quad: 64px,
-);
-
-$grid: (
-	columns: 12,
-	gutter: 1,
-	breakpoint: "device-medium",
-	type: "margin",
-	mobile-padding: 24px
 );

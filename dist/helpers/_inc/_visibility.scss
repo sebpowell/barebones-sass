@@ -1,26 +1,12 @@
-@each $breakpoint, $value in $breakpoints {
-	.#{map-get($test, prefix)}hide-above-#{$breakpoint} {
-		@include if-above(#{$breakpoint}) {
-			display: none !important;
-		}
-	}
-}
+@include helpers("hide", "display: none", "visibility: hidden");
+@include helpers("show", "display: inherit", "visibility: visible");
 
-@each $breakpoint, $value in $breakpoints {
-	.#{map-get($test, prefix)}hide-below-#{$breakpoint} {
-		@include if-below(#{$breakpoint}) {
-			display: none !important;
-		}
-	}
-}
-
-
-.#{map-get($test, prefix)}is-hidden {
+.#{map-get($settings, prefix)}hide {
 	display: none !important;
 	visibility: hidden !important;
 }
 
-.#{map-get($test, prefix)}is-visible {
+.#{map-get($settings, prefix)}show {
 	display: inherit !important;
 	visibility: visible !important;
 }

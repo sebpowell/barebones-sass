@@ -1,14 +1,6 @@
 // Generate text size helpers
-@each $key, $value in $font-sizes {
-	.#{map-get($test, prefix)}text-#{$key} {
-		@if map-get($misc, units) == "rem" {
-			font-size: rem($value) !important;
-		}
-
-		@else {
-			font-size: #{$value} !important;
-		}
-	}
+@each $name, $size in $font-sizes {
+	@include helpers("text-#{$name}", "font-size: #{$size}");
 }
 
 @each $weight, $value in map-get($font, weights) {
@@ -17,21 +9,9 @@
 	}
 }
 
-
-@each $name, $size in $font-sizes {
-	@each $breakpoint, $value in $breakpoints {
-		.text-#{$name}-#{$breakpoint} {
-			@include if-above($breakpoint) {
-				font-size: $size !important;
-			}
-		}
-	}
-}
-
-
 @each $palette, $name in $colors {
 	@each $colour, $value in $name {
-		.#{map-get($test, prefix)}text-#{$palette}-#{$colour} {
+		.#{map-get($settings, prefix)}text-#{$palette}-#{$colour} {
 			color: $value !important;
 		}
 	}
@@ -40,27 +20,25 @@
 $text-alignment: (left, center, right);
 
 @each $direction in $text-alignment {
-	.#{map-get($test, prefix)}text-#{$direction} {
-		text-align: #{$direction} !important;
-	}
+	@include helpers("text-#{$direction}", "text-align: #{$direction}");
 }
 
-.#{map-get($test, prefix)}text-white {
+.#{map-get($settings, prefix)}text-white {
 	color: white !important;
 }
 
-.#{map-get($test, prefix)}text-underline {
+.#{map-get($settings, prefix)}text-underline {
 	text-decoration: underline !important;
 }
 
-.#{map-get($test, prefix)}text-uppercase {
+.#{map-get($settings, prefix)}text-uppercase {
 	text-transform: uppercase !important;
 }
 
-.#{map-get($test, prefix)}text-lowercase {
+.#{map-get($settings, prefix)}text-lowercase {
 	text-transform: lowercase !important;
 }
 
-.#{map-get($test, prefix)}text-capitalize {
+.#{map-get($settings, prefix)}text-capitalize {
 	text-transform: capitalize !important;
 }

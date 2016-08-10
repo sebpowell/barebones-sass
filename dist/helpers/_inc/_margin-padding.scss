@@ -2,51 +2,13 @@ $types: padding, margin;
 $sides: top, right, bottom, left;
 
 @each $type in $types {
-	@each $side in $sides {
-		@each $key, $value in $sizes {
-			.#{map-get($test, prefix)}#{$type}-#{$side}-#{$key} {
-				#{$type}-#{$side}: $value !important;
-			}
-		}
-	}
-}
-
-@each $type in $types {
 	@each $key, $value in $sizes {
-		.#{map-get($test, prefix)}#{$type}-#{$key} {
-			#{$type}: $value !important;
-		}
-	}
-}
-
-.#{map-get($test, prefix)}no-margin {
-	margin: 0 !important;
-}
-
-.#{map-get($test, prefix)}no-padding {
-	padding: 0 !important;
-}
-
-
-@each $type in $types {
-	@each $side in $sides {
-		.#{map-get($test, prefix)}no-padding-#{$side} {
-			#{$type}-#{$side}: 0 !important;
-		}
-	}
-}
-
-
-@each $device, $size in $breakpoints {
-	@each $type in $types {
+		@include helpers("#{$type}-#{$key}", "#{$type}: #{$value}");
 		@each $side in $sides {
-			@each $key, $value in $sizes {
-				@include if-below($device) {
-					.#{map-get($test, prefix)}#{$type}-#{$side}-#{$key}-below-#{$device} {
-						#{$type}-#{$side}: $value !important;
-					}
-				}
-			}
+			@include helpers("#{$type}-#{$side}-#{$key}", "#{$type}-#{$side}: #{$value}");
 		}
 	}
 }
+
+@include helpers("no-padding", "padding: 0");
+@include helpers("no-margin", "margin: 0");

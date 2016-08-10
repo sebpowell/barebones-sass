@@ -1,7 +1,15 @@
-.row, .flex-row {
+.#{map-get($settings, prefix)}row {
 	@include clearfix;
 	@if map-get($grid, type) == "padding" {
-		margin-left: -($gutter / 2);
-		margin-right: -($gutter / 2);
+		margin-left: -( map-get($grid, gutter) / 2 );
+		margin-right: -( map-get($grid, gutter) / 2 );
+	}
+
+	&.#{map-get($settings, prefix)}row-gallery {
+		@include if-above( map-get($grid, breakpoint) ) {
+			> [class^="columns-"] {
+				margin-bottom: map-get($grid, gutter);
+			}
+		}
 	}
 }

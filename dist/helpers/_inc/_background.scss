@@ -1,6 +1,6 @@
 @each $palette, $name in $colors {
 	@each $colour, $value in $name {
-		.#{map-get($test, prefix)}background-#{$palette}-#{$colour} {
+		.#{map-get($settings, prefix)}background-#{$palette}-#{$colour} {
 			background-color: $value !important;
 		}
 	}

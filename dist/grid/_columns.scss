@@ -1,4 +1,8 @@
-$gridBreakpoint: 720 !default;
+@function span($columns) {
+	@if map-get($grid, type) == "padding" {
+		width: (100% / map-get($grid, columns)) * $columns;
+	}
+}
 
 @mixin span($columns, $position: "", $gutter: map-get($grid, gutter), $offset: 0) {
 	float: left;
@@ -10,97 +14,105 @@ $gridBreakpoint: 720 !default;
 		$columnContext:  nth($columns, 3);
 	}
 
-
-	// Padding-based grid handler.
 	@if map-get($grid, type) == "padding" {
 		padding: 0 $gutter / 2;
 		@if $length > 2 {
 			width: (100% / $columnContext) * $columnCount;
 		}
-
 		@else {
 			width: (100% / map-get($grid, columns)) * $columns;
 		}
 	}
 
-	@if map-get($grid, type) == "margin" {
-
-		@if $gutter == 0 {
-
-			@if $length > 2 {
-				$columnCount: nth($columns, 1);
-				$columnContext:  nth($columns, 3);
-				width: (100% / $columnContext) * $columnCount;
-			}
-
-			@else {
-				width: (100% / map-get($grid, columns)) * $columns;
-			}
-		}
-
-
-		@else if $gutter <= 1 {
-			@if $length > 2 {
-				$gutterCount: $columnContext - 1;
-				$totalGutters: $columnContext / $gutter + $columnContext - 1;
-				$gutterWidthTest: 100% / $totalGutters;
-				$totalGutterWidth: $gutterWidthTest * $gutterCount;
-				$columnWidth: (100% - $totalGutterWidth) / $columnContext;
-				width: $columnCount * $columnWidth + (($columnCount - 1) * $gutterWidthTest);
-				&:not(:last-child) {
-					margin-right: $gutterWidthTest;
-				}
-			}
-
-			@else {
-				$totalGutters: (map-get($grid, columns) / $gutter) + map-get($grid, columns) - 1;
-				$gutterWidthTest: 100% / $totalGutters;
-				$totalGutterWidth: $gutterWidthTest * $gutterCount;
-				$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
-				width: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
-				&:not(:last-child) {
-					margin-right: $gutterWidthTest;
-				}
-			}
-		}
-
-
-		// If gutter value passed is above 1.
-		@else {
-			@if $length > 2 {
-				$columnCount: nth($columns, 1);
-				$columnContext: nth($columns, 3);
-				$totalGutters: ( $columnContext * $gutter ) + ( $columnContext - 1 );
-				$gutterWidthTest: 100% / $totalGutters;
-				$totalGutterWidth: $gutterWidthTest * $gutterCount;
-				$columnWidth: (100% - $totalGutterWidth) / $columnContext;
-				width: ($columnCount * $columnWidth) + ( ($columnCount - 1 ) * $gutterWidthTest);
-				&:not(:last-child) {
-					margin-right: $gutterWidthTest;
-				}
-			}
-
-			@else {
-				$totalGutters: (map-get($grid, columns) / $gutter) + map-get($grid, columns) - 1;
-				$gutterWidthTest: 100% / $totalGutters;
-				$totalGutterWidth: $gutterWidthTest * $gutterCount;
-				$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
-				height: 100px;
-				width: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
-				&:not(:last-child) {
-					margin-right: $gutterWidthTest * $gutter;
-				}
-			}
-		}
-	}
+	// @if map-get($grid, type) == "margin" {
+	//
+	// 	@if $gutter == 0 {
+	//
+	// 		@if $length > 2 {
+	// 			$columnCount: nth($columns, 1);
+	// 			$columnContext:  nth($columns, 3);
+	// 			width: (100% / $columnContext) * $columnCount;
+	// 		}
+	//
+	// 		@else {
+	// 			width: (100% / map-get($grid, columns)) * $columns;
+	// 		}
+	// 	}
+	//
+	//
+	// 	@else if $gutter <= 1 {
+	// 		@if $length > 2 {
+	// 			$gutterCount: $columnContext - 1;
+	// 			$totalGutters: $columnContext / $gutter + $columnContext - 1;
+	// 			$gutterWidthTest: 100% / $totalGutters;
+	// 			$totalGutterWidth: $gutterWidthTest * $gutterCount;
+	// 			$columnWidth: (100% - $totalGutterWidth) / $columnContext;
+	// 			width: $columnCount * $columnWidth + (($columnCount - 1) * $gutterWidthTest);
+	// 			&:not(:last-child) {
+	// 				margin-right: $gutterWidthTest;
+	// 			}
+	// 		}
+	//
+	// 		@else {
+	// 			$totalGutters: (map-get($grid, columns) / $gutter) + map-get($grid, columns) - 1;
+	// 			$gutterWidthTest: 100% / $totalGutters;
+	// 			$totalGutterWidth: $gutterWidthTest * $gutterCount;
+	// 			$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+	// 			width: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
+	// 			&:not(:last-child) {
+	// 				margin-right: $gutterWidthTest;
+	// 			}
+	// 		}
+	// 	}
+	//
+	//
+	// 	// If gutter value passed is above 1.
+	// 	@else {
+	// 		@if $length > 2 {
+	// 			$columnCount: nth($columns, 1);
+	// 			$columnContext: nth($columns, 3);
+	// 			$totalGutters: ( $columnContext * $gutter ) + ( $columnContext - 1 );
+	// 			$gutterWidthTest: 100% / $totalGutters;
+	// 			$totalGutterWidth: $gutterWidthTest * $gutterCount;
+	// 			$columnWidth: (100% - $totalGutterWidth) / $columnContext;
+	// 			width: ($columnCount * $columnWidth) + ( ($columnCount - 1 ) * $gutterWidthTest);
+	// 			&:not(:last-child) {
+	// 				margin-right: $gutterWidthTest;
+	// 			}
+	// 		}
+	//
+	// 		@else {
+	// 			$totalGutters: (map-get($grid, columns) / $gutter) + map-get($grid, columns) - 1;
+	// 			$gutterWidthTest: 100% / $totalGutters;
+	// 			$totalGutterWidth: $gutterWidthTest * $gutterCount;
+	// 			$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+	// 			height: 100px;
+	// 			width: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
+	// 			&:not(:last-child) {
+	// 				margin-right: $gutterWidthTest * $gutter;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	@if $offset > 0 {
-		margin-left: columnCalc($offset) + $gutterWidth;
+		@if map-get($grid, type) == "padding" {
+			margin-left: (100% / map-get($grid, columns)) * $offset;
+		}
+
+		@if map-get($grid, type) == "margin" {
+			margin-left: columnCalc($offset);
+		}
 	}
 
 	@if $position == "last" {
-		margin-right: 0;
 		float: right;
+		@if map-get($grid, type) == "padding" {
+
+		}
+		@if map-get($grid, type) == "margin" {
+			margin-right: 0;
+		}
 	}
 }
 
@@ -109,88 +121,91 @@ $gridBreakpoint: 720 !default;
 // Generate column helper classes.
 @for $i from 1 through map-get($grid, columns) {
 	@if map-get($grid, type) == "padding" {
-		.columns-#{$i} {
-			padding: 0 $gutter;
-			@include if-below($gridBreakpoint) {
+		.#{map-get($settings, prefix)}columns-#{$i} {
+			padding: 0 map-get($grid, gutter) / 2;
+
+			@include if-below( map-get($grid, breakpoint) ) {
 				width: 100%;
 				&:not(:last-of-type) {
-					margin-bottom: $gutter / 2;
+					margin-bottom: map-get($grid, gutter) / 2;
 				}
 			}
 
-			@include if-above($gridBreakpoint) {
-				width: $i * (100% /  map-get($grid, columns));
+			@include if-above( map-get($grid, breakpoint) ) {
+				width: $i * (100% / map-get($grid, columns));
 				float: left;
 			}
 		}
 	}
-
-
-	@else if map-get($grid, type) == "margin" {
-		.columns-#{$i} {
-			@include if-below($gridBreakpoint) {
-				width: 100%;
-				margin-bottom: $gutter;
-			}
-			@include if-above($gridBreakpoint) {
-				$totalGutters: ( map-get($grid, columns) / map-get($grid, gutter) ) + ( map-get($grid, columns) - 1 );
-				$gutterWidthTest: 100% / $totalGutters;
-				$totalGutterWidth: $gutterWidthTest * ( map-get($grid, columns) - 1);
-				$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
-
-				width: ($i * $columnWidth) + ( ($i - 1 ) * $gutterWidthTest);
-				float: left;
-				margin-right: $gutterWidthTest;
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-		}
-	}
+	//
+	// @else if map-get($grid, type) == "margin" {
+	// 	.columns-#{$i} {
+	// 		@include if-below( map-get($grid, breakpoint) ) {
+	// 			width: 100%;
+	// 			margin-bottom: $gutter;
+	// 		}
+	//
+	// 		@include if-above( map-get($grid, breakpoint) ) {
+	// 			$totalGutters: ( map-get($grid, columns) / map-get($grid, gutter) ) + ( map-get($grid, columns) - 1 );
+	// 			$gutterWidthTest: 100% / $totalGutters;
+	// 			$totalGutterWidth: $gutterWidthTest * ( map-get($grid, columns) - 1);
+	// 			$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+	//
+	// 			width: ($i * $columnWidth) + ( ($i - 1 ) * $gutterWidthTest);
+	// 			float: left;
+	// 			margin-right: $gutterWidthTest;
+	// 			&:last-child {
+	// 				margin-right: 0;
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
 
 // Generate breakpoint-specific column helper classes.
-@each $key, $value in $breakpoints {
-	@for $i from 1 through map-get($grid, columns) {
-		@if map-get($grid, type) == "padding" {
-			.columns-#{$i}-#{$key} {
-				padding: 0 $gutter;
+@if map-get($settings, responsiveHelpers) != false {
+	@each $key, $value in $breakpoints {
+		@for $i from 1 through map-get($grid, columns) {
+			@if map-get($grid, type) == "padding" {
+				.#{map-get($settings, prefix)}columns-#{$i}-#{$key} {
+					padding: 0 map-get($grid, gutter) / 2;
 
-				@include if-below($key) {
-					&:not(:last-of-type) {
-						margin-bottom: $gutter / 2;
+					@include if-below($key) {
+						&:not(:last-of-type) {
+							margin-bottom: map-get($grid, gutter);
+						}
 					}
-				}
 
-				@include if-above($key) {
-					width: $i * (100% /  map-get($grid, columns));
-					float: left;
-				}
-			}
-		}
-
-
-		@else if map-get($grid, type) == "margin" {
-			.columns-#{$i}-#{$key} {
-
-				@include if-below($key) {
-					margin-bottom: $gutter;
-				}
-
-				@include if-above($key) {
-					$totalGutters: ( map-get($grid, columns) / map-get($grid, gutter) ) + ( map-get($grid, columns) - 1 );
-					$gutterWidthTest: 100% / $totalGutters;
-					$totalGutterWidth: $gutterWidthTest * ( map-get($grid, columns) - 1);
-					$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
-
-					width: ($i * $columnWidth) + ( ($i - 1 ) * $gutterWidthTest);
-					float: left;
-					margin-right: $gutterWidthTest;
-					&:last-child {
-						margin-right: 0;
+					@include if-above($key) {
+						width: $i * (100% /  map-get($grid, columns));
+						float: left;
 					}
 				}
 			}
 		}
+
+		// 	@else if map-get($grid, type) == "margin" {
+		// 		.columns-#{$i}-#{$key} {
+		//
+		// 			@include if-below($key) {
+		// 				margin-bottom: $gutter;
+		// 			}
+		//
+		// 			@include if-above($key) {
+		// 				$totalGutters: ( map-get($grid, columns) / map-get($grid, gutter) ) + ( map-get($grid, columns) - 1 );
+		// 				$gutterWidthTest: 100% / $totalGutters;
+		// 				$totalGutterWidth: $gutterWidthTest * ( map-get($grid, columns) - 1);
+		// 				$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+		//
+		// 				width: ($i * $columnWidth) + ( ($i - 1 ) * $gutterWidthTest);
+		// 				float: left;
+		// 				margin-right: $gutterWidthTest;
+		// 				&:last-child {
+		// 					margin-right: 0;
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 }

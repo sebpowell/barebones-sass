@@ -1,23 +1,39 @@
 // Generates classes for column offsets.
 @for $i from 1 through map-get($grid, columns) {
 	@if map-get($grid, type) == "padding" {
-		.offset-#{$i} {
-			@include if-above($gridBreakpoint) {
+		.#{map-get($settings, prefix)}offset-#{$i} {
+			@include if-above( map-get($grid, breakpoint) ) {
 				margin-left: $i * (100% /  map-get($grid, columns));
+			}
+		}
+
+		@if map-get($settings, responsiveHelpers) != false {
+			@each $breakpoint, $value in $breakpoints {
+				.#{map-get($settings, prefix)}offset-#{$i}-above-#{$breakpoint} {
+					@include if-above($value) {
+						margin-left: $i * (100% /  map-get($grid, columns));
+					}
+				}
+
+				.#{map-get($settings, prefix)}offset-#{$i}-below-#{$breakpoint} {
+					@include if-below($value) {
+						margin-left: $i * (100% /  map-get($grid, columns));
+					}
+				}
 			}
 		}
 	}
 
-	@if map-get($grid, type) == "margin" {
-		.offset-#{$i} {
-			@include if-above($gridBreakpoint) {
-				$totalGutters: (map-get($grid, columns) / map-get($grid, gutter)) + map-get($grid, columns) - 1;
-				$gutterWidthTest: 100% / $totalGutters;
-				$totalGutterWidth: $gutterWidthTest * $gutterCount;
-				$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
-				// margin-left: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
-				margin-left: $i * $columnWidth + $i * $gutterWidthTest;
-			}
-		}
-	}
+	// @if map-get($grid, type) == "margin" {
+	// 	.offset-#{$i} {
+	// 		@include if-above($gridBreakpoint) {
+	// 			$totalGutters: (map-get($grid, columns) / map-get($grid, gutter)) + map-get($grid, columns) - 1;
+	// 			$gutterWidthTest: 100% / $totalGutters;
+	// 			$totalGutterWidth: $gutterWidthTest * $gutterCount;
+	// 			$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
+	// 			// margin-left: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
+	// 			margin-left: $i * $columnWidth + $i * $gutterWidthTest;
+	// 		}
+	// 	}
+	// }
 }

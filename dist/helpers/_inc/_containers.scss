@@ -1,26 +1,31 @@
-$container-sizes: (small: 500px, medium: 800px, large: 1000px, x-large: 1200px, fluid: null);
+$container-sizes: (
+	small: 500px,
+	medium: 800px,
+	large: 1000px,
+	x-large: 1200px,
+	fluid: null
+) !default;
 
 %container {
 	@include clearfix;
 	position: relative;
 	margin: auto;
-	padding: 0 sizes(double-half);
+	padding: 0 grid(mobile-gutter);
 }
 
 // Generate container sizes
 @each $size, $value in $container-sizes {
-	.container-#{$size} {
+	.#{map-get($settings, prefix)}container-#{$size} {
 		@extend %container;
 		max-width: $value;
 	}
 }
 
-
-.vertical-align-container {
+.#{map-get($settings, prefix)}vertical-align-container {
 	display: table;
 	height: 100%;
 	width: 100%;
-	.vertical-align-container-inner {
+	.#{map-get($settings, prefix)}vertical-align-container-inner {
 		display: table-cell;
 		vertical-align: middle;
 		height: 100%;

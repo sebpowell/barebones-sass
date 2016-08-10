@@ -1,5 +1,8 @@
-
-$test: (prefix: "");
+$settings: () !default;
+$colors: () !default;
+$sizes:() !default;
+$font: () !default;
+$font-sizes: () !default;
 
 @import "_inc/background";
 @import "_inc/borders";

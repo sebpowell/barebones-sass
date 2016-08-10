@@ -1,15 +1,8 @@
-$border-sides: top, right, bottom, left, all;
+$border-sides: top, right, bottom, left;
 
-
-@each $color, $value in colors(keyline) {
-
-	.#{map-get($test, prefix)}border-#{$color} {
-		border: 1px solid $value;
-	}
-
+@each $color, $value in map-get($colors, keyline) {
+	@include helpers("border-#{$color}", "border: 1px solid #{$value}");
 	@each $side in $border-sides {
-		.#{map-get($test, prefix)}border-#{$side}-#{$color} {
-			border-#{$side}: 1px solid $value;
-		}
+		@include helpers("border-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
 	}
 }
