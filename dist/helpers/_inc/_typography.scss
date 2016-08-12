@@ -3,6 +3,10 @@
 	@include helpers("text-#{$name}", "font-size: #{$size}");
 }
 
+@each $name, $size in $line-height {
+	@include helpers("line-height-#{$name}", "line-height: #{$size}");
+}
+
 @each $weight, $value in map-get($font, weights) {
 	.weight-#{$weight} {
 		font-weight: $value !important;

@@ -1,15 +1,13 @@
-// keyline(bottomm, dark, 1px);
-
-body {
-	line-height: 1.5;
-}
-
-
 html {
 	font-size: 16px;
+	font-family: map-deep-get($fonts, primary, name);
 	@include if-above(device-x-large) {
 		font-size: 18px;
 	}
+}
+
+body {
+	line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .var {
 	color: #07c;
-	font-family: font(code);
+	// font-family: font(code);
 	// border: 1px solid colors(keyline, dark);
 	// border-radius: 3px;
 	padding: 4px 0;
@@ -34,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 		background-color: colors(greyscale, 100);
 		text-align: left;
 		padding: sizes(half) sizes(base);
-		font-weight: weights(primary, semi-bold);
+		// font-weight: weights(primary, semi-bold);
 	}
 }
 
@@ -85,24 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 
-	.bullet-list {
-		list-style-type: none;
-		margin-bottom: sizes(double);
-		> li {
-			position: relative;
-			padding-left: 24px;
-			&:before {
-				content: "";
-				position: absolute;
-				top: 12px;
-				left: 0;
-				width: 4px;
-				height: 4px;
-				border-radius: 4px;
-				background-color: colors(brand, primary);
-			}
-		}
-	}
+
 
 	> section {
 	  margin-bottom: 80px;
@@ -110,5 +91,24 @@ h1, h2, h3, h4, h5, h6 {
 	  &:last-child {
 	    margin-bottom: 0;
 	  }
+	}
+}
+
+
+.bulleted-list {
+	list-style-type: none;
+	> li {
+		position: relative;
+		padding-left: 24px;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 12px;
+			left: 0;
+			width: 4px;
+			height: 4px;
+			border-radius: 4px;
+			background-color: colors(brand, primary);
+		}
 	}
 }

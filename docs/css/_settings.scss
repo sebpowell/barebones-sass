@@ -24,6 +24,13 @@ $colors: (
 		dark: #FFEEEE,
 	),
 
+	code: (
+		blue: #3c94d4,
+		orange: #ffa566,
+		purple: #a675d0,
+		green: #44b8b4
+	),
+
 	greyscale: (
 		50: #FAFAFA,
 		100: #F5F5F5,
@@ -34,39 +41,49 @@ $colors: (
 		600: #757575,
 		700: #616161,
 		800: #424242,
-		900: #212121
+		900: #212121,
+
+		x-light: #fcfcfc,
+		light: #b8b6bb,
+		medium: #706d77,
+		dark: #4b484f
 	),
 
 	keyline: (
-		light: #f0f0f0,
-		medium: #D5D5D5,
-		dark: #e0e6ed,
+		light: #ebebeb,
+		dark: #dddddd,
 	)
 );
-//
-// $fonts: (
-// 	primary: (
-// 		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
-// 		weights: (
-// 			light: 100,
-// 			regular: 400,
-// 			semi-bold: 600,
-// 			bold: 700
-// 		),
-// 	),
-// 	code: (
-// 		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
-// 	),
-// 	secondary: (
-// 		name: #{"Futura-PT", 'Futura PT', sans-serif},
-// 		weights: (
-// 			light: 100,
-// 			regular: 400,
-// 			bold: 700
-// 		),
-// 	),
-// );
-//
+
+$fonts: (
+	primary: (
+		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
+		weights: (
+			light: 100,
+			regular: 400,
+			semi-bold: 600,
+			bold: 700
+		),
+	),
+	code: (
+		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
+	),
+	secondary: (
+		name: #{"Futura-PT", 'Futura PT', sans-serif},
+		weights: (
+			light: 100,
+			regular: 400,
+			bold: 700
+		),
+	),
+);
+
+$shadows: (
+	sm: 0 1px 2px rgba(0,0,0,0.06),
+	md: 0 3px 2px rgba(0,0,0,0.1),
+
+);
+
 $breakpoints: (
 	device-x-small: 350px,
 	device-small: 480px,
@@ -84,6 +101,13 @@ $font-sizes: (
 	medium-large: 24px,
 	large: 32px,
 	x-large: 42px
+);
+
+$line-height: (
+	sm: 1,
+	md: 1.2,
+	lg: 1.5,
+	xl: 2
 );
 
 // $layers: (

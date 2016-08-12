@@ -6,3 +6,5 @@ $border-sides: top, right, bottom, left;
 		@include helpers("border-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
 	}
 }
+
+@include helpers("no-border", "border: none");

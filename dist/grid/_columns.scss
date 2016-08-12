@@ -1,8 +1,8 @@
-@function span($columns) {
-	@if map-get($grid, type) == "padding" {
-		width: (100% / map-get($grid, columns)) * $columns;
-	}
-}
+// @function span($columns) {
+// 	@if map-get($grid, type) == "padding" {
+// 		width: (100% / map-get($grid, columns)) * $columns;
+// 	}
+// }
 
 @mixin span($columns, $position: "", $gutter: map-get($grid, gutter), $offset: 0) {
 	float: left;

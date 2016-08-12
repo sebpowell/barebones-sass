@@ -9,10 +9,20 @@ block body
 
 			table.table-lined.margin-bottom-double
 				thead
-					th(colspan="2") Options
+					th Option
+					th Values / Example
 				tr
 					td <span class="var">$direction</span>
-					td up, down, left, right, top-right, top-left, bottom-right, bottom-left
+					td 
+						ul.bulleted-list
+							li "up"
+							li "down"
+							li "left"
+							li "right"
+							li "top-right"
+							li "top-left"
+							li "bottom-right"
+							li "bottom-left"
 				tr
 					td <span class="var">$color</span>
 					td Any hex value (e.g. #E5E5E5)
@@ -21,7 +31,6 @@ block body
 					td Any px value (e.g. 6px)
 
 			.example
-
 				pre.example-code
 					code.language-scss.
 						.element { 
@@ -29,43 +38,6 @@ block body
 								@include arrow(down, black, 20px);
 							}
 						 }
-
-
-		article.article(id="circle")
-			h2 Circle
-			p Shorthand for creating a circle. Sets the width, height and border-radius properties. 
-
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include circle(200px);
-						}
-
-
-		article.article(id="placeholder")
-			h2 Placeholder
-			p Changes form placeholder text color.
-
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include placeholder {
-								color: grey;
-							}
-						}
-
-		article.article(id="uppercase")
-			h2 Uppercase
-			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
-
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include uppercase(0.1em);
-						}
 
 		article.article(id="clearfix")
 			h2 Clearfix
@@ -76,23 +48,54 @@ block body
 						.element {
 							@include clearfix;
 						}
-
+						
 		article.article(id="ellipsis")
 			h2 Ellipsis
-			p Adds ellipsis to limit text width <span class="var">ellipsis($width)<span>
+			p Use this to truncate text once it reaches a certain width.
 
 			.example
 				pre.example-code
 					code.language-scss.
 						.element {
-							@include text-overflow(300);
+							@include ellipsis(300px);
 						}
+		
+		article.article(id="no-bullet")
+			h2 No Bullet
+			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
 
+			.example
+				pre.example-code
+					code.language-scss.
+						ul {
+							@include no-bullet;
+						}
+						
+		article.article(id="no-bullet")
+			h2 Map Deep Get
+			p Fetch any value from a nested map. 
+
+			.example
+				pre.example-code
+					code.language-scss.
+						// Example map
+						$colors: (
+							ui: (
+								error: (
+									light: #e6e6e6;
+								)
+							)
+						);
+						
+						// You can go as deep as you need to. 
+						ul {
+							color: map-deep-get($colors, ui, error, light);
+						}
+		
 		article.article(id="media-queries")
 			h2 Media Queries
-			p Use <span class="var">if-above($device)</span>, <span class="var">if-below($device)</span> and <span class="var">if-between($device-min, $device-max)</span> to target different viewport sizes defined in your $breakpoints map.
-
-			p These mixins will also accept values that aren't defined in your $breakpoints map.
+			p Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.
+			
 			.example
 				pre.example-code
 					code.language-scss.
@@ -107,36 +110,59 @@ block body
 								color: blue;
 							}
 						}
-
-		article.article(id="strip-units")
-			h2 Strip Unit
-			p Removes units from a given value - for example, stripping off the 'px' from a pixel value.
+						
+						.element {
+							@include if-below(device-small) {
+								color: blue;
+							}
+						}
+						
+						.element {
+							@include if-between(800px, 1200px) {
+								color: blue;
+							}
+						}
+		
+		article.article(id="placeholder")
+			h2 Placeholder
+			p Changes &lt;input&gt; placeholder text color.
 
 			.example
 				pre.example-code
 					code.language-scss.
-						@return strip-units(20px);
-						// Returns 20
-
-		article.article(id="convert-to-rem")
-			h2 Convert to REM
-			p Converts a px based value to REM units. The root value deafults to 16px, unless a different 'base' value is specifed in your <span class="var">$sizes</span> map.
-
-			.example
-				pre.example-code
-					code.language-scss.
-						ul {
-							font-size: rem(12px);
-							// Converts to 12 / 16 = 0.75rem;
+						.element {
+							@include placeholder {
+								color: grey;
+							}
+							&:focus {
+								@include placeholder {
+									color: lightGrey;
+								}
+							}
 						}
 
-		article.article(id="no-bullet")
-			h2 No Bullet
-			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+		article.article(id="shapes")
+			h2 Shapes
+			p Create a square or circle. 
 
 			.example
 				pre.example-code
 					code.language-scss.
-						ul {
-							@include no-bullet;
+						.element {
+							@include circle(200px);
+						}
+						
+						.element {
+							@include square(400px);
+						}
+						
+		article.article(id="uppercase")
+			h2 Uppercase
+			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include uppercase(0.1em);
 						}
