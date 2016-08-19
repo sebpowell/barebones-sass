@@ -6,7 +6,17 @@
 	visibility: hidden !important;
 }
 
+.#{map-get($settings, prefix)}is-hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
 .#{map-get($settings, prefix)}show {
 	display: inherit !important;
 	visibility: visible !important;
+}
+
+.#{map-get($settings, prefix)}is-visible {
+	display: none !important;
+	visibility: hidden !important;
 }
