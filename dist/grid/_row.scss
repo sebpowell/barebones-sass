@@ -1,8 +1,8 @@
 .#{map-get($settings, prefix)}row {
 	@include clearfix;
 	@if map-get($grid, type) == "padding" {
-		margin-left: -( map-get($grid, gutter) );
-		margin-right: -( map-get($grid, gutter) );
+		margin-left: -( map-get($grid, gutter) / 2);
+		margin-right: -( map-get($grid, gutter) / 2);
 	}
 
 	&.#{map-get($settings, prefix)}row-gallery {
