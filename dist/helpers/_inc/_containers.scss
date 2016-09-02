@@ -10,7 +10,7 @@ $container-sizes: (
 	@include clearfix;
 	position: relative;
 	margin: auto;
-	padding: 0 grid(mobile-gutter);
+	padding: 0 map-get($grid, mobile-gutter);
 }
 
 // Generate container sizes
