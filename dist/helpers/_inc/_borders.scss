@@ -7,4 +7,7 @@ $border-sides: top, right, bottom, left;
 	}
 }
 
+// Remove this
 @include helpers("no-border", "border: none");
+
+@include helpers("border-none", "border: none");

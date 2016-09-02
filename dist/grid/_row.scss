@@ -1,8 +1,8 @@
 .#{map-get($settings, prefix)}row {
 	@include clearfix;
 	@if map-get($grid, type) == "padding" {
-		margin-left: -( map-get($grid, gutter) / 2 );
-		margin-right: -( map-get($grid, gutter) / 2 );
+		margin-left: -( map-get($grid, gutter) );
+		margin-right: -( map-get($grid, gutter) );
 	}
 
 	&.#{map-get($settings, prefix)}row-gallery {
@@ -10,6 +10,13 @@
 			> [class^="columns-"] {
 				margin-bottom: map-get($grid, gutter);
 			}
+		}
+	}
+
+	&.#{map-get($settings, prefix)}no-gutter {
+		margin: 0 !important;
+		> [class*='columns'] {
+			padding: 0;
 		}
 	}
 }
