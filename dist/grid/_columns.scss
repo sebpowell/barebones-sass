@@ -127,7 +127,13 @@
 			@include if-below( map-get($grid, breakpoint) ) {
 				width: 100%;
 				&:not(:last-of-type) {
-					margin-bottom: map-get($grid, gutter) / 2;
+					@if map-get($grid, mobile-spacing) {
+						margin-bottom: map-get($grid, mobile-spacing);
+					}
+
+					@else {
+						margin-bottom: map-get($grid, gutter) / 2;
+					}
 				}
 			}
 
@@ -172,7 +178,13 @@
 
 					@include if-below($key) {
 						&:not(:last-of-type) {
-							margin-bottom: map-get($grid, gutter);
+							@if map-get($grid, mobile-spacing) {
+								margin-bottom: map-get($grid, mobile-spacing);
+							}
+
+							@else {
+								margin-bottom: map-get($grid, gutter) / 2;
+							}
 						}
 					}
 

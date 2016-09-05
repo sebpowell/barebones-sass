@@ -86,11 +86,20 @@ $shadows: (
 
 $breakpoints: (
 	device-x-small: 350px,
-	device-small: 480px,
+	// device-small: 480px,
 	device-medium: 780px,
 	device-medium-large: 960px,
-	device-large: 1280px,
+	// device-large: 1280px,
 	device-x-large: 1400px
+);
+
+$grid: (
+	columns: 12,
+	gutter: 24px,
+	breakpoint: "device-medium",
+	type: "padding",
+	mobile-gutter: 16px,
+	// mobile-spacing: 82px,
 );
 
 $font-sizes: (

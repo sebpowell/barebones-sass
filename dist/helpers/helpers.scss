@@ -1,9 +1,10 @@
 $settings: () !default;
 $colors: () !default;
+$shadows: () !default;
 $sizes:() !default;
 $font: () !default;
 $font-sizes: () !default;
-$line-height: () !default;
+$line-heights: () !default;
 
 @import "_inc/background";
 @import "_inc/borders";
@@ -12,3 +13,4 @@ $line-height: () !default;
 @import "_inc/margin-padding";
 @import "_inc/typography";
 @import "_inc/visibility";
+

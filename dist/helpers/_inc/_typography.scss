@@ -3,12 +3,12 @@
 	@include helpers("text-#{$name}", "font-size: #{$size}");
 }
 
-@each $name, $size in $line-height {
+@each $name, $size in $line-heights {
 	@include helpers("line-height-#{$name}", "line-height: #{$size}");
 }
 
 @each $weight, $value in map-get($font, weights) {
-	.weight-#{$weight} {
+	.#{map-get($settings, prefix)}weight-#{$weight} {
 		font-weight: $value !important;
 	}
 }
@@ -45,4 +45,8 @@ $text-alignment: (left, center, right);
 
 .#{map-get($settings, prefix)}text-capitalize {
 	text-transform: capitalize !important;
+}
+
+.#{map-get($settings, prefix)}text-strikethrough {
+	text-decoration: line-through !important;
 }

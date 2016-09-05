@@ -5,6 +5,19 @@
 		margin-right: -( map-get($grid, gutter) / 2);
 	}
 
+	@each $name, $size in $sizes {
+		&.#{map-get($settings, prefix)}gutter-#{$name} {
+			@include if-above(map-get($grid, breakpoint)) {
+				margin-left: -($size) !important;
+				margin-right: -($size) !important;
+
+				[class*="columns"] {
+					padding: 0 $size;
+				}
+			}
+		}
+	}
+
 	&.#{map-get($settings, prefix)}row-gallery {
 		@include if-above( map-get($grid, breakpoint) ) {
 			> [class^="columns-"] {
