@@ -1,5 +1,5 @@
 .page-layout-docs {
-  padding: 52px grid(mobile-gutter) 60px grid(mobile-gutter);
+  // padding: 52px grid(mobile-gutter) 60px grid(mobile-gutter);
 }
 
 
@@ -8,12 +8,17 @@
 //   @include gallery(1, $gutter: 24px);
 // }
 
+.main-container-intro {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+  height: 600px;
+}
+
 
 .docs-container {
-  @include container(1100px);
-  padding-top: 24px;
+  // @include container(1100px);
+  // padding-top: 24px;
   @include if-above(device-medium-large) {
-    padding-top: 80px;
+    // padding-top: 80px;
     // padding-bottom: 100px;
   }
 }

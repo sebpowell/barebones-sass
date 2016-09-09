@@ -1,52 +1,82 @@
-// Generate text size helpers
-@each $name, $size in $font-sizes {
-	@include helpers("text-#{$name}", "font-size: #{$size}");
-}
-
-@each $name, $size in $line-heights {
-	@include helpers("line-height-#{$name}", "line-height: #{$size}");
-}
-
-@each $weight, $value in map-get($font, weights) {
-	.#{map-get($settings, prefix)}weight-#{$weight} {
-		font-weight: $value !important;
+@if map-deep-get($settings, helpers, text) != false {
+	@each $name, $size in $font-sizes {
+		@include helpers("text-#{$name}", "font-size: #{$size}");
 	}
-}
 
-@each $palette, $name in $colors {
-	@each $colour, $value in $name {
-		.#{map-get($settings, prefix)}text-#{$palette}-#{$colour} {
-			color: $value !important;
+	@each $name, $size in $line-heights {
+		@include helpers("line-height-#{$name}", "line-height: #{$size}");
+	}
+
+	@each $weight, $value in map-get($font, weights) {
+		.#{map-get($settings, prefix)}weight-#{$weight} {
+			font-weight: $value !important;
 		}
 	}
+
+	@if map-get($settings, textColorsSource) != null {
+		@each $colour, $name in map-deep-get($colors, map-get($settings, textColorsSource)...) {
+
+			$temp: to-string(map-get($settings, textColorsSource));
+			$var: str-replace($temp, " ", "-");
+			$var2: str-replace($var, "text-", "");
+
+			.#{map-get($settings, prefix)}text-#{$var2}-#{$colour} {
+				color: $name !important;
+			}
+		}
+	}
+
+	@else {
+		@each $palette, $name in $colors {
+			@each $colour, $value in $name {
+				.#{map-get($settings, prefix)}text-#{$palette}-#{$colour} {
+					color: $value !important;
+				}
+
+				.#{map-get($settings, prefix)}hover-text-#{$palette}-#{$colour} {
+					&:hover {
+						color: $value !important;
+					}
+				}
+			}
+		}
+	}
+
+	$text-alignment: (left, center, right);
+
+	@each $direction in $text-alignment {
+		@include helpers("text-#{$direction}", "text-align: #{$direction}");
+	}
+
+	.#{map-get($settings, prefix)}text-white {
+		color: white !important;
+	}
+
+	.#{map-get($settings, prefix)}text-underline {
+		text-decoration: underline !important;
+	}
+
+	.#{map-get($settings, prefix)}text-uppercase {
+		text-transform: uppercase !important;
+	}
+
+	.#{map-get($settings, prefix)}text-lowercase {
+		text-transform: lowercase !important;
+	}
+
+	.#{map-get($settings, prefix)}text-capitalize {
+		text-transform: capitalize !important;
+	}
+
+	.#{map-get($settings, prefix)}text-strikethrough {
+		text-decoration: line-through !important;
+	}
 }
 
-$text-alignment: (left, center, right);
 
-@each $direction in $text-alignment {
-	@include helpers("text-#{$direction}", "text-align: #{$direction}");
-}
 
-.#{map-get($settings, prefix)}text-white {
-	color: white !important;
-}
 
-.#{map-get($settings, prefix)}text-underline {
-	text-decoration: underline !important;
-}
 
-.#{map-get($settings, prefix)}text-uppercase {
-	text-transform: uppercase !important;
-}
 
-.#{map-get($settings, prefix)}text-lowercase {
-	text-transform: lowercase !important;
-}
 
-.#{map-get($settings, prefix)}text-capitalize {
-	text-transform: capitalize !important;
-}
 
-.#{map-get($settings, prefix)}text-strikethrough {
-	text-decoration: line-through !important;
-}

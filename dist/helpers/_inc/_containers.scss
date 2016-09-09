@@ -1,25 +1,23 @@
-$container-sizes: (
-	small: 500px,
-	medium: 800px,
-	large: 1000px,
-	x-large: 1200px,
-	fluid: null
-) !default;
+@if map-deep-get($settings, helpers, containers) != false {
+	%container {
+		@include clearfix;
+		position: relative;
+		margin: auto;
+		padding: 0 map-get($grid, mobile-gutter);
+	}
 
-%container {
-	@include clearfix;
-	position: relative;
-	margin: auto;
-	padding: 0 map-get($grid, mobile-gutter);
-}
+	@each $size, $value in $container-sizes {
+		.#{map-get($settings, prefix)}container-#{$size} {
+			@extend %container;
+			max-width: $value;
+		}
 
-// Generate container sizes
-@each $size, $value in $container-sizes {
-	.#{map-get($settings, prefix)}container-#{$size} {
-		@extend %container;
-		max-width: $value;
+		.#{map-get($settings, prefix)}max-width-#{$size} {
+			max-width: $value;
+		}
 	}
 }
+
 
 .#{map-get($settings, prefix)}vertical-align-container {
 	display: table;

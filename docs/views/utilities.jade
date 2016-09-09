@@ -24,6 +24,21 @@ block body
 						&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
 						&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
 
+		article.article(id="background")
+			h2 Background Color: Hover
+			p Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.
+			.example
+				.example-rendered
+					.background-brand-primary(style="height: 40px")
+					.background-secondary-orange(style="height: 40px")
+					.background-greyscale-50(style="height: 40px")
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+						&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+						&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+
 		article.article(id="borders")
 			h2 Borders
 			p Adds a border to a given element in the specified direction(s). It uses the color value specified in the keyline category of your <span class="var">$colors</span> map.
@@ -178,6 +193,8 @@ block body
 							&lt;div class="columns-3 offset-9"&gt;
 						&lt;/div&gt;
 
+			h3 Gutter
+
 
 		article.article(id="typography")
 			h2 Typography
@@ -239,6 +256,7 @@ block body
 				.example-rendered
 					.text-uppercase This text is uppercase
 					.text-capitalized This text is capitalized
+					.text-strikethrough This text is strikedtheought
 
 				pre.example-code
 					code.language-html.

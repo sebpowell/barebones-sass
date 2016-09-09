@@ -1,18 +1,3 @@
-$grid: (
-	columns: 12,
-	gutter: 24px,
-	breakpoint: 780px,
-	type: "padding",
-	mobile-gutter: 16px,
-) !default;
-
-$breakpoints: (
-	sm: 480px,
-	md: 780px,
-	mdl: 960px,
-	xl: 1400px
-) !default;
-
 @import "columns";
 @import "container";
 @import "gallery";

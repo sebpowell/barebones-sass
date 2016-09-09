@@ -1,17 +1,19 @@
-$types: padding, margin;
-$sides: top, right, bottom, left;
+@if map-deep-get($settings, helpers, spacing) != false {
+	$types: padding, margin;
+	$sides: top, right, bottom, left;
 
-@each $type in $types {
-	@each $key, $value in $sizes {
-		@include helpers("#{$type}-#{$key}", "#{$type}: #{$value}");
-		@each $side in $sides {
-			@include helpers("#{$type}-#{$side}-#{$key}", "#{$type}-#{$side}: #{$value}");
-			@include helpers("#{$type}-#{$side}-none", "#{$type}-#{$side}: 0");
+	@each $type in $types {
+		@each $key, $value in $sizes {
+			@include helpers("#{$type}-#{$key}", "#{$type}: #{$value}");
+			@each $side in $sides {
+				@include helpers("#{$type}-#{$side}-#{$key}", "#{$type}-#{$side}: #{$value}");
+				@include helpers("#{$type}-#{$side}-none", "#{$type}-#{$side}: 0");
+			}
 		}
 	}
-}
 
-@include helpers("no-padding", "padding: 0");
-@include helpers("padding-none", "padding: 0");
-@include helpers("no-margin", "margin: 0");
-@include helpers("margin-none", "padding: 0");
+	@include helpers("no-padding", "padding: 0");
+	@include helpers("padding-none", "padding: 0");
+	@include helpers("no-margin", "margin: 0");
+	@include helpers("margin-none", "padding: 0");
+}

@@ -15,12 +15,14 @@ block body
 			h2 Misc
 			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced) and unit type (px, rems or ems).
 
+			
+
 			.example
 				pre.example-code
 					code.language-scss.
 						$misc: (
 							prefix: "bb-",
-							units: px
+							responsiveHelpers: true,
 						);
 
 		article.article(id="colors")
@@ -28,30 +30,29 @@ block body
 			p Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.
 			.example.margin-bottom-double
 				pre.example-code.border-bottom
-						code.language-scss.
-								$colors: (
-									brand: (
-										primary: #157AFB,
-										secondary: #FE5607,
-										...
-									),
-									secondary: (
-										orange: #F8B000,
-										...
-									),
-									greyscale: (
-										50: #FAFAFA,
-										100: #F5F5F5,
-										...
-									),
-									keyline: (
-										light: #E5E5E5,
-										...
-									),
-								);
-
-				pre.example-code
 					code.language-scss.
+						$colors: (
+							brand: (
+								primary: #157AFB,
+								secondary: #FE5607,
+								...
+							),
+							secondary: (
+								orange: #F8B000,
+								...
+							),
+							greyscale: (
+								50: #FAFAFA,
+								100: #F5F5F5,
+								...
+							),
+							keyline: (
+								light: #E5E5E5,
+								...
+							),
+						);
+
+						// Access like this
 						.element {
 							background-color: colors(brand, primary);
 						}
@@ -88,7 +89,10 @@ block body
 					code.language-scss.
 						$grid: (
 							columns: 12,
-							gutter: 1/4,
+							gutter: "24px",
+							breakpoint: "device-medium",
+							mobile-gutter: "24px",
+							mobile-spacing: "24px",
 						);
 
 		article.article(id="breakpoints")
@@ -103,6 +107,19 @@ block body
 							device-medium: 480px,
 							...
 						);
+
+
+		article
+			h2 Line Heights
+
+		article
+			h2 Shadows
+
+		article
+			h2 Weights
+
+		article
+			h2 Font Sizes
 
 
 		article.article(id="sizes")

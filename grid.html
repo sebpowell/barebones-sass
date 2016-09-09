@@ -30,16 +30,8 @@
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <div class="docs-container">
-    <div class="docs-navigation hide">
+    <div class="docs-navigation">
       <ul class="docs-navigation-primary-links">
-        <li><a href="introduction.html">Getting Started</a>
-          <ul class="sub-navigation">
-            <li><a href="#installing">Installing Barebones</a></li>
-            <li><a href="#requirements">Requirements</a></li>
-            <li><a href="#support">Support</a></li>
-            <li><a href="#background">Background Reading</a></li>
-          </ul>
-        </li>
         <li><a href="settings.html">Settings</a>
           <ul class="sub-navigation">
             <li><a href="#misc">Misc</a></li>
@@ -73,19 +65,6 @@
           </ul>
         </li>
         <li><a href="mixins.html">Mixins</a>
-          <ul class="sub-navigation">
-            <li><a href="#arrow">Arrow</a></li>
-            <li><a href="#placeholder">Placeholder</a></li>
-            <li><a href="#uppercase">Uppercase</a></li>
-            <li><a href="#clearfix">Clearfix</a></li>
-            <li><a href="#ellipsis">Ellipsis</a></li>
-            <li><a href="#media-queries">Media Queries</a></li>
-            <li><a href="#strip-units">Strip Units</a></li>
-            <li><a href="#convert-to-rem">Convert to REM</a></li>
-            <li><a href="#no-bullet">No Bullet</a></li>
-          </ul>
-        </li>
-        <li><a href="functions.html">Functions</a>
           <ul class="sub-navigation">
             <li><a href="#arrow">Arrow</a></li>
             <li><a href="#placeholder">Placeholder</a></li>
@@ -143,7 +122,12 @@
           <tr>
             <td><span class="var">gutter</span></td>
             <td>1/4</td>
-            <td>If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px).</td>
+            <td>If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px). http://getbase.org/docs/helpers.html</td>
+          </tr>
+          <tr>
+            <td><span class="var">mobile-spacing</span></td>
+            <td>1/4</td>
+            <td>If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px). http://getbase.org/docs/helpers.html</td>
             
           </tr>
         </table>
@@ -151,6 +135,7 @@
       <article id="containers" class="article">
         <h2>Grid Type</h2>
         <p>Barebones allows you to create a grid system that uses either <strong>margins</strong> or padding</strong>. Padding-based grids work by adding padding to left and right side of each column. This creates the gutters in between columns, </p>
+        <p>By default, columns are only activated from tablet onwards. This means columns are stacked on top of each other on mobile. If you want columns to work on mobile too, just add the is-mobile modifier on the columns container: You can define a column size for each viewport size: mobile, tablet, and desktop.</p>
       </article>
       <article id="containers" class="article">
         <h2>Containers</h2>
@@ -231,66 +216,8 @@
 </code></pre>
         </div>
       </article>
-      <article class="article">
-        <h2>Galleries</h2>
-        <p>Galleries are made up of elements that repeat across multiple lines. It works in a similar way to the span mixin, with the only difference being that the right margin is removed from the last item of the row, based on the number of items per row.</p>
-        <p>If you want to specify different grid sizes at different breakpoints, the mixin needs to be called within a media query context to avoid nth-item collisions.</p>
-        <p>You can pass in "false" as a parameter to remove all gutters. </p>
-        <div class="example margin-bottom-double">
-          <div class="example-rendered">
-            <div class="photo-gallery">
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-              <div class="photo-gallery-item"></div>
-            </div>
-          </div>
-          <pre class="example-code border-bottom"><code class="language-scss">.photo-gallery {
-	@include clearfix; // Clears the floats.
-}
-
-.photo-gallery-item {
-	@include gallery(3);
-	// Creates a gallery with each item taking up 3 columns of your grid
-	// (on a 12 grid-layout, this would be 4 items). This will be the case at every screen size.
-}
-
-.photo-gallery-item {
-	@include if-between(device-x-small, device-medium) {
-		@include gallery(6, $gutter: 2);
-	}
-	@include if-above(device-medium) {
-		@include gallery(4);
-	}
-	// Creates a gallery with each item taking up 3 columns of your grid
-	// (on a 12 grid-layout, this would be 4 items). This will be the case at every screen size.
-}
-</code></pre>
-          <pre class="example-code"><code class="language-css">.photo-gallery {
-	@include clearfix; // Clears the floats.
-}
-
-.photo-gallery-item {
-	width: 22.85714%;
-	margin-right: 2.85714%;
-	float: left;
-}
-
-.photo-gallery-item(:nth-child: 3n + 1) {
-	width: 22.85714%;
-	margin-right: 0;
-	float: right;
-}
-
-</code></pre>
-        </div>
-      </article>
+      
+      
       <article id="containers" class="article">
         <h2>Helper Classes</h2>
         <p>Various helper classes are also generated to quickly create grids – <a href="helpers.html">see here</a>.</p>

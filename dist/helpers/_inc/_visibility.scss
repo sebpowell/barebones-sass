@@ -1,28 +1,30 @@
-@include helpers("hide", "display: none", "visibility: hidden", "opacity: 0");
-@include helpers("show", "display: block", "visibility: visible", "opacity: 1");
-@include helpers("is-hidden", "display: none", "visibility: hidden", "opacity: 0");
-@include helpers("is-visible", "display: block", "visibility: visible", "opacity: 1");
+@if map-deep-get($settings, helpers, visibility) != false {
+	@include helpers("hide", "display: none", "visibility: hidden", "opacity: 0");
+	@include helpers("show", "display: block", "visibility: visible", "opacity: 1");
+	@include helpers("is-hidden", "display: none", "visibility: hidden", "opacity: 0");
+	@include helpers("is-visible", "display: block", "visibility: visible", "opacity: 1");
 
-.#{map-get($settings, prefix)}hide {
-	display: none !important;
-	visibility: hidden !important;
-	opacity: 0 !important;
-}
+	.#{map-get($settings, prefix)}hide {
+		display: none !important;
+		visibility: hidden !important;
+		opacity: 0 !important;
+	}
 
-.#{map-get($settings, prefix)}is-hidden {
-	display: none !important;
-	visibility: hidden !important;
-	opacity: 0 !important;
-}
+	.#{map-get($settings, prefix)}is-hidden {
+		display: none !important;
+		visibility: hidden !important;
+		opacity: 0 !important;
+	}
 
-.#{map-get($settings, prefix)}show {
-	display: block !important;
-	visibility: visible !important;
-	opacity: 1 !important;
-}
+	.#{map-get($settings, prefix)}show {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
 
-.#{map-get($settings, prefix)}is-visible {
-	display: block !important;
-	visibility: visible !important;
-	opacity: 1 !important;
+	.#{map-get($settings, prefix)}is-visible {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
 }

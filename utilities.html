@@ -30,16 +30,8 @@
 <body class="page-layout-docs">
   <div class="backdrop"></div>
   <div class="docs-container">
-    <div class="docs-navigation hide">
+    <div class="docs-navigation">
       <ul class="docs-navigation-primary-links">
-        <li><a href="introduction.html">Getting Started</a>
-          <ul class="sub-navigation">
-            <li><a href="#installing">Installing Barebones</a></li>
-            <li><a href="#requirements">Requirements</a></li>
-            <li><a href="#support">Support</a></li>
-            <li><a href="#background">Background Reading</a></li>
-          </ul>
-        </li>
         <li><a href="settings.html">Settings</a>
           <ul class="sub-navigation">
             <li><a href="#misc">Misc</a></li>
@@ -85,19 +77,6 @@
             <li><a href="#no-bullet">No Bullet</a></li>
           </ul>
         </li>
-        <li><a href="functions.html">Functions</a>
-          <ul class="sub-navigation">
-            <li><a href="#arrow">Arrow</a></li>
-            <li><a href="#placeholder">Placeholder</a></li>
-            <li><a href="#uppercase">Uppercase</a></li>
-            <li><a href="#clearfix">Clearfix</a></li>
-            <li><a href="#ellipsis">Ellipsis</a></li>
-            <li><a href="#media-queries">Media Queries</a></li>
-            <li><a href="#strip-units">Strip Units</a></li>
-            <li><a href="#convert-to-rem">Convert to REM</a></li>
-            <li><a href="#no-bullet">No Bullet</a></li>
-          </ul>
-        </li>
         <li><a href="utilities.html">Utilities</a>
           <ul class="sub-navigation">
             <li><a href="#background">Background Color</a></li>
@@ -119,6 +98,21 @@
       </article>
       <article id="background" class="article">
         <h2>Background Color</h2>
+        <p>Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.</p>
+        <div class="example">
+          <div class="example-rendered">
+            <div style="height: 40px" class="background-brand-primary"></div>
+            <div style="height: 40px" class="background-secondary-orange"></div>
+            <div style="height: 40px" class="background-greyscale-50"></div>
+          </div>
+          <pre class="example-code"><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+</code></pre>
+        </div>
+      </article>
+      <article id="background" class="article">
+        <h2>Background Color: Hover</h2>
         <p>Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.</p>
         <div class="example">
           <div class="example-rendered">
@@ -294,9 +288,9 @@
           <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
 	&lt;div class="columns-3 offset-9"&gt;
 &lt;/div&gt;
-
 </code></pre>
         </div>
+        <h3>Gutter</h3>
       </article>
       <article id="typography" class="article">
         <h2>Typography</h2>
@@ -354,6 +348,7 @@
           <div class="example-rendered">
             <div class="text-uppercase">This text is uppercase</div>
             <div class="text-capitalized">This text is capitalized</div>
+            <div class="text-strikethrough">This text is strikedtheought</div>
           </div>
           <pre class="example-code"><code class="language-html">&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
 &lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
