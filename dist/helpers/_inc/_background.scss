@@ -44,72 +44,72 @@
 
 
 
-@mixin helperGenerator($property, $map, $keys...) {
-	@each $size, $value in $map {
-		.#{$property}-#{$name}-#{$size} {
-			#{$property}: $value !important;
-			@if directions == true {
-				@each $direction in [left, right, top, bottom] {
+// @mixin helperGenerator($property, $map, $keys...) {
+// 	@each $size, $value in $map {
+// 		.#{$property}-#{$name}-#{$size} {
+// 			#{$property}: $value !important;
+// 			@if directions == true {
+// 				@each $direction in [left, right, top, bottom] {
 
-				}
-			}
-		}
-	}
-}	
+// 				}
+// 			}
+// 		}
+// 	}
+// }	
  
 
 
 
-$colours: (
-	brand: (
+// $colours: (
+// 	brand: (
 
-	),
+// 	),
 
-	text: (
-
-
-	),
+// 	text: (
 
 
-
-
-	// Errors
-
-	error: (
-
-		light: red,
-		dark: black
-	),
+// 	),
 
 
 
-);
+
+// 	// Errors
+
+// 	error: (
+
+// 		light: red,
+// 		dark: black
+// 	),
+
+
+
+// );
 
 
 // Colours
 
-$brand: (
-	primary: red,
-	secondary: blue
-);
+// $brand: (
+// 	primary: red,
+// 	secondary: blue
+// );
 
-$test: (
-	light: grey,
-	dark: grey
-);
+// $test: (
+// 	light: grey,
+// 	dark: grey
+// );
 
-$keylines: (
+// $keylines: (
 
-	light: grey, 
-	dark: grey,
-);
+// 	light: grey, 
+// 	dark: grey,
+// );
 
 
 
-@include helperGenerator("background-color", "brand", $brand, true);
-@include helperGenerator("background-color", "brand", $brand, true);
+// @include helperGenerator("background-color", "brand", $brand, true);
+// @include helperGenerator("background-color", "brand", $brand, true);
 
-@include helperGenerator("bakcground-color", $colours, true, );
+// @include helperGenerator("bakcground-color", $colours, true, );
 
 // line-height
 // color
