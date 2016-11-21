@@ -90,3 +90,88 @@ table {
 img {
 	max-width: 100%;
 }
+
+
+
+@mixin gall($settings) {
+	$items: length($settings);
+	@debug $items;
+
+
+	// $test: 0;
+
+	@for $index from 1 through $items {
+
+		@function length($map) {
+			@each $item in $amp {
+				@return length()
+			}
+		}
+
+		// @debug $index;
+		// $test + length( map-get($settings, $index));
+
+
+
+		// @return length( map-get($settings, $index));
+
+		// $length: length( map-get($settings, $index));
+
+		// @each $value in map-get($settings, $index) {
+			// @debug $value;
+
+			// &:nth-child(#{12}n+#{$i+$v}) {
+			// 	width: (100% / 12) * nth($value, $v);
+			// }
+		// }
+	}
+
+
+	// @debug $test;
+	// background: blue;
+}
+
+
+$gall: (
+
+	3 3 3 3,
+	6 6,
+	4 4 4,
+	6 3,
+);
+
+
+
+
+.gallery-item {
+	@include gall($gall);
+	height: 40px;
+	float: left;
+	background: red;
+	border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

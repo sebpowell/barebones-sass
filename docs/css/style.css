@@ -139,10 +139,6 @@
 
 .row.no-gutter > [class*='columns'] { padding: 0; }
 
-.line-height-brand-primary { line-height: red !important; }
-
-.line-height-brand-secondary { line-height: blue !important; }
-
 .vertical-align-container { display: table; height: 100%; width: 100%; }
 
 .vertical-align-container .vertical-align-container-inner { display: table-cell; vertical-align: middle; height: 100%; }
@@ -474,6 +470,8 @@ input[type="text"]::-ms-clear, input[type="email"]::-ms-clear, input[type="numbe
 table { width: 100%; padding: 0; margin: 0; border-collapse: initial; border-spacing: 0; }
 
 img { max-width: 100%; }
+
+.gallery-item { height: 40px; float: left; background: red; border: 1px solid black; }
 
 pre, .example { overflow-x: scroll !important; }
 
