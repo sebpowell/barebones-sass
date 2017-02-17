@@ -73,10 +73,7 @@
 	}
 }
 
+@include helpers("text-ellipsis", "width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap");
 
-
-
-
-
-
+@include helpers("no-underline", "text-decoration: none");
 

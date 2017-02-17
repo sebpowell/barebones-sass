@@ -1,0 +1,31 @@
+@if map-deep-get($helpers, border) != false {
+	@include helpers("no-border", "border: none");
+	$border-sides: top, right, bottom, left;
+
+	@each $color, $value in $keylines {
+		@include helpers("border-#{$color}", "border: 1px solid #{$value}");
+		@each $side in $border-sides {
+			@include helpers("border-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
+		}
+	}
+}
+
+
+
+
+
+// .hover-bg-blue:hover
+
+// @mixin background-color-gen($map, $categories...) {
+
+// 	@each $color, $value in map-deep-get($map, $categories...) {
+
+// 		.test {
+// 			background-color: $value;
+// 		}
+
+// 	}
+// }
+
+
+// @include background-color-gen($colors, brand);

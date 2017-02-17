@@ -4,21 +4,16 @@ $settings: () !default;
 /////////////////////////////////////////////////////////
 
 $breakpoints: (
-	sm: 480px,
 	md: 780px,
-	mdl: 960px,
-	xl: 1400px
 ) !default;
 
 $grid: (
 	columns: 12,
 	gutter: 24px,
-	breakpoint: 780px,
-	type: "padding",
-	mobile-gutter: 16px,
+	breakpoint: 780px
 ) !default;
 
-$container-sizes: (
+$containers (
 	small: 500px,
 	medium: 800px,
 	large: 1000px,
@@ -26,56 +21,73 @@ $container-sizes: (
 	fluid: null
 ) !default;
 
-$sizes:(
-	xsmall: 4px,
-	small: 8px,
-	medium: 16px,
-	medium-large: 24px,
-	large: 32px,
-	x-large: 64px,
-) !default;
 
+$keylines: (
 
-
-// Branding
-/////////////////////////////////////////////////////////
-
-$colors: (
-
-	keylines: (
-		light: grey,
-		dark: grey
-	)
+	light: black, 
+	dark: black
 
 ) !default;
 
 
 
+$helpers: (
+	"border": false,
 
-$shadows: (
-	small: null,
-	medium: null,
-	large: null,
-	larger: null, 
-) !default;
+);
 
 
 
-// Typography
-/////////////////////////////////////////////////////
+// $sizes:(
+// 	xsmall: 4px,
+// 	small: 8px,
+// 	medium: 16px,
+// 	medium-large: 24px,
+// 	large: 32px,
+// 	x-large: 64px,
+// ) !default;
 
-$line-heights: (
-	small: 1.2,
-	medium: 1.5,
-	large: 2
-) !default;
 
-$font: () !default;
 
-$font-sizes: (
-	x-small: 10px,
-	// small: 
+// // Branding
+// /////////////////////////////////////////////////////////
 
-) !default;
+// $colors: (
+
+// 	keylines: (
+// 		light: grey,
+// 		dark: grey
+// 	)
+
+// ) !default;
+
+
+
+
+// $shadows: (
+// 	small: null,
+// 	medium: null,
+// 	large: null,
+// 	larger: null, 
+// ) !default;
+
+
+
+// // Typography
+// /////////////////////////////////////////////////////
+
+// $line-heights: (
+// 	small: 1.2,
+// 	medium: 1.5,
+// 	large: 2
+// ) !default;
+
+// $font: () !default;
+
+// $font-sizes: (
+// 	x-small: 10px,
+// 	// small: 
+
+// ) !default;
 
 

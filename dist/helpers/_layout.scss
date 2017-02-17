@@ -1,0 +1,92 @@
+@if map-deep-get($settings, helpers, layout) != false {
+	.clearfix {
+		@include clearfix;
+	}
+
+	@include helpers("float-left", "float: left");
+	@include helpers("float-right", "float: right");
+	@include helpers("display-block", "display: block", "width: 100%");
+	@include helpers("display-inline-block", "display: inline-block");
+	@include helpers("display-none", "display: none");
+	@include helpers("display-table", "display: table");
+	@include helpers("display-table-cell", "display: table-cell");
+	@include helpers("display-table-fixed", "table-layout: fixed");
+	@include helpers("display-flex", "display: flex");
+	@include helpers("position-absolute", "position: absolute");
+	@include helpers("position-relative", "position: relative");
+	@include helpers("position-static", "position: static");
+
+
+
+	@include helpers("flex-column", "flex-direction: column");
+	@include helpers("flex-row", "flex-direction: row");
+	@include helpers("flex-wrap", "flex-wrap: wrap");
+
+
+	@include helpers("overflow-hidden", "overflow: hidden");
+	@include helpers("overflow-scroll", "overflow: scroll");
+	@include helpers("overflow-visible", "overflow: visible");
+	@include helpers("overflow-auto", "overflow: auto");
+
+
+	@include helpers("items-start", "align-items: flex-start");
+	@include helpers("items-end", "align-items: flex-end");
+	@include helpers("items-center", "align-items: center");
+
+	.aspect-ratio--16x9 { padding-bottom: 56.25%; }
+	.aspect-ratio--9x16 { padding-bottom: 177.77%; }
+	
+	.cursor-disabled {
+		cursor: disabled !important;
+	}
+
+	.cursor-pointer {
+		cursor: pointer !important;
+	}
+
+	.hide-child .child {
+		opacity: 0;
+	}
+
+	.hide-child:hover .child {
+		opacity: 1;
+	}
+
+	.text-underline-hover {
+		&:hover {
+	  		text-decoration: underline !important;
+	  	}
+	}
+
+	.background-cover {
+		background-size: cover !important;
+	}
+
+	.background-contain {
+		background-size: contain !important;
+	}
+
+	.background-center {
+		background-position: center;
+	}
+
+	.vertical-align-top {
+		vertical-align: top !important;
+	}
+
+	.vertical-align-middle {
+		vertical-align: middle !important;
+	}
+
+	.vertical-align-bottom {
+		vertical-align: bottom !important;
+	}
+
+	.width-100 {
+		width: 100% !important;
+	}
+
+	.height-100 {
+		height: 100% !important;
+	}
+}

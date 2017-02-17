@@ -1,161 +1,166 @@
-$settings: (
+// $settings: (
 
-	responsiveHelpers: false,
+// 	responsiveHelpers: true,
 
-	textColorsSource: text forms,
-
-	helpers: (
-		// background: false,
-		border: false,
-		containers: false,
-		layout: false,
-		// spacing: false,
-		// text: false,
-		visibility: false,
-	),
-);
-
-$colors: (
-	brand: (
-		primary: #157afb,
-		secondary: #fe5607
-	),
-
-	text: (
-
-		forms: (
-			placeholder: grey,
-			poo: red,
-		),
-	),
-
-	secondary: (
-		orange: #f8b000,
-		green: #00C771,
-	),
-
-	social: (
-		facebook: #103480,
-		twitter: #1DA1F2
-	),
-
-	system: (
-		warning: #CE3535
-	),
-
-	warning: (
-		light: #FFEEEE,
-		base: #CE3535,
-		dark: #FFEEEE,
-	),
-
-	code: (
-		blue: #3c94d4,
-		orange: #ffa566,
-		purple: #a675d0,
-		green: #44b8b4
-	),
-
-	greyscale: (
-		50: #FAFAFA,
-		100: #F5F5F5,
-		200: #EEEEEE,
-		300: #E0E0E0,
-		400: #BDBDBD,
-		500: #9E9E9E,
-		600: #757575,
-		700: #616161,
-		800: #424242,
-		900: #212121,
-
-		x-light: #fcfcfc,
-		light: #b8b6bb,
-		medium: #706d77,
-		dark: #4b484f
-	),
-
-	keyline: (
-		light: #ebebeb,
-		dark: #dddddd,
-	)
-);
-
-$fonts: (
-	primary: (
-		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
-		weights: (
-			light: 100,
-			regular: 400,
-			semi-bold: 600,
-			bold: 700
-		),
-	),
-	code: (
-		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
-	),
-	secondary: (
-		name: #{"Futura-PT", 'Futura PT', sans-serif},
-		weights: (
-			light: 100,
-			regular: 400,
-			bold: 700
-		),
-	),
-);
-
-$shadows: (
-	sm: 0 1px 2px rgba(0,0,0,0.06),
-	md: 0 3px 2px rgba(0,0,0,0.1),
-);
-
-$breakpoints: (
-	device-x-small: 350px,
-	// device-small: 480px,
-	device-medium: 780px,
-	device-medium-large: 960px,
-	// device-large: 1280px,
-	device-x-large: 1400px
-);
-
-$grid: (
-	columns: 12,
-	gutter: 24px,
-	breakpoint: "device-medium",
-	type: "padding",
-	mobile-gutter: 16px,
-	// mobile-spacing: 82px,
-);
-
-$font-sizes: (
-	x-small: 12px,
-	small: 14px,
-	base: 16px,
-	medium: 20px,
-	medium-large: 24px,
-	large: 32px,
-	x-large: 42px
-);
-
-$line-height: (
-	sm: 1,
-	md: 1.2,
-	lg: 1.5,
-	xl: 2
-);
-
-// $layers: (
-// 	backdrop: 3,
-// 	modal: 4,
-// 	share-bar: 2,
-// 	navigation: 1,
+// 	helpers: (
+// 		// background: false,
+// 		border: false,
+// 		containers: false,
+// 		// layout: false,
+// 		// spacing: false,
+// 		// text: false,
+// 		visibility: false,
+// 	),
 // );
-//
-$sizes: (
-  quarter: 4px,
-  half: 8px,
-  base: 16px,
-  double-half: 24px,
-  double: 32px,
-  triple: 48px,
-  quad: 64px,
-);
+
+
+// $fonts: (
+// 	primary: (
+// 		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
+// 		weights: (
+// 			light: 100,
+// 			regular: 400,
+// 			semi-bold: 600,
+// 			bold: 700
+// 		),
+// 	),
+// 	code: (
+// 		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
+// 	),
+// 	secondary: (
+// 		name: #{"Futura-PT", 'Futura PT', sans-serif},
+// 		weights: (
+// 			light: 100,
+// 			regular: 400,
+// 			bold: 700
+// 		),
+// 	),
+// );
+
+// $shadows: (
+// 	sm: 0 1px 2px rgba(0,0,0,0.06),
+// 	md: 0 3px 2px rgba(0,0,0,0.1),
+// 	lg: 0 3px 2px rgba(0,0,0,0.1),
+// );
+
+// $breakpoints: (
+// 	// device-x-small: 350px,
+// 	// device-small: 480px,
+// 	device-medium: 780px,
+// 	// device-medium-large: 960px,
+// 	// device-large: 1280px,
+// 	// device-x-large: 1400px
+// );
+
+// $grid: (
+// 	columns: 12,
+// 	gutter: 24px,
+// 	breakpoint: "device-medium",
+// 	type: "padding",
+// 	mobile-spacing: 16px,
+// );
+
+// $font-sizes: (
+// 	x-small: 12px,
+// 	small: 14px,
+// 	base: 16px,
+// 	medium: 20px,
+// 	medium-large: 24px,
+// 	large: 32px,
+// 	x-large: 42px
+// );
+
+// $line-height: (
+// 	sm: 1,
+// 	md: 1.2,
+// 	lg: 1.5,
+// 	xl: 2
+// );
+
+// // $layers: (
+// // 	backdrop: 3,
+// // 	modal: 4,
+// // 	share-bar: 2,
+// // 	navigation: 1,
+// // );
+// //
+// $sizes: (
+//   quarter: 4px,
+//   half: 8px,
+//   base: 16px,
+//   double-half: 24px,
+//   double: 32px,
+//   triple: 48px,
+//   quad: 64px,
+// );
+
+
+
+// // opacity: 
+
+
+
+
+
+
+
+
+
+
+
+// $colors: (
+// 	brand: (
+// 		primary: #157afb,
+// 		secondary: #fe5607
+// 	),
+
+// 	secondary: (
+// 		orange: #f8b000,
+// 		green: #00C771,
+// 	),
+
+// 	social: (
+// 		facebook: #103480,
+// 		twitter: #1DA1F2
+// 	),
+
+// 	system: (
+// 		warning: #CE3535
+// 	),
+
+// 	warning: (
+// 		light: #FFEEEE,
+// 		base: #CE3535,
+// 		dark: #FFEEEE,
+// 	),
+
+// 	code: (
+// 		blue: #3c94d4,
+// 		orange: #ffa566,
+// 		purple: #a675d0,
+// 		green: #44b8b4
+// 	),
+
+// 	greyscale: (
+// 		50: #FAFAFA,
+// 		100: #F5F5F5,
+// 		200: #EEEEEE,
+// 		300: #E0E0E0,
+// 		400: #BDBDBD,
+// 		500: #9E9E9E,
+// 		600: #757575,
+// 		700: #616161,
+// 		800: #424242,
+// 		900: #212121,
+
+// 		x-light: #fcfcfc,
+// 		light: #b8b6bb,
+// 		medium: #706d77,
+// 		dark: #4b484f
+// 	),
+
+// 	keyline: (
+// 		light: #ebebeb,
+// 		dark: #dddddd,
+// 	)
+// );

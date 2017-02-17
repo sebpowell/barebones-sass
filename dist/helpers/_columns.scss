@@ -1,0 +1,41 @@
+// Generate column helper classes.
+@for $i from 1 through map-get($grid, columns) {
+	.#{map-get($settings, prefix)}columns-#{$i} {
+		padding: 0 map-get($grid, gutter) / 2;
+
+		@include if-below( map-get($grid, breakpoint) ) {
+			width: 100%;
+			&:not(:last-of-type) {
+				margin-bottom: map-get($grid, gutter);
+			}
+		}
+
+		@include if-above( map-get($grid, breakpoint) ) {
+			width: $i * (100% / map-get($grid, columns));
+			float: left;
+		}
+	}
+
+}
+
+// Generate breakpoint-specific column helper classes.
+@if map-get($settings, responsiveHelpers) != false {
+	@each $key, $value in $breakpoints {
+		@for $i from 1 through map-get($grid, columns) {
+			.#{map-get($settings, prefix)}columns-#{$i}-above-#{$key} {
+				padding: 0 map-get($grid, gutter) / 2;
+
+				@include if-below($key) {
+					&:not(:last-of-type) {
+						margin-bottom: map-get($grid, gutter);
+					}
+				}
+
+				@include if-above($key) {
+					width: $i * (100% /  map-get($grid, columns));
+					float: left;
+				}
+			}
+		}
+	}
+}
