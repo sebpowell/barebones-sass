@@ -23,17 +23,4 @@
 			}
 		}
 	}
-
-	// @if map-get($grid, type) == "margin" {
-	// 	.offset-#{$i} {
-	// 		@include if-above($gridBreakpoint) {
-	// 			$totalGutters: (map-get($grid, columns) / map-get($grid, gutter)) + map-get($grid, columns) - 1;
-	// 			$gutterWidthTest: 100% / $totalGutters;
-	// 			$totalGutterWidth: $gutterWidthTest * $gutterCount;
-	// 			$columnWidth: (100% - $totalGutterWidth) / map-get($grid, columns);
-	// 			// margin-left: ($columns * $columnWidth) + ( ($columns - 1 ) * $gutterWidthTest);
-	// 			margin-left: $i * $columnWidth + $i * $gutterWidthTest;
-	// 		}
-	// 	}
-	// }
 }
