@@ -1,0 +1,9 @@
+@if map-deep-get($settings, helpers, float) != false {
+	
+	.clearfix {
+		@include clearfix;
+	}
+
+	@include helpers("float-left", "float: left");
+	@include helpers("float-right", "float: right");
+}

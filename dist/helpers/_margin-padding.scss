@@ -2,37 +2,24 @@
 	$types: padding, margin;
 	$sides: top, right, bottom, left;
 
-	@each $type in $types {
-		@each $key, $value in $sizes {
-			@include helpers("#{$type}-#{$key}", "#{$type}: #{$value}");
+	$i: 0;
+
+	@while $i < strip-unit(map-get($spacing, variants)) {
+		$n: $i * strip-unit(map-get($spacing, base));
+		@each $type in $types {
+			@include helpers("#{$type}-#{$i}", "#{$type}: #{$n}");
 			@each $side in $sides {
-				@include helpers("#{$type}-#{$side}-#{$key}", "#{$type}-#{$side}: #{$value}");
+				@include helpers("#{$type}-#{$side}-#{$n}", "#{$type}-#{$side}: #{$n}px");
 				@include helpers("#{$type}-#{$side}-none", "#{$type}-#{$side}: 0");
 			}
+			@include helpers("#{$type}-vertical-#{$n}", "#{$type}: #{$n}px 0");	
 		}
+
+		$i: $i + 1;
 	}
 
-
-	// Padding vertical
-	// Write for loop 1, 10
-
-	// Border radius 
-	// Box shadow 
 	@include helpers("no-padding", "padding: 0");
 	@include helpers("padding-none", "padding: 0");
 	@include helpers("no-margin", "margin: 0");
 	@include helpers("margin-none", "padding: 0");
-}
-
-
-
-
-
-$i: 0;
-
-@while $i < 10 {
-  .while-#{$i} {
-    width: $i + "px";
-  }
-  $i: $i + 1;
 }

@@ -1,0 +1,6 @@
+@if map-deep-get($settings, helpers, text-align) != false {
+	$text-alignment: (left, center, right);
+	@each $direction in $text-alignment {
+		@include helpers("text-#{$direction}", "text-align: #{$direction}");
+	}
+}

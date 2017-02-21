@@ -1,0 +1,13 @@
+@if map-deep-get($settings, helpers, text-transform) != false {
+	.text-uppercase {
+		text-transform: uppercase !important;
+	}
+
+	.text-lowercase {
+		text-transform: lowercase !important;
+	}
+
+	.text-capitalize {
+		text-transform: capitalize !important;
+	}
+}

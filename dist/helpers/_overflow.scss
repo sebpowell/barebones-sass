@@ -1,0 +1,6 @@
+@if map-deep-get($settings, helpers, overflow) != false {
+	@include helpers("overflow-hidden", "overflow: hidden");
+	@include helpers("overflow-scroll", "overflow: scroll");
+	@include helpers("overflow-visible", "overflow: visible");
+	@include helpers("overflow-auto", "overflow: auto");
+}

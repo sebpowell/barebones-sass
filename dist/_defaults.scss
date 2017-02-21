@@ -3,91 +3,117 @@ $settings: () !default;
 // Settings
 /////////////////////////////////////////////////////////
 
+$helpers: (
+	"background": true,
+	"border-radius": true,
+	"borders": true,
+	"box-shadow": true,
+	"colors": true,
+	"columns": true,
+	"containers": true,
+	"cursor": true,
+	"display": true,
+	"flex": true,
+	"float": true,
+	"font-size": true,
+	"line-height": true,
+	"list": true,
+	"margin-padding": true,
+	"opacity": true,
+	"overflow": true,
+	"position": true,
+	"row": true,
+	"table": true,
+	"text-alignment": true,
+	"text-decoration": true,
+	"text-ellipsis": true,
+	"text-transform": true,
+	"vertical-align": true,
+	"visibility": true
+) !default;
+
+
+// Layout
+/////////////////////////////////////////////////////////
+
 $breakpoints: (
-	md: 780px,
+	"m": 780px
+) !default;
+
+$containers: (
+	"s": 500px,
+	"m": 800px,
+	"l": 1000px,
+	"xl": 1200px,
+	"fluid": null
 ) !default;
 
 $grid: (
-	columns: 12,
-	gutter: 24px,
-	breakpoint: 780px
+	"columns": 12,
+	"gutter": 24px,
+	"breakpoint": 780px
 ) !default;
 
-$containers (
-	small: 500px,
-	medium: 800px,
-	large: 1000px,
-	x-large: 1200px,
-	fluid: null
+$spacing: (
+	"base": 5px,
+	"variants": 10
 ) !default;
 
 
-$keylines: (
-
-	light: black, 
-	dark: black
-
-) !default;
-
-
-
-$helpers: (
-	"border": false,
-
-);
-
-
-
-// $sizes:(
-// 	xsmall: 4px,
-// 	small: 8px,
-// 	medium: 16px,
-// 	medium-large: 24px,
-// 	large: 32px,
-// 	x-large: 64px,
-// ) !default;
-
-
-
-// // Branding
+// Branding
 // /////////////////////////////////////////////////////////
 
-// $colors: (
 
-// 	keylines: (
-// 		light: grey,
-// 		dark: grey
-// 	)
+$colors: (
+	"brand": (
+		"primary": #157afb,
+		"secondary": #fe5607
+	),
 
-// ) !default;
+	"social": (
+		"facebook": #103480,
+		"twitter": #1DA1F2
+	),
 
+	"system": (
+		"warning": #CE3535
+	),
 
+	"greyscale": (
 
+	)
 
-// $shadows: (
-// 	small: null,
-// 	medium: null,
-// 	large: null,
-// 	larger: null, 
-// ) !default;
+) !default;
 
+$keylines: (
+	"light": black, 
+	"dark": black
+) !default;
 
-
-// // Typography
-// /////////////////////////////////////////////////////
-
-// $line-heights: (
-// 	small: 1.2,
-// 	medium: 1.5,
-// 	large: 2
-// ) !default;
-
-// $font: () !default;
-
-// $font-sizes: (
-// 	x-small: 10px,
-// 	// small: 
-
-// ) !default;
+$shadows: (
+	"s": null,
+	"m": null,
+	"l": null,
+	"xl": null, 
+) !default;
 
 
+// Typography
+/////////////////////////////////////////////////////
+
+$font-sizes: (
+	"xs": 10px,
+	"sm": 12px,
+	"b": 15px,
+	"m": 18px,
+	"ml": 24px,
+	"l": 32px,
+	"xl": 42px
+) !default;
+
+$line-heights: (
+	"xs": 1,
+	"s": 1.2,
+	"m": 1.5,
+	"l": 2
+) !default;

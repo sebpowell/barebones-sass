@@ -1,0 +1,3 @@
+@each $name, $size in $line-heights {
+		@include helpers("line-height-#{$name}", "line-height: #{$size}");
+	}

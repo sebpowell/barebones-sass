@@ -1,0 +1,23 @@
+@if map-deep-get($settings, helpers, text-decoration) != false {
+	.text-underline {
+		text-decoration: underline !important;
+	}
+
+	.text-underline-hover {
+		&:hover {
+			text-decoration: underline !important;
+		}
+	}
+
+	.no-underline {
+		text-decoration: none !important;
+	}
+
+	.text-strikethrough {
+		text-decoration: line-through !important;
+	}
+
+	.no-strikethrough {
+		text-decoration: none !important;
+	}
+}

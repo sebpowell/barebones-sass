@@ -1,7 +1,5 @@
 @if map-deep-get($settings, helpers, containers) != false {
 	%container {
-		@include clearfix;
-		position: relative;
 		margin: auto;
 		padding: 0 map-get($grid, gutter);
 	}

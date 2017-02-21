@@ -1,0 +1,13 @@
+@if map-get($helpers, cursor) != false {
+	.cursor-disabled {
+		cursor: disabled !important;
+	}
+
+	.cursor-pointer {
+		cursor: pointer !important;
+	}
+
+	.cursor-default {
+		cursor: default !important;
+	}
+}

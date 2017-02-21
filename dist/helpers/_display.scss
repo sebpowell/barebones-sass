@@ -1,0 +1,9 @@
+@if map-deep-get($settings, helpers, display) != false {
+	@include helpers("display-none", "display: none");
+	@include helpers("display-block", "display: block");
+	@include helpers("display-inline-block", "display: inline-block");
+	@include helpers("display-table", "display: table");
+	@include helpers("display-table-cell", "display: table-cell");
+	@include helpers("display-table-fixed", "table-layout: fixed");
+	@include helpers("display-flex", "display: flex");
+}

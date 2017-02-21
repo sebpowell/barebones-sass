@@ -1,13 +1,11 @@
 $settings:() !default;
 
-// Browser Resets
 *, *:before, *:after {
 	box-sizing: border-box;
 	&:hover, &:focus, &:active {
 		outline: none;
 	}
 }
-
 
 html {
 	-ms-text-size-adjust: 100%;
@@ -25,10 +23,10 @@ a, a:visited {
 	cursor: pointer;
 }
 
-
 @import "defaults";
 @import "mixins/mixins";
-// @import "grid/grid";
 @import "helpers/helpers";
+
+// @include background-color-gen($colors, brand, secondary, warning);
 
 

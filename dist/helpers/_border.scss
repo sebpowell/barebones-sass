@@ -9,23 +9,3 @@
 		}
 	}
 }
-
-
-
-
-
-// .hover-bg-blue:hover
-
-// @mixin background-color-gen($map, $categories...) {
-
-// 	@each $color, $value in map-deep-get($map, $categories...) {
-
-// 		.test {
-// 			background-color: $value;
-// 		}
-
-// 	}
-// }
-
-
-// @include background-color-gen($colors, brand);

@@ -1,0 +1,5 @@
+@if map-deep-get($settings, helpers, text) != false {
+	@each $name, $size in $font-sizes {
+		@include helpers("text-#{$name}", "font-size: #{$size}");
+	}
+}
