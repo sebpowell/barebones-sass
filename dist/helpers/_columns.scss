@@ -1,41 +1,44 @@
 @if map-get($helpers, columns) != false {
+	$name:  map-get($helpers, columns);
+	$breakpoint: map-get($grid, breakpoint);
+	$columns:  map-get($grid, columns);
+	$gutter:  map-get($grid, gutter);
 	
 	// Generate column helper classes.
-	@for $i from 1 through map-get($grid, columns) {
-		.#{map-get($settings, prefix)}columns-#{$i} {
-			padding: 0 map-get($grid, gutter) / 2;
+	@for $i from 1 through $columns {
+		.#{$name}-#{$i} {
+			padding: 0 $gutter / 2;
 
-			@include if-below( map-get($grid, breakpoint) ) {
+			@include if-below($breakpoint) {
 				width: 100%;
 				&:not(:last-of-type) {
-					margin-bottom: map-get($grid, gutter);
+					margin-bottom: $gutter;
 				}
 			}
 
-			@include if-above( map-get($grid, breakpoint) ) {
-				width: $i * (100% / map-get($grid, columns));
+			@include if-above($breakpoint) {
 				float: left;
+				width: $i * (100% / $columns);
 			}
 		}
-
 	}
 
 	// Generate breakpoint-specific column helper classes.
-	@if map-get($settings, responsiveHelpers) != false {
+	@if map-get($helpers, responsive) != false {
 		@each $key, $value in $breakpoints {
-			@for $i from 1 through map-get($grid, columns) {
-				.#{map-get($settings, prefix)}columns-#{$i}-above-#{$key} {
-					padding: 0 map-get($grid, gutter) / 2;
+			@for $i from 1 through $columns {
+				.#{$name}-#{$i}-above-#{$key} {
+					padding: 0 $gutter / 2;
 
 					@include if-below($key) {
 						&:not(:last-of-type) {
-							margin-bottom: map-get($grid, gutter);
+							margin-bottom: $gutter;
 						}
 					}
 
 					@include if-above($key) {
-						width: $i * (100% /  map-get($grid, columns));
 						float: left;
+						width: $i * (100% /  $columns);
 					}
 				}
 			}
@@ -44,26 +47,33 @@
 
 	// Generates classes for column offsets.
 	@for $i from 1 through map-get($grid, columns) {
-		.#{map-get($settings, prefix)}offset-#{$i} {
-			@include if-above( map-get($grid, breakpoint) ) {
-				margin-left: $i * (100% /  map-get($grid, columns));
+		.offset-#{$i} {
+			@include if-above($breakpoint) {
+				margin-left: $i * (100% /  $columns);
 			}
 		}
 
-		@if map-get($settings, responsiveHelpers) != false {
+		@if map-get($helpers, responsive) != false {
 			@each $breakpoint, $value in $breakpoints {
-				.#{map-get($settings, prefix)}offset-#{$i}-above-#{$breakpoint} {
+				.offset-#{$i}-above-#{$breakpoint} {
 					@include if-above($value) {
-						margin-left: $i * (100% /  map-get($grid, columns));
+						margin-left: $i * (100% /  $columns);
 					}
 				}
 
-				.#{map-get($settings, prefix)}offset-#{$i}-below-#{$breakpoint} {
+				.offset-#{$i}-below-#{$breakpoint} {
 					@include if-below($value) {
-						margin-left: $i * (100% /  map-get($grid, columns));
+						margin-left: $i * (100% /  $columns);
 					}
 				}
 			}
 		}
+	}
+
+	// Column container.
+	.#{$name} {
+		@include clearfix;
+		margin-left: -( $gutter / 2);
+		margin-right: -( $gutter / 2);
 	}
 }

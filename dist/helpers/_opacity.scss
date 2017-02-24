@@ -1,6 +1,5 @@
-@if map-deep-get($settings, helpers, opacity) != false {
+@if map-get($helpers, opacity) != false {
 	$i: 0;
-
 	@while $i <= 10 {
 		.opacity-#{$i} {
 			opacity: $i * 0.1;

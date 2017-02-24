@@ -1,23 +1,28 @@
-@if map-deep-get($settings, helpers, text-decoration) != false {
-	.text-underline {
+@if map-get($helpers, text-decoration) != false {
+	$className: "";
+	@if map-get($helpers, text-decoration) != null {
+		$className: map-get($helpers, text-decoration) + "-";
+	}
+
+	.#{$className}underline {
 		text-decoration: underline !important;
 	}
 
-	.text-underline-hover {
+	.#{$className}underline-hover {
 		&:hover {
 			text-decoration: underline !important;
 		}
 	}
 
-	.no-underline {
+	.no-#{$className}underline {
 		text-decoration: none !important;
 	}
 
-	.text-strikethrough {
+	.#{$className}strikethrough {
 		text-decoration: line-through !important;
 	}
 
-	.no-strikethrough {
+	.no-#{$className}strikethrough {
 		text-decoration: none !important;
 	}
 }

@@ -1,13 +1,19 @@
-@if map-deep-get($settings, helpers, text-transform) != false {
-	.text-uppercase {
+@if map-get($helpers, text-transform) != false {
+	$className: "";
+
+	@if map-get($helpers, text-transform) != null {
+		$className: map-get($helpers, text-transform) + "-";
+	}
+
+	.#{$className}uppercase {
 		text-transform: uppercase !important;
 	}
 
-	.text-lowercase {
+	.#{$className}lowercase {
 		text-transform: lowercase !important;
 	}
 
-	.text-capitalize {
+	.#{$className}capitalize {
 		text-transform: capitalize !important;
 	}
 }

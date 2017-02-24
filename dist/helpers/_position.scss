@@ -1,5 +1,6 @@
-@if map-deep-get($settings, helpers, position) != false {
-	@include helpers("position-absolute", "position: absolute");
-	@include helpers("position-relative", "position: relative");
-	@include helpers("position-static", "position: static");
+@if map-get($helpers, position) != false {
+	$className: map-get($helpers, position);
+	@include helpers("#{$className}-absolute", "position: absolute");
+	@include helpers("#{$className}-relative", "position: relative");
+	@include helpers("#{$className}-static", "position: static");
 }

@@ -1,0 +1,6 @@
+@if map-get($helpers, text-size) != false {
+	$className: map-get($helpers, text-size);
+	@each $name, $size in $text-sizes {
+		@include helpers("#{$className}-#{$name}", "font-size: #{$size}");
+	}
+}

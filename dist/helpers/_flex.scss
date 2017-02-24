@@ -1,9 +1,9 @@
-@if map-deep-get($settings, helpers, flex) != false {
-	@include helpers("flex-column", "flex-direction: column");
-	@include helpers("flex-row", "flex-direction: row");
-	@include helpers("flex-wrap", "flex-wrap: wrap");
-
-	@include helpers("items-start", "align-items: flex-start");
-	@include helpers("items-end", "align-items: flex-end");
-	@include helpers("items-center", "align-items: center");
+@if map-get($helpers, flex) != false {
+	$name: map-get($helpers, flex);
+	@include helpers("#{$name}-column", "flex-direction: column");
+	@include helpers("#{$name}-row", "flex-direction: row");
+	@include helpers("#{$name}-wrap", "flex-wrap: wrap");
+	@include helpers("#{$name}-items-start", "align-items: flex-start");
+	@include helpers("#{$name}-items-end", "align-items: flex-end");
+	@include helpers("#{$name}-items-center", "align-items: center");
 }

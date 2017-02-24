@@ -1,10 +1,12 @@
-.border-collapse {
-    border-collapse: collapse;
-    border-spacing: 0;
+@if map-get($helpers, table) != false {
+	$className: map-get($helpers, table);
+	.#{$className}-border-collapse {
+	    border-collapse: collapse !important;
+	    border-spacing: 0 !important;
+	}
+
+	.#{$className}-layout-fixed {
+		table-layout: fixed !important;
+	}
 }
 
-// no-collapse
-
-// layout-fixed
-
-// not-fixed

@@ -1,16 +1,12 @@
-@if map-deep-get($settings, helpers, containers) != false {
+@if map-deep-get($helpers, container) != false {
 	%container {
 		margin: auto;
 		padding: 0 map-get($grid, gutter);
 	}
 
 	@each $size, $value in $containers {
-		.#{map-get($settings, prefix)}container-#{$size} {
+		.#{map-get($helpers, container)}-#{$size} {
 			@extend %container;
-			max-width: $value;
-		}
-
-		.#{map-get($settings, prefix)}max-width-#{$size} {
 			max-width: $value;
 		}
 	}

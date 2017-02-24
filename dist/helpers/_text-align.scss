@@ -1,0 +1,7 @@
+@if map-get($helpers, text-align) != false {
+	$directions: (left, center, right);
+	$className: map-get($helpers, text-align);
+	@each $direction in $directions {
+		@include helpers("#{$className}-#{$direction}", "text-align: #{$direction}");
+	}
+}

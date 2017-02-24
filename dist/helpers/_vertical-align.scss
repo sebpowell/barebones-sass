@@ -1,5 +1,9 @@
-@if map-deep-get($settings, helpers, vertical-align) != false {
-	@include helpers("vertical-align-top", "vertical-align: top");
-	@include helpers("vertical-align-middle", "vertical-align: middle");
-	@include helpers("vertical-align-bottom", "vertical-align: bottom");
+@if map-get($helpers, vertical-align) != false {
+	$className: "";
+	@if map-get($helpers, vertical-align) != null {
+		$className: map-get($helpers, vertical-align) + "-";
+	}
+	@include helpers("#{$className}align-top", "vertical-align: top");
+	@include helpers("#{$className}align-middle", "vertical-align: middle");
+	@include helpers("#{$className}align-bottom", "vertical-align: bottom");
 }

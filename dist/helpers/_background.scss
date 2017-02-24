@@ -1,5 +1,5 @@
 @if map-get($helpers, background) != false {
-	@include helpers("background-cover", "background-size: cover");
-	@include helpers("background-contain", "background-size: contain");
-	@include helpers("background-center", "background-position: center");
+	@include helpers("#{map-get($helpers, background)}-cover", "background-size: cover");
+	@include helpers("#{map-get($helpers, background)}-contain", "background-size: contain");
+	@include helpers("#{map-get($helpers, background)}-center", "background-position: center");
 }

@@ -1,35 +1,36 @@
-$settings: () !default;
 
 // Settings
 /////////////////////////////////////////////////////////
 
 $helpers: (
-	"background": true,
-	"border-radius": true,
-	"borders": true,
-	"box-shadow": true,
-	"colors": true,
-	"columns": true,
-	"containers": true,
-	"cursor": true,
-	"display": true,
-	"flex": true,
-	"float": true,
-	"font-size": true,
-	"line-height": true,
-	"list": true,
-	"margin-padding": true,
-	"opacity": true,
-	"overflow": true,
-	"position": true,
-	"row": true,
-	"table": true,
-	"text-alignment": true,
-	"text-decoration": true,
-	"text-ellipsis": true,
-	"text-transform": true,
-	"vertical-align": true,
-	"visibility": true
+	"background": "background",
+	"border-radius": "border-radius",
+	"border": "border",
+	"box-shadow": "box-shadow",
+	"clearfix": "clearfix",
+	"columns": "columns",
+	"container": "container",
+	"cursor": "cursor",
+	"display": "display",
+	"flex": "flex",
+	"float": "float",
+	"line-height": "line-height",
+	"list": "list",
+	"margin": "margin",
+	"opacity": "opacity",
+	"overflow": "overflow",
+	"padding": "padding",
+	"position": "position",
+	"table": "table",
+	"text-align": "text-align",
+	"text-decoration": "text-decoration",
+	"text-ellipsis": "text",
+	"text-size": "text-size",
+	"text-transform": "text-transform",
+	"vertical-align": "vertical-align",
+	"visibility": "visibility",
+
+	"responsive": true
 ) !default;
 
 
@@ -37,7 +38,7 @@ $helpers: (
 /////////////////////////////////////////////////////////
 
 $breakpoints: (
-	"m": 780px
+	"m": 780px,
 ) !default;
 
 $containers: (
@@ -60,9 +61,8 @@ $spacing: (
 ) !default;
 
 
-// Branding
+// Style
 // /////////////////////////////////////////////////////////
-
 
 $colors: (
 	"brand": (
@@ -101,7 +101,8 @@ $shadows: (
 // Typography
 /////////////////////////////////////////////////////
 
-$font-sizes: (
+
+$text-sizes: (
 	"xs": 10px,
 	"sm": 12px,
 	"b": 15px,
@@ -111,7 +112,7 @@ $font-sizes: (
 	"xl": 42px
 ) !default;
 
-$line-heights: (
+$line-height: (
 	"xs": 1,
 	"s": 1.2,
 	"m": 1.5,

@@ -1,9 +1,11 @@
-@if map-deep-get($settings, helpers, display) != false {
-	@include helpers("display-none", "display: none");
-	@include helpers("display-block", "display: block");
-	@include helpers("display-inline-block", "display: inline-block");
-	@include helpers("display-table", "display: table");
-	@include helpers("display-table-cell", "display: table-cell");
-	@include helpers("display-table-fixed", "table-layout: fixed");
-	@include helpers("display-flex", "display: flex");
+@if map-get($helpers, display) != false {
+	$name: map-get($helpers, display);
+
+	@include helpers("#{$name}-none", "display: none");
+	@include helpers("#{$name}-block", "display: block");
+	@include helpers("#{$name}-inline-block", "display: inline-block");
+	@include helpers("#{$name}-table", "display: table");
+	@include helpers("#{$name}-table-cell", "display: table-cell");
+	@include helpers("#{$name}-table-fixed", "table-layout: fixed");
+	@include helpers("#{$name}-flex", "display: flex");
 }

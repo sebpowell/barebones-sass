@@ -1,0 +1,16 @@
+@if map-get($helpers, padding) != false {
+	$name: map-get($helpers, padding);
+	$sides: top, right, bottom, left;
+	$i: 0;
+	@while $i < strip-unit(map-get($spacing, variants)) {
+		$n: $i * strip-unit(map-get($spacing, base));
+		@include helpers("#{$name}-#{$i}", "padding: #{$n}");
+		@include helpers("no-#{$name}", "padding: 0");
+		@each $side in $sides {
+			@include helpers("#{$name}-#{$side}-#{$n}", "padding-#{$side}: #{$n}px");
+			@include helpers("no-#{$name}-#{$side}", "padding-#{$side}: 0");
+			@include helpers("#{$name}-vertical-#{$n}", "padding: #{$n}px 0");	
+		}
+		$i: $i + 1;
+	}
+}
