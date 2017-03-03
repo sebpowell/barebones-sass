@@ -1,11 +1,6 @@
 // Helper functions
 @function sizes($size) {
-	@if map-has-key($sizes, $size) {
-	 @return map-get($sizes, $size);
-	}
-	@else {
-		@warn "#{$size} does not exist in sizes map."
-	}
+	@return $size * map-get($spacing, base);
 }
 
 @function grid($object) {

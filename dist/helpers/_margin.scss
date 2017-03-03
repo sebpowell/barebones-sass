@@ -2,14 +2,14 @@
 	$name: map-get($helpers, margin);
 	$sides: top, right, bottom, left;
 	$i: 0;
-	@while $i < strip-unit(map-get($spacing, variants)) {
+	@while $i <= strip-unit(map-get($spacing, variants)) {
 		$n: $i * strip-unit(map-get($spacing, base));
 		@include helpers("#{$name}-#{$i}", "margin: #{$n}");
 		@include helpers("no-#{$name}", "margin: 0");
 		@each $side in $sides {
-			@include helpers("#{$name}-#{$side}-#{$n}", "margin-#{$side}: #{$n}px");
+			@include helpers("#{$name}-#{$side}-#{$i}", "margin-#{$side}: #{$n}px");
 			@include helpers("no-#{$name}-#{$side}", "margin-#{$side}: 0");
-			@include helpers("#{$name}-vertical-#{$n}", "margin: #{$n}px 0");	
+			@include helpers("#{$name}-vertical-#{$i}", "margin: #{$n}px 0");	
 		}
 		$i: $i + 1;
 	}

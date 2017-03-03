@@ -1,13 +1,15 @@
 @if map-get($helpers, box-shadow) != false {
 	$className: "";
-	@if map-get($helpers, text-ellipsis) != null {
-		$className: map-get($helpers, text-ellipsis) + "-";
+	@if map-get($helpers, box-shadow) != null {
+		$className: map-get($helpers, box-shadow) + "-";
 	}
 
 	@include helpers("no-#{$className}", "box-shadow: none");
 
 	@each $name, $size in $shadows {
 		
-
+		.#{$className}-#{$name} {
+			box-shadow: $size !important;
+		}
 	}
 }
