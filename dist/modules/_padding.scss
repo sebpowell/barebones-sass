@@ -7,8 +7,8 @@
 		@include helpers("#{$name}-#{$i}", "padding: #{$n}px");
 		@each $side in $sides {
 			@include helpers("#{$name}-#{$side}-#{$n}", "padding-#{$side}: #{$n}px");
-			
-			@include helpers("#{$name}-vertical-#{$i}", "padding: #{$n}px 0");	
+			@include helpers("#{$name}-vertical-#{$i}", "padding: #{$n}px 0");
+			@include helpers("#{$name}-horizontal-#{$i}", "padding: 0 #{$n}px");	
 		}
 		$i: $i + 1;
 	}

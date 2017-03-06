@@ -1,0 +1,13 @@
+@each $category, $value in $colors {
+	@each $color, $value in map-deep-get($colors, $category) {
+		.text-color-#{$category}-#{$color} {
+			color: $value !important;
+		}
+
+		.text-color-hover-#{$category}-#{$color} {
+			&:hover {
+				color: $value !important;
+			}
+		}
+	}
+}

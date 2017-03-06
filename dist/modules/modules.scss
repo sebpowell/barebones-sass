@@ -1,9 +1,9 @@
 @import "aspect-ratio";
-@import "background";
+@import "background-color";
+@import "background-size";
 @import "border-radius";
 @import "border";
 @import "box-shadow";
-@import "colors";
 @import "clearfix";
 @import "columns";
 @import "containers"; // Change to max width
@@ -19,6 +19,7 @@
 @import "position";
 @import "table";
 @import "text-align";
+@import "text-color";
 @import "text-decoration";
 @import "text-size";
 @import "text-ellipsis";
