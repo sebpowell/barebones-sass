@@ -40,7 +40,7 @@ gulp.task('sass', function () {
 		.pipe(sass({
 			outputStyle: "compact",
 		}).on('error', sass.logError))
-		.pipe(cleanCSS({compatibility: 'ie8'}))
+		// .pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(autoprefixer({browsers: ['last 2 versions'], remove: false}))
 		.pipe(gulp.dest(function(file) {
 			return file.base;

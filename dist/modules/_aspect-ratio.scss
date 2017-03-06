@@ -1,0 +1,14 @@
+@if map-get($helpers, aspect-ratio) != false {
+	.aspect-ratio-16-9 {
+		@include aspect-ratio(16, 9);
+	}
+
+	.aspect-ratio-4-3 {
+		@include aspect-ratio(4, 3);
+	}
+
+	.aspect-ratio-1-1 {
+		@include aspect-ratio(1, 1);
+	}
+}
+
