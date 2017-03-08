@@ -1,14 +1,16 @@
 @if map-get($helpers, cursor) != false {
-	$name: map-get($helpers, cursor);
-	.#{$name}-disabled {
+	
+	$className: map-get($helpers, cursor);
+	
+	.#{$className}-disabled {
 		cursor: disabled !important;
 	}
 
-	.#{$name}-pointer {
+	.#{$className}-pointer {
 		cursor: pointer !important;
 	}
 
-	.#{$name}-default {
+	.#{$className}-default {
 		cursor: default !important;
-	}
+	}	
 }

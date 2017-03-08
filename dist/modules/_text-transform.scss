@@ -1,19 +1,16 @@
 @if map-get($helpers, text-transform) != false {
-	$className: "";
+	
+	$className: map-get($helpers, text-transform);
 
-	@if map-get($helpers, text-transform) != null {
-		$className: map-get($helpers, text-transform) + "-";
-	}
-
-	.#{$className}uppercase {
+	.#{$className}-uppercase {
 		text-transform: uppercase !important;
 	}
 
-	.#{$className}lowercase {
+	.#{$className}-lowercase {
 		text-transform: lowercase !important;
 	}
 
-	.#{$className}capitalize {
+	.#{$className}-capitalize {
 		text-transform: capitalize !important;
 	}
 }

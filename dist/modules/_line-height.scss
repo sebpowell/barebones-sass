@@ -1,5 +1,7 @@
 @if map-get($helpers, line-height) != false {
+	
 	$className: map-get($helpers, line-height);
+	
 	@each $name, $size in $line-height {
 		@include helpers("#{$className}-#{$name}", "line-height: #{$size}");
 	}

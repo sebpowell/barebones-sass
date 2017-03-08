@@ -1,5 +1,5 @@
-// .no-bullet
-
-.no-bullet {
-	@include no-bullet;
+@if map-get($helpers, list) != false {
+	.no-bullet {
+		@include no-bullet;
+	}
 }

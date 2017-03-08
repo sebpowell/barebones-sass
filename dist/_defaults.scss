@@ -1,29 +1,33 @@
-
 // Settings
 /////////////////////////////////////////////////////////
 
 $helpers: (
 	"aspect-ratio": "aspect-ratio",
-	"background": "background",
+	"background-color": "background-color",
+	"background-size": "background-size",
 	"border-radius": "border-radius",
-	"border": "border",
+	"border": "b",
 	"box-shadow": "box-shadow",
 	"clearfix": "clearfix",
 	"columns": "columns",
 	"container": "max-width",
 	"cursor": "cursor",
 	"display": "display",
+	"font-weight": "font-weight",
 	"flex": "flex",
 	"float": "float",
+	"letter-spacing": "letter-spacing",
 	"line-height": "line-height",
 	"list": "list",
 	"margin": "margin",
+	"max-width": "max-width",
 	"opacity": "opacity",
 	"overflow": "overflow",
 	"padding": "padding",
 	"position": "position",
 	"table": "table",
 	"text-align": "text-align",
+	"text-color": "text-color",
 	"text-decoration": "text-decoration",
 	"text-ellipsis": "text",
 	"text-size": "text-size",
@@ -34,12 +38,12 @@ $helpers: (
 	"responsive": true
 ) !default;
 
-
 // Layout
 /////////////////////////////////////////////////////////
 
 $breakpoints: (
 	"m": 780px,
+	"l": 1400px
 ) !default;
 
 $containers: (
@@ -61,7 +65,6 @@ $spacing: (
 	"variants": 10
 ) !default;
 
-
 // Style
 // /////////////////////////////////////////////////////////
 
@@ -70,38 +73,39 @@ $colors: (
 		"primary": #157afb,
 		"secondary": #fe5607
 	),
-
 	"social": (
 		"facebook": #103480,
 		"twitter": #1DA1F2
 	),
-
 	"system": (
 		"warning": #CE3535
 	),
-
 	"greyscale": (
 
 	)
-
 ) !default;
 
 $keylines: (
-	"light": black, 
-	"dark": black
+	"light": #E5E5E5, 
+	"dark": #E7E7E7
 ) !default;
 
 $shadows: (
-	"s": null,
-	"m": null,
-	"l": null,
-	"xl": null, 
+	"s": 1px 1px 1px rgba(00,00,00,0.2),
+	"m": 1px 1px 1px rgba(00,00,00,0.2),
+	"l": 1px 1px 1px rgba(00,00,00,0.2),
+	"xl": 1px 1px 1px rgba(00,00,00,0.2)
 ) !default;
-
 
 // Typography
 /////////////////////////////////////////////////////
 
+$line-height: (
+	"xs": 1,
+	"s": 1.2,
+	"m": 1.5,
+	"l": 2
+) !default;
 
 $text-sizes: (
 	"xs": 10px,
@@ -111,11 +115,4 @@ $text-sizes: (
 	"ml": 24px,
 	"l": 32px,
 	"xl": 42px
-) !default;
-
-$line-height: (
-	"xs": 1,
-	"s": 1.2,
-	"m": 1.5,
-	"l": 2
 ) !default;

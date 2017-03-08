@@ -1,5 +1,7 @@
 @if map-get($helpers, float) != false {
-	$name: map-get($helpers, float);
-	@include helpers("#{$name}-left", "float: left");
-	@include helpers("#{$name}-right", "float: right");
+	
+	$className: map-get($helpers, float);
+	
+	@include helpers("#{$className}-left", "float: left");
+	@include helpers("#{$className}-right", "float: right");
 }

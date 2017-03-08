@@ -1,4 +1,5 @@
 @mixin if-above($breakpoint-name) {
+	
 	@if map-has-key($breakpoints, $breakpoint-name) {
 		@media (min-width: breakpoints($breakpoint-name)) {
 			@content;
@@ -13,11 +14,13 @@
 }
 
 @mixin if-below($breakpoint-name) {
+	
 	@if map-has-key($breakpoints, $breakpoint-name) {
 		@media (max-width: breakpoints($breakpoint-name)) {
 			@content;
 		}
 	}
+	
 	@else {
 		@media (max-width: $breakpoint-name) {
 			@content;
@@ -26,66 +29,16 @@
 }
 
 @mixin if-between($breakpoint-name-min, $breakpoint-name-max) {
+	
 	@if map-has-key($breakpoints, $breakpoint-name-min) {
 		@media (min-width: breakpoints($breakpoint-name-min)) and (max-width: breakpoints($breakpoint-name-max)) {
 			@content;
 		}
 	}
+	
 	@else {
 		@media (min-width: $breakpoint-name-min) and (max-width: $breakpoint-name-max) {
 			@content;
 		}
 	}
 }
-
-
-// @mixin span($columns, $position: "", $gutter: map-get($grid, gutter), $offset: 0) {
-// 	float: left;
-// 	$length: length($columns);
-
-// 	// Check if a new grid context is being created.
-// 	@if $length > 2 {
-// 		$columnCount: nth($columns, 1);
-// 		$columnContext:  nth($columns, 3);
-// 	}
-
-// 	@if map-get($grid, type) == "padding" {
-// 		padding: 0 $gutter / 2;
-// 		@if $length > 2 {
-// 			width: (100% / $columnContext) * $columnCount;
-// 		}
-// 		@else {
-// 			width: (100% / map-get($grid, columns)) * $columns;
-// 		}
-// 	}
-
-
-// 	@if $offset > 0 {
-// 		@if map-get($grid, type) == "padding" {
-// 			margin-left: (100% / map-get($grid, columns)) * $offset;
-// 		}
-
-// 		@if map-get($grid, type) == "margin" {
-// 			margin-left: columnCalc($offset);
-// 		}
-// 	}
-
-
-// 	@if $position == "last" {
-// 		float: right;
-// 		@if map-get($grid, type) == "padding" {
-
-// 		}
-// 		@if map-get($grid, type) == "margin" {
-// 			margin-right: 0;
-// 		}
-// 	}
-// }
-
-// @mixin container($max-width: "") {
-// 	@include clearfix;
-// 	margin: 0 auto;
-// 	max-width: $max-width;
-// }
-
-

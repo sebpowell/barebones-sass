@@ -1,12 +1,21 @@
-@each $category, $value in $colors {
-	@each $color, $value in map-deep-get($colors, $category) {
-		.text-color-#{$category}-#{$color} {
-			color: $value !important;
-		}
+@if map-get($helpers, text-color) != false {
 
-		.text-color-hover-#{$category}-#{$color} {
-			&:hover {
+	$className: map-get($helpers, text-color);
+
+	.#{$className}-white {
+		color: white !important;
+	}
+
+	@each $category, $value in $colors {
+		@each $color, $value in map-deep-get($colors, $category) {
+			.#{$className}-#{$category}-#{$color} {
 				color: $value !important;
+			}
+
+			.#{$className}-hover-#{$category}-#{$color} {
+				&:hover {
+					color: $value !important;
+				}
 			}
 		}
 	}

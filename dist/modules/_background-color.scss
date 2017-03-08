@@ -1,12 +1,38 @@
-@each $category, $value in $colors {
-	@each $color, $value in map-deep-get($colors, $category) {
-		.background-color-#{$category}-#{$color} {
-			background-color: $value !important;
-		}
+@if map-get($helpers, background-color) != false {
 
-		.background-color-hover-#{$category}-#{$color} {
-			&:hover {
+	$className: map-get($helpers, background-color);
+	
+	.#{$className}color-white {
+		background-color: white !important;
+	}
+	
+	@each $category, $value in $colors {
+	
+		$type: type-of($value);
+	
+		@if $type == "map" {
+			@each $color, $value in map-deep-get($colors, $category) {
+				.#{$className}-#{$category}-#{$color} {
+					background-color: $value !important;
+				}
+	
+				.#{$className}-hover-#{$category}-#{$color} {
+					&:hover {
+						background-color: $value !important;
+					}
+				}
+			}
+		}
+	
+		@else {
+			.#{$className}-#{$category} {
 				background-color: $value !important;
+			}
+	
+			.#{$className}-hover-#{$category} {
+				&:hover {
+					background-color: $value !important;
+				}
 			}
 		}
 	}

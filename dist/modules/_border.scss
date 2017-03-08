@@ -1,10 +1,14 @@
 @if map-deep-get($helpers, border) != false {
-	@include helpers("no-#{map-get($helpers, border)}", "border: 0");
+	
+	$className: map-get($helpers, border);
 	$border-sides: top, right, bottom, left;
+	
+	@include helpers("no-#{$className}", "border: 0");
+	
 	@each $color, $value in $keylines {
-		@include helpers("#{map-get($helpers, border)}-#{$color}", "border: 1px solid #{$value}");
+		@include helpers("#{$className}-#{$color}", "border: 1px solid #{$value}");
 		@each $side in $border-sides {
-			@include helpers("#{map-get($helpers, border)}-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
+			@include helpers("#{$className}-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
 		}
 	}
 }

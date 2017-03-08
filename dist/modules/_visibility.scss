@@ -1,4 +1,6 @@
 @if map-get($helpers, visibility) != false {
-	@include helpers("visible", "visibility: visible");
+
+	@include helpers("visibility", "visibility: visible");
 	@include helpers("hidden", "visibility: hidden");
+
 }

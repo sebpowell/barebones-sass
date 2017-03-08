@@ -1,9 +1,14 @@
 @if map-get($helpers, opacity) != false {
+	
 	$i: 0;
+	$className: map-get($helpers, opacity);
+	
 	@while $i <= 10 {
-		.opacity-#{$i} {
+	
+		.#{$className}-#{$i} {
 			opacity: $i * 0.1;
 		}
+	
 		$i: $i + 1;
 	}
 }

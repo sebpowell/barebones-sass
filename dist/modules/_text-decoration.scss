@@ -1,28 +1,26 @@
 @if map-get($helpers, text-decoration) != false {
-	$className: "";
-	@if map-get($helpers, text-decoration) != null {
-		$className: map-get($helpers, text-decoration) + "-";
-	}
+	
+	$className: map-get($helpers, text-decoration);
 
-	.#{$className}underline {
+	.#{$className}-underline {
 		text-decoration: underline !important;
 	}
 
-	.#{$className}underline-hover {
+	.#{$className}-underline-hover {
 		&:hover {
 			text-decoration: underline !important;
 		}
 	}
 
-	.no-#{$className}underline {
+	.no-#{$className}-underline {
 		text-decoration: none !important;
 	}
 
-	.#{$className}strikethrough {
+	.#{$className}-strikethrough {
 		text-decoration: line-through !important;
 	}
 
-	.no-#{$className}strikethrough {
+	.no-#{$className}-strikethrough {
 		text-decoration: none !important;
 	}
 }

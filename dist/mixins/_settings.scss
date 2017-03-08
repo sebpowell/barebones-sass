@@ -1,4 +1,3 @@
-// Helper functions
 @function sizes($size) {
 	@return $size * map-get($spacing, base);
 }

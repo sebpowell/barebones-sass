@@ -1,9 +1,11 @@
 @if map-get($helpers, flex) != false {
-	$name: map-get($helpers, flex);
-	@include helpers("#{$name}-column", "flex-direction: column");
-	@include helpers("#{$name}-row", "flex-direction: row");
-	@include helpers("#{$name}-wrap", "flex-wrap: wrap");
-	@include helpers("#{$name}-items-start", "align-items: flex-start");
-	@include helpers("#{$name}-items-end", "align-items: flex-end");
-	@include helpers("#{$name}-items-center", "align-items: center");
+
+	$className: map-get($helpers, flex);
+	
+	@include helpers("#{$className}-column", "flex-direction: column");
+	@include helpers("#{$className}-row", "flex-direction: row");
+	@include helpers("#{$className}-wrap", "flex-wrap: wrap");
+	@include helpers("#{$className}-items-start", "align-items: flex-start");
+	@include helpers("#{$className}-items-end", "align-items: flex-end");
+	@include helpers("#{$className}-items-center", "align-items: center");
 }

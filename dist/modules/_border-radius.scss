@@ -1,5 +1,68 @@
 @if map-get($helpers, border-radius) != false {
+
+	$i: 1;
+
+	@while $i <= 10 {
+		
+		.border-radius-#{$i} {
+			border-radius: $i+px;
+		}
+
+		@each $side in top, top-left, top-right, bottom, bottom-left, bottom-right {
+			.border-radius-#{$side}-#{$i} {
+				$v: $i + px;
+				@if $side == "top" {
+					border-top-left-radius: $v;
+					border-top-right-radius: $v;
+				}
+				@else if $side == "top-left" {
+					border-top-left-radius: $v;
+				}
+				@else if $side == "top-right" {
+					border-top-right-radius: $v;
+				}
+				@else if $side == "bottom" {
+					border-bottom-left-radius: $v;
+					border-bottom-right-radius: $v;
+				}
+				@else if $side == "bottom-right" {
+					border-bottom-right-radius: $v;
+				}
+				@else if $side == "bottom-left" {
+					border-bottom-left-radius: $v;
+				}			
+			}
+		}
+
+		$i: $i + 1;	
+	}
+
 	.no-#{map-get($helpers, border-radius)} {
 		border-radius: 0;
+	}
+
+	@each $side in top, top-left, top-right, bottom, bottom-left, bottom-right {
+		.no-border-radius-#{$side} {
+			@if $side == "top" {
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+			}
+			@else if $side == "top-left" {
+				border-top-left-radius: 0;
+			}
+			@else if $side == "top-right" {
+				border-top-right-radius: 0;
+			}
+			@else if $side == "bottom" {
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			@else if $side == "bottom-right" {
+				border-bottom-right-radius: 0;
+			}
+			@else if $side == "bottom-left" {
+				border-bottom-left-radius: 0;
+			}			
+		}
 	}
 }

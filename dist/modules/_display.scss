@@ -1,11 +1,12 @@
 @if map-get($helpers, display) != false {
-	$name: map-get($helpers, display);
+	
+	$className: map-get($helpers, display);
 
-	@include helpers("#{$name}-none", "display: none");
-	@include helpers("#{$name}-block", "display: block");
-	@include helpers("#{$name}-inline-block", "display: inline-block");
-	@include helpers("#{$name}-table", "display: table");
-	@include helpers("#{$name}-table-cell", "display: table-cell");
-	@include helpers("#{$name}-table-fixed", "table-layout: fixed");
-	@include helpers("#{$name}-flex", "display: flex");
+	@include helpers("#{$className}-none", "display: none");
+	@include helpers("#{$className}-block", "display: block");
+	@include helpers("#{$className}-inline-block", "display: inline-block");
+	@include helpers("#{$className}-table", "display: table");
+	@include helpers("#{$className}-table-cell", "display: table-cell");
+	@include helpers("#{$className}-table-fixed", "table-layout: fixed");
+	@include helpers("#{$className}-flex", "display: flex");
 }

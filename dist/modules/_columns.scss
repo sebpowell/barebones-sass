@@ -1,12 +1,13 @@
 @if map-get($helpers, columns) != false {
-	$name:  map-get($helpers, columns);
+	
+	$className:  map-get($helpers, columns);
 	$breakpoint: map-get($grid, breakpoint);
 	$columns:  map-get($grid, columns);
 	$gutter:  map-get($grid, gutter);
 	
 	// Generate column helper classes.
 	@for $i from 1 through $columns {
-		.#{$name}-#{$i} {
+		.#{$className}-#{$i} {
 			padding: 0 $gutter / 2;
 
 			@include if-below($breakpoint) {
@@ -27,7 +28,7 @@
 	@if map-get($helpers, responsive) != false {
 		@each $key, $value in $breakpoints {
 			@for $i from 1 through $columns {
-				.#{$name}-#{$i}-above-#{$key} {
+				.#{$className}-#{$i}-above-#{$key} {
 					padding: 0 $gutter / 2;
 
 					@include if-below($key) {
@@ -71,10 +72,18 @@
 	}
 
 	// Column container.
-	.#{$name} {
+	.#{$className} {
 		@include clearfix;
 		margin-left: -( $gutter / 2);
 		margin-right: -( $gutter / 2);
+
+		&.no-gutter {
+			margin-left: 0;
+			margin-right: 0;
+			> [class^="columns-"] {
+				padding: 0;
+			}
+		}
 
 		&.gutter-half {
 			margin-left: -($gutter / 4);

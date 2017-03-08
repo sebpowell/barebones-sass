@@ -1,7 +1,6 @@
 @if map-get($helpers, text-ellipsis) != false {
-	$className: "";
-	@if map-get($helpers, text-ellipsis) != null {
-		$className: map-get($helpers, text-ellipsis) + "-";
-	}
+	
+	$className: map-get($helpers, text-ellipsis);
+
 	@include helpers("#{$className}ellipsis", "width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap");
 }

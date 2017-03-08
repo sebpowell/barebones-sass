@@ -1,5 +1,7 @@
 @if map-get($helpers, table) != false {
+
 	$className: map-get($helpers, table);
+
 	.#{$className}-border-collapse {
 	    border-collapse: collapse !important;
 	    border-spacing: 0 !important;

@@ -1,16 +1,15 @@
 @if map-deep-get($helpers, container) != false {
-	
-	$className: map-get($helpers, container);
-	
-	%container {
-		margin: auto;
-		padding: 0 map-get($grid, gutter);
-	}
+
+	$className: map-get($helpers, max-width);
 
 	@each $size, $value in $containers {
 		.#{$className}-#{$size} {
-			@extend %container;
 			max-width: $value;
 		}
 	}
+
+	.no-#{$className} {
+		max-width: 100% !important;
+	}
 }
+

@@ -10,7 +10,13 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 
-body {
+html,body, div, span, object, iframe, hr,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, button, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
 	margin: 0;
 	padding: 0;
 }
@@ -24,7 +30,5 @@ a, a:visited {
 @import "defaults";
 @import "mixins/mixins";
 @import "modules/modules";
-
-// @include background-color-gen($colors, brand, secondary, warning);
 
 

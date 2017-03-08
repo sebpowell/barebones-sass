@@ -1,18 +1,26 @@
 @if map-get($helpers, margin) != false {
-	$name: map-get($helpers, margin);
+	
+	$className: map-get($helpers, margin);
 	$sides: top, right, bottom, left;
-	$i: 0;
+	$i: 1;
+
 	@while $i <= strip-unit(map-get($spacing, variants)) {
+		
 		$n: $i * strip-unit(map-get($spacing, base));
-		@include helpers("#{$name}-#{$i}", "margin: #{$n}");
+		
+		@include helpers("#{$className}-#{$i}", "margin: #{$n}");
+		
 		@each $side in $sides {
-			@include helpers("#{$name}-#{$side}-#{$i}", "margin-#{$side}: #{$n}px");	
-			@include helpers("#{$name}-vertical-#{$i}", "margin: #{$n}px 0");	
+			@include helpers("#{$className}-#{$side}-#{$i}", "margin-#{$side}: #{$n}px");	
+			@include helpers("#{$className}-vertical-#{$i}", "margin: #{$n}px 0");	
 		}
+		
 		$i: $i + 1;
 	}
-	@include helpers("no-#{$name}", "margin: 0");
+	
+	@include helpers("no-#{$className}", "margin: 0");
+	
 	@each $side in $sides {
-		@include helpers("no-#{$name}-#{$side}", "margin-#{$side}: 0");
+		@include helpers("no-#{$className}-#{$side}", "margin-#{$side}: 0");
 	}
 }

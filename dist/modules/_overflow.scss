@@ -1,7 +1,10 @@
 @if map-get($helpers, overflow) != false {
+
 	$className: map-get($helpers, overflow);
+
 	@include helpers("#{$className}-hidden", "overflow: hidden");
 	@include helpers("#{$className}-scroll", "overflow: scroll");
 	@include helpers("#{$className}-visible", "overflow: visible");
 	@include helpers("#{$className}-auto", "overflow: auto");
+	
 }

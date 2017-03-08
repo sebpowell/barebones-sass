@@ -1,5 +1,6 @@
 @mixin aspect-ratio($width, $height, $content: "content") {
   position: relative;
+  
   &:before {
     display: block;
     content: "";
