@@ -1,3 +1,11 @@
+$containers: (
+	"500": 500px,
+	"800": 800px,
+	"1000": 1000px,
+	"1200": 1200px,
+	"fluid": null
+) !default;
+
 @if map-deep-get($helpers, container) != false {
 	
 	$className: map-get($helpers, container);

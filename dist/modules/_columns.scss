@@ -1,10 +1,20 @@
+$grid: () !default;
+
+$grid-default: (
+	"columns": 12,
+	"gutter": 24px,
+	"breakpoint": 780px
+) !default;
+
 @if map-get($helpers, columns) != false {
 	
+	$config: map-merge($grid-default, $grid);
 	$className:  map-get($helpers, columns);
-	$breakpoint: map-get($grid, breakpoint);
-	$columns:  map-get($grid, columns);
-	$gutter:  map-get($grid, gutter);
-	
+
+	$breakpoint: map-get($config, breakpoint);
+	$columns:  map-get($config, columns);
+	$gutter:  map-get($config, gutter);
+
 	// Generate column helper classes.
 	@for $i from 1 through $columns {
 		.#{$className}-#{$i} {
@@ -47,7 +57,7 @@
 	}
 
 	// Generates classes for column offsets.
-	@for $i from 1 through map-get($grid, columns) {
+	@for $i from 1 through $columns {
 		.offset-#{$i} {
 			@include if-above($breakpoint) {
 				margin-left: $i * (100% /  $columns);

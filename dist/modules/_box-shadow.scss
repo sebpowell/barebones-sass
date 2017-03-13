@@ -1,10 +1,20 @@
+$shadows-default: (
+	"s": 1px 1px 1px rgba(00,00,00,0.2),
+	"m": 1px 1px 1px rgba(00,00,00,0.2),
+	"l": 1px 1px 1px rgba(00,00,00,0.2),
+	"xl": 1px 1px 1px rgba(00,00,00,0.2)
+) !default;
+
+$shadows: () !default;
+
 @if map-get($helpers, box-shadow) != false {
 	
+	$config: map-merge($shadows-default, $shadows);
 	$className: map-get($helpers, box-shadow);
 	
 	@include helpers("no-#{$className}", "box-shadow: none");
 	
-	@each $name, $size in $shadows {
+	@each $name, $size in $config {
 		.#{$className}-#{$name} {
 			box-shadow: $size !important;
 		}

@@ -1,0 +1,18 @@
+@if map-get($helpers, height) != false {
+
+	$className: map-get($helpers, height);
+
+	$sizes: 25, 50, 75, 100;
+
+	@each $size in $sizes {
+		@include helpers("#{$className}-#{$size}", "height: #{$size}%");
+	}
+
+	.#{$className}-auto {     
+		height: auto !important;
+	}
+
+	.#{$className}-inherit {  
+		height: inherit !important;
+	}
+}

@@ -1,3 +1,18 @@
+$text-sizes: (
+	"xs": 10px,
+	"sm": 12px,
+	"b": 15px,
+	"m": 18px,
+	"ml": 24px,
+	"l": 32px,
+	"xl": 42px,
+	"xxl": 52px,
+	"xxxl": 62px,
+	"xxxxl": 72px
+) !default;
+
+$text-sizes: ()! default;
+
 @if map-get($helpers, text-size) != false {
 
 	$className: map-get($helpers, text-size);

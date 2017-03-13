@@ -1,12 +1,14 @@
 @if map-get($helpers, padding) != false {
+
+	$config: map-merge($spacing-default, $spacing);
 	
 	$className: map-get($helpers, padding);
 	$sides: top, right, bottom, left;
 	$i: 1;
 	
-	@while $i < strip-unit(map-get($spacing, variants)) {
+	@while $i < strip-unit(map-get($config, variants)) {
 	
-		$n: $i * strip-unit(map-get($spacing, base));
+		$n: $i * strip-unit(map-get($config, base));
 	
 		@include helpers("#{$className}-#{$i}", "padding: #{$n}px");
 	
@@ -17,7 +19,6 @@
 		}
 	
 		$i: $i + 1;
-	
 	}
 
 	@include helpers("no-#{$className}", "padding: 0");

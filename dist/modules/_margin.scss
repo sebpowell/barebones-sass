@@ -1,12 +1,13 @@
 @if map-get($helpers, margin) != false {
-	
+
+	$config: map-merge($spacing-default, $spacing);
 	$className: map-get($helpers, margin);
 	$sides: top, right, bottom, left;
 	$i: 1;
 
-	@while $i <= strip-unit(map-get($spacing, variants)) {
+	@while $i <= strip-unit(map-get($config, variants)) {
 		
-		$n: $i * strip-unit(map-get($spacing, base));
+		$n: $i * strip-unit(map-get($config, base));
 		
 		@include helpers("#{$className}-#{$i}", "margin: #{$n}");
 		
@@ -23,4 +24,6 @@
 	@each $side in $sides {
 		@include helpers("no-#{$className}-#{$side}", "margin-#{$side}: 0");
 	}
+
+	@include helpers("#{$className}-auto", "margin: 0 auto");
 }

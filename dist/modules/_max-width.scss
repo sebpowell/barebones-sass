@@ -1,4 +1,4 @@
-@if map-deep-get($helpers, container) != false {
+@if map-deep-get($helpers, max-width) != false {
 
 	$className: map-get($helpers, max-width);
 

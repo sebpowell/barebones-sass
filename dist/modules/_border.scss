@@ -1,3 +1,10 @@
+$keylines: (
+	"light": #E5E5E5, 
+	"dark": #E7E7E7
+) !default;
+
+
+
 @if map-deep-get($helpers, border) != false {
 	
 	$className: map-get($helpers, border);

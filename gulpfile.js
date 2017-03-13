@@ -3,13 +3,14 @@
 /////////////////////////////////////////////////////
 
 var gulp = require("gulp"),
-		autoprefixer = require("gulp-autoprefixer"),
-		concat = require("gulp-concat"),
-		jade = require('gulp-jade'),
-		sass = require("gulp-sass"),
-		uglify = require("gulp-uglify");
-		cleanCSS = require('gulp-clean-css');
-		// promise = require('es6-promise').Promise;
+	autoprefixer = require("gulp-autoprefixer"),
+	concat = require("gulp-concat"),
+	data = require('gulp-data'),
+	jade = require('gulp-jade'),
+	sass = require("gulp-sass"),
+	fs = require('fs');
+	uglify = require("gulp-uglify");
+	cleanCSS = require('gulp-clean-css');
 
 /////////////////////////////////////////////////////
 // HTML
@@ -17,16 +18,17 @@ var gulp = require("gulp"),
 
 gulp.task("jade", function() {
 	gulp.src('docs/views/**/!(_)*.jade')
-		.pipe(jade({
-			pretty: true,
-			locals: {
-				base: "docs/",
-				image_base: "docs/images/",
-				strapline: "A lightweight, modular SASS boilerplate to kickstart your next web project.",
-				repo: "https://github.com/sebpowell/barebones-sass"
-			}
-		}))
-		.pipe(gulp.dest("./"));
+	.pipe(jade({
+		pretty: true,
+		locals: {
+			data: JSON.parse(fs.readFileSync('docs/views/data.json')),
+			base: "docs/",
+			image_base: "docs/images/",
+			strapline: "A lightweight, modular SASS boilerplate to kickstart your next web project.",
+			repo: "https://github.com/sebpowell/barebones-sass"
+		}
+	}))
+	.pipe(gulp.dest("./"));
 });
 
 /////////////////////////////////////////////////////
@@ -38,7 +40,7 @@ gulp.task('sass', function () {
 		.pipe(sass({
 			outputStyle: "compact",
 		}).on('error', sass.logError))
-		.pipe(cleanCSS({compatibility: 'ie8'}))
+		// .pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(autoprefixer({browsers: ['last 2 versions'], remove: false}))
 		.pipe(gulp.dest(function(file) {
 			return file.base;
@@ -51,8 +53,8 @@ gulp.task('sass', function () {
 
 gulp.task("uglify", function() {
 	gulp.src(["docs/javascript/vendor/*.js", "docs/javascript/components/*.js"])
-		.pipe(concat("application.js"))
-		.pipe(gulp.dest("docs/javascript/"))
+	.pipe(concat("application.js"))
+	.pipe(gulp.dest("docs/javascript/"));
 });
 
 /////////////////////////////////////////////////////

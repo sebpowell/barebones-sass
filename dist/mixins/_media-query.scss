@@ -1,6 +1,15 @@
+$breakpoints-default: (
+	"m": 780px,
+	"l": 1400px
+) !default;
+
+$breakpoints: () !default;
+
+$breakpoints-config: map-merge($breakpoints-default, $breakpoints);
+
 @mixin if-above($breakpoint-name) {
 	
-	@if map-has-key($breakpoints, $breakpoint-name) {
+	@if map-has-key($breakpoints-config, $breakpoint-name) {
 		@media (min-width: breakpoints($breakpoint-name)) {
 			@content;
 		}
@@ -15,7 +24,7 @@
 
 @mixin if-below($breakpoint-name) {
 	
-	@if map-has-key($breakpoints, $breakpoint-name) {
+	@if map-has-key($breakpoints-config, $breakpoint-name) {
 		@media (max-width: breakpoints($breakpoint-name)) {
 			@content;
 		}
@@ -30,7 +39,7 @@
 
 @mixin if-between($breakpoint-name-min, $breakpoint-name-max) {
 	
-	@if map-has-key($breakpoints, $breakpoint-name-min) {
+	@if map-has-key($breakpoints-config, $breakpoint-name-min) {
 		@media (min-width: breakpoints($breakpoint-name-min)) and (max-width: breakpoints($breakpoint-name-max)) {
 			@content;
 		}

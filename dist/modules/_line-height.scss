@@ -1,8 +1,18 @@
+$line-heights-default: (
+	"xs": 1,
+	"s": 1.2,
+	"m": 1.5,
+	"l": 2
+) !default;
+
+$line-heights: () !default;
+
 @if map-get($helpers, line-height) != false {
 	
+	$config: map-merge($line-heights-default, $line-heights);
 	$className: map-get($helpers, line-height);
 	
-	@each $name, $size in $line-height {
+	@each $name, $size in $config {
 		@include helpers("#{$className}-#{$name}", "line-height: #{$size}");
 	}
 }

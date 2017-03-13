@@ -1,33 +1,96 @@
-*, *:before, *:after {
-	box-sizing: border-box;
-	&:hover, &:focus, &:active {
-		outline: none;
-	}
-}
+// Settings
+/////////////////////////////////////////////////////////
 
-html {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
+$helpers-default: (
+	"aspect-ratio": "aspect-ratio",
+	"background-color": "background-color",
+	"background-size": "background-size",
+	"border-radius": "border-radius",
+	"border": "border",
+	"box-shadow": "box-shadow",
+	"clearfix": "clearfix",
+	"columns": "columns",
+	"container": "max-width",
+	"coordinates": "coordinates",
+	"cursor": "cursor",
+	"display": "display",
+	"font-weight": "font-weight",
+	"flex": "flex",
+	"float": "float",
+	"height": "height",
+	"letter-spacing": "letter-spacing",
+	"line-height": "line-height",
+	"list": "list",
+	"margin": "margin",
+	"max-width": "max-width",
+	"opacity": "opacity",
+	"overflow": "overflow",
+	"padding": "padding",
+	"position": "position",
+	"table": "table",
+	"text-align": "text-align",
+	"text-color": "text-color",
+	"text-decoration": "text-decoration",
+	"text-ellipsis": "text-ellipsis",
+	"text-size": "text-size",
+	"text-transform": "text-transform",
+	"vertical-align": "vertical-align",
+	"visibility": "visibility",
+	"z-index": "z-index",
 
-html,body, div, span, object, iframe, hr,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, input, button, textarea, select,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	margin: 0;
-	padding: 0;
-}
+	"responsive": true
+) !default;
 
-a, a:visited {
-	color: inherit;
-	text-decoration: none;
-	cursor: pointer;
-}
+$helpers: () !default;
 
-@import "defaults";
+$helpers: map-merge($helpers-default, $helpers) !global;
+
+// Colors
+// /////////////////////////////////////////////////////////
+
+$colors-default: (
+	"brand": (
+		"primary": #157afb,
+		"secondary": #fe5607
+	),
+	"social": (
+		"facebook": #103480,
+		"twitter": #1DA1F2
+	),
+	"system": (
+		"warning": #CE3535
+	),
+	"greyscale": (
+		50: #FAFAFA,
+		100: #F5F5F5,
+		200: #EEEEEE,
+		300: #E0E0E0,
+		400: #BDBDBD,
+		500: #9E9E9E,
+		600: #757575,
+		700: #616161,
+		800: #424242,
+		900: #212121
+	)
+) !default;
+
+$colors: () !default;
+
+$colors: map-merge($colors-default, $colors) !global;
+
+// Style
+// /////////////////////////////////////////////////////////
+
+$spacing-default: (
+	"base": 5px,
+	"variants": 10
+) !default;
+
+$spacing: () !default;
+
+// Imports
+// /////////////////////////////////////////////////////////
+
 @import "mixins/mixins";
 @import "modules/modules";
 

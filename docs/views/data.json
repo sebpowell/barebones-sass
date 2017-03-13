@@ -1,0 +1,11 @@
+[
+	{
+		"name": "aspect-ratio",
+		"responsive": false,
+		"values": [
+			"1:1",
+			"16:9",
+			"4:3"
+		]
+	}
+]

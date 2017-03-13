@@ -1,0 +1,18 @@
+@if map-get($helpers, coordinates) != false {
+
+	$config: map-merge($spacing-default, $spacing);
+	
+	$i: 0;
+	$sides: top, right, bottom, left;
+
+	@while $i < strip-unit(map-get($config, variants)) {
+
+		$n: $i * 5;
+
+		@each $side in $sides {
+			@include helpers("#{$side}-#{$i}", "#{$side}: #{$n}px");
+		}	
+
+		$i: $i + 1;
+	}
+}

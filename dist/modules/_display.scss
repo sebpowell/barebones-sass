@@ -6,7 +6,7 @@
 	@include helpers("#{$className}-block", "display: block");
 	@include helpers("#{$className}-inline-block", "display: inline-block");
 	@include helpers("#{$className}-table", "display: table");
+	@include helpers("#{$className}-table-row", "display: table-row");
 	@include helpers("#{$className}-table-cell", "display: table-cell");
-	@include helpers("#{$className}-table-fixed", "table-layout: fixed");
 	@include helpers("#{$className}-flex", "display: flex");
 }

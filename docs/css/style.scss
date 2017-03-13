@@ -1,2 +1,59 @@
-// @import "_settings";
+$colors: (
+	// brand: (
+	// 	primary: #157afb,
+	// 	secondary: #fe5607
+	// ),
+
+	secondary: (
+		orange: #f8b000,
+		green: #00C771,
+	),
+
+	// social: (
+	// 	facebook: #103480,
+	// 	twitter: #1DA1F2
+	// ),
+
+	// system: (
+	// 	warning: #CE3535
+	// ),
+
+	// warning: (
+	// 	light: #FFEEEE,
+	// 	base: #CE3535,
+	// 	dark: #FFEEEE,
+	// ),
+
+	// code: (
+	// 	blue: #3c94d4,
+	// 	orange: #ffa566,
+	// 	purple: #a675d0,
+	// 	green: #44b8b4
+	// ),
+
+	// greyscale: (
+	// 	50: #FAFAFA,
+	// 	100: #F5F5F5,
+	// 	200: #EEEEEE,
+	// 	300: #E0E0E0,
+	// 	400: #BDBDBD,
+	// 	500: #9E9E9E,
+	// 	600: #757575,
+	// 	700: #616161,
+	// 	800: #424242,
+	// 	900: #212121,
+
+	// 	x-light: #fcfcfc,
+	// 	light: #b8b6bb,
+	// 	medium: #706d77,
+	// 	dark: #4b484f
+	// ),
+
+	// keyline: (
+	// 	light: #ebebeb,
+	// 	dark: #dddddd,
+	// )
+);
+
+
 @import "../../dist/_base";
