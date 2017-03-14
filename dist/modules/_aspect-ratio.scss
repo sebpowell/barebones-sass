@@ -3,15 +3,15 @@
 	$className: map-get($helpers, aspect-ratio);
 
 	.#{$className}-16-9 {
-		@include aspect-ratio(16, 9);
+		@include aspect-ratio(16, 9, "aspect-ratio-content");
 	}
 
 	.#{$className}-4-3 {
-		@include aspect-ratio(4, 3);
+		@include aspect-ratio(4, 3, "aspect-ratio-content");
 	}
 
 	.#{$className}-1-1 {
-		@include aspect-ratio(1, 1);
+		@include aspect-ratio(1, 1, "aspect-ratio-content");
 	}
 }
 

@@ -1,11 +1,8 @@
-$breakpoints-default: (
-	"m": 780px,
-	"l": 1400px
-) !default;
+@function breakpoints($object) {
+	@return map-get($breakpoints-config, $object);
+}
 
-$breakpoints: () !default;
 
-$breakpoints-config: map-merge($breakpoints-default, $breakpoints);
 
 @mixin if-above($breakpoint-name) {
 	

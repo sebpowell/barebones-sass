@@ -13,9 +13,9 @@
 		@include helpers("#{$className}-#{$i}", "padding: #{$n}px");
 	
 		@each $side in $sides {
-			@include helpers("#{$className}-#{$side}-#{$n}", "padding-#{$side}: #{$n}px");
-			@include helpers("#{$className}-vertical-#{$i}", "padding: #{$n}px 0");
-			@include helpers("#{$className}-horizontal-#{$i}", "padding: 0 #{$n}px");	
+			@include helpers("#{$className}-#{$side}-#{$i}", "padding-#{$side}: #{$n}px");
+			@include helpers("#{$className}-vertical-#{$i}", "padding-top: #{$n}px; padding-bottom: #{$n}px;");
+			@include helpers("#{$className}-horizontal-#{$i}", "padding-left: #{$n}px; padding-right: #{$n}px;");	
 		}
 	
 		$i: $i + 1;

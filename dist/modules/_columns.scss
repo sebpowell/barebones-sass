@@ -36,7 +36,7 @@ $grid-default: (
 
 	// Generate breakpoint-specific column helper classes.
 	@if map-get($helpers, responsive) != false {
-		@each $key, $value in $breakpoints {
+		@each $key, $value in $breakpoints-config {
 			@for $i from 1 through $columns {
 				.#{$className}-#{$i}-above-#{$key} {
 					padding: 0 $gutter / 2;
@@ -65,7 +65,7 @@ $grid-default: (
 		}
 
 		@if map-get($helpers, responsive) != false {
-			@each $breakpoint, $value in $breakpoints {
+			@each $breakpoint, $value in $breakpoints-config {
 				.offset-#{$i}-above-#{$breakpoint} {
 					@include if-above($value) {
 						margin-left: $i * (100% /  $columns);

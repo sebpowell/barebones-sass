@@ -6,11 +6,11 @@
 	  letter-spacing: 0 !important;
 	}
 
-	#{$className}-s {
+	.#{$className}-s {
 	  letter-spacing: .1em !important;
 	}
 
-	#{$className}-l {
+	.#{$className}-l {
 	  letter-spacing: .2em !important;
 	}
 }

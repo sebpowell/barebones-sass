@@ -1,9 +1,10 @@
 @if map-get($helpers, font-weight) != false {
-	
+
+	$className: map-get($helpers, font-weight);
 	$i: 1;
 	
 	@while $i <= 9 {
-		.font-weight-#{$i * 100} {
+		.#{$className}-#{$i * 100} {
 			font-weight: $i * 100 !important;
 		}
 		$i: $i + 1;

@@ -3,7 +3,7 @@
 
 $helpers-default: (
 	"aspect-ratio": "aspect-ratio",
-	"background-color": "background-color",
+	"background-color": "background",
 	"background-size": "background-size",
 	"border-radius": "border-radius",
 	"border": "border",
@@ -14,7 +14,7 @@ $helpers-default: (
 	"coordinates": "coordinates",
 	"cursor": "cursor",
 	"display": "display",
-	"font-weight": "font-weight",
+	"font-weight": "text-weight",
 	"flex": "flex",
 	"float": "float",
 	"height": "height",
@@ -28,11 +28,11 @@ $helpers-default: (
 	"padding": "padding",
 	"position": "position",
 	"table": "table",
-	"text-align": "text-align",
-	"text-color": "text-color",
-	"text-decoration": "text-decoration",
+	"text-align": "text",
+	"text-color": "text",
+	"text-decoration": "text",
 	"text-ellipsis": "text-ellipsis",
-	"text-size": "text-size",
+	"text-size": "text",
 	"text-transform": "text-transform",
 	"vertical-align": "vertical-align",
 	"visibility": "visibility",
@@ -87,6 +87,18 @@ $spacing-default: (
 ) !default;
 
 $spacing: () !default;
+
+$spacing: map-merge($spacing-default, $spacing);
+
+
+$breakpoints-default: (
+	"medium": 780px,
+	"large": 1400px
+) !default;
+
+$breakpoints: () !default;
+
+$breakpoints-config: map-merge($breakpoints-default, $breakpoints);
 
 // Imports
 // /////////////////////////////////////////////////////////

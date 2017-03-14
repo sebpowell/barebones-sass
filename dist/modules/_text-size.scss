@@ -1,14 +1,26 @@
 $text-sizes: (
-	"xs": 10px,
-	"sm": 12px,
-	"b": 15px,
-	"m": 18px,
-	"ml": 24px,
-	"l": 32px,
+	"x-small": 11px,
+	"small": 13px,
+	"base": 15px,
+	"medium": 18px,
+	"medium-large": 24px,
+	"large": 32px,
 	"xl": 42px,
 	"xxl": 52px,
-	"xxxl": 62px,
-	"xxxxl": 72px
+	"xxx-large": 62px,
+	"xxxx-large": 72px,
+
+	"11": 11px,
+	"13": 13px,
+	"15": 15px,
+	"18": 18px,
+	"24": 24px,
+	"32": 32px,
+	"42": 42px,
+	"52": 52px,
+	"62": 62px,
+	"72": 72px
+
 ) !default;
 
 $text-sizes: ()! default;

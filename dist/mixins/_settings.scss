@@ -27,9 +27,6 @@
 	@return map-deep-get($fonts, $object, name);
 }
 
-@function breakpoints($object) {
-	@return map-get($breakpoints, $object);
-}
 
 @function layers($object) {
 	@if map-has-key($layers, $object) {
