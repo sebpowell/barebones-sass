@@ -1,0 +1,11 @@
+.hide-children {
+	.hide-children-child {
+		display: none;
+	}
+
+	&:hover {
+		.hide-children-child {
+			display: block;
+		}
+	}
+}

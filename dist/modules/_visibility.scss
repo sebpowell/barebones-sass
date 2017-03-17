@@ -2,5 +2,6 @@
 
 	@include helpers("visibility", "visibility: visible");
 	@include helpers("hidden", "visibility: hidden");
+	@include helpers("hide", "display: none");
 
 }

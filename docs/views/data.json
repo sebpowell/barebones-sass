@@ -1,11 +1,105 @@
-[
-	{
-		"name": "aspect-ratio",
-		"responsive": false,
-		"values": [
-			"1:1",
-			"16:9",
-			"4:3"
+{
+	"Background Color": {
+		"description": ".background-{$palette (opt) }-{$color}",
+		"responsive": true,
+		"modifiers": [
+			"$colors", 
+			"white"
+		]
+	},
+
+	"Background Position": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"center"
+		]
+	},
+
+	"Background Size": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"cover",
+			"contain"
+		]
+	},
+
+	"Border Radius": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"cover",
+			"contain"
+		]
+	},
+
+	"Border": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"cover",
+			"contain"
+		]
+	},
+
+	"Box Shadow": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"cover",
+			"contain"
+		]
+	},
+
+	"Clearfix": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"cover",
+			"contain"
+		]
+	},
+
+	"Columns": {
+		"description": ".background-{$position}",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"cover",
+			"contain"
+		]
+	},
+
+	"padding": {
+		"description": "Base unit set to 5px, each modifier is a multiple.",
+		"responsive": true,
+		"modifiers": [
+			"vertical",
+			"horizontal",
+			"left",
+			"top",
+			"right",
+			"bottom"
+		]
+	},
+
+	"margin": {
+		"description": "Base unit set to 5px, each modifier is a multiple.",
+		"values": "1 - 5",
+		"modifiers": [
+			"vertical",
+			"horizontal",
+			"left",
+			"top",
+			"right",
+			"bottom"
 		]
 	}
-]
+}

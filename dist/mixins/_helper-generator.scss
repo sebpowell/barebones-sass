@@ -4,7 +4,7 @@
 		$delimiter: str-index($property, ":");
 		$key: unquote(str-slice($property, 0, $delimiter - 1));
 		$value: unquote(str-slice($property, $delimiter + 2, $length));
-		#{$key}: $value !important;
+		#{$key}: $value;
 	}
 }
 
