@@ -1,7 +1,17 @@
 @if map-get($helpers, visibility) != false {
-
 	@include helpers("visibility", "visibility: visible");
 	@include helpers("hidden", "visibility: hidden");
 	@include helpers("hide", "display: none");
+}
 
+.is-visible {
+	display: block !important;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.hide {
+	display: none;
 }

@@ -15,4 +15,8 @@ $line-heights: () !default;
 	@each $name, $size in $config {
 		@include helpers("#{$className}-#{$name}", "line-height: #{$size}");
 	}
+
+	.no-line-height {
+		line-height: 1;
+	}
 }

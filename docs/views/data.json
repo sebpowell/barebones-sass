@@ -1,105 +1,128 @@
 {
-	"Background Color": {
-		"description": ".background-{$palette (opt) }-{$color}",
-		"responsive": true,
-		"modifiers": [
-			"$colors", 
-			"white"
-		]
-	},
 
-	"Background Position": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"center"
-		]
-	},
+	"theme": [
+		{
+			"name": "Border Radius",
+			"description": ".border-radius-{size}",
+			"values": "",
+			"responsive": false,
+			"modifiers": [
+				"1 - 10"
+			]
+		},
 
-	"Background Size": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"cover",
-			"contain"
-		]
-	},
+		{
+			"name": "Border",
+			"description": ".border-(color)-(direction) / .no-border-(direction)",
+			"values": "",
+			"responsive": true,
+			"modifiers": [
+				"left",
+				"right",
+				"bottom",
+				"top"
+			]
+		},
 
-	"Border Radius": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"cover",
-			"contain"
-		]
-	},
+		{
+			"name": "Box Shadow",
+			"description": ".box-shadow-(size) / .no-box-shadow",
+			"values": "",
+			"modifiers": [
+				"small",
+				"medium", 
+				"large",
+				"x-large"
+			]
+		}
+	],
 
-	"Border": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"cover",
-			"contain"
-		]
-	},
 
-	"Box Shadow": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"cover",
-			"contain"
-		]
-	},
 
-	"Clearfix": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"cover",
-			"contain"
-		]
-	},
+	"background": [
+		{
+			"name": "Background Color",
+			"description": ".background-{$palette (opt) }-{$color}",
+			"responsive": true,
+			"modifiers": [
+				"$colors", 
+				"white"
+			]
+		},
 
-	"Columns": {
-		"description": ".background-{$position}",
-		"values": "",
-		"responsive": true,
-		"modifiers": [
-			"cover",
-			"contain"
-		]
-	},
+		{	
+			"name": "Background Position",
+			"description": ".background-(position)",
+			"values": "",
+			"responsive": true,
+			"modifiers": [
+				"center"
+			]
+		},
 
-	"padding": {
-		"description": "Base unit set to 5px, each modifier is a multiple.",
-		"responsive": true,
-		"modifiers": [
-			"vertical",
-			"horizontal",
-			"left",
-			"top",
-			"right",
-			"bottom"
-		]
-	},
+		{
+			"name": "Background Size",
+			"description": ".background-(size)",
+			"values": "",
+			"responsive": true,
+			"modifiers": [
+				"cover",
+				"contain"
+			]
+		},
 
-	"margin": {
-		"description": "Base unit set to 5px, each modifier is a multiple.",
-		"values": "1 - 5",
-		"modifiers": [
-			"vertical",
-			"horizontal",
-			"left",
-			"top",
-			"right",
-			"bottom"
-		]
-	}
+		{
+			"name": "Background Repeat",
+			"description": ".background-repeat",
+			"values": "",
+			"responsive": true,
+			"modifiers": [
+				"cover",
+				"contain"
+			]
+		}
+	],
+
+
+	"text": [
+		{
+			"name": "align",
+			"description": ".text-(direction)",
+			"modifiers": [
+				"left",
+				"center",
+				"right"
+			]
+		},
+
+		{
+			"name": "transform",
+			"description": ".text-(transform)",
+			"values": "1 - 5",
+			"modifiers": [
+				"uppercase",
+				"capitalize",
+				"lowercase"
+			]
+		},
+
+		{	
+			"name": "decoration",
+			"description": "text-(decoration) / no-(decoration)",
+			"values": "1 - 5",
+			"modifiers": [
+				"underline",
+				"strikethrough"
+			]
+		},
+
+		{
+
+			"name": "text-color",
+			"description": ".text-(color)",
+			"modifiers": [
+				"$colors"
+			]
+		}
+	]
 }

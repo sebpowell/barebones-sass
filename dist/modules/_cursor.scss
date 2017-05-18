@@ -2,8 +2,8 @@
 	
 	$className: map-get($helpers, cursor);
 	
-	.#{$className}-disabled {
-		cursor: disabled !important;
+	.#{$className}-not-allowed {
+		cursor: not-allowed !important;
 	}
 
 	.#{$className}-pointer {

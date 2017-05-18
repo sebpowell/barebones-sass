@@ -12,23 +12,26 @@ pre, .example {
 //   }
 // }
 //
-.example {
-  border: 1px solid colors(keyline, dark);
-  border-radius: 3px;
-	box-shadow: map-get($shadows, sm);
-	background: colors(greyscale, x-light);
-	padding: sizes(double-half);
+// .example {
+//   border: 1px solid colors(keyline, dark);
+//   border-radius: 3px;
+// 	box-shadow: map-get($shadows, sm);
+// 	background: colors(greyscale, x-light);
+// 	padding: sizes(double-half);
 
-}
+// }
 
 
 .example-code {
 
-	color: colors(greyscale, medium);
-	font-family: "Roboto Mono", "Menlo", "Monaco", Courier, monospace;
+	// color: colors(greyscale, 100);
+	font-family: "Roboto Mono";
 	white-space: pre;
+	border: 1px solid colors(keyline);
+	padding: sizes(5);
 
-	font-size: 15px;
+	font-size: 13px;
+	border-radius: 3px;
 	margin: 0;
 	word-spacing: normal;
 	word-break: normal;
@@ -38,21 +41,21 @@ pre, .example {
 	hyphens: none;
 
 	.token {
-		&.selector {
-			color: colors(code, blue);
-		}
-		&.comment {
-				color: colors(greyscale, light);
-		}
-		&.keyword {
-			color: colors(code, orange);
-		}
-		&.function {
-			color: colors(code, green);
-		}
-		&.variable {
-			color: colors(code, purple);
-		}
+		// &.selector {
+		// 	color: colors(code, blue);
+		// }
+		// &.comment {
+		// 		color: colors(greyscale, light);
+		// }
+		// &.keyword {
+		// 	color: colors(code, orange);
+		// }
+		// &.function {
+		// 	color: colors(code, green);
+		// }
+		// &.variable {
+		// 	color: colors(code, purple);
+		// }
 	}
 }
 

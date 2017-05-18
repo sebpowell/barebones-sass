@@ -27,12 +27,13 @@
 
 .main-container {
 	@include if-above(device-medium-large) {
-		@include span(8, $position: last, $gutter: 0);
+		// @include span(8, $position: last, $gutter: 0);
+    width: 1000px;
 	}
 }
 
 .page-title {
 	font-size: 42px;
 	font-weight: weights(primary, bold);
-  color: colors(greyscale, 900);
+  // color: colors(greyscale, 900);
 }

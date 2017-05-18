@@ -1,127 +1,81 @@
+$colors: (
+	"brand": (
+		"primary": #1c85e8,
+	),
+	"system": (
+		"error": #ff7f82,
+		"info": #e3f4f5,
+		"success": #13CE66
+	),
+	"purple": "black",
+	"keyline": #d2d2d2
+) !global;
+
 @import "../../dist/_base";
+@import "components/_navigation";
+@import "components/_code";
+@import "components/_docs";
 
 
 html {
-	font-family: "Open Sans";
-}
-
-.background-white {
-	background-color: white;
+	font-family: "Helvetica Neue";
+	font-size: 16px;
 }
 
 
 
+.section {
+	padding: 100px 0;
+	border-bottom: 1px solid colors(keyline);
+}
+
+.table-data {
+	td {
+		padding: sizes(4);
+		border-bottom: 1px solid colors(keyline);
+	}
+}
+
+.page-container {
+	max-width: 1200px;
+	border-radius: 3px;
+	margin: 0 auto;
+	// border: 1px solid colors(keyline, light);
+}
+
+.font-code {
+	font-family: "Roboto Mono";
+}
+
+
+h1 {
+	font-size: 42px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+
+.label {
+	display: inline-block;
+	line-height: 1;
+	border-radius: 2px;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+
+	@each $colour, $value in map-get($colors, system) {
+		&.label-#{$colour} {
+			color: $value;
+			padding: 4px 8px 3px 8px;
+			border: 1px solid $value;
+		}
+	}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $colors: (
-// 	// brand: (
-// 	// 	primary: #157afb,
-// 	// 	secondary: #fe5607
-// 	// ),
-
-// 	secondary: (
-// 		orange: #f8b000,
-// 		green: #00C771,
-// 	),
-
-// 	// social: (
-// 	// 	facebook: #103480,
-// 	// 	twitter: #1DA1F2
-// 	// ),
-
-// 	// system: (
-// 	// 	warning: #CE3535
-// 	// ),
-
-// 	// warning: (
-// 	// 	light: #FFEEEE,
-// 	// 	base: #CE3535,
-// 	// 	dark: #FFEEEE,
-// 	// ),
-
-// 	// code: (
-// 	// 	blue: #3c94d4,
-// 	// 	orange: #ffa566,
-// 	// 	purple: #a675d0,
-// 	// 	green: #44b8b4
-// 	// ),
-
-// 	// greyscale: (
-// 	// 	50: #FAFAFA,
-// 	// 	100: #F5F5F5,
-// 	// 	200: #EEEEEE,
-// 	// 	300: #E0E0E0,
-// 	// 	400: #BDBDBD,
-// 	// 	500: #9E9E9E,
-// 	// 	600: #757575,
-// 	// 	700: #616161,
-// 	// 	800: #424242,
-// 	// 	900: #212121,
-
-// 	// 	x-light: #fcfcfc,
-// 	// 	light: #b8b6bb,
-// 	// 	medium: #706d77,
-// 	// 	dark: #4b484f
-// 	// ),
-
-// 	// keyline: (
-// 	// 	light: #ebebeb,
-// 	// 	dark: #dddddd,
-// 	// )
-// );

@@ -1,0 +1,4 @@
+@if map-get($helpers, background-repeat) != false {
+	$className: #{map-get($helpers, background-repeat)};
+	@include helpers("#{$className}-no-repeat", "background-repeat: no-repeat");
+}

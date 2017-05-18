@@ -6,5 +6,4 @@
 	@include helpers("#{$className}-fixed", "position: fixed");
 	@include helpers("#{$className}-relative", "position: relative");
 	@include helpers("#{$className}-static", "position: static");
-
 }

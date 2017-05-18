@@ -27,114 +27,342 @@
     <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   </head>
 </html>
-<body style="padding-top: 200px" class="background-greyscale-100">
-  <div class="max-width-1200">
-    <div class="border-light display-table width-100 background-white">
-      <div class="display-table-row">
-        <div class="display-table-cell padding-4">Name</div>
-        <div class="display-table-cell padding-4">Modifiers</div>
-        <div class="display-table-cell padding-4">Responsive</div>
-        <div class="display-table-cell padding-4">Hover</div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Background Color</h3>
-          <p class="margin-bottom-2">.background-{$palette (opt) }-{$color}</p>
+<body>
+  <div class="section">
+    <div class="max-width-1200">
+      <div class="columns">
+        <div class="columns-4">
+          <h1 class="margin-bottom-2">Breakpoints</h1>
+          <p class="text-24">Used to generate responsive helpers and for the responsive mixins.</p>
         </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>$colors, </em><em>white</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Background Position</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>center</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Background Size</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>cover, </em><em>contain</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Border Radius</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>cover, </em><em>contain</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
+        <div class="columns-7 offset-1">
+          <h2 class="margin-bottom-3">Values</h2>
+          <p>Stored in $breakpoints map. Add additional values to this map.</p>
+          <table class="width-100 table-data margin-bottom-5">
+            <tr>
+              <td>small</td>
+              <td>480px</td>
+            </tr>
+            <tr>
+              <td>medium</td>
+              <td>780px</td>
+            </tr>
+          </table>
+          <h2 class="margin-bottom-3">Functions</h2>
+          <p class="margin-bottom-3">Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.</p>
+          <div class="example">
+            <pre class="example-code"><code class="language-scss">.element {
+	@include if-above(medium) {
+		color: red;
+	}
+	
+	@include if-below(800px) {
+		color: blue;
+	
+	@include if-between(800px, 1200px) {
+		color: blue;
+	}
+}</code></pre>
+          </div>
         </div>
       </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Border</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="max-width-1200">
+      <div class="columns">
+        <div class="columns-4">
+          <h1 class="margin-bottom-2">Colors</h1>
+          <p class="text-24">Used to generate responsive helpers and for the responsive mixins.</p>
         </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>cover, </em><em>contain</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Box Shadow</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>cover, </em><em>contain</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Clearfix</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>cover, </em><em>contain</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">Columns</h3>
-          <p class="margin-bottom-2">.background-{$position}</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>cover, </em><em>contain</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
-        </div>
-      </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">padding</h3>
-          <p class="margin-bottom-2">Base unit set to 5px, each modifier is a multiple.</p>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>vertical, </em><em>horizontal, </em><em>left, </em><em>top, </em><em>right, </em><em>bottom</em>
-        </div>
-        <div class="display-table-cell padding-4 border-bottom-light">true
+        <div class="columns-7 offset-1">
+          <h2 class="margin-bottom-3">Values</h2>
+          <h3 class="margin-bottom-2">Brand</h3>
+          <div class="columns margin-bottom-4">
+            <div class="columns-4 text-center text-white">
+              <div class="padding-6 background-brand-primary border-radius-3">primary</div>
+            </div>
+            <div class="columns-4 text-center text-white">
+              <div class="padding-6 background-brand-secondary border-radius-3">secondary</div>
+            </div>
+          </div>
+          <h3 class="margin-bottom-2">System</h3>
+          <div class="columns margin-bottom-8">
+            <div class="columns-4 text-center">
+              <div class="padding-8 background-system-error border-radius-3">error</div>
+            </div>
+            <div class="columns-4 text-center">
+              <div class="padding-8 background-system-info border-radius-3">info</div>
+            </div>
+            <div class="columns-4 text-center">
+              <div class="padding-8 background-system-success border-radius-3">success</div>
+            </div>
+          </div>
+          <h2 class="margin-bottom-3">Functions</h2>
+          <p class="margin-bottom-3">Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.</p>
+          <div class="example">
+            <pre class="example-code"><code class="language-scss">.element {
+	color: colors($category (optional), $value);
+}
+</code></pre>
+          </div>
         </div>
       </div>
-      <div class="display-table-row border-bottom-light width-100">
-        <div class="display-table-cell padding-4 border-bottom-light">
-          <h3 class="text-capitalize margin-bottom-2">margin</h3>
-          <p class="margin-bottom-2">Base unit set to 5px, each modifier is a multiple.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="max-width-1200">
+      <div class="columns">
+        <div class="columns-4">
+          <h1 class="margin-bottom-2">Container</h1>
+          <p class="text-24">Used to generate responsive helpers and for the responsive mixins.</p>
         </div>
-        <div class="display-table-cell padding-4 border-bottom-light"><em>vertical, </em><em>horizontal, </em><em>left, </em><em>top, </em><em>right, </em><em>bottom</em>
+        <div class="columns-7 offset-1">
+          <h2>Values </h2>
+          <div class="columns">
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-small">small</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-medium">medium</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-large">large</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-x-large">x-large</div>
+            </div>
+          </div>
+          <h2 class="margin-bottom-3">Functions</h2>
+          <p class="margin-bottom-3">Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.</p>
+          <div class="example">
+            <pre class="example-code"><code class="language-scss">.element {
+	color: colors($category (optional), $value);
+}
+</code></pre>
+          </div>
         </div>
-        <div class="display-table-cell padding-4 border-bottom-light">
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="max-width-1200">
+      <div class="columns">
+        <div class="columns-4">
+          <h1 class="margin-bottom-2">Grid</h1>
+          <p class="text-24">Used to generate responsive helpers and for the responsive mixins.</p>
         </div>
+        <div class="columns-7 offset-1">
+          <h2>Values </h2>
+          <div class="columns">
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-small">small</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-medium">medium</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-large">large</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-x-large">x-large</div>
+            </div>
+          </div>
+          <h2 class="margin-bottom-3">Functions</h2>
+          <p class="margin-bottom-3">Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.</p>
+          <div class="example">
+            <pre class="example-code"><code class="language-scss">.element {
+	color: colors($category (optional), $value);
+}
+
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="max-width-1200">
+      <div class="columns">
+        <div class="columns-4">
+          <h1 class="margin-bottom-2">Shadows</h1>
+          <p class="text-24">Used to generate responsive helpers and for the responsive mixins.</p>
+        </div>
+        <div class="columns-7 offset-1">
+          <h2>Values </h2>
+          <div class="columns">
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-small">small</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-medium">medium</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-large">large</div>
+            </div>
+            <div class="columns-3 text-center">
+              <div class="background-white padding-8 box-shadow-x-large">x-large</div>
+            </div>
+          </div>
+          <h2 class="margin-bottom-3">Functions</h2>
+          <p class="margin-bottom-3">Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.</p>
+          <div class="example">
+            <pre class="example-code"><code class="language-scss">.element {
+	color: colors($category (optional), $value);
+}
+
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="max-width-1200">
+      <h1 class="margin-bottom-5">Helpers</h1>
+      <div class="display-table width-100 background-white table-border-collapse">
+        <h2 class="text-capitalize margin-bottom-5 margin-top-5">theme</h2>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Border Radius</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.theme-1 - 10</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Border</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.theme-left</li>
+              <li class="margin-bottom-4">.theme-right</li>
+              <li class="margin-bottom-4">.theme-bottom</li>
+              <li class="margin-bottom-4">.theme-top</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Box Shadow</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.theme-small</li>
+              <li class="margin-bottom-4">.theme-medium</li>
+              <li class="margin-bottom-4">.theme-large</li>
+              <li class="margin-bottom-4">.theme-x-large</li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        <h2 class="text-capitalize margin-bottom-5 margin-top-5">background</h2>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Background Color</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.background-$colors</li>
+              <li class="margin-bottom-4">.background-white</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Background Position</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.background-center</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Background Size</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.background-cover</li>
+              <li class="margin-bottom-4">.background-contain</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>Background Repeat</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.background-cover</li>
+              <li class="margin-bottom-4">.background-contain</li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        <h2 class="text-capitalize margin-bottom-5 margin-top-5">text</h2>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>align</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.text-left</li>
+              <li class="margin-bottom-4">.text-center</li>
+              <li class="margin-bottom-4">.text-right</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>transform</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.text-uppercase</li>
+              <li class="margin-bottom-4">.text-capitalize</li>
+              <li class="margin-bottom-4">.text-lowercase</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>decoration</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.text-underline</li>
+              <li class="margin-bottom-4">.text-strikethrough</li>
+            </ul>
+          </div>
+        </div>
+        <div class="display-table-row border-bottom-light">
+          <div class="display-table-cell padding-vertical-4">
+            <h3>text-color</h3>
+          </div>
+          <div class="display-table-cell">
+            <ul class="no-bullet">
+              <li class="margin-bottom-4">.text-$colors</li>
+            </ul>
+          </div>
+        </div>
+        
+        
+        
+        
+        
       </div>
     </div>
   </div>

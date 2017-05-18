@@ -4,4 +4,5 @@
 	
 	@include helpers("#{$className}-left", "float: left");
 	@include helpers("#{$className}-right", "float: right");
+	@include helpers("no-#{$className}", "float: none");
 }

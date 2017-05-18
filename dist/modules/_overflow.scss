@@ -6,5 +6,14 @@
 	@include helpers("#{$className}-scroll", "overflow: scroll");
 	@include helpers("#{$className}-visible", "overflow: visible");
 	@include helpers("#{$className}-auto", "overflow: auto");
-	
+
+	@include helpers("#{$className}-x-hidden", "overflow-x: hidden");
+	@include helpers("#{$className}-x-scroll", "overflow-x: scroll");
+	@include helpers("#{$className}-x-visible", "overflow-x: visible");
+	@include helpers("#{$className}-x-auto", "overflow-x: auto");
+
+	@include helpers("#{$className}-y-hidden", "overflow-y: hidden");
+	@include helpers("#{$className}-y-scroll", "overflow-y: scroll");
+	@include helpers("#{$className}-y-visible", "overflow-y: visible");
+	@include helpers("#{$className}-y-auto", "overflow-y: auto");
 }

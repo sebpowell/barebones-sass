@@ -3,7 +3,7 @@
 	$className: map-get($helpers, background-color);
 	
 	.#{$className}-color-white {
-		background-color: white !important;
+		background-color: white;
 	}
 	
 	@each $category, $value in $colors {
@@ -13,12 +13,12 @@
 		@if $type == "map" {
 			@each $color, $value in map-deep-get($colors, $category) {
 				.#{$className}-#{$category}-#{$color} {
-					background-color: $value !important;
+					background-color: $value;
 				}
 	
 				.#{$className}-hover-#{$category}-#{$color} {
 					&:hover {
-						background-color: $value !important;
+						background-color: $value;
 					}
 				}
 			}
@@ -26,14 +26,18 @@
 	
 		@else {
 			.#{$className}-#{$category} {
-				background-color: $value !important;
+				background-color: $value;
 			}
 	
 			.#{$className}-hover-#{$category} {
 				&:hover {
-					background-color: $value !important;
+					background-color: $value;
 				}
 			}
 		}
 	}
+}
+
+.background-white {
+	background-color: white;
 }

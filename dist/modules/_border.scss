@@ -1,9 +1,4 @@
-$keylines: (
-	"light": #E5E5E5, 
-	"dark": #E7E7E7
-) !default;
-
-
+$keylines: () !default;
 
 @if map-deep-get($helpers, border) != false {
 	
@@ -11,11 +6,27 @@ $keylines: (
 	$border-sides: top, right, bottom, left;
 	
 	@include helpers("no-#{$className}", "border: 0");
+
+	.no-#{$className}-last {
+		&:last-of-type {
+			border: none !important;
+		}
+	}
 	
 	@each $color, $value in $keylines {
 		@include helpers("#{$className}-#{$color}", "border: 1px solid #{$value}");
 		@each $side in $border-sides {
 			@include helpers("#{$className}-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
+		}
+	}
+
+	@each $side in $border-sides {
+		@include helpers("no-#{$className}-#{$side}", "border-#{$side}: none");
+
+		.no-#{$className}-#{$side}-last {
+			&:last-of-type {
+				border-#{$side}: none !important;
+			}
 		}
 	}
 }

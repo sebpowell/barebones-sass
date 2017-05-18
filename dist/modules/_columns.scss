@@ -2,7 +2,7 @@ $grid: () !default;
 
 $grid-default: (
 	"columns": 12,
-	"gutter": 24px,
+	"gutter": 40px,
 	"breakpoint": 780px
 ) !default;
 
@@ -95,19 +95,21 @@ $grid-default: (
 			}
 		}
 
-		&.gutter-half {
-			margin-left: -($gutter / 4);
-			margin-right: -($gutter / 4);
-			> [class^="columns-"] {
-				padding: 0 $gutter / 4;
+		@include if-above($breakpoint) {
+			&.gutter-half {
+				margin-left: -($gutter / 4);
+				margin-right: -($gutter / 4);
+				> [class^="columns-"] {
+					padding: 0 $gutter / 4;
+				}
 			}
-		}
 
-		&.gutter-double {
-			margin-left: -($gutter);
-			margin-right: -($gutter);
-			> [class^="columns-"] {
-				padding: 0 $gutter;
+			&.gutter-double {
+				margin-left: -($gutter);
+				margin-right: -($gutter);
+				> [class^="columns-"] {
+					padding: 0 $gutter;
+				}
 			}
 		}
 	}

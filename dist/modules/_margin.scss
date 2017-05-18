@@ -20,9 +20,25 @@
 	}
 	
 	@include helpers("no-#{$className}", "margin: 0");
+
+	.no-#{$className}-last {
+		&:last-of-type {
+			margin: 0 !important;
+		}
+	}
+
+	.#{$className}-auto {
+		margin: 0 auto;
+	}
+
 	
 	@each $side in $sides {
 		@include helpers("no-#{$className}-#{$side}", "margin-#{$side}: 0");
+		.no-#{$className}-#{$side}-last {
+			&:last-of-type {
+				margin-#{$side}: 0 !important;
+			}
+		}
 	}
 
 	@include helpers("#{$className}-auto", "margin: 0 auto");

@@ -2,4 +2,10 @@
 	.#{map-get($helpers, clearfix)} {
 		@include clearfix;
 	}
+
+	.no-clearfix {
+		&:before, &:after {
+			content: normal !important;
+		}
+	}
 }

@@ -14,14 +14,15 @@
 	
 		@each $side in $sides {
 			@include helpers("#{$className}-#{$side}-#{$i}", "padding-#{$side}: #{$n}px");
-			@include helpers("#{$className}-vertical-#{$i}", "padding-top: #{$n}px; padding-bottom: #{$n}px");
-			@include helpers("#{$className}-horizontal-#{$i}", "padding-left: #{$n}px; padding-right: #{$n}px");	
+			@include helpers("#{$className}-vertical-#{$i}", "padding-top: #{$n}px; padding-bottom: #{$n}px;");
+			@include helpers("#{$className}-horizontal-#{$i}", "padding-left: #{$n}px; padding-right: #{$n}px;");	
 		}
 	
 		$i: $i + 1;
 	}
 
 	@include helpers("no-#{$className}", "padding: 0");
+	@include helpers("no-#{$className}-horizontal", "padding-left: 0; padding-right: 0;");
 	
 	@each $side in $sides {
 		@include helpers("no-#{$className}-#{$side}", "padding-#{$side}: 0");

@@ -4,7 +4,9 @@
 $helpers-default: (
 	"aspect-ratio": "aspect-ratio",
 	"background-color": "background",
-	"background-size": "background-size",
+	"background-position": "background",
+	"background-size": "background",
+	"background-repeat": "background",
 	"border-radius": "border-radius",
 	"border": "border",
 	"box-shadow": "box-shadow",
@@ -34,6 +36,7 @@ $helpers-default: (
 	"text-ellipsis": "text-ellipsis",
 	"text-size": "text",
 	"text-transform": "text",
+	"transition": "transition",
 	"vertical-align": "vertical-align",
 	"visibility": "visibility",
 	"z-index": "z-index",
@@ -48,57 +51,14 @@ $helpers: map-merge($helpers-default, $helpers) !global;
 // Colors
 // /////////////////////////////////////////////////////////
 
-$colors-default: (
-	"brand": (
-		"primary": #157afb,
-		"secondary": #fe5607
-	),
-	"social": (
-		"facebook": #103480,
-		"twitter": #1DA1F2
-	),
-	"system": (
-		"warning": #CE3535
-	),
-	"greyscale": (
-		50: #FAFAFA,
-		100: #F5F5F5,
-		200: #EEEEEE,
-		300: #E0E0E0,
-		400: #BDBDBD,
-		500: #9E9E9E,
-		600: #757575,
-		700: #616161,
-		800: #424242,
-		900: #212121
-	)
-) !default;
-
 $colors: () !default;
-
-$colors: map-merge($colors-default, $colors) !global;
 
 // Style
 // /////////////////////////////////////////////////////////
 
-$spacing-default: (
-	"base": 5px,
-	"variants": 10
-) !default;
-
 $spacing: () !default;
 
-$spacing: map-merge($spacing-default, $spacing);
-
-
-$breakpoints-default: (
-	"medium": 780px,
-	"large": 1400px
-) !default;
-
 $breakpoints: () !default;
-
-$breakpoints-config: map-merge($breakpoints-default, $breakpoints);
 
 // Imports
 // /////////////////////////////////////////////////////////

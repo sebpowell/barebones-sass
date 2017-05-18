@@ -15,4 +15,11 @@
 
 		$i: $i + 1;
 	}
+
+	@each $side in $sides {
+		.#{$side}-auto {
+			$side: auto !important;
+		}
+	}
 }
+

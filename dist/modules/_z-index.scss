@@ -12,6 +12,14 @@
 		$i: $i + 1;
 	}
 
+	.#{$className}-99 { 
+		z-index: 99 !important;
+	}
+
+	.#{$className}-999 { 
+		z-index: 99 !important;
+	}
+
 	.#{$className}-9999 { 
 		z-index: 9999 !important;
 	}

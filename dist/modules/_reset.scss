@@ -1,6 +1,9 @@
 *, *:before, *:after {
 	box-sizing: border-box;
-	&:hover, &:focus, &:active {
+}
+
+* {
+	&:focus {
 		outline: none;
 	}
 }
@@ -26,4 +29,16 @@ a, a:visited {
 	color: inherit;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+a {
+	// IE 10 fix.
+	img {
+		border: 0; 
+	}
+}
+
+
+img {
+	max-width: 100%;
 }
