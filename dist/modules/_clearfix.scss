@@ -1,9 +1,9 @@
-@if map-get($helpers, clearfix) != false {
-	.#{map-get($helpers, clearfix)} {
+@if map-get($bb-helpers, clearfix) != false {
+	.#{map-get($bb-helpers, clearfix)} {
 		@include clearfix;
 	}
 
-	.no-clearfix {
+	.no#{$bb-global-delimiter}clearfix {
 		&:before, &:after {
 			content: normal !important;
 		}

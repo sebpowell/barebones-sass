@@ -1,12 +1,9 @@
 @function breakpoints($object) {
-	@return map-get($breakpoints-config, $object);
+	@return map-get($bb-breakpoints, $object);
 }
 
-
-
 @mixin if-above($breakpoint-name) {
-	
-	@if map-has-key($breakpoints-config, $breakpoint-name) {
+	@if map-has-key($bb-breakpoints, $breakpoint-name) {
 		@media (min-width: breakpoints($breakpoint-name)) {
 			@content;
 		}
@@ -20,8 +17,7 @@
 }
 
 @mixin if-below($breakpoint-name) {
-	
-	@if map-has-key($breakpoints-config, $breakpoint-name) {
+	@if map-has-key($bb-breakpoints, $breakpoint-name) {
 		@media (max-width: breakpoints($breakpoint-name)) {
 			@content;
 		}
@@ -36,7 +32,7 @@
 
 @mixin if-between($breakpoint-name-min, $breakpoint-name-max) {
 	
-	@if map-has-key($breakpoints-config, $breakpoint-name-min) {
+	@if map-has-key($bb-breakpoints, $breakpoint-name-min) {
 		@media (min-width: breakpoints($breakpoint-name-min)) and (max-width: breakpoints($breakpoint-name-max)) {
 			@content;
 		}

@@ -13,8 +13,8 @@
 		@include helperGeneratorProperties($properties);
 	}
 
-	@if map-get($helpers, responsive) != false {
-		@each $breakpoint, $value in $breakpoints-config {
+	@if $bb-responsive != false {
+		@each $breakpoint, $value in $bb-breakpoints {
 			.#{$name}-above-#{$breakpoint} {
 				@include if-above(#{$breakpoint}) {
 					@include helperGeneratorProperties($properties);

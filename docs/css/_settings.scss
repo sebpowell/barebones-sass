@@ -1,111 +1,51 @@
-// $settings: (
+$bb-colors: (
+	"Brand": (
+		"Primary": #1c85e8,
+	),
+	"system": (
+		"error": #ff7f82,
+		"info": #e3f4f5,
+		"success": (
+			"light": #13CE66,
+		)
+	),
+	// "purple": "black",
+	"keyline": (
+		"light": #d2d2d2,
+		"dark": "grey",
 
-// 	responsiveHelpers: true,
+	)
+);
 
-// 	helpers: (
-// 		// background: false,
-// 		border: false,
-// 		containers: false,
-// 		// layout: false,
-// 		// spacing: false,
-// 		// text: false,
-// 		visibility: false,
-// 	),
-// );
+$bb-breakpoints: (
+	"medium": 780px,
+);
 
+$bb-letter-spacing: (
+	"small": 0.1em,
+);
 
-// $fonts: (
-// 	primary: (
-// 		name: #{'Avenir Next', Helvetica, Arial, sans-serif},
-// 		weights: (
-// 			light: 100,
-// 			regular: 400,
-// 			semi-bold: 600,
-// 			bold: 700
-// 		),
-// 	),
-// 	code: (
-// 		name: #{'Roboto Mono', 'Menlo', 'Monaco', Courier, monospace},
-// 	),
-// 	secondary: (
-// 		name: #{"Futura-PT", 'Futura PT', sans-serif},
-// 		weights: (
-// 			light: 100,
-// 			regular: 400,
-// 			bold: 700
-// 		),
-// 	),
-// );
+$bb-line-heights: (
+	"xs": 1,
+	"s": 1.2,
+	"m": 1.5,
+	"l": 2
+);
 
-// $shadows: (
-// 	sm: 0 1px 2px rgba(0,0,0,0.06),
-// 	md: 0 3px 2px rgba(0,0,0,0.1),
-// 	lg: 0 3px 2px rgba(0,0,0,0.1),
-// );
+$bb-text-sizes: (
+	"10": 10px,
+	"11": 11px,
+	"12": 12px,
+	"13": 13px,
+	"15": 15px,
+	"18": 18px,
+	"20": 20px,
+	"24": 24px,
+	"32": 32px,
+	"42": 42px,
+	"52": 52px,
+	"62": 62px,
+	"72": 72px
+);
 
-// $breakpoints: (
-// 	// device-x-small: 350px,
-// 	// device-small: 480px,
-// 	device-medium: 780px,
-// 	// device-medium-large: 960px,
-// 	// device-large: 1280px,
-// 	// device-x-large: 1400px
-// );
-
-// $grid: (
-// 	columns: 12,
-// 	gutter: 24px,
-// 	breakpoint: "device-medium",
-// 	type: "padding",
-// 	mobile-spacing: 16px,
-// );
-
-// $font-sizes: (
-// 	x-small: 12px,
-// 	small: 14px,
-// 	base: 16px,
-// 	medium: 20px,
-// 	medium-large: 24px,
-// 	large: 32px,
-// 	x-large: 42px
-// );
-
-// $line-height: (
-// 	sm: 1,
-// 	md: 1.2,
-// 	lg: 1.5,
-// 	xl: 2
-// );
-
-// // $layers: (
-// // 	backdrop: 3,
-// // 	modal: 4,
-// // 	share-bar: 2,
-// // 	navigation: 1,
-// // );
-// //
-// $sizes: (
-//   quarter: 4px,
-//   half: 8px,
-//   base: 16px,
-//   double-half: 24px,
-//   double: 32px,
-//   triple: 48px,
-//   quad: 64px,
-// );
-
-
-
-// // opacity: 
-
-
-
-
-
-
-
-
-
-
-
-
+$bb-global-delimiter: "-";

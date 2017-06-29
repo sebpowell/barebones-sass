@@ -1,6 +1,6 @@
-@if map-get($helpers, font-weight) != false {
+@if map-get($bb-helpers, font-weight) != false {
 
-	$className: map-get($helpers, font-weight);
+	$className: map-get($bb-helpers, font-weight);
 	$i: 1;
 	
 	@while $i <= 9 {

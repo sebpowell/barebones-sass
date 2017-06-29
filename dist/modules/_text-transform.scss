@@ -1,16 +1,16 @@
-@if map-get($helpers, text-transform) != false {
+@if map-get($bb-helpers, text-transform) != false {
 	
-	$className: map-get($helpers, text-transform);
+	$className: map-get($bb-helpers, text-transform);
 
-	.#{$className}-uppercase {
-		text-transform: uppercase !important;
+	.#{$className}#{$bb-global-delimiter}uppercase {
+		text-transform: uppercase;
 	}
 
-	.#{$className}-lowercase {
-		text-transform: lowercase !important;
+	.#{$className}#{$bb-global-delimiter}lowercase {
+		text-transform: lowercase;
 	}
 
-	.#{$className}-capitalize {
-		text-transform: capitalize !important;
+	.#{$className}#{$bb-global-delimiter}capitalize {
+		text-transform: capitalize;
 	}
 }

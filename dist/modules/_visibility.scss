@@ -1,7 +1,7 @@
-@if map-get($helpers, visibility) != false {
+@if map-get($bb-helpers, visibility) != false {
 	@include helpers("visibility", "visibility: visible");
-	@include helpers("hidden", "visibility: hidden");
-	@include helpers("hide", "display: none");
+	@include helpers("hidden", "visibility: hidden !important");
+	@include helpers("hide", "display: none !important");
 }
 
 .is-visible {
@@ -9,9 +9,9 @@
 }
 
 .is-hidden {
-	display: none;
+	display: none !important;
 }
 
 .hide {
-	display: none;
+	display: none !important;
 }

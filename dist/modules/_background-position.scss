@@ -1,4 +1,4 @@
-@if map-get($helpers, background-position) != false {
-	$className: #{map-get($helpers, background-position)};
-	@include helpers("#{$className}-center", "background-position: center");
+@if map-get($bb-helpers, background-position) != false {
+	$className: #{map-get($bb-helpers, background-position)};
+	@include helpers("#{$className}#{$bb-global-delimiter}center", "background-position: center");
 }

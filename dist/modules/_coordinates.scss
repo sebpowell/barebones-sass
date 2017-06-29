@@ -1,23 +1,21 @@
-@if map-get($helpers, coordinates) != false {
-
-	$config: map-merge($spacing-default, $spacing);
+@if map-get($bb-helpers, coordinates) != false {
 	
 	$i: 0;
 	$sides: top, right, bottom, left;
 
-	@while $i < strip-unit(map-get($config, variants)) {
+	@while $i <= $bb-spacing-scale {
 
-		$n: $i * 5;
+		$n: $i * $bb-spacing-base;
 
 		@each $side in $sides {
-			@include helpers("#{$side}-#{$i}", "#{$side}: #{$n}px");
+			@include helpers("#{$side}#{$bb-global-delimiter}#{$i}", "#{$side}: #{$n}px");
 		}	
 
 		$i: $i + 1;
 	}
 
 	@each $side in $sides {
-		.#{$side}-auto {
+		.#{$side}#{$bb-global-delimiter}auto {
 			$side: auto !important;
 		}
 	}

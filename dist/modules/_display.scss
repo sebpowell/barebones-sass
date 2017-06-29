@@ -1,12 +1,10 @@
-@if map-get($helpers, display) != false {
-	
-	$className: map-get($helpers, display);
-
-	@include helpers("#{$className}-none", "display: none");
-	@include helpers("#{$className}-block", "display: block");
-	@include helpers("#{$className}-inline-block", "display: inline-block");
-	@include helpers("#{$className}-table", "display: table");
-	@include helpers("#{$className}-table-row", "display: table-row");
-	@include helpers("#{$className}-table-cell", "display: table-cell");
-	@include helpers("#{$className}-flex", "display: flex");
+@if map-get($bb-helpers, display) != false {
+	$className: map-get($bb-helpers, display);
+	@include helpers("#{$className}#{$bb-global-delimiter}none", "display: none");
+	@include helpers("#{$className}#{$bb-global-delimiter}block", "display: block");
+	@include helpers("#{$className}#{$bb-global-delimiter}inline-block", "display: inline-block");
+	@include helpers("#{$className}#{$bb-global-delimiter}table", "display: table");
+	@include helpers("#{$className}#{$bb-global-delimiter}table#{$bb-global-delimiter}row", "display: table-row");
+	@include helpers("#{$className}#{$bb-global-delimiter}table#{$bb-global-delimiter}cell", "display: table-cell");
+	@include helpers("#{$className}#{$bb-global-delimiter}flex", "display: flex");
 }

@@ -1,14 +1,14 @@
-@if map-get($helpers, table) != false {
+@if map-get($bb-helpers, table) != false {
 
-	$className: map-get($helpers, table);
+	$className: map-get($bb-helpers, table);
 
-	.#{$className}-border-collapse {
-	    border-collapse: collapse !important;
-	    border-spacing: 0 !important;
+	.#{$className}#{$bb-global-delimiter}border#{$bb-global-delimiter}collapse {
+	    border-collapse: collapse;
+	    border-spacing: 0;
 	}
 
-	.#{$className}-layout-fixed {
-		table-layout: fixed !important;
+	.#{$className}#{$bb-global-delimiter}layout#{$bb-global-delimiter}fixed {
+		table-layout: fixed;
 	}
 }
 

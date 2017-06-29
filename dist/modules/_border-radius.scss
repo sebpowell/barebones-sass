@@ -1,15 +1,17 @@
-@if map-get($helpers, border-radius) != false {
+@if map-get($bb-helpers, border-radius) != false {
 
 	$i: 1;
 
-	@while $i <= 10 {
+	$className: #{map-get($bb-helpers, border-radius)};
+
+	@while $i <= $bb-border-radius-scale {
 		
-		.border-radius-#{$i} {
+		.#{$className}#{$bb-global-delimiter}#{$i} {
 			border-radius: $i+px;
 		}
 
 		@each $side in top, top-left, top-right, bottom, bottom-left, bottom-right {
-			.border-radius-#{$side}-#{$i} {
+			.#{$className}#{$bb-global-delimiter}#{$side}#{$bb-global-delimiter}#{$i} {
 				$v: $i + px;
 				@if $side == "top" {
 					border-top-left-radius: $v;
@@ -37,12 +39,12 @@
 		$i: $i + 1;	
 	}
 
-	.no-#{map-get($helpers, border-radius)} {
+	.no#{$bb-global-delimiter}#{$className} {
 		border-radius: 0;
 	}
 
 	@each $side in top, top-left, top-right, bottom, bottom-left, bottom-right {
-		.no-border-radius-#{$side} {
+		.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}#{$side} {
 			@if $side == "top" {
 				border-top-left-radius: 0;
 				border-top-right-radius: 0;

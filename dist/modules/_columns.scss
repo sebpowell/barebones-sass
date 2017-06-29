@@ -1,15 +1,15 @@
-$grid: () !default;
-
 $grid-default: (
 	"columns": 12,
 	"gutter": 40px,
 	"breakpoint": 780px
 ) !default;
 
-@if map-get($helpers, columns) != false {
+$grid: () !default;
+
+@if map-get($bb-helpers, columns) != false {
 	
 	$config: map-merge($grid-default, $grid);
-	$className:  map-get($helpers, columns);
+	$className:  map-get($bb-helpers, columns);
 
 	$breakpoint: map-get($config, breakpoint);
 	$columns:  map-get($config, columns);
@@ -17,7 +17,7 @@ $grid-default: (
 
 	// Generate column helper classes.
 	@for $i from 1 through $columns {
-		.#{$className}-#{$i} {
+		.#{$className}#{$bb-global-delimiter}#{$i} {
 			padding: 0 $gutter / 2;
 
 			@include if-below($breakpoint) {
@@ -35,10 +35,10 @@ $grid-default: (
 	}
 
 	// Generate breakpoint-specific column helper classes.
-	@if map-get($helpers, responsive) != false {
-		@each $key, $value in $breakpoints-config {
+	@if map-get($bb-helpers, responsive) != false {
+		@each $key, $value in $bb-breakpoints {
 			@for $i from 1 through $columns {
-				.#{$className}-#{$i}-above-#{$key} {
+				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}above#{$bb-global-delimiter}#{$key} {
 					padding: 0 $gutter / 2;
 
 					@include if-below($key) {
@@ -58,21 +58,21 @@ $grid-default: (
 
 	// Generates classes for column offsets.
 	@for $i from 1 through $columns {
-		.offset-#{$i} {
+		.offset#{$bb-global-delimiter}#{$i} {
 			@include if-above($breakpoint) {
 				margin-left: $i * (100% /  $columns);
 			}
 		}
 
-		@if map-get($helpers, responsive) != false {
-			@each $breakpoint, $value in $breakpoints-config {
-				.offset-#{$i}-above-#{$breakpoint} {
+		@if map-get($bb-helpers, responsive) != false {
+			@each $breakpoint, $value in $bb-breakpoints {
+				.offset#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}above#{$bb-global-delimiter}#{$breakpoint} {
 					@include if-above($value) {
 						margin-left: $i * (100% /  $columns);
 					}
 				}
 
-				.offset-#{$i}-below-#{$breakpoint} {
+				.offset#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}below#{$bb-global-delimiter}#{$breakpoint} {
 					@include if-below($value) {
 						margin-left: $i * (100% /  $columns);
 					}
@@ -87,7 +87,7 @@ $grid-default: (
 		margin-left: -( $gutter / 2);
 		margin-right: -( $gutter / 2);
 
-		&.no-gutter {
+		&.no#{$bb-global-delimiter}gutter {
 			margin-left: 0;
 			margin-right: 0;
 			> [class^="columns-"] {
@@ -96,7 +96,7 @@ $grid-default: (
 		}
 
 		@include if-above($breakpoint) {
-			&.gutter-half {
+			&.gutter#{$bb-global-delimiter}half {
 				margin-left: -($gutter / 4);
 				margin-right: -($gutter / 4);
 				> [class^="columns-"] {
@@ -104,7 +104,7 @@ $grid-default: (
 				}
 			}
 
-			&.gutter-double {
+			&.gutter#{$bb-global-delimiter}double {
 				margin-left: -($gutter);
 				margin-right: -($gutter);
 				> [class^="columns-"] {

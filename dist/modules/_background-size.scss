@@ -1,8 +1,6 @@
-@if map-get($helpers, background-size) != false {
-	
-	$className: #{map-get($helpers, background-size)};
-
-	@include helpers("#{$className}-cover", "background-size: cover");
-	@include helpers("#{$className}-contain", "background-size: contain");
-	@include helpers("#{$className}-center", "background-position: center");
+@if map-get($bb-helpers, background-size) != false {
+	$className: #{map-get($bb-helpers, background-size)};
+	@include helpers("#{$className}#{$bb-global-delimiter}cover", "background-size: cover");
+	@include helpers("#{$className}#{$bb-global-delimiter}contain", "background-size: contain");
+	@include helpers("#{$className}#{$bb-global-delimiter}center", "background-position: center");
 }

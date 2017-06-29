@@ -1,26 +1,26 @@
-@if map-get($helpers, text-decoration) != false {
+@if map-get($bb-helpers, text-decoration) != false {
 	
-	$className: map-get($helpers, text-decoration);
+	$className: map-get($bb-helpers, text-decoration);
 
-	.#{$className}-underline {
-		text-decoration: underline !important;
+	.#{$className}#{$bb-global-delimiter}underline {
+		text-decoration: underline;
 	}
 
-	.#{$className}-underline-hover {
+	.#{$className}#{$bb-global-delimiter}underline#{$bb-global-delimiter}#{$bb-hover-class-name} {
 		&:hover {
-			text-decoration: underline !important;
+			text-decoration: underline;
 		}
 	}
 
-	.no-#{$className}-underline {
+	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}underline {
 		text-decoration: none !important;
 	}
 
-	.#{$className}-strikethrough {
-		text-decoration: line-through !important;
+	.#{$className}#{$bb-global-delimiter}strikethrough {
+		text-decoration: line-through;
 	}
 
-	.no-#{$className}-strikethrough {
+	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}strikethrough {
 		text-decoration: none !important;
 	}
 }

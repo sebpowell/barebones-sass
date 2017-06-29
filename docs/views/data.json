@@ -1,5 +1,13 @@
 {
 
+	"layout": [
+
+		
+
+	],
+
+
+
 	"theme": [
 		{
 			"name": "Border Radius",
@@ -126,3 +134,328 @@
 		}
 	]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+
+		"text-ellipsis": {
+			"description": ".text-ellipsis",
+			"modifiers": [
+				"vertical"
+			]
+		},
+
+		
+
+		"vertical-align": {
+			"description": ".vertical-align-(direction)",
+			"values": "1 - 5",
+			"modifiers": [
+				"top",
+				"middle",
+				"bottom"
+			]
+		},
+
+		"visibility": {
+			"description": "Base unit set to 5px, each modifier is a multiple.",
+			"values": "1 - 5",
+			"modifiers": [
+				"vertical",
+				"horizontal",
+				"left",
+				"top",
+				"right",
+				"bottom"
+			]
+		},
+
+		"z-index": {
+			"description": "Base unit set to 5px, each modifier is a multiple.",
+			"values": "1 - 5",
+			"modifiers": [
+				"vertical",
+				"horizontal",
+				"left",
+				"top",
+				"right",
+				"bottom"
+			]
+		}
+
+
+
+		{
+			
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+	
+	"Aspect Ratio": {
+		"description": ".aspect-ratio",
+		"responsive": true,
+		"modifiers": [
+			"$colors", 
+			"white"
+		]
+	},
+
+	
+
+	
+
+	"Clearfix": {
+		"description": ".clearfix"
+	},
+
+	"Columns": {
+		"description": ".columns-(number)",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"1 - 12"
+		]
+	},
+
+	"Coordinates": {
+		"description": ".(direction)-(size)",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"top",
+			"right",
+			"bottom",
+			"left"
+		]
+	},
+
+	"Cursor": {
+		"description": ".cursor-(type)",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"default",
+			"pointer",
+			"not-allowed"
+		]
+	},
+
+	"Display": {
+		"description": ".display-(type)",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"block",
+			"inline-block",
+			"flex",
+			"none"
+		]
+	},
+
+	"Fill": {
+		"description": ".fill-(color)",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"block",
+			"inline-block",
+			"flex",
+			"none"
+		]
+	},
+
+	"Flex": {
+		"description": ".flex-",
+		"values": "",
+		"responsive": true,
+		"modifiers": [
+			"row"
+		]
+	},
+
+	"Float": {
+		"description": ".float-(direction) / .no-float",
+		"responsive": true,
+		"modifiers": [
+			"left",
+			"right"
+		]
+	},
+
+	"Height": {
+		"description": ".height-",
+		"responsive": true,
+		"modifiers": [
+			"left",
+			"right"
+		]
+	},
+
+	"Hide Children": {
+		"description": ".hide-children",
+		"responsive": true,
+		"modifiers": [
+			"left",
+			"right"
+		]
+	},
+
+	"Letter Spacing": {
+		"description": ".letter-spacing-(size)",
+		"responsive": true,
+		"modifiers": [
+			"small",
+			"medium"
+		]
+	},
+
+	"Line Height": {
+		"description": ".line-height-(size)",
+		"responsive": true,
+		"modifiers": [
+			"small",
+			"medium"
+		]
+	},
+
+	"Padding": {
+		"description": ".padding-(direction)-(size) / .no-padding-(direction)",
+		"name": "",
+		"responsive": true,
+		"modifiers": [
+			"vertical",
+			"horizontal",
+			"left",
+			"top",
+			"right",
+			"bottom"
+		]
+	},
+
+	"Margin": {
+		"description": ".margin-(direction)-(size) / .no-margin-(direction)",
+		"values": "1 - 5",
+		"modifiers": [
+			"vertical",
+			"horizontal",
+			"left",
+			"top",
+			"right",
+			"bottom"
+		]
+	},
+
+	"list": {
+		"description": ".margin-(direction)-(size) / .no-margin-(direction)",
+		"values": "1 - 5",
+		"modifiers": [
+			"no-bullet"
+		]
+	},
+
+	"max-width": {
+		"description": "Sets max-width. 400 - 1400, with 50px increments."
+	},
+
+	"opacity": {
+		"description": ".opacity-(value)",
+		"modifiers": [
+			"0 - 10",
+			"horizontal",
+			"left",
+			"top",
+			"right",
+			"bottom"
+		]
+	},
+
+	"overflow": {
+		"description": ".overflow-(direction)-(type)",
+		"values": "1 - 5",
+		"modifiers": [
+			"auto",
+			"scroll",
+			"hidden"
+		]
+	},
+
+	"position": {
+		"description": ".position-(type)",
+		"modifiers": [
+			"relative",
+			"static",
+			"absolute",
+			"fixed"
+		]
+	},
+
+	"table": {
+		"description": ".table-(modifier)",
+		"modifiers": [
+			"border-collapse",
+			"layout-fixed"
+		]
+	},
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+	

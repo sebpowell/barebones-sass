@@ -10,6 +10,77 @@
 	}
 }
 
+
+
+
+
+
+
+
+
+// html {
+// 	font-family: "Helvetica Neue";
+// 	font-size: 16px;
+// }
+
+
+
+// .section {
+// 	padding: 100px 0;
+// 	border-bottom: 1px solid colors(keyline);
+// }
+
+// .table-data {
+// 	td {
+// 		padding: sizes(4);
+// 		border-bottom: 1px solid colors(keyline);
+// 	}
+// }
+
+// .page-container {
+// 	max-width: 1200px;
+// 	border-radius: 3px;
+// 	margin: 0 auto;
+// 	// border: 1px solid colors(keyline, light);
+// }
+
+// .font-code {
+// 	font-family: "Roboto Mono";
+// }
+
+
+// h1 {
+// 	font-size: 42px;
+// }
+
+// h2 {
+// 	font-size: 32px;
+// }
+
+// p {
+// 	line-height: 1.5;
+// }
+
+
+// .label {
+// 	display: inline-block;
+// 	line-height: 1;
+// 	border-radius: 2px;
+// 	text-transform: uppercase;
+// 	font-size: 10px;
+// 	font-weight: 500;
+// 	letter-spacing: 0.1em;
+
+// 	@each $colour, $value in map-get($colors, system) {
+// 		&.label-#{$colour} {
+// 			color: $value;
+// 			padding: 4px 8px 3px 8px;
+// 			border: 1px solid $value;
+// 		}
+// 	}
+// }
+
+
 .welcome-masthead {
 	background: linear-gradient(to right, rgba(0,98,227,1) 0%, rgba(0,117,254,1) 100%);
 	padding-top: 40px;

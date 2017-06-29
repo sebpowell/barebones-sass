@@ -1,9 +1,7 @@
-@if map-get($helpers, position) != false {
-
-	$className: map-get($helpers, position);
-
-	@include helpers("#{$className}-absolute", "position: absolute");
-	@include helpers("#{$className}-fixed", "position: fixed");
-	@include helpers("#{$className}-relative", "position: relative");
-	@include helpers("#{$className}-static", "position: static");
+@if map-get($bb-helpers, position) != false {
+	$className: map-get($bb-helpers, position);
+	@include helpers("#{$className}#{$bb-global-delimiter}absolute", "position: absolute");
+	@include helpers("#{$className}#{$bb-global-delimiter}fixed", "position: fixed");
+	@include helpers("#{$className}#{$bb-global-delimiter}relative", "position: relative");
+	@include helpers("#{$className}#{$bb-global-delimiter}static", "position: static");
 }

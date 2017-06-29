@@ -1,24 +1,41 @@
-@if map-get($helpers, background-color) != false {
+@if map-get($bb-helpers, background-color) != false {
 
-	$className: map-get($helpers, background-color);
+	$className: map-get($bb-helpers, background-color);
 	
-	.#{$className}-color-white {
+	.#{$className}-white {
 		background-color: white;
 	}
 	
-	@each $category, $value in $colors {
+	// Generate a background-color class for every colour in the $colours map.
+	@each $category, $value in $bb-colors {
 	
 		$type: type-of($value);
 	
 		@if $type == "map" {
-			@each $color, $value in map-deep-get($colors, $category) {
-				.#{$className}-#{$category}-#{$color} {
-					background-color: $value;
+			@each $color, $value in map-deep-get($bb-colors, $category) {
+				@if type-of($value) == "map" {
+					@each $c, $v in map-deep-get($bb-colors, $category, $color) {
+						.#{$className}#{$bb-global-delimiter}#{$category}#{$bb-global-delimiter}#{$color}#{$bb-global-delimiter}#{$c} {
+							background-color: $v;
+						}
+						// Generate hover class.
+						.#{$className}#{$bb-global-delimiter}#{$category}#{$bb-global-delimiter}#{$color}#{$bb-global-delimiter}#{$c}#{$bb-global-delimiter}#{$bb-hover-class-name} {
+							&:hover {
+								background-color: $v;
+							}
+						}
+					}
 				}
-	
-				.#{$className}-hover-#{$category}-#{$color} {
-					&:hover {
+
+				@else {
+					.#{$className}#{$bb-global-delimiter}#{$category}#{$bb-global-delimiter}#{$color} {
 						background-color: $value;
+					}
+					// Generate hover class.
+					.#{$className}#{$bb-global-delimiter}#{$category}#{$bb-global-delimiter}#{$color}#{$bb-global-delimiter}#{$bb-hover-class-name} {
+						&:hover {
+							background-color: $value;
+						}
 					}
 				}
 			}
@@ -28,16 +45,12 @@
 			.#{$className}-#{$category} {
 				background-color: $value;
 			}
-	
-			.#{$className}-hover-#{$category} {
+			// Generate hover class.
+			.#{$className}#{$bb-global-delimiter}#{$category}#{$bb-global-delimiter}#{$bb-hover-class-name} {
 				&:hover {
 					background-color: $value;
 				}
 			}
 		}
 	}
-}
-
-.background-white {
-	background-color: white;
 }

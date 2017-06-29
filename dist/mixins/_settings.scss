@@ -15,18 +15,17 @@
 	@if length($args) > 1 {
 		$category: nth($args, 1);
 		$name: nth($args, 2);
-		@return map-deep-get($colors, $category, $name);
+		@return map-deep-get($bb-colors, $category, $name);
 	}
 	@else {
 		$name: nth($args, 1);
-		@return map-get($colors, $name);
+		@return map-get($bb-colors, $name);
 	}
 }
 
 @function font($object) {
 	@return map-deep-get($fonts, $object, name);
 }
-
 
 @function layers($object) {
 	@if map-has-key($layers, $object) {

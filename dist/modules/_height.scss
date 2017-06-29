@@ -1,18 +1,18 @@
-@if map-get($helpers, height) != false {
+@if map-get($bb-helpers, height) != false {
 
-	$className: map-get($helpers, height);
+	$className: map-get($bb-helpers, height);
 
 	$sizes: 25, 50, 75, 100;
 
 	@each $size in $sizes {
-		@include helpers("#{$className}-#{$size}", "height: #{$size}%");
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$size}", "height: #{$size}%");
 	}
 
-	.#{$className}-auto {     
-		height: auto !important;
+	.#{$className}#{$bb-global-delimiter}#{map-get($u-height-properties, auto)} {     
+		height: auto;
 	}
 
-	.#{$className}-inherit {  
-		height: inherit !important;
+	.#{$className}#{$bb-global-delimiter}#{map-get($u-height-properties, inherit)}  {  
+		height: inherit;
 	}
 }

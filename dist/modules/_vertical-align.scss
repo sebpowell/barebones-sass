@@ -1,9 +1,6 @@
-@if map-get($helpers, vertical-align) != false {
-	
-	$className: map-get($helpers, vertical-align);
-
-	@include helpers("#{$className}-top", "vertical-align: top");
-	@include helpers("#{$className}-middle", "vertical-align: middle");
-	@include helpers("#{$className}-bottom", "vertical-align: bottom");
-	
+@if map-get($bb-helpers, vertical-align) != false {
+	$className: map-get($bb-helpers, vertical-align);
+	@include helpers("#{$className}#{$bb-global-delimiter}top", "vertical-align: top");
+	@include helpers("#{$className}#{$bb-global-delimiter}middle", "vertical-align: middle");
+	@include helpers("#{$className}#{$bb-global-delimiter}bottom", "vertical-align: bottom");
 }

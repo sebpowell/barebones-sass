@@ -1,22 +1,19 @@
-$shadows: () !default;
-
-@if map-get($helpers, box-shadow) != false {
+@if map-get($bb-helpers, box-shadow) != false {
 	
-	$config: map-merge($shadows-default, $shadows);
-	$className: map-get($helpers, box-shadow);
+	$className: map-get($bb-helpers, box-shadow);
 
-	.no-#{$className} {
+	.no#{$bb-global-delimiter}#{$className} {
 		box-shadow: none !important;
 	}
 	
-	@each $name, $size in $config {
-		.#{$className}-#{$name} {
-			box-shadow: $size !important;
+	@each $name, $size in $bb-shadows {
+		.#{$className}#{$bb-global-delimiter}#{$name} {
+			box-shadow: $size;
 		}
 		
-		.#{$className}-#{$name}-hover {
+		.#{$className}#{$bb-global-delimiter}#{$name}#{$bb-global-delimiter}#{$bb-hover-class-name} {
 			&:hover {
-				box-shadow: $size !important;
+				box-shadow: $size;
 			}
 		}
 	}

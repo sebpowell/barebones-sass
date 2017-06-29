@@ -1,38 +1,8 @@
-$text-sizes: (
-	"x-small": 11px,
-	"small": 13px,
-	"base": 15px,
-	"medium": 18px,
-	"medium-large": 24px,
-	"large": 32px,
-	"xl": 42px,
-	"xxl": 52px,
-	"xxx-large": 62px,
-	"xxxx-large": 72px,
+@if map-get($bb-helpers, text-size) != false {
 
-	"10": 10px,
-	"11": 11px,
-	"12": 12px,
-	"13": 13px,
-	"15": 15px,
-	"18": 18px,
-	"20": 20px,
-	"24": 24px,
-	"32": 32px,
-	"42": 42px,
-	"52": 52px,
-	"62": 62px,
-	"72": 72px
+	$className: map-get($bb-helpers, text-size);
 
-) !default;
-
-$text-sizes: ()! default;
-
-@if map-get($helpers, text-size) != false {
-
-	$className: map-get($helpers, text-size);
-
-	@each $name, $size in $text-sizes {
-		@include helpers("#{$className}-#{$name}", "font-size: #{$size}");
+	@each $name, $size in $bb-text-sizes {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$name}", "font-size: #{$size}");
 	}
 }

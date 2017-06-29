@@ -1,11 +1,11 @@
-@if map-get($helpers, opacity) != false {
+@if map-get($bb-helpers, opacity) != false {
 	
 	$i: 0;
-	$className: map-get($helpers, opacity);
+	$className: map-get($bb-helpers, opacity);
 	
 	@while $i <= 10 {
 	
-		.#{$className}-#{$i} {
+		.#{$className}#{$bb-global-delimiter}#{$i} {
 			opacity: $i * 0.1;
 		}
 	

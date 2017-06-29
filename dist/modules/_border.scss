@@ -1,31 +1,41 @@
-$keylines: () !default;
-
-@if map-deep-get($helpers, border) != false {
+@if map-deep-get($bb-helpers, border) != false {
 	
-	$className: map-get($helpers, border);
+	$className: map-get($bb-helpers, border);
 	$border-sides: top, right, bottom, left;
 	
-	@include helpers("no-#{$className}", "border: 0");
+	@include helpers("no-#{$className}", "border: none !important");
 
-	.no-#{$className}-last {
+	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}last {
 		&:last-of-type {
 			border: none !important;
 		}
 	}
-	
-	@each $color, $value in $keylines {
-		@include helpers("#{$className}-#{$color}", "border: 1px solid #{$value}");
-		@each $side in $border-sides {
-			@include helpers("#{$className}-#{$side}-#{$color}", "border-#{$side}: 1px solid #{$value}");
+
+	@if map-has-key($bb-colors, keyline) {	
+		@if type-of( map-get($bb-colors, keyline) ) == "map" {
+			@each $color, $value in map-get($bb-colors, keyline) {
+				@include helpers("#{$className}-#{$color}", "border: 1px solid #{$value}");
+				@each $side in $border-sides {
+					@include helpers("#{$className}#{$bb-global-delimiter}#{$side}#{$bb-global-delimiter}#{$color}", "border-#{$side}: 1px solid #{$value}");
+				}
+			}
 		}
-	}
 
-	@each $side in $border-sides {
-		@include helpers("no-#{$className}-#{$side}", "border-#{$side}: none");
+		@else {
+			$value: map-get($bb-colors, keyline);
+			@include helpers("#{$className}", "border: 1px solid #{$value}");
+			@each $side in $border-sides {
+				@include helpers("#{$className}#{$bb-global-delimiter}#{$side}", "border-#{$side}: 1px solid #{$value}");
+			}
+		}
 
-		.no-#{$className}-#{$side}-last {
-			&:last-of-type {
-				border-#{$side}: none !important;
+		@each $side in $border-sides {
+			@include helpers("no-#{$className}-#{$side}", "border-#{$side}: none !important");
+
+			.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}#{$side}#{$bb-global-delimiter}last {
+				&:last-of-type {
+					border-#{$side}: none !important;
+				}
 			}
 		}
 	}

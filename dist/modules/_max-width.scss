@@ -1,14 +1,18 @@
-@if map-deep-get($helpers, max-width) != false {
+@if map-deep-get($bb-helpers, max-width) != false {
 
-	$className: map-get($helpers, max-width);
+	$className: map-get($bb-helpers, max-width);
+	$i: 1;
+	
+	@while $i <= $bb-max-width-scale {
 
-	@each $size, $value in $containers {
-		.#{$className}-#{$size} {
-			max-width: $value;
+		.#{$className}#{$bb-global-delimiter}#{$i * 100} {
+			max-width: $i * 100px;
 		}
+
+		$i: $i + 1;
 	}
 
-	.no-#{$className} {
+	.no#{$bb-global-delimiter}#{$className} {
 		max-width: 100% !important;
 	}
 }

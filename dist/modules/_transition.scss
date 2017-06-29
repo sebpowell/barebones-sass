@@ -1,6 +1,6 @@
-@if map-get($helpers, transition) != false {
+@if map-get($bb-helpers, transition) != false {
 	
-	$className: map-get($helpers, transition);
+	$className: map-get($bb-helpers, transition);
 	
 	.#{$className}-0-25 {
 		transition: all 0.25s;
@@ -18,7 +18,7 @@
 		transition: all 1s;
 	}
 
-	.#{$className}-1.5 {
+	.#{$className}-1-5 {
 		transition: all 1.5s;
 	}
 }

@@ -1,11 +1,12 @@
-@if map-get($helpers, flex) != false {
+@if map-get($bb-helpers, flex) != false {
 
-	$className: map-get($helpers, flex);
+	$className: map-get($bb-helpers, flex);
 	
-	@include helpers("#{$className}-column", "flex-direction: column");
-	@include helpers("#{$className}-row", "flex-direction: row");
-	@include helpers("#{$className}-wrap", "flex-wrap: wrap");
-	@include helpers("#{$className}-items-start", "align-items: flex-start");
-	@include helpers("#{$className}-items-end", "align-items: flex-end");
-	@include helpers("#{$className}-items-center", "align-items: center");
+	@include helpers("#{$className}#{$bb-global-delimiter}column", "flex-direction: column");
+	@include helpers("#{$className}#{$bb-global-delimiter}row", "flex-direction: row");
+	@include helpers("#{$className}#{$bb-global-delimiter}wrap", "flex-wrap: wrap");
+	@include helpers("#{$className}#{$bb-global-delimiter}items#{$bb-global-delimiter}start", "align-items: flex-start");
+	@include helpers("#{$className}#{$bb-global-delimiter}items#{$bb-global-delimiter}end", "align-items: flex-end");
+	@include helpers("#{$className}#{$bb-global-delimiter}items#{$bb-global-delimiter}center", "align-items: center");
+	@include helpers("#{$className}#{$bb-global-delimiter}justify#{$bb-global-delimiter}content#{$bb-global-delimiter}center", "justify-content: center");
 }

@@ -1,7 +1,4 @@
-// Settings
-/////////////////////////////////////////////////////////
-
-$helpers-default: (
+$bb-helpers-default: (
 	"aspect-ratio": "aspect-ratio",
 	"background-color": "background",
 	"background-position": "background",
@@ -17,16 +14,17 @@ $helpers-default: (
 	"cursor": "cursor",
 	"display": "display",
 	"font-weight": "weight",
+	"fill": "fill",
 	"flex": "flex",
 	"float": "float",
 	"height": "height",
 	"letter-spacing": "letter-spacing",
 	"line-height": "line-height",
 	"list": "list",
-	"margin": "margin",
 	"max-width": "max-width",
 	"opacity": "opacity",
 	"overflow": "overflow",
+	"margin": "margin",
 	"padding": "padding",
 	"position": "position",
 	"table": "table",
@@ -40,30 +38,51 @@ $helpers-default: (
 	"vertical-align": "vertical-align",
 	"visibility": "visibility",
 	"z-index": "z-index",
-
-	"responsive": true
 ) !default;
 
-$helpers: () !default;
+$bb-color: () !default;
 
-$helpers: map-merge($helpers-default, $helpers) !global;
+$bb-helpers: () !default;
 
-// Colors
-// /////////////////////////////////////////////////////////
+$bb-helpers: map-merge($bb-helpers-default, $bb-helpers) !global;
 
-$colors: () !default;
+$bb-global-delimiter: "-" !default;
 
-// Style
-// /////////////////////////////////////////////////////////
+$bb-hover-class-name: "hover" !default;
 
-$spacing: () !default;
+$bb-responsive: true;
 
-$breakpoints: () !default;
+$bb-border-radius-scale: 5;
 
-// Imports
-// /////////////////////////////////////////////////////////
+$bb-spacing-scale: 10;
+
+$bb-spacing-base: 4;
+
+$bb-max-width-scale: 14;
+
+$bb-text-sizes: () !default;
+
+$bb-breakpoints: () !default;
+
+$bb-shadows: () !default;
+
+$bb-letter-spacing: () !default;
+
+$bb-line-heights: () !default;
+
+$bb-spacing-sides: (
+	"top": "top",
+	"bottom": "bottom",
+	"left": "left", 
+	"right": "right",
+	"vertical": "vertical",
+	"horizontal": "horizontal"
+);
+
+$u-height-properties: (
+	"auto": "auto",
+	"inherit": "inherit",
+);
 
 @import "mixins/mixins";
 @import "modules/modules";
-
-

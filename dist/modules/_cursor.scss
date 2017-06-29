@@ -1,16 +1,16 @@
-@if map-get($helpers, cursor) != false {
+@if map-get($bb-helpers, cursor) != false {
 	
-	$className: map-get($helpers, cursor);
+	$className: map-get($bb-helpers, cursor);
 	
-	.#{$className}-not-allowed {
-		cursor: not-allowed !important;
+	.#{$className}#{$bb-global-delimiter}not#{$bb-global-delimiter}allowed {
+		cursor: not-allowed;
 	}
 
-	.#{$className}-pointer {
-		cursor: pointer !important;
+	.#{$className}#{$bb-global-delimiter}pointer {
+		cursor: pointer;
 	}
 
-	.#{$className}-default {
-		cursor: default !important;
+	.#{$className}#{$bb-global-delimiter}default {
+		cursor: default;
 	}	
 }

@@ -1,22 +1,11 @@
-$line-heights-default: (
-	"xs": 1,
-	"s": 1.2,
-	"medium": 1.5,
-	"large": 2
-) !default;
-
-$line-heights: () !default;
-
-@if map-get($helpers, line-height) != false {
+@if map-get($bb-helpers, line-height) != false {
+	$className: map-get($bb-helpers, line-height);
 	
-	$config: map-merge($line-heights-default, $line-heights);
-	$className: map-get($helpers, line-height);
-	
-	@each $name, $size in $config {
+	@each $name, $size in $bb-line-heights {
 		@include helpers("#{$className}-#{$name}", "line-height: #{$size}");
 	}
 
-	.no-line-height {
+	.no-#{$className} {
 		line-height: 1;
 	}
 }
