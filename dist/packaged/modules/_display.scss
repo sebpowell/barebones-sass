@@ -1,0 +1,7 @@
+@include helpers("display-none", "display: none");
+@include helpers("display-block", "display: block");
+@include helpers("display-inline-block", "display: inline-block");
+@include helpers("display-table", "display: table");
+@include helpers("display-table-row", "display: table-row");
+@include helpers("display-table-cell", "display: table-cell");
+@include helpers("display-flex", "display: flex");

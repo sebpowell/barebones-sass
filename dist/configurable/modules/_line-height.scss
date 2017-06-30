@@ -1,0 +1,11 @@
+@if map-get($bb-helpers, line-height) != false {
+	$className: map-get($bb-helpers, line-height);
+	
+	@each $name, $size in $bb-line-heights {
+		@include helpers("#{$className}-#{$name}", "line-height: #{$size}");
+	}
+
+	.no-#{$className} {
+		line-height: 1 !important;
+	}
+}

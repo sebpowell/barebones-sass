@@ -1,0 +1,15 @@
+$i: 0;
+
+@while $i <= $spacing-scale {
+
+	$n: $i * strip-unit($spacing-base);
+
+	@include helpers("right-#{$i}", "right: #{$n}px");
+	
+	$i: $i + 1;
+}
+
+.right-auto {
+	right: auto !important;
+}
+

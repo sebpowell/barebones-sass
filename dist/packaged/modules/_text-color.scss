@@ -1,0 +1,51 @@
+.text-white {
+	color: white;
+}
+	
+// Generate a text-color class for every colour in the $colours map.
+@each $category, $value in $colors {
+
+	$type: type-of($value);
+
+	@if $type == "map" {
+		@each $color, $value in map-deep-get($bb-colors, $category) {
+			@if type-of($value) == "map" {
+				@each $c, $v in map-deep-get($bb-colors, $category, $color) {
+					.text-#{$category}-#{$color}-#{$c} {
+						color: $v;
+					}
+					// Generate hover class.
+					.text-#{$category}-#{$color}-#{$c}-hover {
+						&:hover {
+							color: $v;
+						}
+					}
+				}
+			}
+
+			@else {
+				.text-#{$category}-#{$color} {
+					color: $value;
+				}
+				// Generate hover class.
+				.text-#{$category}-#{$color}-hover {
+					&:hover {
+						color: $value;
+					}
+				}
+			}
+		}
+	}
+
+	@else {
+		.text-#{$category} {
+			color: $value;
+		}
+		// Generate hover class.
+		.text-#{$category}-hover {
+			&:hover {
+				color: $value;
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@include helpers("visibility", "visibility: visible");
+@include helpers("hidden", "visibility: hidden !important");
+@include helpers("hide", "display: none !important");
+
+.is-visible {
+	display: block !important;
+}
+
+.is-hidden {
+	display: none !important;
+}
+
+.hide {
+	display: none !important;
+}

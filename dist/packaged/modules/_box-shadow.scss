@@ -1,0 +1,15 @@
+.no-box-shadow {
+	box-shadow: none !important;
+}
+
+@each $name, $size in $shadows {
+	.box-shadow-#{$name} {
+		box-shadow: $size;
+	}
+	
+	.box-shadow-#{$name}-hover {
+		&:hover {
+			box-shadow: $size;
+		}
+	}
+}

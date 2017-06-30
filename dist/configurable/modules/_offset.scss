@@ -1,0 +1,42 @@
+$grid-default: (
+	"columns": 12,
+	"gutter": 20px,
+	"breakpoint": 780px
+) !default;
+
+$grid: () !default;
+
+@if map-get($bb-helpers, offset) != false {
+	
+	$config: map-merge($grid-default, $grid);
+	$className:  map-get($bb-helpers, offset);
+
+	$breakpoint: map-get($config, breakpoint);
+	$columns:  map-get($config, columns);
+	$gutter:  map-get($config, gutter);
+
+	// Generates classes for column offsets.
+	@for $i from 1 through $columns {
+		.#{$className}#{$bb-global-delimiter}#{$i} {
+			@include if-above($breakpoint) {
+				margin-left: $i * (100% /  $columns);
+			}
+		}
+
+		@if map-get($bb-helpers, responsive) != false {
+			@each $breakpoint, $value in $bb-breakpoints {
+				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}above#{$bb-global-delimiter}#{$breakpoint} {
+					@include if-above($value) {
+						margin-left: $i * (100% /  $columns);
+					}
+				}
+
+				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}below#{$bb-global-delimiter}#{$breakpoint} {
+					@include if-below($value) {
+						margin-left: $i * (100% /  $columns);
+					}
+				}
+			}
+		}
+	}
+}

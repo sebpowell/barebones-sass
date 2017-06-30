@@ -1,0 +1,4 @@
+@include helpers("position-absolute", "position: absolute");
+@include helpers("position-fixed", "position: fixed");
+@include helpers("position-relative", "position: relative");	
+@include helpers("position-static", "position: static");

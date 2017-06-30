@@ -1,0 +1,51 @@
+@if map-get($bb-helpers, margin) != false {
+	$className: map-get($bb-helpers, margin);
+	$i: 1;
+
+	@while $i <= strip-unit($bb-spacing-scale) {
+		
+		$n: $i * strip-unit($bb-spacing-base);	
+		
+		@each $side, $value in $bb-spacing-sides {
+			@if $side == "vertical" {
+				@include helpers("#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i}", "margin-top: #{$n}px", "margin-bottom: #{$n}px");
+			}
+
+			@else if $side == "horizontal" {
+				@include helpers("#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i}", "margin-left: #{$n}px", "margin-right: #{$n}px");
+			}
+
+			@else {
+				@include helpers("#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i}", "margin-#{$side}: #{$n}px");
+			}
+
+			@include helpers("#{$className}#{$bb-global-delimiter}#{$i}", "margin: #{$n}px");
+		}
+		
+		$i: $i + 1;
+	}
+	
+	@include helpers("no-#{$className}", "margin: 0 !important");
+
+	.no-#{$className}-last {
+		&:last-of-type {
+			margin: 0 !important;
+		}
+	}
+
+	@each $side, $value in $bb-spacing-sides {
+		@if $side == "vertical" {
+			@include helpers("no-#{$className}-#{$side}", "margin-top: 0 !important", "margin-bottom: 0 !important");
+		}
+
+		@else if $side == "horizontal" {
+			@include helpers("no-#{$className}-#{$side}", "margin-left: 0 !important", "margin-right: 0 !important");
+		}
+
+		@else {
+			@include helpers("no-#{$className}-#{$side}", "margin-#{$side}: 0 !important");
+		}
+	}
+
+	@include helpers("#{$className}-auto", "margin: 0 auto");
+}

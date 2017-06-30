@@ -1,0 +1,32 @@
+@if map-get($bb-helpers, flex) != false {
+
+	$className: map-get($bb-helpers, flex);
+	
+	@include helpers("#{$className}#{$bb-global-delimiter}column", "flex-direction: column");
+	@include helpers("#{$className}#{$bb-global-delimiter}row", "flex-direction: row");
+	@include helpers("#{$className}#{$bb-global-delimiter}wrap", "flex-wrap: wrap");
+	@include helpers("#{$className}#{$bb-global-delimiter}items#{$bb-global-delimiter}start", "align-items: flex-start");
+	@include helpers("#{$className}#{$bb-global-delimiter}items#{$bb-global-delimiter}end", "align-items: flex-end");
+	@include helpers("#{$className}#{$bb-global-delimiter}items#{$bb-global-delimiter}center", "align-items: center");
+	@include helpers("#{$className}#{$bb-global-delimiter}justify#{$bb-global-delimiter}content#{$bb-global-delimiter}center", "justify-content: center");
+
+	@include helpers("#{$className}#{$bb-global-delimiter}no-wrap", "flex-wrap: nowrap");
+
+	@include helpers("#{$className}#{$bb-global-delimiter}wrap-reverse", "flex-wrap: wrap-reverse");
+
+
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}stretch", "align-content: stretch");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-center", "align-content: center");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-flex#{$bb-global-delimiter}start", "align-content: flex-start");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-flex#{$bb-global-delimiter}end", "align-content: flex-end");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-space#{$bb-global-delimiter}between", "align-content: space-between");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-space#{$bb-global-delimiter}around", "align-content: space-around");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-space#{$bb-global-delimiter}around", "align-content: initial");
+	@include helpers("#{$className}#{$bb-global-delimiter}content#{$bb-global-delimiter}-space#{$bb-global-delimiter}around", "align-content: inherit");
+
+}
+
+
+
+
+

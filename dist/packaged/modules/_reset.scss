@@ -1,0 +1,38 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+* {
+	&:focus {
+		outline: none;
+	}
+}
+
+html,body, div, span, object, iframe, hr,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, button, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+a, a:visited {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a {
+	// IE 10 fix.
+	img {
+		border: 0; 
+	}
+}
+
+img {
+	max-width: 100%;
+}

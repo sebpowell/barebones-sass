@@ -1,0 +1,13 @@
+$sizes: 25, 50, 75, 100;
+
+@each $size in $sizes {
+	@include helpers("height-#{$size}", "height: #{$size}%");
+}
+
+.height-auto {     
+	height: auto;
+}
+
+.height-inherit  {  
+	height: inherit;
+}

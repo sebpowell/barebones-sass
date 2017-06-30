@@ -1,0 +1,51 @@
+.fill-white {
+	fill: white;
+}
+
+// Generate a background-color class for every colour in the $colours map.
+@each $category, $value in $colors {
+
+	$type: type-of($value);
+
+	@if $type == "map" {
+		@each $color, $value in map-deep-get($colors, $category) {
+			@if type-of($value) == "map" {
+				@each $c, $v in map-deep-get($colors, $category, $color) {
+					.fill-#{$category}-#{$color}-#{$c} {
+						fill: $v;
+					}
+					// Generate hover class.
+					.fill-#{$category}-#{$color}-#{$c}-hover {
+						&:hover {
+							fill: $v;
+						}
+					}
+				}
+			}
+
+			@else {
+				.fill-#{$category}-#{$color} {
+					fill: $value;
+				}
+				// Generate hover class.
+				.fill-#{$category}-#{$color}-hover {
+					&:hover {
+						fill: $value;
+					}
+				}
+			}
+		}
+	}
+
+	@else {
+		.fill-#{$category} {
+			fill: $value;
+		}
+		// Generate hover class.
+		.fill-#{$category}-hover {
+			&:hover {
+				fill: $value;
+			}
+		}
+	}
+}

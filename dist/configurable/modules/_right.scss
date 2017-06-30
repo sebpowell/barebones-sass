@@ -1,0 +1,18 @@
+@if map-get($bb-helpers, right) != false {
+
+	$i: 0;
+
+	@while $i <= $bb-spacing-scale {
+
+		$n: $i * strip-unit($bb-spacing-base);
+
+		@include helpers("right-#{$i}", "right: #{$n}px");
+		
+		$i: $i + 1;
+	}
+
+	.right-auto {
+		right: auto !important;
+	}
+}
+

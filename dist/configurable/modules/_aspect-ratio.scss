@@ -1,0 +1,20 @@
+@if map-get($bb-helpers, aspect-ratio) != false {
+
+	$className: map-get($bb-helpers, aspect-ratio);
+
+	.#{$className}#{$bb-global-delimiter}16#{$bb-global-delimiter}9 {
+		@include aspect-ratio(16, 9, "#{$className}#{$bb-global-delimiter}content");
+	}
+
+	.#{$className}#{$bb-global-delimiter}4#{$bb-global-delimiter}3 {
+		@include aspect-ratio(4, 3, "#{$className}#{$bb-global-delimiter}content");
+	}
+
+	.#{$className}#{$bb-global-delimiter}1#{$bb-global-delimiter}1 {
+		@include aspect-ratio(1, 1, "#{$className}#{$bb-global-delimiter}content");
+	}
+}
+
+
+
+

@@ -1,0 +1,28 @@
+$breakpoint: map-get($grid, breakpoint);
+
+$columns:  map-get($grid, columns);
+
+$gutter:  map-get($grid, gutter);
+
+// Generates classes for column offsets.
+@for $i from 1 through $columns {
+	.offset-#{$i} {
+		@include if-above($breakpoint) {
+			margin-left: $i * (100% /  $columns);
+		}
+	}
+
+	@each $breakpoint, $value in $breakpoints {
+		.offset-#{$i}-above-#{$breakpoint} {
+			@include if-above($value) {
+				margin-left: $i * (100% /  $columns);
+			}
+		}
+
+		.offset-#{$i}-below-#{$breakpoint} {
+			@include if-below($value) {
+				margin-left: $i * (100% /  $columns);
+			}
+		}
+	}	
+}

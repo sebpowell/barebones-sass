@@ -1,0 +1,38 @@
+$breakpoints: ();
+
+$border-radius-scale: 10;
+
+$colors: ();
+
+$grid: (
+	"columns": 12,
+	"gutter": 20px,
+	"breakpoint": 780px
+);
+
+$letter-spacing: ();
+
+$line-heights: ();
+
+$max-width-scale: 14;
+
+$shadows: ();
+
+$spacing-scale: 10;
+
+$spacing-base: 4px;
+
+$spacing-sides: (
+	"top": "top",
+	"bottom": "bottom",
+	"left": "left", 
+	"right": "right",
+	"vertical": "vertical",
+	"horizontal": "horizontal"
+);
+
+$text-sizes: ();
+
+@import "mixins/mixins";
+
+@import "modules/modules";

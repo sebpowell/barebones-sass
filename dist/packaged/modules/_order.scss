@@ -1,0 +1,7 @@
+$i: 0;
+
+@while $i <= 5 {
+	@include helpers("order-#{$i}", "order: #{$i}");
+
+	$i: $i + 1;
+}

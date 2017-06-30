@@ -1,0 +1,10 @@
+.no-letter-spacing {
+  letter-spacing: 0 !important;
+}
+
+@each $name, $value in $letter-spacing {
+	.letter-spacing-#{$name} {
+	  letter-spacing: $value;
+	}
+}
+

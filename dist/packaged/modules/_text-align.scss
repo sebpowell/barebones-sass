@@ -1,0 +1,5 @@
+$directions: (left, center, right);
+
+@each $direction in $directions {
+	@include helpers("text-#{$direction}", "text-align: #{$direction}");
+}

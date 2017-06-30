@@ -1,0 +1,26 @@
+@if map-get($bb-helpers, z-index) != false {
+
+	$className: map-get($bb-helpers, z-index);
+	$i: 0;
+
+	@while $i <= 10 {
+		
+		.#{$className}#{$bb-global-delimiter}#{$i} {
+			z-index: $i;
+		}
+
+		$i: $i + 1;
+	}
+
+	.#{$className}#{$bb-global-delimiter}99 { 
+		z-index: 99;
+	}
+
+	.#{$className}#{$bb-global-delimiter}999 { 
+		z-index: 999;
+	}
+
+	.#{$className}#{$bb-global-delimiter}9999 { 
+		z-index: 9999;
+	}
+}

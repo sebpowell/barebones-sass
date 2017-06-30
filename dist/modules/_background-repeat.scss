@@ -1,4 +1,0 @@
-@if map-get($bb-helpers, background-repeat) != false {
-	$className: #{map-get($bb-helpers, background-repeat)};
-	@include helpers("no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}repeat", "background-repeat: no-repeat");
-}

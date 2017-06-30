@@ -1,0 +1,15 @@
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		@if map-has-key($map, $key) {
+			$map: map-get($map, $key);
+		}
+		@else {
+			$rest: ();
+			$length: length($keys);
+			@for $i from 1 through $length {
+				$rest: append($rest, nth($keys, $i));
+			}
+		}
+	}
+	@return $map;
+}

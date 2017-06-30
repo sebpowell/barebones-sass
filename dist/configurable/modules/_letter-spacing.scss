@@ -1,0 +1,14 @@
+@if map-get($bb-helpers, letter-spacing) != false {
+	
+	$className: map-get($bb-helpers, letter-spacing);
+
+	.no-#{$className} {
+	  letter-spacing: 0 !important;
+	}
+
+	@each $name, $value in $bb-letter-spacing {
+		.#{$className}-#{$name} {
+		  letter-spacing: $value;
+		}
+	}
+}
