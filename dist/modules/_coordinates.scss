@@ -5,7 +5,7 @@
 
 	@while $i <= $bb-spacing-scale {
 
-		$n: $i * $bb-spacing-base;
+		$n: $i * strip-unit($bb-spacing-base);
 
 		@each $side in $sides {
 			@include helpers("#{$side}#{$bb-global-delimiter}#{$i}", "#{$side}: #{$n}px");

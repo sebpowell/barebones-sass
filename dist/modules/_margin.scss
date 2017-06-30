@@ -18,6 +18,8 @@
 			@else {
 				@include helpers("#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i}", "margin-#{$side}: #{$n}px");
 			}
+
+			@include helpers("#{$className}#{$bb-global-delimiter}#{$i}", "margin: #{$n}px");
 		}
 		
 		$i: $i + 1;

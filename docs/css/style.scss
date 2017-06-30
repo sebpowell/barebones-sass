@@ -1,6 +1,10 @@
 @import "_settings";
-@import "../../dist/_base"
+@import "../../dist/_base";
 
 // @import "components/_navigation";
 // @import "components/_code";
 // @import "components/_docs";
+
+.test {
+	padding: sizes(4);
+}

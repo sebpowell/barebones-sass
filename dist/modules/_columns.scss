@@ -1,6 +1,6 @@
 $grid-default: (
 	"columns": 12,
-	"gutter": 40px,
+	"gutter": 20px,
 	"breakpoint": 780px
 ) !default;
 
@@ -48,6 +48,21 @@ $grid: () !default;
 					}
 
 					@include if-above($key) {
+						float: left;
+						width: $i * (100% /  $columns);
+					}
+				}
+
+				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}below#{$bb-global-delimiter}#{$key} {
+					padding: 0 $gutter / 2;
+
+					@include if-below($key) {
+						&:not(:last-of-type) {
+							margin-bottom: $gutter;
+						}
+					}
+
+					@include if-below($key) {
 						float: left;
 						width: $i * (100% /  $columns);
 					}

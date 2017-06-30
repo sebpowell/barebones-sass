@@ -1,5 +1,5 @@
 @function sizes($size) {
-	@return $size * map-get($spacing, base);
+	@return $size * $bb-spacing-base;
 }
 
 @function grid($object) {
