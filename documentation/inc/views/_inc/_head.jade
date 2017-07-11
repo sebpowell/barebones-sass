@@ -10,9 +10,11 @@ html
 		meta(name='description', content="Barebones SASS – #{strapline} | Made by Getagent.co.uk")
 
 		title Barebones SASS – #{strapline} | Made by Getagent.co.uk
-		link(rel='stylesheet', href='#{base}css/style.css')
+		link(rel='stylesheet', href='documentation/inc/css/style.css')
 		link(rel='shortcut icon', href='#{base}/images/favicon.png', type='image/PNG')
 		link(rel='apple-touch-icon-precomposed', href='/screen-icon.png')
+		link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700" rel="stylesheet")
 
 		script(src="https://use.typekit.net/bsw1gyt.js")
 		script
@@ -26,5 +28,12 @@ html
 			|	ga('create', 'UA-73127596-1', 'auto');
 			|	ga('send', 'pageview');
 
-		script(src='#{base}javascript/application.js')
+		script(src='documentation/inc/javascript/application.js')
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
 		script(async defer id="github-bjs" src="https://buttons.github.io/buttons.js")
+		script.
+			hljs.initHighlightingOnLoad();
+
+			$(document).ready(function() {
+				$(".docs-navigation").scrollSpy();
+			});

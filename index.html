@@ -10,9 +10,11 @@
     <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
     <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
     <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
-    <link rel="stylesheet" href="docs/css/style.css"/>
+    <link rel="stylesheet" href="documentation/inc/css/style.css"/>
     <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700" rel="stylesheet"/>
     <script src="https://use.typekit.net/bsw1gyt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script>
@@ -23,8 +25,15 @@
       	ga('create', 'UA-73127596-1', 'auto');
       	ga('send', 'pageview');
     </script>
-    <script src="docs/javascript/application.js"></script>
+    <script src="documentation/inc/javascript/application.js"></script>
     <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+      $(document).ready(function() {
+      	$(".docs-navigation").scrollSpy();
+      });
+    </script>
   </head>
 </html>
 <section class="welcome-masthead">

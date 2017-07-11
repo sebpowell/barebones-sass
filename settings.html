@@ -1,0 +1,1291 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones SASS"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://www.barebones-sass.io/docs/images/og-image.png"/>
+    <meta property="og:url" content="http://barebones-sass.getagent.co.uk/"/>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="documentation/inc/css/style.css"/>
+    <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700" rel="stylesheet"/>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script src="documentation/inc/javascript/application.js"></script>
+    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+      $(document).ready(function() {
+      	$(".docs-navigation").scrollSpy();
+      });
+    </script>
+  </head>
+</html>
+<body class="page-layout-docs">
+  <div class="backdrop"></div>
+  <div class="docs-container">
+    <div class="docs-navigation">
+      <div class="nav-section"><a href="#introduction" class="parent">Introduction</a>
+        <ul class="sub-navigation">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#prerequisites">Requirements</a></li>
+          <li><a href="#installing">Installation</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background reading</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#settings" class="parent">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#br-scale">Border Radius Scale</a></li>
+          <li><a href="#settings-colours">Colors</a></li>
+          <li><a href="#fonts">Letter Spacing</a></li>
+          <li><a href="#grid">Line Heights</a></li>
+          <li><a href="#breakpoints">Global Delimiter</a></li>
+          <li><a href="#sizes">Import</a></li>
+          <li><a href="#layers">Hover Class Name</a></li>
+          <li><a href="#layers">Max-width Scale</a></li>
+          <li><a href="#layers">Responsive</a></li>
+          <li><a href="#layers">Shadows</a></li>
+          <li><a href="#layers">Spacing Scale</a></li>
+          <li><a href="#layers">Spacing Base</a></li>
+          <li><a href="#layers">Spacing Sides</a></li>
+          <li></li><a href="#layers">Text Sizes</a>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#grid" class="parent">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Settings</a></li>
+          <li><a href="#generator">Containers</a></li>
+          <li><a href="#generator">Columns</a></li>
+          <li><a href="#generator">Galleries</a></li>
+          <li><a href="#generator">Helpers</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#mixins" class="parent">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#mixins">Arrow</a></li>
+          <li><a href="#placeholder">Placeholder</a></li>
+          <li><a href="#uppercase">Uppercase</a></li>
+          <li><a href="#clearfix">Clearfix</a></li>
+          <li><a href="#ellipsis">Ellipsis</a></li>
+          <li><a href="#media-queries">Media Queries</a></li>
+          <li><a href="#strip-units">Strip Units</a></li>
+          <li><a href="#convert-to-rem">Convert to REM</a></li>
+          <li><a href="#no-bullet">No Bullet</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#helpers" class="parent">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#background">Background Color</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#margin">Margins & Padding</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#visibility">Visibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="docs-content">
+      <div class="inner">
+        <section id="introduction" class="no-padding-top">
+          <section id="introduction-intro">
+            <h1>Introduction</h1>
+            <p>Barebones is a boilerplate to help you build your own UI framework. It is not a fully-fledged UI kit or library (Bootstrap, Foundation etc), but a set of tools common to all projects; a grid system and commonly used utility classes and mixins, put together in a convenient package to kickstart your next project.</p>
+            <p>It doesn't have any Javascript code inside and it's design agnostic, which means that you don't have to design for the framework and the framework adapts on your design. Only the bare essentials are included – so you can spend less time overwriting and more time creating. Unopinionated</p>
+          </section>
+          <section id="prerequisites">
+            <h2>Prerequisites</h2>
+            <p>Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Instructions can be found <a href="http://sass-lang.com/install" target="_blank">here</a>.</p>
+            <p>Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.</p>
+          </section>
+          <section id="get-started">
+            <h2>Get started</h2>
+            <h3>1. Install the package</h3>
+            <p>Barebones is available as a Bower package. If you want to skip package control and copy the SASS files directly, you can do that too – simply download the latest release from <a href="https://github.com/sebpowell/barebones-sass">GitHub</a> and integrate the source files directly. </p>
+            <div class="example">
+              <pre class="example-code"><code class="language-bash">bower install barebones-sass --save</code></pre>
+            </div>
+            <h3>2. Create a settings file</h3>
+            <p>In your project folder, create a _settings.scss file (or whatever you want to call it) with the following values. These are various settings Barebones uses – a  more detailed explanation of each option can be found here.</p>
+            <pre class="example-code"><code class="language-scss">$bb-border-radius-scale: 5;
+
+$bb-breakpoints: ();
+
+$bb-colors: ();
+
+$bb-letter-spacing: ();
+
+$bb-line-heights: ();
+
+$bb-global-delimiter: "-";
+
+$bb-helpers: ();
+
+$bb-hover-class-name: "hover";
+
+$bb-max-width-scale: 14;
+
+$bb-responsive: true;
+
+$bb-shadows: ();
+
+$bb-spacing-scale: 10;
+
+$bb-spacing-base: 4px;
+
+$bb-spacing-sides: ();
+
+$bb-text-sizes: ();
+</code></pre>
+            <h3>3. Create your main SCSS file</h3>
+            <p>Import your newly created settings file, followed by the Barebones file. Note that the import order mattesr – settings should always come before the barebones file. When you're done, it should look something like this:</p>
+            <p>Settings files contain global, site-wide configurations.</p>
+            <p>Each iotaCSS module has its own set of settings. For example you can define the gutter size, the number of columns and the breakpoints of the grid object.</p>
+            <p>In this step you add your own settings files in order to overwrite any settings that don’t fit the needs of your project. You can find all available settings inside the doc page of each module.</p>
+            <p>The final step is to import all these files into your main files that will be compiled into actual CSS. It’s crucial to note that the order you import each file is really important. The order that is used with iotaCSS architecture is the following:</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">// Always import the settings file first
+@import _settings.scss
+
+// Import Barebones – the path will depend on your setup.
+@import bower-components/barebones-sass/dist/_base.scss
+
+</code></pre>
+            </div>
+          </section>
+          <section id="support">
+            <h2>Support</h2>
+            <p>This library is under active development. If you need help, or if you think something is broken or can be improved, send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. Or feel free to <a href="https://github.com/sebpowell/barebones-sass/issues">open an issue on GitHub</a>.</p>
+          </section>
+          <section id="reading">
+            <h2>Background reading &amp; acknowledgements</h2>
+            <p>Barebones was heavily inspired by other people's brains. Here are some of them in case you're interested in doing some more reading. Inspiration and motivationGemma is evolutionary, not revolutionary. Its philosophical and stylistic leanings have been heavily influenced by the following people and projects:</p>
+            <ul class="bullet-list">
+              <li><a href="http://fourkitchens.com/blog/section/you-dont-need-bootstrap" target="_blank">You Don't Need Bootstrap – Ian Carrico</a></li>
+              <li><a href="https://smacss.com/" target="_blank">Scalable & Module Architecture for CSS – Jonathan Snook</a></li>
+              <li><a href="https://dzone.com/sections/why-its-good-idea-roll-your" target="_blank">Why It's a Good Idea to Roll Your Own CSS Framework</a></li>
+              <li><a href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank">Responsive Deliverables – Dave Rupert</a></li>
+              <li><a href="http://www.sitepoint.com/managing-responsive-breakpoints-sass/" target="_blank">Managing Responsive Breakpoints with SASS – Hugo Giraudel</a></li>
+              <li><a href="http://www.zell-weekeat.com/mappy-breakpoints" target="_blank">Mappy Breakpoints – Zell Liew</a></li>
+              <li><a href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank">How to Structure a SASS Project – John Long</a></li>
+              <li><a href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank">Modular CSS Naming Conventions – John Long</a></li>
+              <li><a href="http://www.sitepoint.com/architecture-sass-project/">Architecture for a SASS Project – Hugo Giraudel</a></li>
+            </ul>
+          </section>
+        </section>
+        <section id="settings">
+          <section id="settings-intro">
+            <h1 class="page-title">Settings</h1>
+          </section>
+          <section id="settings-colours">
+            <h3>Colors</h3>
+            <p>Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss">$colors: (
+	brand: (
+		primary: #157AFB,
+		secondary: #FE5607,
+		...
+	),
+	secondary: (
+		orange: #F8B000,
+		...
+	),
+	greyscale: (
+		50: #FAFAFA,
+		100: #F5F5F5,
+		...
+	),
+	keyline: (
+		light: #E5E5E5,
+		...
+	),
+);
+
+// Access like this
+.element {
+	background-color: colors(brand, primary);
+}
+
+</code></pre>
+            </div>
+          </section>
+        </section>
+        <section id="mixins">
+          <section id="arrow">
+            <h2>Arrow</h2>
+            <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
+            <table class="table-lined margin-bottom-double">
+              <thead>
+                <th>Option</th>
+                <th>Values / Example</th>
+              </thead>
+              <tr>
+                <td><span class="var">$direction</span></td>
+                <td> 
+                  <ul class="bulleted-list">
+                    <li>"up"</li>
+                    <li>"down"</li>
+                    <li>"left"</li>
+                    <li>"right"</li>
+                    <li>"top-right"</li>
+                    <li>"top-left"</li>
+                    <li>"bottom-right"</li>
+                    <li>"bottom-left"</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="var">$color</span></td>
+                <td>Any hex value (e.g. #E5E5E5)</td>
+              </tr>
+              <tr>
+                <td><span class="var">$size</span></td>
+                <td>Any px value (e.g. 6px)</td>
+              </tr>
+            </table>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element { 
+	&:after {
+		@include arrow(down, black, 20px);
+	}
+ }
+</code></pre>
+            </div>
+          </section>
+          <section id="clearfix">
+            <h2>Clearfix</h2>
+            <p>Clears floats. Apply this to the parent element.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include clearfix;
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="ellipsis">
+            <h2>Ellipsis</h2>
+            <p>Use this to truncate text once it reaches a certain width.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include ellipsis(300px);
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="no-bullet">
+            <h2>No Bullet</h2>
+            <p>Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">ul {
+	@include no-bullet;
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="no-bullet">
+            <h2>Map Deep Get</h2>
+            <p>Fetch any value from a nested map. </p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">// Example map
+$colors: (
+	ui: (
+		error: (
+			light: #e6e6e6;
+		)
+	)
+);
+
+// You can go as deep as you need to. 
+ul {
+	color: map-deep-get($colors, ui, error, light);
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="media-queries">
+            <h2>Media Queries</h2>
+            <p>Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include if-above(device-medium) {
+		color: red;
+	}
+}
+
+.element {
+	@include if-above(800px) {
+		color: blue;
+	}
+}
+
+.element {
+	@include if-below(device-small) {
+		color: blue;
+	}
+}
+
+.element {
+	@include if-between(800px, 1200px) {
+		color: blue;
+	}
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="placeholder">
+            <h2>Placeholder</h2>
+            <p>Changes &lt;input&gt; placeholder text color.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include placeholder {
+		color: grey;
+	}
+	&:focus {
+		@include placeholder {
+			color: lightGrey;
+		}
+	}
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="shapes">
+            <h2>Shapes</h2>
+            <p>Create a square or circle. </p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include circle(200px);
+}
+
+.element {
+	@include square(400px);
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="uppercase">
+            <h2>Uppercase</h2>
+            <p>Transforms text to uppercase, accepts an argument to specify letter-spacing.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include uppercase(0.1em);
+}
+
+
+
+
+</code></pre>
+            </div>
+          </section>
+        </section>
+        <section id="grid">
+          <section>
+            <h2>Grid</h2>
+            <p>Specify global grid settings. Access using <span class="var">grid($setting)</span>. Read more about the grid system and available settings <a href="grid.html">here</a>.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code"><code class="language-scss">$grid: (
+	columns: 12,
+	gutter: "24px",
+	breakpoint: "device-medium",
+	mobile-gutter: "24px",
+	mobile-spacing: "24px",
+);
+</code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>Breakpoints</h2>
+            <p>Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code"><code class="language-scss">$breakpoints: (
+	device-small: 320px,
+	device-medium: 480px,
+	...
+);
+</code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>Sizes</h2>
+            <p>Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.</p>
+            <div class="example">
+              <pre class="example-code border-bottom"><code class="language-scss">$sizes: (
+	quarter: 4px,
+	half: 8px,
+	base: 16px,
+	...
+);</code></pre>
+              <pre class="example-code"><code class="language-scss">.element {
+	padding: sizes(quarter);
+}
+</code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>Layers</h2>
+            <p>Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.</p>
+            <div class="example">
+              <pre class="example-code border-bottom"><code class="language-scss">$layers: (
+	modal: 5,
+	backdrop: 2,
+	navigation: 4,
+	...
+);</code></pre>
+              <pre class="example-code"><code class="language-scss">.modal {
+	z-index: layers(modal);
+}
+</code></pre>
+            </div>
+          </section>
+          <h1 class="page-title">Grid</h1>
+          <section class="introduction">
+            <p>Barebones includes a responsive and semantic grid system. It allows you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary DIVs.</p>
+          </section>
+          <section>
+            <h2>Grid Settings</h2>
+            <p>First, you need to specify global grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.</p>
+            <table>
+              <thead>
+                <th>Setting</th>
+                <th>Default</th>
+                <th>Description</th>
+              </thead>
+              <tr>
+                <td><span class="var">type</span></td>
+                <td>margin</td>
+                <td>Choose from a padding or margin-based grid. </td>
+              </tr>
+              <tr>
+                <td><span class="var">columns</span></td>
+                <td>12</td>
+                <td>Specifies the number of columns in your grid.</td>
+              </tr>
+              <tr>
+                <td><span class="var">breakpoint</span></td>
+                <td>720px</td>
+                <td>The point at which columns should expand to 100%. This only gets used for the generic helper classes.</td>
+              </tr>
+              <tr>
+                <td><span class="var">gutter</span></td>
+                <td>1/4</td>
+                <td>If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px). http://getbase.org/docs/helpers.html</td>
+              </tr>
+              <tr>
+                <td><span class="var">mobile-spacing</span></td>
+                <td>1/4</td>
+                <td>If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px). http://getbase.org/docs/helpers.html</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>Grid Type</h2>
+            <p>Barebones allows you to create a grid system that uses either <strong>margins</strong> or padding</strong>. Padding-based grids work by adding padding to left and right side of each column. This creates the gutters in between columns, </p>
+            <p>By default, columns are only activated from tablet onwards. This means columns are stacked on top of each other on mobile. If you want columns to work on mobile too, just add the is-mobile modifier on the columns container: You can define a column size for each viewport size: mobile, tablet, and desktop.</p>
+          </section>
+          <section>
+            <h2>Containers</h2>
+            <p>Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.</p>
+            <p>Create a new container using the <span class="var">container($max-width)</span> function.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div class="example-container"></div>
+              </div>
+              <pre class="example-code border-bottom"><code class="language-scss">.container {
+	@include container(600px);
+}
+</code></pre>
+              <pre class="example-code"><code class="language-scss">.container {
+	zoom: 1;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.container:before, .container:after {
+	content: "";
+	display: table;
+}
+
+.container:after {
+	clear: both;
+}
+</code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>Span</h2>
+            <p>Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.</p>
+            <h3>Columns (required)</h3>
+            <p>Number of columns the component spans, of the total number defined in your settings file (by default this is 12). Barebones also allows you to create a new context, which may be useful in some situations. For example, you may want want to create a grid wit 5 items per row – this isn't possible with a 12-column grid. In these instances, you can override the global context by passing in a new context. </p>
+            <div class="example">
+              <div class="example-code-toggle"></div>
+              <pre class="example-code border-bottom"><code class="language-scss">.sidebar {
+	@include span(4); // Spans 4 colums out of your global context (default: 12)
+}
+
+.content {
+	@include span(8, $position: last); // Spans 8 colums above this size.
+}</code></pre>
+              <pre class="example-code border-bottom"><code class="language-scss">.sidebar {
+	@include span(4 of 20); // Create a new context. This spans 4 columns out of 20.
+}
+</code></pre>
+            </div>
+            
+            <h3>Span Function</h3>
+            <p>The <span class="var">span($columns)</span> only returns a width value for the container - nothing else.</p>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="example-wrapper">
+                  <div style="background-color: lightpink" class="example-span"></div>
+                </div>
+              </div>
+              <pre class="example-code border-bottom"><code class="language-scss">.example-span {
+	width: span(4);
+}</code></pre>
+              <pre class="example-code"><code class="language-scss">.example-span {
+	width: 56.1%;
+}
+</code></pre>
+            </div>
+            <h3>Offset</h3>
+            <p>You can offset a container by a given number of columns by passing in an argument for the <span class="var">$offset</span> value.</p>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="example-wrapper">
+                  <div style="background-color: lightpink" class="example-offset"></div>
+                </div>
+              </div>
+              <pre class="example-code"><code class="language-scss">.sidebar {
+	@include span(8, $offset: 4);
+}
+
+
+</code></pre>
+            </div>
+          </section>
+        </section>
+        <section id="helpers">
+          <p>Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.</p>
+          <p>All helper classes use the <span class="var">!important</span> flag to avoid specificity issues.</p>
+          <section id="background">
+            <h2>Background Color</h2>
+            <p>Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div style="height: 40px" class="background-brand-primary"></div>
+                <div style="height: 40px" class="background-secondary-orange"></div>
+                <div style="height: 40px" class="background-greyscale-50"></div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="background">
+            <h2>Background Color: Hover</h2>
+            <p>Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div style="height: 40px" class="background-brand-primary"></div>
+                <div style="height: 40px" class="background-secondary-orange"></div>
+                <div style="height: 40px" class="background-greyscale-50"></div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="borders">
+            <h2>Borders</h2>
+            <p>Adds a border to a given element in the specified direction(s). It uses the color value specified in the keyline category of your <span class="var">$colors</span> map.</p>
+            <table class="table-lined margin-bottom-double">
+              <thead>
+                <th colspan="2">Options</th>
+              </thead>
+              <tr>
+                <td><span class="var">.border-left</span></td>
+                <td>Adds a 1px keyline on the left.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.border-top</span></td>
+                <td>Adds a 1px keyline on the top.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.border-right</span></td>
+                <td>Adds a 1px keyline on the right.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.border-bottom</span></td>
+                <td>Adds a 1px keyline on the bottom.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.border-all</span></td>
+                <td>Adds a 1px keyline to every side.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.no-border</span></td>
+                <td>Removes all borders.</td>
+              </tr>
+            </table>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="border-top"></div>
+              </div>
+              <pre class="example-code"><code class="language-scss">&lt;div class="border-bottom"&gt;&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="margin">
+            <h2>Margin &amp; Padding</h2>
+            <p>Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map, to help create consistency throughout your project.</p>
+            <table class="table-lined margin-bottom-double">
+              <thead>
+                <th colspan="2">Options</th>
+              </thead>
+              <tr>
+                <td><span class="var">.padding-{direction}-{size}</span></td>
+                <td>Applies padding in the specified direction of the specified size.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.margin-{direction}-{size}</span></td>
+                <td>Applies margin in the specified direction of the specified size.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.no-margin</span></td>
+                <td>Removes all margins.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.no-margin-{direction}</span></td>
+                <td>Removes margin in the specified direction.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.no-padding-{padding}</span></td>
+                <td>Removes padding in the specified direction.</td>
+              </tr>
+            </table>
+            <div class="example">
+              <div class="example-rendered">
+                <div class="border-all padding-base margin-bottom-quarter">.margin-bottom-quarter</div>
+                <div class="border-all padding-base margin-bottom-base">.margin-bottom-base</div>
+                <div class="border-all padding-base margin-bottom-triple">.margin-bottom-triple</div>
+                <div class="border-all padding-base no-margin">.no-margin</div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+&lt;div class="border-all padding-base margin-bottom-base"&gt;.margin-bottom-base&lt;/div&gt;
+&lt;div class="border-all padding-base margin-bottom-triple"&gt;.margin-bottom-triple&lt;/div&gt;
+&lt;div class="border-all padding-base no-margin"&gt;.no-margin&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="layout">
+            <h2>Layout</h2>
+            <table class="table-lined margin-bottom-double">
+              <thead>
+                <th colspan="2">Options</th>
+              </thead>
+              <tr>
+                <td><span class="var">.block</span></td>
+                <td>Sets element display mode to <span class="var">block</span>.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.inline-block</span></td>
+                <td>Sets element display mode to <span class="var">inline-block</span>.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.float-left</span></td>
+                <td>Floats element to the left.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.float-right</span></td>
+                <td>Floats element to the right.</td>
+              </tr>
+              <tr>
+                <td><span class="var">.clearfix</span></td>
+                <td>Clears floats (apply this to the parent element).</span></td>
+              </tr>
+            </table>
+            <div class="example margin-bottom-double">
+              <pre class="example-code"><code class="language-html">&lt;div class="block"&gt;&lt;/div&gt;
+&lt;div class="inline-block"&gt;&lt;/div&gt;
+&lt;div class="float-left"&gt;&lt;/div&gt;
+&lt;div class="float-right"&gt;&lt;/div&gt;
+&lt;div class="clearfix"&gt;&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="grid">
+            <h2>Grid</h2>
+            <h3>Rows &amp; Columns</h3>
+            <p>To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.</p>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="row">
+                  <div class="columns-4"></div>
+                  <div class="columns-5"></div>
+                  <div class="columns-3"></div>
+                </div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="row"&gt;
+ &lt;div class="columns-4"&gt;
+ &lt;div class="columns-5"&gt;
+ &lt;div class="columns-3"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <p>Helper classes are also available to create different grids for different screen sizes.</p>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="row">
+                  <div class="columns-4-device-x-small columns-5-device-medium"></div>
+                  <div class="columns-4-device-x-small columns-3-device-medium"></div>
+                  <div class="columns-4-device-x-small columns-4-device-medium"></div>
+                </div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;
+ &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;
+ &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <h3>Offsets</h3>
+            <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="row">
+                  <div class="columns-3 offset-9"></div>
+                </div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
+	&lt;div class="columns-3 offset-9"&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3>Gutter</h3>
+          </section>
+          <section id="typography">
+            <h2>Typography</h2>
+            <p>Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.</p>
+            <h3>Alignment</h3>
+            <p>Left, right and center.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div class="text-left">This text is left-aligned</div>
+                <div class="text-center">This text is centered</div>
+                <div class="text-right">This text is right-aligned</div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3>Size</h3>
+            <p>These are generated using values specified in your <span class="var">$font-sizes</span> map. These are useful for altering the visual appearance of semantically correct headings.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div class="text-x-large">This text is X-Large</div>
+                <div class="text-large">This text is Large</div>
+                <div class="text-medium-large">This text is Medium-Large</div>
+                <div class="text-medium">This text is Medium</div>
+                <div class="text-base">This text is Base</div>
+                <div class="text-small">This text is Small</div>
+                <div class="text-x-small">This text is X-Small</div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+&lt;div class="text-large"&gt;This text is Large&lt;/div&gt;
+&lt;div class="text-medium-large"&gt;This text is Medium-Large&lt;/div&gt;
+&lt;div class="text-medium"&gt;This text is Medium&lt;/div&gt;
+&lt;div class="text-base"&gt;This text is Base&lt;/div&gt;
+&lt;div class="text-small"&gt;This text is Small&lt;/div&gt;
+&lt;div class="text-x-small"&gt;This text is X-Small&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3>Colors</h3>
+            <p>These are generated using values stored in your <span class="var">$colors</span> map.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div class="text-brand-primary">Text Brand Primary</div>
+                <div class="text-brand-secondary">Text Brand Secondary</div>
+                <div class="text-greyscale-400">Text Greyscale-400</div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="text-brand-primary"&gt;Text Brand Primary&lt;/div&gt;
+&lt;div class="text-brand-primary"&gt;Text Brand Secondary&lt;/div&gt;
+&lt;div class="text-greyscale-400"&gt;Text Greyscale-400&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3>Transform</h3>
+            <p>Uppercase or capitalized.</p>
+            <div class="example">
+              <div class="example-rendered">
+                <div class="text-uppercase">This text is uppercase</div>
+                <div class="text-capitalized">This text is capitalized</div>
+                <div class="text-strikethrough">This text is strikedtheought</div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
+&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="visibility">
+            <h2>Visibility</h2>
+            <p>Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-html">&lt;div class="is-hidden"&gt;&lt;/div&gt;
+// Hidden at all times.
+
+&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
+// Hides above the device-small breakpoint.
+
+&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
+// Hides below the device-small breakpoint.
+</code></pre>
+            </div>
+          </section>
+          <h1 class="border-top-light padding-top-14">Composer Classes</h1>
+          <h3 id="background-color">Background Color</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Colours specified in $colors map.</td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="background-position">Background Position</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"center"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="background-size">Background Size</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"cover", "contain"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="border-radius">Border Radius</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Scale 1 - 5</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 i="border">Border</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"light", "dark"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="box-shadow">Box Shadow</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"small", "medium", "large", "x-large", "xx-large"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="cursor">Cursor</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"not-allowed", "pointer", "default"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="display">Display</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="fill">Fill</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Colours</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="flex-direction">Flex Direction</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"column", "row"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="flex-items">Flex Items</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"start", "center", "end"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="float">Float</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"left", "right"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="letter-spacing">Letter Spacing</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="line-height">Line-height</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>
+                "x-small": 1,
+                "small": 1.2,
+                "medium": 1.5,
+                "large": 2
+              </td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="margin">Margin</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Scale 1 - 15</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="max-width">Max-width</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="opacity">Opacity</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Scale 1 - 10</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="overflow">Overflow</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"hidden", "scroll", "visible", "auto"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="padding">Padding</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"hidden", "scroll", "visible", "auto"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="position">Position</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"absolute", "fixed", "static", "relative"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="table">Table</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"border-collapse", "layout-fixed"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-align">Text Align</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"left", "center", "right"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-color">Text Color</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"left", "center", "right"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-decoration">Text Decoration</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"underline", "strikethrough"</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="text-size">Text Size</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-transform">Text Transform</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"capitalize", "uppercase", "lowercase"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="vertical-align">Vertical Align</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"top", "middle", "bottom"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="visibility">Visibility</h3>
+          <pre>\n\t\t		
+\t		</pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"visible", "hidden"</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

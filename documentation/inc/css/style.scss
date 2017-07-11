@@ -1,40 +1,6 @@
-// $bb-border-radius-scale: 5;
-
-// $bb-breakpoints: ();
-
-// $bb-colors: ();
-
-// $bb-letter-spacing: ();
-
-// $bb-line-heights: ();
-
-// $bb-global-delimiter: "-";
-
-// $bb-helpers: (
-// 	"aspect-ratio": "aspect-ratio",
-// );
-
-// $bb-hover-class-name: "hover";
-
-// $bb-max-width-scale: 14;
-
-// $bb-responsive: true;
-
-// $bb-shadows: ();
-
-// $bb-spacing-scale: 10;
-
-// $bb-spacing-base: 4px;
-
-// $bb-spacing-sides: (
-// 	"top": "top",
-// 	"bottom": "bottom",
-// 	"left": "left", 
-// 	"right": "right",
-// 	"vertical": "vertical",
-// 	"horizontal": "horizontal"
-// );
-
-// $bb-text-sizes: ();
+$bb-colors: (
+	"keyline": #e5e5e5,
+);
 
 @import "../../../dist/configurable/_base";
+@import "components/components";

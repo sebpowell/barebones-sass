@@ -12,6 +12,8 @@
     "gulp-uglify": "^1.4.1"
   },
   "dependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "iotacss-settings-core": "^1.0.2",
+    "iotacss-tools-core": "^1.0.9"
   }
 }

@@ -26,106 +26,107 @@ body.page-layout-docs
 
 	.docs-container
 		.docs-navigation
-			ul.docs-navigation-primary-links
-				//- li
-				//- 	a(href='introduction.html') Getting Started
-				//- 	ul.sub-navigation
-				//- 		li
-				//- 			a(href='#installing') Installing Barebones
-				//- 		li
-				//- 			a(href='#requirements') Requirements
-				//- 		li
-				//- 			a(href='#support') Support
-				//- 		li
-				//- 			a(href='#background') Background Reading
-				li
-					a(href='settings.html') Settings
-					ul.sub-navigation
-						li
-							a(href='#misc') Misc
-						li
-							a(href='#colors') Colors
-						li
-							a(href='#fonts') Fonts
-						li
-							a(href='#grid') Grid
-						li
-							a(href='#breakpoints') Breakpoints
-						li
-							a(href='#sizes') Sizes
-						li
-							a(href='#layers') Layers
-				li
-					a(href='grid.html') Grid
-					ul.sub-navigation
-						li
-							a(href='#generator') Grid Settings
-						li
-							a(href='#generator') Containers
-						li
-							a(href='#generator') Columns
-						li
-							a(href='#generator') Galleries
-						li
-							a(href='#generator') Helpers
-				li
 
-					a(href='components.html') Components
-					ul.sub-navigation
-						li
-							a(href='#generator') Backdrop
-						li
-							a(href='#generator') Buttons
-						li
-							a(href='#generator') Cards
-						li
-							a(href='#generator') Dropdown
-						li
-							a(href='#generator') Forms
-						li
-							a(href='#generator') Modals
-						li
-							a(href='#generator') Tables
-						li
-							a(href='#generator') Tooltip
-				li
-					a(href='mixins.html') Mixins
-					ul.sub-navigation
-						li
-							a(href='#arrow') Arrow
-						li
-							a(href='#placeholder') Placeholder
-						li
-							a(href='#uppercase') Uppercase
-						li
-							a(href='#clearfix') Clearfix
-						li
-							a(href='#ellipsis') Ellipsis
-						li
-							a(href='#media-queries') Media Queries
-						li
-							a(href='#strip-units') Strip Units
-						li
-							a(href='#convert-to-rem') Convert to REM
-						li
-							a(href='#no-bullet') No Bullet
+			.nav-section
+				a.parent(href="#introduction") Introduction
+				ul.sub-navigation
+					li
+						a(href='#introduction') Introduction
+					li
+						a(href='#prerequisites') Requirements
+					li
+						a(href='#installing') Installation
+					li
+						a(href='#support') Support
+					li
+						a(href='#background') Background reading
+		
+			.nav-section
+				a.parent(href="#settings") Settings
+				ul.sub-navigation
+					li
+						a(href='#br-scale') Border Radius Scale
+					li
+						a(href='#settings-colours') Colors
+					li
+						a(href='#fonts') Letter Spacing
+					li
+						a(href='#grid') Line Heights
+					li
+						a(href='#breakpoints') Global Delimiter
+					li
+						a(href='#sizes') Import
+					li
+						a(href='#layers') Hover Class Name
+					li
+						a(href='#layers') Max-width Scale
+					li
+						a(href='#layers') Responsive
+					li
+						a(href='#layers') Shadows
+					li
+						a(href='#layers') Spacing Scale
+					li
+						a(href='#layers') Spacing Base
+					li
+						a(href='#layers') Spacing Sides
+					li
+					a(href='#layers') Text Sizes
+		
 
-				li
-					a(href='utilities.html') Utilities
-					ul.sub-navigation
-						li
-							a(href='#background') Background Color
-						li
-							a(href='#borders') Borders
-						li
-							a(href='#margin') Margins & Padding
-						li
-							a(href='#layout') Layout
-						li
-							a(href='#grid') Grid
-						li
-							a(href='#typography') Typography
-						li
-							a(href='#visibility') Visibility
+			.nav-section
+				a.parent(href="#grid") Grid
+				ul.sub-navigation
+					li
+						a(href='#generator') Grid Settings
+					li
+						a(href='#generator') Containers
+					li
+						a(href='#generator') Columns
+					li
+						a(href='#generator') Galleries
+					li
+						a(href='#generator') Helpers
+		
+			.nav-section
+				a.parent(href="#mixins") Mixins
+				ul.sub-navigation
+					li
+						a(href="#mixins") Arrow
+					li
+						a(href='#placeholder') Placeholder
+					li
+						a(href='#uppercase') Uppercase
+					li
+						a(href='#clearfix') Clearfix
+					li
+						a(href='#ellipsis') Ellipsis
+					li
+						a(href='#media-queries') Media Queries
+					li
+						a(href='#strip-units') Strip Units
+					li
+						a(href='#convert-to-rem') Convert to REM
+					li
+						a(href='#no-bullet') No Bullet
 
-		block body
+			.nav-section
+				a.parent(href="#helpers") Helpers
+				ul.sub-navigation
+					li
+						a(href='#background') Background Color
+					li
+						a(href='#borders') Borders
+					li
+						a(href='#margin') Margins & Padding
+					li
+						a(href='#layout') Layout
+					li
+						a(href='#grid') Grid
+					li
+						a(href='#typography') Typography
+					li
+						a(href='#visibility') Visibility
+		.docs-content
+			.inner
+				block body

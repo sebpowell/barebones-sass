@@ -1,0 +1,433 @@
+extends _inc/_layout.jade
+
+block body
+  article.article(id="installing")
+    h1.border-top-light.padding-top-14 Composer Classes
+    h3#background-color Background Color
+    pre.
+      .background-{$color}  
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td Colours specified in $colors map.
+        td.text-center
+          span.label.label-green Yes
+        td.text-center
+          span.label.label-red No
+  article.article(id="installing")
+    h3#background-position Background Position
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "center"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-red No
+    h3#background-size Background Size
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "cover", "contain"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-red No
+    h3#border-radius Border Radius
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td Scale 1 - 5
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-red No
+    h3(i='border') Border
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "light", "dark"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#box-shadow Box Shadow
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "small", "medium", "large", "x-large", "xx-large"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#cursor Cursor
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "not-allowed", "pointer", "default"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-red No
+    h3#display Display
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+          | "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#fill Fill
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td Colours
+        td.text-center
+          span.label.label-red Yes
+        td.text-center
+          span.label.label-green No
+    h3#flex-direction Flex Direction
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "column", "row"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#flex-items Flex Items
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "start", "center", "end"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#float Float
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+          | "left", "right"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#letter-spacing Letter Spacing
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green No
+    h3#line-height Line-height
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+          | "x-small": 1,
+          | "small": 1.2,
+          | "medium": 1.5,
+          | "large": 2
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#margin Margin
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+          | Scale 1 - 15
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#max-width Max-width
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green No
+    h3#opacity Opacity
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+          | Scale 1 - 10
+        td.text-center
+          span.label.label-red Yes
+        td.text-center
+          span.label.label-green No
+    h3#overflow Overflow
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "hidden", "scroll", "visible", "auto"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green No
+    h3#padding Padding
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "hidden", "scroll", "visible", "auto"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#position Position
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "absolute", "fixed", "static", "relative"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green No
+    h3#table Table
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "border-collapse", "layout-fixed"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#text-align Text Align
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "left", "center", "right"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#text-color Text Color
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "left", "center", "right"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#text-decoration Text Decoration
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "underline", "strikethrough"
+        td.text-center
+          span.label.label-red Yes
+        td.text-center
+          span.label.label-green No
+    h3#text-size Text Size
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-green Yes
+    h3#text-transform Text Transform
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "capitalize", "uppercase", "lowercase"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-red No
+    h3#vertical-align Vertical Align
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "top", "middle", "bottom"
+        td.text-center
+          span.label.label-red No
+        td.text-center
+          span.label.label-red No
+    h3#visibility Visibility
+    pre.
+      \n\t\t    
+      \t    
+    table.width-100
+      thead
+        th.text-left Modifiers
+        th Hover
+        th Responsive
+      tr
+        td "visible", "hidden"
+        td.text-center
+          span.label.label-red Yes
+        td.text-center
+          span.label.label-green Yes

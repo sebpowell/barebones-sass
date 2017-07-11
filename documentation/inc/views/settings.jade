@@ -1,32 +1,123 @@
 extends  _inc/_layout.jade
 
 block body
-	.main-container
-		h1.page-title Settings
-		article.article.introduction
-			p Barebones expects you to store your project settings in a SASS map (<a href="https://viget.com/extend/sass-maps-are-awesome" target="_blank">read more about SASS maps</a>). These values are used by the various helpers and mixins included in the project.
+	section.no-padding-top(id="introduction")
+		section(id="introduction-intro")
+			h1 Introduction
+			p Barebones is a boilerplate to help you build your own UI framework. It is not a fully-fledged UI kit or library (Bootstrap, Foundation etc), but a set of tools common to all projects; a grid system and commonly used utility classes and mixins, put together in a convenient package to kickstart your next project.
 
-			p For example, the <span class="var">if-above()</span> mixin sources it's values from the <span class="var">$breakpoints</span> map, and text-color helper classes are generated for every color stored in the <span class="var">$colors</span> map.
+			p It doesn't have any Javascript code inside and it's design agnostic, which means that you don't have to design for the framework and the framework adapts on your design. Only the bare essentials are included – so you can spend less time overwriting and more time creating. Unopinionated
 
-			.info-panel.warning.margin-bottom-double
-				p The file containing these maps is not included in the package to avoid collisions with your own settings</span>. To use Barebones, you'll need to create your own settings file, using <a href="https://github.com/sebpowell/barebones-sass/blob/master/docs/css/_settings.scss" target="_blank">this template</a>.
+		section(id="prerequisites")
+			h2 Prerequisites
+			p Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Instructions can be found <a href="http://sass-lang.com/install" target="_blank">here</a>.
 
-		article.article(id="misc")
-			h2 Misc
-			p Allows you to specify class prefixing (by default Barebones classes aren't namespaced) and unit type (px, rems or ems).
+			p Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
 
-			
+
+		section(id="get-started")
+
+			h2 Get started
+
+			h3 1. Install the package
+			p Barebones is available as a Bower package. If you want to skip package control and copy the SASS files directly, you can do that too – simply download the latest release from <a href="https://github.com/sebpowell/barebones-sass">GitHub</a> and integrate the source files directly. 
+			.example
+				pre.example-code
+					code.language-bash
+						| bower install barebones-sass --save
+
+			h3 2. Create a settings file
+
+			p In your project folder, create a _settings.scss file (or whatever you want to call it) with the following values. These are various settings Barebones uses – a  more detailed explanation of each option can be found here.
+
+			pre.example-code
+				code.language-scss.
+					$bb-border-radius-scale: 5;
+
+					$bb-breakpoints: ();
+
+					$bb-colors: ();
+
+					$bb-letter-spacing: ();
+
+					$bb-line-heights: ();
+
+					$bb-global-delimiter: "-";
+
+					$bb-helpers: ();
+
+					$bb-hover-class-name: "hover";
+
+					$bb-max-width-scale: 14;
+
+					$bb-responsive: true;
+
+					$bb-shadows: ();
+
+					$bb-spacing-scale: 10;
+
+					$bb-spacing-base: 4px;
+
+					$bb-spacing-sides: ();
+
+					$bb-text-sizes: ();
+
+			h3 3. Create your main SCSS file
+			p Import your newly created settings file, followed by the Barebones file. Note that the import order mattesr – settings should always come before the barebones file. When you're done, it should look something like this:
+
+			p Settings files contain global, site-wide configurations.
+
+			p Each iotaCSS module has its own set of settings. For example you can define the gutter size, the number of columns and the breakpoints of the grid object.
+
+			p In this step you add your own settings files in order to overwrite any settings that don’t fit the needs of your project. You can find all available settings inside the doc page of each module.
+			p The final step is to import all these files into your main files that will be compiled into actual CSS. It’s crucial to note that the order you import each file is really important. The order that is used with iotaCSS architecture is the following:
 
 			.example
 				pre.example-code
 					code.language-scss.
-						$misc: (
-							prefix: "bb-",
-							responsiveHelpers: true,
-						);
+						// Always import the settings file first
+						@import _settings.scss
 
-		article.article(id="colors")
-			h2 Colors
+						// Import Barebones – the path will depend on your setup.
+						@import bower-components/barebones-sass/dist/_base.scss
+			
+
+		section(id="support")
+			h2 Support
+			p This library is under active development. If you need help, or if you think something is broken or can be improved, send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. Or feel free to <a href="https://github.com/sebpowell/barebones-sass/issues">open an issue on GitHub</a>.
+
+
+		section(id="reading")
+
+			h2 Background reading &amp; acknowledgements
+			p Barebones was heavily inspired by other people's brains. Here are some of them in case you're interested in doing some more reading. Inspiration and motivationGemma is evolutionary, not revolutionary. Its philosophical and stylistic leanings have been heavily influenced by the following people and projects:
+
+			ul.bullet-list
+				li
+					a(href="http://fourkitchens.com/blog/section/you-dont-need-bootstrap" target="_blank") You Don't Need Bootstrap – Ian Carrico
+				li
+					a(href="https://smacss.com/" target="_blank") Scalable & Module Architecture for CSS – Jonathan Snook
+				li
+					a(href="https://dzone.com/sections/why-its-good-idea-roll-your" target="_blank") Why It's a Good Idea to Roll Your Own CSS Framework
+				li
+					a(href="http://daverupert.com/2013/04/responsive-deliverables/" target="_blank") Responsive Deliverables – Dave Rupert
+				li
+					a(href="http://www.sitepoint.com/managing-responsive-breakpoints-sass/" target="_blank") Managing Responsive Breakpoints with SASS – Hugo Giraudel
+				li
+					a(href="http://www.zell-weekeat.com/mappy-breakpoints" target="_blank") Mappy Breakpoints – Zell Liew
+				li
+					a(href="http://thesassway.com/beginner/how-to-structure-a-sass-project" target="_blank") How to Structure a SASS Project – John Long
+				li
+					a(href="http://thesassway.com/advanced/modular-css-naming-conventions" target="_blank") Modular CSS Naming Conventions – John Long
+				li
+					a(href="http://www.sitepoint.com/architecture-sass-project/") Architecture for a SASS Project – Hugo Giraudel
+
+	section(id="settings")
+		section(id="settings-intro")
+			h1.page-title Settings
+
+		section(id="settings-colours")
+			h3 Colors
 			p Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.
 			.example.margin-bottom-double
 				pre.example-code.border-bottom
@@ -57,30 +148,178 @@ block body
 							background-color: colors(brand, primary);
 						}
 
-		article.article(id="fonts")
-			h2 Fonts
-			p Specify font familys' and their respective weights. Access using <span class="var">fonts($family)</span> and <span class="var">weights($family, $weight)</span> functions.
-			.example.margin-bottom-double
+
+	section(id="mixins")
+		section(id="arrow")
+			h2 Arrow
+			p Creates a triangle, used for things like tooltips or dropdowns.
+
+			table.table-lined.margin-bottom-double
+				thead
+					th Option
+					th Values / Example
+				tr
+					td <span class="var">$direction</span>
+					td 
+						ul.bulleted-list
+							li "up"
+							li "down"
+							li "left"
+							li "right"
+							li "top-right"
+							li "top-left"
+							li "bottom-right"
+							li "bottom-left"
+				tr
+					td <span class="var">$color</span>
+					td Any hex value (e.g. #E5E5E5)
+				tr
+					td <span class="var">$size</span>
+					td Any px value (e.g. 6px)
+
+			.example
 				pre.example-code
 					code.language-scss.
-						$fonts: (
-							primary: (
-								family: #{"Open Sans", Helvetica, sans-serif},
-								weights: (
-								 light: 100,
-								 regular: 200,
-								 semi-bold: 500
-								)
-							),
-							secondary: (
-								family: #{"Futura PT", Helvetica, sans-serif},
-								weights: (
-									bold: 600,
+						.element { 
+							&:after {
+								@include arrow(down, black, 20px);
+							}
+						 }
+
+		section(id="clearfix")
+			h2 Clearfix
+			p Clears floats. Apply this to the parent element.
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include clearfix;
+						}
+						
+		section(id="ellipsis")
+			h2 Ellipsis
+			p Use this to truncate text once it reaches a certain width.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include ellipsis(300px);
+						}
+		
+		section(id="no-bullet")
+			h2 No Bullet
+			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+
+			.example
+				pre.example-code
+					code.language-scss.
+						ul {
+							@include no-bullet;
+						}
+						
+		section(id="no-bullet")
+			h2 Map Deep Get
+			p Fetch any value from a nested map. 
+
+			.example
+				pre.example-code
+					code.language-scss.
+						// Example map
+						$colors: (
+							ui: (
+								error: (
+									light: #e6e6e6;
 								)
 							)
 						);
+						
+						// You can go as deep as you need to. 
+						ul {
+							color: map-deep-get($colors, ui, error, light);
+						}
+		
+		section(id="media-queries")
+			h2 Media Queries
+			p Create rules depending on the  You can reference values in your breakpoints map, will also accept values that aren't defined in your $breakpoints map.
+			
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include if-above(device-medium) {
+								color: red;
+							}
+						}
 
-		article.article(id="grid")
+						.element {
+							@include if-above(800px) {
+								color: blue;
+							}
+						}
+						
+						.element {
+							@include if-below(device-small) {
+								color: blue;
+							}
+						}
+						
+						.element {
+							@include if-between(800px, 1200px) {
+								color: blue;
+							}
+						}
+		
+		section(id="placeholder")
+			h2 Placeholder
+			p Changes &lt;input&gt; placeholder text color.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include placeholder {
+								color: grey;
+							}
+							&:focus {
+								@include placeholder {
+									color: lightGrey;
+								}
+							}
+						}
+
+		section(id="shapes")
+			h2 Shapes
+			p Create a square or circle. 
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include circle(200px);
+						}
+						
+						.element {
+							@include square(400px);
+						}
+						
+		section(id="uppercase")
+			h2 Uppercase
+			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include uppercase(0.1em);
+						}
+
+
+
+
+
+	section(id="grid")
+		section
 			h2 Grid
 			p Specify global grid settings. Access using <span class="var">grid($setting)</span>. Read more about the grid system and available settings <a href="grid.html">here</a>.
 
@@ -95,7 +334,7 @@ block body
 							mobile-spacing: "24px",
 						);
 
-		article.article(id="breakpoints")
+		section
 			h2 Breakpoints
 			p Specify global breakpoints. It's generally best to set these as device sizes, rather than target specific devices.
 
@@ -108,21 +347,7 @@ block body
 							...
 						);
 
-
-		article
-			h2 Line Heights
-
-		article
-			h2 Shadows
-
-		article
-			h2 Weights
-
-		article
-			h2 Font Sizes
-
-
-		article.article(id="sizes")
+		section
 			h2 Sizes
 			p Used to keep spacing consistent throughout the project. Access using <span class="var">sizes($size)</span>.
 
@@ -141,7 +366,7 @@ block body
 							padding: sizes(quarter);
 						}
 
-		article.article(id="layers")
+		section
 			h2 Layers
 			p Stores z-indexes for different components so you can easily see the stacking order. Access using <span class="var">layers($component)</span>.
 
@@ -159,3 +384,876 @@ block body
 						.modal {
 							z-index: layers(modal);
 						}
+
+		h1.page-title Grid
+		section.introduction
+			p Barebones includes a responsive and semantic grid system. It allows you to target given components – for example, a sidebar – without littering your HTML with helper classes and unnecessary DIVs.
+
+		section
+			h2 Grid Settings
+			p First, you need to specify global grid settings in your <span class="var">settings</span> file. If nothing is specified, default values are applied.
+
+			table
+				thead
+					th Setting
+					th Default
+					th Description
+
+				tr
+					td <span class="var">type</span>
+					td margin
+					td Choose from a padding or margin-based grid. 
+
+				tr
+					td <span class="var">columns</span>
+					td 12
+					td Specifies the number of columns in your grid.
+				tr
+					td <span class="var">breakpoint</span>
+					td 720px
+					td The point at which columns should expand to 100%. This only gets used for the generic helper classes.
+				tr
+					td <span class="var">gutter</span>
+					td 1/4
+					td If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px). http://getbase.org/docs/helpers.html
+
+				tr
+					td <span class="var">mobile-spacing</span>
+					td 1/4
+					td If you're using a marin-based grid, this needs to be expressed as a fraction of a column width (e.g. 1/8, 1/4 or 1/2). If padding, use an absolute px value (e.g. 24px). http://getbase.org/docs/helpers.html
+
+
+
+					//- 				olumns: 12,
+					//- type: margin,
+					//- gutter: 0.5,
+					//- breakpoint: "device-medium",
+					//- mobile-padding: 24px
+		
+		section
+
+			h2 Grid Type
+
+			p Barebones allows you to create a grid system that uses either <strong>margins</strong> or padding</strong>. Padding-based grids work by adding padding to left and right side of each column. This creates the gutters in between columns, 
+
+			p By default, columns are only activated from tablet onwards. This means columns are stacked on top of each other on mobile. If you want columns to work on mobile too, just add the is-mobile modifier on the columns container: You can define a column size for each viewport size: mobile, tablet, and desktop.
+		
+		section
+			h2 Containers
+			p Containers are used to center and restrict content width on the page. They are fluid, and the width is limited using the max-width property. They also clear floated columns.
+
+			p Create a new container using the <span class="var">container($max-width)</span> function.
+
+			.example
+				.example-rendered
+					.example-container
+
+				pre.example-code.border-bottom
+					code.language-scss.
+						.container {
+							@include container(600px);
+						}
+
+				pre.example-code
+					code.language-scss.
+						.container {
+							zoom: 1;
+							margin: 0 auto;
+							max-width: 600px;
+						}
+
+						.container:before, .container:after {
+							content: "";
+							display: table;
+						}
+
+						.container:after {
+							clear: both;
+						}
+
+		section
+
+			h2 Span
+
+			p Columns can be created using either the <span class="var">span($columns, $position, $gutter)</span> mixin, or the <span class="var">span($columns)</span> function. The former does more work for you and allows you to specify various options, whilst the latter simply returns the element width based on the given number of columns.The CSS generated is viewport-agnostic. To create different widths at different breakpoints, combine this with the <a href="mixins.html#media-queries">media query</span> mixins.
+
+
+			h3 Columns (required)
+			p Number of columns the component spans, of the total number defined in your settings file (by default this is 12). Barebones also allows you to create a new context, which may be useful in some situations. For example, you may want want to create a grid wit 5 items per row – this isn't possible with a 12-column grid. In these instances, you can override the global context by passing in a new context. 
+
+
+			.example
+				.example-code-toggle
+					
+				pre.example-code.border-bottom
+					code.language-scss.
+						.sidebar {
+							@include span(4); // Spans 4 colums out of your global context (default: 12)
+						}
+
+						.content {
+							@include span(8, $position: last); // Spans 8 colums above this size.
+						}
+				pre.example-code.border-bottom
+					code.language-scss.
+						.sidebar {
+							@include span(4 of 20); // Create a new context. This spans 4 columns out of 20.
+						}
+
+			//- table.table-lined.margin-bottom-double
+			//- 	thead
+			//- 		th(colspan="2") Options
+			//- 	tr
+					
+			//- 	tr
+			//- 		td <span class="var">$position</span> <em>(optional)</em>
+			//- 		td If the column is the last one, pass in the 'last' keyword to remove the margin-right property and float the column to the right.
+			//- 	tr
+			//- 		td <span class="var">$gutter</span> <em>(optional)</em>
+			//- 		td Change the default gutter by passing in a size (e.g. 1/2), or remove it altogether.
+			//- 	tr
+			//- 		td <span class="var">$offset</span> <em>(optional)</em>
+			//- 		td Offset the container by a given number of columns.
+
+
+			
+			h3 Span Function
+			p The <span class="var">span($columns)</span> only returns a width value for the container - nothing else.
+
+			.example.margin-bottom-double
+				.example-rendered
+					.example-wrapper
+						.example-span(style="background-color: lightpink")
+				pre.example-code.border-bottom
+					code.language-scss.
+						.example-span {
+							width: span(4);
+						}
+				pre.example-code
+					code.language-scss.
+						.example-span {
+							width: 56.1%;
+						}
+
+			h3 Offset
+			p You can offset a container by a given number of columns by passing in an argument for the <span class="var">$offset</span> value.
+
+			.example.margin-bottom-double
+				.example-rendered
+					.example-wrapper
+						.example-offset(style="background-color: lightpink")
+
+				pre.example-code
+					code.language-scss.
+						.sidebar {
+							@include span(8, $offset: 4);
+						}
+
+
+
+	section(id="helpers")
+		p Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.
+
+		p All helper classes use the <span class="var">!important</span> flag to avoid specificity issues.
+
+		section(id="background")
+			h2 Background Color
+			p Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.
+			.example
+				.example-rendered
+					.background-brand-primary(style="height: 40px")
+					.background-secondary-orange(style="height: 40px")
+					.background-greyscale-50(style="height: 40px")
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+						&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+						&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+
+		section(id="background")
+			h2 Background Color: Hover
+			p Generates a background-color helper for all colors specified in your <span class="var">$colors</span> map, in the following format: <span class="var">.background-{$category}-{$value}</span>.
+			.example
+				.example-rendered
+					.background-brand-primary(style="height: 40px")
+					.background-secondary-orange(style="height: 40px")
+					.background-greyscale-50(style="height: 40px")
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="background-brand-primary"&gt;&lt;/div&gt;
+						&lt;div class="background-secondary-orange"&gt;&lt;/div&gt;
+						&lt;div class="background-greyscale-50"&gt;&lt;/div&gt;
+
+		section(id="borders")
+			h2 Borders
+			p Adds a border to a given element in the specified direction(s). It uses the color value specified in the keyline category of your <span class="var">$colors</span> map.
+
+			table.table-lined.margin-bottom-double
+				thead
+					th(colspan="2") Options
+				tr
+					td <span class="var">.border-left</span>
+					td Adds a 1px keyline on the left.
+				tr
+					td <span class="var">.border-top</span>
+					td Adds a 1px keyline on the top.
+				tr
+					td <span class="var">.border-right</span>
+					td Adds a 1px keyline on the right.
+				tr
+					td <span class="var">.border-bottom</span>
+					td Adds a 1px keyline on the bottom.
+				tr
+					td <span class="var">.border-all</span>
+					td Adds a 1px keyline to every side.
+				tr
+					td <span class="var">.no-border</span>
+					td Removes all borders.
+
+			.example.margin-bottom-double
+				.example-rendered
+					.border-top
+				pre.example-code
+					code.language-scss.
+						&lt;div class="border-bottom"&gt;&lt;/div&gt;
+
+		section(id="margin")
+			h2 Margin &amp; Padding
+			p Allows your to add or remove margin or padding in all directions, or a given direction. These are generated using the values stored in the <span class="var">$sizes</span> map, to help create consistency throughout your project.
+
+
+			table.table-lined.margin-bottom-double
+				thead
+					th(colspan="2") Options
+				tr
+					td <span class="var">.padding-{direction}-{size}</span>
+					td Applies padding in the specified direction of the specified size.
+				tr
+					td <span class="var">.margin-{direction}-{size}</span>
+					td Applies margin in the specified direction of the specified size.
+				tr
+					td <span class="var">.no-margin</span>
+					td Removes all margins.
+				tr
+					td <span class="var">.no-margin-{direction}</span>
+					td Removes margin in the specified direction.
+				tr
+					td <span class="var">.no-padding-{padding}</span>
+					td Removes padding in the specified direction.
+
+			.example
+				.example-rendered
+					.border-all.padding-base.margin-bottom-quarter .margin-bottom-quarter
+					.border-all.padding-base.margin-bottom-base .margin-bottom-base
+					.border-all.padding-base.margin-bottom-triple .margin-bottom-triple
+					.border-all.padding-base.no-margin .no-margin
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="border-all padding-base margin-bottom-quarter"&gt;.margin-bottom-quarter&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-base"&gt;.margin-bottom-base&lt;/div&gt;
+						&lt;div class="border-all padding-base margin-bottom-triple"&gt;.margin-bottom-triple&lt;/div&gt;
+						&lt;div class="border-all padding-base no-margin"&gt;.no-margin&lt;/div&gt;
+
+		section(id="layout")
+			h2 Layout
+			table.table-lined.margin-bottom-double
+				thead
+					th(colspan="2") Options
+				tr
+					td <span class="var">.block</span>
+					td Sets element display mode to <span class="var">block</span>.
+				tr
+					td <span class="var">.inline-block</span>
+					td Sets element display mode to <span class="var">inline-block</span>.
+				tr
+					td <span class="var">.float-left</span>
+					td Floats element to the left.
+				tr
+					td <span class="var">.float-right</span>
+					td Floats element to the right.
+				tr
+					td <span class="var">.clearfix</span>
+					td Clears floats (apply this to the parent element).</span>
+
+			.example.margin-bottom-double
+				pre.example-code
+					code.language-html.
+						&lt;div class="block"&gt;&lt;/div&gt;
+						&lt;div class="inline-block"&gt;&lt;/div&gt;
+						&lt;div class="float-left"&gt;&lt;/div&gt;
+						&lt;div class="float-right"&gt;&lt;/div&gt;
+						&lt;div class="clearfix"&gt;&lt;/div&gt;
+
+		section(id="grid")
+			h2 Grid
+
+			h3 Rows &amp; Columns
+			p To create a grid, use the <span class="var">.row</span> class (clears the floats), then <span class="var">.column-{number}</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
+
+			.example.margin-bottom-double
+				.example-rendered
+					.row
+						.columns-4
+						.columns-5
+						.columns-3
+
+				pre.example-code
+					code.language-html
+						| &lt;div class="row"&gt;
+						|  &lt;div class="columns-4"&gt;
+						|  &lt;div class="columns-5"&gt;
+						|  &lt;div class="columns-3"&gt;
+						| &lt;/div&gt;
+
+
+			p Helper classes are also available to create different grids for different screen sizes.
+
+			.example.margin-bottom-double
+				.example-rendered
+					.row
+						.columns-4-device-x-small.columns-5-device-medium
+						.columns-4-device-x-small.columns-3-device-medium
+						.columns-4-device-x-small.columns-4-device-medium
+
+				pre.example-code
+					code.language-html
+						| &lt;div class="columns"&gt;
+						|  &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;
+						|  &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;
+						|  &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;
+						| &lt;/div&gt;
+
+
+			h3 Offsets
+			p Offsets allow you to shift a column to the right by a specified number of columns.
+			.example.margin-bottom-double
+				.example-rendered
+					.row
+						.columns-3.offset-9
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="columns"&gt;
+							&lt;div class="columns-3 offset-9"&gt;
+						&lt;/div&gt;
+
+			h3 Gutter
+
+
+		section(id="typography")
+			h2 Typography
+			p Typgrophy helper classes are prefixed with '.text-', followed by the helper name – e.g. <span class="var">.text-center</span>.
+
+			h3 Alignment
+			p Left, right and center.
+			.example
+				.example-rendered
+					.text-left This text is left-aligned
+					.text-center This text is centered
+					.text-right This text is right-aligned
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-left"&gt;This text is left-aligned&lt;/div&gt;
+						&lt;div class="text-center"&gt;This text is center-aligned&lt;/div&gt;
+						&lt;div class="text-right"&gt;This text is right-aligned&lt;/div&gt;
+
+			h3 Size
+			p These are generated using values specified in your <span class="var">$font-sizes</span> map. These are useful for altering the visual appearance of semantically correct headings.
+			.example
+				.example-rendered
+					.text-x-large This text is X-Large
+					.text-large This text is Large
+					.text-medium-large This text is Medium-Large
+					.text-medium This text is Medium
+					.text-base This text is Base
+					.text-small This text is Small
+					.text-x-small This text is X-Small
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-x-large"&gt;This text is X-Large&lt;/div&gt;
+						&lt;div class="text-large"&gt;This text is Large&lt;/div&gt;
+						&lt;div class="text-medium-large"&gt;This text is Medium-Large&lt;/div&gt;
+						&lt;div class="text-medium"&gt;This text is Medium&lt;/div&gt;
+						&lt;div class="text-base"&gt;This text is Base&lt;/div&gt;
+						&lt;div class="text-small"&gt;This text is Small&lt;/div&gt;
+						&lt;div class="text-x-small"&gt;This text is X-Small&lt;/div&gt;
+
+			h3 Colors
+			p These are generated using values stored in your <span class="var">$colors</span> map.
+			.example
+				.example-rendered
+					.text-brand-primary Text Brand Primary
+					.text-brand-secondary Text Brand Secondary
+					.text-greyscale-400 Text Greyscale-400
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-brand-primary"&gt;Text Brand Primary&lt;/div&gt;
+						&lt;div class="text-brand-primary"&gt;Text Brand Secondary&lt;/div&gt;
+						&lt;div class="text-greyscale-400"&gt;Text Greyscale-400&lt;/div&gt;
+
+			h3 Transform
+			p Uppercase or capitalized.
+			.example
+				.example-rendered
+					.text-uppercase This text is uppercase
+					.text-capitalized This text is capitalized
+					.text-strikethrough This text is strikedtheought
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="text-uppercase"&gt;This text is uppercase&lt;/div&gt;
+						&lt;div class="text-capitalized"&gt;This text is capitalized&lt;/div&gt;
+
+		section(id="visibility")
+			h2 Visibility
+			p Use this to hide an element altogether, or only for specific screen sizes. A helper class is generated using each value stored in the <span class="var">$breakpoints</span> map.
+
+			.example
+
+				pre.example-code
+					code.language-html.
+						&lt;div class="is-hidden"&gt;&lt;/div&gt;
+						// Hidden at all times.
+
+						&lt;div class="is-hidden-above-device-small"&gt;&lt;/div&gt;
+						// Hides above the device-small breakpoint.
+
+						&lt;div class="is-hidden-below-device-small"&gt;&lt;/div&gt;
+						// Hides below the device-small breakpoint.
+
+		h1.border-top-light.padding-top-14 Composer Classes
+		h3#background-color Background Color
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td Colours specified in $colors map.
+				td.text-center
+					span.label.label-green Yes
+				td.text-center
+					span.label.label-red No
+		h3#background-position Background Position
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "center"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-red No
+		h3#background-size Background Size
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "cover", "contain"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-red No
+		h3#border-radius Border Radius
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td Scale 1 - 5
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-red No
+		h3(i='border') Border
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "light", "dark"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#box-shadow Box Shadow
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "small", "medium", "large", "x-large", "xx-large"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#cursor Cursor
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "not-allowed", "pointer", "default"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-red No
+		h3#display Display
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+					| "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#fill Fill
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td Colours
+				td.text-center
+					span.label.label-red Yes
+				td.text-center
+					span.label.label-green No
+		h3#flex-direction Flex Direction
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "column", "row"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#flex-items Flex Items
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "start", "center", "end"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#float Float
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+					| "left", "right"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#letter-spacing Letter Spacing
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green No
+		h3#line-height Line-height
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+					| "x-small": 1,
+					| "small": 1.2,
+					| "medium": 1.5,
+					| "large": 2
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#margin Margin
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+					| Scale 1 - 15
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#max-width Max-width
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green No
+		h3#opacity Opacity
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+					| Scale 1 - 10
+				td.text-center
+					span.label.label-red Yes
+				td.text-center
+					span.label.label-green No
+		h3#overflow Overflow
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "hidden", "scroll", "visible", "auto"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green No
+		h3#padding Padding
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "hidden", "scroll", "visible", "auto"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#position Position
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "absolute", "fixed", "static", "relative"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green No
+		h3#table Table
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "border-collapse", "layout-fixed"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#text-align Text Align
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "left", "center", "right"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#text-color Text Color
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "left", "center", "right"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#text-decoration Text Decoration
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "underline", "strikethrough"
+				td.text-center
+					span.label.label-red Yes
+				td.text-center
+					span.label.label-green No
+		h3#text-size Text Size
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-green Yes
+		h3#text-transform Text Transform
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "capitalize", "uppercase", "lowercase"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-red No
+		h3#vertical-align Vertical Align
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "top", "middle", "bottom"
+				td.text-center
+					span.label.label-red No
+				td.text-center
+					span.label.label-red No
+		h3#visibility Visibility
+		pre.
+			\n\t\t		
+			\t		
+		table.width-100
+			thead
+				th.text-left Modifiers
+				th Hover
+				th Responsive
+			tr
+				td "visible", "hidden"
+				td.text-center
+					span.label.label-red Yes
+				td.text-center
+					span.label.label-green Yes
+

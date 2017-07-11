@@ -17,11 +17,10 @@ var gulp = require("gulp"),
 /////////////////////////////////////////////////////
 
 gulp.task("jade", function() {
-	gulp.src('docs/views/**/!(_)*.jade')
+	gulp.src('documentation/inc/views/**/!(_)*.jade')
 	.pipe(jade({
 		pretty: true,
 		locals: {
-			data: JSON.parse(fs.readFileSync('docs/views/data.json')),
 			base: "docs/",
 			image_base: "docs/images/",
 			strapline: "A lightweight, modular SASS boilerplate to kickstart your next web project.",
@@ -52,9 +51,9 @@ gulp.task('sass', function () {
 /////////////////////////////////////////////////////
 
 gulp.task("uglify", function() {
-	gulp.src(["docs/javascript/vendor/*.js", "docs/javascript/components/*.js"])
+	gulp.src(["documentation/inc/javascript/vendor/*.js", "documentation/inc/javascript/components/*.js"])
 	.pipe(concat("application.js"))
-	.pipe(gulp.dest("docs/javascript/"));
+	.pipe(gulp.dest("documentation/inc/javascript/"));
 });
 
 /////////////////////////////////////////////////////
@@ -63,8 +62,8 @@ gulp.task("uglify", function() {
 
 gulp.task("watch", function() {
 	gulp.watch(['dist/**/*.sass', 'dist/**/*.scss', 'docs/css/**/*.sass', 'documentation/inc/css/**/*.scss', 'dist/packaged/**/*.scss', 'dist/configurable/**/*.scss'], ['sass']);
-	gulp.watch(['docs/javascript/**/*.js'], ['uglify']);
-	gulp.watch(['docs/views/**/*.jade', 'docs/views/data.json'], ['jade']);
+	gulp.watch(['documentation/inc/javascript/**/*.js'], ['uglify']);
+	gulp.watch(['documentation/inc/views/**/*.jade', 'documentation/views/data.json'], ['jade']);
 });
 
 gulp.task("default", ["watch"], function() {

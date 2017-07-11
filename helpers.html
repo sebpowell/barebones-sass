@@ -1,0 +1,538 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones SASS"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://www.barebones-sass.io/docs/images/og-image.png"/>
+    <meta property="og:url" content="http://barebones-sass.getagent.co.uk/"/>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="documentation/inc/css/style.css"/>
+    <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700" rel="stylesheet"/>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script src="documentation/inc/javascript/application.js"></script>
+    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+      $(document).ready(function() {
+      	$(".docs-navigation").scrollSpy();
+      });
+    </script>
+  </head>
+</html>
+<body class="page-layout-docs">
+  <div class="backdrop"></div>
+  <div class="docs-container">
+    <div class="docs-navigation">
+      <div class="nav-section"><a href="#introduction" class="parent">Introduction</a>
+        <ul class="sub-navigation">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#prerequisites">Requirements</a></li>
+          <li><a href="#installing">Installation</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background reading</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#settings" class="parent">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#br-scale">Border Radius Scale</a></li>
+          <li><a href="#settings-colours">Colors</a></li>
+          <li><a href="#fonts">Letter Spacing</a></li>
+          <li><a href="#grid">Line Heights</a></li>
+          <li><a href="#breakpoints">Global Delimiter</a></li>
+          <li><a href="#sizes">Import</a></li>
+          <li><a href="#layers">Hover Class Name</a></li>
+          <li><a href="#layers">Max-width Scale</a></li>
+          <li><a href="#layers">Responsive</a></li>
+          <li><a href="#layers">Shadows</a></li>
+          <li><a href="#layers">Spacing Scale</a></li>
+          <li><a href="#layers">Spacing Base</a></li>
+          <li><a href="#layers">Spacing Sides</a></li>
+          <li></li><a href="#layers">Text Sizes</a>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#grid" class="parent">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Settings</a></li>
+          <li><a href="#generator">Containers</a></li>
+          <li><a href="#generator">Columns</a></li>
+          <li><a href="#generator">Galleries</a></li>
+          <li><a href="#generator">Helpers</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#mixins" class="parent">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#mixins">Arrow</a></li>
+          <li><a href="#placeholder">Placeholder</a></li>
+          <li><a href="#uppercase">Uppercase</a></li>
+          <li><a href="#clearfix">Clearfix</a></li>
+          <li><a href="#ellipsis">Ellipsis</a></li>
+          <li><a href="#media-queries">Media Queries</a></li>
+          <li><a href="#strip-units">Strip Units</a></li>
+          <li><a href="#convert-to-rem">Convert to REM</a></li>
+          <li><a href="#no-bullet">No Bullet</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#helpers" class="parent">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#background">Background Color</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#margin">Margins & Padding</a></li>
+          <li><a href="#layout">Layout</a></li>
+          <li><a href="#grid">Grid</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#visibility">Visibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="docs-content">
+      <div class="inner">
+        <article id="installing" class="article">
+          <h1 class="border-top-light padding-top-14">Composer Classes</h1>
+          <h3 id="background-color">Background Color</h3>
+          <pre>.background-{$color}  </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Colours specified in $colors map.</td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+        </article>
+        <article id="installing" class="article">
+          <h3 id="background-position">Background Position</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"center"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="background-size">Background Size</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"cover", "contain"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="border-radius">Border Radius</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Scale 1 - 5</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 i="border">Border</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"light", "dark"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="box-shadow">Box Shadow</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"small", "medium", "large", "x-large", "xx-large"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="cursor">Cursor</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"not-allowed", "pointer", "default"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="display">Display</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="fill">Fill</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Colours</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="flex-direction">Flex Direction</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"column", "row"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="flex-items">Flex Items</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"start", "center", "end"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="float">Float</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"left", "right"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="letter-spacing">Letter Spacing</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="line-height">Line-height</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>
+                "x-small": 1,
+                "small": 1.2,
+                "medium": 1.5,
+                "large": 2
+              </td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="margin">Margin</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Scale 1 - 15</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="max-width">Max-width</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="opacity">Opacity</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>Scale 1 - 10</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="overflow">Overflow</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"hidden", "scroll", "visible", "auto"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="padding">Padding</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"hidden", "scroll", "visible", "auto"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="position">Position</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"absolute", "fixed", "static", "relative"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="table">Table</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"border-collapse", "layout-fixed"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-align">Text Align</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"left", "center", "right"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-color">Text Color</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"left", "center", "right"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-decoration">Text Decoration</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"underline", "strikethrough"</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">No</span></td>
+            </tr>
+          </table>
+          <h3 id="text-size">Text Size</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+          <h3 id="text-transform">Text Transform</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"capitalize", "uppercase", "lowercase"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="vertical-align">Vertical Align</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"top", "middle", "bottom"</td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+              <td class="text-center"><span class="label label-red">No</span></td>
+            </tr>
+          </table>
+          <h3 id="visibility">Visibility</h3>
+          <pre>\n\t\t    
+\t    </pre>
+          <table class="width-100">
+            <thead>
+              <th class="text-left">Modifiers</th>
+              <th>Hover</th>
+              <th>Responsive</th>
+            </thead>
+            <tr>
+              <td>"visible", "hidden"</td>
+              <td class="text-center"><span class="label label-red">Yes</span></td>
+              <td class="text-center"><span class="label label-green">Yes</span></td>
+            </tr>
+          </table>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>

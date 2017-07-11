@@ -8,9 +8,9 @@
 	$type: type-of($value);
 
 	@if $type == "map" {
-		@each $color, $value in map-deep-get($bb-colors, $category) {
+		@each $color, $value in map-deep-get($colors, $category) {
 			@if type-of($value) == "map" {
-				@each $c, $v in map-deep-get($bb-colors, $category, $color) {
+				@each $c, $v in map-deep-get($colors, $category, $color) {
 					.background-#{$category}-#{$color}-#{$c} {
 						background-color: $v;
 					}
