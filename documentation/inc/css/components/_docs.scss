@@ -110,27 +110,27 @@ body {
     font-size: 32px;
   }
 
-  a {
-    text-decoration: none !important;
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      width: 100%;
-      left: 0;
-      height: 2px;
-      background: colors(keyline);
+  // a {
+  //   text-decoration: none !important;
+  //   position: relative;
+  //   &:after {
+  //     content: "";
+  //     position: absolute;
+  //     top: 100%;
+  //     width: 100%;
+  //     left: 0;
+  //     height: 2px;
+  //     background: colors(keyline);
 
 
-    }
-    &:hover {
+  //   }
+  //   &:hover {
      
-      &:after {
-        background: darken(colors(keyline), 20%);
-      }
-    }
-  }
+  //     &:after {
+  //       background: darken(colors(keyline), 20%);
+  //     }
+  //   }
+  // }
 
 
 

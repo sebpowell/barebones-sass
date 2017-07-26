@@ -8,6 +8,40 @@ block body
 
 			p It doesn't have any Javascript code inside and it's design agnostic, which means that you don't have to design for the framework and the framework adapts on your design. Only the bare essentials are included – so you can spend less time overwriting and more time creating. Unopinionated
 
+
+			.example.background-greyscale-x-light.demo-airbnb
+				.padding-15
+					.padding-8.max-width-500.margin-auto.background-white.box-shadow-xx-large
+						.demo-button.demo-button-facebook.width-100.margin-bottom-2 Log in with Facebook
+						.demo-button.demo-button-empty.width-100.margin-bottom-3 Log in with Google
+
+						.margin-bottom-4
+							input(type="text" placeholder="Email")
+						.margin-bottom-4
+							input(type="password" placeholder="Password")
+
+
+						.border-top.text-center
+							.background-white.padding-horizontal-5.display-inline-block.position-relative(style="top: -10px") or
+
+						.margin-bottom-2
+							.clearfix
+								.float-left
+									input(type="checkbox")
+
+								.float-right
+									a.text-15.text-brand.text-underline-hover(href="#") Forgot your password?
+
+
+						.margin-bottom-3
+							.demo-button.width-100 Log in
+
+
+						.border-top.margin-bottom-3 
+
+						.text-center
+							.text-15 Don’t have an account?Sign up
+
 		section(id="prerequisites")
 			h2 Prerequisites
 			p Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Instructions can be found <a href="http://sass-lang.com/install" target="_blank">here</a>.
@@ -116,6 +150,48 @@ block body
 		section(id="settings-intro")
 			h1.page-title Settings
 
+
+
+		section(id="settings-border-radius")
+			h2 Border Radius
+			p Sets the scale for .border-radius classes. 
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+						$bb-border-radius-scale: 5;
+
+						// This will generate border-radius helpers starting from 1 - 5.
+
+						.border-radius-1 {
+							border-radis: 1px;
+						}
+
+						...
+
+						.border-radius-5 {
+							border-radius: 5px;
+						}
+
+
+			
+
+
+		section(id="settings-border-radius")
+			h2 Breakpoints
+
+			p Stores your breakpoints. This is used by the media-query mixin, and by the responsive helper generator will be generated for every. 
+
+			p You can access using the <span class="inline-code">colors($category, $value)</span> function.
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+						$bb-breakpoints: (
+							"medium": 780px
+						);
+
+
 		section(id="settings-colours")
 			h3 Colors
 			p Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.
@@ -146,12 +222,112 @@ block body
 						// Access like this
 						.element {
 							background-color: colors(brand, primary);
+						
+
+		section(id="settings-border-radius")
+			h2 Line Heights
+
+			p Stores your line-heights. Used by the line-height helper generator.  
+
+			p You can access using the <span class="inline-code">colors($category, $value)</span> function.
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+						$bb-line-heights: (
+							"small": 1,
+							"medium": 1.5,
+							"large": 2
+						);
+
+
+		section(id="settings-border-radius")
+			h2 Global Delimiter
+
+			p Specifies how multi-word classes are separated. 
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+						$bb-global-delimiter: "-";
+
+						// Generates classes that are structured like this
+						.background-cover
+
+
+						$bb-global-delimiter_ "-";
+						// Generates classes that are structured like this
+						.background_cover
+
+
+		section(id="settings-border-radius")
+			h2 Helpers
+
+			p Specify which helper classes you want included in your project, and how you want them to be called. By default, all helpers are imported. 
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+						// The vertical-align helper will not be included in the build.
+						$bb-helpers: (
+							"vertical-align: false
+						);
+
+
+
+						// The vertical-align helper syntax will look like this
+						.vertical-align-middle {
+							vertical-align: middle;
 						}
+
+						$bb-helpers: (
+							"vertical-align: "vertical-align",
+						);
+
+
+
+						// The vertical-align helper syntax will look like this
+						.vertical-align-middle {
+							vertical-align: middle;
+						}
+
+
+						$bb-helpers: (
+							"vertical-align: "verticalAlign",
+						);
+
+						$bb-helpers: (
+							"vertical-align: "va",
+						);
+
+
+		section(id="settings-border-radius")
+			h2 $bb-hover-class-name
+
+			p Specify the name for hover classes.
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+
+
+		section(id="settings-border-radius")
+			h2 $bb-max-width-scale
+
+			p Specify the name for hover classes.
+
+			.example.margin-bottom-double
+				pre.example-code.border-bottom
+					code.language-scss.
+
+
+
+
 
 
 	section(id="mixins")
 		section(id="arrow")
-			h2 Arrow
+			h2 @mixin arrow($color, $size, $direction)
 			p Creates a triangle, used for things like tooltips or dropdowns.
 
 			table.table-lined.margin-bottom-double

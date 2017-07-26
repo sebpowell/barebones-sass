@@ -1,6 +1,99 @@
 $bb-colors: (
+
+	"brand": blue, 
+
+	"greyscale": (
+		"x-light": #e5e5e5
+	),
 	"keyline": #e5e5e5,
+);
+
+$bb-spacing-scale: 15;
+
+$bb-spacing-base: 5px;
+
+$bb-text-sizes: (
+	"11": 11px,
+	"13": 13px,
+	"15": 15px,
 );
 
 @import "../../../dist/configurable/_base";
 @import "components/components";
+
+
+
+$fonts: (
+	(
+		"name": #{"Miller Display", Helvetica},
+		"weights": (
+			"roman": 100,
+			"semi": 200
+		),
+	),
+
+	(
+		"name": #{"Avenir Next", Helvetica},
+		"weights": (
+			"bold": 100,
+			"thin": 200
+		)
+	)
+);
+
+
+
+@each $k, $v in $fonts {
+	@debug $v;
+	@each $weight, $value in map-deep-get($k, "weights") {
+	// 	.text-#{$k}-#{$weight} {
+		@debug $weight;
+	// 		font-weight: $value;
+	// 	}
+	}
+}
+
+
+@mixin input {
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="url"],
+	input[type="date"],
+	input[type="tel"],
+	input[type="search"],
+	select {
+		@content;
+	}
+}
+
+.button {
+	background-color: colors(brand);
+	border: 0;
+	display: inline-block;
+	color: white;
+	padding: 0 sizes(6);
+	height: 45px;
+	line-height: 45px;
+	border-radius: 100px;
+}
+
+
+@include input {
+
+	// font-family: map-deep-get("avenir-next");
+	border: 1px solid colors(keyline);
+	height: 50px;
+	font-size: 16px;
+	width: 100%;
+	padding-left: sizes(3);
+}
+
+
+
+
+
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}

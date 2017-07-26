@@ -11,6 +11,7 @@
     <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
     <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="documentation/inc/css/style.css"/>
+    <link rel="stylesheet" href="documentation/inc/css/style-2.css"/>
     <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
     <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
@@ -30,9 +31,9 @@
     <script>
       hljs.initHighlightingOnLoad();
       
-      $(document).ready(function() {
-      	$(".docs-navigation").scrollSpy();
-      });
+      //- $(document).ready(function() {
+      //- 	$(".docs-navigation").scrollSpy();
+      //- });
     </script>
   </head>
 </html>
@@ -108,6 +109,38 @@
             <h1>Introduction</h1>
             <p>Barebones is a boilerplate to help you build your own UI framework. It is not a fully-fledged UI kit or library (Bootstrap, Foundation etc), but a set of tools common to all projects; a grid system and commonly used utility classes and mixins, put together in a convenient package to kickstart your next project.</p>
             <p>It doesn't have any Javascript code inside and it's design agnostic, which means that you don't have to design for the framework and the framework adapts on your design. Only the bare essentials are included – so you can spend less time overwriting and more time creating. Unopinionated</p>
+            <div class="example background-greyscale-x-light demo-airbnb">
+              <div class="padding-15">
+                <div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large">
+                  <div class="demo-button demo-button-facebook width-100 margin-bottom-2">Log in with Facebook</div>
+                  <div class="demo-button demo-button-empty width-100 margin-bottom-3">Log in with Google</div>
+                  <div class="margin-bottom-4">
+                    <input type="text" placeholder="Email"/>
+                  </div>
+                  <div class="margin-bottom-4">
+                    <input type="password" placeholder="Password"/>
+                  </div>
+                  <div class="border-top text-center">
+                    <div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative">or</div>
+                  </div>
+                  <div class="margin-bottom-2">
+                    <div class="clearfix">
+                      <div class="float-left">
+                        <input type="checkbox"/>
+                      </div>
+                      <div class="float-right"><a href="#" class="text-15 text-brand text-underline-hover">Forgot your password?</a></div>
+                    </div>
+                  </div>
+                  <div class="margin-bottom-3">
+                    <div class="demo-button width-100">Log in</div>
+                  </div>
+                  <div class="border-top margin-bottom-3"> </div>
+                  <div class="text-center">
+                    <div class="text-15">Don’t have an account?Sign up</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <section id="prerequisites">
             <h2>Prerequisites</h2>
@@ -193,6 +226,42 @@ $bb-text-sizes: ();
           <section id="settings-intro">
             <h1 class="page-title">Settings</h1>
           </section>
+          <section id="settings-border-radius">
+            <h2>Border Radius</h2>
+            <p>Sets the scale for .border-radius classes. </p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss">$bb-border-radius-scale: 5;
+
+// This will generate border-radius helpers starting from 1 - 5.
+
+.border-radius-1 {
+	border-radis: 1px;
+}
+
+...
+
+.border-radius-5 {
+	border-radius: 5px;
+}
+
+
+
+
+</code></pre>
+            </div>
+          </section>
+          <section id="settings-border-radius">
+            <h2>Breakpoints</h2>
+            <p>Stores your breakpoints. This is used by the media-query mixin, and by the responsive helper generator will be generated for every. </p>
+            <p>You can access using the <span class="inline-code">colors($category, $value)</span> function.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss">$bb-breakpoints: (
+	"medium": 780px
+);
+
+</code></pre>
+            </div>
+          </section>
           <section id="settings-colours">
             <h3>Colors</h3>
             <p>Stores your colour palette in a organised way. Access using the <span class="var">colors($category, $value)</span> function.</p>
@@ -221,15 +290,102 @@ $bb-text-sizes: ();
 // Access like this
 .element {
 	background-color: colors(brand, primary);
-}
 
 </code></pre>
+            </div>
+          </section>
+          <section id="settings-border-radius">
+            <h2>Line Heights</h2>
+            <p>Stores your line-heights. Used by the line-height helper generator.  </p>
+            <p>You can access using the <span class="inline-code">colors($category, $value)</span> function.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss">$bb-line-heights: (
+	"small": 1,
+	"medium": 1.5,
+	"large": 2
+);
+
+</code></pre>
+            </div>
+          </section>
+          <section id="settings-border-radius">
+            <h2>Global Delimiter</h2>
+            <p>Specifies how multi-word classes are separated. </p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss">$bb-global-delimiter: "-";
+
+// Generates classes that are structured like this
+.background-cover
+
+
+$bb-global-delimiter_ "-";
+// Generates classes that are structured like this
+.background_cover
+
+</code></pre>
+            </div>
+          </section>
+          <section id="settings-border-radius">
+            <h2>Helpers</h2>
+            <p>Specify which helper classes you want included in your project, and how you want them to be called. By default, all helpers are imported. </p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss">// The vertical-align helper will not be included in the build.
+$bb-helpers: (
+	"vertical-align: false
+);
+
+
+
+// The vertical-align helper syntax will look like this
+.vertical-align-middle {
+	vertical-align: middle;
+}
+
+$bb-helpers: (
+	"vertical-align: "vertical-align",
+);
+
+
+
+// The vertical-align helper syntax will look like this
+.vertical-align-middle {
+	vertical-align: middle;
+}
+
+
+$bb-helpers: (
+	"vertical-align: "verticalAlign",
+);
+
+$bb-helpers: (
+	"vertical-align: "va",
+);
+
+</code></pre>
+            </div>
+          </section>
+          <section id="settings-border-radius">
+            <h2>$bb-hover-class-name</h2>
+            <p>Specify the name for hover classes.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss"></code></pre>
+            </div>
+          </section>
+          <section id="settings-border-radius">
+            <h2>$bb-max-width-scale</h2>
+            <p>Specify the name for hover classes.</p>
+            <div class="example margin-bottom-double">
+              <pre class="example-code border-bottom"><code class="language-scss"></code>
+
+
+
+</pre>
             </div>
           </section>
         </section>
         <section id="mixins">
           <section id="arrow">
-            <h2>Arrow</h2>
+            <h2>@mixin arrow($color, $size, $direction)</h2>
             <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
             <table class="table-lined margin-bottom-double">
               <thead>
