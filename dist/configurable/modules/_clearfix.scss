@@ -1,9 +1,21 @@
-@if map-get($bb-helpers, clearfix) != false {
-	.#{map-get($bb-helpers, clearfix)} {
+$bb-clearfix-default: (
+	"import": true,
+	"name": "clearfix"
+);
+
+$bb-clearfix: () !default;
+
+$bb-clearfix: map-merge($bb-clearfix-default, $bb-clearfix);
+
+@if (map-get($bb-clearfix, "import") == true) {
+
+	$className: map-get($bb-clearfix, "name");
+	
+	.#{$className} {
 		@include clearfix;
 	}
 
-	.no#{$bb-global-delimiter}clearfix {
+	.no#{$bb-global-delimiter}#{$className} {
 		&:before, &:after {
 			content: normal !important;
 		}

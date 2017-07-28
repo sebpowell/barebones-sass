@@ -1,0 +1,21 @@
+$bb-flex-direction-default: (
+	"import": true,
+	"name": "flex-direction",
+	"modifiers": (
+		"column": "column",
+		"row": "row"
+	)
+);
+
+$bb-flex-direction: () !default;
+
+$bb-flex-direction: map-merge($bb-flex-direction-default, $bb-flex-direction);
+
+@if (map-get($bb-flex-direction, "import") == true) {
+
+	$className: map-get($bb-flex-direction, "name");
+
+	@each $k, $v in map-deep-get($bb-flex-direction, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "flex-direction: #{$k}");
+	}
+}

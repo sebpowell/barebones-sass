@@ -1,19 +1,32 @@
 $bb-grid-default: (
 	"columns": 12,
 	"gutter": 20px,
-	"breakpoint": 780px
+	"breakpoint": 780px,
+	"container": "columns"
 ) !default;
 
 $bb-grid: () !default;
 
-@if map-get($bb-helpers, columns) != false {
-	
-	$config: map-merge($bb-grid-default, $bb-grid);
-	$className:  map-get($bb-helpers, columns);
+$bb-grid: map-merge($bb-grid-default, $bb-grid);
 
-	$breakpoint: map-get($config, breakpoint);
-	$columns:  map-get($config, columns);
-	$gutter:  map-get($config, gutter);
+$bb-columns: (
+	"import": true,
+	"name": "columns"
+) !default;
+
+$bb-offset: (
+	"import": true,
+	"name": "offset"
+) !default;
+
+
+$breakpoint: map-get($bb-grid, "breakpoint");
+$columns:  map-get($bb-grid, "columns");
+$gutter:  map-get($bb-grid, "gutter");
+
+@if (map-get($bb-columns, "import") != false) {
+
+	$className:  map-get($bb-columns, "name");
 
 	// Generate column helper classes.
 	@for $i from 1 through $columns {
@@ -35,7 +48,7 @@ $bb-grid: () !default;
 	}
 
 	// Generate breakpoint-specific column helper classes.
-	@if map-get($bb-helpers, responsive) != false {
+	@if ($bb-responsive != false) {
 		@each $key, $value in $bb-breakpoints {
 			@for $i from 1 through $columns {
 				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}above#{$bb-global-delimiter}#{$key} {
@@ -71,33 +84,8 @@ $bb-grid: () !default;
 		}
 	}
 
-	// Generates classes for column offsets.
-	@for $i from 1 through $columns {
-		.offset#{$bb-global-delimiter}#{$i} {
-			@include if-above($breakpoint) {
-				margin-left: $i * (100% /  $columns);
-			}
-		}
-
-		@if map-get($bb-helpers, responsive) != false {
-			@each $breakpoint, $value in $bb-breakpoints {
-				.offset#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}above#{$bb-global-delimiter}#{$breakpoint} {
-					@include if-above($value) {
-						margin-left: $i * (100% /  $columns);
-					}
-				}
-
-				.offset#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}below#{$bb-global-delimiter}#{$breakpoint} {
-					@include if-below($value) {
-						margin-left: $i * (100% /  $columns);
-					}
-				}
-			}
-		}
-	}
-
 	// Column container.
-	.#{$className} {
+	.#{map-get($bb-grid, "container")} {
 		@include clearfix;
 		margin-left: -( $gutter / 2);
 		margin-right: -( $gutter / 2);
@@ -124,6 +112,35 @@ $bb-grid: () !default;
 				margin-right: -($gutter);
 				> [class^="#{$className}"] {
 					padding: 0 $gutter;
+				}
+			}
+		}
+	}
+}
+
+@if (map-get($bb-offset, "import") != false) {
+
+	$className:  map-get($bb-offset, "name");
+
+	@for $i from 1 through $columns {
+		.#{$className}#{$bb-global-delimiter}#{$i} {
+			@include if-above($breakpoint) {
+				margin-left: $i * (100% /  $columns);
+			}
+		}
+
+		@if $bb-responsive != false {
+			@each $breakpoint, $value in $bb-breakpoints {
+				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}above#{$bb-global-delimiter}#{$breakpoint} {
+					@include if-above($value) {
+						margin-left: $i * (100% /  $columns);
+					}
+				}
+
+				.#{$className}#{$bb-global-delimiter}#{$i}#{$bb-global-delimiter}below#{$bb-global-delimiter}#{$breakpoint} {
+					@include if-below($value) {
+						margin-left: $i * (100% /  $columns);
+					}
 				}
 			}
 		}

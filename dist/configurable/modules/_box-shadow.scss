@@ -1,6 +1,15 @@
-@if map-get($bb-helpers, box-shadow) != false {
-	
-	$className: map-get($bb-helpers, box-shadow);
+$bb-box-shadow-default: (
+	"import": true,
+	"name": "box-shadow"
+);
+
+$bb-box-shadow: () !default;
+
+$bb-box-shadow: map-merge($bb-box-shadow-default, $bb-box-shadow);
+
+@if (map-get($bb-box-shadow, "import") == true) {
+
+	$className: map-get($bb-box-shadow, "name");
 
 	.no#{$bb-global-delimiter}#{$className} {
 		box-shadow: none !important;

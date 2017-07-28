@@ -1,16 +1,24 @@
-@if map-get($bb-helpers, text-transform) != false {
+$bb-text-transform-default: (
+	"import": true,
+	"name": "text-transform",
+	"modifiers": (
+		"uppercase": "uppercase",
+		"lowercase": "lowercase",
+		"capitalize": "capitalize"
+	)
+);
+
+$bb-text-transform: () !default;
+
+$bb-text-transform: map-merge($bb-text-transform-default, $bb-text-transform);
+
+@if (map-get($bb-text-transform, "import") == true) {
 	
-	$className: map-get($bb-helpers, text-transform);
+	$className: map-get($bb-text-transform, "name");
 
-	.#{$className}#{$bb-global-delimiter}uppercase {
-		text-transform: uppercase;
-	}
-
-	.#{$className}#{$bb-global-delimiter}lowercase {
-		text-transform: lowercase;
-	}
-
-	.#{$className}#{$bb-global-delimiter}capitalize {
-		text-transform: capitalize;
+	@each $key, $value in map-deep-get($bb-position, "modifiers") {
+		.#{$className}#{$bb-global-delimiter}#{$value} {
+			text-transform: $key;
+		}
 	}
 }

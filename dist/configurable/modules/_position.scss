@@ -1,7 +1,23 @@
-@if map-get($bb-helpers, position) != false {
-	$className: map-get($bb-helpers, position);
-	@include helpers("#{$className}#{$bb-global-delimiter}absolute", "position: absolute");
-	@include helpers("#{$className}#{$bb-global-delimiter}fixed", "position: fixed");
-	@include helpers("#{$className}#{$bb-global-delimiter}relative", "position: relative");
-	@include helpers("#{$className}#{$bb-global-delimiter}static", "position: static");
+$bb-position-default: (
+	"import": true,
+	"name": "position",
+	"modifiers": (
+		"absolute": "absolute",
+		"static": "static",
+		"relative": "relative",
+		"fixed": "fixed"
+	)
+);
+
+$bb-position: () !default;
+
+$bb-position: map-merge($bb-position-default, $bb-position);
+
+@if (map-get($bb-position, "import") == true) {
+
+	$className: map-get($bb-position, "name");
+
+	@each $key, $value in map-deep-get($bb-position, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$value}", "position: #{$key}");
+	}
 }

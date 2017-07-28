@@ -1,6 +1,6 @@
-$bb-border-radius-scale: 5;
+$bb-border-radius-scale: 0;
 
-$bb-breakpoints: ("medium": 780px) !default;
+$bb-breakpoints: () !default;
 
 $bb-colors: () !default;
 
@@ -10,76 +10,22 @@ $bb-line-heights: () !default;
 
 $bb-global-delimiter: "-" !default;
 
-$bb-helpers-default: (
-	"aspect-ratio": "aspect-ratio",
-	"background-color": "background",
-	"background-position": "background",
-	"background-size": "background",
-	"background-repeat": "background",
-	"border-radius": "border-radius",
-	"border": "border",
-	"box-shadow": "box-shadow",
-	"clearfix": "clearfix",
-	"columns": "columns",
-	"container": "max-width",
-	"coordinates": "coordinates",
-	"cursor": "cursor",
-	"display": "display",
-	"font-weight": "weight",
-	"fill": "fill",
-	"flex": "flex",
-	"float": "float",
-	"height": "height",
-	"letter-spacing": "letter-spacing",
-	"line-height": "line-height",
-	"list": "list",
-	"max-width": "max-width",
-	"order": "order",
-	"offset": "offset",
-	"opacity": "opacity",
-	"overflow": "overflow",
-	"margin": "margin",
-	"padding": "padding",
-	"position": "position",
-	"table": "table",
-	"text-align": "text",
-	"text-color": "text",
-	"text-decoration": "text",
-	"text-ellipsis": "text-ellipsis",
-	"text-size": "text",
-	"text-transform": "text",
-	"transition": "transition",
-	"vertical-align": "vertical-align",
-	"visibility": "visibility",
-	"z-index": "z-index",
-) !default;
+$bb-hover-class-name: "" !default;
 
-$bb-helpers: () !default;
-
-$bb-helpers: map-merge($bb-helpers-default, $bb-helpers) !global;
-
-$bb-hover-class-name: "hover" !default;
-
-$bb-max-width-scale: 14 !default;
+$bb-max-width-scale: 0 !default;
 
 $bb-responsive: true !default;
 
+$bb-normalize: true !default;
+
 $bb-shadows: () !default;
 
-$bb-spacing-scale: 10 !default;
+$bb-spacing-scale: 0 !default;
 
-$bb-spacing-base: 4px !default;
-
-$bb-spacing-sides: (
-	"top": "top",
-	"bottom": "bottom",
-	"left": "left", 
-	"right": "right",
-	"vertical": "vertical",
-	"horizontal": "horizontal"
-) !default;
+$bb-spacing-base: 0 !default;
 
 $bb-text-sizes: () !default;
 
 @import "mixins/mixins";
+
 @import "modules/modules";

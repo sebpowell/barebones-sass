@@ -1,6 +1,16 @@
-@if map-deep-get($bb-helpers, max-width) != false {
+$bb-max-width-default: (
+	"import": true,
+	"name": "max-width"
+);
 
-	$className: map-get($bb-helpers, max-width);
+$bb-max-width: () !default;
+
+$bb-max-width: map-merge($bb-max-width-default, $bb-max-width);
+
+@if (map-get($bb-max-width, "import") == true) {
+
+	$className: map-get($bb-max-width, "name");
+	
 	$i: 1;
 	
 	@while $i <= $bb-max-width-scale {

@@ -1,18 +1,31 @@
-@if map-get($bb-helpers, top) != false {
+$bb-top-default: (
+	"import": true,
+	"name": "top",
+	"modifiers": (
+		"auto": "auto",
+	)
+);
+
+$bb-top: () !default;
+
+$bb-top: map-merge($bb-top-default, $bb-top);
+
+@if (map-get($bb-top, "import") == true) {
 
 	$i: 0;
+
+	$className: map-get($bb-top, "name");
 
 	@while $i <= $bb-spacing-scale {
 
 		$n: $i * strip-unit($bb-spacing-base);
 
-		@include helpers("top-#{$i}", "top: #{$n}px");
+		@include helpers("#{$className}-#{$i}", "top: #{$n}px");
 		
 		$i: $i + 1;
 	}
 
-	.top-auto {
+	.#{$className}-#{map-deep-get($bb-top, "modifiers", "auto")} {
 		top: auto !important;
 	}
 }
-

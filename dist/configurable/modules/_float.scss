@@ -1,6 +1,23 @@
-@if map-get($bb-helpers, float) != false {
-	$className: map-get($bb-helpers, float);
-	@include helpers("#{$className}-left", "float: left");
-	@include helpers("#{$className}-right", "float: right");
+$bb-float-default: (
+	"import": true,
+	"name": "float",
+	"modifiers": (
+		"left": "left",
+		"right": "right"
+	)
+);
+
+$bb-float: () !default;
+
+$bb-float: map-merge($bb-float-default, $bb-float);
+
+@if (map-get($bb-float, "import") == true) {
+
+	$className: map-get($bb-float, "name");
+	
+	@each $k, $v in map-deep-get($bb-float, "modifiers") {
+		@include helpers("#{$className}-#{$v}", "float: #{$k}");
+	}
+	
 	@include helpers("no-#{$className}", "float: none");
 }

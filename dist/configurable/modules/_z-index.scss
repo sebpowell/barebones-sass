@@ -1,6 +1,16 @@
-@if map-get($bb-helpers, z-index) != false {
+$bb-z-index-default: (
+	"import": true,
+	"name": "z-index"
+);
 
-	$className: map-get($bb-helpers, z-index);
+$bb-z-index: () !default;
+
+$bb-z-index: map-merge($bb-z-index-default, $bb-z-index);
+
+@if (map-get($bb-z-index, "import") == true) {
+
+	$className: map-get($bb-z-index, "name");
+	
 	$i: 0;
 
 	@while $i <= 10 {

@@ -1,6 +1,22 @@
-@if map-get($bb-helpers, vertical-align) != false {
-	$className: map-get($bb-helpers, vertical-align);
-	@include helpers("#{$className}#{$bb-global-delimiter}top", "vertical-align: top");
-	@include helpers("#{$className}#{$bb-global-delimiter}middle", "vertical-align: middle");
-	@include helpers("#{$className}#{$bb-global-delimiter}bottom", "vertical-align: bottom");
+$bb-vertical-align-default: (
+	"import": true,
+	"name": "vertical-align",
+	"modifiers": (
+		"top": "top",
+		"middle": "middle",
+		"bottom": "bottom"
+	)
+);
+
+$bb-vertical-align: () !default;
+
+$bb-vertical-align: map-merge($bb-vertical-align-default, $bb-vertical-align);
+
+@if (map-get($bb-vertical-align, "import") == true) {
+	
+	$className: map-get($bb-vertical-align, "name");
+
+	@each $key, $value in map-deep-get($bb-vertical-align, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$value}", "vertical-align: #{$key}");
+	}
 }

@@ -1,19 +1,25 @@
-@if map-get($bb-helpers, overflow) != false {
+$bb-overflow-default: (
+	"import": true,
+	"name": "overflow",
+	"modifiers": (
+		"hidden": "hidden",
+		"scroll": "scroll",
+		"visible": "visible",
+		"auto": "auto",
+	)
+);
 
-	$className: map-get($bb-helpers, overflow);
+$bb-overflow: () !default;
 
-	@include helpers("#{$className}#{$bb-global-delimiter}hidden", "overflow: hidden");
-	@include helpers("#{$className}#{$bb-global-delimiter}scroll", "overflow: scroll");
-	@include helpers("#{$className}#{$bb-global-delimiter}visible", "overflow: visible");
-	@include helpers("#{$className}#{$bb-global-delimiter}auto", "overflow: auto");
+$bb-overflow: map-merge($bb-overflow-default, $bb-overflow);
 
-	@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}hidden", "overflow-x: hidden");
-	@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}scroll", "overflow-x: scroll");
-	@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}visible", "overflow-x: visible");
-	@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}auto", "overflow-x: auto");
+@if (map-get($bb-overflow, "import") == true) {
 
-	@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}hidden", "overflow-y: hidden");
-	@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}scroll", "overflow-y: scroll");
-	@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}visible", "overflow-y: visible");
-	@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}auto", "overflow-y: auto");
+	$className: map-get($bb-overflow, "name");
+
+	@each $k, $v in map-deep-get($bb-overflow, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "overflow: #{$k}");
+		@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}#{$v}", "overflow-y: #{$k}");
+		@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}#{$v}", "overflow-x: #{$k}");
+	}
 }

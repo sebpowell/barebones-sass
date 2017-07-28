@@ -17,18 +17,40 @@ $bb-spacing-scale: 15;
 
 $bb-spacing-base: 4px;
 
+$bb-normalize: false;
+
+
 @import "../../../dist/configurable/_base";
-@import "components/components";
+// @import "components/components";
 
 
 .demo-airbnb {
 
 	> * {
 		font-family: "circular std";
+		font-weight: 300;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	.checkbox {
+		.checkbox-input {
+			@include square(18px);
+			border: 1px solid colors(keyline);
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: sizes(1);
+		}
+
+		.checkbox-label {
+			display: inline-block;
+			font-size: 20px;
+			vertical-align: middle;
+		}
 	}
 
 	.demo-button {
 		border: 0;
+		cursor: pointer;
 		display: inline-block;
 		color: white;
 		text-align: center;
@@ -52,9 +74,18 @@ $bb-spacing-base: 4px;
 		}
 	}
 
-	input {
-		font-weight: 100;
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="url"],
+	input[type="date"],
+	input[type="tel"],
+	input[type="search"] {
+		font-weight: 300;
 		height: 48px;
+		font-size: 20px;
+		border-radius: 2px;
 		border: 1px solid colors(keyline);
 
 		&:focus {

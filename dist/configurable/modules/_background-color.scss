@@ -1,6 +1,15 @@
-@if map-get($bb-helpers, background-color) != false {
+$bb-background-color-default: (
+	"import": true,
+	"name": "background-color"
+);
 
-	$className: map-get($bb-helpers, background-color);
+$bb-background-color: () !default;
+
+$bb-background-color: map-merge($bb-background-color-default, $bb-background-color);
+
+@if (map-get($bb-background-color, "import") == true) {
+
+	$className: map-get($bb-background-color, "name");
 	
 	.#{$className}-white {
 		background-color: white;
@@ -54,3 +63,4 @@
 		}
 	}
 }
+

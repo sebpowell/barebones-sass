@@ -1,10 +1,26 @@
-@if map-get($bb-helpers, display) != false {
-	$className: map-get($bb-helpers, display);
-	@include helpers("#{$className}#{$bb-global-delimiter}none", "display: none");
-	@include helpers("#{$className}#{$bb-global-delimiter}block", "display: block");
-	@include helpers("#{$className}#{$bb-global-delimiter}inline-block", "display: inline-block");
-	@include helpers("#{$className}#{$bb-global-delimiter}table", "display: table");
-	@include helpers("#{$className}#{$bb-global-delimiter}table#{$bb-global-delimiter}row", "display: table-row");
-	@include helpers("#{$className}#{$bb-global-delimiter}table#{$bb-global-delimiter}cell", "display: table-cell");
-	@include helpers("#{$className}#{$bb-global-delimiter}flex", "display: flex");
+$bb-display-default: (
+	"import": true,
+	"name": "display",
+	"modifiers": (
+		"none": "none",
+		"block": "block",
+		"inline-block": "inline-block",
+		"table": "table",
+		"table-row": "table-row",
+		"table-cell": "table-cell",
+		"flex": "flex"
+	)
+);
+
+$bb-display: () !default;
+
+$bb-display: map-merge($bb-display-default, $bb-display);
+
+@if (map-get($bb-display, "import") == true) {
+	
+	$className: map-get($bb-display, "name");
+
+	@each $k, $v in map-deep-get($bb-display, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "display: #{$k}");
+	}
 }

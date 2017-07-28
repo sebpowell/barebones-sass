@@ -1,6 +1,15 @@
-@if map-get($bb-helpers, text-size) != false {
+$bb-text-size-default: (
+	"import": true,
+	"name": "text"
+);
 
-	$className: map-get($bb-helpers, text-size);
+$bb-text-size: () !default;
+
+$bb-text-size: map-merge($bb-text-size-default, $bb-text-size);
+
+@if (map-get($bb-text-size, "import") == true) {
+
+	$className: map-get($bb-text-size, "name");
 
 	@each $name, $size in $bb-text-sizes {
 		@include helpers("#{$className}#{$bb-global-delimiter}#{$name}", "font-size: #{$size}");

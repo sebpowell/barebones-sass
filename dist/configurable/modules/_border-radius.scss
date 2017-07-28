@@ -1,8 +1,25 @@
-@if map-get($bb-helpers, border-radius) != false {
+$bb-border-radius-default: (
+	"import": true,
+	"name": "border-radius",
+	"modifiers": (
+		"top": "top",
+		"top-left": "top-left",
+		"top-right": "top-right",
+		"bottom": "bottom",
+		"bottom-left": "bottom-left",
+		"bottom-right": "bottom-right"
+	)
+);
+
+$bb-border-radius: () !default;
+
+$bb-border-radius: map-merge($bb-border-radius-default, $bb-border-radius);
+
+@if (map-get($bb-border-radius, "import") == true) {
 
 	$i: 1;
 
-	$className: #{map-get($bb-helpers, border-radius)};
+	$className: map-get($bb-border-radius, "name");
 
 	@while $i <= $bb-border-radius-scale {
 		
@@ -10,8 +27,8 @@
 			border-radius: $i+px;
 		}
 
-		@each $side in top, top-left, top-right, bottom, bottom-left, bottom-right {
-			.#{$className}#{$bb-global-delimiter}#{$side}#{$bb-global-delimiter}#{$i} {
+		@each $side, $value in map-deep-get($bb-border-radius, "modifiers") {
+			.#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i} {
 				$v: $i + px;
 				@if $side == "top" {
 					border-top-left-radius: $v;
@@ -43,7 +60,7 @@
 		border-radius: 0 !important;
 	}
 
-	@each $side in top, top-left, top-right, bottom, bottom-left, bottom-right {
+	@each $side, $value in map-deep-get($bb-border-radius, "modifiers") {
 		.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}#{$side} {
 			@if $side == "top" {
 				border-top-left-radius: 0 !important;

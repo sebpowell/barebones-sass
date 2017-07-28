@@ -1,18 +1,31 @@
-@if map-get($bb-helpers, right) != false {
+$bb-right-default: (
+	"import": true,
+	"name": "right",
+	"modifiers": (
+		"auto": "auto",
+	)
+);
+
+$bb-right: () !default;
+
+$bb-right: map-merge($bb-right-default, $bb-right);
+
+@if (map-get($bb-right, "import") == true) {
 
 	$i: 0;
+
+	$className: map-get($bb-right, "name");
 
 	@while $i <= $bb-spacing-scale {
 
 		$n: $i * strip-unit($bb-spacing-base);
 
-		@include helpers("right-#{$i}", "right: #{$n}px");
+		@include helpers("#{$className}-#{$i}", "right: #{$n}px");
 		
 		$i: $i + 1;
 	}
 
-	.right-auto {
+	.#{$className}-#{map-deep-get($bb-right, "modifiers", "auto")} {
 		right: auto !important;
 	}
 }
-

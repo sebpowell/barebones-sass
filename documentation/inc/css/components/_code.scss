@@ -1,32 +1,8 @@
-pre, .example {
-	overflow-x: scroll !important;
-}
-
-
-//
-// .example-code-toggle {
-//   position: absolute;
-//   @include no-bullet;
-//   > li {
-//
-//   }
-// }
-//
-// .example {
-//   border: 1px solid colors(keyline, dark);
-//   border-radius: 3px;
-// 	box-shadow: map-get($shadows, sm);
-// 	background: colors(greyscale, x-light);
-// 	padding: sizes(double-half);
-
-// }
-
-
 .inline-code {
 	font-family: "Roboto Mono";
-	background: #f5f5f5;
 	border: 1px solid colors(keyline);
-	padding: 2px 5px 4px 2px;
+	padding: 3px 5px 4px 5px;
+	color: colors("greyscale", "900");
 	font-size: 12px;
 	border-radius: 2px;
 	line-height: 1;
@@ -41,225 +17,23 @@ pre {
 
 	// color: colors(greyscale, 100);
 	font-family: "Roboto Mono";
-	white-space: pre;
+	// white-space: pre;
 	border: 1px solid colors(keyline);
 	padding: sizes(5);
+
 
 	font-size: 13px;
 	border-radius: 3px;
 	margin: 0;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
+	// word-spacing: normal;
+	// word-break: normal;
+	// word-wrap: normal;
 	line-height: 1.5;
 	tab-size: 3;
 	hyphens: none;
-
-	.token {
-		// &.selector {
-		// 	color: colors(code, blue);
-		// }
-		// &.comment {
-		// 		color: colors(greyscale, light);
-		// }
-		// &.keyword {
-		// 	color: colors(code, orange);
-		// }
-		// &.function {
-		// 	color: colors(code, green);
-		// }
-		// &.variable {
-		// 	color: colors(code, purple);
-		// }
-	}
-}
-
-
-//   .example-code {
-//   	padding: sizes(double-half);
-//   }
-//
-//   .example-rendered {
-//   	padding: sizes(double-half);
-//   	border-bottom: 1px solid colors(keyline, light);
-//   }
-//
-//   .example-container {
-//   	@include container(500px);
-//   	height: 200px;
-//   	background: pink;
-//   }
-//
-//   .example-gallery-item {
-//     height: 100px;
-//     background: pink;
-//   }
-//
-//   // Example grid
-//   .example-wrapper {
-//     @include container();
-//     @include clearfix;
-//
-//     [class^="column"], .example-sidebar, .example-content-block, .example-offset, .example-span {
-//       height: 100px;
-//     }
-//     .example-sidebar {
-//       // @include span(4, $gutter: 4);
-//     }
-//
-//     .example-sidebar2 {
-//       // @include span(1 of 4);
-//       height: 100px;
-//     }
-//
-//     .example-span {
-//     	// width: span(6);
-//     }
-//
-//     .example-offset {
-//     	@include if-below(device-small) {
-//     		// @include span(6);
-//     	}
-//     	// @include span(6, $offset: 3);
-//     }
-//
-//     .example-content-block {
-//       // @include span(8, $gutter: 4, $position: last);
-//     }
-//   }
-//
-//   // .modal, .dropdown-menu {
-//   //   position: static;
-//   //   visibility: visible;
-//   //   opacity: 1;
-//   // }
-//   .row {
-//   	[class^="column"] {
-//   		background: pink;
-//   		padding: sizes(base);
-//   		font-size: 13px;
-//   		color: darken(pink, 60%);
-//   	}
-//   }
-//
-//   .photo-gallery {
-//   	@include clearfix;
-//
-//   	.photo-gallery-item {
-//   		@include if-between(device-x-small, device-medium) {
-//   			// @include gallery(6, $gutter: 2);
-//   		}
-//
-//   		@include if-above(device-medium) {
-//   			// @include gallery(4);
-//   		}
-//
-//
-//
-//   		background-color: lightpink;
-//   		height: 40px;
-//   	}
-//   }
-// }
-
-.variable {
-	color: blue;
-}
-
-.property {
-	color: green;
+	box-shadow: 0 1px 2px rgba(00,00,00,0.1);
 }
 
 
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	// background: colors(greyscale, 50);
-}
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	// background: colors(greyscale, 50);
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #bbbbbb;
-}
-
-.token.punctuation {
-	color: #999;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	// color: colors(greyscale, 600);
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	// color: colors(brand, primary);
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #3d9970;
-	background: hsla(0, 0%, 100%, .5);
-}
-
-.hljs-keyword {
-	color: #3d9970;
-}
-
-.token.function {
-	// color: colors(brand, primary);
-}
-
-.hljs-variable {
-	color: blue;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-	// color: colors(secondary, green);
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}

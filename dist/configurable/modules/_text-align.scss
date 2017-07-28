@@ -1,9 +1,22 @@
-@if map-get($bb-helpers, text-align) != false {
+$bb-text-align-default: (
+	"import": true,
+	"name": "text",
+	"modifiers": (
+		"left": "left",
+		"center": "center",
+		"right": "right"
+	)
+);
 
-	$directions: (left, center, right);
-	$className: map-get($bb-helpers, text-align);
+$bb-text-align: () !default;
 
-	@each $direction in $directions {
-		@include helpers("#{$className}#{$bb-global-delimiter}#{$direction}", "text-align: #{$direction}");
+$bb-text-align: map-merge($bb-text-align-default, $bb-text-align);
+
+@if (map-get($bb-text-align, "import") == true) {
+	
+	$className: map-get($bb-text-align, "name");
+
+	@each $key, $value in map-deep-get($bb-text-align, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$value}", "text-align: #{$key}");
 	}
 }

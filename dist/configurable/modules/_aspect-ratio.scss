@@ -1,19 +1,27 @@
-@if map-get($bb-helpers, aspect-ratio) != false {
+$bb-aspect-ratio-default: (
+	"import": true,
+	"name": "aspect-ratio",
+	"modifiers": (
+		"16-9": "16, 9",
+		"4-3": "4, 3",
+		"1-1": "1, 1"
+	)
+);
 
-	$className: map-get($bb-helpers, aspect-ratio);
+$bb-aspect-ratio: () !default;
 
-	.#{$className}#{$bb-global-delimiter}16#{$bb-global-delimiter}9 {
-		@include aspect-ratio(16, 9, "#{$className}#{$bb-global-delimiter}content");
-	}
+$bb-aspect-ratio: map-merge($bb-aspect-ratio-default, $bb-aspect-ratio);
 
-	.#{$className}#{$bb-global-delimiter}4#{$bb-global-delimiter}3 {
-		@include aspect-ratio(4, 3, "#{$className}#{$bb-global-delimiter}content");
-	}
+@if (map-get($bb-aspect-ratio, "import") == true) {
 
-	.#{$className}#{$bb-global-delimiter}1#{$bb-global-delimiter}1 {
-		@include aspect-ratio(1, 1, "#{$className}#{$bb-global-delimiter}content");
+	$className: map-get($bb-aspect-ratio, "name");
+
+	@each $k, $v in map-deep-get($bb-aspect-ratio, "modifiers") {
+		// @include aspect-ratio(16, 9, "#{$className}#{$bb-global-delimiter}#{$k}");
 	}
 }
+
+
 
 
 

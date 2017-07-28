@@ -1,6 +1,15 @@
-@if map-get($bb-helpers, fill) != false {
+$bb-fill-default: (
+	"import": true,
+	"name": "fill"
+);
 
-	$className: map-get($bb-helpers, fill);
+$bb-fill: () !default;
+
+$bb-fill: map-merge($bb-fill-default, $bb-fill);
+
+@if (map-get($bb-fill, "import") == true) {
+	
+	$className: map-get($bb-fill, "name");
 	
 	.#{$className}-white {
 		fill: white;

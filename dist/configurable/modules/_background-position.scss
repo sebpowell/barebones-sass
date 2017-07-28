@@ -1,4 +1,20 @@
-@if map-get($bb-helpers, background-position) != false {
-	$className: #{map-get($bb-helpers, background-position)};
-	@include helpers("#{$className}#{$bb-global-delimiter}center", "background-position: center");
+$bb-background-position-default: (
+	"import": true,
+	"name": "background-position",
+	"modifiers": (
+		"center": "center"
+	)
+);
+
+$bb-background-position: () !default;
+
+$bb-background-position: map-merge($bb-background-position-default, $bb-background-position);
+
+@if (map-get($bb-background-position, "import") == true) {
+
+	$className: map-get($bb-background-position, "name");
+
+	@each $k, $v in map-deep-get($bb-background-position, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "background-position: #{$k}");
+	}
 }

@@ -1,0 +1,23 @@
+$bb-flex-wrap-default: (
+	"import": true,
+	"name": "flex",
+	"modifiers": (
+		"wrap": "wrap",
+		"nowrap": "nowrap",
+		"wrap-reverse": "wrap-reverse"
+	)
+);
+
+$bb-flex-wrap: () !default;
+
+$bb-flex-wrap: map-merge($bb-flex-wrap-default, $bb-flex-wrap);
+
+@if (map-get($bb-flex-wrap, "import") == true) {
+
+	$className: map-get($bb-flex-wrap, "name");
+
+	@each $k, $v in map-deep-get($bb-flex-wrap, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "flex-wrap: #{$k}");
+	}
+}
+

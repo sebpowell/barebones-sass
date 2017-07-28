@@ -1,5 +1,15 @@
-@if map-get($bb-helpers, line-height) != false {
-	$className: map-get($bb-helpers, line-height);
+$bb-line-height-default: (
+	"import": true,
+	"name": "line-height"
+);
+
+$bb-line-height: () !default;
+
+$bb-line-height: map-merge($bb-line-height-default, $bb-line-height);
+
+@if (map-get($bb-line-height, "import") == true) {
+
+	$className: map-get($bb-line-height, "name");
 	
 	@each $name, $size in $bb-line-heights {
 		@include helpers("#{$className}-#{$name}", "line-height: #{$size}");
