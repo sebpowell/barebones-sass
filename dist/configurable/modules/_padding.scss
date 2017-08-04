@@ -1,4 +1,4 @@
-$bb-padding-default: (
+$bb-padding-settings-default: (
 	"import": true,
 	"name": "padding",
 	"modifiers": (
@@ -11,13 +11,13 @@ $bb-padding-default: (
 	)
 );
 
-$bb-padding: () !default;
+$bb-padding-settings: () !default;
 
-$bb-padding: map-merge($bb-padding-default, $bb-padding);
+$bb-padding-settings: map-merge($bb-padding-settings-default, $bb-padding-settings);
 
-@if (map-get($bb-padding, "import") == true) {
+@if (map-get($bb-padding-settings, "import") == true) {
 
-	$className: map-get($bb-padding, "name");
+	$className: map-get($bb-padding-settings, "name");
 
 	$i: 1;
 
@@ -25,7 +25,8 @@ $bb-padding: map-merge($bb-padding-default, $bb-padding);
 		
 		$n: $i * strip-unit($bb-spacing-base);	
 		
-		@each $key, $value in map-deep-get($bb-padding, "modifiers") {
+		@each $key, $value in map-deep-get($bb-padding-settings, "modifiers") {
+			
 			@if $key == "vertical" {
 				@include helpers("#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i}", "padding-top: #{$n}px", "padding-bottom: #{$n}px");
 			}

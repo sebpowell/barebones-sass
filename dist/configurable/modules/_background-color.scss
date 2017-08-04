@@ -15,7 +15,6 @@ $bb-background-color: map-merge($bb-background-color-default, $bb-background-col
 		background-color: white;
 	}
 	
-	// Generate a background-color class for every colour in the $colours map.
 	@each $category, $value in $bb-colors {
 	
 		$type: type-of($value);

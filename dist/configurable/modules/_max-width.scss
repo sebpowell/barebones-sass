@@ -1,15 +1,15 @@
-$bb-max-width-default: (
+$bb-max-width-settings-default: (
 	"import": true,
 	"name": "max-width"
 );
 
-$bb-max-width: () !default;
+$bb-max-width-settings: () !default;
 
-$bb-max-width: map-merge($bb-max-width-default, $bb-max-width);
+$bb-max-width-settings: map-merge($bb-max-width-settings-default, $bb-max-width-settings);
 
-@if (map-get($bb-max-width, "import") == true) {
+@if (map-get($bb-max-width-settings, "import") == true) {
 
-	$className: map-get($bb-max-width, "name");
+	$className: map-get($bb-max-width-settings, "name");
 	
 	$i: 1;
 	

@@ -3,7 +3,7 @@ $bb-align-content-default: (
 	"name": "align-content",
 	"modifiers": (
 		"center": "center",
-		"stretch": "stetch",
+		"stretch": "stretch",
 		"flex-start": "flex-start",
 		"flex-end": "flex-end",
 		"space-between": "space-between",
@@ -23,4 +23,3 @@ $bb-align-content: map-merge($bb-align-content-default, $bb-align-content);
 		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "align-content: #{$k}");
 	}
 }
-

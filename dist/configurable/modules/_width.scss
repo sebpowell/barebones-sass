@@ -1,3 +1,29 @@
-.width-100 {
+.width-full {
 	width: 100%;
 }
+
+$bb-width-settings-default: (
+	"import": true,
+	"name": "width"
+);
+
+$bb-width-settings: () !default;
+
+$bb-width-settings: map-merge($bb-width-settings-default, $bb-width-settings);
+
+@if (map-get($bb-width-settings, "import") == true) {
+
+	$className: map-get($bb-width-settings, "name");
+	
+	$i: 1;
+	
+	@while $i <= $bb-max-width-scale {
+
+		.#{$className}#{$bb-global-delimiter}#{$i * 100} {
+			width: $i * 100px;
+		}
+
+		$i: $i + 1;
+	}
+}
+

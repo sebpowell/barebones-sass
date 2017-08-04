@@ -1,6 +1,22 @@
-@if map-get($bb-helpers, table) != false {
+$bb-table-settings-default: (
+	"import": true,
+	"name": "table",
+	"modifiers": (
+		"table-layout": "fixed",
+	)
+);
 
-	$className: map-get($bb-helpers, table);
+$bb-table-settings: () !default;
+
+$bb-table-settings: map-merge($bb-table-settings-default, $bb-table-settings);
+
+@if (map-get($bb-table-settings, "import") == true) {
+
+	$className: map-get($bb-table-settings, "name");
+
+	@each $k, $v in map-deep-get($bb-align-content, "modifiers") {
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "align-content: #{$k}");
+	}
 
 	.#{$className}#{$bb-global-delimiter}border#{$bb-global-delimiter}collapse {
 	    border-collapse: collapse;

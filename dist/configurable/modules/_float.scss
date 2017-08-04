@@ -19,5 +19,5 @@ $bb-float: map-merge($bb-float-default, $bb-float);
 		@include helpers("#{$className}-#{$v}", "float: #{$k}");
 	}
 	
-	@include helpers("no-#{$className}", "float: none");
+	@include helpers("no-#{$className}", "float: none !important");
 }

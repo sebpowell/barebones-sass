@@ -2,7 +2,9 @@ $bb-background-position-default: (
 	"import": true,
 	"name": "background-position",
 	"modifiers": (
-		"center": "center"
+		"top": "top",
+		"center": "center",
+		"bottom": "bottom"
 	)
 );
 

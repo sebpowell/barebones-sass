@@ -7,1922 +7,1921 @@ block body
 			p Barebones is a boilerplate to help you build your own UI framework. It is not a fully-fledged UI kit or library (Bootstrap, Foundation etc), but a set of tools common to all projects; a grid system and commonly used utility classes and mixins reponsive helpers, , put together in a convenient package to kickstart your next project. It is design-agnostic – so you can spend less time overwriting and more time creating.
 
 			p To provide an example, this is the login modal on Airbnb, recreated using the various classes this is the sort of thing you can very quickly create with Barebones.
+		
 
 
-			.example.background-greyscale-x-light.demo-airbnb.margin-bottom-5
-				.padding-15
-					.padding-8.max-width-500.margin-auto.background-white.box-shadow-xx-large
-						.demo-button.demo-button-facebook.width-100.margin-bottom-2 Log in with Facebook
-						.demo-button.demo-button-empty.width-100 Log in with Google
 
-						.border-top.text-center.margin-top-7.margin-bottom-3
-							.background-white.padding-horizontal-5.display-inline-block.position-relative.text-15(style="top: -10px") or
+	//- 		.example.background-greyscale-x-light.demo-airbnb.margin-bottom-5
+	//- 			.padding-15
+	//- 				.padding-8.max-width-500.margin-auto.background-white.box-shadow-xx-large
+	//- 					.demo-button.demo-button-facebook.width-100.margin-bottom-2 Log in with Facebook
+	//- 					.demo-button.demo-button-empty.width-100 Log in with Google
+
+	//- 					.border-top.text-center.margin-top-7.margin-bottom-3
+	//- 						.background-white.padding-horizontal-5.display-inline-block.position-relative.text-15(style="top: -10px") or
 
 
-						.margin-bottom-4
-							input(type="text" placeholder="Email Address")
-						.margin-bottom-4
-							input(type="password" placeholder="Password")
+	//- 					.margin-bottom-4
+	//- 						input(type="text" placeholder="Email Address")
+	//- 					.margin-bottom-4
+	//- 						input(type="password" placeholder="Password")
 
 
 						
-						.margin-bottom-4
-							.clearfix
-								.float-left
-									.checkbox
-										.checkbox-input
-										.checkbox-label Remember me
+	//- 					.margin-bottom-4
+	//- 						.clearfix
+	//- 							.float-left
+	//- 								.checkbox
+	//- 									.checkbox-input
+	//- 									.checkbox-label Remember me
 
-								.float-right
-									a.text-15.text-brand.text-underline-hover(href="#") Forgot password?
-
-
-						.margin-bottom-5
-							.demo-button.width-100 Log in
+	//- 							.float-right
+	//- 								a.text-15.text-brand.text-underline-hover(href="#") Forgot password?
 
 
-						.border-top.margin-bottom-5
-
-						.text-center
-							.text-20 Don’t have an account? <a class="text-brand text-underline-hover">Sign up</a>
+	//- 					.margin-bottom-5
+	//- 						.demo-button.width-100 Log in
 
 
+	//- 					.border-top.margin-bottom-5
 
-			.tabbed-code
-				ul.tabbed-code-navigation
-					li.is-active(data-tab="scss") SCSS
-					li(data-tab="html") HTML
+	//- 					.text-center
+	//- 						.text-20 Don’t have an account? <a class="text-brand text-underline-hover">Sign up</a>
+
+
+
+	//- 		.tabbed-code
+	//- 			ul.tabbed-code-navigation
+	//- 				li.is-active(data-tab="scss") SCSS
+	//- 				li(data-tab="html") HTML
 			
 
-				.tabbed-code-tab.is-open
-					pre.example-code
-						code.language-scss.
+	//- 			.tabbed-code-tab.is-open
+	//- 				pre.example-code
+	//- 					code.language-scss.
 
-							$bb-colors: (
+	//- 						$bb-colors: (
 
-								"brand": #008489, 
+	//- 							"brand": #008489, 
 
-								"greyscale": (
-									"x-light": #e5e5e5,
-									"500": #767676
-								),
-								"keyline": #DBDBDB,
+	//- 							"greyscale": (
+	//- 								"x-light": #e5e5e5,
+	//- 								"500": #767676
+	//- 							),
+	//- 							"keyline": #DBDBDB,
 
-								"social": (
-									"facebook": #4568b2
-								),
-							);
+	//- 							"social": (
+	//- 								"facebook": #4568b2
+	//- 							),
+	//- 						);
 
-							$bb-spacing-scale: 15;
+	//- 						$bb-spacing-scale: 15;
 
-							$bb-spacing-base: 4px;
+	//- 						$bb-spacing-base: 4px;
 
-							@import "../../../dist/configurable/_base";
-							@import "components/components";
+	//- 						@import "../../../dist/configurable/_base";
+	//- 						@import "components/components";
 
-							.demo-airbnb {
+	//- 						.demo-airbnb {
 
-								> * {
-									font-family: "circular std";
-									font-weight: 300;
-									-webkit-font-smoothing: antialiased;
-								}
+	//- 							> * {
+	//- 								font-family: "circular std";
+	//- 								font-weight: 300;
+	//- 								-webkit-font-smoothing: antialiased;
+	//- 							}
 
-								.checkbox {
-									.checkbox-input {
-										@include square(18px);
-										border: 1px solid colors(keyline);
-										display: inline-block;
-										vertical-align: middle;
-										margin-right: sizes(1);
-									}
+	//- 							.checkbox {
+	//- 								.checkbox-input {
+	//- 									@include square(18px);
+	//- 									border: 1px solid colors(keyline);
+	//- 									display: inline-block;
+	//- 									vertical-align: middle;
+	//- 									margin-right: sizes(1);
+	//- 								}
 
-									.checkbox-label {
-										display: inline-block;
-										font-size: 20px;
-										vertical-align: middle;
-									}
-								}
+	//- 								.checkbox-label {
+	//- 									display: inline-block;
+	//- 									font-size: 20px;
+	//- 									vertical-align: middle;
+	//- 								}
+	//- 							}
 
-								.demo-button {
-									border: 0;
-									display: inline-block;
-									color: white;
-									text-align: center;
-									padding: 0 sizes(6);
-									height: 50px;
-									line-height: 50px;
-									font-size: 20px;
-									font-weight: 500;
-									border-radius: 3px;
-									background-color: #008489;
+	//- 							.demo-button {
+	//- 								border: 0;
+	//- 								display: inline-block;
+	//- 								color: white;
+	//- 								text-align: center;
+	//- 								padding: 0 sizes(6);
+	//- 								height: 50px;
+	//- 								line-height: 50px;
+	//- 								font-size: 20px;
+	//- 								font-weight: 500;
+	//- 								border-radius: 3px;
+	//- 								background-color: #008489;
 
-									&.demo-button-facebook {
-										background-color: colors("social", "facebook");
-									}
+	//- 								&.demo-button-facebook {
+	//- 									background-color: colors("social", "facebook");
+	//- 								}
 
-									&.demo-button-empty {
-										border: 2px solid colors("greyscale", "500");
-										background-color: transparent;
-										color: colors("greyscale", "500");
-										line-height: 45px;
-									}
-								}
+	//- 								&.demo-button-empty {
+	//- 									border: 2px solid colors("greyscale", "500");
+	//- 									background-color: transparent;
+	//- 									color: colors("greyscale", "500");
+	//- 									line-height: 45px;
+	//- 								}
+	//- 							}
 
-								input[type="text"],
-								input[type="email"],
-								input[type="number"],
-								input[type="password"],
-								input[type="url"],
-								input[type="date"],
-								input[type="tel"],
-								input[type="search"] {
-									font-weight: 300;
-									height: 48px;
-									font-size: 20px;
-									border-radius: 2px;
-									border: 1px solid colors(keyline);
+	//- 							input[type="text"],
+	//- 							input[type="email"],
+	//- 							input[type="number"],
+	//- 							input[type="password"],
+	//- 							input[type="url"],
+	//- 							input[type="date"],
+	//- 							input[type="tel"],
+	//- 							input[type="search"] {
+	//- 								font-weight: 300;
+	//- 								height: 48px;
+	//- 								font-size: 20px;
+	//- 								border-radius: 2px;
+	//- 								border: 1px solid colors(keyline);
 
-									&:focus {
-										border-color: colors("brand");
-									}
-								}
-							}
-				pre.example-code.tabbed-code-tab
-					code.language-html.
-						&lt;div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large"&gt;
+	//- 								&:focus {
+	//- 									border-color: colors("brand");
+	//- 								}
+	//- 							}
+	//- 						}
+	//- 			pre.example-code.tabbed-code-tab
+	//- 				code.language-html.
+	//- 					&lt;div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large"&gt;
 
-							&lt;div class="demo-button demo-button-facebook width-100 margin-bottom-2"&gt;Log in with Facebook&lt;/div&gt;
+	//- 						&lt;div class="demo-button demo-button-facebook width-100 margin-bottom-2"&gt;Log in with Facebook&lt;/div&gt;
 
-							&lt;div class="demo-button demo-button-empty width-100"&gt;Log in with Google&lt;/div&gt;
+	//- 						&lt;div class="demo-button demo-button-empty width-100"&gt;Log in with Google&lt;/div&gt;
 
-							&lt;div class="border-top text-center margin-top-7 margin-bottom-3"&gt;
-								&lt;div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative text-15"&gt;or&lt;/div&gt;
-							&lt;/div&gt;
+	//- 						&lt;div class="border-top text-center margin-top-7 margin-bottom-3"&gt;
+	//- 							&lt;div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative text-15"&gt;or&lt;/div&gt;
+	//- 						&lt;/div&gt;
 
-							&lt;div class="margin-bottom-4"&gt;
-								&lt;input type="text" placeholder="Email Address"/&gt;
-							&lt;/div&gt;
+	//- 						&lt;div class="margin-bottom-4"&gt;
+	//- 							&lt;input type="text" placeholder="Email Address"/&gt;
+	//- 						&lt;/div&gt;
 
-							&lt;div class="margin-bottom-4"&gt;
-								&lt;input type="password" placeholder="Password"/&gt;
-							&lt;/div&gt;
+	//- 						&lt;div class="margin-bottom-4"&gt;
+	//- 							&lt;input type="password" placeholder="Password"/&gt;
+	//- 						&lt;/div&gt;
 
-							&lt;div class="margin-bottom-4"&gt;
-								&lt;div class="clearfix"&gt;
-									&lt;div class="float-left"&gt;
-										&lt;div class="checkbox"&gt;
-											&lt;div class="checkbox-input"&gt;&lt;/div&gt;
-											&lt;div class="checkbox-label"&gt;Remember me&lt;/div&gt;
-										&lt;/div&gt;
-									&lt;/div&gt;
-									&lt;div class="float-right"&gt;
-										&lt;a href="#" class="text-15 text-brand text-underline-hover"&gt;Forgot password?&lt;/a&gt;&lt;/div&gt;
-									&lt;/div&gt;
-								&lt;/div&gt;
-							&lt;/div&gt;
+	//- 						&lt;div class="margin-bottom-4"&gt;
+	//- 							&lt;div class="clearfix"&gt;
+	//- 								&lt;div class="float-left"&gt;
+	//- 									&lt;div class="checkbox"&gt;
+	//- 										&lt;div class="checkbox-input"&gt;&lt;/div&gt;
+	//- 										&lt;div class="checkbox-label"&gt;Remember me&lt;/div&gt;
+	//- 									&lt;/div&gt;
+	//- 								&lt;/div&gt;
+	//- 								&lt;div class="float-right"&gt;
+	//- 									&lt;a href="#" class="text-15 text-brand text-underline-hover"&gt;Forgot password?&lt;/a&gt;&lt;/div&gt;
+	//- 								&lt;/div&gt;
+	//- 							&lt;/div&gt;
+	//- 						&lt;/div&gt;
 
-							&lt;div class="margin-bottom-5"&gt;
-								&lt;div class="demo-button width-100"&gt;Log in&lt;/div&gt;
-							&lt;/div&gt;
+	//- 						&lt;div class="margin-bottom-5"&gt;
+	//- 							&lt;div class="demo-button width-100"&gt;Log in&lt;/div&gt;
+	//- 						&lt;/div&gt;
 
-							&lt;div class="border-top margin-bottom-5"&gt;&lt;/div&gt;
+	//- 						&lt;div class="border-top margin-bottom-5"&gt;&lt;/div&gt;
 
-							&lt;div class="text-center"&gt;
-								&lt;div class="text-20"&gt;Don’t have an account? &lt;a class="text-brand text-underline-hover"&gt;Sign up&lt;/a&gt;&lt;/div&gt;
-							&lt;/div&gt;
+	//- 						&lt;div class="text-center"&gt;
+	//- 							&lt;div class="text-20"&gt;Don’t have an account? &lt;a class="text-brand text-underline-hover"&gt;Sign up&lt;/a&gt;&lt;/div&gt;
+	//- 						&lt;/div&gt;
 
-						&lt;/div&gt;
-
-
-		section(id="prerequisites")
-			h2 Prerequisites
-			p Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Instructions can be found <a href="http://sass-lang.com/install" target="_blank">here</a>.
-
-			p Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
+	//- 					&lt;/div&gt;
 
 
-		section(id="installation")
+	//- 	section(id="prerequisites")
+	//- 		h2 Prerequisites
+	//- 		p Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Instructions can be found <a href="http://sass-lang.com/install" target="_blank">here</a>.
 
-			h2 Get started
+	//- 		p Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer plugin</a> to do this.
 
-			h3 1. Install the package
-			p Barebones is available as a Bower package. If you want to skip package control and copy the SASS files directly, you can do that too – simply download the latest release from <a href="https://github.com/sebpowell/barebones-sass">GitHub</a> and integrate the source files directly. 
-			.example
-				pre.example-code
-					code.language-bash
-						| bower install barebones-sass --save
 
-			h3 2. Create a settings file
+	//- 	section(id="installation")
 
-			p In your project folder, create a _settings.scss file (or whatever you want to call it) with the following values. These are various settings Barebones uses – a  more detailed explanation of each option can be found here.
+	//- 		h2 Get started
 
-			pre.example-code
-				code.language-scss.
-					$bb-border-radius-scale: 5;
+	//- 		h3 1. Install the package
+	//- 		p Barebones is available as a Bower package. If you want to skip package control and copy the SASS files directly, you can do that too – simply download the latest release from <a href="https://github.com/sebpowell/barebones-sass">GitHub</a> and integrate the source files directly. 
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-bash
+	//- 					| bower install barebones-sass --save
 
-					$bb-breakpoints: ();
+	//- 		h3 2. Create a settings file
 
-					$bb-colors: ();
+	//- 		p In your project folder, create a _settings.scss file (or whatever you want to call it) with the following values. These are various settings Barebones uses – a  more detailed explanation of each option can be found here.
 
-					$bb-letter-spacing: ();
+	//- 		pre.example-code
+	//- 			code.language-scss.
+	//- 				$bb-border-radius-scale: 5;
 
-					$bb-line-heights: ();
+	//- 				$bb-breakpoints: ();
 
-					$bb-global-delimiter: "-";
+	//- 				$bb-colors: ();
 
-					$bb-helpers: ();
+	//- 				$bb-letter-spacing: ();
 
-					$bb-hover-class-name: "hover";
+	//- 				$bb-line-heights: ();
 
-					$bb-max-width-scale: 14;
+	//- 				$bb-global-delimiter: "-";
 
-					$bb-responsive: true;
+	//- 				$bb-helpers: ();
 
-					$bb-shadows: ();
+	//- 				$bb-hover-class-name: "hover";
 
-					$bb-spacing-scale: 10;
+	//- 				$bb-max-width-scale: 14;
 
-					$bb-spacing-base: 4px;
+	//- 				$bb-responsive: true;
 
-					$bb-spacing-sides: ();
+	//- 				$bb-shadows: ();
 
-					$bb-text-sizes: ();
+	//- 				$bb-spacing-scale: 10;
 
-			h3 3. Create your main SCSS file
-			p he final step is to import all these files into your main files that will be compiled into actual CSS. When you're done, it should look something like this:
+	//- 				$bb-spacing-base: 4px;
 
-			.example
-				pre.example-code
-					code.language-scss.
-						// Always import the settings file first
-						@import _settings.scss;
+	//- 				$bb-spacing-sides: ();
 
-						// Always import the settings file first
-						@import bower-components/barebones-sass/dist/_base.scss;
+	//- 				$bb-text-sizes: ();
 
-		section(id="support")
-			h2 Support
-			p This library is under active development. If you need help, or if you think something is broken or can be improved, send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. Or feel free to <a href="https://github.com/sebpowell/barebones-sass/issues">open an issue on GitHub</a>.
+	//- 		h3 3. Create your main SCSS file
+	//- 		p he final step is to import all these files into your main files that will be compiled into actual CSS. When you're done, it should look something like this:
+
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					// Always import the settings file first
+	//- 					@import _settings.scss;
+
+	//- 					// Always import the settings file first
+	//- 					@import bower-components/barebones-sass/dist/_base.scss;
+
+	//- 	section(id="support")
+	//- 		h2 Support
+	//- 		p This library is under active development. If you need help, or if you think something is broken or can be improved, send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. Or feel free to <a href="https://github.com/sebpowell/barebones-sass/issues">open an issue on GitHub</a>.
 			
-	section(id="settings")
-		section(id="settings-intro")
-			h1.page-title Settings
-			p Barebones is fully and easily customisable. Note that if you use the 'packaged' version (see <a href="#installation">installation guide</a>), variables are not prefixed with 'bb-' (for example, <span class="inline-code">$bb-border-radius-scale</span> would simply be <span class="inline-code">$border-radius-scale</span>).
+	//- section(id="settings")
+	//- 	section(id="settings-intro")
+	//- 		h1.page-title Settings
+	//- 		p Barebones is fully and easily customisable. Note that if you use the 'packaged' version (see <a href="#installation">installation guide</a>), variables are not prefixed with 'bb-' (for example, <span class="inline-code">$bb-border-radius-scale</span> would simply be <span class="inline-code">$border-radius-scale</span>).
 
 
-		section(id="settings-border-radius-scale")
-			h2 Border-radius scale
-			p Sets the scale for <span class="inline-code">.border-radius-*</span> classes. 
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-border-radius-scale: 5;
+	//- 	section(id="settings-border-radius-scale")
+	//- 		h2 Border-radius scale
+	//- 		p Sets the scale for <span class="inline-code">.border-radius-*</span> classes. 
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-border-radius-scale: 5;
 
-						// This will generate border-radius helpers for values 1 - 5.
-						.border-radius-1 {
-							border-radius: 1px;
-						}
+	//- 					// This will generate border-radius helpers for values 1 - 5.
+	//- 					.border-radius-1 {
+	//- 						border-radius: 1px;
+	//- 					}
 
-						...
+	//- 					...
 
-		section(id="settings-breakpoints")
-			h2 Breakpoints
-			p Stores your breakpoints. This is used by the <a href="#">media-query mixin</a>, and by the <a href="#">helper generator</a> to generate responsive classes.
-			p Access using the <span class="inline-code">breakpoints($value)</span> function.
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-breakpoints: (
-							"mobile": 480px,
-							"tablet": 720px,
-							"desktop": 1200px
-						);
+	//- 	section(id="settings-breakpoints")
+	//- 		h2 Breakpoints
+	//- 		p Stores your breakpoints. This is used by the <a href="#">media-query mixin</a>, and by the <a href="#">helper generator</a> to generate responsive classes.
+	//- 		p Access using the <span class="inline-code">breakpoints($value)</span> function.
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-breakpoints: (
+	//- 						"mobile": 480px,
+	//- 						"tablet": 720px,
+	//- 						"desktop": 1200px
+	//- 					);
 
-		section(id="settings-colours")
-			h2 Colors
-			p Stores your colour palette in a organised way. Used by the <a href="#">background-color</a>, <a href="#">text-color</a> and <a href="#">fill</a> helper generators. Access using <span class="inline-code">colors($category, $value)</span>.
-			.example
-				pre.example-code
-					code.language-scss.
-						$colors: (
-							"brand": "#157AFB",
-							"secondary": (
-								"orange": "#F8B000",
-								...
-							),
-							"greyscale": (
-								"50": "#FAFAFA",
-								"100": "#F5F5F5",
-								...
-							),
-							"keyline": "#E5E5E5",
-						);
+	//- 	section(id="settings-colours")
+	//- 		h2 Colors
+	//- 		p Stores your colour palette in a organised way. Used by the <a href="#">background-color</a>, <a href="#">text-color</a> and <a href="#">fill</a> helper generators. Access using <span class="inline-code">colors($category, $value)</span>.
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$colors: (
+	//- 						"brand": "#157AFB",
+	//- 						"secondary": (
+	//- 							"orange": "#F8B000",
+	//- 							...
+	//- 						),
+	//- 						"greyscale": (
+	//- 							"50": "#FAFAFA",
+	//- 							"100": "#F5F5F5",
+	//- 							...
+	//- 						),
+	//- 						"keyline": "#E5E5E5",
+	//- 					);
 
-						// The above values can be accessed like this.
-						.element {
-							background-color: colors("brand", "primary");
-						}
+	//- 					// The above values can be accessed like this.
+	//- 					.element {
+	//- 						background-color: colors("brand", "primary");
+	//- 					}
 
-		section(id="settings-letter-spacing")
-			h2 Letter-spacing
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-spacing-base: (
-							"small": "0.01em",
-							"medium": "0.5em",
-							"large": "0.1em"
-						);
+	//- 	section(id="settings-letter-spacing")
+	//- 		h2 Letter-spacing
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-spacing-base: (
+	//- 						"small": "0.01em",
+	//- 						"medium": "0.5em",
+	//- 						"large": "0.1em"
+	//- 					);
 
-		section(id="settings-line-heights")
-			h2 Line-heights
-			p Used by the <a href="#">line-height</a> helper generator.  
+	//- 	section(id="settings-line-heights")
+	//- 		h2 Line-heights
+	//- 		p Used by the <a href="#">line-height</a> helper generator.  
 
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-line-heights: (
-							"small": 1,
-							"medium": 1.5,
-							"large": 2
-						);
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-line-heights: (
+	//- 						"small": 1,
+	//- 						"medium": 1.5,
+	//- 						"large": 2
+	//- 					);
 
-		section(id="settings-global-delimiter")
-			h2 Global delimiter
-			p Specifies how classes are named. 
-			.example
-				pre.example-code.border-bottom
-					code.language-scss.
-						$bb-global-delimiter: "-";
+	//- 	section(id="settings-global-delimiter")
+	//- 		h2 Global delimiter
+	//- 		p Specifies how classes are named. 
+	//- 		.example
+	//- 			pre.example-code.border-bottom
+	//- 				code.language-scss.
+	//- 					$bb-global-delimiter: "-";
 
-						// Output
-						.background-cover {
-							background-size: cover;
-						}
+	//- 					// Output
+	//- 					.background-cover {
+	//- 						background-size: cover;
+	//- 					}
 
 
-						$bb-global-delimiter: "_";
+	//- 					$bb-global-delimiter: "_";
 
-						// Output
-						.background_cover {
-							background-size: cover;
-						}
+	//- 					// Output
+	//- 					.background_cover {
+	//- 						background-size: cover;
+	//- 					}
 
-		section(id="settings-grid")
-			h2 Grid
-			p Settings for the <a href="#">grid system</a>.
+	//- 	section(id="settings-grid")
+	//- 		h2 Grid
+	//- 		p Settings for the <a href="#">grid system</a>.
 
-			table.margin-bottom-5
-				tr
-					td columns
-					td Number of columns
-				tr
-					td gutter
-					td Width between columns
-				tr
-					td breakpoint
-					td Breakpoint at which point column widths change to 100% of viewport
-				tr
-					td mobile-spacing
-					td Default marin-bottom value for collapsed columns.
+	//- 		table.margin-bottom-5
+	//- 			tr
+	//- 				td columns
+	//- 				td Number of columns
+	//- 			tr
+	//- 				td gutter
+	//- 				td Width between columns
+	//- 			tr
+	//- 				td breakpoint
+	//- 				td Breakpoint at which point column widths change to 100% of viewport
+	//- 			tr
+	//- 				td mobile-spacing
+	//- 				td Default marin-bottom value for collapsed columns.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						$grid: (
-							columns: 12,
-							gutter: "24px", 
-							breakpoint: "medium",
-							mobile-spacing: "24px"
-						);
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$grid: (
+	//- 						columns: 12,
+	//- 						gutter: "24px", 
+	//- 						breakpoint: "medium",
+	//- 						mobile-spacing: "24px"
+	//- 					);
 
-		section(id="settings-hover-class")
-			h2 Hover class name
+	//- 	section(id="settings-hover-class")
+	//- 		h2 Hover class name
 
-			p Specify the name for hover classes. Used by <a href="#">background-color</a>, <a href="#">text-color</a> and <a href="#">fill</a> generators.
+	//- 		p Specify the name for hover classes. Used by <a href="#">background-color</a>, <a href="#">text-color</a> and <a href="#">fill</a> generators.
 
-			.example.margin-bottom-double
-				pre.example-code.border-bottom
-					code.language-scss.
-						$bb-helper-class-name: "hover";
+	//- 		.example.margin-bottom-double
+	//- 			pre.example-code.border-bottom
+	//- 				code.language-scss.
+	//- 					$bb-helper-class-name: "hover";
 
-						// Output
-						.background-white-hover:hover {
-							background-color: white;
-						}
+	//- 					// Output
+	//- 					.background-white-hover:hover {
+	//- 						background-color: white;
+	//- 					}
 
-		section(id="settings-max-width-scale")
-			h2 Max-width scale
+	//- 	section(id="settings-max-width-scale")
+	//- 		h2 Max-width scale
 
-			.example.margin-bottom-double
-				pre.example-code.border-bottom
-					code.language-scss.
-						$bb-max-width-scale: 14;
+	//- 		.example.margin-bottom-double
+	//- 			pre.example-code.border-bottom
+	//- 				code.language-scss.
+	//- 					$bb-max-width-scale: 14;
 
-						// Output
-						.max-width-100 {
-							max-width: 100px;
-						}
+	//- 					// Output
+	//- 					.max-width-100 {
+	//- 						max-width: 100px;
+	//- 					}
 
-						...
+	//- 					...
 
-						.max-width-1400 {
-							.max-width: 1400px;
-						}
+	//- 					.max-width-1400 {
+	//- 						.max-width: 1400px;
+	//- 					}
 
-		section(id="settings-normalize")
-			h2 Normalize
-			.example
-				pre.example-code
-					code.language-scss.
-						*, *:before, *:after {
-							box-sizing: border-box;
-						}
+	//- 	section(id="settings-normalize")
+	//- 		h2 Normalize
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					*, *:before, *:after {
+	//- 						box-sizing: border-box;
+	//- 					}
 
-						* {
-							&:focus {
-								outline: none;
-							}
-						}
+	//- 					* {
+	//- 						&:focus {
+	//- 							outline: none;
+	//- 						}
+	//- 					}
 
-						html,body, div, span, object, iframe, hr,
-						h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-						dl, dt, dd, ol, ul, li,
-						fieldset, form, label, legend, input, button, textarea, select,
-						table, caption, tbody, tfoot, thead, tr, th, td,
-						article, aside, canvas, details, figcaption, figure,
-						footer, header, hgroup, menu, nav, section {
-							margin: 0;
-							padding: 0;
-							line-height: 1;
-						}
+	//- 					html,body, div, span, object, iframe, hr,
+	//- 					h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	//- 					dl, dt, dd, ol, ul, li,
+	//- 					fieldset, form, label, legend, input, button, textarea, select,
+	//- 					table, caption, tbody, tfoot, thead, tr, th, td,
+	//- 					article, aside, canvas, details, figcaption, figure,
+	//- 					footer, header, hgroup, menu, nav, section {
+	//- 						margin: 0;
+	//- 						padding: 0;
+	//- 						line-height: 1;
+	//- 					}
 
-						a, a:visited {
-							color: inherit;
-							text-decoration: none;
-							cursor: pointer;
-						}
+	//- 					a, a:visited {
+	//- 						color: inherit;
+	//- 						text-decoration: none;
+	//- 						cursor: pointer;
+	//- 					}
 
-						a {
-							// IE 10 fix.
-							img {
-								border: 0; 
-							}
-						}
+	//- 					a {
+	//- 						// IE 10 fix.
+	//- 						img {
+	//- 							border: 0; 
+	//- 						}
+	//- 					}
 
-						img {
-							max-width: 100%;
-						}
+	//- 					img {
+	//- 						max-width: 100%;
+	//- 					}
 
-		section(id="settings-responsive")
-			h2 Responsive classes
-			p Barebones will automatically generate responsive classes using it's <a href="#">helper generator</a> and specified breakpoints. You can disable this by setting the value to <span class="inline-code">false</span>.
+	//- 	section(id="settings-responsive")
+	//- 		h2 Responsive classes
+	//- 		p Barebones will automatically generate responsive classes using it's <a href="#">helper generator</a> and specified breakpoints. You can disable this by setting the value to <span class="inline-code">false</span>.
 
-			.example
-				pre.example-code
-					code.language-scss.
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
 
-						$bb-breakpoints: (
-							"medium": 780px;
-						);
+	//- 					$bb-breakpoints: (
+	//- 						"medium": 780px;
+	//- 					);
 
-						// Viewports larger than 'medium'.
-						@media max-width(780px) {
-							.display-block-above-medium {
-								display: block;
-							}
-						}
+	//- 					// Viewports larger than 'medium'.
+	//- 					@media max-width(780px) {
+	//- 						.display-block-above-medium {
+	//- 							display: block;
+	//- 						}
+	//- 					}
 
-						// Viewports smaller than 'medium'.
-						@media min-width(780px) {
-							.display-block-above-medium {
-								display: block;
-							}
-						}
+	//- 					// Viewports smaller than 'medium'.
+	//- 					@media min-width(780px) {
+	//- 						.display-block-above-medium {
+	//- 							display: block;
+	//- 						}
+	//- 					}
 
-		section(id="settings-shadows")
-			h2 Shadows
-			p Used to keep spacing consistent throughout the project. The function will multiply uour Access using <span class="inline-code">shadows($shadow)</span>.
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-shadows: (
-							"small": rgba(),
-							"medium": rgba(),
-							"large": rgba()
-						);
+	//- 	section(id="settings-shadows")
+	//- 		h2 Shadows
+	//- 		p Used to keep spacing consistent throughout the project. The function will multiply uour Access using <span class="inline-code">shadows($shadow)</span>.
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-shadows: (
+	//- 						"small": rgba(),
+	//- 						"medium": rgba(),
+	//- 						"large": rgba()
+	//- 					);
 
-		section(id="settings-spacing-base")
-			h2 Spacing base
-			p Used to keep spacing consistent throughout the project. The function will multiply uour Access using <span class="inline-code">sizes($size)</span>. Used by margin, padding, top, left, right and bottom helpers.
+	//- 	section(id="settings-spacing-base")
+	//- 		h2 Spacing base
+	//- 		p Used to keep spacing consistent throughout the project. The function will multiply uour Access using <span class="inline-code">sizes($size)</span>. Used by margin, padding, top, left, right and bottom helpers.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-spacing-base: 5px;
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-spacing-base: 5px;
 
-						.element {
-							padding: sizes(1);
-						}
+	//- 					.element {
+	//- 						padding: sizes(1);
+	//- 					}
 
-		section(id="settings-spacing-scale")
-			h2 Spacing scale
-			p Used to keep spacing consistent throughout the project. The function will multiply uour Access using <span class="inline-code">sizes($size)</span>. Used by margin, padding, top, left, right and bottom helpers.
+	//- 	section(id="settings-spacing-scale")
+	//- 		h2 Spacing scale
+	//- 		p Used to keep spacing consistent throughout the project. The function will multiply uour Access using <span class="inline-code">sizes($size)</span>. Used by margin, padding, top, left, right and bottom helpers.
 
-			.example
-				pre.example-code
-					code.language-scss.
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
 						
-						$bb-spacing-base: 5px;
+	//- 					$bb-spacing-base: 5px;
 
-						.element {
-							padding: sizes(1);
-						}
+	//- 					.element {
+	//- 						padding: sizes(1);
+	//- 					}
 
-		section(id="settings-text-sizes")
-			h2 Text-sizes
+	//- 	section(id="settings-text-sizes")
+	//- 		h2 Text-sizes
 
-			.example
-				pre.example-code
-					code.language-scss.
-						$bb-text-sizes: (
-							"small": rgba(),
-							"medium": rgba(),
-							"large": rgba()
-						);
-
-
-	section(id="grid")
-		section(id="grid-intro")
-			h1.page-title Grid
-
-		section(id="grid-container")
-			h2 Container
-			p To create a grid, use the <span class="inline-code">.row</span> class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
-
-			.example.margin-bottom-double
-				.example-rendered
-					.row
-						.columns-4
-						.columns-5
-						.columns-3
-
-				pre.example-code
-					code.language-html
-						| &lt;div class="columns"&gt;
-						|  &lt;div class="columns-4"&gt;&lt;/div&gt;
-						|  &lt;div class="columns-4"&gt;&lt;/div&gt;
-						|  &lt;div class="columns-4"&gt;&lt;/div&gt;
-						| &lt;/div&gt;
-
-		section(id="grid-container")
-			h2 Mobile columns
-
-			p Helper classes are also available to create different grids for different screen sizes.
-
-			pre.example-code
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;&lt;/div&gt;
-					|  &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;&lt;/div&gt;
-					|  &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;&lt;/div&gt;
-					| &lt;/div&gt;
-
-		section(id="grid-container")
-			h2 Offsets
-			p Offsets allow you to shift a column to the right by a specified number of columns.
-
-			pre.example-code
-				code.language-html.
-					&lt;div class="columns"&gt;
-						&lt;div class="columns-3 offset-9"&gt;&lt;/div&gt;
-					&lt;/div&gt;
-
-		section(id="grid-container")
-			h2 Gutter
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$bb-text-sizes: (
+	//- 						"small": rgba(),
+	//- 						"medium": rgba(),
+	//- 						"large": rgba()
+	//- 					);
 
 
+	//- section(id="grid")
+	//- 	section(id="grid-intro")
+	//- 		h1.page-title Grid
 
-	section(id="mixins")
-		section(id="mixins-intro")
-			h1.page-title Mixins
+	//- 	section(id="grid-container")
+	//- 		h2 Container
+	//- 		p To create a grid, use the <span class="inline-code">.row</span> class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
 
-		section(id="mixins-arrow")
-			h2 arrow($color, $size, $direction)
-			p Creates a triangle, used for things like tooltips or dropdowns.
+	//- 		.example.margin-bottom-double
+	//- 			.example-rendered
+	//- 				.row
+	//- 					.columns-4
+	//- 					.columns-5
+	//- 					.columns-3
 
-			table.margin-bottom-5
-				thead
-					th Option
-					th Values / Example
-				tr
-					td <span class="var">$direction</span>
-					td 
-						ul.bulleted-list
-							li "up"
-							li "down"
-							li "left"
-							li "right"
-							li "top-right"
-							li "top-left"
-							li "bottom-right"
-							li "bottom-left"
-				tr
-					td <span class="var">$color</span>
-					td Any hex value (e.g. #E5E5E5)
-				tr
-					td <span class="var">$size</span>
-					td Any px value (e.g. 6px)
+	//- 			pre.example-code
+	//- 				code.language-html
+	//- 					| &lt;div class="columns"&gt;
+	//- 					|  &lt;div class="columns-4"&gt;&lt;/div&gt;
+	//- 					|  &lt;div class="columns-4"&gt;&lt;/div&gt;
+	//- 					|  &lt;div class="columns-4"&gt;&lt;/div&gt;
+	//- 					| &lt;/div&gt;
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element { 
-							&:after {
-								@include arrow("down", "black", "20px");
-							}
-						 }
+	//- 	section(id="grid-container")
+	//- 		h2 Mobile columns
 
-		section(id="mixins-arrow")
-			h2 aspect-ratio($width, $height, $container: optional)
-			p Creates a triangle, used for things like tooltips or dropdowns.
+	//- 		p Helper classes are also available to create different grids for different screen sizes.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element { 
-							@include aspect-ratio(16, 9);
-						}
+	//- 		pre.example-code
+	//- 			code.language-html
+	//- 				| &lt;div class="columns"&gt;
+	//- 				|  &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;&lt;/div&gt;
+	//- 				|  &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;&lt;/div&gt;
+	//- 				|  &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;&lt;/div&gt;
+	//- 				| &lt;/div&gt;
 
-						// Output
-						.aspect-ratio-16-9 { 
-							position: relative; 
-						}
+	//- 	section(id="grid-container")
+	//- 		h2 Offsets
+	//- 		p Offsets allow you to shift a column to the right by a specified number of columns.
 
-						.aspect-ratio-16-9:before { 
-							display: block; 
-							content: ""; 
-							width: 100%; 
-							padding-top: 56.25%; 
-						}
+	//- 		pre.example-code
+	//- 			code.language-html.
+	//- 				&lt;div class="columns"&gt;
+	//- 					&lt;div class="columns-3 offset-9"&gt;&lt;/div&gt;
+	//- 				&lt;/div&gt;
 
-						.aspect-ratio-16-9 > .aspect-ratio-content { 
-							position: absolute; 
-							top: 0; 
-							left: 0; 
-							right: 0; 
-							bottom: 0; 
-						}
+	//- 	section(id="grid-container")
+	//- 		h2 Gutter
 
-		section(id="mixins-background-image")
-			h2 background-image($width, $height, $container: optional)
-			p Creates a triangle, used for things like tooltips or dropdowns.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element { 
-							@include aspect-ratio(16, 9);
-						}
 
-		section(id="mixins-clearfix")
-			h2 clearfix()
-			p Clears floats. Apply this to the parent element.
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include clearfix;
-						}
+	//- section(id="mixins")
+	//- 	section(id="mixins-intro")
+	//- 		h1.page-title Mixins
 
-						// Output
-						.clearfix { zoom: 1; }
+	//- 	section(id="mixins-arrow")
+	//- 		h2 arrow($color, $size, $direction)
+	//- 		p Creates a triangle, used for things like tooltips or dropdowns.
 
-						.clearfix:before, .clearfix:after { content: ""; display: table; }
+	//- 		table.margin-bottom-5
+	//- 			thead
+	//- 				th Option
+	//- 				th Values / Example
+	//- 			tr
+	//- 				td <span class="var">$direction</span>
+	//- 				td 
+	//- 					ul.bulleted-list
+	//- 						li "up"
+	//- 						li "down"
+	//- 						li "left"
+	//- 						li "right"
+	//- 						li "top-right"
+	//- 						li "top-left"
+	//- 						li "bottom-right"
+	//- 						li "bottom-left"
+	//- 			tr
+	//- 				td <span class="var">$color</span>
+	//- 				td Any hex value (e.g. #E5E5E5)
+	//- 			tr
+	//- 				td <span class="var">$size</span>
+	//- 				td Any px value (e.g. 6px)
 
-						.clearfix:after { clear: both; }
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element { 
+	//- 						&:after {
+	//- 							@include arrow("down", "black", "20px");
+	//- 						}
+	//- 					 }
+
+	//- 	section(id="mixins-arrow")
+	//- 		h2 aspect-ratio($width, $height, $container: optional)
+	//- 		p Creates a triangle, used for things like tooltips or dropdowns.
+
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element { 
+	//- 						@include aspect-ratio(16, 9);
+	//- 					}
+
+	//- 					// Output
+	//- 					.aspect-ratio-16-9 { 
+	//- 						position: relative; 
+	//- 					}
+
+	//- 					.aspect-ratio-16-9:before { 
+	//- 						display: block; 
+	//- 						content: ""; 
+	//- 						width: 100%; 
+	//- 						padding-top: 56.25%; 
+	//- 					}
+
+	//- 					.aspect-ratio-16-9 > .aspect-ratio-content { 
+	//- 						position: absolute; 
+	//- 						top: 0; 
+	//- 						left: 0; 
+	//- 						right: 0; 
+	//- 						bottom: 0; 
+	//- 					}
+
+	//- 	section(id="mixins-background-image")
+	//- 		h2 background-image($width, $height, $container: optional)
+	//- 		p Creates a triangle, used for things like tooltips or dropdowns.
+
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element { 
+	//- 						@include aspect-ratio(16, 9);
+	//- 					}
+
+	//- 	section(id="mixins-clearfix")
+	//- 		h2 clearfix()
+	//- 		p Clears floats. Apply this to the parent element.
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include clearfix;
+	//- 					}
+
+	//- 					// Output
+	//- 					.clearfix { zoom: 1; }
+
+	//- 					.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+	//- 					.clearfix:after { clear: both; }
 						
-		section(id="mixins-ellipsis")
-			h2 ellipsis($width)
-			p Use this to truncate text once it reaches a certain width.
+	//- 	section(id="mixins-ellipsis")
+	//- 		h2 ellipsis($width)
+	//- 		p Use this to truncate text once it reaches a certain width.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include ellipsis(300px);
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include ellipsis(300px);
+	//- 					}
 
-		section(id="mixins-helper-generator")
-			h2 helpers($name, $css...)
-			.example
-				pre.example-code
-					code.language-scss.
-						@include helpers("background-center", "background-position: center");
+	//- 	section(id="mixins-helper-generator")
+	//- 		h2 helpers($name, $css...)
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					@include helpers("background-center", "background-position: center");
 
-						// Output
-						.background-cover { background-size: cover; }
+	//- 					// Output
+	//- 					.background-cover { background-size: cover; }
 
-						@media (min-width: 780px) { .background-cover-above-medium { background-size: cover; } }
+	//- 					@media (min-width: 780px) { .background-cover-above-medium { background-size: cover; } }
 
-						@media (max-width: 780px) { .background-cover-below-medium { background-size: cover; } }
+	//- 					@media (max-width: 780px) { .background-cover-below-medium { background-size: cover; } }
 		
-		section(id="no-bullet")
-			h2 no-bullet()
-			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+	//- 	section(id="no-bullet")
+	//- 		h2 no-bullet()
+	//- 		p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
 
-			.example
-				pre.example-code
-					code.language-scss.
-						ul {
-							@include no-bullet;
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					ul {
+	//- 						@include no-bullet;
+	//- 					}
 						
-		section(id="mixins-map-deep-get")
-			h2 map-deep-get($values...)
-			p Fetch any value from a nested map. You can go as deep as you need to. 
+	//- 	section(id="mixins-map-deep-get")
+	//- 		h2 map-deep-get($values...)
+	//- 		p Fetch any value from a nested map. You can go as deep as you need to. 
 
-			.example
-				pre.example-code
-					code.language-scss.
-						$colors: (
-							ui: (
-								error: (
-									light: #e6e6e6;
-								)
-							)
-						);
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					$colors: (
+	//- 						ui: (
+	//- 							error: (
+	//- 								light: #e6e6e6;
+	//- 							)
+	//- 						)
+	//- 					);
 						
 
-						ul {
-							color: map-deep-get($colors, ui, error, light);
-						}
+	//- 					ul {
+	//- 						color: map-deep-get($colors, ui, error, light);
+	//- 					}
 		
-		section(id="mixins-media-queries")
-			h2 Media-query
-			p You can reference values in your breakpoints map. It will also accept values that aren't defined.
+	//- 	section(id="mixins-media-queries")
+	//- 		h2 Media-query
+	//- 		p You can reference values in your breakpoints map. It will also accept values that aren't defined.
 			
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include if-above(device-medium) {
-								color: red;
-							}
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include if-above(device-medium) {
+	//- 							color: red;
+	//- 						}
+	//- 					}
 
-						.element {
-							@include if-above(800px) {
-								color: blue;
-							}
-						}
+	//- 					.element {
+	//- 						@include if-above(800px) {
+	//- 							color: blue;
+	//- 						}
+	//- 					}
 						
-						.element {
-							@include if-below(device-small) {
-								color: blue;
-							}
-						}
+	//- 					.element {
+	//- 						@include if-below(device-small) {
+	//- 							color: blue;
+	//- 						}
+	//- 					}
 						
-						.element {
-							@include if-between(800px, 1200px) {
-								color: blue;
-							}
-						}
+	//- 					.element {
+	//- 						@include if-between(800px, 1200px) {
+	//- 							color: blue;
+	//- 						}
+	//- 					}
 		
-		section(id="mixins-placeholder")
-			h2 Placeholder
-			p Changes &lt;input&gt; placeholder text color.
+	//- 	section(id="mixins-placeholder")
+	//- 		h2 Placeholder
+	//- 		p Changes &lt;input&gt; placeholder text color.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include placeholder {
-								color: colors("greyscale", 500);
-							}
-							&:focus {
-								@include placeholder {
-									color: colors("greyscale", 300);
-								}
-							}
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include placeholder {
+	//- 							color: colors("greyscale", 500);
+	//- 						}
+	//- 						&:focus {
+	//- 							@include placeholder {
+	//- 								color: colors("greyscale", 300);
+	//- 							}
+	//- 						}
+	//- 					}
 
-		section(id="mixins-circle")
-			h2 circle($size);
-			p Create a square or circle. 
+	//- 	section(id="mixins-circle")
+	//- 		h2 circle($size);
+	//- 		p Create a square or circle. 
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include circle(200px);
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include circle(200px);
+	//- 					}
 
-						// Output
-						.element {
-							width: 200px;
-							height: 200px;
-							border-radius: 200px;
-						}
+	//- 					// Output
+	//- 					.element {
+	//- 						width: 200px;
+	//- 						height: 200px;
+	//- 						border-radius: 200px;
+	//- 					}
 
-		section(id="mixins-circle")
-			h2 square($size);
-			p Create a square.
+	//- 	section(id="mixins-circle")
+	//- 		h2 square($size);
+	//- 		p Create a square.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include square(400px);
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include square(400px);
+	//- 					}
 
-						// Output
-						.element {
-							width: 400px;
-							height: 400px;
-						}
+	//- 					// Output
+	//- 					.element {
+	//- 						width: 400px;
+	//- 						height: 400px;
+	//- 					}
 						
-		section(id="mixins-text-uppercase")
-			h2 text-uppercase($letter-spacing)
-			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
+	//- 	section(id="mixins-text-uppercase")
+	//- 		h2 text-uppercase($letter-spacing)
+	//- 		p Transforms text to uppercase, accepts an argument to specify letter-spacing.
 
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include text-uppercase(0.1em);
-						}
-
-
-		section(id="mixins-strip-units")
-			h2 strip-units($value)
-			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
-
-			.example
-				pre.example-code
-					code.language-scss.
-						.element {
-							@include uppercase(0.1em);
-						}
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include text-uppercase(0.1em);
+	//- 					}
 
 
-	section(id="helpers")
-		h1.page-title Composer Classes
-		p Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.
+	//- 	section(id="mixins-strip-units")
+	//- 		h2 strip-units($value)
+	//- 		p Transforms text to uppercase, accepts an argument to specify letter-spacing.
 
-		// bottom auto
-		p if you enable responsive classes, 
+	//- 		.example
+	//- 			pre.example-code
+	//- 				code.language-scss.
+	//- 					.element {
+	//- 						@include uppercase(0.1em);
+	//- 					}
+
+
+	//- section(id="helpers")
+	//- 	h1.page-title Composer Classes
+	//- 	p Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.
+
+	//- 	// bottom auto
+	//- 	p if you enable responsive classes, 
 		
-		section#aspect-ratio 
-			h2 Aspect Ratio
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-					);
+	//- 	section#aspect-ratio 
+	//- 		h2 Aspect Ratio
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}
 
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Colours specified in <span class="inline-code">$bb-colors</span> map.
-					td.text-center
-						span.label.label-green Yes
-					td.text-center
-						span.label.label-red No
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Colours specified in <span class="inline-code">$bb-colors</span> map.
+	//- 				td.text-center
+	//- 					span.label.label-green Yes
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-background-color")
-			h2 Background Color
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-background-color")
+	//- 		h2 Background Color
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}
 
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Colours specified in <span class="inline-code">$bb-colors</span> map.
-					td.text-center
-						span.label.label-green Yes
-					td.text-center
-						span.label.label-red No
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Colours specified in <span class="inline-code">$bb-colors</span> map.
+	//- 				td.text-center
+	//- 					span.label.label-green Yes
+	//- 				td.text-center
+	//- 					span.label.label-red No
 			
-		section(id="mixins-background-position")
-			h2 Background Position
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-						"modifiers": (
-							"center": "center",
-						);	
-					);
+	//- 	section(id="mixins-background-position")
+	//- 		h2 Background Position
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"name": "background-color",
+	//- 					"modifiers": (
+	//- 						"center": "center",
+	//- 					);	
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "center"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "center"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-background-size")
-			h2 Background Size
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-						"modifiers": (
-							"center": "center",
-						);	
-					);
+	//- 	section(id="mixins-background-size")
+	//- 		h2 Background Size
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"name": "background-color",
+	//- 					"modifiers": (
+	//- 						"center": "center",
+	//- 					);	
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "cover", "contain"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "cover", "contain"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-border-radius")
-			h2 Border Radius
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-border-radius")
+	//- 		h2 Border Radius
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale specified in your settings.
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-border")
-			h2 Border
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-border")
+	//- 		h2 Border
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale specified in your settings.
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-bottom")
-			h2 Bottom
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-bottom")
+	//- 		h2 Bottom
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale specified in your settings.
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-box-shadow")
-			h2 Box Shadow
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-box-shadow")
+	//- 		h2 Box Shadow
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale specified in your settings.
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-clearfix")
-			h2 Clearfix
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-clearfix")
+	//- 		h2 Clearfix
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale specified in your settings.
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-cursor")
-			h2 Cursor
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-cursor")
+	//- 		h2 Cursor
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "not-allowed", "pointer", "default"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "not-allowed", "pointer", "default"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-display")
-			h2 Display
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-display")
+	//- 		h2 Display
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-fill")
-			h2 Fill
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-fill")
+	//- 		h2 Fill
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-flex-direction")
-			h2 Flex Direction
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-flex-direction")
+	//- 		h2 Flex Direction
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "column", "row"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "column", "row"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 			
-		section(id="mixins-flex-items")
-			h2 Flex Items
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-flex-items")
+	//- 		h2 Flex Items
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "start", "center", "end"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "start", "center", "end"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-float")
-			h2 Float
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
+	//- 	section(id="mixins-float")
+	//- 		h2 Float
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "background-color",
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "left", "right"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "left", "right"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-left")
-			h2 Left
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-left")
+	//- 		h2 Left
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  Scale 1 - 15
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-letter-spacing")
-			h2 Letter-spacing
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-letter-spacing")
+	//- 		h2 Letter-spacing
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  Scale 1 - 15
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 						
-		section(id="mixins-line-height")
-			h2 Line-height
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-line-height")
+	//- 		h2 Line-height
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No		
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  Scale 1 - 15
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No		
 
-		section(id="mixins-margin")
-			h2 Margin
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-margin")
+	//- 		h2 Margin
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  Scale 1 - 15
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 						
-		section(id="mixins-max-width")
-			h2 Max-width
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-max-width")
+	//- 		h2 Max-width
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale 1 - 10
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 		
-		section(id="mixins-offset")
-			h2 Offset
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-offset")
+	//- 		h2 Offset
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale 1 - 10
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-opacity")
-			h2 Opacity
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-opacity")
+	//- 		h2 Opacity
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale 1 - 10
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-order")
-			h2 Order
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-order")
+	//- 		h2 Order
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale 1 - 10
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-overflow")
-			h2 Overflow
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-overflow")
+	//- 		h2 Overflow
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "hidden", "scroll", "visible", "auto"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "hidden", "scroll", "visible", "auto"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-padding")
-			h2 Padding
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-padding")
+	//- 		h2 Padding
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "hidden", "scroll", "visible", "auto"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "hidden", "scroll", "visible", "auto"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-position")
-			h2 Position
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-position")
+	//- 		h2 Position
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "absolute", "fixed", "static", "relative"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "absolute", "fixed", "static", "relative"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-right")
-			h2 Right
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-right")
+	//- 		h2 Right
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "absolute", "fixed", "static", "relative"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "absolute", "fixed", "static", "relative"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-table")
-			h2 Table
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-table")
+	//- 		h2 Table
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "border-collapse", "layout-fixed"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "border-collapse", "layout-fixed"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-text-align")
-			h2 Text Align
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-text-align")
+	//- 		h2 Text Align
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "left", "center", "right"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "left", "center", "right"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-text-color")
-			h2 Text Color
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-text-color")
+	//- 		h2 Text Color
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "left", "center", "right"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "left", "center", "right"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-text-decoration")
-			h2 Text Decoration
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-text-decoration")
+	//- 		h2 Text Decoration
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "underline", "strikethrough"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "underline", "strikethrough"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-text-ellipsis")
-			h2 Text Ellipsis
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-text-ellipsis")
+	//- 		h2 Text Ellipsis
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "underline", "strikethrough"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td "underline", "strikethrough"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-text-size")
-			h2 Text Size
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-text-size")
+	//- 		h2 Text Size
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td Scale specified in your settings.
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-text-transform")
-			h2 Text Transform
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-text-transform")
+	//- 		h2 Text Transform
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "capitalize", "uppercase", "lowercase"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "capitalize", "uppercase", "lowercase"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-top")
-			h2 Top
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-top")
+	//- 		h2 Top
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "capitalize", "uppercase", "lowercase"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "capitalize", "uppercase", "lowercase"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-transition")
-			h2 Transition
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-transition")
+	//- 		h2 Transition
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "capitalize", "uppercase", "lowercase"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "capitalize", "uppercase", "lowercase"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixin-vertical-align")
-			h2 Vertical Align
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixin-vertical-align")
+	//- 		h2 Vertical Align
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "top", "middle", "bottom"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "top", "middle", "bottom"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-visibility")
-			h2 Visibility
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-visibility")
+	//- 		h2 Visibility
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "visible", "hidden"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "visible", "hidden"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-width")
-			h2 Width
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-width")
+	//- 		h2 Width
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "visible", "hidden"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "visible", "hidden"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-		section(id="mixins-z-index")
-			h2 Z-index
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+	//- 	section(id="mixins-z-index")
+	//- 		h2 Z-index
+	//- 		pre.example-code.margin-bottom-5
+	//- 			code.language-scss.
+	//- 				// Settings
+	//- 				$bb-background-color: (
+	//- 					"import": true,
+	//- 					"name": "aspect-ratio"
+	//- 				);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "visible", "hidden"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+	//- 				// Output
+	//- 				.background-color-white {
+	//- 					background-color: white;
+	//- 				}	
+	//- 		table.settings-table
+	//- 			thead
+	//- 				th Modifiers
+	//- 				th.text-center Hover
+	//- 				th.text-center Responsive
+	//- 			tr
+	//- 				td  "visible", "hidden"
+	//- 				td.text-center
+	//- 					span.label.label-red No
+	//- 				td.text-center
+	//- 					span.label.label-red No
 
-
-		
 
 		
-
 
 		
 

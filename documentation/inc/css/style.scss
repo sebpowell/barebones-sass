@@ -1,6 +1,6 @@
 $bb-colors: (
 	"brand": blue, 
-	"keyline": #DBDBDB,
+	// "keyline": #DBDBDB,
 	"greyscale": (
 		"x-light": #e5e5e5,
 		"50":  #ECEFF1,
@@ -13,12 +13,48 @@ $bb-colors: (
 		"700": #455A64,
 		"800": #37474F,
 		"900": #263238
+	),
+
+	"keyline": (
+
+		"light": black, 
+		"dark": black
 	)
 );
 
-$bb-spacing-scale: 15;
+$bb-fonts: (
+	"gotham": (
+		"name": #{'Gotham', Helvetica, Arial, sans-serif},
+		"weights": (
+			"semi": 700,
+			"bold": 900
+		)
+	)
+);
 
-$bb-spacing-base: 5px;
+
+$fonts: (
+	(
+		"name": #{"Miller Display", Helvetica},
+		"weights": (
+			"roman": 100,
+			"semi": 200
+		),
+	),
+
+	(
+		"name": #{"Avenir Next", Helvetica},
+		"weights": (
+			"bold": 100,
+			"thin": 200
+		)
+	)
+);
+
+
+// $bb-spacing-scale: 15;
+
+// $bb-spacing-base: 5px;
 
 $bb-text-sizes: (
 	"11": 11px,
@@ -26,6 +62,65 @@ $bb-text-sizes: (
 	"15": 15px,
 	"20": 20px
 );
+
+// $bb-align-content: (
+// 	"import": false,
+// 	"name": "align-content",
+// 	"modifiers": (
+// 		"center": "center",
+// 		"stretch": "stetch",
+// 		"flex-start": "flex-start",
+// 		"flex-end": "flex-end",
+// 		"space-between": "space-between",
+// 		"space-around": "space-around" 
+// 	)
+// );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // $bb-background-color: (
 
@@ -69,52 +164,21 @@ $bb-text-sizes: (
 // );
 
 
-
+@import "_config";
 @import "../../../dist/configurable/_base";
 // @import "components/components";
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $fonts: (
-// 	(
-// 		"name": #{"Miller Display", Helvetica},
-// 		"weights": (
-// 			"roman": 100,
-// 			"semi": 200
-// 		),
-// 	),
-
-// 	(
-// 		"name": #{"Avenir Next", Helvetica},
-// 		"weights": (
-// 			"bold": 100,
-// 			"thin": 200
-// 		)
-// 	)
-// );
-
 // html {
 // 	color: colors("greyscale", "800");
 // }
 
 
-// /*
-// Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
-// */
+/*
+Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+*/
 
 
 // .hljs {

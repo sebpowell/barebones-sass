@@ -1,4 +1,0 @@
-@if map-get($bb-helpers, text-ellipsis) != false {
-	$className: map-get($bb-helpers, text-ellipsis);
-	@include helpers("#{$className}", "width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap");
-}

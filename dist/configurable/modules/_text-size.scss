@@ -1,15 +1,15 @@
-$bb-text-size-default: (
+$bb-text-size-settings-default: (
 	"import": true,
 	"name": "text"
 );
 
-$bb-text-size: () !default;
+$bb-text-size-settings: () !default;
 
-$bb-text-size: map-merge($bb-text-size-default, $bb-text-size);
+$bb-text-size-settings: map-merge($bb-text-size-settings-default, $bb-text-size-settings);
 
-@if (map-get($bb-text-size, "import") == true) {
+@if (map-get($bb-text-size-settings, "import") == true) {
 
-	$className: map-get($bb-text-size, "name");
+	$className: map-get($bb-text-size-settings, "name");
 
 	@each $name, $size in $bb-text-sizes {
 		@include helpers("#{$className}#{$bb-global-delimiter}#{$name}", "font-size: #{$size}");

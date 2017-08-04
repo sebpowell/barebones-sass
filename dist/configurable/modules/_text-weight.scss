@@ -1,0 +1,25 @@
+$bb-text-weight-default: (
+	"import": true,
+	"name": "text"
+);
+
+$bb-text-weight-settings: () !default;
+
+$bb-text-weight-settings: map-merge($bb-text-weight-default, $bb-text-weight-settings);
+
+@if (map-get($bb-text-weight-settings, "import") == true) {
+
+	$className: map-get($bb-text-weight-settings, "name");
+
+	@each $font, $map in $bb-fonts {
+		.#{$className}-#{$font} {
+			font-family: map-deep-get($bb-fonts, $font, "name");
+		}
+
+		@each $weight, $value in map-deep-get($bb-fonts, $font, "weights") {
+			.#{$className}-#{$font}-#{$weight} {
+				font-weight: $value;
+			}
+		}
+	}
+}

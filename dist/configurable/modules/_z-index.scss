@@ -1,15 +1,15 @@
-$bb-z-index-default: (
+$bb-z-index-settings-default: (
 	"import": true,
 	"name": "z-index"
 );
 
-$bb-z-index: () !default;
+$bb-z-index-settings: () !default;
 
-$bb-z-index: map-merge($bb-z-index-default, $bb-z-index);
+$bb-z-index-settings: map-merge($bb-z-index-settings-default, $bb-z-index-settings);
 
-@if (map-get($bb-z-index, "import") == true) {
+@if (map-get($bb-z-index-settings, "import") == true) {
 
-	$className: map-get($bb-z-index, "name");
+	$className: map-get($bb-z-index-settings, "name");
 	
 	$i: 0;
 

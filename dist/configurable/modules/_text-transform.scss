@@ -1,6 +1,6 @@
-$bb-text-transform-default: (
+$bb-text-transform-settings-default: (
 	"import": true,
-	"name": "text-transform",
+	"name": "text",
 	"modifiers": (
 		"uppercase": "uppercase",
 		"lowercase": "lowercase",
@@ -8,15 +8,15 @@ $bb-text-transform-default: (
 	)
 );
 
-$bb-text-transform: () !default;
+$bb-text-transform-settings: () !default;
 
-$bb-text-transform: map-merge($bb-text-transform-default, $bb-text-transform);
+$bb-text-transform-settings: map-merge($bb-text-transform-settings-default, $bb-text-transform-settings);
 
-@if (map-get($bb-text-transform, "import") == true) {
+@if (map-get($bb-text-transform-settings, "import") == true) {
 	
-	$className: map-get($bb-text-transform, "name");
+	$className: map-get($bb-text-transform-settings, "name");
 
-	@each $key, $value in map-deep-get($bb-position, "modifiers") {
+	@each $key, $value in map-deep-get($bb-text-transform-settings, "modifiers") {
 		.#{$className}#{$bb-global-delimiter}#{$value} {
 			text-transform: $key;
 		}

@@ -1,6 +1,15 @@
-@if map-get($bb-helpers, letter-spacing) != false {
+$bb-letter-spacing-settings-default: (
+	"import": true,
+	"name": "letter-spacing"
+);
+
+$bb-letter-spacing-settings: () !default;
+
+$bb-letter-spacing-settings: map-merge($bb-letter-spacing-settings-default, $bb-letter-spacing-settings);
+
+@if (map-get($bb-letter-spacing-settings, "import") == true) {
 	
-	$className: map-get($bb-helpers, letter-spacing);
+	$className: map-get($bb-letter-spacing-settings, "name");
 
 	.no-#{$className} {
 	  letter-spacing: 0 !important;

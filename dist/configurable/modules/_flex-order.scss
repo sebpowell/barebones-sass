@@ -1,0 +1,22 @@
+$bb-flex-order-settings-default: (
+	"import": true,
+	"name": "flex-order"
+);
+
+$bb-flex-order-settings: () !default;
+
+$bb-flex-order-settings: map-merge($bb-flex-order-settings-default, $bb-flex-order-settings);
+
+@if (map-get($bb-flex-order-settings, "import") == true) {
+	
+	$className: map-get($bb-flex-order-settings, "name");
+
+	$i: 1;
+	
+	@while $i <= 10 {
+
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$i}", "order: #{$i}");
+	
+		$i: $i + 1;
+	}
+}

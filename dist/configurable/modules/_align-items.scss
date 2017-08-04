@@ -20,4 +20,3 @@ $bb-align-items: map-merge($bb-align-items-default, $bb-align-items);
 		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "align-items: #{$k}");
 	}
 }
-

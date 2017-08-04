@@ -1,11 +1,16 @@
-@if map-get($bb-helpers, text-color) != false {
+$bb-text-color-settings-default: (
+	"import": true,
+	"name": "text"
+);
 
-	$className: map-get($bb-helpers, text-color);
-	
-	.#{$className}-white {
-		color: white;
-	}
-	
+$bb-text-color-settings: () !default;
+
+$bb-text-color-settings: map-merge($bb-text-color-settings-default, $bb-text-color-settings);
+
+@if (map-get($bb-text-color-settings, "import") == true) {
+
+	$className: map-get($bb-text-color-settings, "name");
+
 	// Generate a text-color class for every colour in the $colours map.
 	@each $category, $value in $bb-colors {
 	

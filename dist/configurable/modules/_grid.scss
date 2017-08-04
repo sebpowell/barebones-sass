@@ -5,8 +5,6 @@ $bb-grid-default: (
 	"container": "columns"
 ) !default;
 
-$bb-grid: () !default;
-
 $bb-grid: map-merge($bb-grid-default, $bb-grid);
 
 $bb-columns: (
@@ -18,7 +16,6 @@ $bb-offset: (
 	"import": true,
 	"name": "offset"
 ) !default;
-
 
 $breakpoint: map-get($bb-grid, "breakpoint");
 $columns:  map-get($bb-grid, "columns");

@@ -1,26 +1,34 @@
-@if map-get($bb-helpers, text-decoration) != false {
-	
-	$className: map-get($bb-helpers, text-decoration);
+$bb-text-decoration-settings-default: (
+	"import": true,
+	"name": "text",
+	"modifiers": (
+		"line-through": "line-through",
+		"underline": "underline"
+	)
+);
 
-	.#{$className}#{$bb-global-delimiter}underline {
-		text-decoration: underline;
-	}
+$bb-text-decoration-settings: () !default;
 
-	.#{$className}#{$bb-global-delimiter}underline#{$bb-global-delimiter}#{$bb-hover-class-name} {
-		&:hover {
-			text-decoration: underline;
+$bb-text-decoration-settings: map-merge($bb-text-decoration-settings-default, $bb-text-decoration-settings);
+
+@if (map-get($bb-text-decoration-settings, "import") == true) {
+
+	$className: map-get($bb-text-decoration-settings, "name");
+
+	@each $k, $v in map-deep-get($bb-text-decoration-settings, "modifiers") {
+
+		.#{$className}#{$bb-global-delimiter}#{$k} {
+			text-decoration: #{$v};
 		}
-	}
 
-	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}underline {
-		text-decoration: none !important;
-	}
+		.#{$className}#{$bb-global-delimiter}#{$k}#{$bb-global-delimiter}#{$bb-hover-class-name} {
+			&:hover {
+				text-decoration: #{$v};
+			}
+		}
 
-	.#{$className}#{$bb-global-delimiter}strikethrough {
-		text-decoration: line-through;
-	}
-
-	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}strikethrough {
-		text-decoration: none !important;
+		.no-#{$className}-#{$k} {
+			text-decoration: none !important;
+		}
 	}
 }

@@ -1,4 +1,4 @@
-$bb-overflow-default: (
+$bb-overflow-settings-default: (
 	"import": true,
 	"name": "overflow",
 	"modifiers": (
@@ -9,15 +9,15 @@ $bb-overflow-default: (
 	)
 );
 
-$bb-overflow: () !default;
+$bb-overflow-settings: () !default;
 
-$bb-overflow: map-merge($bb-overflow-default, $bb-overflow);
+$bb-overflow-settings: map-merge($bb-overflow-settings-default, $bb-overflow-settings);
 
-@if (map-get($bb-overflow, "import") == true) {
+@if (map-get($bb-overflow-settings, "import") == true) {
 
-	$className: map-get($bb-overflow, "name");
+	$className: map-get($bb-overflow-settings, "name");
 
-	@each $k, $v in map-deep-get($bb-overflow, "modifiers") {
+	@each $k, $v in map-deep-get($bb-overflow-settings, "modifiers") {
 		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "overflow: #{$k}");
 		@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}#{$v}", "overflow-y: #{$k}");
 		@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}#{$v}", "overflow-x: #{$k}");

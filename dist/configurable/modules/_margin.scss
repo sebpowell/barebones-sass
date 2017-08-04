@@ -1,4 +1,4 @@
-$bb-margin-default: (
+$bb-margin-settings-default: (
 	"import": true,
 	"name": "margin",
 	"modifiers": (
@@ -11,13 +11,13 @@ $bb-margin-default: (
 	)
 );
 
-$bb-margin: () !default;
+$bb-margin-settings: () !default;
 
-$bb-margin: map-merge($bb-margin-default, $bb-margin);
+$bb-margin-settings: map-merge($bb-margin-settings-default, $bb-margin-settings);
 
-@if (map-get($bb-margin, "import") == true) {
+@if (map-get($bb-margin-settings, "import") == true) {
 
-	$className: map-get($bb-margin, "name");
+	$className: map-get($bb-margin-settings, "name");
 
 	$i: 1;
 
@@ -25,7 +25,7 @@ $bb-margin: map-merge($bb-margin-default, $bb-margin);
 		
 		$n: $i * strip-unit($bb-spacing-base);	
 		
-		@each $key, $value in map-deep-get($bb-margin, "modifiers") {
+		@each $key, $value in map-deep-get($bb-margin-settings, "modifiers") {
 			@if $key == "vertical" {
 				@include helpers("#{$className}#{$bb-global-delimiter}#{$value}#{$bb-global-delimiter}#{$i}", "margin-top: #{$n}px", "margin-bottom: #{$n}px");
 			}

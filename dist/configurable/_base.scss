@@ -1,18 +1,25 @@
-$bb-border-radius-scale: 0;
+$bb-border-radius-scale: 5;
 
-$bb-breakpoints: () !default;
+$bb-breakpoints: ("medium": 780px) !default;
 
 $bb-colors: () !default;
+
+$bb-fonts: () !default;
 
 $bb-letter-spacing: () !default;
 
 $bb-line-heights: () !default;
 
+$bb-grid: (
+	"gutter": 20px,
+	"breakpoint": 780px,
+) !default;
+
 $bb-global-delimiter: "-" !default;
 
-$bb-hover-class-name: "" !default;
+$bb-hover-class-name: "hover" !default;
 
-$bb-max-width-scale: 0 !default;
+$bb-max-width-scale: 10 !default;
 
 $bb-responsive: true !default;
 
@@ -20,9 +27,9 @@ $bb-normalize: true !default;
 
 $bb-shadows: () !default;
 
-$bb-spacing-scale: 0 !default;
+$bb-spacing-scale: 5 !default;
 
-$bb-spacing-base: 0 !default;
+$bb-spacing-base: 5 !default;
 
 $bb-text-sizes: () !default;
 
