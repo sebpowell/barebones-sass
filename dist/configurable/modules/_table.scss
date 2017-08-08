@@ -1,8 +1,8 @@
 $bb-table-settings-default: (
 	"import": true,
-	"name": "table",
 	"modifiers": (
-		"table-layout": "fixed",
+		"table-layout-fixed": "table-layout-fixed",
+		"border-collapse": "table-border-collapse"
 	)
 );
 
@@ -12,19 +12,13 @@ $bb-table-settings: map-merge($bb-table-settings-default, $bb-table-settings);
 
 @if (map-get($bb-table-settings, "import") == true) {
 
-	$className: map-get($bb-table-settings, "name");
-
-	@each $k, $v in map-deep-get($bb-align-content, "modifiers") {
-		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "align-content: #{$k}");
-	}
-
-	.#{$className}#{$bb-global-delimiter}border#{$bb-global-delimiter}collapse {
+	.#{map-deep-get($bb-table-settings, "modifiers", "border-collapse")} {
 	    border-collapse: collapse;
 	    border-spacing: 0;
 	}
 
-	.#{$className}#{$bb-global-delimiter}layout#{$bb-global-delimiter}fixed {
-		table-layout: fixed;
+	.#{map-deep-get($bb-table-settings, "modifiers", "table-layout-fixed")} {
+	    table-layout: fixed;
 	}
 }
 

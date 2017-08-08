@@ -1,10 +1,9 @@
 $bb-align-items-default: (
 	"import": true,
-	"name": "align-items",
 	"modifiers": (
-		"flex-start": "flex-start",
-		"flex-end": "flex-end",
-		"center": "center"
+		"flex-start": "align-items-flex-start",
+		"flex-end": "align-items-flex-end",
+		"center": "align-items-center"
 	)
 );
 
@@ -13,10 +12,7 @@ $bb-align-items: () !default;
 $bb-align-items: map-merge($bb-align-items-default, $bb-align-items);
 
 @if (map-get($bb-align-items, "import") == true) {
-
-	$className: map-get($bb-align-items, "name");
-
 	@each $k, $v in map-deep-get($bb-align-items, "modifiers") {
-		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "align-items: #{$k}");
+		@include helpers("#{$v}", "align-items: #{$k}");
 	}
 }

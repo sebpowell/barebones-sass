@@ -1,9 +1,8 @@
 $bb-text-decoration-settings-default: (
 	"import": true,
-	"name": "text",
 	"modifiers": (
-		"line-through": "line-through",
-		"underline": "underline"
+		"line-through": "text-line-through",
+		"underline": "text-underline"
 	)
 );
 
@@ -13,21 +12,19 @@ $bb-text-decoration-settings: map-merge($bb-text-decoration-settings-default, $b
 
 @if (map-get($bb-text-decoration-settings, "import") == true) {
 
-	$className: map-get($bb-text-decoration-settings, "name");
-
 	@each $k, $v in map-deep-get($bb-text-decoration-settings, "modifiers") {
 
-		.#{$className}#{$bb-global-delimiter}#{$k} {
+		.#{$k} {
 			text-decoration: #{$v};
 		}
 
-		.#{$className}#{$bb-global-delimiter}#{$k}#{$bb-global-delimiter}#{$bb-hover-class-name} {
+		.#{$k}#{$bb-global-delimiter}#{$bb-hover-class-name} {
 			&:hover {
 				text-decoration: #{$v};
 			}
 		}
 
-		.no-#{$className}-#{$k} {
+		.no-#{$k} {
 			text-decoration: none !important;
 		}
 	}

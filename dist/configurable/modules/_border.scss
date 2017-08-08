@@ -1,9 +1,9 @@
 $bb-border-default: (
 	"import": true,
-	"name": "border",
 	"modifiers": (
-		"top": "top",
-		"right": "right",
+		"all": "border",
+		"top": "border-top",
+		"right": "border-xright",
 		"bottom": "bottom",
 		"left": "left"
 	)
@@ -14,12 +14,10 @@ $bb-border: () !default;
 $bb-border: map-merge($bb-border-default, $bb-border);
 
 @if (map-get($bb-border, "import") == true) {
-	
-	$className: map-get($bb-border, "name");
-	
+		
 	@include helpers("no-#{$className}", "border: none !important");
 
-	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}last {
+	.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter-second}last {
 		&:last-of-type {
 			border: none !important;
 		}
@@ -30,7 +28,7 @@ $bb-border: map-merge($bb-border-default, $bb-border);
 			@each $color, $value in map-get($bb-colors, keyline) {
 				@include helpers("#{$className}-#{$color}", "border: 1px solid #{$value}");
 				@each $k, $v in map-deep-get($bb-border, "modifiers") {
-					@include helpers("#{$className}#{$bb-global-delimiter}#{$v}#{$bb-global-delimiter}#{$color}", "border-#{$k}: 1px solid #{$value}");
+					@include helpers("#{$v}#{$bb-global-delimiter-second}#{$color}", "border-#{$k}: 1px solid #{$value}");
 				}
 			}
 		}
@@ -39,14 +37,13 @@ $bb-border: map-merge($bb-border-default, $bb-border);
 			$value: map-get($bb-colors, keyline);
 			@include helpers("#{$className}", "border: 1px solid #{$value}");
 			@each $k, $v in map-deep-get($bb-border, "modifiers") {
-				@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "border-#{$k}: 1px solid #{$value}");
+				@include helpers("#{$v}", "border-#{$k}: 1px solid #{$value}");
 			}
 		}
 
 		@each $k, $v in map-deep-get($bb-border, "modifiers") {
-			@include helpers("no-#{$className}-#{$v}", "border-#{$k}: none !important");
-
-			.no#{$bb-global-delimiter}#{$className}#{$bb-global-delimiter}#{$v}#{$bb-global-delimiter}last {
+			@include helpers("no-#{$className}{$bb-global-delimiter-second}#{$v}", "border-#{$k}: none !important");
+			.no-#{$v}#{$bb-global-delimiter-second}last {
 				&:last-of-type {
 					border-#{$k}: none !important;
 				}

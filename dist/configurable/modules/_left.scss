@@ -20,7 +20,7 @@ $bb-left: map-merge($bb-left-default, $bb-left);
 
 		$n: $i * strip-unit($bb-spacing-base);
 
-		@include helpers("#{$className}-#{$i}", "left: #{$n}px");
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$i}", "left: #{$n}px");
 		
 		$i: $i + 1;
 	}

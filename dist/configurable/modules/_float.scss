@@ -16,7 +16,7 @@ $bb-float: map-merge($bb-float-default, $bb-float);
 	$className: map-get($bb-float, "name");
 	
 	@each $k, $v in map-deep-get($bb-float, "modifiers") {
-		@include helpers("#{$className}-#{$v}", "float: #{$k}");
+		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "float: #{$k}");
 	}
 	
 	@include helpers("no-#{$className}", "float: none !important");

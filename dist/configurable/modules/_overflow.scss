@@ -1,6 +1,5 @@
 $bb-overflow-settings-default: (
 	"import": true,
-	"name": "overflow",
 	"modifiers": (
 		"hidden": "hidden",
 		"scroll": "scroll",
@@ -14,11 +13,8 @@ $bb-overflow-settings: () !default;
 $bb-overflow-settings: map-merge($bb-overflow-settings-default, $bb-overflow-settings);
 
 @if (map-get($bb-overflow-settings, "import") == true) {
-
-	$className: map-get($bb-overflow-settings, "name");
-
 	@each $k, $v in map-deep-get($bb-overflow-settings, "modifiers") {
-		@include helpers("#{$className}#{$bb-global-delimiter}#{$v}", "overflow: #{$k}");
+		@include helpers("#{$v}", "overflow: #{$k}");
 		@include helpers("#{$className}#{$bb-global-delimiter}y#{$bb-global-delimiter}#{$v}", "overflow-y: #{$k}");
 		@include helpers("#{$className}#{$bb-global-delimiter}x#{$bb-global-delimiter}#{$v}", "overflow-x: #{$k}");
 	}

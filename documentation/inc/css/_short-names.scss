@@ -1,9 +1,32 @@
+$bb-global-delimiter: "";
+
+$bb-global-delimiter-second: "-";
+
+$bb-hover-class-name: "Hover";
+
+$bb-text-sizes: (
+
+	"12": 12px,
+	"14": 14px
+);
+
 $bb-align-content: (
-	"name": "ac"
+	"modifiers": (
+		"center": "content-center",
+		"stretch": "content-stretch",
+		"flex-start": "content-flex-start",
+		"flex-end": "content-flex-end",
+		"space-between": "content-space-between",
+		"space-around": "content-space-around" 
+	)
 );
 
 $bb-align-items: (
-	"name": "ai"
+	"modifiers": (
+		"flex-start": "items-flex-start",
+		"flex-end": "items-flex-end",
+		"center": "items-center"
+	)
 );
 
 $bb-aspect-ratio: (
@@ -16,11 +39,19 @@ $bb-background-color: (
 );
 
 $bb-background-position: (
-	"name": "bg"
+	"modifiers": (
+		"top": "bg-top",
+		"center": "bg-center",
+		"bottom": "bg-bottom"
+	)
 );
 
 $bb-background-size: (
-	"name": "bg"
+	"name": "",
+	"modifiers": (
+		"cover": "cover",
+		"contain": "contain"
+	)
 );
 
 $bb-border-radius: (
@@ -28,7 +59,13 @@ $bb-border-radius: (
 );
 
 $bb-border: (
-	"name": "b"
+	"modifiers": (
+		"all": "b",
+		"top": "bt",
+		"right": "br",
+		"bottom": "bb",
+		"left": "bl"
+	)
 );
 
 $bb-box-shadow: (
@@ -39,11 +76,20 @@ $bb-clearfix: (
 	"name": "cl"
 );
 $bb-cursor: (
-	"name": "cu"
+	"name": "",
 );
 
 $bb-display: (
-	"name": "d"
+	"name": "",
+	"modifiers": (
+		"none": "none",
+		"block": "block",
+		"inline-block": "inlineBlock",
+		"table": "table",
+		"table-row": "tableRow",
+		"table-cell": "tableCell",
+		"flex": "flex"
+	)
 );
 
 $bb-fill: (
@@ -63,19 +109,23 @@ $bb-flex-wrap: (
 );
 
 $bb-float: (
-	"name": "fl"
+	"name": "f",
+	"modifiers": (
+		"left": "l",
+		"right": "r"
+	)
 );
 
 $bb-columns: (
-	"name": "columns"
+	"name": "c"
 );
 
 $bb-offset: (
-	"name": "offset"
+	"name": "of"
 );
 
 $bb-height: (
-	"name": "height"
+	"name": "h"
 );
 
 $bb-left: (
@@ -83,11 +133,11 @@ $bb-left: (
 );
 
 $bb-letter-spacing-settings: (
-	"name": "letter-spacing"
+	"name": "ls"
 );
 
 $bb-line-height-settings: (
-	"name": "line-height"
+	"name": "lh"
 );
 
 $bb-margin-settings: (
@@ -95,7 +145,7 @@ $bb-margin-settings: (
 );
 
 $bb-max-width-settings: (
-	"name": "max-width"
+	"name": "mw"
 );
 
 $bb-opacity: (
@@ -135,7 +185,7 @@ $bb-text-decoration-settings: (
 );
 
 $bb-text-size-settings: (
-	"name": "t"
+	"name": "f"
 );
 
 $bb-text-transform-settings: (
@@ -155,13 +205,18 @@ $bb-transition-settings: (
 );
 
 $bb-vertical-align: (
-	"name": "va"
+	"name": "v",
+	"modifiers": (
+		"top": "Top",
+		"bottom": "Bottom",
+		"middle": "Middle"
+	)
 );
 
 $bb-width-settings: (
-	"name": "width"
+	"name": "w"
 );
 
 $bb-z-index-settings: (
-	"name": "z-index"
+	"name": "z"
 );

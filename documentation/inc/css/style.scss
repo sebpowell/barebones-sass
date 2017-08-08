@@ -22,46 +22,52 @@ $bb-colors: (
 	)
 );
 
-$bb-fonts: (
-	"gotham": (
-		"name": #{'Gotham', Helvetica, Arial, sans-serif},
-		"weights": (
-			"semi": 700,
-			"bold": 900
-		)
-	)
-);
+@import "_short-names";
+@import "../../../dist/configurable/_base";
+
+// $bb-fonts: (
+// 	"gotham": (
+// 		"name": #{'Gotham', Helvetica, Arial, sans-serif},
+// 		"weights": (
+// 			"semi": 700,
+// 			"bold": 900
+// 		)
+// 	)
+// );
 
 
-$fonts: (
-	(
-		"name": #{"Miller Display", Helvetica},
-		"weights": (
-			"roman": 100,
-			"semi": 200
-		),
-	),
+// $fonts: (
+// 	(
+// 		"name": #{"Miller Display", Helvetica},
+// 		"weights": (
+// 			"roman": 100,
+// 			"semi": 200
+// 		),
+// 	),
 
-	(
-		"name": #{"Avenir Next", Helvetica},
-		"weights": (
-			"bold": 100,
-			"thin": 200
-		)
-	)
-);
+// 	(
+// 		"name": #{"Avenir Next", Helvetica},
+// 		"weights": (
+// 			"bold": 100,
+// 			"thin": 200
+// 		)
+// 	)
+// );
 
+
+
+// $bb-global-delimiter: "" !default;
 
 // $bb-spacing-scale: 15;
 
 // $bb-spacing-base: 5px;
 
-$bb-text-sizes: (
-	"11": 11px,
-	"13": 13px,
-	"15": 15px,
-	"20": 20px
-);
+// $bb-text-sizes: (
+// 	"11": 11px,
+// 	"13": 13px,
+// 	"15": 15px,
+// 	"20": 20px
+// );
 
 // $bb-align-content: (
 // 	"import": false,
@@ -164,8 +170,6 @@ $bb-text-sizes: (
 // );
 
 
-@import "_config";
-@import "../../../dist/configurable/_base";
 // @import "components/components";
 
 
@@ -174,11 +178,6 @@ $bb-text-sizes: (
 // html {
 // 	color: colors("greyscale", "800");
 // }
-
-
-/*
-Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
-*/
 
 
 // .hljs {
