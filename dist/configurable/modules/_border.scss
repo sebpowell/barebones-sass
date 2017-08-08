@@ -3,7 +3,7 @@ $bb-border-default: (
 	"modifiers": (
 		"all": "border",
 		"top": "border-top",
-		"right": "border-xright",
+		"right": "border-right",
 		"bottom": "bottom",
 		"left": "left"
 	)
@@ -14,6 +14,9 @@ $bb-border: () !default;
 $bb-border: map-merge($bb-border-default, $bb-border);
 
 @if (map-get($bb-border, "import") == true) {
+
+
+	$className: map-deep-get($bb-border-default, "modifiers", "all");
 		
 	@include helpers("no-#{$className}", "border: none !important");
 

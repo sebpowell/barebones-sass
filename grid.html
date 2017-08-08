@@ -1,0 +1,196 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones SASS"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://www.barebones-sass.io/docs/images/og-image.png"/>
+    <meta property="og:url" content="http://barebones-sass.getagent.co.uk/"/>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="documentation/inc/css/style.css"/>
+    <link rel="stylesheet" href="documentation/inc/css/style-2.css"/>
+    <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700" rel="stylesheet"/>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script src="documentation/inc/javascript/application.js"></script>
+    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+      //- $(document).ready(function() {
+      //- 	$(".docs-navigation").scrollSpy();
+      //- });
+    </script>
+  </head>
+</html>
+<body class="page-layout-docs">
+  <div class="backdrop"></div>
+  <div class="docs-container">
+    <div class="docs-navigation">
+      <div class="nav-logo"><img src="documentation/inc/images/logo.png"/></div>
+      <div class="nav-section"><a href="#introduction" class="parent">Introduction</a>
+        <ul style="display: block" class="sub-navigation is-open">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#prerequisites">Requirements</a></li>
+          <li><a href="#installing">Installation</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background reading</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#settings" class="parent">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#settings-border-radius-scale">Border-radius scale</a></li>
+          <li><a href="#settings-breakpoints">Breakpoints</a></li>
+          <li><a href="#settings-colours">Colors</a></li>
+          <li><a href="#settings-letter-spacing">Letter-spacing</a></li>
+          <li><a href="#settings-line-heights">Line-heights</a></li>
+          <li><a href="#settings-global-delimiter">Global delimiter</a></li>
+          <li><a href="#settings-grid">Grid</a></li>
+          <li><a href="#settings-hover-class-name">Hover class name</a></li>
+          <li><a href="#settings-max-width-scale">Max-width scale</a></li>
+          <li><a href="#settings-responsive">Responsive</a></li>
+          <li><a href="#settings-normalize">Normalize</a></li>
+          <li><a href="#settings-shadows">Shadows</a></li>
+          <li><a href="#settings-spacing-base">Spacing base</a></li>
+          <li><a href="#settings-spacing-scale">Spacing scale</a></li>
+          <li><a href="#settings-text-sizes">Text-sizes</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#grid" class="parent">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Settings</a></li>
+          <li><a href="#generator">Containers</a></li>
+          <li><a href="#generator">Columns</a></li>
+          <li><a href="#generator">Galleries</a></li>
+          <li><a href="#generator">Helpers</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#mixins" class="parent">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#mixins-arrow">Arrow</a></li>
+          <li><a href="#mixins-aspect-ratio">Aspect-ratio</a></li>
+          <li><a href="#mixins-background-image">Background-image</a></li>
+          <li><a href="#mixins-clearfix">Clearfix</a></li>
+          <li><a href="#mixins-ellipsis">Ellipsis</a></li>
+          <li><a href="#mixins-helper-generator">Helper generator</a></li>
+          <li><a href="#mixins-lists">Lists</a></li>
+          <li><a href="#mixins-map-deep-get">Map-deep-get</a></li>
+          <li><a href="#mixins-media-query">Media-query</a></li>
+          <li><a href="#mixins-placeholder">Placeholder</a></li>
+          <li><a href="#mixins-shapes">Shapes</a></li>
+          <li><a href="#mixins-strings">Strings</a></li>
+          <li><a href="#mixins-strip-units">Strip-units</a></li>
+          <li><a href="#mixins-text-uppercase">Text-uppercase</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#helpers" class="parent">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#helpers-align-content">Align-content</a></li>
+          <li><a href="#helpers-align-items">Align-items</a></li>
+          <li><a href="#helpers-aspect-ratio">Aspect-ratio</a></li>
+          <li><a href="#helpers-background-color">Background-color</a></li>
+          <li><a href="#helpers-background-position">Background-position</a></li>
+          <li><a href="#helpers-background-size">Background-size</a></li>
+          <li><a href="#helpers-border-radius">Border-radius</a></li>
+          <li><a href="#helpers-border">Border</a></li>
+          <li><a href="#helpers-bottom">Bottom</a></li>
+          <li><a href="#helpers-box-shadow">Box-shadow</a></li>
+          <li><a href="#helpers-clearfix">Clearfix</a></li>
+          <li><a href="#helpers-cursor">Cursor</a></li>
+          <li><a href="#helpers-display">Display</a></li>
+          <li><a href="#helpers-fill">Fill</a></li>
+          <li><a href="#helpers-flex-direction">Flex-direction</a></li>
+          <li><a href="#helpers-flex">Flex</a></li>
+          <li><a href="#helpers-float">Float</a></li>
+          <li><a href="#helpers-height">Height</a></li>
+          <li><a href="#helpers-left">Left</a></li>
+          <li><a href="#helpers-letter-spacing">Letter-spacing</a></li>
+          <li><a href="#helpers-line-height">Line-height</a></li>
+          <li><a href="#helpers-margin">Margin</a></li>
+          <li><a href="#helpers-max-width">Max-width</a></li>
+          <li><a href="#helpers-offset">Offset</a></li>
+          <li><a href="#helpers-opacity">Opacity</a></li>
+          <li><a href="#helpers-order">Order</a></li>
+          <li><a href="#helpers-overflow">Overflow</a></li>
+          <li><a href="#helpers-padding">Padding</a></li>
+          <li><a href="#helpers-position">Position</a></li>
+          <li><a href="#helpers-right">Right</a></li>
+          <li><a href="#helpers-table">Table</a></li>
+          <li><a href="#helpers-text-align">Text-align</a></li>
+          <li><a href="#helpers-text-color">Text-color</a></li>
+          <li><a href="#helpers-text-decoration">Text-decoration</a></li>
+          <li><a href="#helpers-text-ellipsis">Text-ellipsis</a></li>
+          <li><a href="#helpers-text-size">Text-size</a></li>
+          <li><a href="#helpers-text-transform">Text-transform</a></li>
+          <li><a href="#helpers-top">Top</a></li>
+          <li><a href="#helpers-transition">Transition</a></li>
+          <li><a href="#helpers-vertical-align">Vertical-align</a></li>
+          <li><a href="#helpers-visibility">Visibility</a></li>
+          <li><a href="#helpers-width">Width</a></li>
+          <li><a href="#helpers-z-index">Z-index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="docs-content">
+      <div class="inner">
+        <section id="grid">
+          <section id="grid-intro">
+            <h1 class="page-title">Grid</h1>
+          </section>
+          <section id="grid-container">
+            <h2>Container</h2>
+            <p>To create a grid, use the <span class="inline-code">.row</span> class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.</p>
+            <div class="example margin-bottom-double">
+              <div class="example-rendered">
+                <div class="row">
+                  <div class="columns-4"></div>
+                  <div class="columns-5"></div>
+                  <div class="columns-3"></div>
+                </div>
+              </div>
+              <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4"&gt;&lt;/div&gt;
+ &lt;div class="columns-4"&gt;&lt;/div&gt;
+ &lt;div class="columns-4"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </section>
+          <section id="grid-container">
+            <h2>Mobile columns</h2>
+            <p>Helper classes are also available to create different grids for different screen sizes.</p>
+            <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
+ &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;&lt;/div&gt;
+ &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;&lt;/div&gt;
+ &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+          <section id="grid-container">
+            <h2>Offsets</h2>
+            <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
+            <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
+	&lt;div class="columns-3 offset-9"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+          <section id="grid-container">
+            <h2>Gutter</h2>
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

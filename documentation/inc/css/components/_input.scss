@@ -1,0 +1,23 @@
+@mixin input {
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="url"],
+	input[type="date"],
+	input[type="tel"],
+	input[type="search"],
+	select {
+		@content;
+	}
+}
+
+@include input {
+
+	// font-family: map-deep-get("avenir-next");
+	border: 1px solid colors(keyline);
+	height: 50px;
+	font-size: 16px;
+	width: 100%;
+	padding-left: sizes(3);
+}

@@ -41,8 +41,9 @@
   <div class="backdrop"></div>
   <div class="docs-container">
     <div class="docs-navigation">
+      <div class="nav-logo"><img src="documentation/inc/images/logo.png"/></div>
       <div class="nav-section"><a href="#introduction" class="parent">Introduction</a>
-        <ul class="sub-navigation">
+        <ul style="display: block" class="sub-navigation is-open">
           <li><a href="#introduction">Introduction</a></li>
           <li><a href="#prerequisites">Requirements</a></li>
           <li><a href="#installing">Installation</a></li>
@@ -149,9 +150,294 @@
         <section id="introduction" class="no-padding-top">
           <section id="introduction-intro">
             <h1>Introduction</h1>
-            <p>Barebones is a boilerplate to help you build your own UI framework. It is not a fully-fledged UI kit or library (Bootstrap, Foundation etc), but a set of tools common to all projects; a grid system and commonly used utility classes and mixins reponsive helpers, , put together in a convenient package to kickstart your next project. It is design-agnostic – so you can spend less time overwriting and more time creating.</p>
+            <p>Barebones is a boilerplate to help you build your own UI framework. It is not a fully-fledged UI kit or library (Bootstrap, Foundation etc), but a set of tools common to all projects put together in a convenient package to kickstart your next project: </p>
+            <ul class="bullet-list">
+              <li>a grid system </li>
+              <li>commonly used mixins</li>
+              <li>reponsive helpers</li>
+            </ul>
+            <p>Barebones is design-agnostic and fully customisable, so you can spend less time overwriting and more time creating.</p>
             <p>To provide an example, this is the login modal on Airbnb, recreated using the various classes this is the sort of thing you can very quickly create with Barebones.</p>
           </section>
+          <section id="introduction-intro">
+            <h1>Why do I need this?</h1>
+            <p>Barebones allows you to quickly build a custom, fully responsive UI. Here's an exmple of how you could use Barebones to replicate the Airbnb login modal. </p>
+            <div class="example background-greyscale-x-light demo-airbnb margin-bottom-5">
+              <div class="padding-15">
+                <div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large">
+                  <div class="demo-button demo-button-facebook width-full margin-bottom-2">Log in with Facebook</div>
+                  <div class="demo-button demo-button-empty width-full">Log in with Google</div>
+                  <div class="border-top text-center margin-top-7 margin-bottom-3">
+                    <div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative text-15">or</div>
+                  </div>
+                  <div class="margin-bottom-4">
+                    <input type="text" placeholder="Email Address"/>
+                  </div>
+                  <div class="margin-bottom-4">
+                    <input type="password" placeholder="Password"/>
+                  </div>
+                  <div class="margin-bottom-4">
+                    <div class="clearfix">
+                      <div class="float-left">
+                        <div class="checkbox">
+                          <div class="checkbox-input"></div>
+                          <div class="checkbox-label">Remember me</div>
+                        </div>
+                      </div>
+                      <div class="float-right"><a href="#" class="text-15 text-brand text-underline-hover">Forgot password?</a></div>
+                    </div>
+                  </div>
+                  <div class="margin-bottom-5">
+                    <div class="demo-button width-full">Log in</div>
+                  </div>
+                  <div class="border-top margin-bottom-5"></div>
+                  <div class="text-center">
+                    <div class="text-20">Don’t have an account? <a class="text-brand text-underline-hover">Sign up</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabbed-code">
+              <ul class="tabbed-code-navigation">
+                <li data-tab="scss" class="is-active">SCSS</li>
+                <li data-tab="html">HTML</li>
+              </ul>
+              <div class="tabbed-code-tab">
+                <pre class="example-code"><code class="language-scss">$bb-colors: (
+
+	"brand": #008489, 
+
+	"greyscale": (
+		"x-light": #e5e5e5,
+		"500": #767676
+	),
+	"keyline": #DBDBDB,
+
+	"social": (
+		"facebook": #4568b2
+	),
+);
+
+$bb-spacing-scale: 15;
+
+$bb-spacing-base: 4px;
+
+@import "../../../dist/configurable/_base";
+@import "components/components";
+
+.demo-airbnb {
+
+	> * {
+		font-family: "circular std";
+		font-weight: 300;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	.checkbox {
+		.checkbox-input {
+			@include square(18px);
+			border: 1px solid colors(keyline);
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: sizes(1);
+		}
+
+		.checkbox-label {
+			display: inline-block;
+			font-size: 20px;
+			vertical-align: middle;
+		}
+	}
+
+	.demo-button {
+		border: 0;
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 0 sizes(6);
+		height: 50px;
+		line-height: 50px;
+		font-size: 20px;
+		font-weight: 500;
+		border-radius: 3px;
+		background-color: #008489;
+
+		&.demo-button-facebook {
+			background-color: colors("social", "facebook");
+		}
+
+		&.demo-button-empty {
+			border: 2px solid colors("greyscale", "500");
+			background-color: transparent;
+			color: colors("greyscale", "500");
+			line-height: 45px;
+		}
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="url"],
+	input[type="date"],
+	input[type="tel"],
+	input[type="search"] {
+		font-weight: 300;
+		height: 48px;
+		font-size: 20px;
+		border-radius: 2px;
+		border: 1px solid colors(keyline);
+
+		&:focus {
+			border-color: colors("brand");
+		}
+	}
+}</code></pre>
+              </div>
+              <pre class="example-code tabbed-code-tab is-open"><code class="language-html">&lt;div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large"&gt;
+
+	&lt;div class="demo-button demo-button-facebook width-100 margin-bottom-2"&gt;Log in with Facebook&lt;/div&gt;
+
+	&lt;div class="demo-button demo-button-empty width-100"&gt;Log in with Google&lt;/div&gt;
+
+	&lt;div class="border-top text-center margin-top-7 margin-bottom-3"&gt;
+		&lt;div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative text-15"&gt;or&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class="margin-bottom-4"&gt;
+		&lt;input type="text" placeholder="Email Address"/&gt;
+	&lt;/div&gt;
+
+	&lt;div class="margin-bottom-4"&gt;
+		&lt;input type="password" placeholder="Password"/&gt;
+	&lt;/div&gt;
+
+	&lt;div class="margin-bottom-4"&gt;
+		&lt;div class="clearfix"&gt;
+			&lt;div class="float-left"&gt;
+				&lt;div class="checkbox"&gt;
+					&lt;div class="checkbox-input"&gt;&lt;/div&gt;
+					&lt;div class="checkbox-label"&gt;Remember me&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="float-right"&gt;
+				&lt;a href="#" class="text-15 text-brand text-underline-hover"&gt;Forgot password?&lt;/a&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class="margin-bottom-5"&gt;
+		&lt;div class="demo-button width-100"&gt;Log in&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class="border-top margin-bottom-5"&gt;&lt;/div&gt;
+
+	&lt;div class="text-center"&gt;
+		&lt;div class="text-20"&gt;Don’t have an account? &lt;a class="text-brand text-underline-hover"&gt;Sign up&lt;/a&gt;&lt;/div&gt;
+	&lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+            </div>
+          </section>
+          <section id="prerequisites">
+            <h2>Prerequisites</h2>
+            <p>Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Instructions can be found <a href="http://sass-lang.com/install" target="_blank" class="link">here</a>.</p>
+            <p>Additionally, vendor prefixing mixins are not used or included as you can use the <a href="https://github.com/postcss/autoprefixer" target="_blank" class="link">autoprefixer plugin</a> to do this.</p>
+          </section>
+          <section id="installation">
+            <h2>Get started</h2>
+            <h3>1. Install the package</h3>
+            <p>Barebones is available as either a Bower or NPM package.</p>
+            <div class="example margin-bottom-8">
+              <pre class="example-code"><code class="language-bash">bower install barebones-sass --save</code></pre>
+            </div>
+            <div class="example">
+              <pre class="example-code"><code class="language-bash">npm install barebones-sass --save-dev
+</code></pre>
+            </div>
+            <p>If you want to skip package control and copy the SASS files directly, you can do that too – simply download the latest release from <a href="https://github.com/sebpowell/barebones-sass" class="link">GitHub</a> and integrate the source files directly. </p>
+            <h3>2. Create a settings file</h3>
+            <p>In your project folder, create a <span class="inline-code">_settings.scss</span> file (or whatever you want to call it) with the following values. Each setting is covered in the <a href="#" class="link">following section</a>.</p>
+            <pre class="example-code"><code class="language-scss">$bb-border-radius-scale: 5;
+
+$bb-breakpoints: ();
+
+$bb-colors: ();
+
+$bb-letter-spacing: ();
+
+$bb-line-heights: ();
+
+$bb-global-delimiter: "-";
+
+$bb-helpers: ();
+
+$bb-hover-class-name: "hover";
+
+$bb-max-width-scale: 14;
+
+$bb-responsive: true;
+
+$bb-shadows: ();
+
+$bb-spacing-scale: 10;
+
+$bb-spacing-base: 4px;
+
+$bb-spacing-sides: ();
+
+$bb-text-sizes: ();
+
+</code></pre>
+            <p>Barebones also allows you to specify your own naming convention. For each generated class, you can decide how that class will be outputted. Here's an example: </p>
+            <pre class="example-code"><code class="language-scss">$bb-align-items: (
+	"modifiers": (
+		"flex-start": "items-flex-start",
+		"flex-end": "items-flex-end",
+		"center": "items-center"
+	)
+);
+
+// This is used by the align-items helper generator to create classes for the flex align-items property. 
+// By default, this will look like this: 
+
+.align-items-flex-start {}
+.align-items-flex-start {}
+.align-items-flex-start {}
+
+// You can make this less verbose by changing the names: 
+
+$bb-align-items: (
+	"modifiers": (
+		"flex-start": "items-fs",
+		"flex-end": "items-fe",
+		"center": "items-c"
+	)
+);
+
+// Will output: 
+
+.items-fs {}
+.items-fe {}
+.items-c {}
+</code></pre>
+            <h3>3. Create your main SCSS file</h3>
+            <p>he final step is to import all these files into your main files that will be compiled into actual CSS. When you're done, it should look something like this:</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">// Always import the settings file first
+@import _settings.scss;
+
+// Always import the settings file first
+@import bower-components/barebones-sass/dist/_base.scss;
+</code></pre>
+            </div>
+          </section>
+          <section id="support">
+            <h2>Support</h2>
+            <p>This library is under active development. If you need help, or if you think something is broken or can be improved, send an email to <a href="mailto:tech@getagent.co.uk">tech@getagent.co.uk</a>. Or feel free to <a href="https://github.com/sebpowell/barebones-sass/issues">open an issue on GitHub</a>.</p>
+          </section>
+          <div class="next">Next – Settings</div>
         </section>
       </div>
     </div>

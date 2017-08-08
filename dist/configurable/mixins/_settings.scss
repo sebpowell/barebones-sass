@@ -11,6 +11,12 @@
 	}
 }
 
+@function fonts($args...) {
+	$family: nth($args, 1);
+	$weight: nth($args, 2);
+	@return map-deep-get($bb-fonts, $family, "weights", $weight);
+}
+
 @function colors($args...) {
 	@if length($args) > 1 {
 		$category: nth($args, 1);

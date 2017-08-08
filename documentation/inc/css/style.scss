@@ -1,6 +1,6 @@
 $bb-colors: (
 	"brand": blue, 
-	// "keyline": #DBDBDB,
+	"keyline": #DBDBDB,
 	"greyscale": (
 		"x-light": #e5e5e5,
 		"50":  #ECEFF1,
@@ -13,336 +13,75 @@ $bb-colors: (
 		"700": #455A64,
 		"800": #37474F,
 		"900": #263238
-	),
-
-	"keyline": (
-
-		"light": black, 
-		"dark": black
 	)
 );
 
+$bb-breakpoints: (
+	"medium": 780px,
+	"large": 1200px
+);
+
+$bb-fonts: (
+	"atlas-grotesk": (
+		"name": #{'atlas grotesk', Helvetica, Arial, sans-serif},
+		"weights": (
+			"semi": 700,
+			"bold": 900
+		)
+	)
+);
+
+$bb-global-delimiter: "" !default;
+
+$bb-spacing-scale: 15;
+
+$bb-spacing-base: 5px;
+
+$bb-text-sizes: (
+	"11": 11px,
+	"13": 13px,
+	"15": 15px,
+	"20": 20px
+);
+
+
+
 @import "_short-names";
 @import "../../../dist/configurable/_base";
+@import "components/components";
 
-// $bb-fonts: (
-// 	"gotham": (
-// 		"name": #{'Gotham', Helvetica, Arial, sans-serif},
-// 		"weights": (
-// 			"semi": 700,
-// 			"bold": 900
-// 		)
-// 	)
-// );
 
 
-// $fonts: (
-// 	(
-// 		"name": #{"Miller Display", Helvetica},
-// 		"weights": (
-// 			"roman": 100,
-// 			"semi": 200
-// 		),
-// 	),
+html {
+	color: colors("greyscale", "800");
+}
 
-// 	(
-// 		"name": #{"Avenir Next", Helvetica},
-// 		"weights": (
-// 			"bold": 100,
-// 			"thin": 200
-// 		)
-// 	)
-// );
+body {
+	overflow: hidden;
+	height: 100%;
+	font-family: map-deep-get($bb-fonts, "atlas-grotesk", "name");
+}
 
 
 
-// $bb-global-delimiter: "" !default;
+.next {
+	background: blue;
+	color: white;
+	padding: sizes(6);
+	font-size: 18px;
 
-// $bb-spacing-scale: 15;
+	&:hover {
+		background-color: lighten(colors(brand), 10%);
+		cursor: pointer;
+	}
+}
 
-// $bb-spacing-base: 5px;
 
-// $bb-text-sizes: (
-// 	"11": 11px,
-// 	"13": 13px,
-// 	"15": 15px,
-// 	"20": 20px
-// );
 
-// $bb-align-content: (
-// 	"import": false,
-// 	"name": "align-content",
-// 	"modifiers": (
-// 		"center": "center",
-// 		"stretch": "stetch",
-// 		"flex-start": "flex-start",
-// 		"flex-end": "flex-end",
-// 		"space-between": "space-between",
-// 		"space-around": "space-around" 
-// 	)
-// );
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $bb-background-color: (
-
-// 	"modifiers": (
-// 		"stretch": "stretch"
-// 	),
-
-// );
-
-// $bb-background-position: (
-// 	"name": "bg",
-// 	"modifiers": (
-// 		"center": "c"
-// 	),
-
-// );
-
-// $bb-border: (
-// 	// "import": true,
-// 	// "name": "border",
-// 	"modifiers": (
-// 		"top": "t",
-// 		"right": "r",
-// 		"bottom": "b",
-// 		"left": "l"
-// 	)
-// );
-
-
-// $bb-margin: (
-// 	"import": false,
-// 	"name": "margin",
-// 	"modifiers": (
-// 		"top": "t", 
-// 		"right": "r",
-// 		"bottom": "bottom",
-// 		"left": "left",
-// 		"vertical": "v",
-// 		"horizontal": "horizontal"
-// 	)
-// );
-
-
-// @import "components/components";
-
-
-
-
-// html {
-// 	color: colors("greyscale", "800");
-// }
-
-
-// .hljs {
-//   display: block;
-//   overflow-x: auto;
-//   background: #FFFFFF;
-// }
-
-// .hljs,
-// .hljs-subst {
-//   color: colors("greyscale", "700");
-// }
-
-// .hljs-attribute,
-// .hljs-selector-tag,
-// .hljs-doctag,
-// .hljs-name {
-//   color: colors("greyscale", "500");
-// }
-
-
-// .hljs-keyword {
-// 	color: colors("greyscale", "500");
-// }
-
-// .hljs-variable {
-// 	color: colors("greyscale", "500");
-// }
-
-// .hljs-built_in,
-// .hljs-literal,
-// .hljs-bullet,
-// .hljs-code,
-// .hljs-addition {
-//   color: #D35400;
-// }
-
-
-
-// .hljs-title,
-// .hljs-section {
-//   color: #880000;
-//   font-weight: bold;
-// }
-
-// .hljs-comment {
-//   color: colors("greyscale", "200");
-// }
-
-// .hljs-meta-keyword {
-//   color: #728E00;
-// }
-
-// .hljs-meta {
-//   color: #728E00;
-//   color: #434f54;
-// }
-
-// .hljs-emphasis {
-//   font-style: italic;
-// }
-
-// .hljs-strong {
-//   font-weight: bold;
-// }
-
-// .hljs-function {
-//   color: #728E00;
-// }
-
-// .hljs-number {
-//   color: #a480ff;  
-// }
-
-
-// @each $k, $v in $fonts {
-// 	@debug $v;
-// 	@each $weight, $value in map-deep-get($k, "weights") {
-// 	// 	.text-#{$k}-#{$weight} {
-// 		@debug $weight;
-// 	// 		font-weight: $value;
-// 	// 	}
-// 	}
-// }
-
-
-// @mixin input {
-// 	input[type="text"],
-// 	input[type="email"],
-// 	input[type="number"],
-// 	input[type="password"],
-// 	input[type="url"],
-// 	input[type="date"],
-// 	input[type="tel"],
-// 	input[type="search"],
-// 	select {
-// 		@content;
-// 	}
-// }
-
-
-// .tabbed-code {
-// 	.tabbed-code-navigation {
-// 		@include no-bullet;
-// 		@include clearfix;
-// 		border-bottom: 1px solid colors(keyline);
-// 		> li {
-// 			float: left;
-// 			padding: sizes(3) sizes(5);
-// 			font-size: 13px;
-// 			border-right: 1px solid colors(keyline);
-// 			cursor: pointer;
-
-// 			&.is-active {
-// 				color: colors(brand);	
-// 			}
-
-// 		}
-
-
-// 	}
-// 	border: 1px solid colors(keyline);
-
-// 	pre {
-// 		border: 0;
-// 	}
-
-// 	.tabbed-code-tab {
-// 		display: none;
-// 			overflow: scroll;
-// 		max-height: 400px;
-
-// 		&.is-open {
-// 			display: block;
-// 		}
-// 	}
-// }
-
-
-// .button {
-// 	background-color: colors(brand);
-// 	border: 0;
-// 	display: inline-block;
-// 	color: white;
-// 	padding: 0 sizes(6);
-// 	height: 45px;
-// 	line-height: 45px;
-// 	border-radius: 100px;
-// }
-
-
-// @include input {
-
-// 	// font-family: map-deep-get("avenir-next");
-// 	border: 1px solid colors(keyline);
-// 	height: 50px;
-// 	font-size: 16px;
-// 	width: 100%;
-// 	padding-left: sizes(3);
-// }
-
-
-
-
-
-// ::selection {
-//   background: #ffb7b7; /* WebKit/Blink Browsers */
-// }
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}

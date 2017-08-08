@@ -18,7 +18,7 @@ pre {
 	// color: colors(greyscale, 100);
 	font-family: "Roboto Mono";
 	// white-space: pre;
-	border: 1px solid colors(keyline);
+	border: 1px solid #e8e8e8;
 	padding: sizes(5);
 
 
@@ -29,10 +29,90 @@ pre {
 	// word-break: normal;
 	// word-wrap: normal;
 	line-height: 1.5;
+	max-width: 650px;
+	margin: 0 auto;
 	tab-size: 3;
 	hyphens: none;
 	box-shadow: 0 1px 2px rgba(00,00,00,0.1);
+
+	&:not(:last-of-type) {
+		margin-bottom: sizes(8);
+	}
 }
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #FFFFFF;
+}
+
+.hljs,
+.hljs-subst {
+  color: colors("greyscale", "700");
+}
+
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-name, .hljs-selector-class {
+  color: colors("greyscale", "500");
+}
+
+
+.hljs-keyword {
+	color: colors("greyscale", "500");
+}
+
+.hljs-variable {
+	color: colors("greyscale", "500");
+}
+
+.hljs-built_in,
+.hljs-literal,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition, 
+.hljs-tag {
+  color: #D35400;
+}
+
+
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.hljs-comment {
+  color: colors("greyscale", "200");
+}
+
+.hljs-meta-keyword {
+  color: #728E00;
+}
+
+.hljs-meta {
+  color: #728E00;
+  color: #434f54;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-function {
+  color: #728E00;
+}
+
+.hljs-number {
+  color: #a480ff;  
+}
+
 
 
 

@@ -17,6 +17,8 @@ $bb-grid: (
 
 $bb-global-delimiter: "-" !default;
 
+$bb-global-delimiter-second: "-" !default;
+
 $bb-hover-class-name: "hover" !default;
 
 $bb-max-width-scale: 10 !default;
@@ -29,7 +31,7 @@ $bb-shadows: () !default;
 
 $bb-spacing-scale: 5 !default;
 
-$bb-spacing-base: 5 !default;
+$bb-spacing-base: 5px !default;
 
 $bb-text-sizes: () !default;
 

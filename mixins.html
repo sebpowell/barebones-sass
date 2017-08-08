@@ -1,0 +1,409 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta property="og:title" content="Barebones SASS"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://www.barebones-sass.io/docs/images/og-image.png"/>
+    <meta property="og:url" content="http://barebones-sass.getagent.co.uk/"/>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <link rel="stylesheet" href="documentation/inc/css/style.css"/>
+    <link rel="stylesheet" href="documentation/inc/css/style-2.css"/>
+    <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
+    <link rel="apple-touch-icon-precomposed" href="/screen-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700" rel="stylesheet"/>
+    <script src="https://use.typekit.net/bsw1gyt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-73127596-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+    <script src="documentation/inc/javascript/application.js"></script>
+    <script async="async" defer="defer" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+      //- $(document).ready(function() {
+      //- 	$(".docs-navigation").scrollSpy();
+      //- });
+    </script>
+  </head>
+</html>
+<body class="page-layout-docs">
+  <div class="backdrop"></div>
+  <div class="docs-container">
+    <div class="docs-navigation">
+      <div class="nav-logo"><img src="documentation/inc/images/logo.png"/></div>
+      <div class="nav-section"><a href="#introduction" class="parent">Introduction</a>
+        <ul style="display: block" class="sub-navigation is-open">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#prerequisites">Requirements</a></li>
+          <li><a href="#installing">Installation</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#background">Background reading</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#settings" class="parent">Settings</a>
+        <ul class="sub-navigation">
+          <li><a href="#settings-border-radius-scale">Border-radius scale</a></li>
+          <li><a href="#settings-breakpoints">Breakpoints</a></li>
+          <li><a href="#settings-colours">Colors</a></li>
+          <li><a href="#settings-letter-spacing">Letter-spacing</a></li>
+          <li><a href="#settings-line-heights">Line-heights</a></li>
+          <li><a href="#settings-global-delimiter">Global delimiter</a></li>
+          <li><a href="#settings-grid">Grid</a></li>
+          <li><a href="#settings-hover-class-name">Hover class name</a></li>
+          <li><a href="#settings-max-width-scale">Max-width scale</a></li>
+          <li><a href="#settings-responsive">Responsive</a></li>
+          <li><a href="#settings-normalize">Normalize</a></li>
+          <li><a href="#settings-shadows">Shadows</a></li>
+          <li><a href="#settings-spacing-base">Spacing base</a></li>
+          <li><a href="#settings-spacing-scale">Spacing scale</a></li>
+          <li><a href="#settings-text-sizes">Text-sizes</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#grid" class="parent">Grid</a>
+        <ul class="sub-navigation">
+          <li><a href="#generator">Grid Settings</a></li>
+          <li><a href="#generator">Containers</a></li>
+          <li><a href="#generator">Columns</a></li>
+          <li><a href="#generator">Galleries</a></li>
+          <li><a href="#generator">Helpers</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#mixins" class="parent">Mixins</a>
+        <ul class="sub-navigation">
+          <li><a href="#mixins-arrow">Arrow</a></li>
+          <li><a href="#mixins-aspect-ratio">Aspect-ratio</a></li>
+          <li><a href="#mixins-background-image">Background-image</a></li>
+          <li><a href="#mixins-clearfix">Clearfix</a></li>
+          <li><a href="#mixins-ellipsis">Ellipsis</a></li>
+          <li><a href="#mixins-helper-generator">Helper generator</a></li>
+          <li><a href="#mixins-lists">Lists</a></li>
+          <li><a href="#mixins-map-deep-get">Map-deep-get</a></li>
+          <li><a href="#mixins-media-query">Media-query</a></li>
+          <li><a href="#mixins-placeholder">Placeholder</a></li>
+          <li><a href="#mixins-shapes">Shapes</a></li>
+          <li><a href="#mixins-strings">Strings</a></li>
+          <li><a href="#mixins-strip-units">Strip-units</a></li>
+          <li><a href="#mixins-text-uppercase">Text-uppercase</a></li>
+        </ul>
+      </div>
+      <div class="nav-section"><a href="#helpers" class="parent">Helpers</a>
+        <ul class="sub-navigation">
+          <li><a href="#helpers-align-content">Align-content</a></li>
+          <li><a href="#helpers-align-items">Align-items</a></li>
+          <li><a href="#helpers-aspect-ratio">Aspect-ratio</a></li>
+          <li><a href="#helpers-background-color">Background-color</a></li>
+          <li><a href="#helpers-background-position">Background-position</a></li>
+          <li><a href="#helpers-background-size">Background-size</a></li>
+          <li><a href="#helpers-border-radius">Border-radius</a></li>
+          <li><a href="#helpers-border">Border</a></li>
+          <li><a href="#helpers-bottom">Bottom</a></li>
+          <li><a href="#helpers-box-shadow">Box-shadow</a></li>
+          <li><a href="#helpers-clearfix">Clearfix</a></li>
+          <li><a href="#helpers-cursor">Cursor</a></li>
+          <li><a href="#helpers-display">Display</a></li>
+          <li><a href="#helpers-fill">Fill</a></li>
+          <li><a href="#helpers-flex-direction">Flex-direction</a></li>
+          <li><a href="#helpers-flex">Flex</a></li>
+          <li><a href="#helpers-float">Float</a></li>
+          <li><a href="#helpers-height">Height</a></li>
+          <li><a href="#helpers-left">Left</a></li>
+          <li><a href="#helpers-letter-spacing">Letter-spacing</a></li>
+          <li><a href="#helpers-line-height">Line-height</a></li>
+          <li><a href="#helpers-margin">Margin</a></li>
+          <li><a href="#helpers-max-width">Max-width</a></li>
+          <li><a href="#helpers-offset">Offset</a></li>
+          <li><a href="#helpers-opacity">Opacity</a></li>
+          <li><a href="#helpers-order">Order</a></li>
+          <li><a href="#helpers-overflow">Overflow</a></li>
+          <li><a href="#helpers-padding">Padding</a></li>
+          <li><a href="#helpers-position">Position</a></li>
+          <li><a href="#helpers-right">Right</a></li>
+          <li><a href="#helpers-table">Table</a></li>
+          <li><a href="#helpers-text-align">Text-align</a></li>
+          <li><a href="#helpers-text-color">Text-color</a></li>
+          <li><a href="#helpers-text-decoration">Text-decoration</a></li>
+          <li><a href="#helpers-text-ellipsis">Text-ellipsis</a></li>
+          <li><a href="#helpers-text-size">Text-size</a></li>
+          <li><a href="#helpers-text-transform">Text-transform</a></li>
+          <li><a href="#helpers-top">Top</a></li>
+          <li><a href="#helpers-transition">Transition</a></li>
+          <li><a href="#helpers-vertical-align">Vertical-align</a></li>
+          <li><a href="#helpers-visibility">Visibility</a></li>
+          <li><a href="#helpers-width">Width</a></li>
+          <li><a href="#helpers-z-index">Z-index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="docs-content">
+      <div class="inner">
+        <section id="mixins">
+          <section id="mixins-intro" class="intro-section">
+            <h1 class="page-title">Mixins</h1>
+          </section>
+          <section id="mixins-arrow">
+            <h2>Arrow</h2>
+            <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
+            <div class="example margin-bottom-5">
+              <pre class="example-code"><code class="language-scss">.element { 
+	&:after {
+		@include arrow("down", "black", "20px");
+	}
+ }
+</code></pre>
+            </div>
+            <table>
+              <thead>
+                <th>Option</th>
+                <th>Values / Example</th>
+              </thead>
+              <tr>
+                <td><span class="inline-code">$direction</span></td>
+                <td> 
+                  <ul class="bullet-list">
+                    <li>"up"</li>
+                    <li>"down"</li>
+                    <li>"left"</li>
+                    <li>"right"</li>
+                    <li>"top-right"</li>
+                    <li>"top-left"</li>
+                    <li>"bottom-right"</li>
+                    <li>"bottom-left"</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="inline-code">$color</span></td>
+                <td>Any hex value (e.g. #E5E5E5)</td>
+              </tr>
+              <tr>
+                <td><span class="inline-code">$size</span></td>
+                <td>Any px value (e.g. 6px)</td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-arrow">
+            <h2>Aspect-ratio</h2>
+            <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element { 
+	@include aspect-ratio(16, 9);
+}
+
+// Output
+.aspect-ratio-16-9 { 
+	position: relative; 
+}
+
+.aspect-ratio-16-9:before { 
+	display: block; 
+	content: ""; 
+	width: 100%; 
+	padding-top: 56.25%; 
+}
+
+.aspect-ratio-16-9 > .aspect-ratio-content { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	right: 0; 
+	bottom: 0; 
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-background-image">
+            <h2>Background-image</h2>
+            <p>Creates a triangle, used for things like tooltips or dropdowns.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element { 
+	@include aspect-ratio(16, 9);
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-clearfix">
+            <h2>Clearfix</h2>
+            <p>Clears floats. Apply this to the parent element.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include clearfix;
+}
+
+// Output
+.clearfix { zoom: 1; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+.clearfix:after { clear: both; }
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-ellipsis">
+            <h2>Ellipsis</h2>
+            <p>Use this to truncate text once it reaches a certain width.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include ellipsis(300px);
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-helper-generator">
+            <h2>helpers($name, $css...)</h2>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">@include helpers("background-center", "background-position: center");
+
+// Output
+.background-cover { background-size: cover; }
+
+@media (min-width: 780px) { .background-cover-above-medium { background-size: cover; } }
+
+@media (max-width: 780px) { .background-cover-below-medium { background-size: cover; } }
+</code></pre>
+            </div>
+          </section>
+          <section id="no-bullet">
+            <h2>No-bullet</h2>
+            <p>Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">ul {
+	@include no-bullet;
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-map-deep-get">
+            <h2>Map-deep-get</h2>
+            <p>Fetch any value from a nested map. You can go as deep as you need to. </p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">$colors: (
+	ui: (
+		error: (
+			light: #e6e6e6;
+		)
+	)
+);
+
+
+ul {
+	color: map-deep-get($colors, ui, error, light);
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-media-queries">
+            <h2>Media-query</h2>
+            <p>You can reference values in your breakpoints map. It will also accept values that aren't defined.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include if-above(device-medium) {
+		color: red;
+	}
+}
+
+.element {
+	@include if-above(800px) {
+		color: blue;
+	}
+}
+
+.element {
+	@include if-below(device-small) {
+		color: blue;
+	}
+}
+
+.element {
+	@include if-between(800px, 1200px) {
+		color: blue;
+	}
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-placeholder">
+            <h2>Placeholder</h2>
+            <p>Changes &lt;input&gt; placeholder text color.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include placeholder {
+		color: colors("greyscale", 500);
+	}
+	&:focus {
+		@include placeholder {
+			color: colors("greyscale", 300);
+		}
+	}
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-circle">
+            <h2>Circle</h2>
+            <p>Create a square or circle. </p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include circle(200px);
+}
+
+// Output
+.element {
+	width: 200px;
+	height: 200px;
+	border-radius: 200px;
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-circle">
+            <h2>Square</h2>
+            <p>Create a square.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include square(400px);
+}
+
+// Output
+.element {
+	width: 400px;
+	height: 400px;
+}
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-text-uppercase">
+            <h2>Text-uppercase($letter-spacing)</h2>
+            <p>Transforms text to uppercase, accepts an argument to specify letter-spacing.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include text-uppercase(0.1em);
+}
+
+</code></pre>
+            </div>
+          </section>
+          <section id="mixins-strip-units">
+            <h2>Strip-units</h2>
+            <p>Transforms text to uppercase, accepts an argument to specify letter-spacing.</p>
+            <div class="example">
+              <pre class="example-code"><code class="language-scss">.element {
+	@include uppercase(0.1em);
+}</code></pre>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,266 @@
+extends  _inc/_layout.jade
+
+block body
+	section(id="mixins")
+		section.intro-section(id="mixins-intro")
+			h1.page-title Mixins
+
+		section(id="mixins-arrow")
+			h2 Arrow
+			p Creates a triangle, used for things like tooltips or dropdowns.
+
+			.example.margin-bottom-5
+				pre.example-code
+					code.language-scss.
+						.element { 
+							&:after {
+								@include arrow("down", "black", "20px");
+							}
+						 }
+
+			table
+				thead
+					th Option
+					th Values / Example
+				tr
+					td <span class="inline-code">$direction</span>
+					td 
+						ul.bullet-list
+							li "up"
+							li "down"
+							li "left"
+							li "right"
+							li "top-right"
+							li "top-left"
+							li "bottom-right"
+							li "bottom-left"
+				tr
+					td <span class="inline-code">$color</span>
+					td Any hex value (e.g. #E5E5E5)
+				tr
+					td <span class="inline-code">$size</span>
+					td Any px value (e.g. 6px)
+
+			
+
+		section(id="mixins-arrow")
+			h2 Aspect-ratio
+			p Creates a triangle, used for things like tooltips or dropdowns.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element { 
+							@include aspect-ratio(16, 9);
+						}
+
+						// Output
+						.aspect-ratio-16-9 { 
+							position: relative; 
+						}
+
+						.aspect-ratio-16-9:before { 
+							display: block; 
+							content: ""; 
+							width: 100%; 
+							padding-top: 56.25%; 
+						}
+
+						.aspect-ratio-16-9 > .aspect-ratio-content { 
+							position: absolute; 
+							top: 0; 
+							left: 0; 
+							right: 0; 
+							bottom: 0; 
+						}
+
+		section(id="mixins-background-image")
+			h2 Background-image
+			p Creates a triangle, used for things like tooltips or dropdowns.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element { 
+							@include aspect-ratio(16, 9);
+						}
+
+		section(id="mixins-clearfix")
+			h2 Clearfix
+			p Clears floats. Apply this to the parent element.
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include clearfix;
+						}
+
+						// Output
+						.clearfix { zoom: 1; }
+
+						.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+						.clearfix:after { clear: both; }
+						
+		section(id="mixins-ellipsis")
+			h2 Ellipsis
+			p Use this to truncate text once it reaches a certain width.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include ellipsis(300px);
+						}
+
+		section(id="mixins-helper-generator")
+			h2 helpers($name, $css...)
+			.example
+				pre.example-code
+					code.language-scss.
+						@include helpers("background-center", "background-position: center");
+
+						// Output
+						.background-cover { background-size: cover; }
+
+						@media (min-width: 780px) { .background-cover-above-medium { background-size: cover; } }
+
+						@media (max-width: 780px) { .background-cover-below-medium { background-size: cover; } }
+		
+		section(id="no-bullet")
+			h2 No-bullet
+			p Removes list-style-type, margin and padding attributes from ul elements (useful when creating navigation components).
+
+			.example
+				pre.example-code
+					code.language-scss.
+						ul {
+							@include no-bullet;
+						}
+						
+		section(id="mixins-map-deep-get")
+			h2 Map-deep-get
+			p Fetch any value from a nested map. You can go as deep as you need to. 
+
+			.example
+				pre.example-code
+					code.language-scss.
+						$colors: (
+							ui: (
+								error: (
+									light: #e6e6e6;
+								)
+							)
+						);
+						
+
+						ul {
+							color: map-deep-get($colors, ui, error, light);
+						}
+		
+		section(id="mixins-media-queries")
+			h2 Media-query
+			p You can reference values in your breakpoints map. It will also accept values that aren't defined.
+			
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include if-above(device-medium) {
+								color: red;
+							}
+						}
+
+						.element {
+							@include if-above(800px) {
+								color: blue;
+							}
+						}
+						
+						.element {
+							@include if-below(device-small) {
+								color: blue;
+							}
+						}
+						
+						.element {
+							@include if-between(800px, 1200px) {
+								color: blue;
+							}
+						}
+		
+		section(id="mixins-placeholder")
+			h2 Placeholder
+			p Changes &lt;input&gt; placeholder text color.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include placeholder {
+								color: colors("greyscale", 500);
+							}
+							&:focus {
+								@include placeholder {
+									color: colors("greyscale", 300);
+								}
+							}
+						}
+
+		section(id="mixins-circle")
+			h2 Circle
+			p Create a square or circle. 
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include circle(200px);
+						}
+
+						// Output
+						.element {
+							width: 200px;
+							height: 200px;
+							border-radius: 200px;
+						}
+
+		section(id="mixins-circle")
+			h2 Square
+			p Create a square.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include square(400px);
+						}
+
+						// Output
+						.element {
+							width: 400px;
+							height: 400px;
+						}
+						
+		section(id="mixins-text-uppercase")
+			h2 Text-uppercase($letter-spacing)
+			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include text-uppercase(0.1em);
+						}
+
+
+		section(id="mixins-strip-units")
+			h2 Strip-units
+			p Transforms text to uppercase, accepts an argument to specify letter-spacing.
+
+			.example
+				pre.example-code
+					code.language-scss.
+						.element {
+							@include uppercase(0.1em);
+						}
