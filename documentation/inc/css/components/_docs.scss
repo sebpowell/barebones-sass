@@ -8,7 +8,8 @@
 
 	> h1, h2 {
 		// color: colors(brand);
-		font-weight: fonts("atlas-grotesk", "bold") !important;
+		// font-weight: fonts("atlas-grotesk", "bold") !important;
+		font-weight: 400 !important;
 		&:after {
 			content: "";
 			background: colors(brand);
@@ -17,7 +18,7 @@
 			left: 0;
 			height: 5px;
 			display: block;
-			margin: 50px 0;
+			margin: 25px 0;
 		}
 	}
 
@@ -27,7 +28,7 @@
 	}
 
 	h2 {
-		font-size: 38px;
+		font-size: 28px;
 		// text-align: center;
 	}
 

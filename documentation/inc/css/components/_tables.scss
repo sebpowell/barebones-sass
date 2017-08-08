@@ -1,11 +1,11 @@
 
 table {
 	width: 100%;
-	border: 1px solid colors(keyline);
+	border: 1px solid #e8e8e8;
 	// border: 1px solid colors(keyline);
 	border-spacing: 0;
 	border-radius: 3px;
-	box-shadow: 0 1px 2px rgba(00,00,00,0.1);
+	// box-shadow: 0 1px 2px rgba(00,00,00,0.1);
 	// box-shadow: 0 0 0 2px rgba(00,00,00,0.05);
 
 	td {
@@ -21,7 +21,7 @@ table {
 			padding: sizes(3) sizes(5);
 			font-weight: 400;
 			font-size: 14px;
-			border-bottom: 1px solid colors(keyline);
+			border-bottom: 1px solid #e8e8e8;
 		}
 	}
 

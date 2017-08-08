@@ -12,7 +12,7 @@
 	> a {
 		display: block;
 		padding: sizes(8);
-		color: #797979;
+		color: colors("greyscale", "600");
 	}
 
 	.parent {
@@ -26,16 +26,16 @@
 
 .sub-navigation {
 	@include no-bullet;
-	background: white;
-	border-bottom: 1px solid #efefef;
-	border-top: 1px solid #efefef;
+	background: colors("greyscale", "50");
+	// border-bottom: 1px solid #efefef;
+	// border-top: 1px solid #efefef;
 	display: none;
 
 	a {
 		display: block;
 		padding: sizes(5) sizes(8);
 		font-size: 14px;
-		color: grey;
+		color: colors("greyscale", "500");
 		&:hover {
 			color: black;
 		}

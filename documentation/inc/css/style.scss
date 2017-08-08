@@ -31,7 +31,7 @@ $bb-fonts: (
 	)
 );
 
-$bb-global-delimiter: "" !default;
+// $bb-global-delimiter: "" !default;
 
 $bb-spacing-scale: 15;
 
@@ -46,18 +46,39 @@ $bb-text-sizes: (
 
 
 
-@import "_short-names";
+.justify-content-center {
+	justify-content: center;
+}
+
+
+// @import "_short-names";
 @import "../../../dist/configurable/_base";
 @import "components/components";
 
 
+.label {
+	@include uppercase(0.1em);
+	border-radius: 40px;
+	padding: 5px 8px 2px 8px;
+	font-size: 10px;
+
+	color: green;
+	border: 1px solid green;
+
+	&.label-red {
+		border: 1px solid red;
+		color: red;
+	}
+}
+
+
 
 html {
-	color: colors("greyscale", "800");
+	color: colors("greyscale", "900");
 }
 
 body {
-	overflow: hidden;
+	// overflow: hidden;
 	height: 100%;
 	font-family: map-deep-get($bb-fonts, "atlas-grotesk", "name");
 }

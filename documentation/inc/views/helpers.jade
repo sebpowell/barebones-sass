@@ -1,433 +1,1070 @@
-extends _inc/_layout.jade
+
+extends  _inc/_layout.jade
 
 block body
-  article.article(id="installing")
-    h1.border-top-light.padding-top-14 Composer Classes
-    h3#background-color Background Color
-    pre.
-      .background-{$color}  
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td Colours specified in $colors map.
-        td.text-center
-          span.label.label-green Yes
-        td.text-center
-          span.label.label-red No
-  article.article(id="installing")
-    h3#background-position Background Position
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "center"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-red No
-    h3#background-size Background Size
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "cover", "contain"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-red No
-    h3#border-radius Border Radius
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td Scale 1 - 5
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-red No
-    h3(i='border') Border
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "light", "dark"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#box-shadow Box Shadow
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "small", "medium", "large", "x-large", "xx-large"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#cursor Cursor
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "not-allowed", "pointer", "default"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-red No
-    h3#display Display
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-          | "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#fill Fill
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td Colours
-        td.text-center
-          span.label.label-red Yes
-        td.text-center
-          span.label.label-green No
-    h3#flex-direction Flex Direction
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "column", "row"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#flex-items Flex Items
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "start", "center", "end"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#float Float
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-          | "left", "right"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#letter-spacing Letter Spacing
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green No
-    h3#line-height Line-height
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-          | "x-small": 1,
-          | "small": 1.2,
-          | "medium": 1.5,
-          | "large": 2
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#margin Margin
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-          | Scale 1 - 15
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#max-width Max-width
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green No
-    h3#opacity Opacity
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-          | Scale 1 - 10
-        td.text-center
-          span.label.label-red Yes
-        td.text-center
-          span.label.label-green No
-    h3#overflow Overflow
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "hidden", "scroll", "visible", "auto"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green No
-    h3#padding Padding
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "hidden", "scroll", "visible", "auto"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#position Position
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "absolute", "fixed", "static", "relative"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green No
-    h3#table Table
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "border-collapse", "layout-fixed"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#text-align Text Align
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "left", "center", "right"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#text-color Text Color
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "left", "center", "right"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#text-decoration Text Decoration
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "underline", "strikethrough"
-        td.text-center
-          span.label.label-red Yes
-        td.text-center
-          span.label.label-green No
-    h3#text-size Text Size
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-green Yes
-    h3#text-transform Text Transform
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "capitalize", "uppercase", "lowercase"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-red No
-    h3#vertical-align Vertical Align
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "top", "middle", "bottom"
-        td.text-center
-          span.label.label-red No
-        td.text-center
-          span.label.label-red No
-    h3#visibility Visibility
-    pre.
-      \n\t\t    
-      \t    
-    table.width-100
-      thead
-        th.text-left Modifiers
-        th Hover
-        th Responsive
-      tr
-        td "visible", "hidden"
-        td.text-center
-          span.label.label-red Yes
-        td.text-center
-          span.label.label-green Yes
+	section(id="mixins")
+		section.intro-section(id="mixins-intro")
+			h1.page-title Composer Classes
+	
+		p Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.
+
+		// bottom auto
+		p if you enable responsive classes, 
+		
+		section#aspect-ratio 
+			h2 Aspect Ratio
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}
+
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Colours specified in <span class="inline-code">$bb-colors</span> map.
+					td.text-center
+						span.label.label-green Yes
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-background-color")
+			h2 Background Color
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}
+
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Colours specified in <span class="inline-code">$bb-colors</span> map.
+					td.text-center
+						span.label.label-green Yes
+					td.text-center
+						span.label.label-red No
+			
+		section(id="mixins-background-position")
+			h2 Background Position
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"name": "background-color",
+						"modifiers": (
+							"center": "center",
+						);	
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "center"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-background-size")
+			h2 Background Size
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"name": "background-color",
+						"modifiers": (
+							"center": "center",
+						);	
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "cover", "contain"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-border-radius")
+			h2 Border Radius
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale specified in your settings.
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-border")
+			h2 Border
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale specified in your settings.
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-bottom")
+			h2 Bottom
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale specified in your settings.
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-box-shadow")
+			h2 Box Shadow
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale specified in your settings.
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-clearfix")
+			h2 Clearfix
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale specified in your settings.
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-cursor")
+			h2 Cursor
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "not-allowed", "pointer", "default"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-display")
+			h2 Display
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-fill")
+			h2 Fill
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-flex-direction")
+			h2 Flex Direction
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "column", "row"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+			
+		section(id="mixins-flex-items")
+			h2 Flex Items
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "start", "center", "end"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-float")
+			h2 Float
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "background-color",
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "left", "right"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-left")
+			h2 Left
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  Scale 1 - 15
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-letter-spacing")
+			h2 Letter-spacing
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  Scale 1 - 15
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+						
+		section(id="mixins-line-height")
+			h2 Line-height
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  Scale 1 - 15
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No		
+
+		section(id="mixins-margin")
+			h2 Margin
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  Scale 1 - 15
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+						
+		section(id="mixins-max-width")
+			h2 Max-width
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale 1 - 10
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+		
+		section(id="mixins-offset")
+			h2 Offset
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale 1 - 10
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-opacity")
+			h2 Opacity
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale 1 - 10
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-order")
+			h2 Order
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale 1 - 10
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-overflow")
+			h2 Overflow
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "hidden", "scroll", "visible", "auto"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-padding")
+			h2 Padding
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "hidden", "scroll", "visible", "auto"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-position")
+			h2 Position
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "absolute", "fixed", "static", "relative"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-right")
+			h2 Right
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "absolute", "fixed", "static", "relative"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-table")
+			h2 Table
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "border-collapse", "layout-fixed"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-text-align")
+			h2 Text Align
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "left", "center", "right"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-text-color")
+			h2 Text Color
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "left", "center", "right"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-text-decoration")
+			h2 Text Decoration
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "underline", "strikethrough"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-text-ellipsis")
+			h2 Text Ellipsis
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td "underline", "strikethrough"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-text-size")
+			h2 Text Size
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td Scale specified in your settings.
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-text-transform")
+			h2 Text Transform
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "capitalize", "uppercase", "lowercase"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-top")
+			h2 Top
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "capitalize", "uppercase", "lowercase"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-transition")
+			h2 Transition
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "capitalize", "uppercase", "lowercase"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixin-vertical-align")
+			h2 Vertical Align
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "top", "middle", "bottom"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-visibility")
+			h2 Visibility
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "visible", "hidden"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-width")
+			h2 Width
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "visible", "hidden"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+		section(id="mixins-z-index")
+			h2 Z-index
+			pre.example-code.margin-bottom-5
+				code.language-scss.
+					// Settings
+					$bb-background-color: (
+						"import": true,
+						"name": "aspect-ratio"
+					);
+
+					// Output
+					.background-color-white {
+						background-color: white;
+					}	
+			table.settings-table
+				thead
+					th Modifiers
+					th.text-center Hover
+					th.text-center Responsive
+				tr
+					td  "visible", "hidden"
+					td.text-center
+						span.label.label-red No
+					td.text-center
+						span.label.label-red No
+
+
+		
+
+		
+
+		
+
+
+
+		
+
+
+

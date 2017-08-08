@@ -7,9 +7,9 @@
     <meta property="og:type" content="article"/>
     <meta property="og:image" content="http://www.barebones-sass.io/docs/images/og-image.png"/>
     <meta property="og:url" content="http://barebones-sass.getagent.co.uk/"/>
-    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by GetAgent.co.uk"/>
-    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk"/>
-    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next web project. | Made by Getagent.co.uk</title>
+    <meta property="og:description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next project. | Made by GetAgent.co.uk"/>
+    <meta name="description" content="Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next project. | Made by Getagent.co.uk"/>
+    <title>Barebones SASS – A lightweight, modular SASS boilerplate to kickstart your next project. | Made by Getagent.co.uk</title>
     <link rel="stylesheet" href="documentation/inc/css/style.css"/>
     <link rel="stylesheet" href="documentation/inc/css/style-2.css"/>
     <link rel="shortcut icon" href="docs//images/favicon.png" type="image/PNG"/>
@@ -147,435 +147,1018 @@
     </div>
     <div class="docs-content">
       <div class="inner">
-        <article id="installing" class="article">
-          <h1 class="border-top-light padding-top-14">Composer Classes</h1>
-          <h3 id="background-color">Background Color</h3>
-          <pre>.background-{$color}  </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>Colours specified in $colors map.</td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-        </article>
-        <article id="installing" class="article">
-          <h3 id="background-position">Background Position</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"center"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-          <h3 id="background-size">Background Size</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"cover", "contain"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-          <h3 id="border-radius">Border Radius</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>Scale 1 - 5</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-          <h3 i="border">Border</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"light", "dark"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="box-shadow">Box Shadow</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"small", "medium", "large", "x-large", "xx-large"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="cursor">Cursor</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"not-allowed", "pointer", "default"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-          <h3 id="display">Display</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="fill">Fill</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>Colours</td>
-              <td class="text-center"><span class="label label-red">Yes</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="flex-direction">Flex Direction</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"column", "row"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="flex-items">Flex Items</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"start", "center", "end"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="float">Float</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"left", "right"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="letter-spacing">Letter Spacing</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="line-height">Line-height</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>
-                "x-small": 1,
-                "small": 1.2,
-                "medium": 1.5,
-                "large": 2
-              </td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="margin">Margin</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>Scale 1 - 15</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="max-width">Max-width</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="opacity">Opacity</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>Scale 1 - 10</td>
-              <td class="text-center"><span class="label label-red">Yes</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="overflow">Overflow</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"hidden", "scroll", "visible", "auto"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="padding">Padding</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"hidden", "scroll", "visible", "auto"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="position">Position</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"absolute", "fixed", "static", "relative"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="table">Table</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"border-collapse", "layout-fixed"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="text-align">Text Align</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"left", "center", "right"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="text-color">Text Color</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"left", "center", "right"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="text-decoration">Text Decoration</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"underline", "strikethrough"</td>
-              <td class="text-center"><span class="label label-red">Yes</span></td>
-              <td class="text-center"><span class="label label-green">No</span></td>
-            </tr>
-          </table>
-          <h3 id="text-size">Text Size</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-          <h3 id="text-transform">Text Transform</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"capitalize", "uppercase", "lowercase"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-          <h3 id="vertical-align">Vertical Align</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"top", "middle", "bottom"</td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-              <td class="text-center"><span class="label label-red">No</span></td>
-            </tr>
-          </table>
-          <h3 id="visibility">Visibility</h3>
-          <pre>\n\t\t    
-\t    </pre>
-          <table class="width-100">
-            <thead>
-              <th class="text-left">Modifiers</th>
-              <th>Hover</th>
-              <th>Responsive</th>
-            </thead>
-            <tr>
-              <td>"visible", "hidden"</td>
-              <td class="text-center"><span class="label label-red">Yes</span></td>
-              <td class="text-center"><span class="label label-green">Yes</span></td>
-            </tr>
-          </table>
-        </article>
+        <section id="mixins">
+          <section id="mixins-intro" class="intro-section">
+            <h1 class="page-title">Composer Classes</h1>
+          </section>
+          <p>Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.</p>
+          <!-- bottom auto-->
+          <p>if you enable responsive classes, </p>
+          <section id="aspect-ratio"> 
+            <h2>Aspect Ratio</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}
+</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Colours specified in <span class="inline-code">$bb-colors</span> map.</td>
+                <td class="text-center"><span class="label label-green">Yes</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-background-color">
+            <h2>Background Color</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}
+</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Colours specified in <span class="inline-code">$bb-colors</span> map.</td>
+                <td class="text-center"><span class="label label-green">Yes</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-background-position">
+            <h2>Background Position</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"name": "background-color",
+	"modifiers": (
+		"center": "center",
+	);	
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"center"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-background-size">
+            <h2>Background Size</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"name": "background-color",
+	"modifiers": (
+		"center": "center",
+	);	
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"cover", "contain"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-border-radius">
+            <h2>Border Radius</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale specified in your settings.</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-border">
+            <h2>Border</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale specified in your settings.</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-bottom">
+            <h2>Bottom</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale specified in your settings.</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-box-shadow">
+            <h2>Box Shadow</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale specified in your settings.</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-clearfix">
+            <h2>Clearfix</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale specified in your settings.</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-cursor">
+            <h2>Cursor</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"not-allowed", "pointer", "default"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-display">
+            <h2>Display</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-fill">
+            <h2>Fill</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-flex-direction">
+            <h2>Flex Direction</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"column", "row"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-flex-items">
+            <h2>Flex Items</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"start", "center", "end"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-float">
+            <h2>Float</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "background-color",
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"left", "right"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-left">
+            <h2>Left</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> Scale 1 - 15</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-letter-spacing">
+            <h2>Letter-spacing</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> Scale 1 - 15</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-line-height">
+            <h2>Line-height</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> Scale 1 - 15</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No		</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-margin">
+            <h2>Margin</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> Scale 1 - 15</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-max-width">
+            <h2>Max-width</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale 1 - 10</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-offset">
+            <h2>Offset</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale 1 - 10</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-opacity">
+            <h2>Opacity</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale 1 - 10</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-order">
+            <h2>Order</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale 1 - 10</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-overflow">
+            <h2>Overflow</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"hidden", "scroll", "visible", "auto"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-padding">
+            <h2>Padding</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"hidden", "scroll", "visible", "auto"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-position">
+            <h2>Position</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"absolute", "fixed", "static", "relative"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-right">
+            <h2>Right</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"absolute", "fixed", "static", "relative"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-table">
+            <h2>Table</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"border-collapse", "layout-fixed"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-text-align">
+            <h2>Text Align</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"left", "center", "right"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-text-color">
+            <h2>Text Color</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"left", "center", "right"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-text-decoration">
+            <h2>Text Decoration</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"underline", "strikethrough"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-text-ellipsis">
+            <h2>Text Ellipsis</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>"underline", "strikethrough"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-text-size">
+            <h2>Text Size</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td>Scale specified in your settings.</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-text-transform">
+            <h2>Text Transform</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "capitalize", "uppercase", "lowercase"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-top">
+            <h2>Top</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "capitalize", "uppercase", "lowercase"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-transition">
+            <h2>Transition</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "capitalize", "uppercase", "lowercase"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixin-vertical-align">
+            <h2>Vertical Align</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "top", "middle", "bottom"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-visibility">
+            <h2>Visibility</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "visible", "hidden"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-width">
+            <h2>Width</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "visible", "hidden"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+          <section id="mixins-z-index">
+            <h2>Z-index</h2>
+            <pre class="example-code margin-bottom-5"><code class="language-scss">// Settings
+$bb-background-color: (
+	"import": true,
+	"name": "aspect-ratio"
+);
+
+// Output
+.background-color-white {
+	background-color: white;
+}	</code></pre>
+            <table class="settings-table">
+              <thead>
+                <th>Modifiers</th>
+                <th class="text-center">Hover</th>
+                <th class="text-center">Responsive</th>
+              </thead>
+              <tr>
+                <td> "visible", "hidden"</td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+                <td class="text-center"><span class="label label-red">No</span></td>
+              </tr>
+            </table>
+          </section>
+        </section>
       </div>
     </div>
   </div>
