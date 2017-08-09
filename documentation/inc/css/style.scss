@@ -41,9 +41,13 @@ $bb-text-sizes: (
 	"11": 11px,
 	"13": 13px,
 	"15": 15px,
-	"20": 20px
+	"20": 20px,
+	"28": 28px
 );
 
+
+// generic font-weight helpers
+// Rems?
 
 
 .justify-content-center {
@@ -51,7 +55,7 @@ $bb-text-sizes: (
 }
 
 
-// @import "_short-names";
+@import "_short-names";
 @import "../../../dist/configurable/_base";
 @import "components/components";
 
@@ -83,25 +87,26 @@ body {
 	font-family: map-deep-get($bb-fonts, "atlas-grotesk", "name");
 }
 
-
-
 .next {
 	background: blue;
 	color: white;
 	padding: sizes(6);
 	font-size: 18px;
+	position: relative;
 
 	&:hover {
 		background-color: lighten(colors(brand), 10%);
 		cursor: pointer;
 	}
+
+	.next-arrow {
+		@include square(120px);
+		position: absolute;
+		background-color: darken(colors(brand), 10%);
+		right: 0;
+		top: 0;
+	}
 }
-
-
-
-
-
-
 
 ::selection {
   background: #ffb7b7; /* WebKit/Blink Browsers */

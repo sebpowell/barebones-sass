@@ -18,7 +18,7 @@ $bb-text-transform-settings: map-merge($bb-text-transform-settings-default, $bb-
 
 	@each $key, $value in map-deep-get($bb-text-transform-settings, "modifiers") {
 		.#{$className}#{$bb-global-delimiter}#{$value} {
-			text-transform: $key;
+			text-transform: unquote($key);
 		}
 	}
 }

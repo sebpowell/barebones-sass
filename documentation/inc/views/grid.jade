@@ -7,7 +7,8 @@ block body
 
 		section(id="grid-container")
 			h2 Container
-			p To create a grid, use the <span class="inline-code">.row</span> class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
+			p Every grid starts with a container. This clears the floats and sets a negative margin on either side so that the padding used to create the gutters doesn't indent the content. 
+			p The default class name <span class="inline-code">.columns</span>, but you can change this in your <a href="#" class="link">grid settings</a>.
 
 			.example.margin-bottom-double
 				.example-rendered
@@ -17,12 +18,12 @@ block body
 						.columns-3
 
 				pre.example-code
-					code.language-html
-						| &lt;div class="columns"&gt;
-						|  &lt;div class="columns-4"&gt;&lt;/div&gt;
-						|  &lt;div class="columns-4"&gt;&lt;/div&gt;
-						|  &lt;div class="columns-4"&gt;&lt;/div&gt;
-						| &lt;/div&gt;
+					code.language-html.
+						&lt;div class="columns"&gt;&lt;/div&gt;
+
+		section(id="grid-container")
+			h2 Columns
+			p Barbones will automatically generated classes for every number of column specified in your settings file. class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
 
 		section(id="grid-container")
 			h2 Mobile columns
@@ -49,7 +50,3 @@ block body
 
 		section(id="grid-container")
 			h2 Gutter
-
-
-
-	

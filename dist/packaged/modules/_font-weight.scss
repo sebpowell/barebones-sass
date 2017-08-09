@@ -1,8 +1,0 @@
-$i: 1;
-
-@while $i <= 9 {
-	.weight-#{$i * 100} {
-		font-weight: $i * 100;
-	}
-	$i: $i + 1;
-}

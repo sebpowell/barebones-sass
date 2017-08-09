@@ -157,7 +157,15 @@ $bb-overflow-settings: (
 );
 
 $bb-padding-settings: (
-	"name": "p"
+	"name": "p",
+	"modifiers": (
+		"top": "t", 
+		"right": "r",
+		"bottom": "b",
+		"left": "l",
+		"vertical": "v",
+		"horizontal": "h"
+	)
 );
 
 $bb-position-settings: (
@@ -189,7 +197,12 @@ $bb-text-size-settings: (
 );
 
 $bb-text-transform-settings: (
-	"name": "t"
+	"name": "tt",
+	"modifiers": (
+		"uppercase": "u",
+		"lowercase": "l",
+		"capitalize": "c"
+	)
 );
 
 $bb-text-weight: (

@@ -3433,11 +3433,11 @@
 
 .no-underline { text-decoration: none !important; }
 
-.text-uppercase { text-transform: "uppercase"; }
+.text-uppercase { text-transform: uppercase; }
 
-.text-lowercase { text-transform: "lowercase"; }
+.text-lowercase { text-transform: lowercase; }
 
-.text-capitalize { text-transform: "capitalize"; }
+.text-capitalize { text-transform: capitalize; }
 
 .top-0 { top: 0px; }
 
