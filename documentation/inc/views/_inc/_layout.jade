@@ -1,220 +1,205 @@
 include _head.jade
 
+block variables
+	- var test = "meh";
+
 body.page-layout-docs
-	.backdrop
-	//- .primary-navigation
-	//- 	a.logo(href = "index.html")
-	//- 		img(src="#{image_base}logo-blue.png")
-	//- 	.github
-	//- 		a(class="github-button" href="https://github.com/sebpowell/barebones-sass" data-style="mega" data-count-href="/sebpowell/barebones-sass" data-count-api="/sebpowell/barebones-sass" data-count-aria-label="# stargazers on GitHub" aria-label="Star ntkme/github-buttons on GitHub") Star
-
-	//- .mobile-docs-navigation
-	//- 	a.logo(href = "welcome.html")
-	//- 		img(src="#{image_base}logo.png")
-
-	//- 	.mobile-navigation-toggle
-	//- 		span
-	//- 		span
-	//- 		span
-	//- 		span
-
-	//- .share-bar
-	//- 	.newsletter
-	//- 		form(action="//getagent.us8.list-manage.com/subscribe/post?u=8e7e2415ce6f230a2587c4d65&amp;id=efa90a8389" method="post" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
-	//- 			input.newsletter-input(type="email" id="mce-EMAIL" name="EMAIL" placeholder="Sign up for release updates")
-	//- 			input.newsletter-submit(type="submit" name="subscribe" id="mc-embedded-subscribe", value="Submit")
-
 	.docs-container
 		.docs-navigation
-
-			.nav-logo
-				img(src="documentation/inc/images/logo.png")
-
-			.nav-section
-				a.parent(href="#introduction") Introduction
-				ul.sub-navigation.is-open(style="display: block")
-					li
-						a(href="#introduction") Introduction
-					li
-						a(href="#prerequisites") Requirements
-					li
-						a(href="#installing") Installation
-					li
-						a(href="#support") Support
-					li
-						a(href="#background") Background reading
-		
-			.nav-section
-				a.parent(href="#settings") Settings
-				ul.sub-navigation
-					li
-						a(href="#settings-border-radius-scale") Border-radius scale
-					li
-						a(href="#settings-breakpoints") Breakpoints
-					li
-						a(href="#settings-colours") Colors
-					li
-						a(href="#settings-letter-spacing") Letter-spacing
-					li
-						a(href="#settings-line-heights") Line-heights
-					li
-						a(href="#settings-global-delimiter") Global delimiter
-					li
-						a(href="#settings-grid") Grid
-					li
-						a(href="#settings-hover-class-name") Hover class name
-					li
-						a(href="#settings-max-width-scale") Max-width scale
-					li
-						a(href="#settings-responsive") Responsive
-					li
-						a(href="#settings-normalize") Normalize
-					li
-						a(href="#settings-shadows") Shadows
-					li
-						a(href="#settings-spacing-base") Spacing base
-					li
-						a(href="#settings-spacing-scale") Spacing scale
-					li
-						a(href="#settings-text-sizes") Text-sizes
-		
-
-			.nav-section
-				a.parent(href="#grid") Grid
-				ul.sub-navigation
-					li
-						a(href="#generator") Grid Settings
-					li
-						a(href="#generator") Containers
-					li
-						a(href="#generator") Columns
-					li
-						a(href="#generator") Galleries
-					li
-						a(href="#generator") Helpers
-		
-			.nav-section
-				a.parent(href="#mixins") Mixins
-				ul.sub-navigation
-					li
-						a(href="#mixins-arrow") Arrow
-					li
-						a(href="#mixins-aspect-ratio") Aspect-ratio
-					li
-						a(href="#mixins-background-image") Background-image
-					li
-						a(href="#mixins-clearfix") Clearfix
-					li
-						a(href="#mixins-ellipsis") Ellipsis
-					li
-						a(href="#mixins-helper-generator") Helper generator
-					li
-						a(href="#mixins-lists") Lists
-					li
-						a(href="#mixins-map-deep-get") Map-deep-get
-					li
-						a(href="#mixins-media-query") Media-query
-					li
-						a(href="#mixins-placeholder") Placeholder
-					li
-						a(href="#mixins-shapes") Shapes
-					li
-						a(href="#mixins-strings") Strings
-					li
-						a(href="#mixins-strip-units") Strip-units
-					li
-						a(href="#mixins-text-uppercase") Text-uppercase
-
-			.nav-section
-				a.parent(href="#helpers") Helpers
-				ul.sub-navigation
-
-					li
-						a(href="#helpers-align-content") Align-content
-					li
-						a(href="#helpers-align-items") Align-items
-					li
-						a(href="#helpers-aspect-ratio") Aspect-ratio
-					li
-						a(href="#helpers-background-color") Background-color
-					li
-						a(href="#helpers-background-position") Background-position
-					li
-						a(href="#helpers-background-size") Background-size
-					li
-						a(href="#helpers-border-radius") Border-radius
-					li
-						a(href="#helpers-border") Border
-					li
-						a(href="#helpers-bottom") Bottom
-					li
-						a(href="#helpers-box-shadow") Box-shadow
-					li
-						a(href="#helpers-clearfix") Clearfix
-					li
-						a(href="#helpers-cursor") Cursor
-					li
-						a(href="#helpers-display") Display
-					li
-						a(href="#helpers-fill") Fill
-					li
-						a(href="#helpers-flex-direction") Flex-direction
-					li
-						a(href="#helpers-flex") Flex
-					li
-						a(href="#helpers-float") Float
-					li
-						a(href="#helpers-height") Height
-					li
-						a(href="#helpers-left") Left
-					li
-						a(href="#helpers-letter-spacing") Letter-spacing
-					li
-						a(href="#helpers-line-height") Line-height
-					li
-						a(href="#helpers-margin") Margin
-					li
-						a(href="#helpers-max-width") Max-width
-					li
-						a(href="#helpers-offset") Offset
-					li
-						a(href="#helpers-opacity") Opacity
-					li
-						a(href="#helpers-order") Order
-					li
-						a(href="#helpers-overflow") Overflow
-					li
-						a(href="#helpers-padding") Padding
-					li
-						a(href="#helpers-position") Position
-					li
-						a(href="#helpers-right") Right
-					li
-						a(href="#helpers-table") Table
-					li
-						a(href="#helpers-text-align") Text-align
-					li
-						a(href="#helpers-text-color") Text-color
-					li
-						a(href="#helpers-text-decoration") Text-decoration
-					li
-						a(href="#helpers-text-ellipsis") Text-ellipsis
-					li
-						a(href="#helpers-text-size") Text-size
-					li
-						a(href="#helpers-text-transform") Text-transform
-					li
-						a(href="#helpers-top") Top
-					li
-						a(href="#helpers-transition") Transition
-					li
-						a(href="#helpers-vertical-align") Vertical-align
-					li
-						a(href="#helpers-visibility") Visibility
-					li
-						a(href="#helpers-width") Width
-					li
-						a(href="#helpers-z-index") Z-index
-		.docs-content
 			.inner
+				.nav-logo
+					img(src="documentation/inc/images/logo-black.png")
+
+				.nav-section
+					a.parent(href="introduction.html") Introduction
+					ul.sub-navigation.is-open
+						li
+							a(href="#introduction") Introduction
+						li
+							a(href="#prerequisites") Requirements
+						li
+							a(href="#installing") Installation
+			
+				.nav-section
+					a.parent(href="settings.html") Settings
+					ul.sub-navigation
+						li
+							a(href="#settings-border-radius-scale") Border-radius scale
+						li
+							a(href="#settings-breakpoints") Breakpoints
+						li
+							a(href="#settings-colours") Colors
+						li
+							a(href="#settings-letter-spacing") Letter-spacing
+						li
+							a(href="#settings-line-heights") Line-heights
+						li
+							a(href="#settings-global-delimiter") Global delimiter
+						li
+							a(href="#settings-grid") Grid
+						li
+							a(href="#settings-hover-class-name") Hover class name
+						li
+							a(href="#settings-max-width-scale") Max-width scale
+						li
+							a(href="#settings-responsive") Responsive
+						li
+							a(href="#settings-normalize") Normalize
+						li
+							a(href="#settings-shadows") Shadows
+						li
+							a(href="#settings-spacing-base") Spacing base
+						li
+							a(href="#settings-spacing-scale") Spacing scale
+						li
+							a(href="#settings-text-sizes") Text-sizes
+			
+				.nav-section
+					a.parent(href="grid.html") Grid
+					ul.sub-navigation
+						li
+							a(href="#generator") Grid Settings
+						li
+							a(href="#generator") Containers
+						li
+							a(href="#generator") Columns
+						li
+							a(href="#generator") Galleries
+						li
+							a(href="#generator") Helpers
+			
+				.nav-section
+					a.parent(href="mixins.html") Mixins
+					ul.sub-navigation
+						li
+							a(href="#mixins-arrow") Arrow
+						li
+							a(href="#mixins-aspect-ratio") Aspect-ratio
+						li
+							a(href="#mixins-background-image") Background-image
+						li
+							a(href="#mixins-clearfix") Clearfix
+						li
+							a(href="#mixins-ellipsis") Ellipsis
+						li
+							a(href="#mixins-helper-generator") Helper generator
+						li
+							a(href="#mixins-lists") Lists
+						li
+							a(href="#mixins-map-deep-get") Map-deep-get
+						li
+							a(href="#mixins-media-query") Media-query
+						li
+							a(href="#mixins-placeholder") Placeholder
+						li
+							a(href="#mixins-shapes") Shapes
+						li
+							a(href="#mixins-strings") Strings
+						li
+							a(href="#mixins-strip-units") Strip-units
+						li
+							a(href="#mixins-text-uppercase") Text-uppercase
+
+				.nav-section
+					a.parent(href="helpers.html") Helpers
+					ul.sub-navigation
+
+						li
+							a(href="#helpers-align-content") Align-content
+						li
+							a(href="#helpers-align-items") Align-items
+						li
+							a(href="#helpers-aspect-ratio") Aspect-ratio
+						li
+							a(href="#helpers-background-color") Background-color
+						li
+							a(href="#helpers-background-position") Background-position
+						li
+							a(href="#helpers-background-size") Background-size
+						li
+							a(href="#helpers-border-radius") Border-radius
+						li
+							a(href="#helpers-border") Border
+						li
+							a(href="#helpers-bottom") Bottom
+						li
+							a(href="#helpers-box-shadow") Box-shadow
+						li
+							a(href="#helpers-clearfix") Clearfix
+						li
+							a(href="#helpers-cursor") Cursor
+						li
+							a(href="#helpers-display") Display
+						li
+							a(href="#helpers-fill") Fill
+						li
+							a(href="#helpers-flex-direction") Flex-direction
+						li
+							a(href="#helpers-flex") Flex
+						li
+							a(href="#helpers-float") Float
+						li
+							a(href="#helpers-height") Height
+						li
+							a(href="#helpers-left") Left
+						li
+							a(href="#helpers-letter-spacing") Letter-spacing
+						li
+							a(href="#helpers-line-height") Line-height
+						li
+							a(href="#helpers-margin") Margin
+						li
+							a(href="#helpers-max-width") Max-width
+						li
+							a(href="#helpers-offset") Offset
+						li
+							a(href="#helpers-opacity") Opacity
+						li
+							a(href="#helpers-order") Order
+						li
+							a(href="#helpers-overflow") Overflow
+						li
+							a(href="#helpers-padding") Padding
+						li
+							a(href="#helpers-position") Position
+						li
+							a(href="#helpers-right") Right
+						li
+							a(href="#helpers-table") Table
+						li
+							a(href="#helpers-text-align") Text-align
+						li
+							a(href="#helpers-text-color") Text-color
+						li
+							a(href="#helpers-text-decoration") Text-decoration
+						li
+							a(href="#helpers-text-ellipsis") Text-ellipsis
+						li
+							a(href="#helpers-text-size") Text-size
+						li
+							a(href="#helpers-text-transform") Text-transform
+						li
+							a(href="#helpers-top") Top
+						li
+							a(href="#helpers-transition") Transition
+						li
+							a(href="#helpers-vertical-align") Vertical-align
+						li
+							a(href="#helpers-visibility") Visibility
+						li
+							a(href="#helpers-width") Width
+						li
+							a(href="#helpers-z-index") Z-index
+			
+			.navigation-footer
+				.display-table-cell.vertical-align-middle
+					a.button(href="#") Github
+
+		.docs-content
+			.inner			
 				block body
+
+			a.next.display-block(href="#{next}.html")
+				.opacity-7.margin-bottom-3 Next up
+				.text-28.text-capitalize= next
+

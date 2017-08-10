@@ -150,47 +150,151 @@
     <div class="docs-content">
       <div class="inner">			
         <section id="grid-intro" class="intro-section">
-          <h1>Grid</h1>
+          <h1>Introduction</h1>
         </section>
-        <section id="grid-container">
-          <h2>Container</h2>
-          <p>Every grid starts with a container. This clears the floats and sets a negative margin on either side so that the padding used to create the gutters doesn't indent the content. </p>
-          <p>The default class name <span class="inline-code">.columns</span>, but you can change this in your <a href="#" class="link">grid settings</a>.</p>
-          <div class="example margin-bottom-double">
-            <div class="example-rendered">
-              <div class="row">
-                <div class="columns-4"></div>
-                <div class="columns-5"></div>
-                <div class="columns-3"></div>
+        <section id="introduction-intro">
+          <p>Barebones is fully customisable SCSS boilerplate to help you build your own UI framework. </p>
+          <p>It is not a UI kit or library – Bootstrap, Foundation and the like – but a set of commonly used tools common put together in a convenient package to kickstart your next project: </p>
+          <ul class="bullet-list">
+            <li>Grid </li>
+            <li>Mixins</li>
+            <li>Responsive 'composer' classes</li>
+          </ul>
+        </section>
+        <section id="introduction-intro">
+          <h2>Why do I need this?</h2>
+          <p>Barebones allows you to quickly build a custom, fully responsive UI. Here's an exmple of how you could use Barebones to replicate the Airbnb login modal. </p>
+          <div class="example background-greyscale-x-light demo-airbnb margin-bottom-5">
+            <div class="padding-15">
+              <div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large">
+                <div class="demo-button demo-button-facebook width-full margin-bottom-2">Log in with Facebook</div>
+                <div class="demo-button demo-button-empty width-full">Log in with Google</div>
+                <div class="border-top text-center margin-top-7 margin-bottom-3">
+                  <div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative text-15">or</div>
+                </div>
+                <div class="margin-bottom-4">
+                  <input type="text" placeholder="Email Address"/>
+                </div>
+                <div class="margin-bottom-4">
+                  <input type="password" placeholder="Password"/>
+                </div>
+                <div class="margin-bottom-4">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <div class="checkbox">
+                        <div class="checkbox-input"></div>
+                        <div class="checkbox-label">Remember me</div>
+                      </div>
+                    </div>
+                    <div class="float-right"><a href="#" class="text-15 text-brand text-underline-hover">Forgot password?</a></div>
+                  </div>
+                </div>
+                <div class="margin-bottom-5">
+                  <div class="demo-button width-full">Log in</div>
+                </div>
+                <div class="border-top margin-bottom-5"></div>
+                <div class="text-center">
+                  <div class="text-20">Don’t have an account? <a class="text-brand text-underline-hover">Sign up</a></div>
+                </div>
               </div>
             </div>
-            <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;&lt;/div&gt;
-</code></pre>
+            
+            
+            
           </div>
         </section>
-        <section id="grid-container">
-          <h2>Columns</h2>
-          <p>Barbones will automatically generated classes for every number of column specified in your settings file. class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.</p>
+        <section id="prerequisites">
+          <h2>Prerequisites</h2>
+          <p>Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Vendor prefixing mixins are not used as you can use <a href="https://github.com/postcss/autoprefixer" target="_blank" class="link">autoprefixer</a> to do this.</p>
         </section>
-        <section id="grid-container">
-          <h2>Mobile columns</h2>
-          <p>Helper classes are also available to create different grids for different screen sizes.</p>
-          <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
- &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;&lt;/div&gt;
- &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;&lt;/div&gt;
- &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        </section>
-        <section id="grid-container">
-          <h2>Offsets</h2>
-          <p>Offsets allow you to shift a column to the right by a specified number of columns.</p>
-          <pre class="example-code"><code class="language-html">&lt;div class="columns"&gt;
-	&lt;div class="columns-3 offset-9"&gt;&lt;/div&gt;
-&lt;/div&gt;
+        <section id="installation">
+          <h2>Get started</h2>
+          <h3>1. Install the package</h3>
+          <p>Barebones is available as either a Bower or NPM package.</p>
+          <div class="example margin-bottom-8">
+            <pre class="example-code"><code class="language-bash">bower install barebones-sass --save
+npm install barebones-sass --save-dev						
 </code></pre>
-        </section>
-        <section id="grid-container">
-          <h2>Gutter</h2>
+          </div>
+          <p>If you want to skip package control, you can do that too – download the latest release from <a href="https://github.com/sebpowell/barebones-sass" class="link">GitHub</a> and integrate the source files directly. </p>
+          <h3>2. Create a settings file</h3>
+          <p>In your project folder, create a <span class="inline-code">_settings.scss</span> file (or whatever you want to call it) with the following values. Each setting is covered in the <a href="#" class="link">following section</a>.</p>
+          <pre class="example-code"><code class="language-scss">$bb-border-radius-scale: 5;
+
+$bb-breakpoints: ();
+
+$bb-colors: ();
+
+$bb-letter-spacing: ();
+
+$bb-line-heights: ();
+
+$bb-global-delimiter: "-";
+
+$bb-helpers: ();
+
+$bb-hover-class-name: "hover";
+
+$bb-max-width-scale: 14;
+
+$bb-responsive: true;
+
+$bb-shadows: ();
+
+$bb-spacing-scale: 10;
+
+$bb-spacing-base: 4px;
+
+$bb-spacing-sides: ();
+
+$bb-text-sizes: ();
+
+</code></pre>
+          <p>Barebones also allows you to specify your own naming convention. For each generated class, you can decide how that class will be outputted. </p>
+          <pre class="example-code"><code class="language-scss">// These are the settings used by the align-items helper generator to 
+// create classes for the flex align-items property. 
+$bb-align-items: (
+	"modifiers": (
+		"flex-start": "items-flex-start",
+		"flex-end": "items-flex-end",
+		"center": "items-center"
+	)
+);
+
+// This will output
+.align-items-flex-start { 
+	flex-items: flex-start; 
+}
+
+</code></pre>
+          <p>You may want a less verbose version, and you ay want to specify your own class names. A short name boilerplate with all the relevant variables nams is aavailable here.</p>
+          <pre class="example-code"><code class="language-scss">// You can make this less verbose by changing the names: 
+$bb-align-items: (
+	"modifiers": (
+		"flex-start": "items-fs",
+		"flex-end": "items-fe",
+		"center": "items-c"
+	)
+);
+
+// Will output: 
+.items-fs {
+	flex-items: flex-start;
+}
+</code></pre>
+          <h3>3. Create your main SCSS file</h3>
+          <p>Import these files into your main SCSS file so they can compiled. </p>
+          <p>Note that the import order matters!</p>
+          <div class="example">
+            <pre class="example-code"><code class="language-scss">// Always import the settings file first
+@import _settings.scss;
+
+// Optional – import the _module-names.scss if you're using it
+@import _module_names.scss;
+
+// Always import the settings file first
+@import bower-components/barebones-sass/dist/_base.scss;</code></pre>
+          </div>
         </section>
       </div><a href="undefined.html" class="next display-block">
         <div class="opacity-7 margin-bottom-3">Next up</div>

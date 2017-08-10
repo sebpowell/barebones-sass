@@ -11,13 +11,3 @@
 		@content;
 	}
 }
-
-@include input {
-
-	// font-family: map-deep-get("avenir-next");
-	border: 1px solid colors(keyline);
-	height: 50px;
-	font-size: 16px;
-	width: 100%;
-	padding-left: sizes(3);
-}

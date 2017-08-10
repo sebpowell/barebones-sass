@@ -1,52 +1,51 @@
 extends  _inc/_layout.jade
 
 block body
-	section(id="grid")
-		section(id="grid-intro")
-			h1.page-title Grid
+	section.intro-section(id="grid-intro")
+		h1 Grid
 
-		section(id="grid-container")
-			h2 Container
-			p Every grid starts with a container. This clears the floats and sets a negative margin on either side so that the padding used to create the gutters doesn't indent the content. 
-			p The default class name <span class="inline-code">.columns</span>, but you can change this in your <a href="#" class="link">grid settings</a>.
+	section(id="grid-container")
+		h2 Container
+		p Every grid starts with a container. This clears the floats and sets a negative margin on either side so that the padding used to create the gutters doesn't indent the content. 
+		p The default class name <span class="inline-code">.columns</span>, but you can change this in your <a href="#" class="link">grid settings</a>.
 
-			.example.margin-bottom-double
-				.example-rendered
-					.row
-						.columns-4
-						.columns-5
-						.columns-3
-
-				pre.example-code
-					code.language-html.
-						&lt;div class="columns"&gt;&lt;/div&gt;
-
-		section(id="grid-container")
-			h2 Columns
-			p Barbones will automatically generated classes for every number of column specified in your settings file. class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
-
-		section(id="grid-container")
-			h2 Mobile columns
-
-			p Helper classes are also available to create different grids for different screen sizes.
-
-			pre.example-code
-				code.language-html
-					| &lt;div class="columns"&gt;
-					|  &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;&lt;/div&gt;
-					|  &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;&lt;/div&gt;
-					|  &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;&lt;/div&gt;
-					| &lt;/div&gt;
-
-		section(id="grid-container")
-			h2 Offsets
-			p Offsets allow you to shift a column to the right by a specified number of columns.
+		.example.margin-bottom-double
+			.example-rendered
+				.row
+					.columns-4
+					.columns-5
+					.columns-3
 
 			pre.example-code
 				code.language-html.
-					&lt;div class="columns"&gt;
-						&lt;div class="columns-3 offset-9"&gt;&lt;/div&gt;
-					&lt;/div&gt;
+					&lt;div class="columns"&gt;&lt;/div&gt;
 
-		section(id="grid-container")
-			h2 Gutter
+	section(id="grid-container")
+		h2 Columns
+		p Barbones will automatically generated classes for every number of column specified in your settings file. class (clears the floats), then <span class="var">.columns-*</span> classes for different column widths. Columns will grow to 100% of the container width at the breakpoint specified in your grid map.
+
+	section(id="grid-container")
+		h2 Mobile columns
+
+		p Helper classes are also available to create different grids for different screen sizes.
+
+		pre.example-code
+			code.language-html
+				| &lt;div class="columns"&gt;
+				|  &lt;div class="columns-4-device-x-small columns-5-device-medium"&gt;&lt;/div&gt;
+				|  &lt;div class="columns-4-device-x-small columns-3-device-medium"&gt;&lt;/div&gt;
+				|  &lt;div class="columns-4-device-x-small columns-4-device-medium"&gt;&lt;/div&gt;
+				| &lt;/div&gt;
+
+	section(id="grid-container")
+		h2 Offsets
+		p Offsets allow you to shift a column to the right by a specified number of columns.
+
+		pre.example-code
+			code.language-html.
+				&lt;div class="columns"&gt;
+					&lt;div class="columns-3 offset-9"&gt;&lt;/div&gt;
+				&lt;/div&gt;
+
+	section(id="grid-container")
+		h2 Gutter

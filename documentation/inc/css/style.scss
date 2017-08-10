@@ -1,6 +1,6 @@
 $bb-colors: (
 	"brand": blue, 
-	"keyline": #DBDBDB,
+	"keyline": #efefef,
 	"greyscale": (
 		"x-light": #e5e5e5,
 		"50":  #ECEFF1,
@@ -35,6 +35,11 @@ $bb-fonts: (
 
 $bb-spacing-scale: 15;
 
+$bb-line-heights: (
+	"small": 1.2,
+	"medium": 1.5
+);
+
 $bb-spacing-base: 5px;
 
 $bb-text-sizes: (
@@ -55,7 +60,7 @@ $bb-text-sizes: (
 }
 
 
-@import "_short-names";
+// @import "_short-names";
 @import "../../../dist/configurable/_base";
 @import "components/components";
 
@@ -82,17 +87,21 @@ html {
 }
 
 body {
-	// overflow: hidden;
+	overflow: hidden;
 	height: 100%;
 	font-family: map-deep-get($bb-fonts, "atlas-grotesk", "name");
 }
 
+
 .next {
-	background: blue;
-	color: white;
+	background: white;
+	border-top: 1px solid colors("keyline");
+	box-shadow: -10px -20px 5px rgba(00,00,00,0.2);
 	padding: sizes(6);
 	font-size: 18px;
-	position: relative;
+	bottom: 0;
+	text-align: right;
+	max-width: 1000px;
 
 	&:hover {
 		background-color: lighten(colors(brand), 10%);
@@ -109,5 +118,5 @@ body {
 }
 
 ::selection {
-  background: #ffb7b7; /* WebKit/Blink Browsers */
+  background: lighten(colors("brand"), 45%);
 }

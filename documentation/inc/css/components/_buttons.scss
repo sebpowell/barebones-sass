@@ -9,3 +9,19 @@
 	line-height: 45px;
 	border-radius: 100px;
 }
+
+
+
+.button {
+	// font-size: 20px;
+	// height: 55px;
+	// line-height: 57px;
+	border: 1px solid lighten(colors(brand), 42%);
+	color: colors(brand);
+	// position: absolute;
+	bottom: 20px;
+	left: 30px;
+	background: white;
+	padding: 0 sizes(8);
+	font-weight: 400 !important;
+}

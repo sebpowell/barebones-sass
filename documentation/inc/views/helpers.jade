@@ -4,1056 +4,1053 @@ extends  _inc/_layout.jade
 block body
 	section(id="mixins")
 		section.intro-section(id="mixins-intro")
-			h1.page-title Composer Classes
-	
-		p Utility classes can help remove repetition by creating a set of abstract classes that can be used throughout your project. Each class is responsible for doing one job and doing it well. These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.
+			h1 Composer Classes
 
-		// bottom auto
-		p if you enable responsive classes, 
 		
-		section#aspect-ratio 
-			h2 Aspect Ratio
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}
-
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Colours specified in <span class="inline-code">$bb-colors</span> map.
-					td.text-center
-						span.label.label-green Yes
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-background-color")
-			h2 Background Color
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}
-
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Colours specified in <span class="inline-code">$bb-colors</span> map.
-					td.text-center
-						span.label.label-green Yes
-					td.text-center
-						span.label.label-red No
-			
-		section(id="mixins-background-position")
-			h2 Background Position
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-						"modifiers": (
-							"center": "center",
-						);	
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "center"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-background-size")
-			h2 Background Size
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"name": "background-color",
-						"modifiers": (
-							"center": "center",
-						);	
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "cover", "contain"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-border-radius")
-			h2 Border Radius
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-border")
-			h2 Border
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-bottom")
-			h2 Bottom
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-box-shadow")
-			h2 Box Shadow
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-clearfix")
-			h2 Clearfix
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-cursor")
-			h2 Cursor
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "not-allowed", "pointer", "default"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-display")
-			h2 Display
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-fill")
-			h2 Fill
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-flex-direction")
-			h2 Flex Direction
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "column", "row"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-			
-		section(id="mixins-flex-items")
-			h2 Flex Items
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "start", "center", "end"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-float")
-			h2 Float
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "background-color",
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "left", "right"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-left")
-			h2 Left
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-
-		section(id="mixins-letter-spacing")
-			h2 Letter-spacing
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-						
-		section(id="mixins-line-height")
-			h2 Line-height
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No		
-
-		section(id="mixins-margin")
-			h2 Margin
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  Scale 1 - 15
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
-						
-		section(id="mixins-max-width")
-			h2 Max-width
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
-
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
 		
-		section(id="mixins-offset")
-			h2 Offset
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- section#aspect-ratio 
+		//- 	h2 Aspect Ratio
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"name": "background-color",
+		//- 			);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}
 
-		section(id="mixins-opacity")
-			h2 Opacity
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Colours specified in <span class="inline-code">$bb-colors</span> map.
+		//- 			td.text-center
+		//- 				span.label.label-green Yes
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-background-color")
+		//- 	h2 Background Color
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-order")
-			h2 Order
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale 1 - 10
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Colours specified in <span class="inline-code">$bb-colors</span> map.
+		//- 			td.text-center
+		//- 				span.label.label-green Yes
+		//- 			td.text-center
+		//- 				span.label.label-red No
+			
+		//- section(id="mixins-background-position")
+		//- 	h2 Background Position
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"name": "background-color",
+		//- 				"modifiers": (
+		//- 					"center": "center",
+		//- 				);	
+		//- 			);
 
-		section(id="mixins-overflow")
-			h2 Overflow
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "center"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "hidden", "scroll", "visible", "auto"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-background-size")
+		//- 	h2 Background Size
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"name": "background-color",
+		//- 				"modifiers": (
+		//- 					"center": "center",
+		//- 				);	
+		//- 			);
 
-		section(id="mixins-padding")
-			h2 Padding
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "cover", "contain"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "hidden", "scroll", "visible", "auto"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-border-radius")
+		//- 	h2 Border Radius
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-position")
-			h2 Position
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale specified in your settings.
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "absolute", "fixed", "static", "relative"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-border")
+		//- 	h2 Border
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-right")
-			h2 Right
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale specified in your settings.
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "absolute", "fixed", "static", "relative"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-bottom")
+		//- 	h2 Bottom
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-		section(id="mixins-table")
-			h2 Table
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale specified in your settings.
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "border-collapse", "layout-fixed"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-box-shadow")
+		//- 	h2 Box Shadow
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-text-align")
-			h2 Text Align
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale specified in your settings.
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "left", "center", "right"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-clearfix")
+		//- 	h2 Clearfix
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-text-color")
-			h2 Text Color
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale specified in your settings.
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "left", "center", "right"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-cursor")
+		//- 	h2 Cursor
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-text-decoration")
-			h2 Text Decoration
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "not-allowed", "pointer", "default"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "underline", "strikethrough"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-display")
+		//- 	h2 Display
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-text-ellipsis")
-			h2 Text Ellipsis
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td "underline", "strikethrough"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-fill")
+		//- 	h2 Fill
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-text-size")
-			h2 Text Size
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "flex", "block", "inline-block", "inline", "none", "table", "table-cell", "table-row"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td Scale specified in your settings.
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-flex-direction")
+		//- 	h2 Flex Direction
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-		section(id="mixins-text-transform")
-			h2 Text Transform
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "column", "row"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+			
+		//- section(id="mixins-flex-items")
+		//- 	h2 Flex Items
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "capitalize", "uppercase", "lowercase"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "start", "center", "end"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-		section(id="mixins-top")
-			h2 Top
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- section(id="mixins-float")
+		//- 	h2 Float
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "background-color",
+		//- 			);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "capitalize", "uppercase", "lowercase"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "left", "right"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-		section(id="mixins-transition")
-			h2 Transition
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- section(id="mixins-left")
+		//- 	h2 Left
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "capitalize", "uppercase", "lowercase"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  Scale 1 - 15
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-		section(id="mixin-vertical-align")
-			h2 Vertical Align
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- section(id="mixins-letter-spacing")
+		//- 	h2 Letter-spacing
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "top", "middle", "bottom"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  Scale 1 - 15
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+						
+		//- section(id="mixins-line-height")
+		//- 	h2 Line-height
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-		section(id="mixins-visibility")
-			h2 Visibility
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  Scale 1 - 15
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No		
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "visible", "hidden"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-margin")
+		//- 	h2 Margin
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-		section(id="mixins-width")
-			h2 Width
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  Scale 1 - 15
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+						
+		//- section(id="mixins-max-width")
+		//- 	h2 Max-width
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "visible", "hidden"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale 1 - 10
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		
+		//- section(id="mixins-offset")
+		//- 	h2 Offset
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
 
-		section(id="mixins-z-index")
-			h2 Z-index
-			pre.example-code.margin-bottom-5
-				code.language-scss.
-					// Settings
-					$bb-background-color: (
-						"import": true,
-						"name": "aspect-ratio"
-					);
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale 1 - 10
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
-					// Output
-					.background-color-white {
-						background-color: white;
-					}	
-			table.settings-table
-				thead
-					th Modifiers
-					th.text-center Hover
-					th.text-center Responsive
-				tr
-					td  "visible", "hidden"
-					td.text-center
-						span.label.label-red No
-					td.text-center
-						span.label.label-red No
+		//- section(id="mixins-opacity")
+		//- 	h2 Opacity
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale 1 - 10
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-order")
+		//- 	h2 Order
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale 1 - 10
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-overflow")
+		//- 	h2 Overflow
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "hidden", "scroll", "visible", "auto"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-padding")
+		//- 	h2 Padding
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "hidden", "scroll", "visible", "auto"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-position")
+		//- 	h2 Position
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "absolute", "fixed", "static", "relative"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-right")
+		//- 	h2 Right
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "absolute", "fixed", "static", "relative"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-table")
+		//- 	h2 Table
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "border-collapse", "layout-fixed"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-text-align")
+		//- 	h2 Text Align
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "left", "center", "right"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-text-color")
+		//- 	h2 Text Color
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "left", "center", "right"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-text-decoration")
+		//- 	h2 Text Decoration
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "underline", "strikethrough"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-text-ellipsis")
+		//- 	h2 Text Ellipsis
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td "underline", "strikethrough"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-text-size")
+		//- 	h2 Text Size
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td Scale specified in your settings.
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-text-transform")
+		//- 	h2 Text Transform
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "capitalize", "uppercase", "lowercase"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-top")
+		//- 	h2 Top
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "capitalize", "uppercase", "lowercase"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-transition")
+		//- 	h2 Transition
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "capitalize", "uppercase", "lowercase"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixin-vertical-align")
+		//- 	h2 Vertical Align
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "top", "middle", "bottom"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-visibility")
+		//- 	h2 Visibility
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "visible", "hidden"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-width")
+		//- 	h2 Width
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "visible", "hidden"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
+
+		//- section(id="mixins-z-index")
+		//- 	h2 Z-index
+		//- 	pre.example-code.margin-bottom-5
+		//- 		code.language-scss.
+		//- 			// Settings
+		//- 			$bb-background-color: (
+		//- 				"import": true,
+		//- 				"name": "aspect-ratio"
+		//- 			);
+
+		//- 			// Output
+		//- 			.background-color-white {
+		//- 				background-color: white;
+		//- 			}	
+		//- 	table.settings-table
+		//- 		thead
+		//- 			th Modifiers
+		//- 			th.text-center Hover
+		//- 			th.text-center Responsive
+		//- 		tr
+		//- 			td  "visible", "hidden"
+		//- 			td.text-center
+		//- 				span.label.label-red No
+		//- 			td.text-center
+		//- 				span.label.label-red No
 
 
 		

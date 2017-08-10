@@ -1,0 +1,327 @@
+extends  _inc/_layout.jade
+
+block body
+	section.intro-section(id="grid-intro")
+		h1 Introduction
+	
+
+	section(id="introduction-intro")
+		
+
+		p Barebones is fully customisable SCSS boilerplate to help you build your own UI framework. 
+
+		p It is not a UI kit or library – Bootstrap, Foundation and the like – but a set of commonly used tools common put together in a convenient package to kickstart your next project: 
+
+		ul.bullet-list
+			li Grid 
+			li Mixins
+			li Responsive 'composer' classes
+
+
+	section(id="introduction-intro")
+
+		h2 Why do I need this?
+
+		p Barebones allows you to quickly build a custom, fully responsive UI. Here's an exmple of how you could use Barebones to replicate the Airbnb login modal. 
+
+
+
+		.example.background-greyscale-x-light.demo-airbnb.margin-bottom-5
+			.padding-15
+				.padding-8.max-width-500.margin-auto.background-white.box-shadow-xx-large
+					.demo-button.demo-button-facebook.width-full.margin-bottom-2 Log in with Facebook
+					.demo-button.demo-button-empty.width-full Log in with Google
+
+					.border-top.text-center.margin-top-7.margin-bottom-3
+						.background-white.padding-horizontal-5.display-inline-block.position-relative.text-15(style="top: -10px") or
+
+
+					.margin-bottom-4
+						input(type="text" placeholder="Email Address")
+					.margin-bottom-4
+						input(type="password" placeholder="Password")
+
+
+					
+					.margin-bottom-4
+						.clearfix
+							.float-left
+								.checkbox
+									.checkbox-input
+									.checkbox-label Remember me
+
+							.float-right
+								a.text-15.text-brand.text-underline-hover(href="#") Forgot password?
+
+
+					.margin-bottom-5
+						.demo-button.width-full Log in
+
+
+					.border-top.margin-bottom-5
+
+					.text-center
+						.text-20 Don’t have an account? <a class="text-brand text-underline-hover">Sign up</a>
+
+
+
+
+			//- .tabbed-code
+			//- 	ul.tabbed-code-navigation
+			//- 		li.is-active(data-tab="scss") SCSS
+			//- 		li(data-tab="html") HTML
+			
+
+			//- 	.tabbed-code-tab
+			//- 		pre.example-code
+			//- 			code.language-scss.
+
+			//- 				$bb-colors: (
+
+			//- 					"brand": #008489, 
+
+			//- 					"greyscale": (
+			//- 						"x-light": #e5e5e5,
+			//- 						"500": #767676
+			//- 					),
+			//- 					"keyline": #DBDBDB,
+
+			//- 					"social": (
+			//- 						"facebook": #4568b2
+			//- 					),
+			//- 				);
+
+			//- 				$bb-spacing-scale: 15;
+
+			//- 				$bb-spacing-base: 4px;
+
+			//- 				@import "../../../dist/configurable/_base";
+			//- 				@import "components/components";
+
+			//- 				.demo-airbnb {
+
+			//- 					> * {
+			//- 						font-family: "circular std";
+			//- 						font-weight: 300;
+			//- 						-webkit-font-smoothing: antialiased;
+			//- 					}
+
+			//- 					.checkbox {
+			//- 						.checkbox-input {
+			//- 							@include square(18px);
+			//- 							border: 1px solid colors(keyline);
+			//- 							display: inline-block;
+			//- 							vertical-align: middle;
+			//- 							margin-right: sizes(1);
+			//- 						}
+
+			//- 						.checkbox-label {
+			//- 							display: inline-block;
+			//- 							font-size: 20px;
+			//- 							vertical-align: middle;
+			//- 						}
+			//- 					}
+
+			//- 					.demo-button {
+			//- 						border: 0;
+			//- 						display: inline-block;
+			//- 						color: white;
+			//- 						text-align: center;
+			//- 						padding: 0 sizes(6);
+			//- 						height: 50px;
+			//- 						line-height: 50px;
+			//- 						font-size: 20px;
+			//- 						font-weight: 500;
+			//- 						border-radius: 3px;
+			//- 						background-color: #008489;
+
+			//- 						&.demo-button-facebook {
+			//- 							background-color: colors("social", "facebook");
+			//- 						}
+
+			//- 						&.demo-button-empty {
+			//- 							border: 2px solid colors("greyscale", "500");
+			//- 							background-color: transparent;
+			//- 							color: colors("greyscale", "500");
+			//- 							line-height: 45px;
+			//- 						}
+			//- 					}
+
+			//- 					input[type="text"],
+			//- 					input[type="email"],
+			//- 					input[type="number"],
+			//- 					input[type="password"],
+			//- 					input[type="url"],
+			//- 					input[type="date"],
+			//- 					input[type="tel"],
+			//- 					input[type="search"] {
+			//- 						font-weight: 300;
+			//- 						height: 48px;
+			//- 						font-size: 20px;
+			//- 						border-radius: 2px;
+			//- 						border: 1px solid colors(keyline);
+
+			//- 						&:focus {
+			//- 							border-color: colors("brand");
+			//- 						}
+			//- 					}
+			//- 				}
+			//- 	pre.example-code.tabbed-code-tab.is-open
+			//- 		code.language-html.
+			//- 			&lt;div class="padding-8 max-width-500 margin-auto background-white box-shadow-xx-large"&gt;
+
+			//- 				&lt;div class="demo-button demo-button-facebook width-100 margin-bottom-2"&gt;Log in with Facebook&lt;/div&gt;
+
+			//- 				&lt;div class="demo-button demo-button-empty width-100"&gt;Log in with Google&lt;/div&gt;
+
+			//- 				&lt;div class="border-top text-center margin-top-7 margin-bottom-3"&gt;
+			//- 					&lt;div style="top: -10px" class="background-white padding-horizontal-5 display-inline-block position-relative text-15"&gt;or&lt;/div&gt;
+			//- 				&lt;/div&gt;
+
+			//- 				&lt;div class="margin-bottom-4"&gt;
+			//- 					&lt;input type="text" placeholder="Email Address"/&gt;
+			//- 				&lt;/div&gt;
+
+			//- 				&lt;div class="margin-bottom-4"&gt;
+			//- 					&lt;input type="password" placeholder="Password"/&gt;
+			//- 				&lt;/div&gt;
+
+			//- 				&lt;div class="margin-bottom-4"&gt;
+			//- 					&lt;div class="clearfix"&gt;
+			//- 						&lt;div class="float-left"&gt;
+			//- 							&lt;div class="checkbox"&gt;
+			//- 								&lt;div class="checkbox-input"&gt;&lt;/div&gt;
+			//- 								&lt;div class="checkbox-label"&gt;Remember me&lt;/div&gt;
+			//- 							&lt;/div&gt;
+			//- 						&lt;/div&gt;
+			//- 						&lt;div class="float-right"&gt;
+			//- 							&lt;a href="#" class="text-15 text-brand text-underline-hover"&gt;Forgot password?&lt;/a&gt;&lt;/div&gt;
+			//- 						&lt;/div&gt;
+			//- 					&lt;/div&gt;
+			//- 				&lt;/div&gt;
+
+			//- 				&lt;div class="margin-bottom-5"&gt;
+			//- 					&lt;div class="demo-button width-100"&gt;Log in&lt;/div&gt;
+			//- 				&lt;/div&gt;
+
+			//- 				&lt;div class="border-top margin-bottom-5"&gt;&lt;/div&gt;
+
+			//- 				&lt;div class="text-center"&gt;
+			//- 					&lt;div class="text-20"&gt;Don’t have an account? &lt;a class="text-brand text-underline-hover"&gt;Sign up&lt;/a&gt;&lt;/div&gt;
+			//- 				&lt;/div&gt;
+
+			//- 			&lt;/div&gt;
+
+
+
+
+	section(id="prerequisites")
+		h2 Prerequisites
+		p Barebones requires SASS v3.3 or later to compile <span class="inline-code">.scss</span> files into <span class="inline-code">.css</span>. Vendor prefixing mixins are not used as you can use <a href="https://github.com/postcss/autoprefixer" target="_blank" class="link">autoprefixer</a> to do this.
+
+
+	section(id="installation")
+
+		h2 Get started
+
+		h3 1. Install the package
+		p Barebones is available as either a Bower or NPM package.
+		.example.margin-bottom-8
+			pre.example-code
+				code.language-bash.
+					bower install barebones-sass --save
+					npm install barebones-sass --save-dev						
+
+		p If you want to skip package control, you can do that too – download the latest release from <a href="https://github.com/sebpowell/barebones-sass" class="link">GitHub</a> and integrate the source files directly. 
+
+
+		h3 2. Create a settings file
+
+		p In your project folder, create a <span class="inline-code">_settings.scss</span> file (or whatever you want to call it) with the following values. Each setting is covered in the <a href="#" class="link">following section</a>.
+		pre.example-code
+			code.language-scss.
+				$bb-border-radius-scale: 5;
+
+				$bb-breakpoints: ();
+
+				$bb-colors: ();
+
+				$bb-letter-spacing: ();
+
+				$bb-line-heights: ();
+
+				$bb-global-delimiter: "-";
+
+				$bb-helpers: ();
+
+				$bb-hover-class-name: "hover";
+
+				$bb-max-width-scale: 14;
+
+				$bb-responsive: true;
+
+				$bb-shadows: ();
+
+				$bb-spacing-scale: 10;
+
+				$bb-spacing-base: 4px;
+
+				$bb-spacing-sides: ();
+
+				$bb-text-sizes: ();
+
+
+		p Barebones also allows you to specify your own naming convention. For each generated class, you can decide how that class will be outputted. 
+
+		pre.example-code
+			code.language-scss.
+
+				// These are the settings used by the align-items helper generator to 
+				// create classes for the flex align-items property. 
+				$bb-align-items: (
+					"modifiers": (
+						"flex-start": "items-flex-start",
+						"flex-end": "items-flex-end",
+						"center": "items-center"
+					)
+				);
+				
+				// This will output
+				.align-items-flex-start { 
+					flex-items: flex-start; 
+				}
+
+
+		p You may want a less verbose version, and you ay want to specify your own class names. A short name boilerplate with all the relevant variables nams is aavailable here.
+
+		pre.example-code
+			code.language-scss.
+				// You can make this less verbose by changing the names: 
+				$bb-align-items: (
+					"modifiers": (
+						"flex-start": "items-fs",
+						"flex-end": "items-fe",
+						"center": "items-c"
+					)
+				);
+
+				// Will output: 
+				.items-fs {
+					flex-items: flex-start;
+				}
+
+		h3 3. Create your main SCSS file
+		p Import these files into your main SCSS file so they can compiled. 
+		p Note that the import order matters!
+
+		.example
+			pre.example-code
+				code.language-scss.
+					// Always import the settings file first
+					@import _settings.scss;
+					
+					// Optional – import the _module-names.scss if you're using it
+					@import _module_names.scss;
+					
+					// Always import the settings file first
+					@import bower-components/barebones-sass/dist/_base.scss;

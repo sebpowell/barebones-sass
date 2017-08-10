@@ -38,115 +38,117 @@
   </head>
 </html>
 <body class="page-layout-docs">
-  <div class="backdrop"></div>
   <div class="docs-container">
     <div class="docs-navigation">
-      <div class="nav-logo"><img src="documentation/inc/images/logo.png"/></div>
-      <div class="nav-section"><a href="#introduction" class="parent">Introduction</a>
-        <ul style="display: block" class="sub-navigation is-open">
-          <li><a href="#introduction">Introduction</a></li>
-          <li><a href="#prerequisites">Requirements</a></li>
-          <li><a href="#installing">Installation</a></li>
-          <li><a href="#support">Support</a></li>
-          <li><a href="#background">Background reading</a></li>
-        </ul>
+      <div class="inner">
+        <div class="nav-logo"><img src="documentation/inc/images/logo-black.png"/></div>
+        <div class="nav-section"><a href="introduction.html" class="parent">Introduction</a>
+          <ul class="sub-navigation is-open">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#prerequisites">Requirements</a></li>
+            <li><a href="#installing">Installation</a></li>
+          </ul>
+        </div>
+        <div class="nav-section"><a href="settings.html" class="parent">Settings</a>
+          <ul class="sub-navigation">
+            <li><a href="#settings-border-radius-scale">Border-radius scale</a></li>
+            <li><a href="#settings-breakpoints">Breakpoints</a></li>
+            <li><a href="#settings-colours">Colors</a></li>
+            <li><a href="#settings-letter-spacing">Letter-spacing</a></li>
+            <li><a href="#settings-line-heights">Line-heights</a></li>
+            <li><a href="#settings-global-delimiter">Global delimiter</a></li>
+            <li><a href="#settings-grid">Grid</a></li>
+            <li><a href="#settings-hover-class-name">Hover class name</a></li>
+            <li><a href="#settings-max-width-scale">Max-width scale</a></li>
+            <li><a href="#settings-responsive">Responsive</a></li>
+            <li><a href="#settings-normalize">Normalize</a></li>
+            <li><a href="#settings-shadows">Shadows</a></li>
+            <li><a href="#settings-spacing-base">Spacing base</a></li>
+            <li><a href="#settings-spacing-scale">Spacing scale</a></li>
+            <li><a href="#settings-text-sizes">Text-sizes</a></li>
+          </ul>
+        </div>
+        <div class="nav-section"><a href="grid.html" class="parent">Grid</a>
+          <ul class="sub-navigation">
+            <li><a href="#generator">Grid Settings</a></li>
+            <li><a href="#generator">Containers</a></li>
+            <li><a href="#generator">Columns</a></li>
+            <li><a href="#generator">Galleries</a></li>
+            <li><a href="#generator">Helpers</a></li>
+          </ul>
+        </div>
+        <div class="nav-section"><a href="mixins.html" class="parent">Mixins</a>
+          <ul class="sub-navigation">
+            <li><a href="#mixins-arrow">Arrow</a></li>
+            <li><a href="#mixins-aspect-ratio">Aspect-ratio</a></li>
+            <li><a href="#mixins-background-image">Background-image</a></li>
+            <li><a href="#mixins-clearfix">Clearfix</a></li>
+            <li><a href="#mixins-ellipsis">Ellipsis</a></li>
+            <li><a href="#mixins-helper-generator">Helper generator</a></li>
+            <li><a href="#mixins-lists">Lists</a></li>
+            <li><a href="#mixins-map-deep-get">Map-deep-get</a></li>
+            <li><a href="#mixins-media-query">Media-query</a></li>
+            <li><a href="#mixins-placeholder">Placeholder</a></li>
+            <li><a href="#mixins-shapes">Shapes</a></li>
+            <li><a href="#mixins-strings">Strings</a></li>
+            <li><a href="#mixins-strip-units">Strip-units</a></li>
+            <li><a href="#mixins-text-uppercase">Text-uppercase</a></li>
+          </ul>
+        </div>
+        <div class="nav-section"><a href="helpers.html" class="parent">Helpers</a>
+          <ul class="sub-navigation">
+            <li><a href="#helpers-align-content">Align-content</a></li>
+            <li><a href="#helpers-align-items">Align-items</a></li>
+            <li><a href="#helpers-aspect-ratio">Aspect-ratio</a></li>
+            <li><a href="#helpers-background-color">Background-color</a></li>
+            <li><a href="#helpers-background-position">Background-position</a></li>
+            <li><a href="#helpers-background-size">Background-size</a></li>
+            <li><a href="#helpers-border-radius">Border-radius</a></li>
+            <li><a href="#helpers-border">Border</a></li>
+            <li><a href="#helpers-bottom">Bottom</a></li>
+            <li><a href="#helpers-box-shadow">Box-shadow</a></li>
+            <li><a href="#helpers-clearfix">Clearfix</a></li>
+            <li><a href="#helpers-cursor">Cursor</a></li>
+            <li><a href="#helpers-display">Display</a></li>
+            <li><a href="#helpers-fill">Fill</a></li>
+            <li><a href="#helpers-flex-direction">Flex-direction</a></li>
+            <li><a href="#helpers-flex">Flex</a></li>
+            <li><a href="#helpers-float">Float</a></li>
+            <li><a href="#helpers-height">Height</a></li>
+            <li><a href="#helpers-left">Left</a></li>
+            <li><a href="#helpers-letter-spacing">Letter-spacing</a></li>
+            <li><a href="#helpers-line-height">Line-height</a></li>
+            <li><a href="#helpers-margin">Margin</a></li>
+            <li><a href="#helpers-max-width">Max-width</a></li>
+            <li><a href="#helpers-offset">Offset</a></li>
+            <li><a href="#helpers-opacity">Opacity</a></li>
+            <li><a href="#helpers-order">Order</a></li>
+            <li><a href="#helpers-overflow">Overflow</a></li>
+            <li><a href="#helpers-padding">Padding</a></li>
+            <li><a href="#helpers-position">Position</a></li>
+            <li><a href="#helpers-right">Right</a></li>
+            <li><a href="#helpers-table">Table</a></li>
+            <li><a href="#helpers-text-align">Text-align</a></li>
+            <li><a href="#helpers-text-color">Text-color</a></li>
+            <li><a href="#helpers-text-decoration">Text-decoration</a></li>
+            <li><a href="#helpers-text-ellipsis">Text-ellipsis</a></li>
+            <li><a href="#helpers-text-size">Text-size</a></li>
+            <li><a href="#helpers-text-transform">Text-transform</a></li>
+            <li><a href="#helpers-top">Top</a></li>
+            <li><a href="#helpers-transition">Transition</a></li>
+            <li><a href="#helpers-vertical-align">Vertical-align</a></li>
+            <li><a href="#helpers-visibility">Visibility</a></li>
+            <li><a href="#helpers-width">Width</a></li>
+            <li><a href="#helpers-z-index">Z-index</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="nav-section"><a href="#settings" class="parent">Settings</a>
-        <ul class="sub-navigation">
-          <li><a href="#settings-border-radius-scale">Border-radius scale</a></li>
-          <li><a href="#settings-breakpoints">Breakpoints</a></li>
-          <li><a href="#settings-colours">Colors</a></li>
-          <li><a href="#settings-letter-spacing">Letter-spacing</a></li>
-          <li><a href="#settings-line-heights">Line-heights</a></li>
-          <li><a href="#settings-global-delimiter">Global delimiter</a></li>
-          <li><a href="#settings-grid">Grid</a></li>
-          <li><a href="#settings-hover-class-name">Hover class name</a></li>
-          <li><a href="#settings-max-width-scale">Max-width scale</a></li>
-          <li><a href="#settings-responsive">Responsive</a></li>
-          <li><a href="#settings-normalize">Normalize</a></li>
-          <li><a href="#settings-shadows">Shadows</a></li>
-          <li><a href="#settings-spacing-base">Spacing base</a></li>
-          <li><a href="#settings-spacing-scale">Spacing scale</a></li>
-          <li><a href="#settings-text-sizes">Text-sizes</a></li>
-        </ul>
-      </div>
-      <div class="nav-section"><a href="#grid" class="parent">Grid</a>
-        <ul class="sub-navigation">
-          <li><a href="#generator">Grid Settings</a></li>
-          <li><a href="#generator">Containers</a></li>
-          <li><a href="#generator">Columns</a></li>
-          <li><a href="#generator">Galleries</a></li>
-          <li><a href="#generator">Helpers</a></li>
-        </ul>
-      </div>
-      <div class="nav-section"><a href="#mixins" class="parent">Mixins</a>
-        <ul class="sub-navigation">
-          <li><a href="#mixins-arrow">Arrow</a></li>
-          <li><a href="#mixins-aspect-ratio">Aspect-ratio</a></li>
-          <li><a href="#mixins-background-image">Background-image</a></li>
-          <li><a href="#mixins-clearfix">Clearfix</a></li>
-          <li><a href="#mixins-ellipsis">Ellipsis</a></li>
-          <li><a href="#mixins-helper-generator">Helper generator</a></li>
-          <li><a href="#mixins-lists">Lists</a></li>
-          <li><a href="#mixins-map-deep-get">Map-deep-get</a></li>
-          <li><a href="#mixins-media-query">Media-query</a></li>
-          <li><a href="#mixins-placeholder">Placeholder</a></li>
-          <li><a href="#mixins-shapes">Shapes</a></li>
-          <li><a href="#mixins-strings">Strings</a></li>
-          <li><a href="#mixins-strip-units">Strip-units</a></li>
-          <li><a href="#mixins-text-uppercase">Text-uppercase</a></li>
-        </ul>
-      </div>
-      <div class="nav-section"><a href="#helpers" class="parent">Helpers</a>
-        <ul class="sub-navigation">
-          <li><a href="#helpers-align-content">Align-content</a></li>
-          <li><a href="#helpers-align-items">Align-items</a></li>
-          <li><a href="#helpers-aspect-ratio">Aspect-ratio</a></li>
-          <li><a href="#helpers-background-color">Background-color</a></li>
-          <li><a href="#helpers-background-position">Background-position</a></li>
-          <li><a href="#helpers-background-size">Background-size</a></li>
-          <li><a href="#helpers-border-radius">Border-radius</a></li>
-          <li><a href="#helpers-border">Border</a></li>
-          <li><a href="#helpers-bottom">Bottom</a></li>
-          <li><a href="#helpers-box-shadow">Box-shadow</a></li>
-          <li><a href="#helpers-clearfix">Clearfix</a></li>
-          <li><a href="#helpers-cursor">Cursor</a></li>
-          <li><a href="#helpers-display">Display</a></li>
-          <li><a href="#helpers-fill">Fill</a></li>
-          <li><a href="#helpers-flex-direction">Flex-direction</a></li>
-          <li><a href="#helpers-flex">Flex</a></li>
-          <li><a href="#helpers-float">Float</a></li>
-          <li><a href="#helpers-height">Height</a></li>
-          <li><a href="#helpers-left">Left</a></li>
-          <li><a href="#helpers-letter-spacing">Letter-spacing</a></li>
-          <li><a href="#helpers-line-height">Line-height</a></li>
-          <li><a href="#helpers-margin">Margin</a></li>
-          <li><a href="#helpers-max-width">Max-width</a></li>
-          <li><a href="#helpers-offset">Offset</a></li>
-          <li><a href="#helpers-opacity">Opacity</a></li>
-          <li><a href="#helpers-order">Order</a></li>
-          <li><a href="#helpers-overflow">Overflow</a></li>
-          <li><a href="#helpers-padding">Padding</a></li>
-          <li><a href="#helpers-position">Position</a></li>
-          <li><a href="#helpers-right">Right</a></li>
-          <li><a href="#helpers-table">Table</a></li>
-          <li><a href="#helpers-text-align">Text-align</a></li>
-          <li><a href="#helpers-text-color">Text-color</a></li>
-          <li><a href="#helpers-text-decoration">Text-decoration</a></li>
-          <li><a href="#helpers-text-ellipsis">Text-ellipsis</a></li>
-          <li><a href="#helpers-text-size">Text-size</a></li>
-          <li><a href="#helpers-text-transform">Text-transform</a></li>
-          <li><a href="#helpers-top">Top</a></li>
-          <li><a href="#helpers-transition">Transition</a></li>
-          <li><a href="#helpers-vertical-align">Vertical-align</a></li>
-          <li><a href="#helpers-visibility">Visibility</a></li>
-          <li><a href="#helpers-width">Width</a></li>
-          <li><a href="#helpers-z-index">Z-index</a></li>
-        </ul>
+      <div class="navigation-footer">
+        <div class="display-table-cell vertical-align-middle"><a href="#" class="button">Github</a></div>
       </div>
     </div>
     <div class="docs-content">
-      <div class="inner">
+      <div class="inner">			
         <script>
           $(document).ready(function() {
           	$(".dropdown").on("click", function() {
@@ -525,7 +527,9 @@
             </div>
           </article>
         </div>
-      </div>
+      </div><a href="undefined.html" class="next display-block">
+        <div class="opacity-7 margin-bottom-3">Next up</div>
+        <div class="text-28 text-capitalize"></div></a>
     </div>
   </div>
 </body>
