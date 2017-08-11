@@ -6,8 +6,6 @@ block body
 	
 
 	section(id="introduction-intro")
-		
-
 		p Barebones is fully customisable SCSS boilerplate to help you build your own UI framework. 
 
 		p It is not a UI kit or library – Bootstrap, Foundation and the like – but a set of commonly used tools common put together in a convenient package to kickstart your next project: 
@@ -225,6 +223,7 @@ block body
 		h2 Get started
 
 		h3 1. Install the package
+		
 		p Barebones is available as either a Bower or NPM package.
 		.example.margin-bottom-8
 			pre.example-code
@@ -238,6 +237,7 @@ block body
 		h3 2. Create a settings file
 
 		p In your project folder, create a <span class="inline-code">_settings.scss</span> file (or whatever you want to call it) with the following values. Each setting is covered in the <a href="#" class="link">following section</a>.
+
 		pre.example-code
 			code.language-scss.
 				$bb-border-radius-scale: 5;
@@ -311,7 +311,9 @@ block body
 				}
 
 		h3 3. Create your main SCSS file
+		
 		p Import these files into your main SCSS file so they can compiled. 
+		
 		p Note that the import order matters!
 
 		.example
